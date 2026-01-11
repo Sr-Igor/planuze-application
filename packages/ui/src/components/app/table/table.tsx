@@ -1,11 +1,9 @@
 "use client";
 
-import  { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { useLang } from "@repo/language/hook";
 import { cn, Table, TableBody } from "@repo/ui";
-
-
-import { useWindowWidth } from "./hooks";
 
 import {
   AppTableColgroup,
@@ -17,6 +15,7 @@ import {
 } from "./components";
 import { TableProvider } from "./context/table-context";
 import { useTableState } from "./hooks";
+import { useWindowWidth } from "./hooks/use-table-width";
 import { BaseTableItem, TableProps } from "./types/index";
 import { getTableVariantClasses } from "./utils/helpers";
 
@@ -37,7 +36,6 @@ function TableComponent<T extends BaseTableItem>({
   variant = "default",
   disabledCheckbox,
   height,
-  useLang,
   ...props
 }: TableProps<T>) {
   const t = useLang();
@@ -87,7 +85,6 @@ function TableComponent<T extends BaseTableItem>({
     size,
     variant,
     disabledCheckbox,
-    useLang,
     ...props,
   });
 

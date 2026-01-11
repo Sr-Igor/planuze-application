@@ -16,10 +16,9 @@ export * from "./icon";
 export * from "./info-modal";
 export * from "./main-card";
 export * from "./status-circle";
-export * from "./card-flag";
+export * from "./flag-card";
 
 // Subdirectories
 export * from "./table";
 export * from "./app-logs";
 export * from "./app-logs/modal";
-

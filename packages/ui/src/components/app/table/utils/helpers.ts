@@ -165,7 +165,7 @@ export function debounce<T extends (...args: any[]) => any>(
  * @returns ID único
  */
 export function generateTableId(prefix: string, ...parts: (string | number)[]): string {
-  return [prefix, ...parts].join("-").replaceAll(/\s+/g, "-").toLowerCase();
+  return [prefix, ...parts].join("-").replace(/\s+/g, "-").toLowerCase();
 }
 
 /**

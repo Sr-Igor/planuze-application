@@ -8,6 +8,7 @@ export interface ITooltipDemoProps {
   className?: string;
   contentClassName?: string;
   side?: "top" | "right" | "bottom" | "left";
+  align?: "start" | "center" | "end";
 }
 
 export function AppTooltip({
@@ -16,6 +17,7 @@ export function AppTooltip({
   className,
   contentClassName,
   side,
+  align,
 }: ITooltipDemoProps) {
   const formatText = (text: string) => {
     const lines = text.split("\n");
@@ -34,7 +36,7 @@ export function AppTooltip({
           <TooltipTrigger asChild className={className}>
             {children}
           </TooltipTrigger>
-          <TooltipContent className={contentClassName} side={side}>
+          <TooltipContent className={contentClassName} side={side} align={align}>
             <p>{formatText(text)}</p>
           </TooltipContent>
         </Tooltip>

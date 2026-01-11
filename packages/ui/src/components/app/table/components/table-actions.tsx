@@ -4,6 +4,7 @@ import React, { memo, useCallback, useState } from "react";
 
 import { Loader2, MoreHorizontal } from "lucide-react";
 
+import { useLang } from "@repo/language/hook";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -29,7 +30,6 @@ function TableActionsComponent<T extends BaseTableItem>({
   item,
   actions,
   isLoading,
-  useLang,
 }: TableActionsProps<T>) {
   const t = useLang();
   const [openAlert, setOpenAlert] = useState<string | null>(null);

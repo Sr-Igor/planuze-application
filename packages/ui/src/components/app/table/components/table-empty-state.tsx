@@ -1,14 +1,15 @@
 "use client";
 
-import { memo } from "react";
+import React, { memo } from "react";
 
 import { Inbox } from "lucide-react";
 
+import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
 import { TableEmptyStateProps } from "../types/index";
 
-function TableEmptyStateComponent({ message, icon, action, useLang }: TableEmptyStateProps) {
+function TableEmptyStateComponent({ message, icon, action }: TableEmptyStateProps) {
   const t = useLang();
 
   return (

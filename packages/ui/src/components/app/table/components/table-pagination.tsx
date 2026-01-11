@@ -4,6 +4,7 @@ import React, { memo, useCallback } from "react";
 
 import { ChevronFirst, ChevronLast, ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 
+import { useLang } from "@repo/language/hook";
 import {
   Button,
   cn,
@@ -14,7 +15,6 @@ import {
   SelectValue,
   Skeleton,
 } from "@repo/ui";
-
 
 import { TablePaginationProps } from "../types/index";
 
@@ -30,7 +30,6 @@ function TablePaginationComponent({
   loading,
   onPageChange,
   onLimitChange,
-  useLang,
 }: TablePaginationProps) {
   const t = useLang();
   const { page, pages, limit, count } = pagination;

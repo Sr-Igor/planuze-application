@@ -15,7 +15,6 @@ export interface LogEntry {
   deletedAt: string | null;
   createdAt: string;
   updatedAt: string;
-
 }
 
 export interface ILogsComparison<T> {
@@ -37,11 +36,4 @@ export interface DiffItem {
   newValue: any;
 }
 
-export type LogAction =
-  | "CREATE"
-  | "UPDATE"
-  | "DELETE"
-  | "INDEX"
-  | "SHOW"
-  | "TRASH"
-  | "RESTORE";
+export type LogAction = "CREATE" | "UPDATE" | "DELETE" | "INDEX" | "SHOW" | "TRASH" | "RESTORE";

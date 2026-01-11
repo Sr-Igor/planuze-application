@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { CreditCard } from "lucide-react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "@repo/ui";
 
 const SUPPORTED_FLAGS = [
   "visa",
@@ -23,7 +23,7 @@ export interface CardFlagProps {
 }
 
 export function CardFlag({ brand, width = 28, height = 18 }: CardFlagProps) {
-  const normalized = brand?.toLowerCase()?.replaceAll(/[^a-z]/g, "") || "";
+  const normalized = brand?.toLowerCase()?.replace(/[^a-z]/g, "") || "";
 
   if (SUPPORTED_FLAGS.includes(normalized)) {
     try {

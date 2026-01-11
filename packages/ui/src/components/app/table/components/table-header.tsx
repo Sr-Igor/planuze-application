@@ -4,6 +4,7 @@ import React, { memo, useCallback } from "react";
 
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+import { useLang } from "@repo/language/hook";
 import { Button, Checkbox, cn, TableHead, TableHeader, TableRow } from "@repo/ui";
 
 import { BaseTableItem, TableHeaderProps } from "../types/index";
@@ -13,9 +14,9 @@ function TableHeaderComponent<T extends BaseTableItem>({
   selectable,
   onSelectAll,
   allSelected,
+  someSelected,
   onSort,
   currentSort,
-  useLang,
 }: TableHeaderProps<T>) {
   const t = useLang();
 

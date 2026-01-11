@@ -25,7 +25,6 @@ function TableRowComponent<T extends BaseTableItem>({
   onRowDoubleClick,
   onToggleExpand,
   actions = [],
-  useLang,
   disabledCheckbox,
 }: TableRowProps<T> & { actions?: any[] }) {
   const handleClick = useCallback(
@@ -137,7 +136,7 @@ function TableRowComponent<T extends BaseTableItem>({
         style={{ flex: "none", width: "80px", minWidth: 80 }}
       >
         <div className="flex items-center justify-center">
-          <AppTableActions item={item} actions={actions} isLoading={isLoading}/>
+          <AppTableActions item={item} actions={actions} isLoading={isLoading} />
         </div>
       </TableCell>
     </TableRow>
