@@ -1,6 +1,6 @@
+import { profile } from "@repo/api/generator/types";
 import { Avatar, AvatarFallback, AvatarImage, Card, CardContent } from "@repo/ui";
 
-import { profile } from "@/api/generator/types";
 import { cn } from "@/lib/utils";
 
 export interface IProfileFormProps {

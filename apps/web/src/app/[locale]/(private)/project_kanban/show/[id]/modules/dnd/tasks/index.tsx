@@ -5,9 +5,8 @@ import { memo, useCallback, useMemo, useState } from "react";
 import { DndContext, pointerWithin, rectIntersection } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
-
-import { project_kanban_cycle_card } from "@/api/generator/types";
 
 import { useKanbanShow } from "../../../context";
 import { fakeColumn } from "../../../utils/fake-column";

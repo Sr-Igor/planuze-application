@@ -23,6 +23,17 @@ export type Endpoints = {
       "password_confirm": string;
     };
   };
+  "/api/private/auth/owner": {
+    "method": "PUT";
+    "query"?: {
+      "select"?: Prisma.authSelect;
+      "include"?: Prisma.authInclude;
+    };
+    "body": {
+      "current_password": string;
+      "profile_id": string;
+    };
+  };
   "/api/private/auth/reset": {
     "method": "POST";
     "body": {
@@ -5146,6 +5157,7 @@ export type Endpoints = {
     };
     "body": {
       "deleted"?: string;
+      "integration"?: string;
       "title": string;
     };
   };
@@ -5160,6 +5172,7 @@ export type Endpoints = {
     };
     "body": {
       "deleted"?: string;
+      "integration"?: string;
       "title"?: string;
     };
   };
@@ -5241,6 +5254,7 @@ export type Endpoints = {
       "group"?: string;
       "icon"?: string;
       "module_id": string;
+      "new"?: string;
       "order": string;
       "path": string;
       "plan_title": string;
@@ -5266,6 +5280,7 @@ export type Endpoints = {
       "group"?: string;
       "icon"?: string;
       "module_id"?: string;
+      "new"?: string;
       "order"?: string;
       "path"?: string;
       "plan_title"?: string;
@@ -5297,9 +5312,11 @@ export type Endpoints = {
       "include"?: Prisma.moduleInclude;
     };
     "body": {
+      "basic"?: string;
       "company_id"?: string;
       "deleted"?: string;
       "icon": string;
+      "integration"?: string;
       "order": string;
       "title": string;
     };
@@ -5314,9 +5331,11 @@ export type Endpoints = {
       "include"?: Prisma.moduleInclude;
     };
     "body": {
+      "basic"?: string;
       "company_id"?: string;
       "deleted"?: string;
       "icon"?: string;
+      "integration"?: string;
       "order"?: string;
       "title"?: string;
     };
@@ -5460,6 +5479,7 @@ export type Routes =
   | "/api/private/auth/confirm"
   | "/api/private/auth/hidrate"
   | "/api/private/auth/need_reset"
+  | "/api/private/auth/owner"
   | "/api/private/auth/reset"
   | "/api/private/billing/checkout"
   | "/api/private/billing/test"
@@ -5836,6 +5856,9 @@ export const flatEndpoints = {
   },
   "/api/private/auth/need_reset": {
     "method": "POST"
+  },
+  "/api/private/auth/owner": {
+    "method": "PUT"
   },
   "/api/private/auth/reset": {
     "method": "POST"

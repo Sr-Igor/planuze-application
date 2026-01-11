@@ -1,5 +1,6 @@
 import { Clock10, History, Pen, Trash } from "lucide-react";
 
+import { project_allocation } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -12,7 +13,6 @@ import {
   Skeleton,
 } from "@repo/ui";
 
-import { project_allocation } from "@/api/generator/types";
 import { Permission } from "@/components/ui/permission";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { cn } from "@/lib/utils";

@@ -1,6 +1,6 @@
+import { project } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { project } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import {

@@ -1,10 +1,10 @@
 import { Ellipsis } from "lucide-react";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDropdownMenu } from "@repo/ui/app";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useAccess } from "@/hooks/access";
 

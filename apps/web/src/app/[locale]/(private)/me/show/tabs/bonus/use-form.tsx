@@ -1,6 +1,6 @@
+import { profile_bonus } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { profile_bonus } from "@/api/generator/types";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field, IUseFormListReturn } from "@/hooks/form/types";

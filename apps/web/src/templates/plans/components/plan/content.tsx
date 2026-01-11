@@ -1,3 +1,4 @@
+import { plan } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Accordion,
@@ -8,8 +9,6 @@ import {
   Skeleton,
 } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
-
-import { plan } from "@/api/generator/types";
 
 import { FeaturesByModule } from "../../types";
 

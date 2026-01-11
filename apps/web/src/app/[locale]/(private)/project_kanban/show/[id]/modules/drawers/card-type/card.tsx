@@ -1,5 +1,6 @@
 import { History, Pen, Trash } from "lucide-react";
 
+import { project_kanban_cycle_card_type } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -13,7 +14,6 @@ import {
 } from "@repo/ui";
 import { Icon, StatusCircle } from "@repo/ui/app";
 
-import { project_kanban_cycle_card_type } from "@/api/generator/types";
 import { Permission } from "@/components/ui/permission";
 import { cn } from "@/lib/utils";
 

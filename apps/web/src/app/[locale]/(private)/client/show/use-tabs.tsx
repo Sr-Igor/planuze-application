@@ -1,6 +1,6 @@
+import { client } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { client } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Address, BankAccount, Contact, Data, Document, File } from "./tabs";

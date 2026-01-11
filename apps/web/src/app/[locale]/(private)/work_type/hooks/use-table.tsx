@@ -1,6 +1,5 @@
+import { work_type } from "@repo/api/generator/types";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
-
-import { work_type } from "@/api/generator/types";
 
 export const useTable = () => {
   const t = useLang();

@@ -1,8 +1,8 @@
 import { BadgeCheck, ShieldBan } from "lucide-react";
 
+import { profile } from "@repo/api/generator/types";
 import { DropdownMenuItem } from "@repo/ui";
 
-import { profile } from "@/api/generator/types";
 import { cn } from "@/lib/utils";
 
 import { AppAvatar } from "./app-avatar";

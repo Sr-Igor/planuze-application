@@ -1,7 +1,7 @@
+import { level, profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 
-import { level, profile } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { IUseHookProps } from "@/templates/list/base/types";
 

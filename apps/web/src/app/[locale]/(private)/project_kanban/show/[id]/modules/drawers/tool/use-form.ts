@@ -4,7 +4,8 @@ import { useLocale } from "next-intl";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_tool, project_version } from "@/api/generator/types";
+import { project_tool, project_version } from "@repo/api/generator/types";
+
 import { index as indexProjectVersion } from "@/api/req/project_version";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";

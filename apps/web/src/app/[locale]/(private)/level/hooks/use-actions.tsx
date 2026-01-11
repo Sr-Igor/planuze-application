@@ -2,10 +2,10 @@ import { useRouter } from "next/navigation";
 
 import { Eye, Pen, Trash } from "lucide-react";
 
+import { level } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 
-import { level } from "@/api/generator/types";
 import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";
 

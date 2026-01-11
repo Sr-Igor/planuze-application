@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-import { plan } from "@/api/generator/types";
+import { plan } from "@repo/api/generator/types";
+
 import { useAuth } from "@/hooks/auth";
 import { useIntlFormat } from "@/hooks/intl-format";
 

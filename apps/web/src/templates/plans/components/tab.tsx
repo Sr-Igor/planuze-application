@@ -1,8 +1,8 @@
 import { Zap } from "lucide-react";
 
+import { plan } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { plan } from "@/api/generator/types";
 import { cn } from "@/lib/utils";
 
 import { IPlanCardProps } from "../types";

@@ -2,10 +2,10 @@ import { useRouter } from "next/navigation";
 
 import { FilePen, MousePointerBan } from "lucide-react";
 
+import { profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { profile } from "@/api/generator/types";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { set } from "@/store/modules/module/actions";
 

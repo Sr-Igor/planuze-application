@@ -1,7 +1,7 @@
+import { work_type } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 
-import { work_type } from "@/api/generator/types";
 import { CheckboxInfinitySelect } from "@/components/form/select/cases/checkbox-infinity";
 
 import { useKanbanShow } from "../../../context";

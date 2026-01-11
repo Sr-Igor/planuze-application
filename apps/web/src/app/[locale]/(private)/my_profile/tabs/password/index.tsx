@@ -1,10 +1,10 @@
 "use client";
 
+import { user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
 import { useAuth } from "@/api/callers/auth";
-import { user } from "@/api/generator/types";
 import { useSignOut } from "@/hooks/cookies/signout";
 import { useAppSelector } from "@/hooks/redux";
 import { useUnload } from "@/hooks/unload";

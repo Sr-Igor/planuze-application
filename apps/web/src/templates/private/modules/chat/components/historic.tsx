@@ -2,10 +2,10 @@ import * as React from "react";
 
 import { X } from "lucide-react";
 
+import { chat } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button, Skeleton } from "@repo/ui";
 
-import { chat } from "@/api/generator/types";
 import { cn } from "@/lib/utils";
 
 export interface IHistoryProps {

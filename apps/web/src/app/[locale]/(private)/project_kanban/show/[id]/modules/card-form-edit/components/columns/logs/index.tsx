@@ -1,7 +1,7 @@
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Logs as LogsComponent } from "@repo/ui/app";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { useLogs } from "@/hooks/logs";
 
 import { Collapsible } from "../../collapsible";

@@ -1,6 +1,6 @@
+import { level } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { level } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Data, Permission, User } from "./tabs";

@@ -1,7 +1,6 @@
+import { plan } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Badge } from "@repo/ui";
-
-import { plan } from "@/api/generator/types";
 
 import { FeaturesByModule } from "../types";
 

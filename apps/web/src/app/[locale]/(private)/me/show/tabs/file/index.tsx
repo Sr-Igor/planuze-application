@@ -1,16 +1,17 @@
-import { profile } from '@/api/generator/types';
-import { useShow } from '@/templates/show/context';
-import { UploadTemplate } from '@/templates/upload';
+import { profile } from "@repo/api/generator/types";
+
+import { useShow } from "@/templates/show/context";
+import { UploadTemplate } from "@/templates/upload";
 
 export const File = () => {
-    const { data, permissions } = useShow<profile>();
+  const { data, permissions } = useShow<profile>();
 
-    return (
-        <UploadTemplate
-            files={data?.profile_files || []}
-            rootData={{}}
-            feature='profile_file'
-            permissions={permissions}
-        />
-    );
+  return (
+    <UploadTemplate
+      files={data?.profile_files || []}
+      rootData={{}}
+      feature="profile_file"
+      permissions={permissions}
+    />
+  );
 };

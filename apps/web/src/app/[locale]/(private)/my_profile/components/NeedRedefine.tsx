@@ -1,9 +1,9 @@
 import { Key } from "lucide-react";
 
+import { user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { user } from "@/api/generator/types";
 import { useSignOut } from "@/hooks/cookies/signout";
 
 export interface INeedRedefineProps {

@@ -1,102 +1,103 @@
 //Utils
-import { callEndpoint } from '@/api/generator';
-import { Prisma } from '@/api/generator/prisma-types';
-import { handleReq } from '@/api/handle';
-import { logs } from '@/utils/includeLogs';
+import { callEndpoint } from "@repo/api/generator";
+import { Prisma } from "@repo/api/generator/prisma-types";
 
-const query: Record<'include', Prisma.project_allocationInclude> = {
-    include: {
-        logs,
-        project_version: true,
-        profile: {
-            include: {
-                user: {
-                    select: {
-                        name: true,
-                        avatar: true
-                    }
-                }
-            }
-        }
-    }
+import { handleReq } from "@/api/handle";
+import { logs } from "@/utils/includeLogs";
+
+const query: Record<"include", Prisma.project_allocationInclude> = {
+  include: {
+    logs,
+    project_version: true,
+    profile: {
+      include: {
+        user: {
+          select: {
+            name: true,
+            avatar: true,
+          },
+        },
+      },
+    },
+  },
 };
 
 export const index = async (filters: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/project_allocation/index',
-        query: {
-            ...filters,
-            ...query,
-            orderKey: 'createdAt',
-            orderValue: 'desc'
-        }
-    });
+  const handle = callEndpoint({
+    route: "/api/private/project_allocation/index",
+    query: {
+      ...filters,
+      ...query,
+      orderKey: "createdAt",
+      orderValue: "desc",
+    },
+  });
 
-    return handleReq({
-        ...handle
-    });
+  return handleReq({
+    ...handle,
+  });
 };
 
 export const store = async (body: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/project_allocation/store',
-        body,
-        query
-    });
+  const handle = callEndpoint({
+    route: "/api/private/project_allocation/store",
+    body,
+    query,
+  });
 
-    return handleReq({
-        ...handle,
-        showSuccess: true
-    });
+  return handleReq({
+    ...handle,
+    showSuccess: true,
+  });
 };
 
 export const update = async (id: string, body: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/project_allocation/update',
-        body,
-        query,
-        params: { id }
-    });
+  const handle = callEndpoint({
+    route: "/api/private/project_allocation/update",
+    body,
+    query,
+    params: { id },
+  });
 
-    return handleReq({
-        ...handle,
-        showSuccess: true
-    });
+  return handleReq({
+    ...handle,
+    showSuccess: true,
+  });
 };
 
 export const destroy = async (id: string) => {
-    const handle = callEndpoint({
-        route: '/api/private/project_allocation/destroy',
-        params: { id },
-        query
-    });
+  const handle = callEndpoint({
+    route: "/api/private/project_allocation/destroy",
+    params: { id },
+    query,
+  });
 
-    return handleReq({
-        ...handle,
-        showSuccess: true
-    });
+  return handleReq({
+    ...handle,
+    showSuccess: true,
+  });
 };
 
 export const trash = async (filters?: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/project_allocation/trash',
-        query: { ...filters, ...query }
-    });
+  const handle = callEndpoint({
+    route: "/api/private/project_allocation/trash",
+    query: { ...filters, ...query },
+  });
 
-    return handleReq({
-        ...handle
-    });
+  return handleReq({
+    ...handle,
+  });
 };
 
 export const restore = async (id: string) => {
-    const handle = callEndpoint({
-        route: '/api/private/project_allocation/restore',
-        query,
-        params: { id }
-    });
+  const handle = callEndpoint({
+    route: "/api/private/project_allocation/restore",
+    query,
+    params: { id },
+  });
 
-    return handleReq({
-        ...handle,
-        showSuccess: true
-    });
+  return handleReq({
+    ...handle,
+    showSuccess: true,
+  });
 };

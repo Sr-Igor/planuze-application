@@ -4,6 +4,7 @@
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
+  "type": "module",
   "scripts": {
     "check-types": "tsc --noEmit --skipLibCheck || true",
     "lint": "eslint . --max-warnings 0"
@@ -15,14 +16,21 @@
     "typescript": "5.9.3"
   },
   "exports": {
-    ".": "./index.ts",
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./generator": {
+      "types": "./generator/index.ts",
+      "default": "./generator/index.ts"
+    },
     "./generator/types": {
       "types": "./generator/types/index.ts",
       "default": "./generator/types/index.ts"
     },
-    "./generator/prisma-types": {
-      "types": "./generator/prisma-types.d.ts",
-      "default": "./generator/prisma-types.d.ts"
+    "./generator/endpoints": {
+      "types": "./generator/endpoints.ts",
+      "default": "./generator/endpoints.ts"
     }
   }
 }

@@ -1,7 +1,9 @@
+import {
+  project_kanban_cycle_card,
+  project_kanban_cycle_card_type,
+} from "@repo/api/generator/types";
 import { DialogTitle } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
-
-import { project_kanban_cycle_card, project_kanban_cycle_card_type } from "@/api/generator/types";
 
 export interface ICardTypeTitleProps {
   cardType?: project_kanban_cycle_card_type;

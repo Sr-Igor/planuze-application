@@ -1,6 +1,5 @@
+import { project_kanban_objective } from "@repo/api/generator/types";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
-
-import { project_kanban_objective } from "@/api/generator/types";
 
 export const useTable = () => {
   const t = useLang();

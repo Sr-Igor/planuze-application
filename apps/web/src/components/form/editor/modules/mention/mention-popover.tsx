@@ -7,10 +7,10 @@ import { createPortal } from "react-dom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { LoaderCircle, PackageOpen } from "lucide-react";
 
+import { profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from "@repo/ui";
 
-import { profile } from "@/api/generator/types";
 import { index } from "@/api/req/profile";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { useDebounce } from "@/hooks/debounce";

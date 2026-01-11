@@ -1,15 +1,16 @@
 //Utils
-import { callEndpoint } from '@/api/generator';
-import { handleReq } from '@/api/handle';
+import { callEndpoint } from "@repo/api/generator";
+
+import { handleReq } from "@/api/handle";
 
 export const show = async (id: string) => {
-    const handle = callEndpoint({
-        route: '/api/private/me/show',
-        params: { id }
-    });
+  const handle = callEndpoint({
+    route: "/api/private/me/show",
+    params: { id },
+  });
 
-    return handleReq({
-        ...handle,
-        hideError: true
-    });
+  return handleReq({
+    ...handle,
+    hideError: true,
+  });
 };

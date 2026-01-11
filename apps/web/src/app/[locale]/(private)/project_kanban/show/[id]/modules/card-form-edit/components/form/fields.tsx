@@ -1,7 +1,5 @@
 import { UseFormReturn } from "react-hook-form";
 
-import { useLang } from "@repo/language/hook";
-
 import {
   kanban_template_tag,
   profile,
@@ -10,7 +8,9 @@ import {
   project_kanban_objective,
   project_kanban_objective_target,
   work_type,
-} from "@/api/generator/types";
+} from "@repo/api/generator/types";
+import { useLang } from "@repo/language/hook";
+
 import { index as indexKanbanTemplateTag } from "@/api/req/kanban_template_tag";
 import { index as indexProjectKanbanCycleCard } from "@/api/req/project_kanban_cycle_card";
 import { index as indexProjectKanbanObjectiveTarget } from "@/api/req/project_kanban_objective_target";

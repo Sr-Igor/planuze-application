@@ -1,8 +1,8 @@
 import { IValidatorRequest } from "@deviobr/validator";
 
+import { project_config, project_version } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { project_config, project_version } from "@/api/generator/types";
 import { index as indexProjectVersion } from "@/api/req/project_version";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

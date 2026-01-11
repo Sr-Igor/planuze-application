@@ -1,10 +1,10 @@
 import { differenceInDays } from "date-fns";
 import { Check, X } from "lucide-react";
 
+import { invite } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 
-import { invite } from "@/api/generator/types";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { useIntlFormat } from "@/hooks/intl-format";
 

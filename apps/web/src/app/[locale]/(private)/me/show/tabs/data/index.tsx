@@ -1,8 +1,8 @@
 "use client";
 
+import { profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { profile } from "@/api/generator/types";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { cn } from "@/lib/utils";

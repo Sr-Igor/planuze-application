@@ -4,7 +4,8 @@ import { useEffect, useMemo } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_kanban_cycle, project_kanban_cycle_card } from "@/api/generator/types";
+import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/api/generator/types";
+
 import { index as indexProjectKanbanCycleCard } from "@/api/req/project_kanban_cycle_card";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
 import { useFormList } from "@/hooks/form";

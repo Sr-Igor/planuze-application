@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
+import { kanban_template } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
 import { useKanbanTemplate } from "@/api/callers/kanban_template";
-import { kanban_template } from "@/api/generator/types";
 import { BaseTemplate, defaultState } from "@/templates/list/base";
 import { State } from "@/templates/list/base/types";
 

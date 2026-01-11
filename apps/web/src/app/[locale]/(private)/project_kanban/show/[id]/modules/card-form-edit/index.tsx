@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { ISelected } from "@/components/form/tags";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";

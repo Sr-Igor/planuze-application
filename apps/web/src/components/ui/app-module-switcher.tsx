@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 
+import { module } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   DropdownMenu,
@@ -21,7 +22,6 @@ import {
 } from "@repo/ui";
 import { AppTooltip, Icon } from "@repo/ui/app";
 
-import { module } from "@/api/generator/types";
 import { useAccess } from "@/hooks/access";
 import { ModuleWithFeatures } from "@/hooks/access/types";
 import { getModule } from "@/hooks/cookies/module";

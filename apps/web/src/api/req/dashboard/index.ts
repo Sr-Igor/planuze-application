@@ -1,18 +1,19 @@
 //Utils
-import { callEndpoint } from '@/api/generator';
-import { exporteXlsx } from '@/api/global/export-xlsx';
-import { handleReq } from '@/api/handle';
+import { callEndpoint } from "@repo/api/generator";
+
+import { exporteXlsx } from "@/api/global/export-xlsx";
+import { handleReq } from "@/api/handle";
 
 export const index = async (filters: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/dashboard/index',
-        query: filters
-    });
+  const handle = callEndpoint({
+    route: "/api/private/dashboard/index",
+    query: filters,
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const exported = async (filters: any) => {
-    const response = await exporteXlsx('/api/private/dashboard/index', filters);
-    return response;
+  const response = await exporteXlsx("/api/private/dashboard/index", filters);
+  return response;
 };

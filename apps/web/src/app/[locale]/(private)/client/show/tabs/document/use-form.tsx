@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { client_document } from "@/api/generator/types";
+import { client_document } from "@repo/api/generator/types";
+
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

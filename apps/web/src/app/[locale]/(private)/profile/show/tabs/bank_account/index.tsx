@@ -1,7 +1,7 @@
+import { profile_bank_account } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
 import { useProfileBankAccount } from "@/api/callers/profile_bank_account";
-import { profile_bank_account } from "@/api/generator/types";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

@@ -1,19 +1,20 @@
-'use client';
+"use client";
 
-import { useIntegration } from '@/api/callers/integration';
-import { integration } from '@/api/generator/types';
-import { BaseTemplate } from '@/templates/list/base';
+import { integration } from "@repo/api/generator/types";
 
-import { useActions, useTable } from './hooks';
+import { useIntegration } from "@/api/callers/integration";
+import { BaseTemplate } from "@/templates/list/base";
+
+import { useActions, useTable } from "./hooks";
 
 export default function Page() {
-    return (
-        <BaseTemplate<integration>
-            path='integration'
-            redirect='show'
-            hookReq={useIntegration}
-            useTable={useTable}
-            useActions={useActions}
-        />
-    );
+  return (
+    <BaseTemplate<integration>
+      path="integration"
+      redirect="show"
+      hookReq={useIntegration}
+      useTable={useTable}
+      useActions={useActions}
+    />
+  );
 }

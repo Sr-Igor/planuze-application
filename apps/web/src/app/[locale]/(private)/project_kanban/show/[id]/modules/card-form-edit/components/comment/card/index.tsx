@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import { Pen, Trash } from "lucide-react";
 
+import { project_kanban_cycle_card_comment } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { project_kanban_cycle_card_comment } from "@/api/generator/types";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";
 import { Editor } from "@/components/form/editor";

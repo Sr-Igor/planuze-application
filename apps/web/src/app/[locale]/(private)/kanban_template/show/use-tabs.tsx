@@ -1,6 +1,6 @@
+import { kanban_template } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { kanban_template } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Card, Column, Data } from "./tabs";

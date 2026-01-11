@@ -2,9 +2,9 @@ import { useLocale } from "next-intl";
 
 import { AlertCircle, BadgeDollarSign, ClockAlert } from "lucide-react";
 
+import { plan, subscription } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { plan, subscription } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { formatCurrency } from "@/utils/currency";
 

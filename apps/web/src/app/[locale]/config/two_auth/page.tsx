@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { KeyRound, Mail, Phone } from "lucide-react";
 
+import { user_two_auth } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -21,7 +22,6 @@ import {
 } from "@repo/ui";
 
 import { useUserTwoAuthCode } from "@/api/callers/user_two_auth_code";
-import { user_two_auth } from "@/api/generator/types";
 import { useAuth } from "@/hooks/auth";
 import { useSignOut } from "@/hooks/cookies/signout";
 import { setTwoAuth } from "@/hooks/cookies/two_auth";

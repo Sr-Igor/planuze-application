@@ -1,6 +1,6 @@
+import { company } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { company } from "@/api/generator/types";
 import { useAuth } from "@/hooks/auth";
 import { IShowHookProps } from "@/templates/show/types";
 

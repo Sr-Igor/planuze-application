@@ -1,5 +1,6 @@
 import { FolderKanban, History, Pen, Trash } from "lucide-react";
 
+import { project_kanban_cycle } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -13,7 +14,6 @@ import {
 } from "@repo/ui";
 import { StatusCircle } from "@repo/ui/app";
 
-import { project_kanban_cycle } from "@/api/generator/types";
 import { Permission } from "@/components/ui/permission";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { cn } from "@/lib/utils";

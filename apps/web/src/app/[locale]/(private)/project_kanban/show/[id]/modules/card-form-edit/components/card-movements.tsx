@@ -4,10 +4,10 @@ import { useMemo } from "react";
 
 import { differenceInDays, differenceInHours, differenceInMinutes } from "date-fns";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Badge, Card, CardContent, CardHeader, CardTitle, Separator } from "@repo/ui";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { timeLabel } from "@/utils/timeLabel";
 

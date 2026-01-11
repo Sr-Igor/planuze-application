@@ -5,9 +5,9 @@ import { useLocale } from "next-intl";
 import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
+import { cost_center, profile_bonus } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { cost_center, profile_bonus } from "@/api/generator/types";
 import { index as indexCostCenter } from "@/api/req/cost_center";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";

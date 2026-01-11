@@ -1,10 +1,10 @@
 import { useState } from "react";
 
+import { invite } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { invite } from "@/api/generator/types";
 import { AppInvite } from "@/components/ui/app.invite";
 
 export interface IInviteProps {

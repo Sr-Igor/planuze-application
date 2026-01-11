@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
+import { user } from "@repo/api/generator/types";
+
 import { useUser } from "@/api/callers/user";
-import { user } from "@/api/generator/types";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

@@ -1,6 +1,6 @@
+import { project_kanban_cycle_card_comment } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { project_kanban_cycle_card_comment } from "@/api/generator/types";
 import { Permission } from "@/components/ui/permission";
 
 import { CommentCard } from "./card";

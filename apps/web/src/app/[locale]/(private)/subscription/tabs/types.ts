@@ -1,7 +1,7 @@
-import { plan, subscription } from '@/api/generator/types';
+import { plan, subscription } from "@repo/api/generator/types";
 
 export interface ITabProps {
-    plans: plan[];
-    subscriptions: subscription[];
-    isLoading: boolean;
+  plans: plan[];
+  subscriptions: subscription[];
+  isLoading: boolean;
 }

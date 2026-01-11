@@ -1,9 +1,9 @@
 import { useSearchParams } from "next/navigation";
 
+import { user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { useRouter } from "@repo/language/navigation";
 
-import { user } from "@/api/generator/types";
 import { set } from "@/store/modules/module/actions";
 import { create } from "@/store/modules/user/actions";
 

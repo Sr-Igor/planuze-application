@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 import { isAfter } from "date-fns";
 import { AlertTriangle, ExternalLink, InfoIcon, X } from "lucide-react";
 
+import { subscription } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
 
 import { useSubscription } from "@/api/callers/subscription";
-import { subscription } from "@/api/generator/types";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { cn } from "@/lib/utils";
 import { set } from "@/store/modules/module/actions";

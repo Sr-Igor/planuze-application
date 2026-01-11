@@ -1,6 +1,6 @@
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { Card } from "@repo/ui";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { cn } from "@/lib/utils";
 
 export interface IRootProps {

@@ -1,7 +1,7 @@
+import { profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 
-import { profile } from "@/api/generator/types";
 import { AppAvatarLine } from "@/components/ui/app-avatar-line";
 import { useIntlFormat } from "@/hooks/intl-format";
 

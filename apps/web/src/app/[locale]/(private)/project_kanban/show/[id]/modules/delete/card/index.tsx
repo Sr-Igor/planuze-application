@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { CustomDelete } from "@/app/[locale]/(private)/project_kanban/show/[id]/modules/delete";
 import { hookValidate } from "@/utils/submitForm";
 

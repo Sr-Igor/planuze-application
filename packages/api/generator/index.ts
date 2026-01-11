@@ -1,4 +1,5 @@
-import { flatEndpoints, RouteConfig, Routes } from "./endpoints";
+/* eslint-disable */
+import { flatEndpoints, Routes, RouteConfig } from "./endpoints";
 
 /* -------------------------------------------------
  * Tipos utilitários para construir a chamada
@@ -6,26 +7,19 @@ import { flatEndpoints, RouteConfig, Routes } from "./endpoints";
 
 // Args<R>      – define exatamente quais campos precisam
 //                (ou podem) ser passados para cada rota.
-type Args<R extends Routes> = { route: R } & (RouteConfig<R> extends {
-  params: infer P;
-}
-  ? { params: P }
-  : {}) &
+type Args<R extends Routes> =
+  { route: R } &
+  (RouteConfig<R> extends { params: infer P } ? { params: P } : {}) &
   (RouteConfig<R> extends { query?: infer Q } ? { query?: Q } : {}) &
-  (RouteConfig<R> extends { body: infer B }
-    ? { body: B }
-    : RouteConfig<R> extends { body?: infer B }
-      ? { body?: B }
-      : {});
+  (RouteConfig<R> extends { body:  infer B } ? { body:  B } :
+   RouteConfig<R> extends { body?: infer B } ? { body?: B } : {});
 
 // ReturnCall<R> – estrutura que a função devolve.
 //                 Inclui "body" apenas quando existir na rota.
 type ReturnCall<R extends Routes> =
-  RouteConfig<R> extends { body: infer B }
-    ? { url: string; method: RouteConfig<R>["method"]; body: B }
-    : RouteConfig<R> extends { body?: infer B }
-      ? { url: string; method: RouteConfig<R>["method"]; body?: B }
-      : { url: string; method: RouteConfig<R>["method"] };
+  RouteConfig<R> extends { body:  infer B } ? { url: string; method: RouteConfig<R>["method"]; body:  B } :
+  RouteConfig<R> extends { body?: infer B } ? { url: string; method: RouteConfig<R>["method"]; body?: B } :
+  { url: string; method: RouteConfig<R>["method"] };
 
 /* -------------------------------------------------
  * Utilitário: serializa objetos em query-string
@@ -34,7 +28,7 @@ function buildQueryString(params: Record<string, any>, prefix?: string): string 
   const query: string[] = [];
   for (const key in params) {
     if (!Object.prototype.hasOwnProperty.call(params, key)) continue;
-    const value = params[key];
+    const value       = params[key];
     const prefixedKey = prefix ? `${prefix}[${encodeURIComponent(key)}]` : encodeURIComponent(key);
     if (value === null || value === undefined) continue;
     if (value !== null && typeof value === "object") {
@@ -56,10 +50,9 @@ export function callEndpoint<R extends Routes>(args: Args<R>): ReturnCall<R> {
 
   if (
     query &&
-    "include" in query &&
-    "select" in query &&
+    "include" in query && "select" in query &&
     Object.keys(query.include ?? {}).length > 0 &&
-    Object.keys(query.select ?? {}).length > 0
+    Object.keys(query.select  ?? {}).length > 0
   ) {
     throw new Error("You can't use include and select at the same time");
   }
@@ -68,11 +61,7 @@ export function callEndpoint<R extends Routes>(args: Args<R>): ReturnCall<R> {
   let url: string = route;
 
   if (params) {
-    url +=
-      "/" +
-      Object.values(params)
-        .map((v) => encodeURIComponent(String(v)))
-        .join("/");
+    url += "/" + Object.values(params).map((v) => encodeURIComponent(String(v))).join("/");
   }
 
   if (query) {

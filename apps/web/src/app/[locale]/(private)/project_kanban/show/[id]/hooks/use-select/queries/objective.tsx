@@ -1,33 +1,36 @@
-import { project_kanban_objective } from '@/api/generator/types';
-import { index } from '@/api/req/project_kanban_objective';
-import { useAccess } from '@/hooks/access';
-import { Pagination } from '@/types/pagination';
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from "@tanstack/react-query";
 
-import { ISelectProps, ISelectReturnProps } from '../types';
+import { project_kanban_objective } from "@repo/api/generator/types";
+
+import { index } from "@/api/req/project_kanban_objective";
+import { useAccess } from "@/hooks/access";
+import { Pagination } from "@/types/pagination";
+
+import { ISelectProps, ISelectReturnProps } from "../types";
 
 export const useIndexObjective = ({ search, kanban }: ISelectProps): ISelectReturnProps => {
-    const { permissions } = useAccess();
-    const perm = permissions('project_kanban_objective');
+  const { permissions } = useAccess();
+  const perm = permissions("project_kanban_objective");
 
-    const queryParams = {
-        limit: 10,
-        project_kanban_id: kanban?.id
-    };
+  const queryParams = {
+    limit: 10,
+    project_kanban_id: kanban?.id,
+  };
 
-    const hash = { ...queryParams, search: search || undefined };
+  const hash = { ...queryParams, search: search || undefined };
 
-    const objectives = useInfiniteQuery<Pagination<project_kanban_objective>>({
-        queryKey: ['kanban-selects-objective', hash],
-        queryFn: ({ pageParam = 1 }) => {
-            const params: Record<string, any> = { page: pageParam, ...queryParams };
-            if (search) params.search = search;
-            return index(params);
-        },
-        getNextPageParam: (lastPage) => (lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined),
-        initialPageParam: 1,
-        enabled: perm.index
-    });
+  const objectives = useInfiniteQuery<Pagination<project_kanban_objective>>({
+    queryKey: ["kanban-selects-objective", hash],
+    queryFn: ({ pageParam = 1 }) => {
+      const params: Record<string, any> = { page: pageParam, ...queryParams };
+      if (search) params.search = search;
+      return index(params);
+    },
+    getNextPageParam: (lastPage) =>
+      lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,
+    initialPageParam: 1,
+    enabled: perm.index,
+  });
 
-    return objectives;
+  return objectives;
 };

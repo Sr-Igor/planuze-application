@@ -1,7 +1,7 @@
+import { level } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 
-import { level } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 export const useTable = () => {

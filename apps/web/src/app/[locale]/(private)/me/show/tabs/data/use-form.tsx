@@ -1,4 +1,5 @@
-import { profile } from "@/api/generator/types";
+import { profile } from "@repo/api/generator/types";
+
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

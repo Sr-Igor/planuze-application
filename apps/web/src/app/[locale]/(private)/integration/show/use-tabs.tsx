@@ -1,6 +1,6 @@
+import { integration } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { integration } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Data, Permission } from "./tabs";

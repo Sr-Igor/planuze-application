@@ -1,37 +1,43 @@
-import { useCache } from '@/api/cache';
-import keys from '@/api/cache/keys';
-import { company_config } from '@/api/generator/types';
-import * as api from '@/api/req/company_config';
-import { IUseCallerProps } from '@/api/types';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from "@tanstack/react-query";
 
-export const useCompanyConfig = ({ callbacks, enabledShow, id }: IUseCallerProps<company_config>) => {
-    const showKey = keys.company_config.show({});
-    const cache = useCache();
+import { company_config } from "@repo/api/generator/types";
 
-    const show = useQuery<company_config>({
-        queryKey: showKey,
-        queryFn: () => api.show(),
-        enabled: !!enabledShow
-    });
+import { useCache } from "@/api/cache";
+import keys from "@/api/cache/keys";
+import * as api from "@/api/req/company_config";
+import { IUseCallerProps } from "@/api/types";
 
-    const update = useMutation({
-        mutationFn: (body: any) => api.update(id!, body),
-        onSuccess: (e) => {
-            cache.replaceShow({ key: showKey, item: e });
-            callbacks?.update?.onSuccess?.(e);
-        },
-        onError: callbacks?.update?.onError
-    });
+export const useCompanyConfig = ({
+  callbacks,
+  enabledShow,
+  id,
+}: IUseCallerProps<company_config>) => {
+  const showKey = keys.company_config.show({});
+  const cache = useCache();
 
-    const store = useMutation({
-        mutationFn: (body: any) => api.store(body),
-        onSuccess: (e) => {
-            cache.replaceShow({ key: showKey, item: e });
-            callbacks?.store?.onSuccess?.(e);
-        },
-        onError: callbacks?.store?.onError
-    });
+  const show = useQuery<company_config>({
+    queryKey: showKey,
+    queryFn: () => api.show(),
+    enabled: !!enabledShow,
+  });
 
-    return { update, show, store };
+  const update = useMutation({
+    mutationFn: (body: any) => api.update(id!, body),
+    onSuccess: (e) => {
+      cache.replaceShow({ key: showKey, item: e });
+      callbacks?.update?.onSuccess?.(e);
+    },
+    onError: callbacks?.update?.onError,
+  });
+
+  const store = useMutation({
+    mutationFn: (body: any) => api.store(body),
+    onSuccess: (e) => {
+      cache.replaceShow({ key: showKey, item: e });
+      callbacks?.store?.onSuccess?.(e);
+    },
+    onError: callbacks?.store?.onError,
+  });
+
+  return { update, show, store };
 };

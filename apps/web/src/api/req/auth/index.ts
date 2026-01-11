@@ -1,74 +1,75 @@
 //Utils
-import { callEndpoint } from '@/api/generator';
-import { handleReq } from '@/api/handle';
+import { callEndpoint } from "@repo/api/generator";
+
+import { handleReq } from "@/api/handle";
 
 export const login = async (body: any) => {
-    const handle = callEndpoint({
-        route: '/api/public/auth/login',
-        body
-    });
+  const handle = callEndpoint({
+    route: "/api/public/auth/login",
+    body,
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const hidrate = async () => {
-    const handle = callEndpoint({
-        route: '/api/private/auth/hidrate'
-    });
+  const handle = callEndpoint({
+    route: "/api/private/auth/hidrate",
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const confirm = async () => {
-    const handle = callEndpoint({
-        route: '/api/private/auth/confirm'
-    });
+  const handle = callEndpoint({
+    route: "/api/private/auth/confirm",
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const code = async (code: string) => {
-    const handle = callEndpoint({
-        route: '/api/private/auth/code',
-        params: { code }
-    });
+  const handle = callEndpoint({
+    route: "/api/private/auth/code",
+    params: { code },
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const recovery = async (body: any) => {
-    const handle = callEndpoint({
-        route: '/api/public/auth/recovery',
-        body
-    });
+  const handle = callEndpoint({
+    route: "/api/public/auth/recovery",
+    body,
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const reset = async (code: string, body: any) => {
-    const handle = callEndpoint({
-        route: '/api/public/auth/reset',
-        params: { code },
-        body
-    });
+  const handle = callEndpoint({
+    route: "/api/public/auth/reset",
+    params: { code },
+    body,
+  });
 
-    return handleReq({ ...handle, showSuccess: true });
+  return handleReq({ ...handle, showSuccess: true });
 };
 
 export const changePassword = async (body: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/auth/reset',
-        body
-    });
+  const handle = callEndpoint({
+    route: "/api/private/auth/reset",
+    body,
+  });
 
-    return handleReq({ ...handle, showSuccess: true });
+  return handleReq({ ...handle, showSuccess: true });
 };
 
 export const owner = async (body: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/auth/owner',
-        body
-    });
+  const handle = callEndpoint({
+    route: "/api/private/auth/owner",
+    body,
+  });
 
-    return handleReq({ ...handle, showSuccess: true });
+  return handleReq({ ...handle, showSuccess: true });
 };

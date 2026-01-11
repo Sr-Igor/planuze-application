@@ -1,10 +1,10 @@
 import { Ban } from "lucide-react";
 
+import { module } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
 
-import { module } from "@/api/generator/types";
 import { useAppDispatch } from "@/hooks/redux";
 import { set } from "@/store/modules/module/actions";
 

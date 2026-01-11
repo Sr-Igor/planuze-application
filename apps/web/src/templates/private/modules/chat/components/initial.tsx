@@ -1,7 +1,7 @@
+import { user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Badge } from "@repo/ui";
 
-import { user } from "@/api/generator/types";
 import { cn } from "@/lib/utils";
 
 export interface IInitialProps {

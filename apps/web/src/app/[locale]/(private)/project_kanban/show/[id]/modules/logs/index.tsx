@@ -1,5 +1,3 @@
-import { AppLogsModal, ILogsComparison } from "@repo/ui/app";
-
 import {
   project_allocation,
   project_kanban_cycle,
@@ -8,7 +6,9 @@ import {
   project_kanban_cycle_card_type,
   project_kanban_cycle_column,
   project_tool,
-} from "@/api/generator/types";
+} from "@repo/api/generator/types";
+import { AppLogsModal, ILogsComparison } from "@repo/ui/app";
+
 import { useLogs } from "@/hooks/logs";
 
 import { State } from "../../types";

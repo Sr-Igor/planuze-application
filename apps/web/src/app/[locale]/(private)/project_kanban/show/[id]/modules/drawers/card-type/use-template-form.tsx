@@ -2,13 +2,13 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { Icon } from "@repo/ui/app";
-
 import {
   kanban_template_card,
   kanban_template_card_type,
   project_kanban_cycle_card_type,
-} from "@/api/generator/types";
+} from "@repo/api/generator/types";
+import { Icon } from "@repo/ui/app";
+
 import { index as indexKanbanTemplateCardType } from "@/api/req/kanban_template_card_type";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

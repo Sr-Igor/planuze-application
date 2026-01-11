@@ -1,6 +1,6 @@
+import { company_config } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { company_config } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { General } from "./tabs";

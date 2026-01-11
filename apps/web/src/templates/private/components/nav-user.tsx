@@ -17,6 +17,7 @@ import {
   UserCog,
 } from "lucide-react";
 
+import { invite, profile as TProfile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Avatar,
@@ -35,7 +36,6 @@ import {
 } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { invite, profile as TProfile } from "@/api/generator/types";
 import { Img } from "@/components/image";
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@/hooks/cookies/signout";

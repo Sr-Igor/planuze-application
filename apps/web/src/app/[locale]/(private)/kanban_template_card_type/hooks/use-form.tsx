@@ -2,9 +2,9 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
+import { kanban_template_card_type } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { kanban_template_card_type } from "@/api/generator/types";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/list/base/types";

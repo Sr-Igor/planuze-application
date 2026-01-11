@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
+import { company } from "@repo/api/generator/types";
+
 import { useCompany } from "@/api/callers/company";
-import { company } from "@/api/generator/types";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

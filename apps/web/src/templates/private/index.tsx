@@ -4,11 +4,11 @@ import { usePathname } from "next/navigation";
 
 import { ToggleLeft, UserLock } from "lucide-react";
 
+import { profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button, SidebarProvider } from "@repo/ui";
 import { FullScreenMessage } from "@repo/ui/app";
 
-import { profile } from "@/api/generator/types";
 import { Nav } from "@/components/nav";
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@/hooks/cookies/signout";

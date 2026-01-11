@@ -1,7 +1,7 @@
+import { client } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 
-import { client } from "@/api/generator/types";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { IUseHookProps } from "@/templates/list/base/types";

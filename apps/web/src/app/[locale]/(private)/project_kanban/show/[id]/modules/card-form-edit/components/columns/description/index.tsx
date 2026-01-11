@@ -2,9 +2,9 @@
 
 import { UseFormReturn } from "react-hook-form";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { EditorController } from "@/components/controllers/editor";
 import { useAccess } from "@/hooks/access";

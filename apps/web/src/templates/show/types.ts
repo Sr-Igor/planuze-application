@@ -1,8 +1,8 @@
 import { UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
+import { profile } from "@repo/api/generator/types";
 import { PageKeys } from "@repo/language/types";
 
-import { profile } from "@/api/generator/types";
 import { IUseCallerProps } from "@/api/types";
 import { AccessView, Permissions } from "@/hooks/access/types";
 

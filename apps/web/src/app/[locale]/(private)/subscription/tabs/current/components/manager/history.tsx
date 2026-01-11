@@ -1,3 +1,4 @@
+import { subscription_changes } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Card,
@@ -15,7 +16,6 @@ import {
   TableRow,
 } from "@repo/ui";
 
-import { subscription_changes } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 interface HistoryModalProps {

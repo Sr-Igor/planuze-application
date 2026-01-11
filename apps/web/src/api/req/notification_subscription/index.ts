@@ -1,20 +1,21 @@
 //Utils
-import { callEndpoint } from '@/api/generator';
-import { handleReq } from '@/api/handle';
+import { callEndpoint } from "@repo/api/generator";
+
+import { handleReq } from "@/api/handle";
 
 export const store = async (body: any) => {
-    const handle = callEndpoint({
-        route: '/api/private/notification_subscription/store',
-        body
-    });
+  const handle = callEndpoint({
+    route: "/api/private/notification_subscription/store",
+    body,
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };
 
 export const key = async () => {
-    const handle = callEndpoint({
-        route: '/api/private/notification_subscription/key'
-    });
+  const handle = callEndpoint({
+    route: "/api/private/notification_subscription/key",
+  });
 
-    return handleReq(handle);
+  return handleReq(handle);
 };

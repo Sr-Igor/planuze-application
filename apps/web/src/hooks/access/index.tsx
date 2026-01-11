@@ -4,9 +4,8 @@ import { usePathname } from "next/navigation";
 
 import { addDays, differenceInDays, isAfter, isBefore } from "date-fns";
 
+import { module, profile, subscription, user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
-
-import { module, profile, subscription, user } from "@/api/generator/types";
 
 import { useAuth } from "../auth";
 import type { AccessView, FeatureWithActions, Warning } from "./types";

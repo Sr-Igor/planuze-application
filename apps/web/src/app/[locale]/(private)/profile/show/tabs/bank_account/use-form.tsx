@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { profile_bank_account } from "@/api/generator/types";
+import { profile_bank_account } from "@repo/api/generator/types";
+
 import { IBank } from "@/api/global/bank";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";

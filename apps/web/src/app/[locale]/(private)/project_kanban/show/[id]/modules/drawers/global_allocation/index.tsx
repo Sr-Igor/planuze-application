@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import { ClockArrowDown, EllipsisVertical, Info, PackageOpen, Plus, Trash2, X } from "lucide-react";
 
+import { project_allocation } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Alert,
@@ -20,7 +21,6 @@ import {
 } from "@repo/ui";
 import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui/app";
 
-import { project_allocation } from "@/api/generator/types";
 import { Input } from "@/components/form/input";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";

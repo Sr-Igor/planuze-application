@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "lucide-react";
 
+import { project_kanban_cycle_card_type } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -17,7 +18,6 @@ import {
 } from "@repo/ui";
 import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui/app";
 
-import { project_kanban_cycle_card_type } from "@/api/generator/types";
 import { Input } from "@/components/form/input";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";

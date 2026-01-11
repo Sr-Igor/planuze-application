@@ -13,7 +13,8 @@
     ]
   },
   "include": [
-    "index.ts"
+    "index.ts",
+    "api.d.ts"
   ],
   "exclude": [
     "node_modules",

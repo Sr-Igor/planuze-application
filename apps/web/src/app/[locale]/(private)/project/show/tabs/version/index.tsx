@@ -1,7 +1,7 @@
+import { project_version } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
 import { useProjectVersion } from "@/api/callers/project_version";
-import { project_version } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";

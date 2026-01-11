@@ -1,7 +1,7 @@
+import { project_allocation } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
 import { useProjectAllocation } from "@/api/callers/project_allocation";
-import { project_allocation } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";

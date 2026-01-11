@@ -4,10 +4,10 @@ import { useMemo } from "react";
 
 import { ArrowRight, CheckCircle, Eye, EyeOff } from "lucide-react";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import * as C from "@repo/ui";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { AppAvatarLine } from "@/components/ui/app-avatar-line";
 import { useAuth } from "@/hooks/auth";
 import { useIntlFormat } from "@/hooks/intl-format";

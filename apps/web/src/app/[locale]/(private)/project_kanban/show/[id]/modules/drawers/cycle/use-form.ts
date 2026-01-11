@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 import { IValidatorRequest } from "@deviobr/validator";
 import { differenceInDays } from "date-fns";
 
-import { useLang } from "@repo/language/hook";
-
 import {
   kanban_template,
   project_kanban_cycle,
   project_version,
   work_type,
-} from "@/api/generator/types";
+} from "@repo/api/generator/types";
+import { useLang } from "@repo/language/hook";
+
 import { index } from "@/api/req/kanban_template";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

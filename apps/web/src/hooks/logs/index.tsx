@@ -1,7 +1,7 @@
+import { project_kanban_cycle_card_tag } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { ILogsComparison } from "@repo/ui/app";
 
-import { project_kanban_cycle_card_tag } from "@/api/generator/types";
 import { useConstants } from "@/hooks/constants";
 
 type LogKey = Omit<ILogsComparison<any>, "logs">;

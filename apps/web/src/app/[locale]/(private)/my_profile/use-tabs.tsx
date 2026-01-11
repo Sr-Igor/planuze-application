@@ -1,6 +1,6 @@
+import { user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { user } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Company, Data, Password, TwoFactor } from "./tabs";

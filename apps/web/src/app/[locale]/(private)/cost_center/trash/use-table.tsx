@@ -1,7 +1,7 @@
+import { cost_center } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 
-import { cost_center } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 export const useTable = () => {

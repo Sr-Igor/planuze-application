@@ -1,7 +1,7 @@
+import { kanban_template_card_type } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Icon, StatusCircle, TableColumn } from "@repo/ui/app";
 
-import { kanban_template_card_type } from "@/api/generator/types";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 export const useTable = () => {

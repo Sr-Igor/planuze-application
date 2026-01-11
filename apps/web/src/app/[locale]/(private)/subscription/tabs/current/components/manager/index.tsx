@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import { CreditCard, History } from "lucide-react";
 
+import { subscription } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { Permission } from "@repo/ui/app";
 
 import { useSubscription } from "@/api/callers/subscription";
-import { subscription } from "@/api/generator/types";
 import { useShow } from "@/templates/show/context";
 
 import { HistoryModal } from "./history";

@@ -4,11 +4,11 @@ import { useEffect } from "react";
 
 import { AlertCircleIcon } from "lucide-react";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { hookValidate } from "@/utils/submitForm";
 
 import { useKanbanShow } from "../../context";

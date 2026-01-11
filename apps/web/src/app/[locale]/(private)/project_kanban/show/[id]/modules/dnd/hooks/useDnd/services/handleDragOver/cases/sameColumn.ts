@@ -1,44 +1,49 @@
-import { project_kanban_cycle } from '@/api/generator/types';
+import { project_kanban_cycle } from "@repo/api/generator/types";
 
-import { Position } from '../../../types';
-import { findColumnByCardId } from '../../../utils';
+import { Position } from "../../../types";
+import { findColumnByCardId } from "../../../utils";
 
 type SameColumnProps = {
-    activeColumnId: string | number;
-    overId: string | number;
-    cycle?: project_kanban_cycle | null;
-    updateInsertPosition: (insertPosition: Position | null) => void;
+  activeColumnId: string | number;
+  overId: string | number;
+  cycle?: project_kanban_cycle | null;
+  updateInsertPosition: (insertPosition: Position | null) => void;
 };
 
-export const sameColumn = ({ activeColumnId, overId, cycle, updateInsertPosition }: SameColumnProps) => {
-    const columns = cycle?.project_kanban_cycle_columns;
-    const overColumnId = findColumnByCardId({ cardId: overId as string, cycle })?.id;
+export const sameColumn = ({
+  activeColumnId,
+  overId,
+  cycle,
+  updateInsertPosition,
+}: SameColumnProps) => {
+  const columns = cycle?.project_kanban_cycle_columns;
+  const overColumnId = findColumnByCardId({ cardId: overId as string, cycle })?.id;
 
-    if (!overColumnId || !columns) {
-        updateInsertPosition(null);
-        return;
-    }
+  if (!overColumnId || !columns) {
+    updateInsertPosition(null);
+    return;
+  }
 
-    if (activeColumnId !== overColumnId) {
-        // Moving between columns - calculate insert position
-        const targetColumn = columns.find((col) => col.id === overColumnId);
-        if (targetColumn) {
-            const overCardIndex =
-                targetColumn.project_kanban_cycle_cards?.findIndex((card) => card.id === overId) ?? -1;
+  if (activeColumnId !== overColumnId) {
+    // Moving between columns - calculate insert position
+    const targetColumn = columns.find((col) => col.id === overColumnId);
+    if (targetColumn) {
+      const overCardIndex =
+        targetColumn.project_kanban_cycle_cards?.findIndex((card) => card.id === overId) ?? -1;
 
-            // Se o índice foi encontrado, use-o; caso contrário, adicione ao final
-            const insertIndex =
-                overCardIndex !== -1 ? overCardIndex : targetColumn.project_kanban_cycle_cards?.length || 0;
+      // Se o índice foi encontrado, use-o; caso contrário, adicione ao final
+      const insertIndex =
+        overCardIndex !== -1 ? overCardIndex : targetColumn.project_kanban_cycle_cards?.length || 0;
 
-            updateInsertPosition({
-                columnId: overColumnId,
-                index: insertIndex
-            });
-        } else {
-            updateInsertPosition(null);
-        }
+      updateInsertPosition({
+        columnId: overColumnId,
+        index: insertIndex,
+      });
     } else {
-        // Mesma coluna - não precisa de insertPosition específico
-        updateInsertPosition(null);
+      updateInsertPosition(null);
     }
+  } else {
+    // Mesma coluna - não precisa de insertPosition específico
+    updateInsertPosition(null);
+  }
 };

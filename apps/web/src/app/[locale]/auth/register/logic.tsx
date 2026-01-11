@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 
 import { LogInIcon } from "lucide-react";
 
+import { user } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
 import { useUser } from "@/api/callers/user";
-import { user } from "@/api/generator/types";
 import { useAppDispatch } from "@/hooks/redux";
 import { create } from "@/store/modules/user/actions";
 import { fingerprint } from "@/utils/fingerprint";

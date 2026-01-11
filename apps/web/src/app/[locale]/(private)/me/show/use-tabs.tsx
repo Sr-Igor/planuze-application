@@ -1,6 +1,6 @@
+import { profile } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { profile } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Address, BankAccount, Bonus, Contact, Data, Document, File, Role } from "./tabs";

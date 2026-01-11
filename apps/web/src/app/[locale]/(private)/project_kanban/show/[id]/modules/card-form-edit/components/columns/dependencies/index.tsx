@@ -1,10 +1,10 @@
 import { PackageOpen, Plus } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
 
+import { project_kanban_cycle_card } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { project_kanban_cycle_card } from "@/api/generator/types";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
 import { Permission } from "@/components/ui/permission";

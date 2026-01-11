@@ -1,6 +1,6 @@
+import { project_kanban_objective } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
-import { project_kanban_objective } from "@/api/generator/types";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Data, Target } from "./tabs";

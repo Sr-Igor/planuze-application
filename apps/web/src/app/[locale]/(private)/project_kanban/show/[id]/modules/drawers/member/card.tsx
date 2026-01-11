@@ -1,8 +1,16 @@
 import { Trash } from "lucide-react";
 
-import { Button , Card as CardComponent, CardContent, CardFooter, CardHeader, CardTitle , Skeleton } from "@repo/ui";
+import { profile, project_member } from "@repo/api/generator/types";
+import {
+  Button,
+  Card as CardComponent,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Skeleton,
+} from "@repo/ui";
 
-import { profile, project_member } from "@/api/generator/types";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { Permission } from "@/components/ui/permission";
 import { cn } from "@/lib/utils";
