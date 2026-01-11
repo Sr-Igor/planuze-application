@@ -6,10 +6,10 @@ import { useParams } from "next/navigation";
 
 import { z } from "zod";
 
-import { useSearchParams } from "@repo/hooks/search-params";
 import { useLang } from "@repo/language/hook";
 
 import { useAccess } from "@/hooks/access";
+import { useSearchParams } from "@/hooks/search-params";
 import { cn } from "@/lib/utils";
 
 import { Cancel, Header, Tabs } from "./components";

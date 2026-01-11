@@ -23,7 +23,7 @@ import { SelectController } from "@/components/controllers/select";
 import { TagsController } from "@/components/controllers/tags";
 import { AppAvatarLine } from "@/components/ui/app-avatar-line";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
-import { useConstants } from "@repo/hooks/constants";
+import { useConstants } from "@/hooks/constants";
 import { Field } from "@/hooks/form/types";
 import { cn } from "@/lib/utils";
 

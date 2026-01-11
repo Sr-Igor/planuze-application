@@ -4,7 +4,7 @@ import { z } from "zod";
 import { useLang } from "@repo/language/hook";
 
 import { profile, user } from "@/api/generator/types";
-import { useConstants } from "@repo/hooks/constants";
+import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 

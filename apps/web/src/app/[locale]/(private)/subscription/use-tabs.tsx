@@ -5,7 +5,7 @@ import { useLang } from "@repo/language/hook";
 import { usePlan } from "@/api/callers/plan";
 import { useSubscription } from "@/api/callers/subscription";
 import { useAccess } from "@/hooks/access";
-import { useLoading } from "@repo/hooks/loading";
+import { useLoading } from "@/hooks/loading";
 
 import { Current, Invoices, Plans } from "./tabs";
 

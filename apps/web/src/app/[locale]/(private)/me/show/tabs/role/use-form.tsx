@@ -1,7 +1,7 @@
 import { useLang } from "@repo/language/hook";
 
 import { profile_role } from "@/api/generator/types";
-import { useConstants } from "@repo/hooks/constants";
+import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field, IUseFormListReturn } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";

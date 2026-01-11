@@ -6,7 +6,7 @@ import { useLang } from "@repo/language/hook";
 import { AppLogsModal } from "@repo/ui/app";
 
 import { useLogs } from "@/hooks/logs";
-import { useUnload } from "@repo/hooks/unload";
+import { useUnload } from "@/hooks/unload";
 
 import { DeleteConfirmationDialog } from "./components/DeleteConfirmationDialog";
 import { UploadManager } from "./components/UploadManager";

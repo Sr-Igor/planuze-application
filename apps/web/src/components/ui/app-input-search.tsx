@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, ScrollArea } from "@repo/ui";
 
-import { useDebounce } from "@repo/hooks/debounce";
+import { useDebounce } from "@/hooks/debounce";
 import { cn } from "@/lib/utils";
 
 import { Input } from "../form/input";

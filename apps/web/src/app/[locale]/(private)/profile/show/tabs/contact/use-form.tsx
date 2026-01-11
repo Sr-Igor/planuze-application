@@ -5,7 +5,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { useLang } from "@repo/language/hook";
 
 import { profile_contact } from "@/api/generator/types";
-import { useConstants } from "@repo/hooks/constants";
+import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";

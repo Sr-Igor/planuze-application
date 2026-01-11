@@ -6,7 +6,7 @@ import { useLang } from "@repo/language/hook";
 import { Popover, PopoverTrigger } from "@repo/ui";
 import * as C from "@repo/ui";
 
-import { useDebounce } from "@repo/hooks/debounce";
+import { useDebounce } from "@/hooks/debounce";
 import { cn } from "@/lib/utils";
 
 import {

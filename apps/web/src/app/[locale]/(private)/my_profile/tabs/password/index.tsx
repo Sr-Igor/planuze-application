@@ -7,7 +7,7 @@ import { useAuth } from "@/api/callers/auth";
 import { user } from "@/api/generator/types";
 import { useSignOut } from "@/hooks/cookies/signout";
 import { useAppSelector } from "@/hooks/redux";
-import { useUnload } from "@repo/hooks/unload";
+import { useUnload } from "@/hooks/unload";
 import { useUserSet } from "@/hooks/user-set";
 import { cn } from "@/lib/utils";
 import { useShow } from "@/templates/show/context";

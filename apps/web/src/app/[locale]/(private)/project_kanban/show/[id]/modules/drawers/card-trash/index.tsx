@@ -18,7 +18,7 @@ import {
 
 import { Input } from "@/components/form/input";
 import { Permission } from "@/components/ui/permission";
-import { useDebounce } from "@repo/hooks/debounce";
+import { useDebounce } from "@/hooks/debounce";
 
 import { useKanbanShow } from "../../../context";
 import { Card } from "./card";

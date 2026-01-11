@@ -13,7 +13,7 @@ import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from "@
 import { profile } from "@/api/generator/types";
 import { index } from "@/api/req/profile";
 import { AppAvatar } from "@/components/ui/app-avatar";
-import { useDebounce } from "@repo/hooks/debounce";
+import { useDebounce } from "@/hooks/debounce";
 import { cn } from "@/lib/utils";
 import { Pagination } from "@/types/pagination";
 

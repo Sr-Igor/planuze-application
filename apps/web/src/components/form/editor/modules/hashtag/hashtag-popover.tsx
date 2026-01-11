@@ -13,7 +13,7 @@ import { AppTooltip, Icon } from "@repo/ui/app";
 
 import { project_kanban_cycle_card } from "@/api/generator/types";
 import { index } from "@/api/req/project_kanban_cycle_card";
-import { useDebounce } from "@repo/hooks/debounce";
+import { useDebounce } from "@/hooks/debounce";
 import { cn } from "@/lib/utils";
 import { Pagination } from "@/types/pagination";
 

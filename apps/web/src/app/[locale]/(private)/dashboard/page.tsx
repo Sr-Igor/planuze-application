@@ -1,9 +1,8 @@
 "use client";
 
-import { useSearchParams } from "@repo/hooks/search-params";
-
 import { useDashboard } from "@/api/callers/dashboard";
 import { useAuth } from "@/hooks/auth";
+import { useSearchParams } from "@/hooks/search-params";
 
 import { Loader } from "./components/Loader";
 import { schema } from "./constants/schema";

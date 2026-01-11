@@ -12,7 +12,7 @@ import {
   type TableFilters,
 } from "@repo/ui/app";
 
-import { useDebounce } from "@repo/hooks/debounce";
+import { useDebounce } from "@/hooks/debounce";
 import { cn } from "@/lib/utils";
 
 import * as styles from "./styles";

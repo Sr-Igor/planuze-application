@@ -10,7 +10,7 @@ import { useLang } from "@repo/language/hook";
 import { cost_center, profile_role, role } from "@/api/generator/types";
 import { index as indexCostCenter } from "@/api/req/cost_center";
 import { index as indexRole } from "@/api/req/role";
-import { useConstants } from "@repo/hooks/constants";
+import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";

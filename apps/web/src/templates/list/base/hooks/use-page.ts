@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef } from "react";
 
 import { useRouter } from "next/navigation";
 
-import { usePaginationParams } from "@repo/hooks/search-params";
-import { baseFilterParams, paginationSchema } from "@repo/hooks/search-params/utils";
+import { usePaginationParams } from "@/hooks/search-params";
+import { baseFilterParams, paginationSchema } from "@/hooks/search-params/utils";
 
 import { IUsePageProps } from "../types";
 

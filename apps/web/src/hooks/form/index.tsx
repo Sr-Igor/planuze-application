@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { DefaultValues, FieldValues, useForm } from "react-hook-form";
 import { z, ZodSchema } from "zod";
 
-import { useValidator } from "@repo/hooks/validator";
+import { useValidator } from "@/hooks/validator";
 
 import { Form } from "./form";
 import { getInitialValueForField } from "./initial";

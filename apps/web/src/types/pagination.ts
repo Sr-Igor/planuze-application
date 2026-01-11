@@ -5,7 +5,7 @@ export interface Pagination<T> {
   count: number;
 }
 
-export type { PaginationParams } from "@repo/hooks/search-params/utils";
+export type { PaginationParams } from "@/hooks/search-params/utils";
 
 export interface Query {
   page?: number;

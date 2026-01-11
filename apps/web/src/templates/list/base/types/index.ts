@@ -6,7 +6,7 @@ import { ILogsComparison, TableAction, TableColumn, TableEventHandlers } from "@
 
 import { Permissions } from "@/hooks/access/types";
 import { Field, IUseFormListReturn } from "@/hooks/form/types";
-import { PaginationParams } from "@repo/hooks/search-params/utils";
+import { PaginationParams } from "@/hooks/search-params/utils";
 import { HookReq, Requests } from "@/types/hookReq";
 
 export interface IUseHookProps<T extends { id: string }> {
