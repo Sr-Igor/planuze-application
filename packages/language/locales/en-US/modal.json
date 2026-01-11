@@ -1,0 +1,25 @@
+{
+    "title": "Modal",
+    "close": "Close",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "not_found": {
+        "title": "Oops!...",
+        "description": "The item you tried to access is not available or no longer exists"
+    },
+    "inactive": {
+        "title": "Inactive profile!",
+        "description": "Your profile is disabled for {{company}}. Contact the administrator for more information."
+    },
+    "not_profile": {
+        "title": "Hello! {{name}}",
+        "description": "It seems your account is not associated with a company. How about starting to use the system?"
+    },
+    "error": {
+        "title": "An error occurred..."
+    },
+    "redirect": {
+        "title": "Redirecting...",
+        "description": "Please wait..."
+    }
+}

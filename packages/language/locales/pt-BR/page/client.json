@@ -1,0 +1,86 @@
+{
+    "title": "Clientes",
+    "new": "Novo cliente",
+    "modal": {
+        "destroy": {
+            "title": "Deletar cliente",
+            "description": "Tem certeza de que deseja deletar esse cliente?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} clientes",
+            "description": "Tem certeza de que deseja deletar esses clientes?"
+        },
+        "restore": {
+            "title": "Restaurar cliente",
+            "description": "Tem certeza de que deseja restaurar esse cliente?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} clientes",
+            "description": "Tem certeza de que deseja restaurar esses clientes?"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Cadastrar cliente",
+            "description": "Preencha os dados abaixo para cadastrar um novo cliente"
+        },
+        "edit": {
+            "title": "Editar cliente",
+            "description": "Edite os dados do cliente preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "document": {
+            "new": "Novo documento",
+            "exclude": {
+                "title": "Excluir documento",
+                "description": "Esse documento será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem documentos para esse cliente"
+        },
+        "contact": {
+            "new": "Novo contato",
+            "exclude": {
+                "title": "Excluir contato",
+                "description": "Esse contato será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem contatos para esse cliente"
+        },
+        "exclude": {
+            "title": "Excluir cliente",
+            "description": "Esse cliente será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "bank_account": {
+            "account": "Conta",
+            "agency": "Agência",
+            "digit": "Digito",
+            "principal": "Principal",
+            "empty": "Sem contas bancárias para esse cliente",
+            "new": "Nova conta bancária",
+            "modal": {
+                "store": {
+                    "title": "Nova conta bancária",
+                    "description": "Crie uma nova conta bancária para o cliente"
+                },
+                "update": {
+                    "title": "Editar conta bancária",
+                    "description": "Edite os dados da conta bancária preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir conta bancária",
+                "description": "Esse conta bancária será excluída permanentemente, tem certeza que deseja continuar?"
+            }
+        },
+        "tabs": {
+            "data": "Dados",
+            "documents": "Documentos",
+            "contacts": "Contatos",
+            "address": "Endereço",
+            "files": "Arquivos",
+            "bank_account": "Contas bancárias"
+        }
+    }
+}

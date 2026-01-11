@@ -1,0 +1,56 @@
+{
+    "show": {
+        "edit": {
+            "title": "Edit profile",
+            "description": "Change your profile data"
+        },
+        "cancel": {
+            "title": "Exit",
+            "description": "Are you sure you want to exit? You have unsaved changes, they will be lost when confirmed"
+        },
+        "exclude": {
+            "title": "Delete company",
+            "description": "This company will be permanently deleted, are you sure you want to continue?"
+        },
+        "password": {
+            "no_password": "Your user does not have a password yet",
+            "action_required": "To perform this action you will need to execute the recovery process",
+            "redirect_to_email": "By doing this, you will be disconnected and redirected to the email confirmation screen",
+            "define_password": "Set password",
+            "forgot_password": "Don't remember your password?",
+            "redefine_password": "Reset by email"
+        },
+        "company": {
+            "level": "Access level",
+            "registered_at": "Joined at",
+            "add": "Register a new company",
+            "undefined": "Not defined"
+        },
+        "two_factor": {
+            "add": "New authentication method",
+            "confirmed": "Confirmed",
+            "active": "Active",
+            "confirmed_in": "Confirmed at",
+            "created_at": "Created at",
+            "no_auths": "No authentication method registered",
+            "modal": {
+                "title": "Two-factor authentication",
+                "description": "Enter the fields below for the authentication method"
+            },
+            "exclude": {
+                "title": "Delete authentication method",
+                "description": "Are you sure you want to delete this authentication method?"
+            },
+            "confirm": {
+                "title": "Confirm two-factor authentication",
+                "description": "Enter the authentication code sent"
+            }
+        },
+        "tabs": {
+            "data": "Data",
+            "company": "Companies",
+            "password": "Change password",
+            "two_factor": "Two factors"
+        }
+    }
+}

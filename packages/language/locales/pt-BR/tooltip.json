@@ -1,0 +1,15 @@
+{
+    "cards_moved_for_this_column_will_be_finished": "Cards movidos para esta coluna serão considerados como finalizados",
+    "principal_card_type_tooltip": "Cards principais podem ter sub-tipos de cards associados",
+    "payment_routine_tooltip": "Uma fatura será gerada no período informado em conformidade com a recorrência",
+    "pro_rata_tooltip": "Se ativado, uma fatura proporcional será gerada entre a data inicial ou final e a data de pagamento",
+    "general_cards": "Visão geral",
+    "tasks_cards": "Tarefas",
+    "list_cards": "Lista",
+    "reports_cards": "Relatórios",
+    "default_profile_id_tooltip": "O perfil selecionado será redirecionado ao fazer login",
+    "show_to_profile_tooltip": "Se ativado, o colaborador poderá ver essa informação no seu perfil",
+    "problem_card_type_tooltip": "São cards que representam problemas ou impedimentos no projeto",
+    "prepare_cycle_tooltip": "Ciclos de preparação não são contabilizados no período de duração do projeto",
+    "util_hour_day_tooltip": "Horas produtivas por dia. Geralmente menor que a jornada diária de trabalho"
+}

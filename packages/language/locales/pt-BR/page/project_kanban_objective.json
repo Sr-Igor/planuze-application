@@ -1,0 +1,52 @@
+{
+    "title": "Objetivos",
+    "new": "Novo objetivo",
+    "modal": {
+        "destroy": {
+            "title": "Deletar objetivo",
+            "description": "Tem certeza de que deseja deletar esse objetivo?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} objetivos",
+            "description": "Tem certeza de que deseja deletar esses objetivos?"
+        },
+        "restore": {
+            "title": "Restaurar objetivo",
+            "description": "Tem certeza de que deseja restaurar esse objetivo?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} objetivos",
+            "description": "Tem certeza de que deseja restaurar esses objetivos?"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Cadastrar objetivo",
+            "description": "Preencha os dados abaixo para cadastrar um novo objetivo"
+        },
+        "edit": {
+            "title": "Editar objetivo",
+            "description": "Edite os dados do objetivo preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "target": {
+            "new": "Nova meta",
+            "exclude": {
+                "title": "Excluir meta",
+                "description": "Esse meta será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem metas para esse objetivo"
+        },
+        "exclude": {
+            "title": "Excluir objetivo",
+            "description": "Esse objetivo será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "tabs": {
+            "data": "Dados",
+            "targets": "Metas"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "register": "Company",
+    "invites": "Invites",
+    "welcome": "Welcome!",
+    "accept": "Accept",
+    "reject": "Reject",
+    "modal": {
+        "accept": {
+            "title": "Accept invite",
+            "description": "Are you sure you want to accept this invite?"
+        },
+        "reject": {
+            "title": "Reject invite",
+            "description": "Are you sure you want to reject this invite?"
+        }
+    }
+}

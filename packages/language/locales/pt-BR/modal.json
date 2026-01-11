@@ -1,0 +1,21 @@
+{
+    "not_found": {
+        "title": "Ops!...",
+        "description": "O item que você tentou acessar não está disponível ou não existe mais"
+    },
+    "inactive": {
+        "title": "Perfil inativo!",
+        "description": "Seu perfil está desabilitado para {{company}}. Entre em contato com o administrador para mais informações."
+    },
+    "not_profile": {
+        "title": "Olá! {{name}}",
+        "description": "Parece que sua conta não está associada com a empresa. Que tal começar a usar o sistema?"
+    },
+    "error": {
+        "title": "Ocorreu um erro..."
+    },
+    "redirect": {
+        "title": "Redirecionando...",
+        "description": "Por favor, aguarde..."
+    }
+}

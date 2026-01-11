@@ -1,0 +1,63 @@
+{
+    "title": "Níveis de Acesso",
+    "new": "Novo nível",
+    "modal": {
+        "destroy": {
+            "title": "Deletar nível",
+            "description": "Tem certeza de que deseja deletar esse nível de acesso?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} níveis",
+            "description": "Tem certeza de que deseja deletar esses níveis? Esta ação não pode ser desfeita."
+        },
+        "restore": {
+            "title": "Restaurar nível",
+            "description": "Tem certeza de que deseja restaurar esse nível de acesso?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} níveis",
+            "description": "Tem certeza de que deseja restaurar esses níveis?"
+        }
+    },
+    "show": {
+        "select_all": "Selecionar todas as permissões do módulo",
+        "others": "Outros",
+        "new": {
+            "title": "Cadastrar nível de acesso",
+            "description": "Preencha os dados abaixo para cadastrar um novo nível"
+        },
+        "edit": {
+            "title": "Editar nível de acesso",
+            "description": "Edite os dados do nível preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "exclude": {
+            "title": "Excluir nível",
+            "description": "Esse nível será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "tabs": {
+            "data": "Dados",
+            "permission": "Permissões",
+            "user": "Usuários"
+        },
+        "profile": {
+            "empty": "Nenhum perfil encontrado",
+            "define_user": "Definir usuário",
+            "define_user_description": "Selecione um perfil para definir como usuário do nível de acesso",
+            "define_user_alert_title": "O usuário selecionado será trocado de nível"
+        },
+        "alert": {
+            "own_level": {
+                "title": "Atenção",
+                "description": "Esse é seu nível de acesso. Alterações nas permissões podem afetar seu acesso ao sistema. Tenha cuidado ao modificar as permissões."
+            },
+            "admin_level": {
+                "title": "Atenção",
+                "description": "Esse nível de acesso não pode ser editado."
+            }
+        }
+    }
+}

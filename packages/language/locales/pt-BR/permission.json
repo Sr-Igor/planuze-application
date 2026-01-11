@@ -1,0 +1,14 @@
+{
+    "index": "Listar",
+    "show": "Visualizar",
+    "store": "Cadastrar",
+    "update": "Editar",
+    "destroy": "Deletar",
+    "restore": "Restaurar",
+    "trash": "Lixeira",
+    "many": "Múltiplos",
+    "feature": "Funcionalidade",
+    "ai": "Chat IA",
+    "not_available": "Funcionalidade não disponível ou não existente",
+    "dependency": "Os seguintes itens marcados dependem dessa funcionalidade:\n {list}"
+}

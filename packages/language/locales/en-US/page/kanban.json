@@ -1,0 +1,665 @@
+{
+    "search_for_a_card": "Search for a card",
+    "unlinked": "Unlinked",
+    "principal_tasks": "Principal tasks",
+    "no_principal_tasks_found": "No principal tasks found",
+    "create_principal_task_to_see_here": "Create a principal task to see here",
+    "empty": {
+        "no_cycles_found": "No cycles found",
+        "no_columns_found": "No columns found",
+        "cycle": "Create your first cycle to manage your project",
+        "column": "Create a column to start managing your cards"
+    },
+    "button": {
+        "new_cycle": "New cycle",
+        "new_column": "New column"
+    },
+    "modal-form": {
+        "column": {
+            "store": {
+                "title": "New column",
+                "description": "Create a new column to start managing your cards"
+            },
+            "update": {
+                "title": "Edit column",
+                "description": "Edit the column data by filling in the fields below"
+            }
+        },
+        "cycle": {
+            "store": {
+                "title": "New cycle",
+                "description": "Create a new cycle for the project"
+            },
+            "update": {
+                "title": "Edit cycle",
+                "description": "Edit the cycle data by filling in the fields below"
+            }
+        },
+        "allocation": {
+            "store": {
+                "title": "New allocation",
+                "description": "Configure a new allocation for the project"
+            },
+            "update": {
+                "title": "Edit allocation",
+                "description": "Edit the allocation data by filling in the fields below"
+            }
+        },
+        "member": {
+            "store": {
+                "title": "New member",
+                "description": "Create a new member for the project"
+            },
+            "update": {
+                "title": "Edit member",
+                "description": "Edit the member data by filling in the fields below"
+            }
+        },
+        "cardType": {
+            "update": {
+                "alert": {
+                    "title": "Attention!",
+                    "description": "Some information cannot be changed"
+                },
+                "title": "Edit card type",
+                "description": "Edit the card type data by filling in the fields below"
+            }
+        },
+        "globalAllocation": {
+            "store": {
+                "title": "New global allocation",
+                "description": "Create a new global allocation for the project"
+            },
+            "update": {
+                "title": "Edit global allocation",
+                "description": "Edit the global allocation data by filling in the fields below"
+            }
+        },
+        "config": {
+            "store": {
+                "title": "New configuration",
+                "description": "Create a new configuration for the project"
+            },
+            "update": {
+                "title": "Edit configuration",
+                "description": "Edit the configuration data by filling in the fields below"
+            }
+        },
+        "tool": {
+            "store": {
+                "title": "New tool",
+                "description": "Create a new tool for the project"
+            },
+            "update": {
+                "title": "Edit tool",
+                "description": "Edit the tool data by filling in the fields below"
+            }
+        }
+    },
+    "drawer": {
+        "member": {
+            "title": "Members",
+            "description": "Manage project members",
+            "placeholder": "Search member",
+            "actions": {
+                "title": "Actions",
+                "new_member": "New member",
+                "trash": "Trash",
+                "restore": "Restore member"
+            },
+            "trash": "Trash",
+            "no_results": "No member found"
+        },
+        "cycle": {
+            "title": "Cycle",
+            "description": "Manage project cycles",
+            "placeholder": "Search cycle",
+            "actions": {
+                "title": "Actions",
+                "new_cycle": "New cycle",
+                "order": "Order cycles",
+                "trash": "Trash",
+                "restore": "Restore cycle"
+            },
+            "trash": "Trash",
+            "no_results": "No cycle found",
+            "init": "Start",
+            "end": "End",
+            "base_template": "Template",
+            "work_type": "Work type",
+            "version": "Version",
+            "prepare": "Preparation"
+        },
+        "column": {
+            "title": "Column",
+            "description": "Manage project columns",
+            "placeholder": "Search column",
+            "actions": {
+                "title": "Actions",
+                "new_column": "New column",
+                "order": "Order columns",
+                "trash": "Trash",
+                "restore": "Restore column"
+            },
+            "trash": "Trash",
+            "no_results": "No column found",
+            "isFinished": "Finished"
+        },
+        "cardType": {
+            "title": "Card type",
+            "description": "Manage project card types",
+            "placeholder": "Search card type",
+            "actions": {
+                "title": "Actions",
+                "new_cardType": "New card type",
+                "trash": "Trash",
+                "restore": "Restore card type"
+            },
+            "trash": "Trash",
+            "no_results": "No card type found",
+            "isPrincipal": "Principal",
+            "isProblem": "Problem",
+            "no_more_results": "No more results"
+        },
+        "cardTrash": {
+            "title": "Card trash",
+            "description": "Manage deleted project cards",
+            "placeholder": "Search card",
+            "actions": {
+                "title": "Actions",
+                "restore": "Restore card"
+            },
+            "no_results": "No card found",
+            "no_more_results": "No more results",
+            "restore": {
+                "title": "Restore card",
+                "description": "Restore the selected card"
+            }
+        },
+        "allocation": {
+            "title": "Allocation",
+            "description": "Manage project allocations",
+            "placeholder": "Search allocation",
+            "actions": {
+                "title": "Actions",
+                "new_allocation": "New allocation",
+                "trash": "Trash",
+                "restore": "Restore allocation"
+            },
+            "trash": "Trash",
+            "no_results": "No allocation found",
+            "restore": {
+                "title": "Restore allocation",
+                "description": "Restore the selected allocation"
+            },
+            "not_a_member": "Not a member",
+            "allocation": "Allocation",
+            "not_allocated": "Not allocated"
+        },
+        "config": {
+            "title": "Configuration",
+            "description": "Manage project configuration",
+            "placeholder": "Search configuration",
+            "actions": {
+                "title": "Actions",
+                "new_config": "New configuration",
+                "trash": "Trash",
+                "restore": "Restore configuration"
+            },
+            "trash": "Trash",
+            "no_results": "No configuration found",
+            "restore": {
+                "title": "Restore configuration",
+                "description": "Restore the selected configuration"
+            }
+        },
+        "globalAllocation": {
+            "title": "Global allocation",
+            "description": "Manage project global allocations",
+            "placeholder": "Search global allocation",
+            "alert": {
+                "title": "Attention!",
+                "description": "Global allocations are not linked to any cycle. Use for people without defined hours."
+            },
+            "actions": {
+                "title": "Actions",
+                "new_globalAllocation": "New global allocation",
+                "trash": "Trash",
+                "restore": "Restore global allocation"
+            },
+            "trash": "Trash",
+            "no_results": "No global allocation found",
+            "restore": {
+                "title": "Restore global allocation",
+                "description": "Restore the selected global allocation"
+            }
+        },
+        "tool": {
+            "title": "Tools & Materials",
+            "description": "Manage project tools",
+            "placeholder": "Search tool",
+            "actions": {
+                "title": "Actions",
+                "new_tool": "New tool",
+                "trash": "Trash",
+                "restore": "Restore tool"
+            },
+            "trash": "Trash",
+            "no_results": "No tool found",
+            "restore": {
+                "title": "Restore tool",
+                "description": "Restore the selected tool"
+            }
+        }
+    },
+    "component": {
+        "locked": {
+            "title": "Restricted access",
+            "description": "You need permission to view kanban cycles to access this page"
+        },
+        "column": {
+            "add_card": "Add card",
+            "column_options": "Column options",
+            "edit_column": "Edit column",
+            "delete_column": "Delete column",
+            "limit_reached": "Limit reached",
+            "no_card_in_column": "No card",
+            "add_first_card": "Add card"
+        },
+        "card": {
+            "add_subtask": "Add sub card",
+            "estimate": "Estimate",
+            "actions": {
+                "open_menu": "Open menu",
+                "edit_card": "Edit card",
+                "move_card": "Move card",
+                "change_card_type": "Change card type",
+                "delete_card": "Delete card"
+            },
+            "placeholder": {
+                "responsible": "Responsible",
+                "work_type": "Work type"
+            }
+        },
+        "loader": {
+            "loading": "Loading..."
+        },
+        "line": {
+            "search": "Search",
+            "cycle": "Cycle",
+            "card_type": "Card type",
+            "filters": "Filters",
+            "clean_filters": "Clear filters",
+            "new_column": "New column",
+            "new_card": "New card",
+            "cycle_config": "Cycle configuration",
+            "column": "Columns",
+            "allocation": "Allocations",
+            "responsible": "Responsible",
+            "work_type": "Work type",
+            "objective": "Objective",
+            "end_date_estimate": "Completion estimate",
+            "end_date_execute": "Completed at",
+            "created_at": "Created at",
+            "selects": "Selectable",
+            "severity": "Severity",
+            "priority": "Priority",
+            "estimate": "Estimate",
+            "work_in_progress": "In progress",
+            "execute": "Executed",
+            "tag": "Tags",
+            "description": "Description",
+            "dates": "Dates",
+            "open": "Open fields",
+            "interval": "Intervals",
+            "max": "Max",
+            "min": "Min",
+            "public_id": "ID",
+            "type": "Type",
+            "version": "Version"
+        },
+        "header": {
+            "objectives_and_targets": "Objectives and targets",
+            "new_cycle": "New cycle",
+            "project_manager": "Project management",
+            "cycle": "Cycles",
+            "card_types": "Card types",
+            "project_members": "Project members",
+            "project_config": "Configuration",
+            "card_trash": "Card trash",
+            "project_tool": "Tools",
+            "globalAllocation": "Global allocation"
+        }
+    },
+    "delete": {
+        "warning": {
+            "title": "This item may have associated cards",
+            "description": "Select what you want to do with the associated cards"
+        },
+        "options": {
+            "delete_cards": "Delete cards",
+            "transfer": "Transfer cards",
+            "unlink_cards": "Unlink cards",
+            "move_cards": "Move dependent cards"
+        },
+        "member": {
+            "title": "Delete member",
+            "description": "Are you sure you want to delete this member?"
+        },
+        "cycle": {
+            "title": "Delete cycle",
+            "description": "Are you sure you want to delete this cycle?"
+        },
+        "column": {
+            "title": "Delete column",
+            "description": "Are you sure you want to delete this column?"
+        },
+        "cardType": {
+            "title": "Delete card type",
+            "description": "Are you sure you want to delete this card type?"
+        },
+        "card": {
+            "title": "Delete card",
+            "description": "Are you sure you want to delete this card?"
+        },
+        "allocation": {
+            "title": "Delete allocation",
+            "description": "Are you sure you want to delete this allocation?"
+        },
+        "config": {
+            "title": "Delete configuration",
+            "description": "Are you sure you want to delete this configuration?"
+        },
+        "globalAllocation": {
+            "title": "Delete global allocation",
+            "description": "Are you sure you want to delete this global allocation?"
+        },
+        "tool": {
+            "title": "Delete tool",
+            "description": "Are you sure you want to delete this tool?"
+        }
+    },
+    "card-type-modal-form": {
+        "title": "Card type",
+        "description": "Manage project card types",
+        "tabs": {
+            "template": "Template",
+            "manual": "Manual"
+        }
+    },
+    "card-form-store": {
+        "title": "Create card",
+        "description": "Create a new card for the project"
+    },
+    "card-form-move": {
+        "title": "Move card",
+        "description": "Move the card to another column"
+    },
+    "card-form-edit": {
+        "details": "Details",
+        "history": "History",
+        "files": "Files",
+        "views": "Views",
+        "save_and_close": "Save and close",
+        "created_at": "Created",
+        "updated_at": "Updated",
+        "save": "Save",
+        "cancel": "Cancel",
+        "destroy": "Delete",
+        "project": "Project",
+        "no_dependent_cards": "No dependent cards",
+        "no_parent_card": "Does not belong to any card",
+        "add_children": "New card",
+        "read": "Mark as read",
+        "unread": "Mark as unread",
+        "placeholder": {
+            "title": "Enter a title for the card",
+            "responsible": "Select a responsible",
+            "comment": "Add a comment. Use @ to reference a user and # to reference a card",
+            "objective": "Select an objective",
+            "target": "Select a target",
+            "parent": "Select a card",
+            "description": "Enter a description",
+            "accept_description": "Enter completion criteria"
+        },
+        "label": {
+            "project": "Project",
+            "version": "Version",
+            "cycle": "Cycle",
+            "column": "Column",
+            "work_type": "Work type",
+            "parent": "Belongs to",
+            "objective": "Objective",
+            "target": "Target"
+        },
+        "actions": {
+            "title": "Actions",
+            "move_card": "Move card",
+            "change_card_type": "Change card type",
+            "delete_card": "Delete card"
+        },
+        "movement": {
+            "less_than_1_minute": "Less than 1 minute",
+            "m": "m",
+            "h": "h",
+            "d": "d",
+            "unknown_column": "Unknown column",
+            "empty": "No movement recorded",
+            "from": "From",
+            "to": "To",
+            "created_in": "Created in",
+            "current": "Current",
+            "movement_date": "Movement date",
+            "previous_column_duration": "Duration in previous column",
+            "total_duration_since_creation": "Total duration since creation",
+            "year": "Year",
+            "years": "Years",
+            "month": "Month",
+            "months": "Months",
+            "day": "Day",
+            "days": "Days",
+            "and": "and",
+            "less_than_one_day": "Less than 1 day"
+        },
+        "comment": {
+            "title": "Delete comment",
+            "description": "Are you sure you want to delete this comment?"
+        },
+        "collapsible": {
+            "planning": "Planning",
+            "effort": "Effort",
+            "movements": "Movements",
+            "logs": "Logs",
+            "description": "Description",
+            "comments": "Comments",
+            "objectives_and_targets": "Objectives and targets",
+            "dependent_cards": "Dependent cards",
+            "parent": "Belongs to",
+            "views": "Views",
+            "accept_description": "Completion criteria"
+        },
+        "view": {
+            "empty": "No view recorded",
+            "actions": {
+                "opened": "Opened",
+                "read": "Read",
+                "unread": "Unread"
+            }
+        }
+    },
+    "card-form-change": {
+        "title": "Change card type",
+        "description": "Change the card type by filling in the fields below",
+        "caution": {
+            "title": "Caution",
+            "description": "Changing a principal card type to a non-principal one will unlink dependent cards"
+        }
+    },
+    "cancel": {
+        "title": "Cancel",
+        "description": "Are you sure you want to exit? You have unsaved changes, they will be lost when confirmed",
+        "confirm": "Confirm"
+    },
+    "no_value": {
+        "title": "No title",
+        "responsible": "No responsible",
+        "parent": "None",
+        "work_type": "No work type",
+        "priority": "-",
+        "severity": "-",
+        "end_date_estimate": "Not defined",
+        "end_date_execute": "Not defined",
+        "estimate": "-",
+        "execute": "-",
+        "work_in_progress": "-",
+        "objective": "None",
+        "target": "None",
+        "comments": "No comments",
+        "description": "No description",
+        "accept_description": "No completion criteria"
+    },
+    "report": {
+        "empty": "No data found",
+        "generated_in": "Report generated at",
+        "total_of": "Total of",
+        "total_cycles": "cycles analyzed",
+        "no_work_type": "None",
+        "export": "Export",
+        "priority": "Priority",
+        "tab": {
+            "cards": "Summary",
+            "charts": "Charts",
+            "rankings": "Rankings",
+            "hours": "Hours"
+        },
+        "card-category": {
+            "title": "Card Types",
+            "description": "Total distribution of cards by category",
+            "types": {
+                "principal": "Principal",
+                "problem": "Problem",
+                "sub_task": "Sub task"
+            }
+        },
+        "summary": {
+            "total_cards": "Total Cards",
+            "completed_cards": "Completed Cards",
+            "in_progress_cards": "In Progress Cards",
+            "late_cards": "Late Cards",
+            "estimated_hours": "Estimated Hours",
+            "executed_hours": "Executed Hours",
+            "wip_hours": "Hours in progress",
+            "estimated_vs_executed_percentage": "Execution x Estimate",
+            "lead_time": "Average Lead Time"
+        },
+        "rank": {
+            "member": {
+                "title": "Top Members",
+                "description": "Members with best performance"
+            },
+            "critical": {
+                "title": "Critical Cards",
+                "description": "Cards that need urgent attention"
+            },
+            "engagement": {
+                "title": "Most Engaged Cards",
+                "description": "Cards with highest team interaction"
+            },
+            "hours_allocation": {
+                "title": "Hours per Allocation",
+                "description": "Distribution of hours per member allocation"
+            },
+            "line": {
+                "comments": "Comments",
+                "files": "Files",
+                "reads": "Views",
+                "score": "Score",
+                "completed": "{{completed}} of {{total}} card(s) completed",
+                "days_late": "{{days}} day(s) late",
+                "efficiency": "Efficiency: {{rate}}%",
+                "estimated": "Estimated",
+                "executed": "Executed",
+                "wip": "In Progress",
+                "no_allocated": "Not allocated",
+                "allocated": "Allocated: {{hour}}h"
+            }
+        },
+        "graphs": {
+            "quantity": "Quantity",
+            "card_type": {
+                "title": "Distribution by Type",
+                "description": "Number of cards by type"
+            },
+            "column": {
+                "title": "Distribution by Column",
+                "description": "Number of cards in each column"
+            },
+            "cycle": {
+                "title": "Statistics by Cycle",
+                "description": "Performance of each sprint/cycle",
+                "conclusion_rate": "Completion Rate"
+            },
+            "priority": {
+                "title": "Distribution by Priority",
+                "description": "Number of cards by priority level"
+            },
+            "timeline": {
+                "title": "Completed Cards Timeline",
+                "description": "Temporal analysis of completed cards",
+                "lead_time": "Lead Time",
+                "days": "days"
+            },
+            "work_type": {
+                "title": "Distribution by Work Type",
+                "description": "Number of cards by work type"
+            }
+        },
+        "hours": {
+            "total_available_hours": "Total Available Hours",
+            "total_estimated_hours": "Total Estimated Hours",
+            "total_executed_hours": "Total Executed Hours",
+            "total_wip_hours": "Hours in progress",
+            "total_allocated_hours": "Total Allocated Hours",
+            "overall_utilization_rate": "Overall Utilization Rate",
+            "overall_occupancy_rate": "Overall Occupancy Rate",
+            "overall_capacity_usage": "Overall Capacity Usage",
+            "per_person": "per person",
+            "cycles_analysis": {
+                "title": "Analysis by Cycles",
+                "description": "Detailed hours analysis by cycle",
+                "util_days": "Business Days",
+                "allocated_members": "Allocated Members",
+                "max_hours_total": "Max Hours (total)",
+                "available_hours_total": "Ideal Load (total)",
+                "max_hours": "Max Hours (per person)",
+                "available_hours": "Ideal Load (per person)",
+                "estimated_hours": "Estimated Hours",
+                "executed_hours": "Executed Hours",
+                "wip_hours": "Hours in progress",
+                "allocated_hours": "Allocated Hours",
+                "remaining_capacity": "Remaining Allocation",
+                "remaining_hours": "Remaining Hours",
+                "utilization_rate": "Utilization Rate",
+                "occupancy_rate": "Occupancy Rate",
+                "capacity_usage": "Allocation usage"
+            },
+            "profiles_analysis": {
+                "title": "Analysis by Profiles",
+                "description": "Detailed hours analysis by profile",
+                "available_hours": "Ideal load",
+                "max_hours": "Max Hours",
+                "allocated_hours": "Allocated Hours",
+                "worked_hours": "Worked Hours",
+                "wip_hours": "Hours in progress",
+                "idle_hours": "Idle Hours",
+                "productivity_rate": "Productivity Rate",
+                "utilization_rate": "Utilization Rate",
+                "max_utilization_rate": "Max Utilization Rate",
+                "allocation_rate": "Allocation Rate",
+                "max_allocation_rate": "Max Allocation Rate",
+                "estimated_rate": "Estimate Rate",
+                "estimated_hours": "Estimated Hours"
+            }
+        }
+    }
+}

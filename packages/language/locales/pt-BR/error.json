@@ -1,0 +1,8 @@
+{
+    "connection_error": "Erro de conexão. Por favor, tente novamente mais tarde.",
+    "internal_server_error": "Erro interno do servidor. Por favor, tente novamente mais tarde.",
+    "error_register": "Erro ao processar usuário",
+    "error_token": "Token de usuário não encontrado",
+    "error_user_not_found": "Usuário não encontrado ou não autorizado",
+    "error_unexpected": "Ocorreu um erro inesperado!"
+}

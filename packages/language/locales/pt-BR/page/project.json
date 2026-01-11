@@ -1,0 +1,196 @@
+{
+    "title": "Projetos",
+    "new": "Novo projeto",
+    "modal": {
+        "new": {
+            "title": "Novo projeto",
+            "description": "Crie um novo projeto para gerenciar seus projetos."
+        },
+        "edit": {
+            "title": "Editar projeto",
+            "description": "Edite o projeto para atualizar suas informações."
+        },
+        "destroy": {
+            "title": "Deletar projeto",
+            "description": "Tem certeza de que deseja deletar este projeto? Esta ação não pode ser desfeita."
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} projetos",
+            "description": "Tem certeza de que deseja deletar estes projetos? Esta ação não pode ser desfeita."
+        },
+        "restore": {
+            "title": "Restaurar projeto",
+            "description": "Tem certeza de que deseja restaurar este projeto?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} projetos",
+            "description": "Tem certeza de que deseja restaurar esses projetos?"
+        },
+        "logs": {
+            "title": "Logs",
+            "description": "Visualize os logs de alterações feitas neste projeto."
+        }
+    },
+    "show": {
+        "edit": {
+            "title": "{{name}}",
+            "description": ""
+        },
+        "new": {
+            "title": "Novo projeto",
+            "description": ""
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "exclude": {
+            "title": "Excluir projeto",
+            "description": "Esse projeto será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "version": {
+            "new": "Nova versão",
+            "empty": "Sem versões para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova versão",
+                    "description": "Crie uma nova versão para o projeto"
+                },
+                "update": {
+                    "title": "Editar versão",
+                    "description": "Edite os dados da versão preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir versão",
+                "description": "Esse versão será excluída permanentemente, tem certeza que deseja continuar?"
+            },
+            "responsible": "Responsável",
+            "expected": "Inicio estimado",
+            "effective": "Inicio efetivo"
+        },
+        "allocation": {
+            "new": "Nova alocação",
+            "empty": "Sem alocações para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova alocação",
+                    "description": "Crie uma nova alocação para o projeto"
+                },
+                "update": {
+                    "title": "Editar alocação",
+                    "description": "Edite os dados da alocação preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir alocação",
+                "description": "Esse alocação será excluída permanentemente, tem certeza que deseja continuar?"
+            },
+            "version": "Versão",
+            "start_date": "Data de início",
+            "end_date": "Data de término"
+        },
+        "config": {
+            "new": "Nova configuração",
+            "empty": "Sem configurações para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova configuração",
+                    "description": "Crie uma nova configuração para o projeto"
+                },
+                "update": {
+                    "title": "Editar configuração",
+                    "description": "Edite os dados da configuração preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir configuração",
+                "description": "Esse configuração será excluída permanentemente, tem certeza que deseja continuar?"
+            },
+            "util_hour_day": "Horas úteis por dia",
+            "total_hour_day": "Jornada diária"
+        },
+        "financial": {
+            "new": "Nova etapa",
+            "empty": "Sem etapas para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova etapa",
+                    "description": "Crie uma nova etapa para o projeto"
+                },
+                "update": {
+                    "title": "Editar etapa",
+                    "description": "Edite os dados da etapa preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir etapa",
+                "description": "Esse etapa será excluída permanentemente, tem certeza que deseja continuar?"
+            }
+        },
+        "financial_employees": {
+            "new": "Nova equipe",
+            "empty": "Sem equipes para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova equipe",
+                    "description": "Crie uma nova equipe para o projeto"
+                },
+                "update": {
+                    "title": "Editar equipe",
+                    "description": "Edite os dados da equipe preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir equipe",
+                "description": "Esse equipe será excluída permanentemente, tem certeza que deseja continuar?"
+            }
+        },
+        "tool": {
+            "new": "Nova ferramenta",
+            "empty": "Sem ferramentas para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova ferramenta",
+                    "description": "Crie uma nova ferramenta para o projeto"
+                },
+                "update": {
+                    "title": "Editar ferramenta",
+                    "description": "Edite os dados da ferramenta preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir ferramenta",
+                "description": "Esse ferramenta será excluída permanentemente, tem certeza que deseja continuar?"
+            }
+        },
+        "member": {
+            "new": "Novo membro",
+            "empty": "Sem membros para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Novo membro",
+                    "description": "Adicione um novo membro ao projeto"
+                },
+                "update": {
+                    "title": "Editar membro",
+                    "description": "Edite os dados do membro preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir membro",
+                "description": "Esse membro será excluído permanentemente, tem certeza que deseja continuar?"
+            }
+        },
+        "tabs": {
+            "data": "Dados",
+            "version": "Versões",
+            "financial": "Etapas & Financeiro",
+            "financial_employees": "Equipes",
+            "member": "Membros",
+            "config": "Configurações",
+            "allocation": "Alocações",
+            "tool": "Ferramentas & Materiais"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "register": "Empresa",
+    "invites": "Convites",
+    "welcome": "Bem vindo!",
+    "accept": "Aceitar",
+    "reject": "Rejeitar",
+    "modal": {
+        "accept": {
+            "title": "Aceitar convite",
+            "description": "Tem certeza de que deseja aceitar este convite?"
+        },
+        "reject": {
+            "title": "Rejeitar convite",
+            "description": "Tem certeza de que deseja rejeitar este convite?"
+        }
+    }
+}

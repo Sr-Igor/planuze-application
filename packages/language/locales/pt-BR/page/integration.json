@@ -1,0 +1,50 @@
+{
+    "title": "Integrações de API",
+    "new": "Novo token",
+    "modal": {
+        "destroy": {
+            "title": "Deletar token",
+            "description": "Tem certeza de que deseja deletar esse token?"
+        },
+        "restore": {
+            "title": "Restaurar token",
+            "description": "Tem certeza de que deseja restaurar esse token?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} tokens",
+            "description": "Tem certeza de que deseja deletar esses tokens? Esta ação não pode ser desfeita."
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} tokens",
+            "description": "Tem certeza de que deseja restaurar esses tokens?"
+        }
+    },
+    "show": {
+        "select_all": "Selecionar todas as permissões do módulo",
+        "new": {
+            "title": "Cadastrar token",
+            "description": "Preencha os dados abaixo para cadastrar um novo token"
+        },
+        "edit": {
+            "title": "Editar token",
+            "description": "Edite os dados do token preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "exclude": {
+            "title": "Excluir token",
+            "description": "Esse token será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "tabs": {
+            "data": "Dados",
+            "permission": "Permissões"
+        },
+        "token": {
+            "title": "Token de acesso da API",
+            "description": "O token permite o acesso a API do sistema. Copie e salve-o em um local seguro. Por segurança, ele será exibido apenas uma vez.",
+            "warning": "A documentação fornece as rotas da API. Algumas delas podem não estar disponíveis para o seu plano."
+        }
+    }
+}

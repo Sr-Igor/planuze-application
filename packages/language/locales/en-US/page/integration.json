@@ -1,0 +1,50 @@
+{
+    "title": "API Integrations",
+    "new": "New token",
+    "modal": {
+        "destroy": {
+            "title": "Delete token",
+            "description": "Are you sure you want to delete this token?"
+        },
+        "restore": {
+            "title": "Restore token",
+            "description": "Are you sure you want to restore this token?"
+        },
+        "destroyMany": {
+            "title": "Delete {{total}} tokens",
+            "description": "Are you sure you want to delete these tokens? This action cannot be undone."
+        },
+        "restoreMany": {
+            "title": "Restore {{total}} tokens",
+            "description": "Are you sure you want to restore these tokens?"
+        }
+    },
+    "show": {
+        "select_all": "Select all module permissions",
+        "new": {
+            "title": "Register token",
+            "description": "Fill in the data below to register a new token"
+        },
+        "edit": {
+            "title": "Edit token",
+            "description": "Edit the token data by filling in the fields below"
+        },
+        "cancel": {
+            "title": "Exit",
+            "description": "Are you sure you want to exit? You have unsaved changes, they will be lost when confirmed"
+        },
+        "exclude": {
+            "title": "Delete token",
+            "description": "This token will be permanently deleted, are you sure you want to continue?"
+        },
+        "tabs": {
+            "data": "Data",
+            "permission": "Permissions"
+        },
+        "token": {
+            "title": "API access token",
+            "description": "The token allows access to the system API. Copy and save it in a safe place. For security, it will only be displayed once.",
+            "warning": "The documentation provides the API routes. Some of them may not be available for your plan."
+        }
+    }
+}

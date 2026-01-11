@@ -1,0 +1,86 @@
+{
+    "title": "Clients",
+    "new": "New client",
+    "modal": {
+        "destroy": {
+            "title": "Delete client",
+            "description": "Are you sure you want to delete this client?"
+        },
+        "destroyMany": {
+            "title": "Delete {{total}} clients",
+            "description": "Are you sure you want to delete these clients?"
+        },
+        "restore": {
+            "title": "Restore client",
+            "description": "Are you sure you want to restore this client?"
+        },
+        "restoreMany": {
+            "title": "Restore {{total}} clients",
+            "description": "Are you sure you want to restore these clients?"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Register client",
+            "description": "Fill in the data below to register a new client"
+        },
+        "edit": {
+            "title": "Edit client",
+            "description": "Edit the client data by filling in the fields below"
+        },
+        "cancel": {
+            "title": "Exit",
+            "description": "Are you sure you want to exit? You have unsaved changes, they will be lost when confirmed"
+        },
+        "document": {
+            "new": "New document",
+            "exclude": {
+                "title": "Delete document",
+                "description": "This document will be permanently deleted, are you sure you want to continue?"
+            },
+            "empty": "No documents for this client"
+        },
+        "contact": {
+            "new": "New contact",
+            "exclude": {
+                "title": "Delete contact",
+                "description": "This contact will be permanently deleted, are you sure you want to continue?"
+            },
+            "empty": "No contacts for this client"
+        },
+        "exclude": {
+            "title": "Delete client",
+            "description": "This client will be permanently deleted, are you sure you want to continue?"
+        },
+        "bank_account": {
+            "account": "Account",
+            "agency": "Agency",
+            "digit": "Digit",
+            "principal": "Principal",
+            "empty": "No bank accounts for this client",
+            "new": "New bank account",
+            "modal": {
+                "store": {
+                    "title": "New bank account",
+                    "description": "Create a new bank account for the client"
+                },
+                "update": {
+                    "title": "Edit bank account",
+                    "description": "Edit the bank account data by filling in the fields below"
+                }
+            },
+            "exclude": {
+                "title": "Delete bank account",
+                "description": "This bank account will be permanently deleted, are you sure you want to continue?"
+            }
+        },
+        "tabs": {
+            "data": "Data",
+            "documents": "Documents",
+            "contacts": "Contacts",
+            "address": "Address",
+            "files": "Files",
+            "bank_account": "Bank accounts"
+        }
+    }
+}

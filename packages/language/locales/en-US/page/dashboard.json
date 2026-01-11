@@ -1,0 +1,372 @@
+{
+    "project": {
+        "tabs": {
+            "summary": "Summary",
+            "projects": "Projects",
+            "costs": "Costs",
+            "analyses": "Analyses"
+        },
+        "header": {
+            "title": "Project Dashboard",
+            "description": "Financial and operational analysis of projects",
+            "filters": "Filters",
+            "export": "Export"
+        },
+        "filters": {
+            "title": "Filters",
+            "description": "Filter projects according to your criteria",
+            "clear": "Clear",
+            "apply": "Apply"
+        },
+        "summary": {
+            "total_budget": "Total Budget",
+            "total_cost": "Total Cost",
+            "total_revenue": "Total Revenue",
+            "profit_margin": "Profit Margin",
+            "budget_variance": "Budget Variance",
+            "total_projects": "Total Projects",
+            "active_projects": "Active Projects",
+            "completed_projects": "Completed Projects",
+            "late_projects": "Late Projects"
+        },
+        "projects": {
+            "title": "Financial Projects",
+            "description": "Financial overview of projects",
+            "empty": "No projects found",
+            "status": {
+                "active": "Active",
+                "completed": "Completed",
+                "late": "Late",
+                "on_schedule": "On Schedule"
+            },
+            "progress": "Progress",
+            "budget": "Budget",
+            "actual_cost": "Actual Cost",
+            "revenue": "Revenue",
+            "profit": "Profit",
+            "profit_margin": "Profit Margin",
+            "budget_variance": "Budget Variance",
+            "estimated_duration": "Estimated Duration",
+            "actual_duration": "Actual Duration",
+            "duration_variance": "Duration Variance",
+            "days": "days"
+        },
+        "costs": {
+            "title": "Cost Breakdown",
+            "description": "Cost analysis by category",
+            "empty": "No data available",
+            "actual": "Actual",
+            "executed": "Executed",
+            "planned": "Planned",
+            "variance": "Remaining",
+            "of_total": "of total",
+            "category": {
+                "labor_costs": "Labor Costs",
+                "external_services": "Total budget",
+                "remaining_budget": "Remaining Budget"
+            }
+        },
+        "analyses": {
+            "employee_costs": {
+                "title": "Costs per Employee",
+                "description": "Cost analysis by profile",
+                "global": "Global Allocation",
+                "allocated_hours": "Allocated Hours",
+                "hourly_rate": "Ideal Hourly Rate",
+                "hourly_rate_total": "Maximum Hourly Rate",
+                "total_cost": "Total Cost",
+                "total_compensation": "Total Compensation",
+                "simultaneous_projects": "Simultaneous Projects"
+            },
+            "cost_centers": {
+                "title": "Cost Centers",
+                "description": "Analysis by cost center",
+                "allocated": "Allocated",
+                "spent": "Spent",
+                "projects": "Projects",
+                "employees": "Employees"
+            },
+            "work_types": {
+                "title": "Work Types",
+                "description": "Analysis by work type",
+                "budget": "Budget",
+                "cost": "Cost",
+                "steps": "Stages",
+                "average_cost_per_project": "Average Cost/Project"
+            },
+            "profitability": {
+                "title": "Profitability Metrics",
+                "description": "Profitability indicators",
+                "roi_percentage": "ROI (%)",
+                "roi_amount": "ROI ({{currencyCode}})",
+                "cost_efficiency_rate": "Cost Efficiency Rate",
+                "revenue_per_hour": "Revenue per Hour",
+                "cost_per_hour": "Cost per Hour",
+                "break_even_point": "Break Even Point"
+            },
+            "timeline": {
+                "title": "Timeline Analysis",
+                "description": "Project deadline analysis",
+                "late": "Late",
+                "on_schedule": "On Schedule",
+                "days_planned": "Planned Days",
+                "days_actual": "Actual Days",
+                "deviation": "Deviation",
+                "days": "days",
+                "status": "Status",
+                "planned_start": "Planned Start",
+                "planned_end": "Planned End",
+                "actual_start": "Actual Start",
+                "actual_end": "Actual End"
+            }
+        },
+        "metadata": {
+            "generated_at": "Generated at",
+            "period": "Period",
+            "total_projects": "Total projects",
+            "conversion_applied": "Conversion applied to"
+        }
+    },
+    "personal": {
+        "tabs": {
+            "general": "General",
+            "projects": "Projects",
+            "cards": "Cards",
+            "kanbans": "Kanbans",
+            "timeline": "Timeline"
+        },
+        "time": {
+            "less_than_1_day": "Less than 1 day",
+            "year": "year",
+            "years": "years",
+            "month": "month",
+            "months": "months",
+            "day": "day",
+            "days": "days"
+        },
+        "header": {
+            "title": "Personal Dashboard",
+            "description": "Personal information and activities",
+            "filters": "Filters",
+            "export": "Export"
+        },
+        "filters": {
+            "title": "Filters",
+            "description": "Filter information according to your criteria",
+            "clear": "Clear",
+            "apply": "Apply"
+        },
+        "general": {
+            "profile": {
+                "title": "Profile Information",
+                "description": "Personal data and account information",
+                "name": "Name",
+                "email": "Email",
+                "level": "Level",
+                "company": "Company",
+                "company_entry_date": "Entry Date",
+                "time_in_company": "Time in Company",
+                "profile_created_at": "Profile Created at",
+                "profile_updated_at": "Profile Updated at"
+            },
+            "financial": {
+                "title": "Financial Information",
+                "description": "Current financial data",
+                "total_compensation": "Total Compensation",
+                "base_salary": "Base Salary",
+                "total_bonuses": "Total Bonuses",
+                "proportional": {
+                    "title": "Proportional Values",
+                    "description": "Values already received until today",
+                    "total_compensation": "Total Proportional Compensation",
+                    "base_salary": "Proportional Base Salary",
+                    "total_bonuses": "Total Proportional Bonuses"
+                },
+                "integral": {
+                    "title": "Full Values",
+                    "description": "Values that will be received in full",
+                    "total_compensation": "Total Full Compensation",
+                    "base_salary": "Full Base Salary",
+                    "total_bonuses": "Total Full Bonuses"
+                },
+                "roles": "Positions",
+                "roles_description": "Your positions and salaries",
+                "bonuses": "Bonuses",
+                "bonuses_description": "Your bonuses and extras",
+                "role_name": "Position Name",
+                "bonus_name": "Bonus Name",
+                "cost_center": "Cost Center",
+                "salary": "Salary",
+                "salary_proportional": "Proportional Salary",
+                "salary_integral": "Full Salary",
+                "amount": "Amount",
+                "amount_proportional": "Proportional Amount",
+                "amount_integral": "Full Amount"
+            },
+            "evolution": {
+                "title": "Financial Evolution",
+                "description": "History of salary and compensation evolution",
+                "salary": "Salary",
+                "bonuses": "Bonuses",
+                "compensation": "Total Compensation",
+                "average_salary": "Average Salary",
+                "average_bonuses": "Average Bonuses",
+                "average_compensation": "Average Compensation",
+                "highest_compensation": "Highest Compensation",
+                "lowest_compensation": "Lowest Compensation",
+                "total_periods": "Total Periods"
+            }
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "Information about projects you are allocated to",
+            "progress": "Progress",
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "allocated_hours": "Allocated Hours",
+            "worked_hours": "Worked Hours",
+            "summary": {
+                "title": "Projects Summary",
+                "total_projects": "Total Projects",
+                "active_projects": "Active Projects",
+                "completed_projects": "Completed Projects",
+                "total_allocations": "Total Allocations",
+                "total_hours_worked": "Total Hours Worked",
+                "total_hours_allocated": "Total Hours Allocated"
+            },
+            "status": {
+                "active": "Active",
+                "completed": "Completed",
+                "pending": "Pending"
+            }
+        },
+        "cards": {
+            "title": "Cards",
+            "description": "Cards assigned to you",
+            "due_date": "Due Date",
+            "assigned_at": "Assigned at",
+            "comments_count": "Comments Count",
+            "is_read": "Reading Status",
+            "read": "Read",
+            "unread": "Unread",
+            "status": {
+                "pending": "Pending",
+                "in_progress": "In Progress",
+                "completed": "Completed"
+            },
+            "priority": {
+                "high": "High",
+                "medium": "Medium",
+                "low": "Low"
+            }
+        },
+        "kanbans": {
+            "title": "Kanbans",
+            "description": "Kanbans from your projects",
+            "total_cards": "Total Cards",
+            "my_cards": "My Cards",
+            "completed_cards": "Completed Cards",
+            "pending_cards": "Pending Cards",
+            "last_activity": "Last Activity"
+        },
+        "timeline": {
+            "title": "Timeline",
+            "description": "Timeline of your activities",
+            "type": {
+                "allocation": "Allocation",
+                "card_created": "Card Created",
+                "card_completed": "Card Completed",
+                "comment": "Comment",
+                "project_joined": "Joined Project"
+            }
+        },
+        "metadata": {
+            "generated_at": "Generated at",
+            "period": "Period",
+            "conversion_applied": "Conversion applied to"
+        }
+    },
+    "admin": {
+        "header": {
+            "title": "Administrative Dashboard",
+            "description": "Company administration overview",
+            "export": "Export"
+        },
+        "metadata": {
+            "generated_at": "Generated at"
+        },
+        "overview": {
+            "yes": "Yes",
+            "no": "No",
+            "company": {
+                "title": "Company Information",
+                "description": "Basic company data",
+                "name": "Name",
+                "created_at": "Created at",
+                "updated_at": "Updated at",
+                "has_address": "Address",
+                "has_documents": "Documents",
+                "has_contacts": "Contacts",
+                "has_files": "Files",
+                "has_config": "Configuration"
+            },
+            "invites": {
+                "title": "Invites",
+                "description": "Invite statistics",
+                "total_invites": "Total Invites",
+                "pending_invites": "Pending Invites",
+                "accepted_invites": "Accepted Invites",
+                "refused_invites": "Refused Invites",
+                "expired_invites": "Expired Invites"
+            },
+            "users": {
+                "title": "Users",
+                "description": "User and invite statistics",
+                "total_users": "Total Users",
+                "active_users": "Active Users",
+                "inactive_users": "Inactive Users"
+            },
+            "licenses": {
+                "title": "Licenses",
+                "description": "License information",
+                "total_licenses": "Total Licenses",
+                "used_licenses": "Used Licenses",
+                "available_licenses": "Available Licenses",
+                "usage_percentage": "Usage Percentage"
+            },
+            "subscriptions": {
+                "title": "Subscriptions",
+                "description": "Active plans and subscriptions",
+                "start_date": "Start Date",
+                "end_date": "End Date",
+                "days_off": "Days Remaining",
+                "is_test": "Trial Period"
+            },
+            "integrations": {
+                "title": "Integrations",
+                "description": "Configured integrations",
+                "total_integrations": "Total Integrations",
+                "active_integrations": "Active Integrations",
+                "name": "Name",
+                "type": "Type",
+                "status": "Status",
+                "created_at": "Created at"
+            },
+            "additional": {
+                "title": "Additional Information",
+                "description": "Other system information",
+                "cost_centers": "Cost Centers",
+                "levels": "Levels",
+                "work_types": "Work Types",
+                "roles": "Positions",
+                "invoices": "Invoices"
+            },
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive",
+                "canceled": "Canceled",
+                "pending": "Pending"
+            }
+        }
+    }
+}

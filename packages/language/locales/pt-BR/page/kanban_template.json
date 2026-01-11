@@ -1,0 +1,77 @@
+{
+    "title": "Templates de kanban",
+    "new": "Novo template",
+    "modal": {
+        "destroy": {
+            "title": "Deletar template",
+            "description": "Tem certeza de que deseja deletar esse template?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} templates",
+            "description": "Tem certeza de que deseja deletar esses templates?"
+        },
+        "restore": {
+            "title": "Restaurar template",
+            "description": "Tem certeza de que deseja restaurar esse template?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} templates",
+            "description": "Tem certeza de que deseja restaurar esses templates?"
+        },
+        "clone": {
+            "title": "Clonar template",
+            "description": "Todas os tipos de card e colunas serão clonados para o novo template"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Cadastrar template",
+            "description": "Preencha os dados abaixo para cadastrar um novo template"
+        },
+        "edit": {
+            "title": "Editar template",
+            "description": "Edite os dados do template preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "column": {
+            "new": "Nova coluna",
+            "exclude": {
+                "title": "Excluir coluna",
+                "description": "Essa coluna será excluída permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem colunas para esse template"
+        },
+        "card": {
+            "new": "Novo card",
+            "empty": "Sem cards para esse projeto",
+            "modal": {
+                "store": {
+                    "title": "Nova card",
+                    "description": "Selecione um novo card para o projeto"
+                },
+                "update": {
+                    "title": "Editar card",
+                    "description": "Edite os dados da card preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir card",
+                "description": "Esse card será excluída permanentemente, tem certeza que deseja continuar?"
+            },
+            "principal": "Principal",
+            "problem": "Problema"
+        },
+        "exclude": {
+            "title": "Excluir template",
+            "description": "Esse template será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "tabs": {
+            "data": "Dados",
+            "columns": "Colunas",
+            "cards": "Tipos de cards"
+        }
+    }
+}

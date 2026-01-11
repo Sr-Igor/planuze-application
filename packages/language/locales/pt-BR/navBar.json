@@ -1,0 +1,42 @@
+{
+    "groups": {
+        "kanban_template": "Templates de kanban",
+        "variables": "Variáveis"
+    },
+    "labels": {
+        "client": "Clientes",
+        "dashboard": "Dashboard",
+        "company": "Empresa",
+        "level": "Níveis de acesso",
+        "subscription": "Assinatura",
+        "companies": "Empresas",
+        "action": "Ações",
+        "features": "Funcionalidades",
+        "plans": "Planos",
+        "modules": "Módulos",
+        "invite": "Convites",
+        "integration": "Integrações de API",
+        "profile": "Colaboradores",
+        "cost_center": "Centros de custo",
+        "role": "Cargos e salários",
+        "me_data": "Informações gerais",
+        "me_address": "Endereço",
+        "me_contacts": "Contatos",
+        "me_documents": "Documentos",
+        "me_role": "Cargos e salários",
+        "me_bonus": "Bônus e extras",
+        "me_file": "Arquivos",
+        "me_bank_accounts": "Contas bancárias",
+        "project": "Projetos",
+        "work_type": "Tipos de trabalho",
+        "kanban_template": "Cards e colunas",
+        "project_kanban": "Kanban",
+        "kanban_template_card_type": "Tipos de cards",
+        "kanban_template_tag": "Tags",
+        "company_config": "Configuração"
+    },
+    "message": {
+        "upgrade": "Atualize seu plano para acessar esta funcionalidade.",
+        "locked": "Você não tem permissão para acessar esse módulo."
+    }
+}

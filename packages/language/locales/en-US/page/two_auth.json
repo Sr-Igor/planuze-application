@@ -1,0 +1,12 @@
+{
+    "title": "Two-Factor Authentication",
+    "description": "Configure two-factor authentication for your account",
+    "enable": "Enable",
+    "disable": "Disable",
+    "qr_code": "QR Code",
+    "secret": "Secret",
+    "verify": "Verify",
+    "code": "Verification Code",
+    "success": "Two-factor authentication enabled successfully",
+    "error": "Failed to enable two-factor authentication"
+}

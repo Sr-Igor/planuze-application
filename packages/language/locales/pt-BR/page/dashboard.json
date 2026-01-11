@@ -1,0 +1,372 @@
+{
+    "project": {
+        "tabs": {
+            "summary": "Resumo",
+            "projects": "Projetos",
+            "costs": "Custos",
+            "analyses": "Análises"
+        },
+        "header": {
+            "title": "Dashboard de Projetos",
+            "description": "Análise financeira e operacional dos projetos",
+            "filters": "Filtros",
+            "export": "Exportar"
+        },
+        "filters": {
+            "title": "Filtros",
+            "description": "Filtre os projetos de acordo com seus critérios",
+            "clear": "Limpar",
+            "apply": "Aplicar"
+        },
+        "summary": {
+            "total_budget": "Orçamento Total",
+            "total_cost": "Custo Total",
+            "total_revenue": "Receita Total",
+            "profit_margin": "Margem de Lucro",
+            "budget_variance": "Variação do Orçamento",
+            "total_projects": "Total de Projetos",
+            "active_projects": "Projetos Ativos",
+            "completed_projects": "Projetos Concluídos",
+            "late_projects": "Projetos Atrasados"
+        },
+        "projects": {
+            "title": "Projetos Financeiros",
+            "description": "Visão geral financeira dos projetos",
+            "empty": "Nenhum projeto encontrado",
+            "status": {
+                "active": "Ativo",
+                "completed": "Concluído",
+                "late": "Atrasado",
+                "on_schedule": "No Prazo"
+            },
+            "progress": "Progresso",
+            "budget": "Orçamento",
+            "actual_cost": "Custo Real",
+            "revenue": "Receita",
+            "profit": "Lucro",
+            "profit_margin": "Margem de Lucro",
+            "budget_variance": "Variação Orçamento",
+            "estimated_duration": "Duração Estimada",
+            "actual_duration": "Duração Real",
+            "duration_variance": "Variação Duração",
+            "days": "dias"
+        },
+        "costs": {
+            "title": "Breakdown de Custos",
+            "description": "Análise de custos por categoria",
+            "empty": "Nenhum dado disponível",
+            "actual": "Real",
+            "executed": "Executado",
+            "planned": "Planejado",
+            "variance": "Restante",
+            "of_total": "do total",
+            "category": {
+                "labor_costs": "Custos de Mão de Obra",
+                "external_services": "Orçamento total",
+                "remaining_budget": "Orçamento Restante"
+            }
+        },
+        "analyses": {
+            "employee_costs": {
+                "title": "Custos por Funcionário",
+                "description": "Análise de custos por perfil",
+                "global": "Alocação Global",
+                "allocated_hours": "Horas Alocadas",
+                "hourly_rate": "Taxa/Hora Ideal",
+                "hourly_rate_total": "Taxa/Hora Máxima",
+                "total_cost": "Custo Total",
+                "total_compensation": "Compensação Total",
+                "simultaneous_projects": "Projetos Simultâneos"
+            },
+            "cost_centers": {
+                "title": "Centros de Custo",
+                "description": "Análise por centro de custo",
+                "allocated": "Alocado",
+                "spent": "Gasto",
+                "projects": "Projetos",
+                "employees": "Funcionários"
+            },
+            "work_types": {
+                "title": "Tipos de Trabalho",
+                "description": "Análise por tipo de trabalho",
+                "budget": "Orçamento",
+                "cost": "Custo",
+                "steps": "Etapas",
+                "average_cost_per_project": "Custo Médio/Projeto"
+            },
+            "profitability": {
+                "title": "Métricas de Rentabilidade",
+                "description": "Indicadores de rentabilidade",
+                "roi_percentage": "ROI (%)",
+                "roi_amount": "ROI ({{currencyCode}})",
+                "cost_efficiency_rate": "Taxa de Eficiência de Custo",
+                "revenue_per_hour": "Receita por Hora",
+                "cost_per_hour": "Custo por Hora",
+                "break_even_point": "Ponto de Equilíbrio"
+            },
+            "timeline": {
+                "title": "Análise de Timeline",
+                "description": "Análise de prazos dos projetos",
+                "late": "Atrasado",
+                "on_schedule": "No Prazo",
+                "days_planned": "Dias Planejados",
+                "days_actual": "Dias Reais",
+                "deviation": "Desvio",
+                "days": "dias",
+                "status": "Status",
+                "planned_start": "Início Planejado",
+                "planned_end": "Fim Planejado",
+                "actual_start": "Início Real",
+                "actual_end": "Fim Real"
+            }
+        },
+        "metadata": {
+            "generated_at": "Gerado em",
+            "period": "Período",
+            "total_projects": "Total de projetos",
+            "conversion_applied": "Conversão aplicada para"
+        }
+    },
+    "personal": {
+        "tabs": {
+            "general": "Geral",
+            "projects": "Projetos",
+            "cards": "Cards",
+            "kanbans": "Kanbans",
+            "timeline": "Timeline"
+        },
+        "time": {
+            "less_than_1_day": "Menos de 1 dia",
+            "year": "ano",
+            "years": "anos",
+            "month": "mês",
+            "months": "meses",
+            "day": "dia",
+            "days": "dias"
+        },
+        "header": {
+            "title": "Dashboard Pessoal",
+            "description": "Informações e atividades pessoais",
+            "filters": "Filtros",
+            "export": "Exportar"
+        },
+        "filters": {
+            "title": "Filtros",
+            "description": "Filtre as informações de acordo com seus critérios",
+            "clear": "Limpar",
+            "apply": "Aplicar"
+        },
+        "general": {
+            "profile": {
+                "title": "Informações do Perfil",
+                "description": "Dados pessoais e informações da conta",
+                "name": "Nome",
+                "email": "E-mail",
+                "level": "Nível",
+                "company": "Empresa",
+                "company_entry_date": "Data de Entrada",
+                "time_in_company": "Tempo na Empresa",
+                "profile_created_at": "Perfil Criado em",
+                "profile_updated_at": "Perfil Atualizado em"
+            },
+            "financial": {
+                "title": "Informações Financeiras",
+                "description": "Dados financeiros atuais",
+                "total_compensation": "Compensação Total",
+                "base_salary": "Salário Base",
+                "total_bonuses": "Total de Bônus",
+                "proportional": {
+                    "title": "Valores Proporcionais",
+                    "description": "Valores já recebidos até hoje",
+                    "total_compensation": "Compensação Total Proporcional",
+                    "base_salary": "Salário Base Proporcional",
+                    "total_bonuses": "Total de Bônus Proporcional"
+                },
+                "integral": {
+                    "title": "Valores Integrais",
+                    "description": "Valores que serão recebidos no total",
+                    "total_compensation": "Compensação Total Integral",
+                    "base_salary": "Salário Base Integral",
+                    "total_bonuses": "Total de Bônus Integral"
+                },
+                "roles": "Cargos",
+                "roles_description": "Seus cargos e salários",
+                "bonuses": "Bônus",
+                "bonuses_description": "Seus bônus e extras",
+                "role_name": "Nome do Cargo",
+                "bonus_name": "Nome do Bônus",
+                "cost_center": "Centro de Custo",
+                "salary": "Salário",
+                "salary_proportional": "Salário Proporcional",
+                "salary_integral": "Salário Integral",
+                "amount": "Valor",
+                "amount_proportional": "Valor Proporcional",
+                "amount_integral": "Valor Integral"
+            },
+            "evolution": {
+                "title": "Evolução Financeira",
+                "description": "Histórico de evolução salarial e compensações",
+                "salary": "Salário",
+                "bonuses": "Bônus",
+                "compensation": "Compensação Total",
+                "average_salary": "Salário Médio",
+                "average_bonuses": "Bônus Médio",
+                "average_compensation": "Compensação Média",
+                "highest_compensation": "Maior Compensação",
+                "lowest_compensation": "Menor Compensação",
+                "total_periods": "Total de Períodos"
+            }
+        },
+        "projects": {
+            "title": "Projetos",
+            "description": "Informações dos projetos em que você está alocado",
+            "progress": "Progresso",
+            "start_date": "Data de Início",
+            "end_date": "Data de Término",
+            "allocated_hours": "Horas Alocadas",
+            "worked_hours": "Horas Trabalhadas",
+            "summary": {
+                "title": "Resumo de Projetos",
+                "total_projects": "Total de Projetos",
+                "active_projects": "Projetos Ativos",
+                "completed_projects": "Projetos Concluídos",
+                "total_allocations": "Total de Alocações",
+                "total_hours_worked": "Total de Horas Trabalhadas",
+                "total_hours_allocated": "Total de Horas Alocadas"
+            },
+            "status": {
+                "active": "Ativo",
+                "completed": "Concluído",
+                "pending": "Pendente"
+            }
+        },
+        "cards": {
+            "title": "Cards",
+            "description": "Cards atribuídos a você",
+            "due_date": "Data de Vencimento",
+            "assigned_at": "Data de Atribuição",
+            "comments_count": "Quantidade de Comentários",
+            "is_read": "Status de Leitura",
+            "read": "Lido",
+            "unread": "Não Lido",
+            "status": {
+                "pending": "Pendente",
+                "in_progress": "Em Progresso",
+                "completed": "Concluído"
+            },
+            "priority": {
+                "high": "Alta",
+                "medium": "Média",
+                "low": "Baixa"
+            }
+        },
+        "kanbans": {
+            "title": "Kanbans",
+            "description": "Kanbans dos seus projetos",
+            "total_cards": "Total de Cards",
+            "my_cards": "Meus Cards",
+            "completed_cards": "Cards Concluídos",
+            "pending_cards": "Cards Pendentes",
+            "last_activity": "Última Atividade"
+        },
+        "timeline": {
+            "title": "Timeline",
+            "description": "Linha do tempo das suas atividades",
+            "type": {
+                "allocation": "Alocação",
+                "card_created": "Card Criado",
+                "card_completed": "Card Concluído",
+                "comment": "Comentário",
+                "project_joined": "Entrou no Projeto"
+            }
+        },
+        "metadata": {
+            "generated_at": "Gerado em",
+            "period": "Período",
+            "conversion_applied": "Conversão aplicada para"
+        }
+    },
+    "admin": {
+        "header": {
+            "title": "Dashboard Administrativo",
+            "description": "Visão geral da administração da empresa",
+            "export": "Exportar"
+        },
+        "metadata": {
+            "generated_at": "Gerado em"
+        },
+        "overview": {
+            "yes": "Sim",
+            "no": "Não",
+            "company": {
+                "title": "Informações da Empresa",
+                "description": "Dados básicos da empresa",
+                "name": "Nome",
+                "created_at": "Criado em",
+                "updated_at": "Atualizado em",
+                "has_address": "Endereço",
+                "has_documents": "Documentos",
+                "has_contacts": "Contatos",
+                "has_files": "Arquivos",
+                "has_config": "Configuração"
+            },
+            "invites": {
+                "title": "Convites",
+                "description": "Estatísticas de convites",
+                "total_invites": "Total de Convites",
+                "pending_invites": "Convites Pendentes",
+                "accepted_invites": "Convites Aceitos",
+                "refused_invites": "Convites Recusados",
+                "expired_invites": "Convites Expirados"
+            },
+            "users": {
+                "title": "Usuários",
+                "description": "Estatísticas de usuários e convites",
+                "total_users": "Total de Usuários",
+                "active_users": "Usuários Ativos",
+                "inactive_users": "Usuários Inativos"
+            },
+            "licenses": {
+                "title": "Licenças",
+                "description": "Informações sobre licenças",
+                "total_licenses": "Total de Licenças",
+                "used_licenses": "Licenças Utilizadas",
+                "available_licenses": "Licenças Disponíveis",
+                "usage_percentage": "Percentual de Uso"
+            },
+            "subscriptions": {
+                "title": "Assinaturas",
+                "description": "Planos e assinaturas ativas",
+                "start_date": "Data de Início",
+                "end_date": "Data de Término",
+                "days_off": "Dias Restantes",
+                "is_test": "Período de Teste"
+            },
+            "integrations": {
+                "title": "Integrações",
+                "description": "Integrações configuradas",
+                "total_integrations": "Total de Integrações",
+                "active_integrations": "Integrações Ativas",
+                "name": "Nome",
+                "type": "Tipo",
+                "status": "Status",
+                "created_at": "Criado em"
+            },
+            "additional": {
+                "title": "Informações Adicionais",
+                "description": "Outras informações do sistema",
+                "cost_centers": "Centros de Custo",
+                "levels": "Níveis",
+                "work_types": "Tipos de Trabalho",
+                "roles": "Cargos",
+                "invoices": "Faturas"
+            },
+            "status": {
+                "active": "Ativo",
+                "inactive": "Inativo",
+                "canceled": "Cancelado",
+                "pending": "Pendente"
+            }
+        }
+    }
+}

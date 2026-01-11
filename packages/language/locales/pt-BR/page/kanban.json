@@ -1,0 +1,665 @@
+{
+    "search_for_a_card": "Pesquise por um card",
+    "unlinked": "Não vinculados",
+    "principal_tasks": "Tarefas principais",
+    "no_principal_tasks_found": "Nenhuma tarefa principal encontrada",
+    "create_principal_task_to_see_here": "Crie uma tarefa principal para ver aqui",
+    "empty": {
+        "no_cycles_found": "Nenhum ciclo encontrado",
+        "no_columns_found": "Nenhuma coluna encontrada",
+        "cycle": "Crie seu primeiro ciclo para gerenciar seu projeto",
+        "column": "Crie uma coluna para começar a gerenciar seus cards"
+    },
+    "button": {
+        "new_cycle": "Novo ciclo",
+        "new_column": "Nova coluna"
+    },
+    "modal-form": {
+        "column": {
+            "store": {
+                "title": "Nova coluna",
+                "description": "Crie uma nova coluna para começar a gerenciar seus cards"
+            },
+            "update": {
+                "title": "Editar coluna",
+                "description": "Edite os dados da coluna preenchendo os campos abaixo"
+            }
+        },
+        "cycle": {
+            "store": {
+                "title": "Novo ciclo",
+                "description": "Crie um novo ciclo para o projeto"
+            },
+            "update": {
+                "title": "Editar ciclo",
+                "description": "Edite os dados do ciclo preenchendo os campos abaixo"
+            }
+        },
+        "allocation": {
+            "store": {
+                "title": "Nova alocação",
+                "description": "Configure uma nova alocação para o projeto"
+            },
+            "update": {
+                "title": "Editar alocação",
+                "description": "Edite os dados da alocação preenchendo os campos abaixo"
+            }
+        },
+        "member": {
+            "store": {
+                "title": "Novo membro",
+                "description": "Crie um novo membro para o projeto"
+            },
+            "update": {
+                "title": "Editar membro",
+                "description": "Edite os dados do membro preenchendo os campos abaixo"
+            }
+        },
+        "cardType": {
+            "update": {
+                "alert": {
+                    "title": "Atenção!",
+                    "description": "Algumas informações não podem ser alteradas"
+                },
+                "title": "Editar tipo de card",
+                "description": "Edite os dados do tipo de card preenchendo os campos abaixo"
+            }
+        },
+        "globalAllocation": {
+            "store": {
+                "title": "Nova alocação global",
+                "description": "Crie uma nova alocação global para o projeto"
+            },
+            "update": {
+                "title": "Editar alocação global",
+                "description": "Edite os dados da alocação global preenchendo os campos abaixo"
+            }
+        },
+        "config": {
+            "store": {
+                "title": "Nova configuração",
+                "description": "Crie uma nova configuração para o projeto"
+            },
+            "update": {
+                "title": "Editar configuração",
+                "description": "Edite os dados da configuração preenchendo os campos abaixo"
+            }
+        },
+        "tool": {
+            "store": {
+                "title": "Nova ferramenta",
+                "description": "Crie uma nova ferramenta para o projeto"
+            },
+            "update": {
+                "title": "Editar ferramenta",
+                "description": "Edite os dados da ferramenta preenchendo os campos abaixo"
+            }
+        }
+    },
+    "drawer": {
+        "member": {
+            "title": "Membros",
+            "description": "Gerencie os membros do projeto",
+            "placeholder": "Pesquisar membro",
+            "actions": {
+                "title": "Ações",
+                "new_member": "Novo membro",
+                "trash": "Lixeira",
+                "restore": "Restaurar membro"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhum membro encontrado"
+        },
+        "cycle": {
+            "title": "Ciclo",
+            "description": "Gerencie os ciclos do projeto",
+            "placeholder": "Pesquisar ciclo",
+            "actions": {
+                "title": "Ações",
+                "new_cycle": "Novo ciclo",
+                "order": "Ordenar ciclos",
+                "trash": "Lixeira",
+                "restore": "Restaurar ciclo"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhum ciclo encontrado",
+            "init": "Início",
+            "end": "Fim",
+            "base_template": "Template",
+            "work_type": "Tipo de trabalho",
+            "version": "Versão",
+            "prepare": "Preparação"
+        },
+        "column": {
+            "title": "Coluna",
+            "description": "Gerencie as colunas do projeto",
+            "placeholder": "Pesquisar coluna",
+            "actions": {
+                "title": "Ações",
+                "new_column": "Nova coluna",
+                "order": "Ordenar colunas",
+                "trash": "Lixeira",
+                "restore": "Restaurar coluna"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhuma coluna encontrada",
+            "isFinished": "Finalizada"
+        },
+        "cardType": {
+            "title": "Tipo de card",
+            "description": "Gerencie os tipos de card do projeto",
+            "placeholder": "Pesquisar tipo de card",
+            "actions": {
+                "title": "Ações",
+                "new_cardType": "Novo tipo de card",
+                "trash": "Lixeira",
+                "restore": "Restaurar tipo de card"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhum tipo de card encontrado",
+            "isPrincipal": "Principal",
+            "isProblem": "Problema",
+            "no_more_results": "Sem mais resultados"
+        },
+        "cardTrash": {
+            "title": "Lixeira de cards",
+            "description": "Gerencie os cards excluídos do projeto",
+            "placeholder": "Pesquisar card",
+            "actions": {
+                "title": "Ações",
+                "restore": "Restaurar card"
+            },
+            "no_results": "Nenhum card encontrado",
+            "no_more_results": "Sem mais resultados",
+            "restore": {
+                "title": "Restaurar card",
+                "description": "Restaure o card selecionado"
+            }
+        },
+        "allocation": {
+            "title": "Alocação",
+            "description": "Gerencie as alocações do projeto",
+            "placeholder": "Pesquisar alocação",
+            "actions": {
+                "title": "Ações",
+                "new_allocation": "Nova alocação",
+                "trash": "Lixeira",
+                "restore": "Restaurar alocação"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhuma alocação encontrada",
+            "restore": {
+                "title": "Restaurar alocação",
+                "description": "Restaure a alocação selecionada"
+            },
+            "not_a_member": "Não é membro",
+            "allocation": "Alocação",
+            "not_allocated": "Não alocado"
+        },
+        "config": {
+            "title": "Configuração",
+            "description": "Gerencie a configuração do projeto",
+            "placeholder": "Pesquisar configuração",
+            "actions": {
+                "title": "Ações",
+                "new_config": "Nova configuração",
+                "trash": "Lixeira",
+                "restore": "Restaurar configuração"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhuma configuração encontrada",
+            "restore": {
+                "title": "Restaurar configuração",
+                "description": "Restaure a configuração selecionada"
+            }
+        },
+        "globalAllocation": {
+            "title": "Alocação global",
+            "description": "Gerencie as alocações globais do projeto",
+            "placeholder": "Pesquisar alocação global",
+            "alert": {
+                "title": "Atenção!",
+                "description": "Alocações globais não são vinculadas a nenhum ciclo. Use para pessoas sem horas definidas."
+            },
+            "actions": {
+                "title": "Ações",
+                "new_globalAllocation": "Nova alocação global",
+                "trash": "Lixeira",
+                "restore": "Restaurar alocação global"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhuma alocação global encontrada",
+            "restore": {
+                "title": "Restaurar alocação global",
+                "description": "Restaure a alocação global selecionada"
+            }
+        },
+        "tool": {
+            "title": "Ferramentas & Materiais",
+            "description": "Gerencie as ferramentas do projeto",
+            "placeholder": "Pesquisar ferramenta",
+            "actions": {
+                "title": "Ações",
+                "new_tool": "Nova ferramenta",
+                "trash": "Lixeira",
+                "restore": "Restaurar ferramenta"
+            },
+            "trash": "Lixeira",
+            "no_results": "Nenhuma ferramenta encontrada",
+            "restore": {
+                "title": "Restaurar ferramenta",
+                "description": "Restaure a ferramenta selecionada"
+            }
+        }
+    },
+    "component": {
+        "locked": {
+            "title": "Acesso restrito",
+            "description": "Você precisa da permissão de visualizar ciclos de kanban para acessar esta página"
+        },
+        "column": {
+            "add_card": "Adicionar card",
+            "column_options": "Opções da coluna",
+            "edit_column": "Editar coluna",
+            "delete_column": "Excluir coluna",
+            "limit_reached": "Limite atingido",
+            "no_card_in_column": "Nenhum card",
+            "add_first_card": "Adicionar card"
+        },
+        "card": {
+            "add_subtask": "Adicionar sub card",
+            "estimate": "Estimativa",
+            "actions": {
+                "open_menu": "Abrir menu",
+                "edit_card": "Editar card",
+                "move_card": "Mover card",
+                "change_card_type": "Alterar tipo de card",
+                "delete_card": "Excluir card"
+            },
+            "placeholder": {
+                "responsible": "Responsável",
+                "work_type": "Tipo de trabalho"
+            }
+        },
+        "loader": {
+            "loading": "Carregando..."
+        },
+        "line": {
+            "search": "Pesquisar",
+            "cycle": "Ciclo",
+            "card_type": "Tipo de card",
+            "filters": "Filtros",
+            "clean_filters": "Limpar filtros",
+            "new_column": "Nova coluna",
+            "new_card": "Novo card",
+            "cycle_config": "Configuração do ciclo",
+            "column": "Colunas",
+            "allocation": "Alocações",
+            "responsible": "Responsável",
+            "work_type": "Tipo de trabalho",
+            "objective": "Objetivo",
+            "end_date_estimate": "Estimativa de finalização",
+            "end_date_execute": "FInalizado em",
+            "created_at": "Criado em",
+            "selects": "Selecionáveis",
+            "severity": "Severidade",
+            "priority": "Prioridade",
+            "estimate": "Estimativa",
+            "work_in_progress": "Em progresso",
+            "execute": "Executado",
+            "tag": "Tags",
+            "description": "Descrição",
+            "dates": "Datas",
+            "open": "Campos abertos",
+            "interval": "Intervalos",
+            "max": "Máx",
+            "min": "Mín",
+            "public_id": "ID",
+            "type": "Digite",
+            "version": "Versão"
+        },
+        "header": {
+            "objectives_and_targets": "Objetivos e metas",
+            "new_cycle": "Novo ciclo",
+            "project_manager": "Gestão de projeto",
+            "cycle": "Ciclos",
+            "card_types": "Tipos de cards",
+            "project_members": "Membros do projeto",
+            "project_config": "Configuração",
+            "card_trash": "Lixeira de cards",
+            "project_tool": "Ferramentas",
+            "globalAllocation": "Alocação global"
+        }
+    },
+    "delete": {
+        "warning": {
+            "title": "Esse item pode possuir cards associados",
+            "description": "Selecione o que deseja fazer com os cards associados"
+        },
+        "options": {
+            "delete_cards": "Excluir cards",
+            "transfer": "Transferir cards",
+            "unlink_cards": "Desvincular cards",
+            "move_cards": "Mover cards dependentes"
+        },
+        "member": {
+            "title": "Excluir membro",
+            "description": "Tem certeza de que deseja excluir esse membro?"
+        },
+        "cycle": {
+            "title": "Excluir ciclo",
+            "description": "Tem certeza de que deseja excluir esse ciclo?"
+        },
+        "column": {
+            "title": "Excluir coluna",
+            "description": "Tem certeza de que deseja excluir essa coluna?"
+        },
+        "cardType": {
+            "title": "Excluir tipo de card",
+            "description": "Tem certeza de que deseja excluir esse tipo de card?"
+        },
+        "card": {
+            "title": "Excluir card",
+            "description": "Tem certeza de que deseja excluir esse card?"
+        },
+        "allocation": {
+            "title": "Excluir alocação",
+            "description": "Tem certeza de que deseja excluir essa alocação?"
+        },
+        "config": {
+            "title": "Excluir configuração",
+            "description": "Tem certeza de que deseja excluir essa configuração?"
+        },
+        "globalAllocation": {
+            "title": "Excluir alocação global",
+            "description": "Tem certeza de que deseja excluir essa alocação global?"
+        },
+        "tool": {
+            "title": "Excluir ferramenta",
+            "description": "Tem certeza de que deseja excluir essa ferramenta?"
+        }
+    },
+    "card-type-modal-form": {
+        "title": "Tipo de card",
+        "description": "Gerencie os tipos de card do projeto",
+        "tabs": {
+            "template": "Template",
+            "manual": "Manual"
+        }
+    },
+    "card-form-store": {
+        "title": "Criar card",
+        "description": "Crie um novo card para o projeto"
+    },
+    "card-form-move": {
+        "title": "Mover card",
+        "description": "Mova o card para outra coluna"
+    },
+    "card-form-edit": {
+        "details": "Detalhes",
+        "history": "Histórico",
+        "files": "Arquivos",
+        "views": "Leituras",
+        "save_and_close": "Salvar e fechar",
+        "created_at": "Criado",
+        "updated_at": "Atualização",
+        "save": "Salvar",
+        "cancel": "Cancelar",
+        "destroy": "Excluir",
+        "project": "Projeto",
+        "no_dependent_cards": "Nenhum card dependente",
+        "no_parent_card": "Não pertence a nenhum card",
+        "add_children": "Novo card",
+        "read": "Marcar como lido",
+        "unread": "Marcar como não lido",
+        "placeholder": {
+            "title": "Insira um título para o card",
+            "responsible": "Selecione um responsável",
+            "comment": "Adicione um comentário. Use @ para referenciar um usuário e # para referenciar um card",
+            "objective": "Selecione um objetivo",
+            "target": "Selecione uma meta",
+            "parent": "Selecione um card",
+            "description": "Insira uma descrição",
+            "accept_description": "Insira os critérios de conclusão"
+        },
+        "label": {
+            "project": "Projeto",
+            "version": "Versão",
+            "cycle": "Ciclo",
+            "column": "Coluna",
+            "work_type": "Tipo de trabalho",
+            "parent": "Pertence a",
+            "objective": "Objetivo",
+            "target": "Meta"
+        },
+        "actions": {
+            "title": "Ações",
+            "move_card": "Mover card",
+            "change_card_type": "Alterar tipo de card",
+            "delete_card": "Excluir card"
+        },
+        "movement": {
+            "less_than_1_minute": "Menos de 1 minuto",
+            "m": "m",
+            "h": "h",
+            "d": "d",
+            "unknown_column": "Coluna desconhecida",
+            "empty": "Nenhuma movimentação registrada",
+            "from": "De",
+            "to": "Para",
+            "created_in": "Criado em",
+            "current": "Atual",
+            "movement_date": "Data da movimentação",
+            "previous_column_duration": "Duração na coluna anterior",
+            "total_duration_since_creation": "Duração total desde a criação",
+            "year": "Ano",
+            "years": "Anos",
+            "month": "Mês",
+            "months": "Meses",
+            "day": "Dia",
+            "days": "Dias",
+            "and": "e",
+            "less_than_one_day": "Menos de 1 dia"
+        },
+        "comment": {
+            "title": "Deletar comentário",
+            "description": "Tem certeza de que deseja deletar esse comentário?"
+        },
+        "collapsible": {
+            "planning": "Planejamento",
+            "effort": "Esforço",
+            "movements": "Movimentações",
+            "logs": "Logs",
+            "description": "Descrição",
+            "comments": "Comentários",
+            "objectives_and_targets": "Objetivos e metas",
+            "dependent_cards": "Cards dependentes",
+            "parent": "Pertence a",
+            "views": "Visualizações",
+            "accept_description": "Critérios de conclusão"
+        },
+        "view": {
+            "empty": "Nenhuma visualização registrada",
+            "actions": {
+                "opened": "Aberto",
+                "read": "Lido",
+                "unread": "Não lido"
+            }
+        }
+    },
+    "card-form-change": {
+        "title": "Alterar tipo de card",
+        "description": "Altere o tipo de card do card preenchendo os campos abaixo",
+        "caution": {
+            "title": "Cuidado",
+            "description": "Alterar o tipo de um card principal para um não principal desvinculará os cards dependentes"
+        }
+    },
+    "cancel": {
+        "title": "Cancelar",
+        "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas",
+        "confirm": "Confirmar"
+    },
+    "no_value": {
+        "title": "Sem título",
+        "responsible": "Sem responsável",
+        "parent": "Nenhum",
+        "work_type": "Sem tipo de trabalho",
+        "priority": "-",
+        "severity": "-",
+        "end_date_estimate": "Não definido",
+        "end_date_execute": "Não definido",
+        "estimate": "-",
+        "execute": "-",
+        "work_in_progress": "-",
+        "objective": "Nenhum",
+        "target": "Nenhum",
+        "comments": "Nenhum comentário",
+        "description": "Nenhuma descrição",
+        "accept_description": "Nenhum critério de conclusão"
+    },
+    "report": {
+        "empty": "Nenhum dado encontrado",
+        "generated_in": "Relatório gerado em",
+        "total_of": "Total de",
+        "total_cycles": "ciclos analisados",
+        "no_work_type": "Nenhum",
+        "export": "Exportar",
+        "priority": "Prioridade",
+        "tab": {
+            "cards": "Sumário",
+            "charts": "Gráficos",
+            "rankings": "Rankings",
+            "hours": "Horas"
+        },
+        "card-category": {
+            "title": "Tipos de Cards",
+            "description": "Distribuição total de cards por categoria",
+            "types": {
+                "principal": "Principal",
+                "problem": "Problema",
+                "sub_task": "Sub tarefa"
+            }
+        },
+        "summary": {
+            "total_cards": "Cards Totais",
+            "completed_cards": "Cards Concluídos",
+            "in_progress_cards": "Cards Em Progresso",
+            "late_cards": "Cards Atrasados",
+            "estimated_hours": "Horas Estimadas",
+            "executed_hours": "Horas Executadas",
+            "wip_hours": "Horas em progresso",
+            "estimated_vs_executed_percentage": "Execução x Estimativa",
+            "lead_time": "Lead Time Médio"
+        },
+        "rank": {
+            "member": {
+                "title": "Top Membros",
+                "description": "Membros com mais performance"
+            },
+            "critical": {
+                "title": "Cards Críticos",
+                "description": "Cards que precisam de atenção urgente"
+            },
+            "engagement": {
+                "title": "Cards Mais Engajados",
+                "description": "Cards com maior interação da equipe"
+            },
+            "hours_allocation": {
+                "title": "Horas por Alocação",
+                "description": "Distribuição de horas por alocação de membros"
+            },
+            "line": {
+                "comments": "Comentários",
+                "files": "Arquivos",
+                "reads": "Visualizações",
+                "score": "Pontuação",
+                "completed": "{{completed}} de {{total}} card(s) concluído(s)",
+                "days_late": "{{days}} dia(s) atrasado(s)",
+                "efficiency": "Eficiência: {{rate}}%",
+                "estimated": "Estimadas",
+                "executed": "Executadas",
+                "wip": "Em Progresso",
+                "no_allocated": "Não alocado",
+                "allocated": "Alocado: {{hour}}h"
+            }
+        },
+        "graphs": {
+            "quantity": "Quantidade",
+            "card_type": {
+                "title": "Distribuição por Tipo",
+                "description": "Quantidade de cards por tipo"
+            },
+            "column": {
+                "title": "Distribuição por Coluna",
+                "description": "Quantidade de cards em cada coluna"
+            },
+            "cycle": {
+                "title": "Estatísticas por Ciclo",
+                "description": "Performance de cada sprint/ciclo",
+                "conclusion_rate": "Taxa de Conclusão"
+            },
+            "priority": {
+                "title": "Distribuição por Prioridade",
+                "description": "Quantidade de cards por nível de prioridade"
+            },
+            "timeline": {
+                "title": "Timeline de Cards Concluídos",
+                "description": "Análise temporal dos cards finalizados",
+                "lead_time": "Lead Time",
+                "days": "dias"
+            },
+            "work_type": {
+                "title": "Distribuição por Tipo de Trabalho",
+                "description": "Quantidade de cards por tipo de trabalho"
+            }
+        },
+        "hours": {
+            "total_available_hours": "Horas Disponíveis Totais",
+            "total_estimated_hours": "Horas Estimadas Totais",
+            "total_executed_hours": "Horas Executadas Totais",
+            "total_wip_hours": "Horas em progresso",
+            "total_allocated_hours": "Horas Alocadas Totais",
+            "overall_utilization_rate": "Taxa de Utilização Geral",
+            "overall_occupancy_rate": "Taxa de Ocupação Geral",
+            "overall_capacity_usage": "Uso de Capacidade Geral",
+            "per_person": "por pessoa",
+            "cycles_analysis": {
+                "title": "Análise por Ciclos",
+                "description": "Análise detalhada de horas por ciclo",
+                "util_days": "Dias Úteis",
+                "allocated_members": "Membros Alocados",
+                "max_hours_total": "Horas Máximas (total)",
+                "available_hours_total": "Carga Ideal (total)",
+                "max_hours": "Horas Máximas (por pessoa)",
+                "available_hours": "Carga Ideal (por pessoa)",
+                "estimated_hours": "Horas Estimadas",
+                "executed_hours": "Horas Executadas",
+                "wip_hours": "Horas em progresso",
+                "allocated_hours": "Horas Alocadas",
+                "remaining_capacity": "Alocação Restante",
+                "remaining_hours": "Horas Restantes",
+                "utilization_rate": "Taxa de Utilização",
+                "occupancy_rate": "Taxa de Ocupação",
+                "capacity_usage": "Uso da alocação"
+            },
+            "profiles_analysis": {
+                "title": "Análise por Perfis",
+                "description": "Análise detalhada de horas por perfil",
+                "available_hours": "Carga ideal",
+                "max_hours": "Horas Máximas",
+                "allocated_hours": "Horas Alocadas",
+                "worked_hours": "Horas Trabalhadas",
+                "wip_hours": "Horas em progresso",
+                "idle_hours": "Horas Ociosas",
+                "productivity_rate": "Taxa de Produtividade",
+                "utilization_rate": "Taxa de Utilização",
+                "max_utilization_rate": "Taxa de Utilização Máxima",
+                "allocation_rate": "Taxa de Alocação",
+                "max_allocation_rate": "Taxa de Alocação Máxima",
+                "estimated_rate": "Taxa de Estimativas",
+                "estimated_hours": "Horas Estimadas"
+            }
+        }
+    }
+}

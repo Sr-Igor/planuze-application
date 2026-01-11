@@ -1,0 +1,80 @@
+{
+    "title": "Empresa",
+    "edit": "Editar empresa",
+    "details": "Detalhes da Empresa",
+    "modal": {
+        "destroy": {
+            "title": "Deletar empresa",
+            "description": "Tem certeza de que deseja deletar essa empresa?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} empresas",
+            "description": "Tem certeza de que deseja deletar essas empresas?"
+        },
+        "restore": {
+            "title": "Restaurar empresa",
+            "description": "Tem certeza de que deseja restaurar essa empresa?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} empresas",
+            "description": "Tem certeza de que deseja restaurar essas empresas?"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Cadastrar empresa",
+            "description": "Preencha os dados abaixo para cadastrar uma nova empresa"
+        },
+        "edit": {
+            "title": "Editar empresa",
+            "description": "Edite os dados da empresa preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "exclude": {
+            "title": "Excluir empresa",
+            "description": "Essa empresa será excluída permanentemente, tem certeza que deseja continuar?"
+        },
+        "document": {
+            "new": "Novo documento",
+            "exclude": {
+                "title": "Excluir documento",
+                "description": "Esse documento será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem documentos para essa empresa"
+        },
+        "contact": {
+            "new": "Novo contato",
+            "exclude": {
+                "title": "Excluir contato",
+                "description": "Esse contato será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem contatos para essa empresa"
+        },
+        "file": {
+            "exclude": {
+                "title": "Excluir arquivo",
+                "description": "Esse arquivo será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem arquivos para essa empresa"
+        },
+        "owner": {
+            "change_property": "Alterar proprietário",
+            "modal": {
+                "title": "Alterar proprietário",
+                "description": "Selecione o novo proprietário para essa empresa",
+                "alert_title": "Atenção! Ao alterar o proprietário, todas as permissões do usuário atual serão removidas e atribuídas ao novo proprietário."
+            }
+        },
+        "tabs": {
+            "data": "Dados",
+            "documents": "Documentos",
+            "contacts": "Contatos",
+            "address": "Endereço",
+            "files": "Arquivos",
+            "owner": "Proprietário"
+        }
+    }
+}

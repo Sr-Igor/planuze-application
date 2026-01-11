@@ -1,0 +1,9 @@
+{
+    "CREATE": "Criado",
+    "UPDATE": "Atualizado",
+    "DELETE": "Deletado",
+    "INDEX": "Listado",
+    "SHOW": "Visualizado",
+    "RESTORE": "Restaurado",
+    "TRASH": "Lixeira"
+}

@@ -1,0 +1,143 @@
+{
+    "errors": {
+        "invalid_type": "Expected {{expected}}, received {{received}}",
+        "invalid_type_received_undefined": "Required",
+        "invalid_type_received_null": "Required",
+        "invalid_type_not_empty": "Cannot be empty",
+        "invalid_type_reverse_condition": "The fields {{names}} {{conjugation}} {{last}} cannot be filled at the same time",
+        "invalid_type_mutual_condition": "The fields {{names}} {{conjugation}} {{last}} must be filled at the same time",
+        "invalid_type_major_condition": "The value of {{first}} must be greater than {{second}}",
+        "invalid_type_major_or_equal_condition": "The value of {{first}} must be greater than or equal to {{second}}",
+        "invalid_type_one_of_required_condition": "One of the fields {{names}} {{conjugation}} {{last}} must be filled",
+        "invalid_type_equal_condition": "The fields {{names}} {{conjugation}} {{last}} must be equal",
+        "invalid_literal": "Invalid literal value, expected {{expected}}",
+        "unrecognized_keys": "Unrecognized key(s) in object: {{- keys}}",
+        "invalid_union": "Invalid input",
+        "invalid_union_discriminator": "Invalid discriminator value. Expected {{- options}}",
+        "invalid_enum_value": "Invalid enum value. Expected {{- options}}, received '{{received}}'",
+        "invalid_arguments": "Invalid function arguments",
+        "invalid_return_type": "Invalid function return type",
+        "invalid_date": "Required",
+        "invalid_phone": "Invalid phone number format",
+        "invalid_cep": "ZIP code must be valid",
+        "invalid_cnpj": "CNPJ must be valid",
+        "invalid_cpf": "CPF must be valid",
+        "password_too_short": "Password must contain at least {{min}} characters, including uppercase, lowercase and numbers",
+        "password_too_long": "Password must contain at most {{max}} characters, including uppercase, lowercase and numbers",
+        "password_too_weak": "Password must contain at least one uppercase letter, one lowercase letter and one number",
+        "invalid_email": "Invalid email",
+        "custom": "Invalid input",
+        "invalid_intersection_types": "Intersection results could not be merged",
+        "not_multiple_of": "Number must be a multiple of {{multipleOf}}",
+        "not_finite": "Number must be finite",
+        "not_allowed": "Not allowed",
+        "invalid_string": {
+            "email": "Invalid email",
+            "url": "Invalid URL",
+            "uuid": "Invalid UUID",
+            "cuid": "Invalid CUID",
+            "regex": "Invalid",
+            "datetime": "Invalid datetime",
+            "startsWith": "Invalid input: must start with \"{{startsWith}}\"",
+            "endsWith": "Invalid input: must end with \"{{endsWith}}\""
+        },
+        "too_small": {
+            "array": {
+                "exact": "Array must contain exactly {{minimum}} element(s)",
+                "inclusive": "Array must contain at least {{minimum}} element(s)",
+                "not_inclusive": "Array must contain more than {{minimum}} element(s)"
+            },
+            "string": {
+                "exact": "String must contain exactly {{minimum}} character(s)",
+                "inclusive": "String must contain at least {{minimum}} character(s)",
+                "not_inclusive": "String must contain over {{minimum}} character(s)"
+            },
+            "number": {
+                "exact": "Number must be exactly {{minimum}}",
+                "inclusive": "Number must be greater than or equal to {{minimum}}",
+                "not_inclusive": "Number must be greater than {{minimum}}"
+            },
+            "set": {
+                "exact": "Invalid input",
+                "inclusive": "Invalid input",
+                "not_inclusive": "Invalid input"
+            },
+            "date": {
+                "exact": "Date must be exactly {{- maximum, datetime}}",
+                "inclusive": "Date must be greater than or equal to {{- minimum, datetime}}",
+                "not_inclusive": "Date must be greater than {{- minimum, datetime}}"
+            }
+        },
+        "too_big": {
+            "array": {
+                "exact": "Array must contain exactly {{maximum}} element(s)",
+                "inclusive": "Array must contain at most {{maximum}} element(s)",
+                "not_inclusive": "Array must contain less than {{maximum}} element(s)"
+            },
+            "string": {
+                "exact": "String must contain exactly {{maximum}} character(s)",
+                "inclusive": "String must contain at most {{maximum}} character(s)",
+                "not_inclusive": "String must contain under {{maximum}} character(s)"
+            },
+            "number": {
+                "exact": "Number must be exactly {{maximum}}",
+                "inclusive": "Number must be less than or equal to {{maximum}}",
+                "not_inclusive": "Number must be less than {{maximum}}"
+            },
+            "set": {
+                "exact": "Invalid input",
+                "inclusive": "Invalid input",
+                "not_inclusive": "Invalid input"
+            },
+            "date": {
+                "exact": "Date must be exactly {{- maximum, datetime}}",
+                "inclusive": "Date must be smaller than or equal to {{- maximum, datetime}}",
+                "not_inclusive": "Date must be smaller than {{- maximum, datetime}}"
+            }
+        }
+    },
+    "validations": {
+        "email": "email",
+        "url": "url",
+        "uuid": "uuid",
+        "cuid": "cuid",
+        "regex": "regex",
+        "datetime": "datetime"
+    },
+    "types": {
+        "function": "function",
+        "number": "number",
+        "string": "string",
+        "nan": "nan",
+        "integer": "integer",
+        "float": "float",
+        "boolean": "boolean",
+        "date": "date",
+        "bigint": "bigint",
+        "undefined": "undefined",
+        "symbol": "symbol",
+        "null": "null",
+        "array": "array",
+        "object": "object",
+        "unknown": "unknown",
+        "promise": "promise",
+        "void": "void",
+        "never": "never",
+        "map": "map",
+        "set": "set"
+    },
+    "conjugations": {
+        "and": "and",
+        "or": "or"
+    },
+    "names": {
+        "password": "password",
+        "password_confirm": "password confirmation",
+        "start_date": "start",
+        "end_date": "end",
+        "original_end_date": "original end",
+        "original_start_date": "original start",
+        "real_start_date": "actual start",
+        "real_end_date": "actual end"
+    }
+}

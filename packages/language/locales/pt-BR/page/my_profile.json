@@ -1,0 +1,56 @@
+{
+    "show": {
+        "edit": {
+            "title": "Editar perfil",
+            "description": "Altere os dados do seu perfil"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "exclude": {
+            "title": "Excluir empresa",
+            "description": "Essa empresa será excluída permanentemente, tem certeza que deseja continuar?"
+        },
+        "password": {
+            "no_password": "Seu usuário ainda não possui uma senha",
+            "action_required": "Para realizar essa ação você precisará executar o processo de recuperação",
+            "redirect_to_email": "Ao fazer isso, você será desconectado e redirecionado para tela de confirmação do email",
+            "define_password": "Definir senha",
+            "forgot_password": "Não lembra sua senha?",
+            "redefine_password": "Redefinir pelo email"
+        },
+        "company": {
+            "level": "Nível de acesso",
+            "registered_at": "Entrou em",
+            "add": "Cadastre uma nova empresa",
+            "undefined": "Não definido"
+        },
+        "two_factor": {
+            "add": "Novo método de autenticação",
+            "confirmed": "Confirmado",
+            "active": "Ativo",
+            "confirmed_in": "Confirmado em",
+            "created_at": "Criado em",
+            "no_auths": "Nenhum método de autenticação cadastrado",
+            "modal": {
+                "title": "Autenticação de dois fatores",
+                "description": "Insira os campos abaixo para o método de autenticação"
+            },
+            "exclude": {
+                "title": "Excluir método de autenticação",
+                "description": "Tem certeza que deseja excluir esse método de autenticação?"
+            },
+            "confirm": {
+                "title": "Confirmar autenticação de dois fatores",
+                "description": "Insira o código de autenticação enviado"
+            }
+        },
+        "tabs": {
+            "data": "Dados",
+            "company": "Empresas",
+            "password": "Alterar senha",
+            "two_factor": "Dois fatores"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "title": "Password Recovery",
+    "subtitle": "Enter your email to recover your password",
+    "email": "Email",
+    "submit": "Send Recovery Link",
+    "success": "Recovery link sent successfully",
+    "error": "Failed to send recovery link",
+    "backToLogin": "Back to Login"
+}

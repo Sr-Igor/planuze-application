@@ -1,0 +1,44 @@
+{
+    "title": "Escolha o Plano Ideal",
+    "description": "Selecione o plano que melhor se adapta às suas necessidades e comece a aproveitar todos os recursos da nossa plataforma.",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "no_card": "Não precisa de cartão",
+    "most_popular": "Mais Popular",
+    "current_plan": "Plano Atual",
+    "save_20": "Economize 20%",
+    "free": "Grátis",
+    "price_note": "O plano pode ter alterações de preço relacionados às taxas do seu país.",
+    "manage_subscription": "Gerenciar Assinatura",
+    "feature": "Funcionalidade",
+    "features": "Funcionalidades",
+    "active_period": "Período ativo",
+    "change_plan": "Alterar para esse plano",
+    "start_free": "Começar Grátis",
+    "subscribe_now": "Assinar Agora",
+    "empty_features": "Nenhum requisito disponível",
+    "cycle": {
+        "monthly": "/mês",
+        "yearly": "/ano",
+        "quarterly": "/trimestre"
+    },
+    "empty": {
+        "title": "Nenhum plano disponível",
+        "description": "Os planos estão sendo preparados. Volte em breve!"
+    },
+    "change_modal": {
+        "title": "Confirmar mudança de plano",
+        "description": "Você está alterando do plano {{current_plan}} para {{new_plan}}. Essa ação não pode ser desfeita.",
+        "low_price": "Como o novo plano é mais barato que o atual, ele será aplicado somente após o término do ciclo vigente em {{end_date}}.",
+        "high_price": "Como o novo plano é mais caro que o atual, será feita uma cobrança proporcional no seu cartão referente ao valor restante até o fim do ciclo de assinatura vigente.",
+        "confirm": "Confirmar Alteração",
+        "cancel": "Cancelar"
+    },
+    "no_permission": {
+        "title": "Você não tem permissão para gerenciar os planos dessa empresa",
+        "description": "Faça logout ou altere seu perfil para ver os planos"
+    },
+    "change_to_admin": "Alterar",
+    "change_to_admin_description": "Altere para administrador para acessar este página",
+    "change_to_admin_title": "Sem permissões suficientes!"
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Recuperar acesso",
+    "title_no_password": "Cadastrar senha",
+    "description": "Digite o e-mail cadastrado para receber um link de recuperação.",
+    "description_no_password": "Confirme seu e-mail para receber um link de criação de senha.",
+    "send_recovery": "Enviar link",
+    "sent": "Verifique seu e-mail para recuperar seu acesso.",
+    "sent_no_password": "Verifique seu e-mail para criar sua senha.",
+    "check_spam": "Caso não encontre, verifique sua caixa de spam."
+}

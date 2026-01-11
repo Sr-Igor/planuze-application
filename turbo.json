@@ -1,0 +1,53 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_*", "BUNDLE_ANALYZER_ENABLED"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*",
+        "!**/*.test.*",
+        "!**/*.spec.*"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**",
+        "build/**"
+      ],
+      "env": ["NODE_ENV"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "cache": true,
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!**/*.test.*",
+        "!**/*.spec.*"
+      ]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"],
+      "cache": true,
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "tsconfig.json",
+        "!**/*.test.*",
+        "!**/*.spec.*"
+      ],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^build"]
+    },
+    "generate:translations": {
+      "cache": false,
+      "inputs": ["locales/**/*.json"]
+    }
+  }
+}

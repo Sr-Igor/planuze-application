@@ -1,0 +1,148 @@
+{
+    "nav": {
+        "plans": "Plans",
+        "login": "Login",
+        "start_free": "Start Free"
+    },
+    "hero": {
+        "title": "Manage Projects with Intelligence and Efficiency",
+        "description": "Complete project management platform with integrated AI, Kanban, financial control, time management and much more. Perfect for companies and independent professionals.",
+        "cta_primary": "Start Free Trial",
+        "cta_secondary": "Watch Demo",
+        "trial": "No credit card required • Free trial available"
+    },
+    "ai_chat": {
+        "badge": "Exclusive Feature",
+        "title": "AI Assistant with Complete Access to Your Data",
+        "description": "Our AI is not just a chatbot. It's an intelligent assistant that deeply understands your company, accessing and processing all your data securely and privately.",
+        "features": {
+            "access": {
+                "title": "Intelligent Data Access",
+                "description": "AI accesses your company information and generates contextual responses based on your real business data"
+            },
+            "vectorization": {
+                "title": "Multimedia Vectorization",
+                "description": "Processes and vectorizes videos, audios, images, documents and spreadsheets, ensuring complete access to information"
+            },
+            "privacy": {
+                "title": "Total Privacy",
+                "description": "AI model running on dedicated server. Your data is never exposed to third-party tools"
+            }
+        },
+        "supported_formats": {
+            "title": "Supported Formats",
+            "video": "Videos",
+            "audio": "Audios",
+            "image": "Images",
+            "document": "Documents",
+            "spreadsheet": "Spreadsheets"
+        },
+        "demo": {
+            "title": "Planuze Assistant",
+            "subtitle": "Online",
+            "message": "How can I help you today? I can analyze your projects, financial reports or any document you need.",
+            "typing": "Typing..."
+        }
+    },
+    "features": {
+        "title": "Powerful Features",
+        "description": "Everything you need to successfully manage your projects",
+        "kanban": {
+            "title": "Smart Kanban",
+            "description": "Organize tasks, allocate people and materials with our advanced Kanban system"
+        },
+        "team": {
+            "title": "Team Management",
+            "description": "Allocate people to projects and track each member's performance"
+        },
+        "financial": {
+            "title": "Financial Control",
+            "description": "Track revenues, expenses and get detailed financial returns from projects"
+        },
+        "time": {
+            "title": "Time Management",
+            "description": "Record and track worked hours with accurate reports"
+        },
+        "security": {
+            "title": "Advanced Security",
+            "description": "Extremely detailed permission system for total access control"
+        },
+        "international": {
+            "title": "Internationalization",
+            "description": "Support for multiple languages and currencies for global operations"
+        },
+        "integration": {
+            "title": "API Integrations",
+            "description": "Connect with other tools through custom API-keys"
+        },
+        "reports": {
+            "title": "Complete Reports",
+            "description": "Export detailed reports on finances, hours and performance"
+        }
+    },
+    "steps": {
+        "title": "How It Works",
+        "description": "Four simple steps to transform your project management",
+        "create": {
+            "title": "Create Your Projects",
+            "description": "Set up projects, define objectives and organize your tasks"
+        },
+        "organize": {
+            "title": "Organize in Kanban",
+            "description": "Use the Kanban system to visualize and manage workflow"
+        },
+        "track": {
+            "title": "Track in Real Time",
+            "description": "Monitor hours, costs and progress with real-time updates"
+        },
+        "analyze": {
+            "title": "Analyze Results",
+            "description": "Get valuable insights with financial and performance reports"
+        }
+    },
+    "benefits": {
+        "title": "Why Choose Planuze?",
+        "description": "Discover the benefits that make a difference in your management",
+        "productivity": {
+            "title": "Increase Productivity",
+            "description": "Better organize your work and deliver projects on time with greater efficiency"
+        },
+        "control": {
+            "title": "Total Control",
+            "description": "Have complete visibility over project finances, hours and resources"
+        },
+        "notifications": {
+            "title": "Smart Notifications",
+            "description": "Stay informed about important updates and deadlines"
+        },
+        "customization": {
+            "title": "Fully Customizable",
+            "description": "Adapt the system to your needs with flexible settings"
+        }
+    },
+    "cta": {
+        "title": "Ready to Transform Your Project Management?",
+        "description": "Join thousands of companies and professionals who already trust Planuze",
+        "button": "Get Started Now",
+        "trial": "Free trial • No commitment • Cancel anytime"
+    },
+    "footer": {
+        "description": "The most complete project management platform on the market. Manage teams, projects and finances in one place.",
+        "product": {
+            "title": "Product",
+            "plans": "Plans and Pricing",
+            "features": "Features"
+        },
+        "company": {
+            "title": "Company",
+            "about": "About Us",
+            "contact": "Contact"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Privacy",
+            "terms": "Terms of Use"
+        },
+        "copyright": "All rights reserved."
+    }
+}

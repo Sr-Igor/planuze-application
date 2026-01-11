@@ -1,0 +1,6 @@
+{
+    "description": "Enter the code sent to your email",
+    "confirm": "confirmation",
+    "recovery": "recovery",
+    "title": "{{mode}} code"
+}

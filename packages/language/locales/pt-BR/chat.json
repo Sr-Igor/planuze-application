@@ -1,0 +1,24 @@
+{
+    "title": "Assistente IA",
+    "placeholder": "Pergunte-me qualquer coisa...",
+    "initial": "Sobre o que você quer falar?",
+    "history": "Histórico de chats",
+    "new_chat": "Novo chat",
+    "ai": "IA",
+    "user": "Você",
+    "empty": "Nenhuma mensagem.",
+    "close": "Fechar",
+    "minimize": "Minimizar",
+    "send": "Enviar",
+    "hello": "Olá! {{name}}",
+    "categories": {
+        "company": "Informações da sua empresa",
+        "client": "Informações de clientes",
+        "project": "Informações de projetos",
+        "project_kanban": "Informações de kanbans"
+    },
+    "errors": {
+        "unknown_error": "Ocorreu um erro desconhecido. Por favor, tente novamente mais tarde.",
+        "no_permission": "Ops! Parece que você não tem permissão para acessar o conteúdo desta conversa."
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "description": "Informe o código enviado para o seu e-mail",
+    "confirm": "confirmação",
+    "recovery": "recuperação",
+    "title": "Código de {{mode}}"
+}

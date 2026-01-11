@@ -1,0 +1,13 @@
+{
+    "enter": "Sign in",
+    "enter_with_google": "Sign in with Google",
+    "or": "or",
+    "enter_like_user": "Sign in as user",
+    "register": "Register",
+    "not_account": "Don't have an account?",
+    "create_account": "Create one now",
+    "already_account": "Already have an account?",
+    "do_login": "Sign in",
+    "do_login_to_continue": "Sign in to continue!",
+    "welcome_back": "Welcome back!"
+}

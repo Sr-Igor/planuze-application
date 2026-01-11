@@ -1,0 +1,92 @@
+{
+    "tips": "Dicas",
+    "cancel": "Cancelar",
+    "insert": "Inserir",
+    "converting": "Convertendo...",
+    "placeholder": "Digite aqui...",
+    "error": {
+        "convert_file": "Erro ao converter arquivo. Tente novamente.",
+        "invalid_image_format": "Por favor, selecione um arquivo de imagem válido (JPEG, PNG, GIF, WebP, SVG)",
+        "image_too_large": "Imagem muito grande! Tamanho máximo: {maxSize}MB. Tamanho da imagem: {currentSize}MB"
+    },
+    "image": {
+        "title": "Inserir imagem",
+        "placeholder": "https://exemplo.com/imagem.jpg",
+        "label": "URL da imagem",
+        "upload_label": "Ou faça upload de um arquivo",
+        "select_file": "Selecionar Arquivo",
+        "tip_url_or_upload": "Use uma URL válida ou faça upload de um arquivo",
+        "tip_formats": "Formatos suportados: JPEG, PNG, GIF, WebP, SVG",
+        "tip_base64": "Arquivos são convertidos para base64 automaticamente"
+    },
+    "youtube": {
+        "title": "Inserir vídeo do YouTube",
+        "placeholder": "https://www.youtube.com/watch?v=VIDEO_ID",
+        "label": "URL do YouTube",
+        "tip_urls": "URLs do YouTube",
+        "tip_short_urls": "URLs do YouTube short",
+        "tip_embed_urls": "URLs do YouTube embed"
+    },
+    "link": {
+        "title": "Inserir link",
+        "placeholder": "https://exemplo.com",
+        "label": "URL do link",
+        "text_label": "Texto do link (opcional)",
+        "text_placeholder": "Digite o texto que será exibido para o link",
+        "tip_url": "Digite a URL completa do link (ex: https://exemplo.com)",
+        "tip_text_optional": "O texto do link é opcional - se não preenchido, será usado a URL",
+        "tip_custom_text": "O texto personalizado aparecerá no editor em vez da URL"
+    },
+    "default": {
+        "title": "Inserir",
+        "placeholder": "Digite aqui...",
+        "label": "Valor"
+    },
+    "colors": {
+        "foreground": "Primeiro plano",
+        "background": "Fundo",
+        "gray": "Cinza",
+        "red": "Vermelho",
+        "orange": "Laranja",
+        "yellow": "Amarelo",
+        "green": "Verde",
+        "blue": "Azul",
+        "purple": "Roxo",
+        "pink": "Rosa",
+        "cyan": "Ciano",
+        "indigo": "Índigo"
+    },
+    "toolbar": {
+        "paragraph": "Parágrafo",
+        "h1": "Título 1",
+        "h2": "Título 2",
+        "h3": "Título 3",
+        "h4": "Título 4",
+        "h5": "Título 5",
+        "h6": "Título 6",
+        "bold": "Negrito",
+        "italic": "Itálico",
+        "underline": "Sublinhado",
+        "strike": "Riscado",
+        "code": "Código",
+        "highlight": "Destacar",
+        "subscript": "Subscrito",
+        "superscript": "Sobrescrito",
+        "align_left": "Alinhar à esquerda",
+        "align_center": "Alinhar ao centro",
+        "align_right": "Alinhar à direita",
+        "list_bullet": "Lista com marcadores",
+        "list_ordered": "Lista numerada",
+        "list_task": "Lista de tarefas",
+        "quote": "Citação",
+        "code_block": "Bloco de código",
+        "horizontal_rule": "Linha horizontal",
+        "image": "Inserir imagem",
+        "youtube": "Inserir vídeo YouTube",
+        "link": "Inserir link",
+        "table": "Inserir tabela",
+        "undo": "Desfazer",
+        "redo": "Refazer",
+        "select_color": "Selecionar cor"
+    }
+}

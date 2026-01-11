@@ -1,0 +1,14 @@
+{
+    "year": "year",
+    "month": "month",
+    "day": "day",
+    "years": "years",
+    "months": "months",
+    "days": "days",
+    "lessThanOneDay": "Less than 1 day",
+    "and": "and",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "yesterday": "Yesterday",
+    "week": "Week"
+}

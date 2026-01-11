@@ -1,0 +1,161 @@
+"use client";
+
+import { useMemo, useState } from "react";
+
+import { useLocale } from "next-intl";
+
+import { format } from "date-fns";
+import * as locations from "date-fns/locale";
+import { CheckIcon, ChevronsUpDown } from "lucide-react";
+
+import { useLang } from "@repo/language/hook";
+import {
+  Button,
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@repo/ui";
+
+import { cn } from "@/lib/utils";
+
+export interface DaysOfWeekProps {
+  value?: string;
+  onValueChange?: (value: string) => void;
+  placeholder?: string;
+  className?: string;
+  disabled?: boolean;
+  inputClassName?: string;
+}
+
+export function DaysOfWeek({
+  value,
+  onValueChange,
+  placeholder,
+  className,
+  disabled = false,
+  inputClassName,
+}: DaysOfWeekProps) {
+  const [open, setOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const t = useLang();
+  const l = useLocale();
+
+  const dateFnsLocale: any = l?.replaceAll("_", "")?.replaceAll("-", "") || "en";
+  //@ts-ignore
+  const locale = locations?.[dateFnsLocale] || locations.enUS;
+
+  const weekdays = useMemo(() => {
+    return Array.from({ length: 7 }, (_, index) => {
+      const dayName = format(new Date(2023, 0, index + 1), "EEEE", { locale });
+      return {
+        value: index.toString(),
+        label: dayName,
+        dayName: dayName.toLowerCase(),
+      };
+    });
+  }, [locale]);
+
+  const filteredWeekdays = useMemo(() => {
+    if (!searchValue.trim()) {
+      return weekdays;
+    }
+
+    const searchLower = searchValue.toLowerCase().trim();
+
+    return weekdays.filter((day) => {
+      // Busca por nome do dia (completo ou parcial)
+      if (day.dayName.includes(searchLower)) {
+        return true;
+      }
+
+      // Busca por texto completo
+      if (day.label.toLowerCase().includes(searchLower)) {
+        return true;
+      }
+
+      // Busca por número do dia (0-6)
+      if (day.value.includes(searchLower)) {
+        return true;
+      }
+
+      return false;
+    });
+  }, [weekdays, searchValue]);
+
+  const selectedDay = useMemo(() => {
+    return weekdays.find((day) => day.value === value);
+  }, [value, weekdays]);
+
+  const handleSearchChange = (value: string) => {
+    setSearchValue(value);
+  };
+
+  const handleSelect = (currentValue: string) => {
+    onValueChange?.(currentValue === value ? "" : currentValue);
+    setOpen(false);
+    setSearchValue(""); // Limpa a pesquisa ao selecionar
+  };
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className={cn(
+            "w-full justify-between",
+            !selectedDay ? "text-muted-foreground" : "capitalize",
+            className,
+            inputClassName
+          )}
+          disabled={disabled}
+        >
+          <span className={cn(!selectedDay && "text-muted-foreground")}>
+            {selectedDay ? selectedDay.label : placeholder || t.helper("select_a_day_of_week")}
+          </span>
+          {!disabled && <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-full p-0" align="start">
+        <Command shouldFilter={false}>
+          <CommandInput
+            placeholder={t.helper("search_for_a_day_of_week")}
+            className="h-9"
+            value={searchValue}
+            onValueChange={handleSearchChange}
+          />
+          <CommandList className="max-h-[300px]">
+            <CommandEmpty>
+              <p className="text-muted-foreground text-sm">{t.helper("day_of_week_not_found")}</p>
+            </CommandEmpty>
+            <CommandGroup>
+              {filteredWeekdays.map((day) => (
+                <CommandItem
+                  key={day.value}
+                  value={day.value}
+                  onSelect={handleSelect}
+                  className="capitalize"
+                >
+                  {day.label}
+                  <CheckIcon
+                    className={cn(
+                      "mr-2 h-4 w-4",
+                      value === day.value ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}

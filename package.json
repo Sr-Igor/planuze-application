@@ -1,0 +1,39 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "ui:add": "cd packages/ui && npx shadcn@latest add",
+    "check-types": "turbo run check-types",
+    "check-versions": "node scripts/check-versions.mjs",
+    "health-check": "./scripts/health-check.sh",
+    "setup": "./scripts/setup.sh",
+    "outdated": "pnpm outdated -r",
+    "dedupe": "pnpm dedupe",
+    "validate": "pnpm check-versions && pnpm check-types && pnpm lint"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4.1.17",
+    "turbo": "^2.6.1",
+    "typescript": "5.9.3"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9.0.0"
+  }
+}

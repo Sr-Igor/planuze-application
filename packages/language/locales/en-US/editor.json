@@ -1,0 +1,92 @@
+{
+    "tips": "Tips",
+    "cancel": "Cancel",
+    "insert": "Insert",
+    "converting": "Converting...",
+    "placeholder": "Type here...",
+    "error": {
+        "convert_file": "Error converting file. Please try again.",
+        "invalid_image_format": "Please select a valid image file (JPEG, PNG, GIF, WebP, SVG)",
+        "image_too_large": "Image too large! Maximum size: {maxSize}MB. Image size: {currentSize}MB"
+    },
+    "image": {
+        "title": "Insert image",
+        "placeholder": "https://example.com/image.jpg",
+        "label": "Image URL",
+        "upload_label": "Or upload a file",
+        "select_file": "Select File",
+        "tip_url_or_upload": "Use a valid URL or upload a file",
+        "tip_formats": "Supported formats: JPEG, PNG, GIF, WebP, SVG",
+        "tip_base64": "Files are automatically converted to base64"
+    },
+    "youtube": {
+        "title": "Insert YouTube video",
+        "placeholder": "https://www.youtube.com/watch?v=VIDEO_ID",
+        "label": "YouTube URL",
+        "tip_urls": "YouTube URLs",
+        "tip_short_urls": "YouTube short URLs",
+        "tip_embed_urls": "YouTube embed URLs"
+    },
+    "link": {
+        "title": "Insert link",
+        "placeholder": "https://example.com",
+        "label": "Link URL",
+        "text_label": "Link text (optional)",
+        "text_placeholder": "Enter the text that will be displayed for the link",
+        "tip_url": "Enter the full URL of the link (e.g., https://example.com)",
+        "tip_text_optional": "Link text is optional - if not filled, the URL will be used",
+        "tip_custom_text": "Custom text will appear in the editor instead of the URL"
+    },
+    "default": {
+        "title": "Insert",
+        "placeholder": "Type here...",
+        "label": "Value"
+    },
+    "colors": {
+        "foreground": "Foreground",
+        "background": "Background",
+        "gray": "Gray",
+        "red": "Red",
+        "orange": "Orange",
+        "yellow": "Yellow",
+        "green": "Green",
+        "blue": "Blue",
+        "purple": "Purple",
+        "pink": "Pink",
+        "cyan": "Cyan",
+        "indigo": "Indigo"
+    },
+    "toolbar": {
+        "paragraph": "Paragraph",
+        "h1": "Heading 1",
+        "h2": "Heading 2",
+        "h3": "Heading 3",
+        "h4": "Heading 4",
+        "h5": "Heading 5",
+        "h6": "Heading 6",
+        "bold": "Bold",
+        "italic": "Italic",
+        "underline": "Underline",
+        "strike": "Strikethrough",
+        "code": "Code",
+        "highlight": "Highlight",
+        "subscript": "Subscript",
+        "superscript": "Superscript",
+        "align_left": "Align left",
+        "align_center": "Align center",
+        "align_right": "Align right",
+        "list_bullet": "Bullet list",
+        "list_ordered": "Numbered list",
+        "list_task": "Task list",
+        "quote": "Quote",
+        "code_block": "Code block",
+        "horizontal_rule": "Horizontal rule",
+        "image": "Insert image",
+        "youtube": "Insert YouTube video",
+        "link": "Insert link",
+        "table": "Insert table",
+        "undo": "Undo",
+        "redo": "Redo",
+        "select_color": "Select color"
+    }
+}

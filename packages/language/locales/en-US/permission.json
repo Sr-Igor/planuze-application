@@ -1,0 +1,22 @@
+{
+    "title": "Permissions",
+    "create": "Create",
+    "read": "Read",
+    "delete": "Delete",
+    "manage": "Manage",
+    "view": "View",
+    "edit": "Edit",
+    "admin": "Administrator",
+    "index": "List",
+    "show": "View",
+    "store": "Register",
+    "update": "Edit",
+    "destroy": "Delete",
+    "restore": "Restore",
+    "trash": "Trash",
+    "many": "Multiple",
+    "feature": "Feature",
+    "ai": "AI Chat",
+    "not_available": "Feature not available or does not exist",
+    "dependency": "The following marked items depend on this feature:\n {list}"
+}

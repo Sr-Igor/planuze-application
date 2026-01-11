@@ -1,0 +1,10 @@
+{
+    "welcome": "Bem vindo ao sistema",
+    "invited": "Você foi convidado para a empresa {{name}}",
+    "responsible_card": "[{{type}}] - Nova tarefa atribuída",
+    "no_unread": "Você está em dia! Nenhuma notificação não lida.",
+    "mention_card": "[{{company}}] - Você foi mencionado.",
+    "owner": "[{{company}}] - Você é o novo proprietário da empresa",
+    "unread": "Não lida",
+    "read": "Lida"
+}

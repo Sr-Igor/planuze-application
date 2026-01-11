@@ -1,0 +1,44 @@
+{
+    "title": "Choose the Ideal Plan",
+    "description": "Select the plan that best fits your needs and start enjoying all the features of our platform.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "no_card": "No card required",
+    "most_popular": "Most Popular",
+    "current_plan": "Current Plan",
+    "save_20": "Save 20%",
+    "free": "Free",
+    "price_note": "The plan may have price changes related to the taxes of your country.",
+    "manage_subscription": "Manage Subscription",
+    "feature": "Feature",
+    "features": "Features",
+    "active_period": "Active period",
+    "change_plan": "Change to this plan",
+    "start_free": "Start Free",
+    "subscribe_now": "Subscribe Now",
+    "empty_features": "No requirements available",
+    "cycle": {
+        "monthly": "/month",
+        "yearly": "/year",
+        "quarterly": "/quarter"
+    },
+    "empty": {
+        "title": "No plans available",
+        "description": "Plans are being prepared. Come back soon!"
+    },
+    "change_modal": {
+        "title": "Confirm plan change",
+        "description": "You are changing from plan {{current_plan}} to {{new_plan}}. This action cannot be undone.",
+        "low_price": "Since the new plan is cheaper than the current one, it will only be applied after the current cycle ends on {{end_date}}.",
+        "high_price": "Since the new plan is more expensive than the current one, a proportional charge will be made on your card for the remaining value until the end of the current subscription cycle.",
+        "confirm": "Confirm Change",
+        "cancel": "Cancel"
+    },
+    "no_permission": {
+        "title": "You do not have permission to manage this company's plans",
+        "description": "Log out or change your profile to view plans"
+    },
+    "change_to_admin": "Change",
+    "change_to_admin_description": "Change to administrator to access this page",
+    "change_to_admin_title": "Insufficient permissions!"
+}

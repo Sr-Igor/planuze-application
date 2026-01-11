@@ -1,0 +1,15 @@
+{
+    "show": {
+        "new": {
+            "title": "Company configuration",
+            "description": "Manage company configuration information"
+        },
+        "edit": {
+            "title": "Company configuration",
+            "description": "Manage company configuration information"
+        },
+        "tabs": {
+            "general": "General"
+        }
+    }
+}

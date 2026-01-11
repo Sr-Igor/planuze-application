@@ -1,0 +1,10 @@
+{
+    "modules": "Módulos",
+    "commercial": "Comercial",
+    "financial": "Financeiro",
+    "human": "Recursos Humanos",
+    "project": "Projetos",
+    "personal": "Pessoal",
+    "admin": "Administração",
+    "integration": "Integrações"
+}

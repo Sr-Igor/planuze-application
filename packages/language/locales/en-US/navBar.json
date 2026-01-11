@@ -1,0 +1,42 @@
+{
+    "groups": {
+        "kanban_template": "Kanban templates",
+        "variables": "Variables"
+    },
+    "labels": {
+        "client": "Clients",
+        "dashboard": "Dashboard",
+        "company": "Company",
+        "level": "Access levels",
+        "subscription": "Subscription",
+        "companies": "Companies",
+        "action": "Actions",
+        "features": "Features",
+        "plans": "Plans",
+        "modules": "Modules",
+        "invite": "Invites",
+        "integration": "API Integrations",
+        "profile": "Employees",
+        "cost_center": "Cost centers",
+        "role": "Positions and salaries",
+        "me_data": "General information",
+        "me_address": "Address",
+        "me_contacts": "Contacts",
+        "me_documents": "Documents",
+        "me_role": "Positions and salaries",
+        "me_bonus": "Bonuses and extras",
+        "me_file": "Files",
+        "me_bank_accounts": "Bank accounts",
+        "project": "Projects",
+        "work_type": "Work types",
+        "kanban_template": "Cards and columns",
+        "project_kanban": "Kanban",
+        "kanban_template_card_type": "Card types",
+        "kanban_template_tag": "Tags",
+        "company_config": "Configuration"
+    },
+    "message": {
+        "upgrade": "Upgrade your plan to access this feature.",
+        "locked": "You do not have permission to access this module."
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "modules": "Modules",
+    "commercial": "Commercial",
+    "financial": "Financial",
+    "human": "Human Resources",
+    "project": "Projects",
+    "personal": "Personal",
+    "admin": "Administration",
+    "integration": "Integrations",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "reports": "Reports",
+    "analytics": "Analytics"
+}

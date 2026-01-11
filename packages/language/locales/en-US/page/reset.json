@@ -1,0 +1,10 @@
+{
+    "title": "Reset Password",
+    "subtitle": "Enter your new password",
+    "password": "New Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Reset Password",
+    "success": "Password reset successfully",
+    "error": "Failed to reset password",
+    "backToLogin": "Back to Login"
+}

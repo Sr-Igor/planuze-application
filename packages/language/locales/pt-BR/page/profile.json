@@ -1,0 +1,127 @@
+{
+    "title": "Colaboradores",
+    "new": "Novo perfil",
+    "invites": "Ver convites",
+    "modal": {
+        "destroy": {
+            "title": "Deletar colaborador",
+            "description": "Tem certeza de que deseja deletar esse colaborador?"
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} colaboradores",
+            "description": "Tem certeza de que deseja deletar esses colaboradores?"
+        },
+        "restore": {
+            "title": "Restaurar colaborador",
+            "description": "Tem certeza de que deseja restaurar esse colaborador?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} colaboradores",
+            "description": "Tem certeza de que deseja restaurar esses colaboradores?"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Cadastrar colaborador",
+            "description": "Preencha os dados abaixo para cadastrar um novo colaborador"
+        },
+        "edit": {
+            "title": "Editar colaborador",
+            "description": "Edite os dados do colaborador preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas."
+        },
+        "data": {
+            "registered_at": "Registrado em",
+            "company_time": "Tempo de empresa"
+        },
+        "role": {
+            "new": "Novo cargo",
+            "exclude": {
+                "title": "Excluir cargo",
+                "description": "Esse cargo será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem cargos para esse colaborador"
+        },
+        "bonus": {
+            "new": "Novo bônus",
+            "exclude": {
+                "title": "Excluir bônus",
+                "description": "Esse bônus será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem bônus para esse colaborador"
+        },
+        "document": {
+            "new": "Novo documento",
+            "exclude": {
+                "title": "Excluir documento",
+                "description": "Esse documento será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem documentos para esse colaborador"
+        },
+        "contact": {
+            "new": "Novo contato",
+            "exclude": {
+                "title": "Excluir contato",
+                "description": "Esse contato será excluído permanentemente, tem certeza que deseja continuar?"
+            },
+            "empty": "Sem contatos para esse colaborador"
+        },
+        "bank_account": {
+            "account": "Conta",
+            "agency": "Agência",
+            "digit": "Digito",
+            "principal": "Principal",
+            "empty": "Sem contas bancárias para esse colaborador",
+            "new": "Nova conta bancária",
+            "modal": {
+                "store": {
+                    "title": "Nova conta bancária",
+                    "description": "Crie uma nova conta bancária para o colaborador"
+                },
+                "update": {
+                    "title": "Editar conta bancária",
+                    "description": "Edite os dados da conta bancária preenchendo os campos abaixo"
+                }
+            },
+            "exclude": {
+                "title": "Excluir conta bancária",
+                "description": "Esse conta bancária será excluída permanentemente, tem certeza que deseja continuar?"
+            }
+        },
+        "exclude": {
+            "title": "Excluir colaborador",
+            "description": "Esse colaborador será excluído permanentemente, tem certeza que deseja continuar?"
+        },
+        "tabs": {
+            "data": "Dados",
+            "documents": "Documentos",
+            "contacts": "Contatos",
+            "address": "Endereço",
+            "files": "Arquivos",
+            "role": "Cargos & Salários",
+            "bonus": "Bônus & Extras",
+            "bank_account": "Contas bancárias"
+        },
+        "alert": {
+            "owner": {
+                "title": "Proprietário da empresa",
+                "description": "Algumas informações não podem ser alteradas para esse usuário."
+            },
+            "yourself": {
+                "title": "Esse é seu perfil",
+                "description": "Algumas informações não podem ser alteradas por você."
+            },
+            "no_data": {
+                "title": "Perfil interno",
+                "description": "Ao cadastrar um colaborador sem o envio de um convite. Ele não possuirá um login associado."
+            },
+            "anonymous": {
+                "title": "Perfil interno",
+                "description": "Esse colaborador não possui um login associado."
+            }
+        }
+    }
+}

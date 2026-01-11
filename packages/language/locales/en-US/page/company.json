@@ -1,0 +1,80 @@
+{
+    "title": "Company",
+    "edit": "Edit company",
+    "details": "Company Details",
+    "modal": {
+        "destroy": {
+            "title": "Delete company",
+            "description": "Are you sure you want to delete this company?"
+        },
+        "destroyMany": {
+            "title": "Delete {{total}} companies",
+            "description": "Are you sure you want to delete these companies?"
+        },
+        "restore": {
+            "title": "Restore company",
+            "description": "Are you sure you want to restore this company?"
+        },
+        "restoreMany": {
+            "title": "Restore {{total}} companies",
+            "description": "Are you sure you want to restore these companies?"
+        }
+    },
+    "show": {
+        "new": {
+            "title": "Register company",
+            "description": "Fill in the data below to register a new company"
+        },
+        "edit": {
+            "title": "Edit company",
+            "description": "Edit the company data by filling in the fields below"
+        },
+        "cancel": {
+            "title": "Exit",
+            "description": "Are you sure you want to exit? You have unsaved changes, they will be lost when confirmed"
+        },
+        "exclude": {
+            "title": "Delete company",
+            "description": "This company will be permanently deleted, are you sure you want to continue?"
+        },
+        "document": {
+            "new": "New document",
+            "exclude": {
+                "title": "Delete document",
+                "description": "This document will be permanently deleted, are you sure you want to continue?"
+            },
+            "empty": "No documents for this company"
+        },
+        "contact": {
+            "new": "New contact",
+            "exclude": {
+                "title": "Delete contact",
+                "description": "This contact will be permanently deleted, are you sure you want to continue?"
+            },
+            "empty": "No contacts for this company"
+        },
+        "file": {
+            "exclude": {
+                "title": "Delete file",
+                "description": "This file will be permanently deleted, are you sure you want to continue?"
+            },
+            "empty": "No files for this company"
+        },
+        "owner": {
+            "change_property": "Change property",
+            "modal": {
+                "title": "Change property",
+                "description": "Select the new property for this company",
+                "alert_title": "Attention! When changing the property, all permissions of the current user will be removed and assigned to the new property."
+            }
+        },
+        "tabs": {
+            "data": "Data",
+            "documents": "Documents",
+            "contacts": "Contacts",
+            "address": "Address",
+            "files": "Files",
+            "owner": "Owner"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "title": "Notifications",
+    "noNotifications": "No notifications",
+    "markAsRead": "Mark as read",
+    "markAllAsRead": "Mark all as read",
+    "clear": "Clear",
+    "welcome": "Welcome to the system",
+    "invited": "You have been invited to the company {{name}}",
+    "responsible_card": "[{{type}}] - New task assigned",
+    "no_unread": "You're up to date! No unread notifications.",
+    "mention_card": "[{{company}}] - You were mentioned.",
+    "owner": "[{{company}}] - Você é o novo proprietário da empresa",
+    "unread": "Unread",
+    "read": "Read"
+}

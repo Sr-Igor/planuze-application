@@ -1,0 +1,34 @@
+{
+    "title": "Tipos de cards",
+    "new": "Nova card",
+    "modal": {
+        "new": {
+            "title": "Nova card",
+            "description": "Crie uma nova card para categorizar os cards do kanban."
+        },
+        "edit": {
+            "title": "Editar card",
+            "description": "Edite a card para atualizar suas informações."
+        },
+        "destroy": {
+            "title": "Deletar card",
+            "description": "Tem certeza de que deseja deletar este card? Esta ação não pode ser desfeita."
+        },
+        "destroyMany": {
+            "title": "Deletar {{total}} cards",
+            "description": "Tem certeza de que deseja deletar estas cards? Esta ação não pode ser desfeita."
+        },
+        "restore": {
+            "title": "Restaurar card",
+            "description": "Tem certeza de que deseja restaurar este card?"
+        },
+        "restoreMany": {
+            "title": "Restaurar {{total}} cards",
+            "description": "Tem certeza de que deseja restaurar esses cards?"
+        },
+        "logs": {
+            "title": "Logs",
+            "description": "Visualize os logs de alterações feitas nesta card."
+        }
+    }
+}

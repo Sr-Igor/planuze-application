@@ -1,0 +1,148 @@
+{
+    "nav": {
+        "plans": "Planos",
+        "login": "Entrar",
+        "start_free": "Começar Grátis"
+    },
+    "hero": {
+        "title": "Gerencie Projetos com Inteligência e Eficiência",
+        "description": "Plataforma completa de gestão de projetos com IA integrada, Kanban, controle financeiro, gestão de horas e muito mais. Perfeito para empresas e profissionais autônomos.",
+        "cta_primary": "Começar Teste Grátis",
+        "cta_secondary": "Ver Demonstração",
+        "trial": "Sem necessidade de cartão de crédito • Teste grátis disponível"
+    },
+    "ai_chat": {
+        "badge": "Diferencial Exclusivo",
+        "title": "Assistente de IA com Acesso Completo aos Seus Dados",
+        "description": "Nossa IA não é apenas um chatbot. É um assistente inteligente que compreende profundamente sua empresa, acessando e processando todos os seus dados de forma segura e privada.",
+        "features": {
+            "access": {
+                "title": "Acesso Inteligente aos Dados",
+                "description": "A IA acessa informações da sua empresa e gera respostas contextuais baseadas nos dados reais do seu negócio"
+            },
+            "vectorization": {
+                "title": "Vetorização Multimídia",
+                "description": "Processa e vetoriza vídeos, áudios, imagens, documentos e planilhas, garantindo acesso completo às informações"
+            },
+            "privacy": {
+                "title": "Privacidade Total",
+                "description": "Modelo de IA rodando em servidor dedicado. Seus dados nunca são expostos a ferramentas de terceiros"
+            }
+        },
+        "supported_formats": {
+            "title": "Formatos Suportados",
+            "video": "Vídeos",
+            "audio": "Áudios",
+            "image": "Imagens",
+            "document": "Documentos",
+            "spreadsheet": "Planilhas"
+        },
+        "demo": {
+            "title": "Assistente Planuze",
+            "subtitle": "Online",
+            "message": "Como posso ajudá-lo hoje? Posso analisar seus projetos, relatórios financeiros ou qualquer documento que você precisar.",
+            "typing": "Digitando..."
+        }
+    },
+    "features": {
+        "title": "Recursos Poderosos",
+        "description": "Tudo que você precisa para gerenciar seus projetos com sucesso",
+        "kanban": {
+            "title": "Kanban Inteligente",
+            "description": "Organize tarefas, aloque pessoas e materiais com nosso sistema Kanban avançado"
+        },
+        "team": {
+            "title": "Gestão de Equipe",
+            "description": "Aloque pessoas aos projetos e acompanhe o desempenho de cada membro"
+        },
+        "financial": {
+            "title": "Controle Financeiro",
+            "description": "Acompanhe receitas, despesas e obtenha retornos financeiros detalhados dos projetos"
+        },
+        "time": {
+            "title": "Gestão de Horas",
+            "description": "Registre e acompanhe horas trabalhadas com relatórios precisos"
+        },
+        "security": {
+            "title": "Segurança Avançada",
+            "description": "Sistema de permissões extremamente detalhado para controle total de acesso"
+        },
+        "international": {
+            "title": "Internacionalização",
+            "description": "Suporte a múltiplos idiomas e moedas para operações globais"
+        },
+        "integration": {
+            "title": "Integrações API",
+            "description": "Conecte-se com outras ferramentas através de API-keys personalizadas"
+        },
+        "reports": {
+            "title": "Relatórios Completos",
+            "description": "Exporte relatórios detalhados sobre finanças, horas e desempenho"
+        }
+    },
+    "steps": {
+        "title": "Como Funciona",
+        "description": "Quatro passos simples para transformar sua gestão de projetos",
+        "create": {
+            "title": "Crie Seus Projetos",
+            "description": "Configure projetos, defina objetivos e organize suas tarefas"
+        },
+        "organize": {
+            "title": "Organize no Kanban",
+            "description": "Use o sistema Kanban para visualizar e gerenciar o fluxo de trabalho"
+        },
+        "track": {
+            "title": "Acompanhe em Tempo Real",
+            "description": "Monitore horas, custos e progresso com atualizações em tempo real"
+        },
+        "analyze": {
+            "title": "Analise Resultados",
+            "description": "Obtenha insights valiosos com relatórios financeiros e de desempenho"
+        }
+    },
+    "benefits": {
+        "title": "Por Que Escolher o Planuze?",
+        "description": "Descubra os benefícios que fazem a diferença na sua gestão",
+        "productivity": {
+            "title": "Aumente a Produtividade",
+            "description": "Organize melhor seu trabalho e entregue projetos no prazo com maior eficiência"
+        },
+        "control": {
+            "title": "Controle Total",
+            "description": "Tenha visibilidade completa sobre finanças, horas e recursos do projeto"
+        },
+        "notifications": {
+            "title": "Notificações Inteligentes",
+            "description": "Mantenha-se informado sobre atualizações importantes e prazos"
+        },
+        "customization": {
+            "title": "Totalmente Personalizável",
+            "description": "Adapte o sistema às suas necessidades com configurações flexíveis"
+        }
+    },
+    "cta": {
+        "title": "Pronto para Transformar sua Gestão de Projetos?",
+        "description": "Junte-se a milhares de empresas e profissionais que já confiam no Planuze",
+        "button": "Começar Agora",
+        "trial": "Teste grátis • Sem compromisso • Cancele quando quiser"
+    },
+    "footer": {
+        "description": "A plataforma de gestão de projetos mais completa do mercado. Gerencie equipes, projetos e finanças em um só lugar.",
+        "product": {
+            "title": "Produto",
+            "plans": "Planos e Preços",
+            "features": "Recursos"
+        },
+        "company": {
+            "title": "Empresa",
+            "about": "Sobre Nós",
+            "contact": "Contato"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Privacidade",
+            "terms": "Termos de Uso"
+        },
+        "copyright": "Todos os direitos reservados."
+    }
+}

@@ -1,0 +1,365 @@
+import { IIndexResponseDTO } from '@/app/[locale]/(private)/dashboard/modules/project/types';
+
+const now = new Date();
+const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+const sixtyDaysAgo = new Date(now.getTime() - 60 * 24 * 60 * 60 * 1000);
+
+export const placeholder: IIndexResponseDTO = {
+    summary: {
+        totalBudget: 2500000,
+        totalCost: 1950000,
+        totalRevenue: 2800000,
+        profitMargin: 30.36,
+        budgetVariance: -22.0,
+        totalProjects: 12,
+        activeProjects: 7,
+        completedProjects: 4,
+        lateProjects: 2
+    },
+    projects: [
+        {
+            projectId: '1',
+            projectName: 'Sistema de Gestão Empresarial',
+            versionName: 'v2.1.0',
+            budget: 500000,
+            actualCost: 480000,
+            revenue: 650000,
+            profit: 170000,
+            profitMargin: 26.15,
+            budgetVariance: -4.0,
+            estimatedDuration: 120,
+            actualDuration: 115,
+            durationVariance: -4.17,
+            status: 'completed',
+            progress: 100
+        },
+        {
+            projectId: '2',
+            projectName: 'Plataforma E-commerce',
+            versionName: 'v1.5.2',
+            budget: 750000,
+            actualCost: 820000,
+            revenue: 950000,
+            profit: 130000,
+            profitMargin: 13.68,
+            budgetVariance: 9.33,
+            estimatedDuration: 180,
+            actualDuration: 195,
+            durationVariance: 8.33,
+            status: 'late',
+            progress: 85
+        },
+        {
+            projectId: '3',
+            projectName: 'Aplicativo Mobile',
+            versionName: 'v1.0.0',
+            budget: 400000,
+            actualCost: 280000,
+            revenue: 420000,
+            profit: 140000,
+            profitMargin: 33.33,
+            budgetVariance: -30.0,
+            estimatedDuration: 90,
+            actualDuration: 75,
+            durationVariance: -16.67,
+            status: 'on_schedule',
+            progress: 92
+        },
+        {
+            projectId: '4',
+            projectName: 'Sistema de BI e Analytics',
+            versionName: 'v1.2.0',
+            budget: 350000,
+            actualCost: 370000,
+            revenue: 380000,
+            profit: 10000,
+            profitMargin: 2.63,
+            budgetVariance: 5.71,
+            estimatedDuration: 100,
+            actualDuration: 105,
+            durationVariance: 5.0,
+            status: 'active',
+            progress: 78
+        },
+        {
+            projectId: '5',
+            projectName: 'Portal do Cliente',
+            versionName: 'v2.0.0',
+            budget: 300000,
+            actualCost: 0,
+            revenue: 0,
+            profit: 0,
+            profitMargin: 0,
+            budgetVariance: 0,
+            estimatedDuration: 80,
+            actualDuration: 15,
+            durationVariance: -81.25,
+            status: 'active',
+            progress: 18
+        },
+        {
+            projectId: '6',
+            projectName: 'Integração ERP',
+            versionName: 'v1.1.0',
+            budget: 200000,
+            actualCost: 190000,
+            revenue: 210000,
+            profit: 20000,
+            profitMargin: 9.52,
+            budgetVariance: -5.0,
+            estimatedDuration: 60,
+            actualDuration: 58,
+            durationVariance: -3.33,
+            status: 'completed',
+            progress: 100
+        }
+    ],
+    costBreakdown: [
+        {
+            category: 'labor_costs',
+            planned: 1200000,
+            executed: 1150000
+        },
+        {
+            category: 'external_services',
+            planned: 350000,
+            executed: 380000
+        },
+        {
+            category: 'remaining_budget',
+            planned: 250000,
+            executed: 240000
+        }
+    ],
+    employeeCosts: [
+        {
+            profileId: '1',
+            profileName: 'João Silva',
+            roleName: 'Desenvolvedor Sênior',
+            allocatedHours: 320,
+            hourlyRateTotal: 150,
+            isGlobal: false,
+            simultaneousProjects: 1,
+            hourlyRateUtil: 150,
+            totalCost: 48000,
+            bonuses: 4800,
+            totalCompensation: 52800
+        },
+        {
+            profileId: '2',
+            profileName: 'Maria Santos',
+            roleName: 'Desenvolvedora Pleno',
+            allocatedHours: 280,
+            hourlyRateTotal: 120,
+            isGlobal: false,
+            simultaneousProjects: 1,
+            hourlyRateUtil: 120,
+            totalCost: 33600,
+            bonuses: 3360,
+            totalCompensation: 36960
+        },
+        {
+            profileId: '3',
+            profileName: 'Pedro Oliveira',
+            roleName: 'Designer UX/UI',
+            allocatedHours: 240,
+            hourlyRateTotal: 110,
+            isGlobal: false,
+            simultaneousProjects: 1,
+            hourlyRateUtil: 110,
+            totalCost: 26400,
+            bonuses: 2640,
+            totalCompensation: 29040
+        },
+        {
+            profileId: '4',
+            profileName: 'Ana Costa',
+            roleName: 'QA Tester',
+            allocatedHours: 200,
+            hourlyRateTotal: 100,
+            isGlobal: false,
+            simultaneousProjects: 1,
+            hourlyRateUtil: 100,
+            totalCost: 20000,
+            bonuses: 2000,
+            totalCompensation: 22000
+        },
+        {
+            profileId: '5',
+            profileName: 'Carlos Mendes',
+            roleName: 'DevOps Engineer',
+            allocatedHours: 160,
+            hourlyRateTotal: 140,
+            isGlobal: false,
+            simultaneousProjects: 1,
+            hourlyRateUtil: 140,
+            totalCost: 22400,
+            bonuses: 2240,
+            totalCompensation: 24640
+        }
+    ],
+    timeline: [
+        {
+            projectId: '1',
+            projectName: 'Sistema de Gestão Empresarial',
+            versionName: 'v2.1.0',
+            plannedStartDate: sixtyDaysAgo,
+            plannedEndDate: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000),
+            actualStartDate: sixtyDaysAgo,
+            actualEndDate: new Date(now.getTime() - 5 * 24 * 60 * 60 * 1000),
+            daysPlanned: 120,
+            daysActual: 115,
+            daysDeviation: -5,
+            isLate: false
+        },
+        {
+            projectId: '2',
+            projectName: 'Plataforma E-commerce',
+            versionName: 'v1.5.2',
+            plannedStartDate: new Date(now.getTime() - 195 * 24 * 60 * 60 * 1000),
+            plannedEndDate: new Date(now.getTime() - 15 * 24 * 60 * 60 * 1000),
+            actualStartDate: new Date(now.getTime() - 195 * 24 * 60 * 60 * 1000),
+            actualEndDate: null,
+            daysPlanned: 180,
+            daysActual: 195,
+            daysDeviation: 15,
+            isLate: true
+        },
+        {
+            projectId: '3',
+            projectName: 'Aplicativo Mobile',
+            versionName: 'v1.0.0',
+            plannedStartDate: new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000),
+            plannedEndDate: new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000),
+            actualStartDate: new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000),
+            actualEndDate: null,
+            daysPlanned: 90,
+            daysActual: 75,
+            daysDeviation: -15,
+            isLate: false
+        },
+        {
+            projectId: '4',
+            projectName: 'Sistema de BI e Analytics',
+            versionName: 'v1.2.0',
+            plannedStartDate: thirtyDaysAgo,
+            plannedEndDate: new Date(now.getTime() + 70 * 24 * 60 * 60 * 1000),
+            actualStartDate: thirtyDaysAgo,
+            actualEndDate: null,
+            daysPlanned: 100,
+            daysActual: 105,
+            daysDeviation: 5,
+            isLate: false
+        },
+        {
+            projectId: '5',
+            projectName: 'Portal do Cliente',
+            versionName: 'v2.0.0',
+            plannedStartDate: new Date(now.getTime() - 15 * 24 * 60 * 60 * 1000),
+            plannedEndDate: new Date(now.getTime() + 65 * 24 * 60 * 60 * 1000),
+            actualStartDate: new Date(now.getTime() - 15 * 24 * 60 * 60 * 1000),
+            actualEndDate: null,
+            daysPlanned: 80,
+            daysActual: 15,
+            daysDeviation: -65,
+            isLate: false
+        },
+        {
+            projectId: '6',
+            projectName: 'Integração ERP',
+            versionName: 'v1.1.0',
+            plannedStartDate: new Date(now.getTime() - 70 * 24 * 60 * 60 * 1000),
+            plannedEndDate: new Date(now.getTime() - 10 * 24 * 60 * 60 * 1000),
+            actualStartDate: new Date(now.getTime() - 70 * 24 * 60 * 60 * 1000),
+            actualEndDate: new Date(now.getTime() - 12 * 24 * 60 * 60 * 1000),
+            daysPlanned: 60,
+            daysActual: 58,
+            daysDeviation: -2,
+            isLate: false
+        }
+    ],
+    costCenters: [
+        {
+            costCenterId: '1',
+            costCenterName: 'Desenvolvimento',
+            totalAllocated: 1500000,
+            totalSpent: 1420000,
+            projectsCount: 8,
+            employeesCount: 15
+        },
+        {
+            costCenterId: '2',
+            costCenterName: 'Design',
+            totalAllocated: 450000,
+            totalSpent: 480000,
+            projectsCount: 6,
+            employeesCount: 5
+        },
+        {
+            costCenterId: '3',
+            costCenterName: 'Qualidade',
+            totalAllocated: 300000,
+            totalSpent: 280000,
+            projectsCount: 10,
+            employeesCount: 8
+        },
+        {
+            costCenterId: '4',
+            costCenterName: 'Infraestrutura',
+            totalAllocated: 500000,
+            totalSpent: 220000,
+            projectsCount: 12,
+            employeesCount: 4
+        }
+    ],
+    workTypes: [
+        {
+            workTypeId: '1',
+            workTypeName: 'Desenvolvimento',
+            totalBudget: 1400000,
+            totalCost: 1350000,
+            projectsCount: 10,
+            averageCostPerProject: 135000
+        },
+        {
+            workTypeId: '2',
+            workTypeName: 'Design',
+            totalBudget: 400000,
+            totalCost: 420000,
+            projectsCount: 6,
+            averageCostPerProject: 70000
+        },
+        {
+            workTypeId: '3',
+            workTypeName: 'Testes',
+            totalBudget: 300000,
+            totalCost: 280000,
+            projectsCount: 8,
+            averageCostPerProject: 35000
+        },
+        {
+            workTypeId: '4',
+            workTypeName: 'Infraestrutura',
+            totalBudget: 400000,
+            totalCost: 200000,
+            projectsCount: 12,
+            averageCostPerProject: 16666.67
+        }
+    ],
+    profitability: {
+        roiPercentage: 43.59,
+        costEfficiencyRate: 87.23,
+        roiAmount: 1000000,
+        revenuePerHour: 145.68,
+        costPerHour: 110.75,
+        breakEvenPoint: 1560000
+    },
+    metadata: {
+        totalProjects: 12,
+        dateRange: {
+            start: sixtyDaysAgo.toISOString().split('T')[0],
+            end: now.toISOString().split('T')[0]
+        },
+        generatedAt: now.toISOString()
+    }
+};

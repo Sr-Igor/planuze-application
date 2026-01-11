@@ -1,0 +1,62 @@
+{
+    "show": {
+        "edit": {
+            "title": "Meu perfil",
+            "description": "Veja os dados do seu perfil para essa empresa"
+        },
+        "data": {
+            "registered_at": "Registrado em",
+            "company_time": "Tempo de empresa"
+        },
+        "role": {
+            "new": "",
+            "exclude": {
+                "title": "",
+                "description": ""
+            },
+            "empty": "Sem cargos para o seu perfil"
+        },
+        "bonus": {
+            "new": "",
+            "exclude": {
+                "title": "",
+                "description": ""
+            },
+            "empty": "Sem bônus para o seu perfil"
+        },
+        "document": {
+            "new": "",
+            "exclude": {
+                "title": "",
+                "description": ""
+            },
+            "empty": "Sem documentos para o seu perfil"
+        },
+        "contact": {
+            "new": "",
+            "exclude": {
+                "title": "",
+                "description": ""
+            },
+            "empty": "Sem contatos para o seu perfil"
+        },
+        "bank_account": {
+            "new": "",
+            "exclude": {
+                "title": "",
+                "description": ""
+            },
+            "empty": "Sem contas bancárias para o seu perfil"
+        },
+        "tabs": {
+            "data": "Dados",
+            "documents": "Documentos",
+            "contacts": "Contatos",
+            "address": "Endereço",
+            "file": "Arquivos",
+            "role": "Cargos & Salários",
+            "bonus": "Bônus & Extras",
+            "bank_account": "Contas bancárias"
+        }
+    }
+}
