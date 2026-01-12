@@ -8,7 +8,7 @@ import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { FormType, useForm } from "./use-form";
 

@@ -11,7 +11,7 @@ import { AppDialog } from "@repo/ui/app";
 
 import { NeedRedefine } from "@/app/[locale]/(private)/my_profile/components/NeedRedefine";
 import { cn } from "@/lib/utils";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { useForm } from "./use-form";
 

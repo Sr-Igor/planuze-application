@@ -3,7 +3,7 @@ import { useLocale } from "next-intl";
 import { TrashProps } from "@repo/ui/app";
 
 import { useConstants } from "@/hooks/constants";
-import { formatCurrency } from "@/utils/currency";
+import { formatCurrency } from "@repo/utils/currency";
 
 type TrashKey<T extends Record<string, any> = any> = Omit<TrashProps<T>, "items" | "loading">;
 

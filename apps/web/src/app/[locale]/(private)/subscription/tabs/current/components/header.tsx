@@ -7,7 +7,7 @@ import { Icon } from "@repo/ui/app";
 
 import { useIntlFormat } from "@/hooks/intl-format";
 import { useUtilsPlan } from "@/templates/plans/hooks/use-utils-plan";
-import { formatCurrency } from "@/utils/currency";
+import { formatCurrency } from "@repo/utils/currency";
 
 export interface IHeaderProps {
   isLoading: boolean;

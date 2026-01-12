@@ -13,7 +13,7 @@ import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
-import { getDefaultCurrencyByLocale } from "@/utils/currency";
+import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 type Form = Shallow<project_tool>;
 

@@ -5,7 +5,7 @@ import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 
 import { useIntlFormat } from "@/hooks/intl-format";
-import { formatCurrency } from "@/utils/currency";
+import { formatCurrency } from "@repo/utils/currency";
 
 export const useTable = () => {
   const t = useLang();

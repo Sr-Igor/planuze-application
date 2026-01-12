@@ -18,7 +18,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { set as setModule } from "@/store/modules/module/actions";
 import { update as updateSocket } from "@/store/modules/socket/actions";
 import { update as updateUser } from "@/store/modules/user/actions";
-import { fingerprint } from "@/utils/fingerprint";
+import { fingerprint } from "@repo/utils/fingerprint";
 
 //Global
 const URL = process.env.NEXT_PUBLIC_API_URL;

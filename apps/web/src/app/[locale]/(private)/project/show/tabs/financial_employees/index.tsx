@@ -7,7 +7,7 @@ import { useProjectFinancialEmployees } from "@/api/callers/project_financial_em
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";
-import { formatCurrency } from "@/utils/currency";
+import { formatCurrency } from "@repo/utils/currency";
 
 import { useForm } from "./use-form";
 

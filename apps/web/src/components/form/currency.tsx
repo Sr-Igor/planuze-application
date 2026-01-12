@@ -21,8 +21,8 @@ import {
 } from "@repo/ui";
 
 import { cn } from "@/lib/utils";
-import { getAllCurrencies } from "@/utils/currency/service";
-import { CurrencyInfo } from "@/utils/currency/types";
+import { getAllCurrencies } from "@repo/utils/currency/service";
+import { CurrencyInfo } from "@repo/utils/currency/types";
 
 interface CurrencyProps {
   value?: any;

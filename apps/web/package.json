@@ -25,6 +25,7 @@
         "@repo/language": "workspace:*",
         "@repo/tailwind-config": "workspace:*",
         "@repo/ui": "workspace:*",
+        "@repo/utils": "workspace:*",
         "@tanstack/react-query": "^5.90.10",
         "@tiptap/core": "^3.11.0",
         "@tiptap/extension-blockquote": "^3.11.0",

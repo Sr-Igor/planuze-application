@@ -3,8 +3,8 @@ import { callEndpoint } from "@repo/api/generator";
 import { Prisma } from "@repo/api/generator/prisma-types";
 
 import { handleReq } from "@/api/handle";
-import { logs } from "@/utils/includeLogs";
-import { setFormData } from "@/utils/submitForm/formData";
+import { logs } from "@repo/utils/includeLogs";
+import { setFormData } from "@repo/utils/submitForm/formData";
 
 const query: Record<"include", Prisma.client_fileInclude> = {
   include: {

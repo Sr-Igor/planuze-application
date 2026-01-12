@@ -9,7 +9,7 @@ import { useLang } from "@repo/language/hook";
 import { Badge, Card, CardContent, CardHeader, CardTitle, Separator } from "@repo/ui";
 
 import { useIntlFormat } from "@/hooks/intl-format";
-import { timeLabel } from "@/utils/timeLabel";
+import { timeLabel } from "@repo/utils/timeLabel";
 
 interface CardMovementsProps {
   item?: project_kanban_cycle_card;

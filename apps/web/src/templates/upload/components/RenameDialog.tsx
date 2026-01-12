@@ -10,7 +10,7 @@ import { AppDialog } from "@repo/ui/app";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { IRenameProps } from "../types/interfaces";
 

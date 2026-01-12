@@ -7,7 +7,7 @@ import { Badge, Card, Skeleton } from "@repo/ui";
 import { CardFlag } from "@repo/ui/app";
 
 import { useIntlFormat } from "@/hooks/intl-format";
-import { formatCurrency } from "@/utils/currency";
+import { formatCurrency } from "@repo/utils/currency";
 
 import { ITabProps } from "../types";
 import { usePage } from "./use-page";

@@ -8,7 +8,7 @@ import { useIntlFormat } from "@/hooks/intl-format";
 import { cn } from "@/lib/utils";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { timeLabel } from "@/utils/timeLabel";
+import { timeLabel } from "@repo/utils/timeLabel";
 
 import { useForm } from "./use-form";
 

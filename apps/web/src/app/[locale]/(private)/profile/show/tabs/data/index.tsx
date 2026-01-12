@@ -13,8 +13,8 @@ import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@/utils/submitForm";
-import { timeLabel } from "@/utils/timeLabel";
+import { hookValidate } from "@repo/utils/submitForm";
+import { timeLabel } from "@repo/utils/timeLabel";
 
 import { useAnonymousForm } from "./use-anonymous-form";
 import { useProfileForm } from "./use-profile-form";

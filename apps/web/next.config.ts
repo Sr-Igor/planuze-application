@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
     "@repo/api",
     "@repo/tailwind-config",
     "@repo/language",
+    "@repo/utils",
     "@repo/hooks",
   ],
   typescript: {

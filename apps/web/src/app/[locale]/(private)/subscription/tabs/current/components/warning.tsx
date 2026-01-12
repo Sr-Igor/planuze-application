@@ -6,7 +6,7 @@ import { plan, subscription } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 
 import { useIntlFormat } from "@/hooks/intl-format";
-import { formatCurrency } from "@/utils/currency";
+import { formatCurrency } from "@repo/utils/currency";
 
 export interface IWarningProps {
   subscription: subscription;

@@ -14,7 +14,7 @@ import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { getDefaultCurrencyByLocale } from "@/utils/currency";
+import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 type FormType = {
   role_id?: string;

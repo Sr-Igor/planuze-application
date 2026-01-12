@@ -11,8 +11,8 @@ import { Button } from "@repo/ui";
 
 import { useAuth } from "@/api/callers/auth";
 import { useUserSet } from "@/hooks/user-set";
-import { fingerprint } from "@/utils/fingerprint";
-import { hookValidate } from "@/utils/submitForm";
+import { fingerprint } from "@repo/utils/fingerprint";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { useForm } from "./use-form";
 

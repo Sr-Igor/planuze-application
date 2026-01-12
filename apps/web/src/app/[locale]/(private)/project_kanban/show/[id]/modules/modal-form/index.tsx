@@ -9,7 +9,7 @@ import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { useKanbanShow } from "../../context";
 import { Feature } from "../../types";

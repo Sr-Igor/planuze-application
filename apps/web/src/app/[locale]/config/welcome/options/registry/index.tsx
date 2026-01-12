@@ -5,7 +5,7 @@ import { LogInIcon } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { useForm } from "./use-form";
 

@@ -12,7 +12,7 @@ import { Button } from "@repo/ui";
 import { useAuth } from "@/api/callers/auth";
 import { useUserSet } from "@/hooks/user-set";
 import { CenterTemplate } from "@/templates/center";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { useForm } from "./use-form";
 

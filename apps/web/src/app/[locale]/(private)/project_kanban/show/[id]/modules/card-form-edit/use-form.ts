@@ -11,7 +11,7 @@ import { project_kanban_cycle_card } from "@repo/api/generator/types";
 
 import { ISelected } from "@/components/form/tags";
 import { useValidator } from "@/hooks/validator";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 type FormType = {
   title?: string;

@@ -2,7 +2,7 @@
 import { callEndpoint } from "@repo/api/generator";
 
 import { handleReq } from "@/api/handle";
-import { setFormData } from "@/utils/submitForm/formData";
+import { setFormData } from "@repo/utils/submitForm/formData";
 
 export const store = async (body: any) => {
   const handle = callEndpoint({

@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { useLang } from "@repo/language/hook";
 
-import { formatCurrencySimple } from "@/utils/currency";
+import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { IFinancialSummary } from "../../../types";
 import { formatPercentage, getStatusColor } from "../../../utils";

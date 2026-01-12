@@ -9,7 +9,7 @@ import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "
 import { MainCard } from "@repo/ui/app";
 
 import { cn } from "@/lib/utils";
-import { formatCurrencySimple } from "@/utils/currency";
+import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { IFinancialEvolutionResponse, IFinancialInfo, IProfileInfo } from "../../../types";
 import { CardItem } from "../../card";

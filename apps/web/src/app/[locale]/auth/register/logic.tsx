@@ -13,8 +13,8 @@ import { Button } from "@repo/ui";
 import { useUser } from "@/api/callers/user";
 import { useAppDispatch } from "@/hooks/redux";
 import { create } from "@/store/modules/user/actions";
-import { fingerprint } from "@/utils/fingerprint";
-import { hookValidate } from "@/utils/submitForm";
+import { fingerprint } from "@repo/utils/fingerprint";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { useForm } from "./use-form";
 

@@ -9,7 +9,7 @@ import { AppTooltip, MainCard } from "@repo/ui/app";
 
 import { useIntlFormat } from "@/hooks/intl-format";
 import { cn } from "@/lib/utils";
-import { formatCurrencySimple } from "@/utils/currency";
+import { formatCurrencySimple } from "@repo/utils/currency";
 
 import {
   ICostCenterAnalysis,

@@ -11,7 +11,7 @@ import { useUnload } from "@/hooks/unload";
 import { useUserSet } from "@/hooks/user-set";
 import { cn } from "@/lib/utils";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { NeedRedefine } from "../../components/NeedRedefine";
 import { useForm } from "./use-form";

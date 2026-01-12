@@ -3,7 +3,7 @@ import { callEndpoint } from "@repo/api/generator";
 import { Prisma } from "@repo/api/generator/prisma-types";
 
 import { handleReq } from "@/api/handle";
-import { logs } from "@/utils/includeLogs";
+import { logs } from "@repo/utils/includeLogs";
 
 const query: Record<"include", Prisma.profile_roleInclude> = {
   include: {

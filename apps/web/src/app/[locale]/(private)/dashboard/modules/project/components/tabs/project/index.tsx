@@ -7,7 +7,7 @@ import { Badge } from "@repo/ui";
 import { MainCard } from "@repo/ui/app";
 
 import { cn } from "@/lib/utils";
-import { formatCurrencySimple } from "@/utils/currency";
+import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { IProjectFinancial } from "../../../types";
 import { formatPercentage } from "../../../utils";

@@ -10,7 +10,7 @@ import { AppDialog, AppLogsModal } from "@repo/ui/app";
 import { Permission } from "@/components/ui/permission";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";
-import { hookValidate } from "@/utils/submitForm";
+import { hookValidate } from "@repo/utils/submitForm";
 
 import { IRegisterCardProps } from "./types";
 import { useReq } from "./use-req";
