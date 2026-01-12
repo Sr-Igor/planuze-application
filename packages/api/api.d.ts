@@ -5,3 +5,7 @@ declare module "@repo/api/generator/types" {
 declare module "@repo/api/generator/endpoints" {
   export * from "./generator/endpoints";
 }
+
+declare module "@repo/api/generator/prisma-types" {
+  export * from "./generator/prisma-types";
+}

@@ -234,7 +234,7 @@ export const useCardForm = ({ item, onSubmit }: IUseFormProps) => {
   };
 
   const hook = useForm<FormType>({
-    resolver: zodResolver(schemaResolver),
+    resolver: zodResolver(schemaResolver as any),
     mode: "onChange",
     values,
     defaultValues: {

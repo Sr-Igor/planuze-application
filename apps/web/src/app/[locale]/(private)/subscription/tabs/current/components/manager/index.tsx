@@ -5,9 +5,9 @@ import { CreditCard, History } from "lucide-react";
 import { subscription } from "@repo/api/generator/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
-import { Permission } from "@repo/ui/app";
 
 import { useSubscription } from "@/api/callers/subscription";
+import { Permission } from "@/components/ui/permission";
 import { useShow } from "@/templates/show/context";
 
 import { HistoryModal } from "./history";

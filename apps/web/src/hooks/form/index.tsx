@@ -31,7 +31,7 @@ export function useFormList<FormType extends FieldValues>({
       resolvedZodSchema = validator(schema as IValidatorRequest) as ZodSchema<FormType>;
     }
 
-    return zodResolver(resolvedZodSchema);
+    return zodResolver(resolvedZodSchema as any);
   }, [schema, validator]);
 
   const initialDefaultValues: DefaultValues<FormType> = useMemo(() => {

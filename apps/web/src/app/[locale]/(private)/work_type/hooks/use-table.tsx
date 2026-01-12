@@ -1,5 +1,8 @@
 import { work_type } from "@repo/api/generator/types";
+import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
+
+import { useIntlFormat } from "@/hooks/intl-format";
 
 export const useTable = () => {
   const t = useLang();

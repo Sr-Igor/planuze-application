@@ -31,6 +31,10 @@
     "./generator/endpoints": {
       "types": "./generator/endpoints.ts",
       "default": "./generator/endpoints.ts"
+    },
+    "./generator/prisma-types": {
+      "types": "./generator/prisma-types.d.ts",
+      "default": "./generator/prisma-types.d.ts"
     }
   }
 }

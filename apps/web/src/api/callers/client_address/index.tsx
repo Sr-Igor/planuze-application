@@ -1,4 +1,4 @@
-import { client_address } from "@repo/api/generator/prisma-types";
+import { client_address } from "@repo/api/generator/types";
 
 import { useNestedField } from "@/api/hooks/use-nested-field";
 import * as api from "@/api/req/client_address";
