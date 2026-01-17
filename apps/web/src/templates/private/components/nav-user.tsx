@@ -17,7 +17,7 @@ import {
   UserCog,
 } from "lucide-react";
 
-import { invite, profile as TProfile } from "@repo/api/generator/types";
+import { invite, profile as TProfile } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Avatar,
@@ -30,7 +30,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "@repo/ui";
@@ -38,9 +37,9 @@ import { AppTooltip } from "@repo/ui/app";
 
 import { Img } from "@/components/image";
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@/hooks/cookies/signout";
+import { useSignOut } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 import { cn } from "@/lib/utils";
 import { Pagination } from "@/types/pagination";
 

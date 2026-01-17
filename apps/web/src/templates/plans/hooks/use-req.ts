@@ -1,5 +1,5 @@
-import { useBilling } from '@/api/callers/billing';
-import { useSubscription } from '@/api/callers/subscription';
+import { useBilling } from '@repo/api/web/callers/billing';
+import { useSubscription } from '@repo/api/web/callers/subscription';
 
 export const useReq = () => {
     const { upgrade, portal } = useSubscription({

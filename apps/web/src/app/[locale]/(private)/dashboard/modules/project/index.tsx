@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { ScrollArea } from "@repo/ui";
 
-import { placeholder } from "@/api/callers/dashboard/placeholder/project";
+import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/project";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 import { Filters } from "./components/filters";

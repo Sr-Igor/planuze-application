@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 
 import { Kanban } from "lucide-react";
 
-import { project_kanban } from "@repo/api/generator/types";
+import { project_kanban } from "@repo/types";
 import { Button } from "@repo/ui";
 
-import { useProject } from "@/api/callers/project";
-import { useProjectKanban } from "@/api/callers/project_kanban";
+import { useProject } from "@repo/api/web/callers/project";
+import { useProjectKanban } from "@repo/api/web/callers/project_kanban";
 import { ShowTemplate } from "@/templates/show";
 
 import { useTabs } from "./use-tabs";

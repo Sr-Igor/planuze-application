@@ -5,7 +5,7 @@ import { memo, useMemo } from "react";
 import { closestCenter, DndContext, pointerWithin, rectIntersection } from "@dnd-kit/core";
 import { horizontalListSortingStrategy, SortableContext } from "@dnd-kit/sortable";
 
-import { project_kanban_cycle_card, project_kanban_cycle_column } from "@repo/api/generator/types";
+import { project_kanban_cycle_card, project_kanban_cycle_column } from "@repo/types";
 
 import { useKanbanShow } from "../../../context";
 import { KanbanColumn } from "../common/components/column";

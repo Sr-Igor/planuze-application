@@ -1,4 +1,4 @@
-import { work_type } from "@repo/api/generator/types";
+import { work_type } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 

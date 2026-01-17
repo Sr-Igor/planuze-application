@@ -2,9 +2,9 @@ import { useEffect, useRef } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { profile_address } from "@repo/api/generator/types";
+import { profile_address } from "@repo/types";
 
-import { getCep } from "@/api/global/cep";
+import { getCep } from "@repo/api/global/cep";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 

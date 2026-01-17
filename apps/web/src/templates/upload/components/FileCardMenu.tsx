@@ -25,7 +25,7 @@ import {
   DropdownMenuTrigger,
 } from "@repo/ui";
 
-import { downloadFile } from "@/api/global/download";
+import { downloadFile } from "@repo/api/global/download";
 import { cn } from "@/lib/utils";
 
 import { FileStatus } from "../types/enums";

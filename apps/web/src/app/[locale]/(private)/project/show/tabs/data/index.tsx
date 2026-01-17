@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
-import { project } from "@repo/api/generator/types";
+import { project } from "@repo/types";
 
-import { useProject } from "@/api/callers/project";
+import { useProject } from "@repo/api/web/callers/project";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

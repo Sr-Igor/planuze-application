@@ -1,6 +1,6 @@
 'use client';
 
-import { useProject } from '@/api/callers/project';
+import { useProject } from '@repo/api/web/callers/project';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

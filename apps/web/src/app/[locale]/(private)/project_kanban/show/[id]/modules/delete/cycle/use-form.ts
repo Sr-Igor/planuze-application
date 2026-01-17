@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban_cycle } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

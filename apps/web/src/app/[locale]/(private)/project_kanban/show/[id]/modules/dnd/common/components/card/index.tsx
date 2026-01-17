@@ -4,9 +4,9 @@ import { memo, useCallback } from "react";
 
 import { Loader2 } from "lucide-react";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 
-import { useProjectKanbanCycleCard } from "@/api/callers/project_kanban_cycle_card";
+import { useProjectKanbanCycleCard } from "@repo/api/web/callers/project_kanban_cycle_card";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useAccess } from "@/hooks/access";
 import { cn } from "@/lib/utils";

@@ -2,10 +2,10 @@
 
 import { useParams, useRouter } from "next/navigation";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { useProfile } from "@/api/callers/profile";
+import { useProfile } from "@repo/api/web/callers/profile";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { useLogs } from "@/hooks/logs";

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { useAppSelector } from '@/hooks/redux';
+import { useAppSelector } from '@repo/redux/hook';
 
 import { UsePermissionSelectionProps } from '../types';
 

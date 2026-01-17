@@ -1,6 +1,6 @@
 import { BellRing, ChevronRight, Trash } from "lucide-react";
 
-import { notification } from "@repo/api/generator/types";
+import { notification } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { Img } from "@/components/image";

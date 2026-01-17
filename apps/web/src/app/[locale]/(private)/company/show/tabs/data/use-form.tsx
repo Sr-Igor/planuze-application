@@ -1,7 +1,7 @@
 import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
-import { company } from "@repo/api/generator/types";
+import { company } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

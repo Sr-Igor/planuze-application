@@ -6,12 +6,11 @@ import { useSearchParams } from "next/navigation";
 
 import { urlToBase64 } from "@repo/utils";
 
-import { useNotificationSubscription } from "@/api/callers/notification_subscription";
-import { set } from "@/store/modules/module/actions";
+import { useNotificationSubscription } from "@repo/api/web/callers/notification_subscription";
+import { set } from "@repo/redux/store/modules/module/actions";
 
-import { useAuth } from "../auth";
 import { useModal } from "../modal";
-import { useAppDispatch } from "../redux";
+import { useAuth , useAppDispatch } from "@repo/redux/hook";
 
 function areSubscriptionsEqual(sub1: any, sub2: any) {
   if (!sub1 || !sub2) return false;

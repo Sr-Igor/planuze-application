@@ -1,6 +1,6 @@
-import { project_kanban } from "@repo/api/generator/types";
+import { project_kanban } from "@repo/types";
 
-import { useProjectTool } from "@/api/callers/project_tool";
+import { useProjectTool } from "@repo/api/web/callers/project_tool";
 import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";

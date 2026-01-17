@@ -2,9 +2,9 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { invite, level } from "@repo/api/generator/types";
+import { invite, level } from "@repo/types";
 
-import { index } from "@/api/req/level";
+import { index } from "@repo/api/web/req/level";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/list/base/types";

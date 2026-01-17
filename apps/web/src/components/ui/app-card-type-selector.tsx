@@ -1,4 +1,4 @@
-import { project_kanban_cycle_card_type } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_type } from "@repo/types";
 import { Icon } from "@repo/ui/app";
 
 import { cn } from "@/lib/utils";

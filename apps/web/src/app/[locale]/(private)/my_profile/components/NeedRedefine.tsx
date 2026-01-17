@@ -1,10 +1,10 @@
 import { Key } from "lucide-react";
 
-import { user } from "@repo/api/generator/types";
+import { user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { useSignOut } from "@/hooks/cookies/signout";
+import { useSignOut } from "@repo/cookies";
 
 export interface INeedRedefineProps {
   user: user | null;

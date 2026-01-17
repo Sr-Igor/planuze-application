@@ -1,6 +1,6 @@
 import { arrayMove } from "@dnd-kit/sortable";
 
-import { project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban_cycle } from "@repo/types";
 
 export interface IReorderCardsInColumnProps {
   columnId: string;

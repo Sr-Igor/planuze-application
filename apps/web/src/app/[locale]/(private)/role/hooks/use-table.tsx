@@ -1,6 +1,6 @@
 import { useLocale } from "next-intl";
 
-import { role } from "@repo/api/generator/types";
+import { role } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 

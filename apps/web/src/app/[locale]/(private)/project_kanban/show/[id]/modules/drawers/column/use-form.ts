@@ -2,7 +2,7 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_kanban_cycle_column } from "@repo/api/generator/types";
+import { project_kanban_cycle_column } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { useFormList } from "@/hooks/form";

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { getToken } from '@/hooks/cookies/token';
+import { getToken } from '@repo/cookies';
 
 export default function Home() {
     const { replace } = useRouter();

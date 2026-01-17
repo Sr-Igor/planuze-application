@@ -13,11 +13,10 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { Img } from "@/components/image";
 import { AppAvatar } from "@/components/ui/app-avatar";
-import { getProfile } from "@/hooks/cookies/profile";
+import { getProfile } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 import { cn } from "@/lib/utils";
 
 export const ProfileModal = () => {

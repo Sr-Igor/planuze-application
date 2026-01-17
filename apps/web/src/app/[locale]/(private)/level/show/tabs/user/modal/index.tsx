@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 import { AlertCircleIcon } from "lucide-react";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Alert, AlertDescription, Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";

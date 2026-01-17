@@ -1,14 +1,14 @@
 import { useSearchParams } from "next/navigation";
 
-import { user } from "@repo/api/generator/types";
+import { user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { useRouter } from "@repo/language/navigation";
 
-import { set } from "@/store/modules/module/actions";
-import { create } from "@/store/modules/user/actions";
+import { set } from "@repo/redux/store/modules/module/actions";
+import { create } from "@repo/redux/store/modules/user/actions";
 
 import { useModal } from "../modal";
-import { useAppDispatch, useAppSelector } from "../redux";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 
 export const useUserSet = (redirect: string | null = "/dashboard", initialMode: boolean = true) => {
   const route = useRouter();

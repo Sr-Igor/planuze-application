@@ -12,11 +12,11 @@ import {
   ScrollArea,
 } from "@repo/ui";
 
-import { useInvite } from "@/api/callers/invite";
+import { useInvite } from "@repo/api/web/callers/invite";
 import { Invite } from "@/app/[locale]/config/welcome/options/invite";
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@repo/redux/hook";
 import { useModal } from "@/hooks/modal";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 import { useUserSet } from "@/hooks/user-set";
 
 export const InviteModal = () => {

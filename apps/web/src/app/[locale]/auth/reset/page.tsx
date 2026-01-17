@@ -9,7 +9,7 @@ import { RotateCcw } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { useAuth } from "@/api/callers/auth";
+import { useAuth } from "@repo/api/web/callers/auth";
 import { useUserSet } from "@/hooks/user-set";
 import { CenterTemplate } from "@/templates/center";
 import { hookValidate } from "@repo/utils/submitForm";

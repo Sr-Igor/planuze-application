@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@repo/ui";
 
-import { useCities } from "@/api/callers/cities";
+import { useCities } from "@repo/api/web/callers/cities";
 import { cn } from "@/lib/utils";
 
 export interface ICityProps {

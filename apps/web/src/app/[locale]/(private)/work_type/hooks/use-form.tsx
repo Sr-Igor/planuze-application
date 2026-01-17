@@ -2,7 +2,7 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { work_type } from "@repo/api/generator/types";
+import { work_type } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

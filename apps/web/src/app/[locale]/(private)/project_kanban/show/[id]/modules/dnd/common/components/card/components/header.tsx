@@ -6,7 +6,7 @@ import {
   project_kanban_cycle_card,
   project_kanban_cycle_card_type,
   project_kanban_cycle_column,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button, CardHeader, CardTitle } from "@repo/ui";
 import { AppTooltip, Icon } from "@repo/ui/app";

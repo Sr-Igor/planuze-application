@@ -9,9 +9,9 @@ import { Button } from "@repo/ui";
 import { StatusCircle } from "@repo/ui/app";
 
 import { AppAvatar } from "@/components/ui/app-avatar";
-import { getProfile } from "@/hooks/cookies/profile";
+import { getProfile } from "@repo/cookies";
 import { useIntlFormat } from "@/hooks/intl-format";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 import { cn } from "@/lib/utils";
 
 export const Company = () => {

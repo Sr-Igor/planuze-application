@@ -1,4 +1,4 @@
-import { level } from "@repo/api/generator/types";
+import { level } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 

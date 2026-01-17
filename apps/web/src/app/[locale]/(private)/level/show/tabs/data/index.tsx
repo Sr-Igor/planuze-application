@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
-import { level } from "@repo/api/generator/types";
+import { level } from "@repo/types";
 
-import { useLevel } from "@/api/callers/level";
+import { useLevel } from "@repo/api/web/callers/level";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

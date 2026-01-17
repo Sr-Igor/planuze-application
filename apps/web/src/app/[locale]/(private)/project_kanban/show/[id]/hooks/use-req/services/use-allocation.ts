@@ -1,4 +1,4 @@
-import { useProjectKanbanCycleAllocation } from '@/api/callers/project_kanban_cycle_allocation';
+import { useProjectKanbanCycleAllocation } from '@repo/api/web/callers/project_kanban_cycle_allocation';
 import { useAccess } from '@/hooks/access';
 
 import { State } from '../../../types';

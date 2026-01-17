@@ -1,6 +1,6 @@
 'use client';
 
-import { useCompany } from '@/api/callers/company';
+import { useCompany } from '@repo/api/web/callers/company';
 import { useAccess } from '@/hooks/access';
 import { ShowTemplate } from '@/templates/show';
 

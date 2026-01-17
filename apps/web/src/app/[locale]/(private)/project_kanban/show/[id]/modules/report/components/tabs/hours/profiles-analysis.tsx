@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hook";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
 
-import { IProfileHoursAnalysis } from "@/api/callers/project_kanban_report/types";
+import { IProfileHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { cn } from "@/lib/utils";
 

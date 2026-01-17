@@ -5,7 +5,7 @@ import { useCallback, useMemo, useRef } from "react";
 import { DragEndEvent, DragOverEvent, DragStartEvent } from "@dnd-kit/core";
 import { throttle } from "lodash-es";
 
-import { project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban_cycle } from "@repo/types";
 
 import { BoardUpdateProps } from "@/app/[locale]/(private)/project_kanban/show/[id]/types";
 

@@ -1,4 +1,4 @@
-import { useProjectKanbanCycleCard } from '@/api/callers/project_kanban_cycle_card';
+import { useProjectKanbanCycleCard } from '@repo/api/web/callers/project_kanban_cycle_card';
 import { useAccess } from '@/hooks/access';
 
 import { Mode, State } from '../../../types';

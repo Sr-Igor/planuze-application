@@ -1,6 +1,6 @@
 import { useLang } from "@repo/language/hook";
 
-import { ICriticalCard } from "@/api/callers/project_kanban_report/types";
+import { ICriticalCard } from "@repo/api/web/callers/project_kanban_report/types";
 
 export interface iLineSeverityProps {
   card: ICriticalCard;

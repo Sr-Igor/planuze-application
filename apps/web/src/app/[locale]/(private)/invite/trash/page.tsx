@@ -1,6 +1,6 @@
 'use client';
 
-import { useInvite } from '@/api/callers/invite';
+import { useInvite } from '@repo/api/web/callers/invite';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

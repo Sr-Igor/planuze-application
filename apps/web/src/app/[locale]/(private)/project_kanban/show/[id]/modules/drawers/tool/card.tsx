@@ -2,7 +2,7 @@ import { useLocale } from "next-intl";
 
 import { History, Pen, Ruler, Trash } from "lucide-react";
 
-import { project_tool } from "@repo/api/generator/types";
+import { project_tool } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,

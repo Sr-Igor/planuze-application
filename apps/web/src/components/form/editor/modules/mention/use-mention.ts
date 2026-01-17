@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import type { Editor } from "@tiptap/react";
 
-import type { profile } from "@repo/api/generator/types";
+import type { profile } from "@repo/types";
 
 interface MentionState {
   isOpen: boolean;

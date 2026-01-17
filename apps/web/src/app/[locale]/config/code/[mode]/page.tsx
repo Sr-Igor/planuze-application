@@ -11,10 +11,10 @@ import { useLang } from "@repo/language/hook";
 import { Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";
 import { AppCountdown } from "@repo/ui/app";
 
-import { useAuth } from "@/api/callers/auth";
-import { useSignOut } from "@/hooks/cookies/signout";
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-import { update } from "@/store/modules/user/actions";
+import { useAuth } from "@repo/api/web/callers/auth";
+import { useSignOut } from "@repo/cookies";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { update } from "@repo/redux/store/modules/user/actions";
 import { CenterTemplate } from "@/templates/center";
 
 const TIME = 1;

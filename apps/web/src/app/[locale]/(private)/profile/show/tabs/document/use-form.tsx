@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { profile_document } from "@repo/api/generator/types";
+import { profile_document } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { useConstants } from "@/hooks/constants";

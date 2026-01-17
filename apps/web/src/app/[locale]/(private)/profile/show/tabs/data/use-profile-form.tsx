@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { level, profile } from "@repo/api/generator/types";
+import { level, profile } from "@repo/types";
 
-import { index } from "@/api/req/level";
+import { index } from "@repo/api/web/req/level";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

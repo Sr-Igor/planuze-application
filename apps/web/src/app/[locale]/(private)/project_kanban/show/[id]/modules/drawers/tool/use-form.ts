@@ -4,9 +4,9 @@ import { useLocale } from "next-intl";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_tool, project_version } from "@repo/api/generator/types";
+import { project_tool, project_version } from "@repo/types";
 
-import { index as indexProjectVersion } from "@/api/req/project_version";
+import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

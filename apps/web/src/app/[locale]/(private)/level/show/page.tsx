@@ -1,8 +1,8 @@
 "use client";
 
-import { level } from "@repo/api/generator/types";
+import { level } from "@repo/types";
 
-import { useLevel } from "@/api/callers/level";
+import { useLevel } from "@repo/api/web/callers/level";
 import { ShowTemplate } from "@/templates/show";
 
 import { useTabs } from "./use-tabs";

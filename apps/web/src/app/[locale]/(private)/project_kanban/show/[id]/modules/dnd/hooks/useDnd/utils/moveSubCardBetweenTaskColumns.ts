@@ -1,4 +1,4 @@
-import { project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban_cycle } from "@repo/types";
 
 type MoveSubCardBetweenTaskColumnsProps = {
   cardId: string;

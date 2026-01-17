@@ -1,7 +1,7 @@
 import { differenceInDays } from "date-fns";
 import { Check, X } from "lucide-react";
 
-import { invite } from "@repo/api/generator/types";
+import { invite } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 

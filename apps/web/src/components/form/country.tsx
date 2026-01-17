@@ -20,7 +20,7 @@ import {
   PopoverTrigger,
 } from "@repo/ui";
 
-import { useCountry } from "@/api/callers/country";
+import { useCountry } from "@repo/api/web/callers/country";
 import { cn } from "@/lib/utils";
 
 export interface ICountryProps {

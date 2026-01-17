@@ -1,6 +1,6 @@
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 
-import { useProjectKanbanCycleCardFile } from "@/api/callers/project_kanban_cycle_card_file";
+import { useProjectKanbanCycleCardFile } from "@repo/api/web/callers/project_kanban_cycle_card_file";
 import { useAccess } from "@/hooks/access";
 import { UploadTemplate } from "@/templates/upload";
 

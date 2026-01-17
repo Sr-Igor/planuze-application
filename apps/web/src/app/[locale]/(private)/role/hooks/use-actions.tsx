@@ -1,6 +1,6 @@
 import { Eye, Pen, Trash } from "lucide-react";
 
-import { role } from "@repo/api/generator/types";
+import { role } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

@@ -1,6 +1,7 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
@@ -8,13 +9,18 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "target": "ES2023",
+    "baseUrl": ".",
+    "paths": {
+      "#/*": [
+        "./src/*"
+      ]
+    },
     "lib": [
       "ES2023"
     ]
   },
   "include": [
-    "index.ts",
-    "api.d.ts"
+    "src/**/*",
   ],
   "exclude": [
     "node_modules",

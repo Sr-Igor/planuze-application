@@ -1,6 +1,6 @@
 'use client';
 
-import { useCostCenter } from '@/api/callers/cost_center';
+import { useCostCenter } from '@repo/api/web/callers/cost_center';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

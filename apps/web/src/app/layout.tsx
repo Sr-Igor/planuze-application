@@ -8,7 +8,7 @@ import "@/app/globals.css";
 import { NotificationManager } from "@/hooks/notification";
 import { Progress } from "@/providers/progress";
 import { Provider as Query } from "@/providers/query";
-import { Provider as Redux } from "@/providers/redux";
+import { Provider as Redux } from "@repo/redux/provider";
 import { Provider as Socket } from "@/providers/socket";
 
 export const metadata: Metadata = {

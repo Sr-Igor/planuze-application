@@ -2,9 +2,9 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project, project_kanban } from "@repo/api/generator/types";
+import { project, project_kanban } from "@repo/types";
 
-import { index } from "@/api/req/project";
+import { index } from "@repo/api/web/req/project";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/list/base/types";

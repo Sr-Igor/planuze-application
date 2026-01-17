@@ -1,0 +1,27 @@
+{{#if (eq eslintConfig 'react-internal')}}
+import { config } from "@repo/eslint-config/react-internal";
+
+/** @type {import("eslint").Linter.Config} */
+export default config;
+{{else}}
+  {{#if (eq eslintConfig 'next-js')}}
+/** @type {import("eslint").Linter.Config} */
+export { nextJsConfig as default } from "@repo/eslint-config/next-js";
+  {{else}}
+import { config } from "@repo/eslint-config/base";
+
+/** @type {import("eslint").Linter.Config} */
+export default [
+  ...config,
+  {
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "no-unused-vars": "off",
+    },
+  },
+];
+  {{/if}}
+{{/if}}

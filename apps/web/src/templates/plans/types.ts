@@ -1,4 +1,4 @@
-import { plan, subscription } from "@repo/api/generator/types";
+import { plan, subscription } from "@repo/types";
 
 export interface IPlanTemplateProps {
   plans: plan[];

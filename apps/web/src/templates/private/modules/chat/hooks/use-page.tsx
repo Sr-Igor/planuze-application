@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import keys from '@/api/cache/keys';
-import { useChat } from '@/api/callers/chat';
-import { useAppSelector } from '@/hooks/redux';
+import keys from '@repo/api/cache/keys';
+import { useChat } from '@repo/api/web/callers/chat';
+import { useAppSelector } from '@repo/redux/hook';
 //Socket
 import { socket } from '@/providers/socket';
 import { useQueryClient } from '@tanstack/react-query';

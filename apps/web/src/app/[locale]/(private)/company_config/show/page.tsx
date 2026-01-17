@@ -1,8 +1,8 @@
 "use client";
 
-import { company_config } from "@repo/api/generator/types";
+import { company_config } from "@repo/types";
 
-import { useCompanyConfig } from "@/api/callers/company_config";
+import { useCompanyConfig } from "@repo/api/web/callers/company_config";
 import { ShowTemplate } from "@/templates/show";
 
 import { useTabs } from "./use-tabs";

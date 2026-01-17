@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { client_contact } from "@repo/api/generator/types";
+import { client_contact } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";

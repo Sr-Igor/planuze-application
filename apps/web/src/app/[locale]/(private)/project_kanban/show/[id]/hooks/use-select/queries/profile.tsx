@@ -1,8 +1,8 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 
-import { index } from "@/api/req/profile";
+import { index } from "@repo/api/web/req/profile";
 import { useAccess } from "@/hooks/access";
 import { Pagination } from "@/types/pagination";
 

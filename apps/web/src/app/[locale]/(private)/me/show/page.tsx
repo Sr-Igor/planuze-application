@@ -1,7 +1,7 @@
 'use client';
 
-import { useMe } from '@/api/callers/me';
-import { useAuth } from '@/hooks/auth';
+import { useMe } from '@repo/api/web/callers/me';
+import { useAuth } from '@repo/redux/hook';
 import { ShowTemplate } from '@/templates/show';
 
 import { useTabs } from './use-tabs';

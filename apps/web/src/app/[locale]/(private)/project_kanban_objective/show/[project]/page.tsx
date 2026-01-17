@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 
-import { useProjectKanbanObjective } from '@/api/callers/project_kanban_objective';
+import { useProjectKanbanObjective } from '@repo/api/web/callers/project_kanban_objective';
 import { ShowTemplate } from '@/templates/show';
 
 import { useTabs } from './use-tabs';

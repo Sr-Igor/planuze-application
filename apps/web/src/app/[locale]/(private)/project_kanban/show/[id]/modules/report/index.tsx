@@ -5,7 +5,7 @@ import * as React from "react";
 import { useLang } from "@repo/language/hook";
 import { ScrollArea } from "@repo/ui";
 
-import { placeholder } from "@/api/callers/project_kanban_report/placeholder";
+import { placeholder } from "@repo/api/web/callers/project_kanban_report/placeholder";
 
 import { useKanbanShow } from "../../context";
 import { Graphs } from "./components/tabs/graphs";

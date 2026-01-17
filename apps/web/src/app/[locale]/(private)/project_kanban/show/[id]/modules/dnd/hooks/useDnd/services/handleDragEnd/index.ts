@@ -1,6 +1,6 @@
 import { DragEndEvent } from "@dnd-kit/core";
 
-import { project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban_cycle } from "@repo/types";
 
 import { ActiveItem, IUseDndProps, Position } from "../../types";
 import { findColumnByCardId } from "../../utils";

@@ -1,4 +1,4 @@
-import { work_type } from "@repo/api/generator/types";
+import { work_type } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 

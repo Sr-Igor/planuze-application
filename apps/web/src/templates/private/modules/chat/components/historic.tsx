@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { X } from "lucide-react";
 
-import { chat } from "@repo/api/generator/types";
+import { chat } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button, Skeleton } from "@repo/ui";
 

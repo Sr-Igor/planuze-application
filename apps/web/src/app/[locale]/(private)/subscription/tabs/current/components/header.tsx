@@ -1,6 +1,6 @@
 import { useLocale } from "next-intl";
 
-import { subscription, subscription_plan } from "@repo/api/generator/types";
+import { subscription, subscription_plan } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Badge, CardDescription, CardTitle, Skeleton } from "@repo/ui";
 import { Icon } from "@repo/ui/app";

@@ -1,6 +1,6 @@
 import { QueryClient, UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
-import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
 
 import { BoardUpdateProps, State } from "@/app/[locale]/(private)/project_kanban/show/[id]/types";
 

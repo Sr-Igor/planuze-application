@@ -8,7 +8,7 @@ import {
   ICriticalCard,
   IRankings,
   ITopEngagedCard,
-} from "@/api/callers/project_kanban_report/types";
+} from "@repo/api/web/callers/project_kanban_report/types";
 
 import { Rank } from "../../rank";
 import { LineEngagement } from "./lines/engagement";

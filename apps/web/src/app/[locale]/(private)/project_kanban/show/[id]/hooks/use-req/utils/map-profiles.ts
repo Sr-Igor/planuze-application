@@ -1,4 +1,4 @@
-import { project_kanban_cycle_allocation, project_member } from "@repo/api/generator/types";
+import { project_kanban_cycle_allocation, project_member } from "@repo/types";
 
 import { IProfile } from "@/app/[locale]/(private)/project_kanban/show/[id]/types";
 

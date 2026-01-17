@@ -1,6 +1,6 @@
-import { client, client_document } from "@repo/api/generator/types";
+import { client, client_document } from "@repo/types";
 
-import { useClientDocument } from "@/api/callers/client_document";
+import { useClientDocument } from "@repo/api/web/callers/client_document";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

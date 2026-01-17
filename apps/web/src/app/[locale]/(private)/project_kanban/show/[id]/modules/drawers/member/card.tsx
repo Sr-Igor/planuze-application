@@ -1,6 +1,6 @@
 import { Trash } from "lucide-react";
 
-import { profile, project_member } from "@repo/api/generator/types";
+import { profile, project_member } from "@repo/types";
 import {
   Button,
   Card as CardComponent,

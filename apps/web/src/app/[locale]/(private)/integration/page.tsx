@@ -1,8 +1,8 @@
 "use client";
 
-import { integration } from "@repo/api/generator/types";
+import { integration } from "@repo/types";
 
-import { useIntegration } from "@/api/callers/integration";
+import { useIntegration } from "@repo/api/web/callers/integration";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useTable } from "./hooks";

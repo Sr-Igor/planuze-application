@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 

@@ -1,4 +1,4 @@
-import { client } from "@repo/api/generator/types";
+import { client } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 

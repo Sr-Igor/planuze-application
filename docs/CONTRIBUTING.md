@@ -180,7 +180,7 @@ export * from "./hooks/use-exemplo"
 
 ```typescript
 // apps/web/src/api/req/exemplo.ts
-import { api } from '@/api/handle'
+import { api } from '@repo/api/web/handle'
 
 export async function getExemplo(id: string) {
   return api.get(`/exemplo/${id}`)
@@ -188,7 +188,7 @@ export async function getExemplo(id: string) {
 
 // apps/web/src/api/callers/exemplo.tsx
 import { useQuery } from '@tanstack/react-query'
-import { getExemplo } from '@/api/req/exemplo'
+import { getExemplo } from '@repo/api/web/req/exemplo'
 
 export function useExemplo(id: string) {
   return useQuery({

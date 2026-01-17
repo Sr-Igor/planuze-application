@@ -1,6 +1,6 @@
 "use client";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 import { AppTable } from "@repo/ui/app";
 
 import { useAccess } from "@/hooks/access";

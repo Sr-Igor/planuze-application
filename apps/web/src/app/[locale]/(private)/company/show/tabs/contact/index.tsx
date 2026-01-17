@@ -1,6 +1,6 @@
-import { company, company_contact } from "@repo/api/generator/types";
+import { company, company_contact } from "@repo/types";
 
-import { useCompanyContact } from "@/api/callers/company_contact";
+import { useCompanyContact } from "@repo/api/web/callers/company_contact";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

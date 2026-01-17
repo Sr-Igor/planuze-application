@@ -2,8 +2,8 @@
 
 import { useLang } from "@repo/language/hook";
 
-import { usePlan } from "@/api/callers/plan";
-import { useSubscription } from "@/api/callers/subscription";
+import { usePlan } from "@repo/api/web/callers/plan";
+import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAccess } from "@/hooks/access";
 import { useLoading } from "@/hooks/loading";
 

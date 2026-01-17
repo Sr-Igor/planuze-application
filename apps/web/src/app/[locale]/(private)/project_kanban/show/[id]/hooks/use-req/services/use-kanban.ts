@@ -1,4 +1,4 @@
-import { useProjectKanban } from '@/api/callers/project_kanban';
+import { useProjectKanban } from '@repo/api/web/callers/project_kanban';
 import { useAccess } from '@/hooks/access';
 
 export interface IUseKanbanProps {

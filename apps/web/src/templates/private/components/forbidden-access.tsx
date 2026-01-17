@@ -1,12 +1,12 @@
 import { Ban } from "lucide-react";
 
-import { module } from "@repo/api/generator/types";
+import { module } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
 
-import { useAppDispatch } from "@/hooks/redux";
-import { set } from "@/store/modules/module/actions";
+import { useAppDispatch } from "@repo/redux/hook";
+import { set } from "@repo/redux/store/modules/module/actions";
 
 interface ForbiddenAccessProps {
   suggestedModules: module[];

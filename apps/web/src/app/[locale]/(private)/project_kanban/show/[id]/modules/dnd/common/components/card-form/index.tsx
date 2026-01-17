@@ -2,13 +2,13 @@
 
 import { useEffect } from "react";
 
-import { project_kanban_cycle_card_type } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_type } from "@repo/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
 
-import { useProjectKanbanCycleCard } from "@/api/callers/project_kanban_cycle_card";
+import { useProjectKanbanCycleCard } from "@repo/api/web/callers/project_kanban_cycle_card";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@repo/redux/hook";
 import { cn } from "@/lib/utils";
 
 import { useForm } from "./use-form";

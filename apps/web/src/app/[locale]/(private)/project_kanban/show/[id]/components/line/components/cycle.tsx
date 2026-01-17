@@ -1,4 +1,4 @@
-import { project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban_cycle } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { CheckboxSelect } from "@/components/form/select/cases/checkbox";

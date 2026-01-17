@@ -2,10 +2,10 @@ import { useLocale } from "next-intl";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_financial, project_version, work_type } from "@repo/api/generator/types";
+import { project_financial, project_version, work_type } from "@repo/types";
 
-import { index as indexProjectVersion } from "@/api/req/project_version";
-import { index as indexWorkType } from "@/api/req/work_type";
+import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
+import { index as indexWorkType } from "@repo/api/web/req/work_type";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-crud/type";

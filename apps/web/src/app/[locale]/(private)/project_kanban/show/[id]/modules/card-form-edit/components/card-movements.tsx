@@ -4,7 +4,7 @@ import { useMemo } from "react";
 
 import { differenceInDays, differenceInHours, differenceInMinutes } from "date-fns";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Badge, Card, CardContent, CardHeader, CardTitle, Separator } from "@repo/ui";
 

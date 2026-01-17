@@ -215,7 +215,7 @@ import { GeistSans } from '@repo/fonts'
 
 // 3. Internos absolutos
 import { api } from '@/api'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '@repo/redux/hook'
 
 // 4. Relativos
 import { Header } from './header'

@@ -18,7 +18,7 @@ import {
   PopoverTrigger,
 } from "@repo/ui";
 
-import { useStates } from "@/api/callers/states";
+import { useStates } from "@repo/api/web/callers/states";
 import { cn } from "@/lib/utils";
 
 export interface IStateProps {

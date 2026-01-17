@@ -1,4 +1,4 @@
-import { module as TModule } from "@repo/api/generator/types";
+import { module as TModule } from "@repo/types";
 
 import { ModuleWithFeatures } from "@/hooks/access/types";
 

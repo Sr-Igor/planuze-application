@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 
 import { useQueryClient } from "@tanstack/react-query";
 
-import { project_kanban, project_kanban_cycle } from "@repo/api/generator/types";
+import { project_kanban, project_kanban_cycle } from "@repo/types";
 
 import { Mode } from "../../../types";
 import { useKanban } from "../services/use-kanban";

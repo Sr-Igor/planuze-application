@@ -1,7 +1,7 @@
 import { useLang } from "@repo/language/hook";
 import { Separator } from "@repo/ui";
 
-import { ITopEngagedCard } from "@/api/callers/project_kanban_report/types";
+import { ITopEngagedCard } from "@repo/api/web/callers/project_kanban_report/types";
 
 export interface iLineEngagementProps {
   card: ITopEngagedCard;

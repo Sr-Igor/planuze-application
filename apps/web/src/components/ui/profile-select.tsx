@@ -1,6 +1,6 @@
 import { BadgeCheck, ShieldBan } from "lucide-react";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 import { DropdownMenuItem } from "@repo/ui";
 
 import { cn } from "@/lib/utils";

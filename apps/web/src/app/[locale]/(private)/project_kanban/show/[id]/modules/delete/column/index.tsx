@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { project_kanban_cycle_column } from "@repo/api/generator/types";
+import { project_kanban_cycle_column } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";

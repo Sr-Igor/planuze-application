@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hook";
 import { ChartConfig, ChartContainer } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { ICardsByWorkType } from "@/api/callers/project_kanban_report/types";
+import { ICardsByWorkType } from "@repo/api/web/callers/project_kanban_report/types";
 
 import { Container } from "../container";
 

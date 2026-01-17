@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { KeyRound, Mail, Phone } from "lucide-react";
 
-import { user_two_auth } from "@repo/api/generator/types";
+import { user_two_auth } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -21,10 +21,9 @@ import {
   RadioGroupItem,
 } from "@repo/ui";
 
-import { useUserTwoAuthCode } from "@/api/callers/user_two_auth_code";
-import { useAuth } from "@/hooks/auth";
-import { useSignOut } from "@/hooks/cookies/signout";
-import { setTwoAuth } from "@/hooks/cookies/two_auth";
+import { useUserTwoAuthCode } from "@repo/api/web/callers/user_two_auth_code";
+import { useAuth } from "@repo/redux/hook";
+import { useSignOut, setTwoAuth } from "@repo/cookies";
 import { cn } from "@/lib/utils";
 import { CenterTemplate } from "@/templates/center";
 

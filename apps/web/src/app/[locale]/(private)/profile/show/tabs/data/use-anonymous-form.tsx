@@ -3,7 +3,7 @@
 import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

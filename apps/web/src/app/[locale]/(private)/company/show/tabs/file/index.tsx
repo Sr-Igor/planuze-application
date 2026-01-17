@@ -1,6 +1,6 @@
-import { company } from "@repo/api/generator/types";
+import { company } from "@repo/types";
 
-import { useCompanyFile } from "@/api/callers/company_file";
+import { useCompanyFile } from "@repo/api/web/callers/company_file";
 import { useShow } from "@/templates/show/context";
 import { UploadTemplate } from "@/templates/upload";
 

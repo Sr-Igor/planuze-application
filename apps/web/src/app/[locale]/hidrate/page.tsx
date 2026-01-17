@@ -5,12 +5,12 @@ import { useEffect, useMemo } from 'react';
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { useAuth } from '@/api/callers/auth';
-import { useAuth as userAuth } from '@/hooks/auth';
+import { useAuth } from '@repo/api/web/callers/auth';
+import { useAuth as userAuth } from '@repo/redux/hook';
 import { useModal } from '@/hooks/modal';
-import { useAppDispatch } from '@/hooks/redux';
-import { set as setModule } from '@/store/modules/module/actions';
-import { create } from '@/store/modules/user/actions';
+import { useAppDispatch } from '@repo/redux/hook';
+import { set as setModule } from '@repo/redux/store/modules/module/actions';
+import { create } from '@repo/redux/store/modules/user/actions';
 import { LoaderTemplate } from '@/templates/loader';
 
 export default function HidratePage() {

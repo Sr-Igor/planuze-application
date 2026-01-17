@@ -1,6 +1,6 @@
 import { Cog, History, Pen, Trash } from "lucide-react";
 
-import { project_config } from "@repo/api/generator/types";
+import { project_config } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,

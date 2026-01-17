@@ -6,7 +6,7 @@ import {
   project_kanban_cycle_card_type,
   project_kanban_cycle_column,
   project_tool,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 import { AppLogsModal, ILogsComparison } from "@repo/ui/app";
 
 import { useLogs } from "@/hooks/logs";

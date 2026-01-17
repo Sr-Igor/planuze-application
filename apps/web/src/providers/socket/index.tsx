@@ -8,16 +8,15 @@ import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import io from "socket.io-client";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 
-import keys from "@/api/cache/keys";
-import { useAuth } from "@/hooks/auth";
-import { getProfile } from "@/hooks/cookies/profile";
-import { getToken } from "@/hooks/cookies/token";
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-import { set as setModule } from "@/store/modules/module/actions";
-import { update as updateSocket } from "@/store/modules/socket/actions";
-import { update as updateUser } from "@/store/modules/user/actions";
+import keys from "@repo/api/cache/keys";
+import { useAuth } from "@repo/redux/hook";
+import { getProfile, getToken } from "@repo/cookies";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { set as setModule } from "@repo/redux/store/modules/module/actions";
+import { update as updateSocket } from "@repo/redux/store/modules/socket/actions";
+import { update as updateUser } from "@repo/redux/store/modules/user/actions";
 import { fingerprint } from "@repo/utils/fingerprint";
 
 //Global

@@ -1,4 +1,4 @@
-import { profile, profile_bank_account } from "@repo/api/generator/types";
+import { profile, profile_bank_account } from "@repo/types";
 
 import { CardListTemplate } from "@/templates/card-list";
 import { RegisterCard } from "@/templates/card-list/cards/register";

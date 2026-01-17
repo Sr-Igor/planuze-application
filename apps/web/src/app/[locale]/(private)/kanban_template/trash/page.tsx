@@ -1,6 +1,6 @@
 'use client';
 
-import { useKanbanTemplate } from '@/api/callers/kanban_template';
+import { useKanbanTemplate } from '@repo/api/web/callers/kanban_template';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

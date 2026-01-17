@@ -1,4 +1,4 @@
-import { project_kanban_cycle_column } from "@repo/api/generator/types";
+import { project_kanban_cycle_column } from "@repo/types";
 
 import { checkVisibility } from "../modules/dnd/hooks/useDnd/utils/isVisible";
 import { VisibleCards } from "../modules/dnd/types";

@@ -4,9 +4,9 @@ import { useState } from "react";
 
 import { useRouter } from "next/navigation";
 
-import { client } from "@repo/api/generator/types";
+import { client } from "@repo/types";
 
-import { useClient } from "@/api/callers/client";
+import { useClient } from "@repo/api/web/callers/client";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

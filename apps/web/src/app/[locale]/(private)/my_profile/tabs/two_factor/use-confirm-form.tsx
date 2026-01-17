@@ -1,6 +1,6 @@
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { user_two_auth } from "@repo/api/generator/types";
+import { user_two_auth } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

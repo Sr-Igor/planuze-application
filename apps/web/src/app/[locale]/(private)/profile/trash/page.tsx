@@ -1,6 +1,6 @@
 'use client';
 
-import { useProfile } from '@/api/callers/profile';
+import { useProfile } from '@repo/api/web/callers/profile';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

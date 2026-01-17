@@ -9,8 +9,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useLang } from "@repo/language/hook";
 import { Skeleton } from "@repo/ui";
 
-import { getFile } from "@/api/global/file";
-import { useAuth } from "@/hooks/auth";
+import { getFile } from "@repo/api/global/file";
+import { useAuth } from "@repo/redux/hook";
 
 export interface IImg extends ImageProps {
   callbackLink?: (url: string | null) => void;

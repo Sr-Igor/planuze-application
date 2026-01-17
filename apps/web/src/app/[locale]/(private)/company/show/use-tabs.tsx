@@ -1,7 +1,7 @@
-import { company } from "@repo/api/generator/types";
+import { company } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@repo/redux/hook";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Address, Contact, Data, Document, File, Owner } from "./tabs";

@@ -1,7 +1,7 @@
-import { project_config } from "@repo/api/generator/types";
+import { project_config } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { useProjectConfig } from "@/api/callers/project_config";
+import { useProjectConfig } from "@repo/api/web/callers/project_config";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

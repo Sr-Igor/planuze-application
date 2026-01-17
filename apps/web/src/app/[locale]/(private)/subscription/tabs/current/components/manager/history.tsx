@@ -1,4 +1,4 @@
-import { subscription_changes } from "@repo/api/generator/types";
+import { subscription_changes } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Card,

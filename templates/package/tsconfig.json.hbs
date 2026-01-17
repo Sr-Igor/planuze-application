@@ -1,0 +1,33 @@
+{
+    "extends": "@repo/typescript-config/{{#if (eq type 'react')}}react-library{{else}}base{{/if}}.json",
+    "compilerOptions": {
+        {{#if (eq type 'react')}}
+        "jsx": "react-jsx",
+        {{/if}}
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "skipLibCheck": true,
+        "noEmit": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "target": "ES2023",
+        {{#if usePathAlias}}
+        "baseUrl": ".",
+        "paths": {
+            "#/*": [
+                "./src/*"
+            ]
+        },
+        {{/if}}
+        "lib": [
+            "ES2023"{{#if (or (eq type 'react') (eq type 'library'))}},
+            "DOM"{{/if}}
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

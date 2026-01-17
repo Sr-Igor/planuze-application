@@ -17,7 +17,7 @@ import {
   Skeleton,
 } from "@repo/ui";
 
-import { useNotification } from "@/api/callers/notification";
+import { useNotification } from "@repo/api/web/callers/notification";
 import { Calendar } from "@/components/form/calendar";
 import { useModal } from "@/hooks/modal";
 

@@ -1,4 +1,4 @@
-import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
 
 import { IUseDndProps } from "../../../types";
 import { moveSubCardBetweenTaskColumns } from "../../../utils/moveSubCardBetweenTaskColumns";

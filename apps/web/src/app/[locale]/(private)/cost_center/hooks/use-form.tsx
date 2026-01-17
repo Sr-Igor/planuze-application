@@ -2,7 +2,7 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { cost_center } from "@repo/api/generator/types";
+import { cost_center } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

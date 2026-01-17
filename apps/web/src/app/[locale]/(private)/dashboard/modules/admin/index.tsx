@@ -2,7 +2,7 @@
 
 import { ScrollArea } from "@repo/ui";
 
-import { placeholder } from "@/api/callers/dashboard/placeholder/admin";
+import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/admin";
 
 import { Header } from "./components/header";
 import { Metadata } from "./components/metadata";

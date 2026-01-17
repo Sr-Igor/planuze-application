@@ -1,6 +1,6 @@
-import { kanban_template, kanban_template_column } from "@repo/api/generator/types";
+import { kanban_template, kanban_template_column } from "@repo/types";
 
-import { useKanbanTemplateColumn } from "@/api/callers/kanban_template_column";
+import { useKanbanTemplateColumn } from "@repo/api/web/callers/kanban_template_column";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

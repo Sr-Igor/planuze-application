@@ -1,6 +1,6 @@
 import { Eye, Pen, Trash } from "lucide-react";
 
-import { work_type } from "@repo/api/generator/types";
+import { work_type } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

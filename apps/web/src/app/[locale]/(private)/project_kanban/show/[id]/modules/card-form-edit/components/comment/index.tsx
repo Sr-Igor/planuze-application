@@ -1,4 +1,4 @@
-import { project_kanban_cycle_card_comment } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_comment } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { Permission } from "@/components/ui/permission";

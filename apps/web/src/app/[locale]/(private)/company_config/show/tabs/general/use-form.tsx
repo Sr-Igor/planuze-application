@@ -1,6 +1,6 @@
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { company_config } from "@repo/api/generator/types";
+import { company_config } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

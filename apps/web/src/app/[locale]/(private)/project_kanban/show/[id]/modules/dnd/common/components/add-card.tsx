@@ -1,6 +1,6 @@
 import { Plus } from "lucide-react";
 
-import { project_kanban_cycle_card_type } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_type } from "@repo/types";
 
 import { SimpleSelect } from "@/components/form/select/cases/simple";
 import { AppCardTypeSelector } from "@/components/ui/app-card-type-selector";

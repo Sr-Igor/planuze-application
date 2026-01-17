@@ -18,8 +18,8 @@ import {
   PopoverTrigger,
 } from "@repo/ui";
 
-import { useBank } from "@/api/callers/bank";
-import { IBank } from "@/api/global/bank";
+import { useBank } from "@repo/api/web/callers/bank";
+import { IBank } from "@repo/api/global/bank";
 import { cn } from "@/lib/utils";
 
 export interface IBankProps {

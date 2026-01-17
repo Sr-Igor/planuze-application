@@ -1,6 +1,6 @@
 import { Eye, Pen, Trash } from "lucide-react";
 
-import { kanban_template_tag } from "@repo/api/generator/types";
+import { kanban_template_tag } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

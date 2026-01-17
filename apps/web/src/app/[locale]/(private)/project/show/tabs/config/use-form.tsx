@@ -1,9 +1,9 @@
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_config, project_version } from "@repo/api/generator/types";
+import { project_config, project_version } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { index as indexProjectVersion } from "@/api/req/project_version";
+import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-crud/type";

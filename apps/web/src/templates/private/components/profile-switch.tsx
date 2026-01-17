@@ -12,7 +12,7 @@ import {
 
 import { ProfileSelectItem } from "@/components/ui/profile-select";
 import { useAccess } from "@/hooks/access";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 
 export interface ProfileSwitcherProps {
   callbackUrl?: string;

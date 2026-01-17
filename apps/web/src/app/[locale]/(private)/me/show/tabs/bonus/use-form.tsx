@@ -1,4 +1,4 @@
-import { profile_bonus } from "@repo/api/generator/types";
+import { profile_bonus } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { useConstants } from "@/hooks/constants";

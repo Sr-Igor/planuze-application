@@ -1,7 +1,7 @@
-import { project_kanban_cycle_card_comment } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_comment } from "@repo/types";
 
-import { useProjectKanbanCycleCardComment } from "@/api/callers/project_kanban_cycle_card_comment";
-import { IUseCallerProps } from "@/api/types";
+import { useProjectKanbanCycleCardComment } from "@repo/api/web/callers/project_kanban_cycle_card_comment";
+import { IUseCallerProps } from "@repo/api/web/types";
 
 export interface IUseCardCommentProps {
   cardId: string;

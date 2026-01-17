@@ -2,7 +2,7 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { profile, project_kanban_cycle_allocation } from "@repo/api/generator/types";
+import { profile, project_kanban_cycle_allocation } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";

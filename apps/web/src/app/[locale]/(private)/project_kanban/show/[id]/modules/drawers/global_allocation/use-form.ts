@@ -2,7 +2,7 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { profile, project_allocation, project_version } from "@repo/api/generator/types";
+import { profile, project_allocation, project_version } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

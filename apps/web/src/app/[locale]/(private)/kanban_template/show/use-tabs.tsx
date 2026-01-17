@@ -1,4 +1,4 @@
-import { kanban_template } from "@repo/api/generator/types";
+import { kanban_template } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { IShowHookProps } from "@/templates/show/types";

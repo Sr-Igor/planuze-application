@@ -1,9 +1,9 @@
 import { useLocale } from "next-intl";
 
-import { project_financial } from "@repo/api/generator/types";
+import { project_financial } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { useProjectFinancial } from "@/api/callers/project_financial";
+import { useProjectFinancial } from "@repo/api/web/callers/project_financial";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

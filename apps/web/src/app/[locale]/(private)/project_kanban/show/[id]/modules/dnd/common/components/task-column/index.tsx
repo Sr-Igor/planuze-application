@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 
-import { project_kanban_cycle_card_type } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_type } from "@repo/types";
 
 import { Permission } from "@/components/ui/permission";
 

@@ -1,6 +1,6 @@
-import { project_kanban } from "@repo/api/generator/types";
+import { project_kanban } from "@repo/types";
 
-import { useProjectKanbanReport } from "@/api/callers/project_kanban_report";
+import { useProjectKanbanReport } from "@repo/api/web/callers/project_kanban_report";
 import { useAccess } from "@/hooks/access";
 
 import { IParams } from "../../use-query/types";

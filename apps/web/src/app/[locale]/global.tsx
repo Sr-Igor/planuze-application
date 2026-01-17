@@ -1,10 +1,10 @@
 "use client";
 
-import { useAction } from "@/api/callers/action";
-import { useCountry } from "@/api/callers/country";
-import { useModule } from "@/api/callers/module";
+import { useAction } from "@repo/api/web/callers/action";
+import { useCountry } from "@repo/api/web/callers/country";
+import { useModule } from "@repo/api/web/callers/module";
 import { useIntlFormat } from "@/hooks/intl-format";
-import { useTabId } from "@/hooks/tab";
+import { useTabId } from "@repo/hooks";
 //Modals
 import { ErrorModal } from "@/templates/modal/error";
 import { InactiveModal } from "@/templates/modal/inactive";

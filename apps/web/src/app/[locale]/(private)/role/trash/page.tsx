@@ -1,6 +1,6 @@
 'use client';
 
-import { useRole } from '@/api/callers/role';
+import { useRole } from '@repo/api/web/callers/role';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

@@ -1,10 +1,10 @@
 import { useRouter } from 'next/navigation';
 
-import { set } from '@/store/modules/module/actions';
+import { set } from '@repo/redux/store/modules/module/actions';
 
 import { useAccess } from '../access';
 import { useModal } from '../modal';
-import { useAppDispatch } from '../redux';
+import { useAppDispatch } from '@repo/redux/hook';
 
 export const useNextRouter = () => {
     const router = useRouter();

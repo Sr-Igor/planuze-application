@@ -10,8 +10,8 @@ import { useLang } from "@repo/language/hook";
 import { Button, Skeleton } from "@repo/ui";
 
 import { AppTabs } from "@/components/ui/app-tabs";
-import { useSignOut } from "@/hooks/cookies/signout";
-import { useAppSelector } from "@/hooks/redux";
+import { useSignOut } from "@repo/cookies";
+import { useAppSelector } from "@repo/redux/hook";
 import { CenterTemplate } from "@/templates/center";
 
 import { Invite } from "./options/invite";

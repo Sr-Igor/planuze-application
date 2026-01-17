@@ -1,4 +1,4 @@
-import { kanban_template_card_type } from "@repo/api/generator/types";
+import { kanban_template_card_type } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Icon, StatusCircle, TableColumn } from "@repo/ui/app";
 

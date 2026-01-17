@@ -1,6 +1,6 @@
 import { InfiniteData, UseInfiniteQueryResult } from "@tanstack/react-query";
 
-import { project_kanban } from "@repo/api/generator/types";
+import { project_kanban } from "@repo/types";
 
 import { Pagination } from "@/types/pagination";
 

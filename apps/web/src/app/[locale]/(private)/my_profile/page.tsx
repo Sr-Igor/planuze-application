@@ -1,6 +1,6 @@
 'use client';
 
-import { useAuth } from '@/hooks/auth';
+import { useAuth } from '@repo/redux/hook';
 import { ShowTemplate } from '@/templates/show';
 
 import { useTabs } from './use-tabs';

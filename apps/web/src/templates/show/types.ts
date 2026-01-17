@@ -1,9 +1,9 @@
 import { UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 import { PageKeys } from "@repo/language/types";
 
-import { IUseCallerProps } from "@/api/types";
+import { IUseCallerProps } from "@repo/api/web/types";
 import { AccessView, Permissions } from "@/hooks/access/types";
 
 export interface IShowTab {

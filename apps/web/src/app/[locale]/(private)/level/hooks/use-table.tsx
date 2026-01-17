@@ -1,4 +1,4 @@
-import { level, profile } from "@repo/api/generator/types";
+import { level, profile } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 

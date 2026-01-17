@@ -1,5 +1,5 @@
-import { useCompany } from '@/api/callers/company';
-import { useInvite } from '@/api/callers/invite';
+import { useCompany } from '@repo/api/web/callers/company';
+import { useInvite } from '@repo/api/web/callers/invite';
 import { useUserSet } from '@/hooks/user-set';
 
 export const useReq = () => {

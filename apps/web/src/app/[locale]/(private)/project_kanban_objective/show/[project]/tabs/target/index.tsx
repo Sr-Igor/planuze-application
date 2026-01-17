@@ -1,9 +1,9 @@
 import {
   project_kanban_objective,
   project_kanban_objective_target,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 
-import { useProjectKanbanObjectiveTarget } from "@/api/callers/project_kanban_objective_target";
+import { useProjectKanbanObjectiveTarget } from "@repo/api/web/callers/project_kanban_objective_target";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

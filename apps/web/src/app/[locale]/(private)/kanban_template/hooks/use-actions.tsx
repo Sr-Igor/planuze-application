@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 
 import { BookCopy, Eye, Pen, Trash } from "lucide-react";
 
-import { kanban_template } from "@repo/api/generator/types";
+import { kanban_template } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

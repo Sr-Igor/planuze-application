@@ -1,4 +1,4 @@
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 
 import { useShow } from "@/templates/show/context";
 import { UploadTemplate } from "@/templates/upload";

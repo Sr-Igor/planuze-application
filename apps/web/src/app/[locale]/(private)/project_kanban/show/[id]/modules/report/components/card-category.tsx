@@ -4,7 +4,7 @@ import { useLang } from "@repo/language/hook";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
 
-import { ICardsTotalByType } from "@/api/callers/project_kanban_report/types";
+import { ICardsTotalByType } from "@repo/api/web/callers/project_kanban_report/types";
 import { cn } from "@/lib/utils";
 
 export interface iCardCategoryProps {

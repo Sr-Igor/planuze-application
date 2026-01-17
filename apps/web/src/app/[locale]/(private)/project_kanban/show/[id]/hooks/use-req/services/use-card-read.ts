@@ -1,7 +1,7 @@
-import { project_kanban_cycle_card_read } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_read } from "@repo/types";
 
-import { useProjectKanbanCycleCardRead } from "@/api/callers/project_kanban_cycle_card_read";
-import { IUseCallerProps } from "@/api/types";
+import { useProjectKanbanCycleCardRead } from "@repo/api/web/callers/project_kanban_cycle_card_read";
+import { IUseCallerProps } from "@repo/api/web/types";
 
 export interface IUseCardReadProps {
   cardId: string;

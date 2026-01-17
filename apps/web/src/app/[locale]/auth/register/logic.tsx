@@ -6,13 +6,13 @@ import { useRouter } from "next/navigation";
 
 import { LogInIcon } from "lucide-react";
 
-import { user } from "@repo/api/generator/types";
+import { user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { useUser } from "@/api/callers/user";
-import { useAppDispatch } from "@/hooks/redux";
-import { create } from "@/store/modules/user/actions";
+import { useUser } from "@repo/api/web/callers/user";
+import { useAppDispatch } from "@repo/redux/hook";
+import { create } from "@repo/redux/store/modules/user/actions";
 import { fingerprint } from "@repo/utils/fingerprint";
 import { hookValidate } from "@repo/utils/submitForm";
 

@@ -4,10 +4,10 @@ import {
   kanban_template,
   kanban_template_card,
   kanban_template_card_type,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 import { Icon } from "@repo/ui/app";
 
-import { index } from "@/api/req/kanban_template_card_type";
+import { index } from "@repo/api/web/req/kanban_template_card_type";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-crud/type";

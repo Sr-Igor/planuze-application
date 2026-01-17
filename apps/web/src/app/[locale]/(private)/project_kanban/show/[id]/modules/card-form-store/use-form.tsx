@@ -8,12 +8,12 @@ import {
   profile,
   project_kanban_cycle_card,
   project_kanban_cycle_card_type,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 
-import { index as indexProjectKanbanCycleCard } from "@/api/req/project_kanban_cycle_card";
+import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
 import { AppCardTypeSelector } from "@/components/ui/app-card-type-selector";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@repo/redux/hook";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { Shallow } from "@/types/shallowType";

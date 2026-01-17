@@ -9,7 +9,7 @@ import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { downloadFile } from "@/api/global/download";
+import { downloadFile } from "@repo/api/global/download";
 import { Img } from "@/components/image";
 
 import { IUploadFile } from "../types";

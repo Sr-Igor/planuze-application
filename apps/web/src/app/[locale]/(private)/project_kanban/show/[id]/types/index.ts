@@ -11,9 +11,9 @@ import {
   project_kanban_cycle_column,
   project_member,
   project_tool,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 
-import { IIndexResponseDTO } from "@/api/callers/project_kanban_report/types";
+import { IIndexResponseDTO } from "@repo/api/web/callers/project_kanban_report/types";
 import { Pagination } from "@/types/pagination";
 
 import { IParams } from "../hooks/use-query/types";

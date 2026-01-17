@@ -12,7 +12,7 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 
 export const RedirectModal = () => {
   const t = useLang();

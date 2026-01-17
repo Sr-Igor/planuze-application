@@ -1,6 +1,6 @@
 "use client";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { AppAvatar } from "@/components/ui/app-avatar";

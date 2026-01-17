@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { useVectorize } from '@/api/callers/vectorize';
+import { useVectorize } from '@repo/api/web/callers/vectorize';
 
 import { FileUploadService } from '../services/FileUploadService';
 import { FileStatus } from '../types/enums';

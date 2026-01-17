@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 
 import { Eye, Pen, Trash } from "lucide-react";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

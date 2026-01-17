@@ -1,4 +1,4 @@
-import { project } from "@repo/api/generator/types";
+import { project } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableColumn } from "@repo/ui/app";
 

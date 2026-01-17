@@ -1,4 +1,4 @@
-import { module } from "@repo/api/generator/types";
+import { module } from "@repo/types";
 
 import { IDashboardModule } from "../../types";
 

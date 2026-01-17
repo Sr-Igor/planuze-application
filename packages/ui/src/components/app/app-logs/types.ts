@@ -1,4 +1,4 @@
-import { integration, user } from "@repo/api/generator/types";
+import { integration, user } from "@repo/types";
 
 export interface LogEntry {
   id: string;

@@ -1,6 +1,6 @@
-import { client } from "@repo/api/generator/types";
+import { client } from "@repo/types";
 
-import { useClientFile } from "@/api/callers/client_file";
+import { useClientFile } from "@repo/api/web/callers/client_file";
 import { useShow } from "@/templates/show/context";
 import { UploadTemplate } from "@/templates/upload";
 

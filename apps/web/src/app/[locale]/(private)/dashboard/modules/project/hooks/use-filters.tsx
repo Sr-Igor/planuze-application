@@ -5,12 +5,12 @@ import { useEffect, useRef } from "react";
 import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
-import { cost_center, profile, project_version, work_type } from "@repo/api/generator/types";
+import { cost_center, profile, project_version, work_type } from "@repo/types";
 
-import { index as indexCostCenter } from "@/api/req/cost_center";
-import { index as indexProfile } from "@/api/req/profile";
-import { index as indexProjectVersion } from "@/api/req/project_version";
-import { index as indexWorkType } from "@/api/req/work_type";
+import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
+import { index as indexProfile } from "@repo/api/web/req/profile";
+import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
+import { index as indexWorkType } from "@repo/api/web/req/work_type";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 

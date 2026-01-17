@@ -1,8 +1,8 @@
 "use client";
 
-import { kanban_template_tag } from "@repo/api/generator/types";
+import { kanban_template_tag } from "@repo/types";
 
-import { useKanbanTemplateTag } from "@/api/callers/kanban_template_tag";
+import { useKanbanTemplateTag } from "@repo/api/web/callers/kanban_template_tag";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useForm, useTable } from "./hooks";

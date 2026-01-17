@@ -2,9 +2,9 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 
-import { index } from "@/api/req/project_kanban_cycle_card";
+import { index } from "@repo/api/web/req/project_kanban_cycle_card";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 

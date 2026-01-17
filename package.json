@@ -14,7 +14,8 @@
     "setup": "./scripts/setup.sh",
     "outdated": "pnpm outdated -r",
     "dedupe": "pnpm dedupe",
-    "validate": "pnpm check-versions && pnpm check-types && pnpm lint"
+    "validate": "pnpm check-versions && pnpm check-types && pnpm lint",
+    "plop:package": "plop --plopfile templates/plopfile.mjs"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -24,6 +25,7 @@
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
+    "plop": "^4.0.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",

@@ -1,6 +1,6 @@
 import { History, Pen, Trash } from "lucide-react";
 
-import { project_kanban_cycle_column } from "@repo/api/generator/types";
+import { project_kanban_cycle_column } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,

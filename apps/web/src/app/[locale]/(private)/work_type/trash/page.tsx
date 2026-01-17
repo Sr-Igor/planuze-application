@@ -1,6 +1,6 @@
 'use client';
 
-import { useWorkType } from '@/api/callers/work_type';
+import { useWorkType } from '@repo/api/web/callers/work_type';
 import { TrashTemplate } from '@/templates/list/trash';
 
 import { useTable } from './use-table';

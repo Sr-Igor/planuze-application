@@ -1,7 +1,7 @@
 import { useLang } from "@repo/language/hook";
 import { Separator } from "@repo/ui";
 
-import { IHoursByAllocation } from "@/api/callers/project_kanban_report/types";
+import { IHoursByAllocation } from "@repo/api/web/callers/project_kanban_report/types";
 
 export interface iLineHoursAllocationProps {
   allocation: IHoursByAllocation;

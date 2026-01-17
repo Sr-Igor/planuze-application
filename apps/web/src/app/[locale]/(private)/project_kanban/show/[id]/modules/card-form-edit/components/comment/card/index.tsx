@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { Pen, Trash } from "lucide-react";
 
-import { project_kanban_cycle_card_comment } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_comment } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";

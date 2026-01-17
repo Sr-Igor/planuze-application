@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { BookOpenText, CopyIcon } from "lucide-react";
 import { toast } from "sonner";
 
-import { integration } from "@repo/api/generator/types";
+import { integration } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,
@@ -19,7 +19,7 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { useIntegration } from "@/api/callers/integration";
+import { useIntegration } from "@repo/api/web/callers/integration";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

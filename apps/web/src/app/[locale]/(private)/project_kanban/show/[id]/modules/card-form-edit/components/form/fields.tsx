@@ -8,12 +8,12 @@ import {
   project_kanban_objective,
   project_kanban_objective_target,
   work_type,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { index as indexKanbanTemplateTag } from "@/api/req/kanban_template_tag";
-import { index as indexProjectKanbanCycleCard } from "@/api/req/project_kanban_cycle_card";
-import { index as indexProjectKanbanObjectiveTarget } from "@/api/req/project_kanban_objective_target";
+import { index as indexKanbanTemplateTag } from "@repo/api/web/req/kanban_template_tag";
+import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
+import { index as indexProjectKanbanObjectiveTarget } from "@repo/api/web/req/project_kanban_objective_target";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { CalendarController } from "@/components/controllers/calendar";
 import { InfinitySelectController } from "@/components/controllers/infinity-select";

@@ -5,11 +5,11 @@ import { useLocale } from "next-intl";
 import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
-import { cost_center, profile_role, role } from "@repo/api/generator/types";
+import { cost_center, profile_role, role } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { index as indexCostCenter } from "@/api/req/cost_center";
-import { index as indexRole } from "@/api/req/role";
+import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
+import { index as indexRole } from "@repo/api/web/req/role";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

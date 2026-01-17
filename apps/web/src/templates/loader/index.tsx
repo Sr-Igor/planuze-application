@@ -5,7 +5,7 @@ import { LoaderCircle } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { useSignOut } from "@/hooks/cookies/signout";
+import { useSignOut } from "@repo/cookies";
 
 import { CenterTemplate } from "../center";
 

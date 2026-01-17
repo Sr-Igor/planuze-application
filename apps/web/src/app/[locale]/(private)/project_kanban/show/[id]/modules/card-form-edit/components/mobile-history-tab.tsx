@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { History, Move } from "lucide-react";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 import { Separator, Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
 
 import { Logs, Movements } from "./columns";

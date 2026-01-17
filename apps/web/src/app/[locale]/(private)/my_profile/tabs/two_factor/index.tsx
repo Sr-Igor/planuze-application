@@ -2,7 +2,7 @@
 
 import { CircleCheck, PackageOpen, Pen, Plus, RefreshCw, Trash } from "lucide-react";
 
-import { user_two_auth } from "@repo/api/generator/types";
+import { user_two_auth } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button, Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui";
 import { AppDialog, StatusCircle } from "@repo/ui/app";

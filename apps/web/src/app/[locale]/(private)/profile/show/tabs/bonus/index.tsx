@@ -1,6 +1,6 @@
-import { profile, profile_bonus } from "@repo/api/generator/types";
+import { profile, profile_bonus } from "@repo/types";
 
-import { useProfileBonus } from "@/api/callers/profile_bonus";
+import { useProfileBonus } from "@repo/api/web/callers/profile_bonus";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

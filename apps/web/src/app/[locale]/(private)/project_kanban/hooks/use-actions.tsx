@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 
 import { ChartNoAxesGantt, Presentation, Target, Trash } from "lucide-react";
 
-import { project_kanban } from "@repo/api/generator/types";
+import { project_kanban } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

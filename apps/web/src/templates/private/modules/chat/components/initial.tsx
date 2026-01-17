@@ -1,4 +1,4 @@
-import { user } from "@repo/api/generator/types";
+import { user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Badge } from "@repo/ui";
 

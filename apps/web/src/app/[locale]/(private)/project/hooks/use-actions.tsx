@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 
 import { ChartNoAxesGantt, Eye, Pen, Trash } from "lucide-react";
 
-import { project } from "@repo/api/generator/types";
+import { project } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

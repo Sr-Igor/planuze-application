@@ -1,4 +1,4 @@
-import { profile_address } from "@repo/api/generator/types";
+import { profile_address } from "@repo/types";
 
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

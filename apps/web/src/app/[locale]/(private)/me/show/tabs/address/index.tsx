@@ -1,6 +1,6 @@
 "use client";
 
-import { profile } from "@repo/api/generator/types";
+import { profile } from "@repo/types";
 
 import { cn } from "@/lib/utils";
 import { DataForm } from "@/templates/data-form";

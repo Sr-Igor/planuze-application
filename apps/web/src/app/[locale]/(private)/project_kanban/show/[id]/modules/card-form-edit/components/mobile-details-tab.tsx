@@ -5,7 +5,7 @@ import { useState } from "react";
 import { BookOpen, Calendar, ListChecks } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 import { Separator, Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
 
 import { DependenciesAndObjectives, Description, PlanningAndEffort } from "./columns";

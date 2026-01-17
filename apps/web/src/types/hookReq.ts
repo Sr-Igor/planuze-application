@@ -1,4 +1,4 @@
-import { IUseCallerProps } from '@/api/types';
+import { IUseCallerProps } from '@repo/api/web/types';
 import { UseMutationResult, UseQueryResult } from '@tanstack/react-query';
 
 export interface Requests<T> extends Record<string, any> {

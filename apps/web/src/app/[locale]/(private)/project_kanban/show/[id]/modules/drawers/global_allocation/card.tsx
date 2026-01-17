@@ -1,6 +1,6 @@
 import { Clock10, History, Pen, Trash } from "lucide-react";
 
-import { project_allocation } from "@repo/api/generator/types";
+import { project_allocation } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Button,

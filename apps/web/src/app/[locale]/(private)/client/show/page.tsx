@@ -1,6 +1,6 @@
 'use client';
 
-import { useClient } from '@/api/callers/client';
+import { useClient } from '@repo/api/web/callers/client';
 import { ShowTemplate } from '@/templates/show';
 
 import { useTabs } from './use-tabs';

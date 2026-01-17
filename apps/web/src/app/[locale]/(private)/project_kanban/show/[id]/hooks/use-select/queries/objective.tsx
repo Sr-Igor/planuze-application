@@ -1,8 +1,8 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
-import { project_kanban_objective } from "@repo/api/generator/types";
+import { project_kanban_objective } from "@repo/types";
 
-import { index } from "@/api/req/project_kanban_objective";
+import { index } from "@repo/api/web/req/project_kanban_objective";
 import { useAccess } from "@/hooks/access";
 import { Pagination } from "@/types/pagination";
 

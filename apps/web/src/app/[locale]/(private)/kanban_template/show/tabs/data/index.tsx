@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
-import { kanban_template } from "@repo/api/generator/types";
+import { kanban_template } from "@repo/types";
 
-import { useKanbanTemplate } from "@/api/callers/kanban_template";
+import { useKanbanTemplate } from "@repo/api/web/callers/kanban_template";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 
-import { project_kanban_cycle_card } from "@repo/api/generator/types";
+import { project_kanban_cycle_card } from "@repo/types";
 
 import { useKanbanShow } from "../../../../../../context";
 import { checkVisibility } from "../../../../hooks/useDnd/utils/isVisible";

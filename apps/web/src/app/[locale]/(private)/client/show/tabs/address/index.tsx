@@ -1,8 +1,8 @@
 "use client";
 
-import { client } from "@repo/api/generator/types";
+import { client } from "@repo/types";
 
-import { useClientAddress } from "@/api/callers/client_address";
+import { useClientAddress } from "@repo/api/web/callers/client_address";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

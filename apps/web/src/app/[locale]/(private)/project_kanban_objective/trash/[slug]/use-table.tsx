@@ -1,4 +1,4 @@
-import { project_kanban_objective } from "@repo/api/generator/types";
+import { project_kanban_objective } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 

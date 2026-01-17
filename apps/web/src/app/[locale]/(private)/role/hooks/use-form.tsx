@@ -4,10 +4,10 @@ import { useLocale } from "next-intl";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { cost_center, role, work_type } from "@repo/api/generator/types";
+import { cost_center, role, work_type } from "@repo/types";
 
-import { index as indexCostCenter } from "@/api/req/cost_center";
-import { index } from "@/api/req/work_type";
+import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
+import { index } from "@repo/api/web/req/work_type";
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";

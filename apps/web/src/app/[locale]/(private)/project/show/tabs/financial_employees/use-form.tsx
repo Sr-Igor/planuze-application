@@ -4,10 +4,10 @@ import { useLocale } from "next-intl";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { project_financial, project_financial_employees, role } from "@repo/api/generator/types";
+import { project_financial, project_financial_employees, role } from "@repo/types";
 
-import { index as indexProjectFinancial } from "@/api/req/project_financial";
-import { index as indexRole } from "@/api/req/role";
+import { index as indexProjectFinancial } from "@repo/api/web/req/project_financial";
+import { index as indexRole } from "@repo/api/web/req/role";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-crud/type";

@@ -1,8 +1,8 @@
 "use client";
 
-import { client } from "@repo/api/generator/types";
+import { client } from "@repo/types";
 
-import { useClient } from "@/api/callers/client";
+import { useClient } from "@repo/api/web/callers/client";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useTable } from "./hooks";

@@ -1,4 +1,4 @@
-import { project_kanban_cycle_card_tag } from "@repo/api/generator/types";
+import { project_kanban_cycle_card_tag } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { ILogsComparison } from "@repo/ui/app";
 

@@ -1,12 +1,12 @@
 "use client";
 
-import { user } from "@repo/api/generator/types";
+import { user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { useAuth } from "@/api/callers/auth";
-import { useSignOut } from "@/hooks/cookies/signout";
-import { useAppSelector } from "@/hooks/redux";
+import { useAuth } from "@repo/api/web/callers/auth";
+import { useSignOut } from "@repo/cookies";
+import { useAppSelector } from "@repo/redux/hook";
 import { useUnload } from "@/hooks/unload";
 import { useUserSet } from "@/hooks/user-set";
 import { cn } from "@/lib/utils";

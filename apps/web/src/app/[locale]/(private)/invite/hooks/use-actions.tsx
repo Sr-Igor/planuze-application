@@ -1,6 +1,6 @@
 import { Mail, Pen, Trash } from "lucide-react";
 
-import { invite } from "@repo/api/generator/types";
+import { invite } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { TableAction } from "@repo/ui/app";
 

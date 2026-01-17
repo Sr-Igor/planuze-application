@@ -14,12 +14,12 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { usePlan } from "@/api/callers/plan";
-import { useSubscription } from "@/api/callers/subscription";
+import { usePlan } from "@repo/api/web/callers/plan";
+import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@/hooks/cookies/signout";
-import { useAppDispatch } from "@/hooks/redux";
-import { set as setModule } from "@/store/modules/module/actions";
+import { useSignOut } from "@repo/cookies";
+import { useAppDispatch } from "@repo/redux/hook";
+import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import { PlansTemplate } from "@/templates/plans";
 import { ProfileSwitcher } from "@/templates/private/components/profile-switch";
 

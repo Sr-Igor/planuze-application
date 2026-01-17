@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-import { integration_action, module as TModule } from "@repo/api/generator/types";
+import { integration_action, module as TModule } from "@repo/types";
 
-import { useIntegrationAction } from "@/api/callers/integration_action";
+import { useIntegrationAction } from "@repo/api/web/callers/integration_action";
 import { ModuleWithFeatures } from "@/hooks/access/types";
 import { PermissionCard } from "@/templates/permission-card";
 

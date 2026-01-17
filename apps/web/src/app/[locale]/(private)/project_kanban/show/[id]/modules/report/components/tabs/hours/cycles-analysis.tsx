@@ -7,7 +7,7 @@ import { PackageOpen } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 
-import { ICycleHoursAnalysis } from "@/api/callers/project_kanban_report/types";
+import { ICycleHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
 import { cn } from "@/lib/utils";
 
 export interface iCyclesAnalysisProps {

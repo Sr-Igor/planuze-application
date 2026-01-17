@@ -1,4 +1,4 @@
-import { plan } from "@repo/api/generator/types";
+import { plan } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   Accordion,

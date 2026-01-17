@@ -13,9 +13,9 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { useSignOut } from "@/hooks/cookies/signout";
+import { useSignOut } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
-import { useAppSelector } from "@/hooks/redux";
+import { useAppSelector } from "@repo/redux/hook";
 
 export const ErrorModal = () => {
   const t = useLang();

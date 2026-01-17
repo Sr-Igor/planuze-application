@@ -2,9 +2,9 @@
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { profile, project_member } from "@repo/api/generator/types";
+import { profile, project_member } from "@repo/types";
 
-import { index } from "@/api/req/profile";
+import { index } from "@repo/api/web/req/profile";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { Shallow } from "@/types/shallowType";

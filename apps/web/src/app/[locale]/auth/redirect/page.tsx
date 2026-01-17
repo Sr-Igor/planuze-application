@@ -8,9 +8,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useLang } from "@repo/language/hook";
 
 import { useModal } from "@/hooks/modal";
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-import { set } from "@/store/modules/module/actions";
-import { create } from "@/store/modules/user/actions";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { set } from "@repo/redux/store/modules/module/actions";
+import { create } from "@repo/redux/store/modules/user/actions";
 import { LoaderTemplate } from "@/templates/loader";
 
 export default function LoginPage() {

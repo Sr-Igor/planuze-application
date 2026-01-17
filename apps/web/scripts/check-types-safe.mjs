@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Script para verificar tipos TypeScript ignorando apenas erros da pasta generator
- * Filtra erros relacionados a @repo/api/generator e permite que outros erros sejam reportados
+ * Filtra erros relacionados a @repo/types e permite que outros erros sejam reportados
  */
 import { execSync } from "child_process";
 import { dirname, join } from "path";
@@ -35,7 +35,7 @@ try {
     }
 
     // Ignora erros da pasta generator
-    if (line.includes("generator/") || line.includes("@repo/api/generator")) {
+    if (line.includes("generator/") || line.includes("@repo/types")) {
       return false;
     }
 

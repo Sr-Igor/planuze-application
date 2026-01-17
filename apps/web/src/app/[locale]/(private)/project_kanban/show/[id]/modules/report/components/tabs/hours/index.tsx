@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { useLang } from "@repo/language/hook";
 
-import { IHoursAnalysis } from "@/api/callers/project_kanban_report/types";
+import { IHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
 
 import { CardItem } from "../../card";
 import { CyclesAnalysis } from "./cycles-analysis";

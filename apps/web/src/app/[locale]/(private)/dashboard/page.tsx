@@ -1,7 +1,7 @@
 "use client";
 
-import { useDashboard } from "@/api/callers/dashboard";
-import { useAuth } from "@/hooks/auth";
+import { useDashboard } from "@repo/api/web/callers/dashboard";
+import { useAuth } from "@repo/redux/hook";
 import { useSearchParams } from "@/hooks/search-params";
 
 import { Loader } from "./components/Loader";

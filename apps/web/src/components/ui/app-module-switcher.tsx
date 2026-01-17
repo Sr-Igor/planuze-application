@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 
-import { module } from "@repo/api/generator/types";
+import { module } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import {
   DropdownMenu,
@@ -24,11 +24,11 @@ import { AppTooltip, Icon } from "@repo/ui/app";
 
 import { useAccess } from "@/hooks/access";
 import { ModuleWithFeatures } from "@/hooks/access/types";
-import { getModule } from "@/hooks/cookies/module";
+import { getModule } from "@repo/cookies";
 import { useNextRouter } from "@/hooks/next-router";
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { cn } from "@/lib/utils";
-import { set } from "@/store/modules/module/actions";
+import { set } from "@repo/redux/store/modules/module/actions";
 
 export function ModuleSwitcher() {
   const { isMobile } = useSidebar();

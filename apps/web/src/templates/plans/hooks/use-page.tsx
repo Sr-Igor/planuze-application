@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import { plan } from "@repo/api/generator/types";
+import { plan } from "@repo/types";
 
-import { useAuth } from "@/hooks/auth";
+import { useAuth } from "@repo/redux/hook";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 import { IPlanTemplateProps } from "../types";

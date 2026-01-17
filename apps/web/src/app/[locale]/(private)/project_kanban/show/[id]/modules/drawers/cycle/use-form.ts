@@ -10,10 +10,10 @@ import {
   project_kanban_cycle,
   project_version,
   work_type,
-} from "@repo/api/generator/types";
+} from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { index } from "@/api/req/kanban_template";
+import { index } from "@repo/api/web/req/kanban_template";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";

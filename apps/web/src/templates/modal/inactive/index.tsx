@@ -26,10 +26,10 @@ import {
 
 import { ProfileSelectItem } from "@/components/ui/profile-select";
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@/hooks/cookies/signout";
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { useSignOut } from "@repo/cookies";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { cn } from "@/lib/utils";
-import { update } from "@/store/modules/modal/actions";
+import { update } from "@repo/redux/store/modules/modal/actions";
 
 export const InactiveModal = () => {
   const t = useLang();

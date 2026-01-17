@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
-import { profile, project_allocation, project_version } from "@repo/api/generator/types";
+import { profile, project_allocation, project_version } from "@repo/types";
 
-import { index as indexProfile } from "@/api/req/profile";
-import { index as indexProjectVersion } from "@/api/req/project_version";
+import { index as indexProfile } from "@repo/api/web/req/profile";
+import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
 import { useFormList } from "@/hooks/form";
 import { Field } from "@/hooks/form/types";
 import { IUseHookProps } from "@/templates/card-crud/type";

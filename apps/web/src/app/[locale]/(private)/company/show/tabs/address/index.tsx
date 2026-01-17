@@ -1,8 +1,8 @@
 "use client";
 
-import { company } from "@repo/api/generator/types";
+import { company } from "@repo/types";
 
-import { useCompanyAddress } from "@/api/callers/company_address";
+import { useCompanyAddress } from "@repo/api/web/callers/company_address";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@/lib/utils";

@@ -4,7 +4,7 @@ import { memo, useMemo } from "react";
 
 import { DragOverlay } from "@dnd-kit/core";
 
-import { project_kanban_cycle_card, project_kanban_cycle_column } from "@repo/api/generator/types";
+import { project_kanban_cycle_card, project_kanban_cycle_column } from "@repo/types";
 
 import { VisibleCards } from "../../types";
 import { KanbanCard } from "./card";
