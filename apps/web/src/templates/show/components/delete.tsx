@@ -1,7 +1,7 @@
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { IDeleteProps } from "../types";
 

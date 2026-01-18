@@ -7,7 +7,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
 
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
+import { AppCardSelector } from "@/components/app-cycle-card-selector";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
 

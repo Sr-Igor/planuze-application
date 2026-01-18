@@ -7,7 +7,7 @@ import { useLang } from "@repo/language/hooks";
 import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
 import { ISelected } from "@repo/form";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../context";

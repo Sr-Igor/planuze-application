@@ -7,7 +7,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button, ScrollArea } from "@repo/ui";
 import { AppDialog, Trash } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { OrderModal } from "../modal/order";
 import { State } from "../show/types";

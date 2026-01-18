@@ -14,7 +14,7 @@ import {
  cn } from "@repo/ui";
 import { StatusCircle } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { useKanbanShow } from "../../../context";
 

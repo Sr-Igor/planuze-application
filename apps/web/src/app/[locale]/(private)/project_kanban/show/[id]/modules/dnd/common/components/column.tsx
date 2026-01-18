@@ -10,7 +10,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button, Card, CardContent, ScrollArea } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { cn } from "@repo/ui";
 
 import { KanbanColumnProps } from "../../types";

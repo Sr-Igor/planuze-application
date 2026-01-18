@@ -12,7 +12,7 @@ import {
 } from "@repo/ui";
 import { AppTooltip, Icon } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";

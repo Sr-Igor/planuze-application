@@ -7,7 +7,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useProfile } from "@repo/api/web/callers/profile";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useShow } from "@/templates/show/context";
 
 import { Profile } from "./card";

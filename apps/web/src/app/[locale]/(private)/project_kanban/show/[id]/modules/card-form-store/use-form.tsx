@@ -11,8 +11,8 @@ import {
 } from "@repo/types";
 
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { AppCardTypeSelector } from "@/components/ui/app-card-type-selector";
-import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
+import { AppCardTypeSelector } from "@/components/app-card-type-selector";
+import { AppCardSelector } from "@/components/app-cycle-card-selector";
 import { useAuth } from "@repo/redux/hook";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";

@@ -2,7 +2,7 @@ import { useLang } from "@repo/language/hooks";
 import { Label } from "@repo/ui";
 
 import { CheckboxSelect } from "@repo/form";
-import { AppCardTypeSelector } from "@/components/ui/app-card-type-selector";
+import { AppCardTypeSelector } from "@/components/app-card-type-selector";
 
 import { useKanbanShow } from "../../../context";
 

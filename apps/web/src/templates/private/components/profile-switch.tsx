@@ -10,7 +10,7 @@ import {
   useIsMobile,
 } from "@repo/ui";
 
-import { ProfileSelectItem } from "@/components/ui/profile-select";
+import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
 import { useAppSelector } from "@repo/redux/hook";
 

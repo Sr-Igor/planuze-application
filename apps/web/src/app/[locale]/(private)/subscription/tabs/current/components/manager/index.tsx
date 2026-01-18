@@ -7,7 +7,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useSubscription } from "@repo/api/web/callers/subscription";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useShow } from "@/templates/show/context";
 
 import { HistoryModal } from "./history";

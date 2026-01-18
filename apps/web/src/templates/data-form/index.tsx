@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppLogsModal, ILogsComparison } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 export interface DataFormProps<T> {
   children: React.ReactNode;

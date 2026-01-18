@@ -1,7 +1,7 @@
 import { project_kanban_cycle_card_comment } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { CommentCard } from "./card";
 import { NewComment } from "./new";

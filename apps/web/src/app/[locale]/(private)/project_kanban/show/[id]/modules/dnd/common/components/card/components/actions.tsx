@@ -6,7 +6,7 @@ import { Button } from "@repo/ui";
 import * as Cn from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 export interface IActionsProps {
   column: project_kanban_cycle_column;

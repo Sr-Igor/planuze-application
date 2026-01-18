@@ -7,7 +7,7 @@ import { Button } from "@repo/ui";
 import * as C from "@repo/ui";
 import { AppDialog, AppLogsModal } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useUnload } from "@/hooks/unload";
 import { cn } from "@repo/ui";
 import { hookValidate } from "@repo/form";

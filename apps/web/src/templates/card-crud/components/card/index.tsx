@@ -7,7 +7,7 @@ import { Button, Skeleton } from "@repo/ui";
 import * as C from "@repo/ui";
 import { AppDialog, Icon } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { cn } from "@repo/ui";
 
 import { ICardProps } from "../../type";

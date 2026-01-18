@@ -6,8 +6,8 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
-import { Permission } from "@/components/ui/permission";
+import { AppCardSelector } from "@/components/app-cycle-card-selector";
+import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 
 import { Collapsible } from "../../collapsible";

@@ -13,7 +13,7 @@ import {
   Skeleton,
  cn } from "@repo/ui";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { useKanbanShow } from "../../../context";
 

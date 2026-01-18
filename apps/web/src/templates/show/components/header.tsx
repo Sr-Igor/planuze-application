@@ -4,7 +4,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppCard, Icon } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { cn } from "@repo/ui";
 import { usePrivateContext } from "@/templates/private/context";
 

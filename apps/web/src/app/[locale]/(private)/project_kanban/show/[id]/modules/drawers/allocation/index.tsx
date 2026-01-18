@@ -19,7 +19,7 @@ import {
 import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui/app";
 
 import { Input } from "@repo/form";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../../context";

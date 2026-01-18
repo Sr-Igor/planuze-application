@@ -27,7 +27,7 @@ import {
 import { AppTheme, Icon } from "@repo/ui/app";
 
 import { AppLanguage } from "@/components/language";
-import { ModuleSwitcher } from "@/components/ui/app-module-switcher";
+import { ModuleSwitcher } from "@/components/app-module-switcher";
 import { useAccess } from "@/hooks/access";
 import { FeatureWithActions, ModuleWithFeatures } from "@/hooks/access/types";
 

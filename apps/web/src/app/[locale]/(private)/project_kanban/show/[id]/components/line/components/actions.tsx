@@ -4,7 +4,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDropdownMenu } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../../context";

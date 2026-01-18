@@ -6,7 +6,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { AppTabs } from "@/components/ui/app-tabs";
+import { AppTabs } from "@/components/app-tabs";
 import { hookValidate } from "@repo/form";
 
 import { useKanbanShow } from "../../context";

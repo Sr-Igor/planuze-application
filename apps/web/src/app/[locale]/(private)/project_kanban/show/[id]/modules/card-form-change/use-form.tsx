@@ -4,7 +4,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 
 import { project_kanban_cycle_card } from "@repo/types";
 
-import { AppCardTypeSelector } from "@/components/ui/app-card-type-selector";
+import { AppCardTypeSelector } from "@/components/app-card-type-selector";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
 

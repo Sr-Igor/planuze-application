@@ -12,7 +12,7 @@ import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id
 import { Editor } from "@repo/form";
 import { isHtmlEmpty, normalizeHtml } from "@repo/form/utils";
 import { AppAvatar } from "@repo/ui/app";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 
 export interface ICommentCardProps {

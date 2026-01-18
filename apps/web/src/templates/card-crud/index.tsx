@@ -5,7 +5,7 @@ import { PackageOpen } from "lucide-react";
 import { useLang } from "@repo/language/hooks";
 import { ScrollArea } from "@repo/ui";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useShow } from "@/templates/show/context";
 
 import { Card } from "./components/card";

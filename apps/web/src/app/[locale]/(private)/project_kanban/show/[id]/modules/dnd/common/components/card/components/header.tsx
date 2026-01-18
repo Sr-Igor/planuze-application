@@ -12,7 +12,7 @@ import { Button, CardHeader, CardTitle } from "@repo/ui";
 import { AppTooltip, Icon } from "@repo/ui/app";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 import { cn } from "@repo/ui";
 

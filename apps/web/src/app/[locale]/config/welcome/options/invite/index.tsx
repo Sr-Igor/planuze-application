@@ -5,7 +5,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { AppInvite } from "@/components/ui/app.invite";
+import { AppInvite } from "@/components/app.invite";
 
 export interface IInviteProps {
   invites: invite[];

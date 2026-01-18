@@ -3,7 +3,7 @@ import { Plus, Trash2 } from "lucide-react";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { IHeaderProps } from "../../type";
 

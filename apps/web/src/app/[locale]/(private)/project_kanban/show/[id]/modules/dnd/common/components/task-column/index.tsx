@@ -6,7 +6,7 @@ import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 
 import { project_kanban_cycle_card_type } from "@repo/types";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 import { useKanbanShow } from "../../../../../context";
 import { AddCard } from "../add-card";

@@ -16,7 +16,7 @@ import {
 
 import { DndWrapper, ProviderDND, DraggableItem } from "@repo/ui/app";
 
-import { Permission } from "@/components/ui/permission";
+import { Permission } from "@/components/permission";
 
 interface IOrderModalProps {
   data: any[];
