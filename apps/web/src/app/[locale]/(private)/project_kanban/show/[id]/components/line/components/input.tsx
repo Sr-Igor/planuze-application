@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLang } from "@repo/language/hook";
 import { Input as InputComponent, Label } from "@repo/ui";
 
-import { useDebounce } from "@/hooks/debounce";
+import { useDebounce } from "@/@repo/hooks";
 
 export interface InputProps {
   keyItem: string;

@@ -12,11 +12,11 @@ import {
   Separator,
   Tabs,
   TabsContent,
-} from "@repo/ui";
+  cn,
+ } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { useDebounce } from "@/hooks/debounce";
-import { cn } from "@repo/ui";
+import { useDebounce } from "@repo/hooks";
 
 import { useKanbanShow } from "../../context";
 import { TabList } from "../../modules/report/components/tab-list";

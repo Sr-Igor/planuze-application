@@ -4,7 +4,7 @@ import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 
 import { Numeric } from "@repo/form";
-import { useDebounce } from "@/hooks/debounce";
+import { useDebounce } from "@/@repo/hooks";
 
 import { FilterKey } from "../types";
 

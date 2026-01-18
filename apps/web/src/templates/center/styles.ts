@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@repo/ui';
 
 export const container = cn('flex min-h-screen w-full flex-col items-center justify-start gap-y-8 p-4 md:p-8');
 

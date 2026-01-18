@@ -3,7 +3,7 @@
 import { memo } from 'react';
 
 import { useAccess } from '@/hooks/access';
-import { cn } from '@/lib/utils';
+import { cn } from '@repo/ui';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
