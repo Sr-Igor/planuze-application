@@ -84,7 +84,7 @@ export const nextJsConfig = [
     },
   },
   {
-    ignores: [".next/*", "src/api/generator", "next-env.d.ts"],
+    ignores: [".next/*", "next-env.d.ts"],
   },
   {
     files: ["next-env.d.ts"],
