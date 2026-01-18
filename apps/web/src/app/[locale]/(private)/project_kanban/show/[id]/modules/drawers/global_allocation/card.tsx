@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
- cn } from "@repo/ui";
+ cn } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 

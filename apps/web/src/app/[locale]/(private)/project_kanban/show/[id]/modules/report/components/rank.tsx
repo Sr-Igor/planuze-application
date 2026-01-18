@@ -3,9 +3,9 @@ import { Fragment } from "react";
 import { PackageOpen } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui-new";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 export interface IRankProps<T> {
   title: string;

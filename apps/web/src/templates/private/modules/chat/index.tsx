@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { cn } from '@repo/ui';
+import { cn } from '@repo/ui-new';
 
 import { Footer } from './components/footer';
 import { Header } from './components/header';

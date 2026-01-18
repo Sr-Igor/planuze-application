@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@repo/ui";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@repo/ui-new";
 
 export interface FeatureProps {
   features: {

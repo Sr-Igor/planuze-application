@@ -12,7 +12,7 @@ import {
   DialogDescription,
   DialogFooter,
   DialogTitle,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { usePlan } from "@repo/api/web/callers/plan";
 import { useSubscription } from "@repo/api/web/callers/subscription";

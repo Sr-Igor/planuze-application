@@ -6,14 +6,14 @@ import { ToggleLeft, UserLock } from "lucide-react";
 
 import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button, SidebarProvider } from "@repo/ui";
-import { FullScreenMessage } from "@repo/ui/app";
+import { Button, SidebarProvider } from "@repo/ui-new";
+import { FullScreenMessage } from "@repo/ui-new";
 
 import { Nav } from "@/components/nav";
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@repo/cookies";
 import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { AppSidebar } from "./components/app-sidebar";
 import { ForbiddenAccess } from "./components/forbidden-access";

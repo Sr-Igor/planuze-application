@@ -2,10 +2,10 @@ import { memo } from "react";
 
 import * as icons from "lucide-react";
 
-import { Checkbox , Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui";
-import { AppTooltip } from "@repo/ui/app";
+import { Checkbox , Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@repo/ui-new";
+import { AppTooltip } from "@repo/ui-new";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { PermissionTableProps } from "../types";
 import { getCheckboxState } from "../utils/checkbox-state";

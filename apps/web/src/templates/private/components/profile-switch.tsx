@@ -8,7 +8,7 @@ import {
   DropdownMenuGroup,
   DropdownMenuTrigger,
   useIsMobile,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";

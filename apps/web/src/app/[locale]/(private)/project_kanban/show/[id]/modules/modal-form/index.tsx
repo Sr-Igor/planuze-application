@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { AlertCircleIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui/app";
+import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui-new";
+import { AppDialog } from "@repo/ui-new";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { hookValidate } from "@repo/form";

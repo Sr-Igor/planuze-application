@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 
 import { useLang } from "@repo/language/hooks";
-import { Icon } from "@repo/ui/app";
+import { Icon } from "@repo/ui-new";
 
 import { useProjectKanbanObjective } from "@repo/api/web/callers/project_kanban_objective";
 import { TrashTemplate } from "@/templates/list/trash";

@@ -5,7 +5,7 @@ import { memo, useState } from "react";
 import { Plus } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 

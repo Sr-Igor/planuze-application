@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Kanban } from "lucide-react";
 
 import { project_kanban } from "@repo/types";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 import { useProject } from "@repo/api/web/callers/project";
 import { useProjectKanban } from "@repo/api/web/callers/project_kanban";

@@ -1,10 +1,9 @@
 import { BadgeCheck, ShieldBan } from "lucide-react";
 
 import { profile } from "@repo/types";
-import { DropdownMenuItem , cn } from "@repo/ui";
+import { DropdownMenuItem , cn , AppAvatar } from "@repo/ui-new";
 
 
-import { AppAvatar } from "@repo/ui/app";
 
 interface ProfileSelectItemProps {
   profile: profile;

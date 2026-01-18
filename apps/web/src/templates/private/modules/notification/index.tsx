@@ -15,7 +15,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   Skeleton,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { useNotification } from "@repo/api/web/callers/notification";
 import { Calendar } from "@repo/form";

@@ -1,6 +1,6 @@
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
-import { AppLogo } from "@repo/ui/app";
+import { AppLogo } from "@repo/ui-new";
 
 export const Footer = () => {
   const t = useLang();

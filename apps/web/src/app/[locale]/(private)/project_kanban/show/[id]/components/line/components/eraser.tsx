@@ -1,8 +1,8 @@
 import { EraserIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppTooltip } from "@repo/ui/app";
+import { Button } from "@repo/ui-new";
+import { AppTooltip } from "@repo/ui-new";
 
 export interface IEraserProps {
   onClear: () => void;

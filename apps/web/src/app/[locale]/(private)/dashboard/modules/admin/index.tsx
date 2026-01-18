@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollArea } from "@repo/ui";
+import { ScrollArea } from "@repo/ui-new";
 
 import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/admin";
 

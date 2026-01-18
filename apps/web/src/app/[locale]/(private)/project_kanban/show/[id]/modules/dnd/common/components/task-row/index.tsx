@@ -2,10 +2,10 @@
 
 import { ChevronDown, ChevronRight } from "lucide-react";
 
-import { Badge , Button } from "@repo/ui";
+import { Badge , Button } from "@repo/ui-new";
 
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { KanbanCard } from "../card";
 import { TaskRowColumn } from "../task-column";

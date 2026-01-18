@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui';
+import { cn } from '@repo/ui-new';
 
 export const main = cn('relative w-full overflow-hidden');
 

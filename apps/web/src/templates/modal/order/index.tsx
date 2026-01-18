@@ -12,9 +12,9 @@ import {
   DialogHeader,
   DialogTitle,
   ScrollArea,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
-import { DndWrapper, ProviderDND, DraggableItem } from "@repo/ui/app";
+import { DndWrapper, ProviderDND, DraggableItem } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 

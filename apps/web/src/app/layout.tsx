@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
 import { geistMono, geistSans } from "@repo/fonts";
-import { Toaster } from "@repo/ui";
+import { Toaster } from "@repo/ui-new";
 
 import "@/app/globals.css";
 import { NotificationManager } from "@/hooks/notification";

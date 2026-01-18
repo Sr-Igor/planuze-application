@@ -5,10 +5,10 @@ import * as React from "react";
 import { PackageOpen } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui-new";
 
 import { ICycleHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 export interface iCyclesAnalysisProps {
   data: ICycleHoursAnalysis[];

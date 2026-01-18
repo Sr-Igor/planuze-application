@@ -4,8 +4,8 @@ import { createId } from "@paralleldrive/cuid2";
 import { ClockArrowDown, PackageOpen, Plus, Trash2 } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, ScrollArea } from "@repo/ui";
-import { AppDialog, Trash } from "@repo/ui/app";
+import { Button, ScrollArea } from "@repo/ui-new";
+import { AppDialog, Trash } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 

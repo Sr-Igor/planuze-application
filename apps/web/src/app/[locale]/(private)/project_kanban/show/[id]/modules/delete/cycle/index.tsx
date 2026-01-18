@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import { project_kanban_cycle } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui/app";
+import { Button } from "@repo/ui-new";
+import { AppDialog } from "@repo/ui-new";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { hookValidate } from "@repo/form";

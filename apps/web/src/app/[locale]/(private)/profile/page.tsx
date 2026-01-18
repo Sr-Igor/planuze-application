@@ -6,7 +6,7 @@ import { Ticket } from "lucide-react";
 
 import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 import { useProfile } from "@repo/api/web/callers/profile";
 import { useAccess } from "@/hooks/access";

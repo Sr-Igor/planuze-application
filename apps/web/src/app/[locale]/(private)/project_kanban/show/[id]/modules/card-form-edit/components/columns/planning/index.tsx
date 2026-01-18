@@ -1,7 +1,7 @@
 import { UseFormReturn } from "react-hook-form";
 
 import { useLang } from "@repo/language/hooks";
-import { Separator } from "@repo/ui";
+import { Separator } from "@repo/ui-new";
 
 import { useAccess } from "@/hooks/access";
 

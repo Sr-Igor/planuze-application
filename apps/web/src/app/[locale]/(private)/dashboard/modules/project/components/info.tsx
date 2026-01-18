@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui';
+import { cn } from '@repo/ui-new';
 
 export interface IInfoProps {
     title: string;

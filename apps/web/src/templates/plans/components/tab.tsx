@@ -3,7 +3,7 @@ import { Zap } from "lucide-react";
 import { plan } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { IPlanCardProps } from "../types";
 import { PlanCard } from "./plan";

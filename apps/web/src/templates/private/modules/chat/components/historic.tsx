@@ -4,9 +4,9 @@ import { X } from "lucide-react";
 
 import { chat } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button, Skeleton } from "@repo/ui";
+import { Button, Skeleton } from "@repo/ui-new";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 export interface IHistoryProps {
   open: boolean;

@@ -18,8 +18,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   ScrollArea,
-} from "@repo/ui";
-import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui/app";
+} from "@repo/ui-new";
+import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui-new";
 
 import { Input } from "@repo/form";
 import { Permission } from "@/components/permission";

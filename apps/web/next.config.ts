@@ -20,7 +20,7 @@ const withNextIntl = createNextIntlPlugin("../../packages/language/src/request.t
 const nextConfig: NextConfig = {
   reactStrictMode: false,
   transpilePackages: [
-    "@repo/ui",
+    "@repo/ui-new",
     "@repo/fonts",
     "@repo/api",
     "@repo/form",

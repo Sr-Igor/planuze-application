@@ -1,5 +1,5 @@
 import { useLang } from "@repo/language/hooks";
-import { Badge, Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
+import { Badge, Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui-new";
 
 import { AuthModal } from "@/app/[locale]/auth/login/modal";
 

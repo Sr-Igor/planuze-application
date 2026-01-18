@@ -2,7 +2,7 @@ import { BookOpen, Eye, History, Paperclip } from "lucide-react";
 
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Separator, TabsList, TabsTrigger } from "@repo/ui";
+import { Separator, TabsList, TabsTrigger } from "@repo/ui-new";
 
 export interface ITabButtonsProps {
   item?: project_kanban_cycle_card | null;

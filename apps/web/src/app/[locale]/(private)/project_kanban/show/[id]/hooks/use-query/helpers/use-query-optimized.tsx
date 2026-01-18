@@ -4,7 +4,7 @@ import { useSearchParams as useNextSearchParams, usePathname, useRouter } from "
 
 import { z } from "zod";
 
-import { useDebounce } from "@/@repo/hooks";
+import { useDebounce } from "@repo/hooks";
 
 import { IParams } from "../types";
 

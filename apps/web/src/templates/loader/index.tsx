@@ -3,7 +3,7 @@
 import { LoaderCircle } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 import { useSignOut } from "@repo/cookies";
 

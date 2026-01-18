@@ -1,6 +1,6 @@
 import { work_type } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { TableColumn } from "@repo/ui/app";
+import { TableColumn } from "@repo/ui-new";
 
 
 export const useTable = () => {

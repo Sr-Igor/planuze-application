@@ -7,11 +7,11 @@ import { AlertTriangle, ExternalLink, InfoIcon, X } from "lucide-react";
 
 import { subscription } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
+import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui-new";
 
 import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { update } from "@repo/redux/store/modules/warning/actions";
 

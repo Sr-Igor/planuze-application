@@ -1,5 +1,5 @@
 import { useLang } from "@repo/language/hooks";
-import { Label } from "@repo/ui";
+import { Label } from "@repo/ui-new";
 
 import { CheckboxSelect } from "@repo/form";
 import { AppCardTypeSelector } from "@/components/app-card-type-selector";

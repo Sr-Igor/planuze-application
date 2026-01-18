@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { differenceInDays } from "date-fns";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Skeleton } from "@repo/ui";
+import { Button, Skeleton } from "@repo/ui-new";
 
 import { AppTabs } from "@/components/app-tabs";
 import { useSignOut } from "@repo/cookies";

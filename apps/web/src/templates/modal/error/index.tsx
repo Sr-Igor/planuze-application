@@ -11,7 +11,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { useSignOut } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";

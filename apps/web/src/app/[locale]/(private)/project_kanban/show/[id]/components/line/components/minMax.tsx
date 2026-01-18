@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Label } from "@repo/ui";
+import { Label } from "@repo/ui-new";
 
 import { Numeric } from "@repo/form";
-import { useDebounce } from "@/@repo/hooks";
+import { useDebounce } from "@repo/hooks";
 
 import { FilterKey } from "../types";
 

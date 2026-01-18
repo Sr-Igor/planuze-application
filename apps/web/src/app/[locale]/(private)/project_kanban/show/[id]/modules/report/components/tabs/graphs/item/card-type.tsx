@@ -5,7 +5,7 @@ import * as React from "react";
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 
 import { useLang } from "@repo/language/hooks";
-import { ChartConfig, ChartContainer } from "@repo/ui";
+import { ChartConfig, ChartContainer } from "@repo/ui-new";
 
 import { ICardsByType } from "@repo/api/web/callers/project_kanban_report/types";
 

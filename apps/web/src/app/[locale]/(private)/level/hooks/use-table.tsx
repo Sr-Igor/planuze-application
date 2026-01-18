@@ -1,6 +1,6 @@
 import { level, profile } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { StatusCircle, TableColumn } from "@repo/ui/app";
+import { StatusCircle, TableColumn } from "@repo/ui-new";
 
 import { IUseHookProps } from "@/templates/list/base/types";
 

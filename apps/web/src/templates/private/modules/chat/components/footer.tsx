@@ -2,9 +2,9 @@ import { Send } from "lucide-react";
 import { toast } from "sonner";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Textarea } from "@repo/ui";
+import { Button, Textarea } from "@repo/ui-new";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 export interface IFooterProps {
   question?: string;

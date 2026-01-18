@@ -11,8 +11,8 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
- cn } from "@repo/ui";
-import { StatusCircle } from "@repo/ui/app";
+ cn } from "@repo/ui-new";
+import { StatusCircle } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 

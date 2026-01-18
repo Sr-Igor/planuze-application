@@ -4,20 +4,21 @@ import { useRouter } from "next/navigation";
 
 import { useLang } from "@repo/language/hooks";
 import {
+  AppAvatar,
   Button,
+  cn,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
-import { AppAvatar } from "@repo/ui/app";
 import { getProfile } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
+import { useFetchImage } from "@/hooks/image";
 import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
 
 export const ProfileModal = () => {
   const t = useLang();
@@ -25,6 +26,7 @@ export const ProfileModal = () => {
   const profileIdCookie = getProfile();
   const { profileId: profileIdStore, all } = useAppSelector((state) => state.module);
   const route = useRouter();
+  const fetchImage = useFetchImage("company/logo", true);
 
   const profileId = profileIdCookie || profileIdStore;
 
@@ -63,11 +65,10 @@ export const ProfileModal = () => {
             >
               <AppAvatar
                 src={profile?.company?.logo || ""}
-                path="company/logo"
                 name={profile?.company?.name || ""}
                 className="h-25 w-25"
                 fallbackClassName="text-5xl"
-                publicFile
+                fetchImage={fetchImage}
               />
               <p className="text-md font-medium">{profile.company?.name}</p>
             </button>

@@ -2,8 +2,8 @@ import {
   project_kanban_cycle_card,
   project_kanban_cycle_card_type,
 } from "@repo/types";
-import { DialogTitle } from "@repo/ui";
-import { Icon } from "@repo/ui/app";
+import { DialogTitle } from "@repo/ui-new";
+import { Icon } from "@repo/ui-new";
 
 export interface ICardTypeTitleProps {
   cardType?: project_kanban_cycle_card_type;

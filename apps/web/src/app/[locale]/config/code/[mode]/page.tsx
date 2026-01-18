@@ -8,8 +8,8 @@ import { differenceInSeconds } from "date-fns";
 import { LogOut } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";
-import { AppCountdown } from "@repo/ui/app";
+import { Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui-new";
+import { AppCountdown } from "@repo/ui-new";
 
 import { useAuth } from "@repo/api/web/callers/auth";
 import { useSignOut } from "@repo/cookies";

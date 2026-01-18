@@ -2,7 +2,7 @@ import { UseFormReturn } from "react-hook-form";
 
 import { kanban_template_tag, project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Badge, CardContent } from "@repo/ui";
+import { Badge, CardContent } from "@repo/ui-new";
 
 import {
   Estimate,

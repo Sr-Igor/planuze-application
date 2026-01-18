@@ -1,5 +1,5 @@
 import { useLang } from "@repo/language/hooks";
-import { AppLogsModal } from "@repo/ui/app";
+import { AppLogsModal } from "@repo/ui-new";
 
 import { ILogsProps } from "../../type";
 

@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui';
+import { cn } from '@repo/ui-new';
 
 export const errorMessage = cn(`
     text-red-500

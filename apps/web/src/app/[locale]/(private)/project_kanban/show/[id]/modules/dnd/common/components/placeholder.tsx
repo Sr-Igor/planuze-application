@@ -2,7 +2,7 @@
 
 import { memo } from 'react';
 
-import { cn } from '@repo/ui';
+import { cn } from '@repo/ui-new';
 
 interface CardPlaceholderProps {
     className?: string;

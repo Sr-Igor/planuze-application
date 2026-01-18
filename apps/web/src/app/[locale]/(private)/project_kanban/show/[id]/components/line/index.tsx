@@ -13,8 +13,8 @@ import {
   Tabs,
   TabsContent,
   cn,
- } from "@repo/ui";
-import { AppTooltip } from "@repo/ui/app";
+ } from "@repo/ui-new";
+import { AppTooltip } from "@repo/ui-new";
 
 import { useDebounce } from "@repo/hooks";
 

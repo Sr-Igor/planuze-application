@@ -2,7 +2,7 @@ import { Eye, Pen, Trash } from "lucide-react";
 
 import { kanban_template_tag } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { TableAction } from "@repo/ui/app";
+import { TableAction } from "@repo/ui-new";
 
 import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";

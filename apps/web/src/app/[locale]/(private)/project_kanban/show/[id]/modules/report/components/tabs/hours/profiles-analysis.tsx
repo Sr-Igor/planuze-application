@@ -5,12 +5,9 @@ import * as React from "react";
 import { PackageOpen } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
-import { Icon } from "@repo/ui/app";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton , cn , Icon , AppAvatar } from "@repo/ui-new";
 
 import { IProfileHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
-import { AppAvatar } from "@repo/ui/app";
-import { cn } from "@repo/ui";
 
 export interface iProfilesAnalysisProps {
   data: IProfileHoursAnalysis[];

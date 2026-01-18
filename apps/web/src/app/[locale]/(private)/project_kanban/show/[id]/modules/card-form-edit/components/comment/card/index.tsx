@@ -4,14 +4,12 @@ import { Pen, Trash } from "lucide-react";
 
 import { project_kanban_cycle_card_comment } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button , cn } from "@repo/ui";
-import { AppDialog } from "@repo/ui/app";
+import { Button , cn , AppDialog , AppAvatar } from "@repo/ui-new";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";
 import { Editor } from "@repo/form";
 import { isHtmlEmpty, normalizeHtml } from "@repo/form/utils";
-import { AppAvatar } from "@repo/ui/app";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 

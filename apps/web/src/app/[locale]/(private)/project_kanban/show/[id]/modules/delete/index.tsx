@@ -1,9 +1,9 @@
 import { AlertCircleIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, AlertTitle, Label, RadioGroup, RadioGroupItem } from "@repo/ui";
+import { Alert, AlertDescription, AlertTitle, Label, RadioGroup, RadioGroupItem } from "@repo/ui-new";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 export interface ICustomDeleteProps {
   Form?: React.ComponentType<any>;

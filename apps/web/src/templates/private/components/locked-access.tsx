@@ -4,7 +4,7 @@ import { FilePen, MousePointerBan } from "lucide-react";
 
 import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { set } from "@repo/redux/store/modules/module/actions";

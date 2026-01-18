@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui/app";
+import { Button } from "@repo/ui-new";
+import { AppDialog } from "@repo/ui-new";
 
 import { AppTabs } from "@/components/app-tabs";
 import { hookValidate } from "@repo/form";

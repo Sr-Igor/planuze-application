@@ -7,7 +7,7 @@ import { user } from "@repo/types";
 import { useUser } from "@repo/api/web/callers/user";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";

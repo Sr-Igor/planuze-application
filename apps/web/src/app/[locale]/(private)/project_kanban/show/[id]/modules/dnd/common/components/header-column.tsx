@@ -13,15 +13,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   Skeleton,
-} from "@repo/ui";
-import { AppTooltip } from "@repo/ui/app";
+} from "@repo/ui-new";
+import { AppTooltip } from "@repo/ui-new";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { calcColumnTime } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-time";
 import { calcColumnTotal } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-total";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { KanbanColumnProps } from "../../types";
 

@@ -5,8 +5,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { invite, level } from "@repo/types";
 
 import { index } from "@repo/api/web/req/level";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { useFormList , Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useForm = ({ disabled, state }: IUseHookProps<invite>) => {
@@ -44,7 +43,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<invite>) => {
       className: "col-span-2",
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "level_id",
       label: "level_id",
       required: true,

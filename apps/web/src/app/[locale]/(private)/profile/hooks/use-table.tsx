@@ -1,6 +1,6 @@
 import { profile } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { StatusCircle, TableColumn, AppAvatarLine } from "@repo/ui/app";
+import { StatusCircle, TableColumn, AppAvatarLine } from "@repo/ui-new";
 
 import { IUseHookProps } from "@/templates/list/base/types";
 

@@ -1,0 +1,21 @@
+import { toast } from "sonner";
+
+/**
+ * Copy text to clipboard with fallback
+ */
+export const copyToClipboard = async (
+  text: string,
+  copiedMessage: string = "Copied"
+): Promise<void> => {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+  }
+  toast.info(copiedMessage);
+};

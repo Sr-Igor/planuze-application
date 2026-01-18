@@ -2,8 +2,8 @@ import { Ban } from "lucide-react";
 
 import { module } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { Icon } from "@repo/ui/app";
+import { Button } from "@repo/ui-new";
+import { Icon } from "@repo/ui-new";
 
 import { useAppDispatch } from "@repo/redux/hook";
 import { set } from "@repo/redux/store/modules/module/actions";

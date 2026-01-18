@@ -23,10 +23,10 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { downloadFile } from "@repo/api/global/download";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { FileStatus } from "../types/enums";
 import { IRenameProps, IUploadConfig, IUploadFile } from "../types/interfaces";

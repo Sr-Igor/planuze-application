@@ -1,4 +1,4 @@
-import { cn } from '@repo/ui';
+import { cn } from '@repo/ui-new';
 
 export const container = cn('flex h-full flex-col p-4 md:p-6');
 

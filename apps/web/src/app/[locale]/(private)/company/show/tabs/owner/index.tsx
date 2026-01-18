@@ -3,10 +3,9 @@ import { useState } from "react";
 import { RotateCcwKey } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Card, CardHeader } from "@repo/ui";
+import { Button, Card, CardHeader , AppAvatar } from "@repo/ui-new";
 
 import { useAuth } from "@repo/api/web/callers/auth";
-import { AppAvatar } from "@repo/ui/app";
 import { useAuth as useAuthHook } from "@repo/redux/hook";
 import { useShow } from "@/templates/show/context";
 

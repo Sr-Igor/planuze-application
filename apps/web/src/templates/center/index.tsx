@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 
-import { AppLogo } from "@repo/ui/app";
+import { AppLogo } from "@repo/ui-new";
 
 import * as styles from "./styles";
 

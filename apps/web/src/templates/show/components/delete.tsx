@@ -1,5 +1,5 @@
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui/app";
+import { Button } from "@repo/ui-new";
+import { AppDialog } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 

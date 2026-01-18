@@ -22,13 +22,13 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@repo/cookies";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { update } from "@repo/redux/store/modules/modal/actions";
 
 export const InactiveModal = () => {

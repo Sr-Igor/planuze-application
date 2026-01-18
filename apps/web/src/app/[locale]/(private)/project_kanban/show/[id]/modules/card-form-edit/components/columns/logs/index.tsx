@@ -1,6 +1,6 @@
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Logs as LogsComponent } from "@repo/ui/app";
+import { Logs as LogsComponent } from "@repo/ui-new";
 
 import { useLogs } from "@/hooks/logs";
 

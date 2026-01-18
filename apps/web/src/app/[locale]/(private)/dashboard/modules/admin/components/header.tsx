@@ -1,7 +1,7 @@
 import { FileDown } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 export interface IHeaderProps {
   onExport: () => void;

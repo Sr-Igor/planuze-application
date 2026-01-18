@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { PackageOpen } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { ScrollArea } from "@repo/ui";
+import { ScrollArea } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
 import { useShow } from "@/templates/show/context";

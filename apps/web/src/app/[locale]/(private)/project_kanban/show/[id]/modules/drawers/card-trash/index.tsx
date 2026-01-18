@@ -14,11 +14,11 @@ import {
   DrawerHeader,
   DrawerTitle,
   ScrollArea,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { Input } from "@repo/form";
 import { Permission } from "@/components/permission";
-import { useDebounce } from "@/@repo/hooks";
+import { useDebounce } from "@repo/hooks";
 
 import { useKanbanShow } from "../../../context";
 import { Card } from "./card";

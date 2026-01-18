@@ -3,8 +3,7 @@
 import { profile } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { AppAvatar } from "@repo/ui/app";
-import { cn } from "@repo/ui";
+import { AppAvatar , cn } from "@repo/ui-new";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { timeLabel } from "@repo/utils/timeLabel";

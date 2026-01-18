@@ -16,8 +16,8 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@repo/ui";
-import { AppTooltip } from "@repo/ui/app";
+} from "@repo/ui-new";
+import { AppTooltip } from "@repo/ui-new";
 
 import { SimpleSelect } from "@repo/form";
 

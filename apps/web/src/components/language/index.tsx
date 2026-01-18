@@ -9,7 +9,7 @@ import { Loader2 } from "lucide-react";
 
 import { usePathname, useRouter } from "@repo/language/navigation";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { SimpleSelect } from "@repo/form";
 import { languages } from "./options";

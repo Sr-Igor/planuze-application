@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, ScrollArea , cn } from "@repo/ui";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, ScrollArea , cn } from "@repo/ui-new";
 
 import { useDebounce } from "@repo/hooks";
 

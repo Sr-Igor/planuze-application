@@ -5,7 +5,7 @@ import {
   kanban_template_card,
   kanban_template_card_type,
 } from "@repo/types";
-import { Icon } from "@repo/ui/app";
+import { Icon } from "@repo/ui-new";
 
 import { index } from "@repo/api/web/req/kanban_template_card_type";
 import { useFormList } from "@repo/form";

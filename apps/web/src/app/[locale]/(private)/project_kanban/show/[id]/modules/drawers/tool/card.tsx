@@ -13,10 +13,10 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { formatCurrency } from "@repo/utils/currency";
 
 import { useKanbanShow } from "../../../context";

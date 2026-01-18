@@ -11,11 +11,11 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
-} from "@repo/ui";
-import { StatusCircle } from "@repo/ui/app";
+} from "@repo/ui-new";
+import { StatusCircle } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { useKanbanShow } from "../../../context";
 

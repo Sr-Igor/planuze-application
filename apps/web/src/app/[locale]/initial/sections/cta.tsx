@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
-import { Button } from "@repo/ui";
+import { Button } from "@repo/ui-new";
 
 export const Cta = () => {
   const t = useLang();

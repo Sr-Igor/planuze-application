@@ -1,6 +1,6 @@
 import { project_kanban_objective } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Label } from "@repo/ui";
+import { Label } from "@repo/ui-new";
 
 import { CheckboxInfinitySelect } from "@repo/form";
 

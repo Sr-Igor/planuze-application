@@ -1,6 +1,6 @@
 import { plan } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Badge } from "@repo/ui";
+import { Badge } from "@repo/ui-new";
 
 import { FeaturesByModule } from "../types";
 

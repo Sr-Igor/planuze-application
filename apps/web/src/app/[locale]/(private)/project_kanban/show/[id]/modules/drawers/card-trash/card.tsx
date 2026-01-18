@@ -9,11 +9,11 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
-} from "@repo/ui";
-import { AppTooltip, Icon } from "@repo/ui/app";
+} from "@repo/ui-new";
+import { AppTooltip, Icon } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 
 import { useKanbanShow } from "../../../context";
 

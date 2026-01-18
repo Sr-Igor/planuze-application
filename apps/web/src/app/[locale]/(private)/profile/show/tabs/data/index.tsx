@@ -6,10 +6,9 @@ import { profile } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
 
 import { useProfile } from "@repo/api/web/callers/profile";
-import { AppAvatar } from "@repo/ui/app";
+import { AppAvatar , cn } from "@repo/ui-new";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { hookValidate } from "@repo/form";

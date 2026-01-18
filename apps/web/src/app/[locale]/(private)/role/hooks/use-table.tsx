@@ -2,7 +2,7 @@ import { useLocale } from "next-intl";
 
 import { role } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { StatusCircle, TableColumn } from "@repo/ui/app";
+import { StatusCircle, TableColumn } from "@repo/ui-new";
 
 import { formatCurrency } from "@repo/utils/currency";
 

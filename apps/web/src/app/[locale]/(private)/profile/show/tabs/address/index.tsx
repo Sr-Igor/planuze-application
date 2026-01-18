@@ -5,7 +5,7 @@ import { profile } from "@repo/types";
 import { useProfileAddress } from "@repo/api/web/callers/profile_address";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { hookValidate } from "@repo/form";

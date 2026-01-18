@@ -1,11 +1,11 @@
 import { Trash } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppCard, Icon } from "@repo/ui/app";
+import { Button } from "@repo/ui-new";
+import { AppCard, Icon } from "@repo/ui-new";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { usePrivateContext } from "@/templates/private/context";
 
 import { IHeaderProps } from "../types";

@@ -17,12 +17,12 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 import { useIntegration } from "@repo/api/web/callers/integration";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { hookValidate } from "@repo/form";

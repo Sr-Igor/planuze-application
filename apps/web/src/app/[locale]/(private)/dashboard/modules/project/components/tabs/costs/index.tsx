@@ -5,10 +5,10 @@ import * as React from "react";
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 
 import { useLang } from "@repo/language/hooks";
-import { ChartContainer } from "@repo/ui";
-import { MainCard } from "@repo/ui/app";
+import { ChartContainer } from "@repo/ui-new";
+import { MainCard } from "@repo/ui-new";
 
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { ICostBreakdown } from "../../../types";

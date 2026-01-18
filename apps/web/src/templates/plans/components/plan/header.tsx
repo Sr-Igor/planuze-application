@@ -2,8 +2,8 @@ import { useLocale } from "next-intl";
 
 import { plan } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Badge, CardTitle, Skeleton } from "@repo/ui";
-import { Icon } from "@repo/ui/app";
+import { Badge, CardTitle, Skeleton } from "@repo/ui-new";
+import { Icon } from "@repo/ui-new";
 
 import { formatCurrency } from "@repo/utils/currency";
 

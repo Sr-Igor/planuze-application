@@ -6,7 +6,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@repo/ui";
+} from "@repo/ui-new";
 
 interface ChangePlanModalProps {
   isOpen: boolean;

@@ -5,10 +5,10 @@ import * as React from "react";
 import { Globe } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { AppTooltip, MainCard } from "@repo/ui/app";
+import { AppTooltip, MainCard } from "@repo/ui-new";
 
 import { useIntlFormat } from "@repo/language/hooks";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import {

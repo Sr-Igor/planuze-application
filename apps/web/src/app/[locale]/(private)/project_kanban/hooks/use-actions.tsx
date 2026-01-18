@@ -4,7 +4,7 @@ import { ChartNoAxesGantt, Presentation, Target, Trash } from "lucide-react";
 
 import { project_kanban } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { TableAction } from "@repo/ui/app";
+import { TableAction } from "@repo/ui-new";
 
 import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";

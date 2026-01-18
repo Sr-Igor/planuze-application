@@ -1,7 +1,7 @@
 "use client";
 
 import { project_kanban_cycle_card } from "@repo/types";
-import { AppTable } from "@repo/ui/app";
+import { AppTable } from "@repo/ui-new";
 
 import { useAccess } from "@/hooks/access";
 

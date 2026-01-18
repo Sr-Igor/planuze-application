@@ -33,14 +33,14 @@ import {
   SidebarMenuItem,
   useSidebar,
 Img
-} from "@repo/ui";
-import { AppTooltip } from "@repo/ui/app";
+} from "@repo/ui-new";
+import { AppTooltip } from "@repo/ui-new";
 
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
 import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
+import { cn } from "@repo/ui-new";
 import { Pagination } from "@/types/pagination";
 
 interface NavUserProps {
