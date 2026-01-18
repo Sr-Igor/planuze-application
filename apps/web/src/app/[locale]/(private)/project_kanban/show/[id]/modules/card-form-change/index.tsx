@@ -9,7 +9,7 @@ import { useLang } from "@repo/language/hook";
 import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useKanbanShow } from "../../context";
 import { useForm } from "./use-form";

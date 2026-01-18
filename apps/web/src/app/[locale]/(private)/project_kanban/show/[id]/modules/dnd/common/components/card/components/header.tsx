@@ -14,7 +14,7 @@ import { AppTooltip, Icon } from "@repo/ui/app";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { Actions } from "./actions";
 

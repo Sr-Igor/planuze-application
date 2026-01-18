@@ -5,7 +5,7 @@ import { BotMessageSquare, User } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Skeleton } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface IMessagesProps {
   localMessages: any[];

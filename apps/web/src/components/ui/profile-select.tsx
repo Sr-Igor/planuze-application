@@ -3,7 +3,7 @@ import { BadgeCheck, ShieldBan } from "lucide-react";
 import { profile } from "@repo/types";
 import { DropdownMenuItem } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { AppAvatar } from "./app-avatar";
 

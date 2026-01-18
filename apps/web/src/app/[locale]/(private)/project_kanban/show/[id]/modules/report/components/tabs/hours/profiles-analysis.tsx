@@ -10,7 +10,7 @@ import { Icon } from "@repo/ui/app";
 
 import { IProfileHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
 import { AppAvatar } from "@/components/ui/app-avatar";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface iProfilesAnalysisProps {
   data: IProfileHoursAnalysis[];

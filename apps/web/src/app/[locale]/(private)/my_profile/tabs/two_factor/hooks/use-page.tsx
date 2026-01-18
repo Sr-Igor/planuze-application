@@ -7,7 +7,7 @@ import { user_two_auth } from "@repo/types";
 import { useUserTwoAuth } from "@repo/api/web/callers/user_two_auth";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useConfirmForm } from "../use-confirm-form";
 import { useDestroyForm } from "../use-destroy-form";

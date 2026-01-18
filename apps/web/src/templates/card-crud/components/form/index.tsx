@@ -6,7 +6,7 @@ import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { GenericItem, IFormDialogProps } from "../../type";
 

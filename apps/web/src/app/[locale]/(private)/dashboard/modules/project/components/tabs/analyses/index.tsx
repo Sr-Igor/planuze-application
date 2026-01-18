@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hook";
 import { AppTooltip, MainCard } from "@repo/ui/app";
 
 import { useIntlFormat } from "@/hooks/intl-format";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import {

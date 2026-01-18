@@ -5,7 +5,7 @@ import { useLang } from "@repo/language/hook";
 
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { useIntlFormat } from "@/hooks/intl-format";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { timeLabel } from "@repo/utils/timeLabel";

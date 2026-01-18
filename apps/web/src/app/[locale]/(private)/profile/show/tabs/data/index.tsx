@@ -10,10 +10,10 @@ import { AppAvatar } from "@/components/ui/app-avatar";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 import { timeLabel } from "@repo/utils/timeLabel";
 
 import { useAnonymousForm } from "./use-anonymous-form";

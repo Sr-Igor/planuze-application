@@ -2,7 +2,7 @@ import { Kanban, Loader2 } from "lucide-react";
 
 import { useLang } from "@repo/language/hook";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface LoaderProps {
   loading: boolean;

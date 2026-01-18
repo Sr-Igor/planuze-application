@@ -2,7 +2,7 @@
 import { callEndpoint } from "@repo/types";
 import { Prisma } from "@repo/types/prisma-types";
 import { logs } from "@repo/utils/includeLogs";
-import { setFormData } from "@repo/utils/submitForm/formData";
+import { setFormData } from "@repo/form/formData";
 
 import { handleReq } from "../../../handle";
 

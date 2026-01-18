@@ -6,7 +6,7 @@ import { BarChart3, DollarSign, FileText, PieChart } from "lucide-react";
 
 import { useLang } from "@repo/language/hook";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export type TabValue = "summary" | "projects" | "costs" | "analyses";
 

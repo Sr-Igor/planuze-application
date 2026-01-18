@@ -10,7 +10,7 @@ import { Button, SidebarTrigger } from "@repo/ui";
 import { AppLogo } from "@repo/ui/app";
 
 import { useAuth } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { NavUser } from "@/templates/private/components/nav-user";
 import { Notifications } from "@/templates/private/modules/notification";
 

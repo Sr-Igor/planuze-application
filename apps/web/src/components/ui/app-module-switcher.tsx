@@ -27,7 +27,7 @@ import { ModuleWithFeatures } from "@/hooks/access/types";
 import { getModule } from "@repo/cookies";
 import { useNextRouter } from "@/hooks/next-router";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { set } from "@repo/redux/store/modules/module/actions";
 
 export function ModuleSwitcher() {

@@ -2,7 +2,7 @@
 
 import { profile } from "@repo/types";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 

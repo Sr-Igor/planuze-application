@@ -28,7 +28,7 @@ import { ProfileSelectItem } from "@/components/ui/profile-select";
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@repo/cookies";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { update } from "@repo/redux/store/modules/modal/actions";
 
 export const InactiveModal = () => {

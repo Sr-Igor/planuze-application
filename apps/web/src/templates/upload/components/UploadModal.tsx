@@ -8,7 +8,7 @@ import { useDropzone } from "react-dropzone";
 import { useLang } from "@repo/language/hook";
 import { AppDialog } from "@repo/ui/app";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { useFileValidation } from "../hooks/useFileValidation";
 

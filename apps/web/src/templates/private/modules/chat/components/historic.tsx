@@ -6,7 +6,7 @@ import { chat } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Button, Skeleton } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface IHistoryProps {
   open: boolean;

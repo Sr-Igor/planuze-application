@@ -26,7 +26,7 @@ import {
 } from "@repo/ui";
 
 import { downloadFile } from "@repo/api/global/download";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { FileStatus } from "../types/enums";
 import { IRenameProps, IUploadConfig, IUploadFile } from "../types/interfaces";

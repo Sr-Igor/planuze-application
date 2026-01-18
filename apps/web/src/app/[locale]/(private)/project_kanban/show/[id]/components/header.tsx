@@ -9,7 +9,7 @@ import { AppDropdownMenu, AppTooltip, Icon } from "@repo/ui/app";
 import { AppInputSearch } from "@/components/ui/app-input-search";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../context";
 

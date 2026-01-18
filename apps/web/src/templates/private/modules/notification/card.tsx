@@ -5,7 +5,7 @@ import { useLang } from "@repo/language/hook";
 
 import { Img } from "@repo/ui";
 import { useIntlFormat } from "@/hooks/intl-format";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface ICard {
   notification: notification;

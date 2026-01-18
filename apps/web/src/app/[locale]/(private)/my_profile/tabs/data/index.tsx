@@ -7,11 +7,11 @@ import { user } from "@repo/types";
 import { useUser } from "@repo/api/web/callers/user";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 

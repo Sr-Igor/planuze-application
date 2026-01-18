@@ -1,6 +1,6 @@
 import { ScrollArea } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 interface ScrollColumnProps {
   children: React.ReactNode;

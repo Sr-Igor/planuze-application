@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hook";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 
 import { ICycleHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface iCyclesAnalysisProps {
   data: ICycleHoursAnalysis[];

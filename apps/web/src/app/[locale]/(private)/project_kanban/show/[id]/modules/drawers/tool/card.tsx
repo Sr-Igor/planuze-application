@@ -16,7 +16,7 @@ import {
 } from "@repo/ui";
 
 import { Permission } from "@/components/ui/permission";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { formatCurrency } from "@repo/utils/currency";
 
 import { useKanbanShow } from "../../../context";

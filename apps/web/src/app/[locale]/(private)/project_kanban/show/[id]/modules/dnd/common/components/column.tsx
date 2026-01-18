@@ -11,7 +11,7 @@ import { Button, Card, CardContent, ScrollArea } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { Permission } from "@/components/ui/permission";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { KanbanColumnProps } from "../../types";
 import { HeaderColumn } from "./header-column";

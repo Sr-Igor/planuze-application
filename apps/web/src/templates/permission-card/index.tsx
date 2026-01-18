@@ -12,7 +12,7 @@ import {
 } from "@repo/ui";
 import { Icon } from "@repo/ui/app";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { GroupCollapsible } from "./components/group-collapsible";
 import { SmallScreenView } from "./components/small-screen-view";

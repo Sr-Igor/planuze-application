@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } f
 import { Icon } from "@repo/ui/app";
 
 import { ICardsTotalByType } from "@repo/api/web/callers/project_kanban_report/types";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface iCardCategoryProps {
   cardsTotalByType: ICardsTotalByType[];

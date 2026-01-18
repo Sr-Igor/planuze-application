@@ -7,7 +7,7 @@ import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
 import { AppTabs } from "@/components/ui/app-tabs";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useKanbanShow } from "../../context";
 import { useForm } from "../drawers/card-type/use-form";

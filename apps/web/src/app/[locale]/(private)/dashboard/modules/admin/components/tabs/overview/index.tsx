@@ -6,7 +6,7 @@ import { useLang } from "@repo/language/hook";
 import { Badge, Separator } from "@repo/ui";
 import { MainCard } from "@repo/ui/app";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { IAdminSummary } from "../../../types";
 import { CardItem } from "../../card";

@@ -4,7 +4,7 @@ import { useLang } from "@repo/language/hook";
 import { TabsList, TabsTrigger } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface IFilterTabsProps {
   countFilters: {

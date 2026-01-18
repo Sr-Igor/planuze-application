@@ -11,7 +11,7 @@ import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
 
 import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { update } from "@repo/redux/store/modules/warning/actions";
 

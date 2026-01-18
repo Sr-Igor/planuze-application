@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useLang } from "@repo/language/hook";
 import { Button, Textarea } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface IFooterProps {
   question?: string;

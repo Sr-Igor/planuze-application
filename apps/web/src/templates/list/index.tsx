@@ -13,7 +13,7 @@ import {
 } from "@repo/ui/app";
 
 import { useDebounce } from "@/hooks/debounce";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import * as styles from "./styles";
 

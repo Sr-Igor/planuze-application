@@ -3,7 +3,7 @@ import { FileDown } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 import { tabs } from "../constants";

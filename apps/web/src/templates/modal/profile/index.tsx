@@ -17,7 +17,7 @@ import { AppAvatar } from "@/components/ui/app-avatar";
 import { getProfile } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
 import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export const ProfileModal = () => {
   const t = useLang();

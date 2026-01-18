@@ -7,10 +7,10 @@ import { company } from "@repo/types";
 import { useCompany } from "@repo/api/web/callers/company";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 
@@ -43,7 +43,7 @@ export const Data = () => {
     const hooks = [{ hook, data }];
     hookValidate(hooks, (form) => {
       handleState({ loading: true });
-      data?.id ? update.mutate(form) : null;
+      if(data?.id) update.mutate(form);
     });
   };
 

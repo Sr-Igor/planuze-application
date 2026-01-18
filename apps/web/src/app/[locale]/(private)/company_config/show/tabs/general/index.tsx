@@ -7,10 +7,10 @@ import { company_config } from "@repo/types";
 import { useCompanyConfig } from "@repo/api/web/callers/company_config";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 

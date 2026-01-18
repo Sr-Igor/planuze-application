@@ -19,7 +19,7 @@ import { CalendarController , SimpleInfinitySelectController , InputController ,
 import { AppAvatarLine } from "@/components/ui/app-avatar-line";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
 import { useConstants } from "@/hooks/constants";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { styles } from "./styles";
 

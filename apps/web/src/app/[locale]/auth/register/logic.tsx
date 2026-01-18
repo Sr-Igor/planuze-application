@@ -14,7 +14,7 @@ import { useUser } from "@repo/api/web/callers/user";
 import { useAppDispatch } from "@repo/redux/hook";
 import { create } from "@repo/redux/store/modules/user/actions";
 import { fingerprint } from "@repo/utils/fingerprint";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 

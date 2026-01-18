@@ -6,12 +6,11 @@ import { AlertCircleIcon } from "lucide-react";
 
 import { profile, user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
-import { Alert, AlertDescription, Button } from "@repo/ui";
+import { Alert, AlertDescription, Button , cn } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
 import { NeedRedefine } from "@/app/[locale]/(private)/my_profile/components/NeedRedefine";
-import { cn } from "@/lib/utils";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 

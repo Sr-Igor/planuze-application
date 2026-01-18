@@ -1,6 +1,6 @@
 //Utils
 import { callEndpoint } from "@repo/types";
-import { setFormData } from "@repo/utils/submitForm/formData";
+import { setFormData } from "@repo/form/formData";
 
 import { handleReq } from "../../../handle";
 

@@ -4,7 +4,7 @@ import { LockIcon } from "lucide-react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { SimpleSelect } from "@repo/form";
 

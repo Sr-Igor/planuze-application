@@ -5,7 +5,7 @@ import { Button } from "@repo/ui";
 import { AppCard, Icon } from "@repo/ui/app";
 
 import { Permission } from "@/components/ui/permission";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { usePrivateContext } from "@/templates/private/context";
 
 import { IHeaderProps } from "../types";

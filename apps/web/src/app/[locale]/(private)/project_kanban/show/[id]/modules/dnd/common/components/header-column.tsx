@@ -21,7 +21,7 @@ import { calcColumnTime } from "@/app/[locale]/(private)/project_kanban/show/[id
 import { calcColumnTotal } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-total";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { KanbanColumnProps } from "../../types";
 

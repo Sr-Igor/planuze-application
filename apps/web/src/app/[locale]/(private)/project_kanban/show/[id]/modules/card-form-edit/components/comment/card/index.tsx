@@ -15,7 +15,7 @@ import { AppAvatar } from "@/components/ui/app-avatar";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
 import { useIntlFormat } from "@/hooks/intl-format";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface ICommentCardProps {
   comment: project_kanban_cycle_card_comment;

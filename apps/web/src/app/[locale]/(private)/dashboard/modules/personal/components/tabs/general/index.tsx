@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hook";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@repo/ui";
 import { MainCard } from "@repo/ui/app";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { IFinancialEvolutionResponse, IFinancialInfo, IProfileInfo } from "../../../types";

@@ -8,7 +8,7 @@ import {
   CollapsibleTrigger,
 } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface ICollapsibleProps {
   title: string;

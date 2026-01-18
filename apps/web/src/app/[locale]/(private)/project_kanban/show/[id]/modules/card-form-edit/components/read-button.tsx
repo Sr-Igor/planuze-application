@@ -6,7 +6,7 @@ import { Button } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
 import { useAuth } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 import { useCardRead } from "../../../hooks/use-req/services/use-card-read";

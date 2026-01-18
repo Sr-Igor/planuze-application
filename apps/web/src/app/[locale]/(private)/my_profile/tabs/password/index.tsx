@@ -9,9 +9,9 @@ import { useSignOut } from "@repo/cookies";
 import { useAppSelector } from "@repo/redux/hook";
 import { useUnload } from "@/hooks/unload";
 import { useUserSet } from "@/hooks/user-set";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { NeedRedefine } from "../../components/NeedRedefine";
 import { useForm } from "./use-form";

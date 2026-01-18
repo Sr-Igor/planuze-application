@@ -5,7 +5,7 @@ import { ChevronDown, Save } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Button, Popover, PopoverContent, PopoverTrigger } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface ISaveButtonProps {
   isDisabled: boolean;

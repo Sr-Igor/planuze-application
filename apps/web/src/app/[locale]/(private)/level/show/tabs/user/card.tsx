@@ -1,7 +1,7 @@
 import { profile } from "@repo/types";
 import { Avatar, AvatarFallback, AvatarImage, Card, CardContent } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface IProfileFormProps {
   profile: Partial<profile>;

@@ -6,7 +6,7 @@ import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
 import { CustomDelete } from "..";
 import { useForm } from "./use-form";

@@ -12,7 +12,7 @@ import { AppAvatar } from "@/components/ui/app-avatar";
 import { getProfile } from "@repo/cookies";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export const Company = () => {
   const t = useLang();

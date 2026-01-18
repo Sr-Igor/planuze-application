@@ -1,7 +1,7 @@
 import { project_kanban_cycle_card } from "@repo/types";
 import { Card } from "@repo/ui";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@repo/ui";
 
 export interface IRootProps {
   cardRef: React.RefObject<HTMLDivElement | null>;
