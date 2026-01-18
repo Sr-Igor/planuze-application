@@ -1,6 +1,7 @@
-import { Avatar, AvatarFallback, IImg, Img } from "@repo/ui";
+import { Img, IImg } from "#/components/image";
+import { Avatar, AvatarFallback } from "#/components/ui/avatar";
 
-import { cn } from "@repo/ui";
+import { cn } from "#/lib/utils";
 
 export interface IAppAvatarProps extends Omit<IImg, "alt" | "fill"> {
   name: string;

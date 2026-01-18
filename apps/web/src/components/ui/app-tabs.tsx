@@ -2,9 +2,7 @@ import { memo } from "react";
 
 import { LockIcon } from "lucide-react";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { Tabs, TabsContent, TabsList, TabsTrigger , cn } from "@repo/ui";
 
 import { SimpleSelect } from "@repo/form";
 

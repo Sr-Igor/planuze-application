@@ -16,7 +16,7 @@ import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_
 import { index as indexProjectKanbanObjectiveTarget } from "@repo/api/web/req/project_kanban_objective_target";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { CalendarController , SimpleInfinitySelectController , InputController , NumericController , SimpleSelectController , TagsController , Field } from "@repo/form";
-import { AppAvatarLine } from "@/components/ui/app-avatar-line";
+import { AppAvatarLine } from "@repo/ui/app";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
 import { useConstants } from "@/hooks/constants";
 import { cn } from "@repo/ui";

@@ -25,3 +25,7 @@ export * from "./app-logs/modal";
 
 // DND
 export * from "./dnd";
+
+//Avatar
+export * from "./app-avatar";
+export * from "./app-avatar-line";

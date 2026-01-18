@@ -6,9 +6,8 @@ import { Plus } from "lucide-react";
 
 import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { Button , cn } from "@repo/ui";
-import { StatusCircle } from "@repo/ui/app";
+import { StatusCircle , AppAvatar } from "@repo/ui/app";
 
-import { AppAvatar } from "@/components/ui/app-avatar";
 import { getProfile } from "@repo/cookies";
 import { useAppSelector } from "@repo/redux/hook";
 

@@ -2,7 +2,7 @@ import { profile } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { TableColumn } from "@repo/ui/app";
 
-import { AppAvatarLine } from "@/components/ui/app-avatar-line";
+import { AppAvatarLine } from "@repo/ui/app";
 
 export const useTable = () => {
   const t = useLang();

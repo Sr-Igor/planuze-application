@@ -11,7 +11,7 @@ import {
   Skeleton,
 } from "@repo/ui";
 
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "@repo/ui/app";
 import { Permission } from "@/components/ui/permission";
 import { cn } from "@repo/ui";
 

@@ -1,8 +1,7 @@
 import { client } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { TableColumn } from "@repo/ui/app";
+import { TableColumn , AppAvatar } from "@repo/ui/app";
 
-import { AppAvatar } from "@/components/ui/app-avatar";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useTable = (_: IUseHookProps<client>) => {

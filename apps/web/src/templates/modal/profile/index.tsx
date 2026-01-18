@@ -13,7 +13,7 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "@repo/ui/app";
 import { getProfile } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
 import { useAppSelector } from "@repo/redux/hook";

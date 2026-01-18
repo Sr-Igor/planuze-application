@@ -8,7 +8,7 @@ import { project_kanban_cycle_card } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
 import * as C from "@repo/ui";
 
-import { AppAvatarLine } from "@/components/ui/app-avatar-line";
+import { AppAvatarLine } from "@repo/ui/app";
 import { useAuth } from "@repo/redux/hook";
 
 import { ScrollColumn } from "../../scroll-column";

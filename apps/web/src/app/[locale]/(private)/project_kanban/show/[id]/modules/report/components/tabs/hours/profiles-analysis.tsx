@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } f
 import { Icon } from "@repo/ui/app";
 
 import { IProfileHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "@repo/ui/app";
 import { cn } from "@repo/ui";
 
 export interface iProfilesAnalysisProps {

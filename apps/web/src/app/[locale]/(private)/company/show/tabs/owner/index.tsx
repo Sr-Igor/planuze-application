@@ -6,7 +6,7 @@ import { useLang } from "@repo/language/hooks";
 import { Button, Card, CardHeader } from "@repo/ui";
 
 import { useAuth } from "@repo/api/web/callers/auth";
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "@repo/ui/app";
 import { useAuth as useAuthHook } from "@repo/redux/hook";
 import { useShow } from "@/templates/show/context";
 

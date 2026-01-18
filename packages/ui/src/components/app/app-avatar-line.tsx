@@ -1,6 +1,6 @@
 import { Skeleton } from "@repo/ui";
 
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "./app-avatar";
 
 export interface IAppAvatarLineProps {
   loading: boolean;

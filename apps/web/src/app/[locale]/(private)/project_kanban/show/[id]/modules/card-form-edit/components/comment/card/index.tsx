@@ -11,7 +11,7 @@ import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";
 import { Editor } from "@repo/form";
 import { isHtmlEmpty, normalizeHtml } from "@repo/form/utils";
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "@repo/ui/app";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
 

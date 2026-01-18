@@ -5,7 +5,7 @@ import { invite } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 
-import { AppAvatar } from "@/components/ui/app-avatar";
+import { AppAvatar } from "@repo/ui/app";
 
 export interface IAppInviteProps {
   invite: invite;
