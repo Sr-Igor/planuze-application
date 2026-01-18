@@ -2,7 +2,7 @@ import { Pagination } from '@repo/types';
 import { InfiniteData, UseInfiniteQueryResult } from '@tanstack/react-query';
 
 /**
- * Opção para componentes Select
+ * Option for Select components
  */
 export interface IOption<T = any> {
     label: string;
@@ -12,7 +12,7 @@ export interface IOption<T = any> {
 }
 
 /**
- * Props base para componentes Select
+ * Base props for Select components
  */
 export interface ISelectProps<T = any> {
     placeholder?: string;
@@ -28,7 +28,7 @@ export interface ISelectProps<T = any> {
 }
 
 /**
- * Props para hook de infinity scroll
+ * Props for infinity scroll hook
  */
 export interface IUseInfinityProps<T = any> {
     cacheKey?: string;
@@ -46,7 +46,7 @@ export interface IUseInfinityProps<T = any> {
 }
 
 /**
- * Props para handlers de checkbox
+ * Props for checkbox handlers
  */
 export interface IUseCheckboxHandlersProps {
     values: any[];
@@ -58,7 +58,7 @@ export interface IUseCheckboxHandlersProps {
 }
 
 /**
- * Props para Simple Select
+ * Props for Simple Select
  */
 export interface ISimpleSelectProps<T = any> extends ISelectProps<T> {
     options: IOption<T>[];
@@ -70,7 +70,7 @@ export interface ISimpleSelectProps<T = any> extends ISelectProps<T> {
 }
 
 /**
- * Props para hook de dados simples
+ * Props for simple data hook
  */
 export interface IUseSimpleDataProps<T = any> {
     options: IOption<T>[];
@@ -78,7 +78,7 @@ export interface IUseSimpleDataProps<T = any> {
 }
 
 /**
- * Props para Checkbox Select
+ * Props for Checkbox Select
  */
 export interface ICheckboxSelectProps<T = any> extends ISelectProps<T> {
     options: IOption<T>[];
@@ -89,7 +89,7 @@ export interface ICheckboxSelectProps<T = any> extends ISelectProps<T> {
 }
 
 /**
- * Props para hook de checkbox
+ * Props for checkbox hook
  */
 export interface IUseCheckboxProps<T = any> {
     options: IOption<T>[];
@@ -97,7 +97,7 @@ export interface IUseCheckboxProps<T = any> {
 }
 
 /**
- * Props para Infinity Select
+ * Props for Infinity Select
  */
 export interface ISimpleInfinityProps<T>
     extends ISelectProps<T>,

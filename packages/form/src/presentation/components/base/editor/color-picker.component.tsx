@@ -115,7 +115,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onColorSelect, current
             >
                 <div
                     className={cn('h-4 w-4 rounded border', isCurrentColorTheme && currentColorData?.class)}
-                    style={!isCurrentColorTheme ? { backgroundColor: currentColor || '#000000' } : undefined}
+                    style={isCurrentColorTheme ? undefined :{ backgroundColor: currentColor || '#000000' } }
                 />
             </button>
 
@@ -137,7 +137,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onColorSelect, current
                                 color.class,
                                 currentColor === color.value && 'ring-primary ring-2'
                             )}
-                            style={!color.isThemeColor ? { backgroundColor: color.value } : undefined}
+                            style={color.isThemeColor ? undefined : { backgroundColor: color.value } }
                             title={color.name}
                         />
                     ))}

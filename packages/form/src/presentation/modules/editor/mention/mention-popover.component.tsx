@@ -22,7 +22,6 @@ interface MentionPopoverProps {
     position: { top: number; left: number };
     mentionQuery?: Record<string, string>;
     editor?: any;
-    mentionRefLink?: (id: string) => void;
 }
 
 export const MentionPopover: React.FC<MentionPopoverProps> = ({
@@ -33,7 +32,6 @@ export const MentionPopover: React.FC<MentionPopoverProps> = ({
     position,
     mentionQuery,
     editor,
-    mentionRefLink,
 }) => {
     const t = useLang();
     const [selectedIndex, setSelectedIndex] = useState(0);

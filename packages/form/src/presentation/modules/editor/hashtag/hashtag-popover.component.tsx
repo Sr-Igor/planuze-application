@@ -23,7 +23,6 @@ interface HashtagPopoverProps {
     position: { top: number; left: number };
     hashtagQuery?: Record<string, string>;
     editor?: any;
-    hashRefLink?: (id: string) => void;
 }
 
 export const HashtagPopover: React.FC<HashtagPopoverProps> = ({
@@ -34,7 +33,6 @@ export const HashtagPopover: React.FC<HashtagPopoverProps> = ({
     position,
     hashtagQuery,
     editor,
-    hashRefLink,
 }) => {
     const t = useLang();
     const [selectedIndex, setSelectedIndex] = useState(0);

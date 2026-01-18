@@ -43,10 +43,10 @@ export const InsertModal: React.FC<InsertModalProps> = ({
                 if (typeof reader.result === 'string') {
                     resolve(reader.result);
                 } else {
-                    reject(new Error('Erro ao converter arquivo'));
+                    reject(new Error('Error converting file'));
                 }
             };
-            reader.onerror = () => reject(new Error('Erro ao ler arquivo'));
+            reader.onerror = () => reject(new Error('Error reading file'));
             reader.readAsDataURL(file);
         });
     };

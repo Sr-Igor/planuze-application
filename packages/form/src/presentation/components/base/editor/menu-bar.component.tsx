@@ -9,9 +9,11 @@ import { EDITOR_CLASSES } from '#/shared/constants/editor-settings.constant';
 import { useMenuOptions } from '../../../hooks/editor/use-menu-options.hook';
 import type { MenuBarProps, MenuOption } from '#/shared/types/editor.types';
 import { ColorPicker } from './color-picker.component';
+import { useLang } from '@repo/language/hook';
 
 export const MenuBar: React.FC<MenuBarProps> = ({ editor, className, onOpenModal }) => {
     const menuOptions = useMenuOptions(editor, onOpenModal);
+    const t = useLang();
 
     const renderToggleGroup = (options: MenuOption[], key: string) => (
         <div key={key} className="flex items-center space-x-1">
@@ -58,7 +60,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ editor, className, onOpenModal
 
             {/* Style */}
             <div className="flex items-center space-x-1">
-                <AppTooltip text="Selecionar cor">
+                <AppTooltip text={t.editor('toolbar.select_color')}>
                     <ColorPicker
                         onColorSelect={(color) => editor.chain().focus().setColor(color).run()}
                         currentColor={editor.getAttributes('textStyle').color}

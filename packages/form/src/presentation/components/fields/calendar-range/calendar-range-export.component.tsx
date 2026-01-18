@@ -128,17 +128,6 @@ export const CalendarRange = ({
                             {t.helper('clear_selection')}
                         </button>
                     </div>
-                    {/* {hasInvalidRange && (
-                        <div className="text-destructive bg-destructive/10 border-b px-3 py-2 text-sm">
-                            {minRange && maxRange
-                                ? `O período deve ter entre ${minRange} e ${maxRange} dias`
-                                : minRange
-                                  ? `O período deve ter pelo menos ${minRange} dias`
-                                  : maxRange
-                                    ? `O período deve ter no máximo ${maxRange} dias`
-                                    : 'Período inválido'}
-                        </div>
-                    )} */}
                     <PickerCalendar
                         mode="range"
                         selected={tempDateRange || undefined}
