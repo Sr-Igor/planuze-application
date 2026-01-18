@@ -14,8 +14,8 @@ import {
   ScrollArea,
 } from "@repo/ui";
 
-import { DndWrapper, ProviderDND } from "@/components/ui/dnd";
-import { DraggableItem } from "@/components/ui/dnd/parts/item";
+import { DndWrapper, ProviderDND, DraggableItem } from "@repo/ui/app";
+
 import { Permission } from "@/components/ui/permission";
 
 interface IOrderModalProps {

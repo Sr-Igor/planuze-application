@@ -1,6 +1,7 @@
 import React from 'react';
 
 import dynamic from 'next/dynamic';
+import type { DragDropContext as DragDropContextType, Droppable as DroppableType, Draggable as DraggableType } from 'react-beautiful-dnd';
 
 const DndLoadingFallback = () => {
     const skeletonCards = Array.from({ length: 8 }, (_, index) => (
@@ -33,20 +34,20 @@ const DndLoadingFallback = () => {
     return <div className='relative flex h-full flex-col gap-3'>{skeletonCards}</div>;
 };
 
-const DragDropContext = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.DragDropContext), {
-    ssr: false,
-    loading: DndLoadingFallback
-});
+const DragDropContext: typeof DragDropContextType = dynamic(
+    () => import('react-beautiful-dnd').then((mod) => mod.DragDropContext),
+    { ssr: false, loading: DndLoadingFallback }
+);
 
-const Droppable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Droppable), {
-    ssr: false,
-    loading: DndLoadingFallback
-});
+const Droppable: typeof DroppableType = dynamic(
+    () => import('react-beautiful-dnd').then((mod) => mod.Droppable),
+    { ssr: false, loading: DndLoadingFallback }
+);
 
-const Draggable = dynamic(() => import('react-beautiful-dnd').then((mod) => mod.Draggable), {
-    ssr: false,
-    loading: DndLoadingFallback
-});
+const Draggable: typeof DraggableType = dynamic(
+    () => import('react-beautiful-dnd').then((mod) => mod.Draggable),
+    { ssr: false, loading: DndLoadingFallback }
+);
 
 // Wrapper component that ensures DND components are ready
 export const DndWrapper = ({ children }: { children: React.ReactNode }) => {

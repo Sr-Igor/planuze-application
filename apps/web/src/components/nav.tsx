@@ -6,11 +6,10 @@ import { ChevronLeft, HousePlus, LogInIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
-import { Button, SidebarTrigger } from "@repo/ui";
+import { Button, SidebarTrigger , cn } from "@repo/ui";
 import { AppLogo } from "@repo/ui/app";
 
 import { useAuth } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
 import { NavUser } from "@/templates/private/components/nav-user";
 import { Notifications } from "@/templates/private/modules/notification";
 
