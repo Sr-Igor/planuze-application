@@ -34,7 +34,7 @@ function TablePaginationComponent({
   onPageChange,
   onLimitChange,
   labels,
-}: TablePaginationProps) {
+}: Readonly<TablePaginationProps>) {
   const limitLabel = labels?.limit ?? "Limit";
   const totalLabel = labels?.total ?? "Total";
 
@@ -149,7 +149,7 @@ function TablePaginationComponent({
 
         <div className="mx-2 flex items-center gap-1">
           {getVisiblePages().map((pageNum, index) => (
-            <Fragment key={index}>
+            <Fragment key={`page-${pageNum}-${index}`}>
               {pageNum === "ellipsis" ? (
                 <div className="flex h-8 w-8 items-center justify-center">
                   <MoreHorizontal size={14} className="text-muted-foreground" />

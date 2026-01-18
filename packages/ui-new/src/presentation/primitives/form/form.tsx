@@ -15,6 +15,7 @@ import {
   forwardRef,
   useContext,
   useId,
+  useMemo,
 } from "react";
 import {
   Controller,
@@ -94,8 +95,10 @@ function FormField<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({ ...props }: ControllerProps<TFieldValues, TName>) {
+  const contextValue = useMemo(() => ({ name: props.name }), [props.name]);
+
   return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
+    <FormFieldContext.Provider value={contextValue}>
       <Controller {...props} />
     </FormFieldContext.Provider>
   );
@@ -108,9 +111,10 @@ export type FormItemProps = ComponentPropsWithoutRef<"div">;
  */
 const FormItem = forwardRef<HTMLDivElement, FormItemProps>(({ className, ...props }, ref) => {
   const id = useId();
+  const contextValue = useMemo(() => ({ id }), [id]);
 
   return (
-    <FormItemContext.Provider value={{ id }}>
+    <FormItemContext.Provider value={contextValue}>
       <div ref={ref} data-slot="form-item" className={cn("grid gap-2", className)} {...props} />
     </FormItemContext.Provider>
   );
@@ -153,7 +157,7 @@ const FormControl = forwardRef<HTMLElement, FormControlProps>(({ ...props }, ref
       ref={ref}
       data-slot="form-control"
       id={formItemId}
-      aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
+      aria-describedby={error ? `${formDescriptionId} ${formMessageId}` : formDescriptionId}
       aria-invalid={!!error}
       {...props}
     />

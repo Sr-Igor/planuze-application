@@ -46,7 +46,7 @@ export type StatusCircleProps = {
  * <StatusCircle status={null} />
  * ```
  */
-function StatusCircle({ status, className, labels }: StatusCircleProps) {
+function StatusCircle({ status, className, labels }: Readonly<StatusCircleProps>) {
   const tooltip = useMemo(() => {
     if (status === true) return labels?.true ?? "True";
     if (status === false) return labels?.false ?? "False";

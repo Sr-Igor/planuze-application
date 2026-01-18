@@ -42,12 +42,13 @@ export const MobileCard = <T,>({
                   {labels.old}:
                 </span>
                 <AppTooltip text={oldFormatted.full} className="min-w-0 flex-1">
-                  <div
-                    className="min-w-0 truncate text-[11px] text-gray-700 select-text dark:text-gray-200"
+                  <button
+                    type="button"
+                    className="min-w-0 truncate text-left text-[11px] text-gray-700 select-text dark:text-gray-200"
                     onDoubleClick={() => copyToClipboard(oldFormatted.full)}
                   >
                     {oldFormatted.display}
-                  </div>
+                  </button>
                 </AppTooltip>
               </div>
               <div className="flex items-center gap-1 rounded bg-gray-100 px-2 py-1 dark:bg-neutral-800/60">
@@ -55,12 +56,13 @@ export const MobileCard = <T,>({
                   {labels.new}:
                 </span>
                 <AppTooltip text={newFormatted.full} className="min-w-0 flex-1">
-                  <div
-                    className="min-w-0 truncate text-[11px] text-gray-700 select-text dark:text-gray-200"
+                  <button
+                    type="button"
+                    className="min-w-0 truncate text-left text-[11px] text-gray-700 select-text dark:text-gray-200"
                     onDoubleClick={() => copyToClipboard(newFormatted.full)}
                   >
                     {newFormatted.display}
-                  </div>
+                  </button>
                 </AppTooltip>
               </div>
             </div>

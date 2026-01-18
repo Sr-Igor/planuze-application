@@ -13,7 +13,43 @@ import { cn } from "../../../../shared/utils";
 import { Button } from "../../../primitives/button";
 import { Checkbox } from "../../../primitives/checkbox";
 import { TableHead, TableHeader, TableRow } from "../../../primitives/table";
-import { BaseTableItem, TableHeaderProps } from "../types";
+import { BaseTableItem, TableColumn, TableHeaderProps } from "../types";
+
+/**
+ * Convert a dimension value to CSS string
+ */
+const toCssDimension = (value: number | string): string =>
+  typeof value === "number" ? `${value}px` : value;
+
+/**
+ * Calculate header cell styles based on column configuration
+ */
+const getHeaderCellStyles = <T extends BaseTableItem>(column: TableColumn<T>): CSSProperties => {
+  const hasCustomDimensions = column.width || column.minWidth || column.maxWidth;
+
+  if (!hasCustomDimensions) {
+    return { flex: "1", minWidth: "120px" };
+  }
+
+  const styles: CSSProperties = { flex: "none" };
+
+  if (column.width) {
+    styles.width = toCssDimension(column.width);
+  }
+
+  if (column.minWidth) {
+    styles.minWidth = toCssDimension(column.minWidth);
+    if (!column.width) {
+      styles.width = styles.minWidth;
+    }
+  }
+
+  if (column.maxWidth) {
+    styles.maxWidth = toCssDimension(column.maxWidth);
+  }
+
+  return styles;
+};
 
 function TableHeaderComponent<T extends BaseTableItem>({
   columns,
@@ -24,7 +60,7 @@ function TableHeaderComponent<T extends BaseTableItem>({
   onSort,
   currentSort,
   labels,
-}: TableHeaderProps<T>) {
+}: Readonly<TableHeaderProps<T>>) {
   const selectAllLabel = labels?.selectAll ?? "Select all";
   const actionsLabel = labels?.actions ?? "Actions";
 
@@ -54,36 +90,6 @@ function TableHeaderComponent<T extends BaseTableItem>({
         />
       </div>
     );
-  };
-
-  const getCellStyles = (column: typeof columns[0]): CSSProperties => {
-    const styles: CSSProperties = {};
-
-    if (!column.width && !column.minWidth && !column.maxWidth) {
-      styles.flex = "1";
-      styles.minWidth = "120px";
-    } else {
-      styles.flex = "none";
-
-      if (column.width) {
-        styles.width = typeof column.width === "number" ? `${column.width}px` : column.width;
-      }
-
-      if (column.minWidth) {
-        styles.minWidth =
-          typeof column.minWidth === "number" ? `${column.minWidth}px` : column.minWidth;
-        if (!column.width) {
-          styles.width = styles.minWidth;
-        }
-      }
-
-      if (column.maxWidth) {
-        styles.maxWidth =
-          typeof column.maxWidth === "number" ? `${column.maxWidth}px` : column.maxWidth;
-      }
-    }
-
-    return styles;
   };
 
   return (
@@ -121,7 +127,7 @@ function TableHeaderComponent<T extends BaseTableItem>({
                   `sticky ${column.sticky === "left" ? "left-0" : "right-0"} bg-muted/50 z-20`,
                 column.centered && "text-center"
               )}
-              style={getCellStyles(column)}
+              style={getHeaderCellStyles(column)}
             >
               <div
                 className={cn(

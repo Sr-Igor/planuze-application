@@ -12,7 +12,7 @@ import { memo } from "react";
 import { Button } from "../../../primitives/button";
 import { TableEmptyStateProps } from "../types";
 
-function TableEmptyStateComponent({ message, icon, action, labels }: TableEmptyStateProps) {
+function TableEmptyStateComponent({ message, icon, action, labels }: Readonly<TableEmptyStateProps>) {
   const noDataLabel = labels?.noDataFound ?? "No data found";
 
   return (

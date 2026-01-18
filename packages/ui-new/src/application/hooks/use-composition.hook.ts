@@ -185,12 +185,16 @@ export function useCompoundComponent<T extends string>(
       }
 
       // Get the display name of the child component
-      const displayName =
-        typeof child.type === "function"
-          ? (child.type as { displayName?: string }).displayName
-          : typeof child.type === "string"
-            ? child.type
-            : undefined;
+      const getDisplayName = (): string | undefined => {
+        if (typeof child.type === "function") {
+          return (child.type as { displayName?: string }).displayName;
+        }
+        if (typeof child.type === "string") {
+          return child.type;
+        }
+        return undefined;
+      };
+      const displayName = getDisplayName();
 
       // Check if this child matches any of our slot names
       const matchedSlot = slotNames.find(

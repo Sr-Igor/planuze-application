@@ -39,7 +39,7 @@ export type DialogProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Root>;
  * </Dialog>
  * ```
  */
-function Dialog({ ...props }: DialogProps) {
+function Dialog({ ...props }: Readonly<DialogProps>) {
   return <DialogPrimitive.Root data-slot="dialog" {...props} />;
 }
 
@@ -72,7 +72,7 @@ export type DialogPortalProps = ComponentPropsWithoutRef<typeof DialogPrimitive.
  *
  * Renders the dialog in a portal.
  */
-function DialogPortal({ ...props }: DialogPortalProps) {
+function DialogPortal({ ...props }: Readonly<DialogPortalProps>) {
   return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
 }
 

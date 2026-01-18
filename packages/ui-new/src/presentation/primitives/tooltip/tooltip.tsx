@@ -23,7 +23,7 @@ export type TooltipProviderProps = ComponentPropsWithoutRef<typeof TooltipPrimit
  *
  * Wraps the application to provide tooltip functionality.
  */
-function TooltipProvider({ delayDuration = 0, ...props }: TooltipProviderProps) {
+function TooltipProvider({ delayDuration = 0, ...props }: Readonly<TooltipProviderProps>) {
   return (
     <TooltipPrimitive.Provider
       data-slot="tooltip-provider"
@@ -51,7 +51,7 @@ export type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root
  * </Tooltip>
  * ```
  */
-function Tooltip({ ...props }: TooltipProps) {
+function Tooltip({ ...props }: Readonly<TooltipProps>) {
   return (
     <TooltipProvider>
       <TooltipPrimitive.Root data-slot="tooltip" {...props} />

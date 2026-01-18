@@ -45,7 +45,16 @@ export function formatCellValue(value: unknown): string {
     return JSON.stringify(value);
   }
 
-  return String(value);
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (typeof value === "symbol") {
+    return value.toString();
+  }
+
+  // bigint, function, or other
+  return JSON.stringify(value);
 }
 
 /**
@@ -65,9 +74,9 @@ export function calculateColumnWidth<T extends BaseTableItem>(
     ...data.slice(0, 100).map((item) => {
       const value = getNestedValue(item, column.accessor);
       const formattedValue = column.formatValue
-        ? String(column.formatValue(item))
+        ? formatCellValue(column.formatValue(item))
         : formatCellValue(value);
-      return String(formattedValue).length;
+      return formattedValue.length;
     })
   );
 
@@ -159,8 +168,8 @@ export function generateTableId(prefix: string, ...parts: (string | number)[]): 
  * Checks if the device is mobile.
  */
 export function isMobile(breakpoint: number = 768): boolean {
-  if (typeof window === "undefined") return false;
-  return window.innerWidth < breakpoint;
+  if (globalThis.window === undefined) return false;
+  return globalThis.window.innerWidth < breakpoint;
 }
 
 /**

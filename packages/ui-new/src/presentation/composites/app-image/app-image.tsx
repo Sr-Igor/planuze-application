@@ -11,6 +11,7 @@
 "use client";
 
 import { memo, ReactNode, useCallback, useEffect, useState } from "react";
+import Image, { ImageProps } from "next/image";
 
 import { Skeleton } from "../../primitives/skeleton";
 
@@ -64,7 +65,7 @@ export interface UseAppImageResult {
   isError: boolean;
 }
 
-export interface AppImageProps {
+export interface AppImageProps extends Omit<ImageProps, "src" | "alt"> {
   /**
    * Image source (filename, blob URL, or full URL)
    */
@@ -86,10 +87,6 @@ export interface AppImageProps {
    * Alt text for the image
    */
   alt?: string;
-  /**
-   * Inline styles for the image
-   */
-  style?: React.CSSProperties;
   /**
    * File object for determining extension
    */
@@ -117,22 +114,6 @@ export interface AppImageProps {
    * @default false
    */
   publicFile?: boolean;
-  /**
-   * Whether to fill the container (similar to Next.js Image fill)
-   */
-  fill?: boolean;
-  /**
-   * Additional class name
-   */
-  className?: string;
-  /**
-   * Width of the image
-   */
-  width?: number | string;
-  /**
-   * Height of the image
-   */
-  height?: number | string;
   /**
    * Function to fetch the image blob (for protected images)
    */
@@ -166,7 +147,7 @@ export interface AppImageProps {
 // Constants
 // ============================================================================
 
-const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "gif", "webp", "svg"];
+const IMAGE_EXTENSIONS = new Set(["png", "jpg", "jpeg", "gif", "webp", "svg"]);
 
 // ============================================================================
 // Hook
@@ -280,16 +261,13 @@ const AppImageComponent = ({
   fallback,
   skipDefault = false,
   publicFile = false,
-  fill,
-  className,
-  width,
-  height,
   fetchImage,
   companyId,
   baseUrl,
   loadingComponent,
   noPreviewComponent,
   labels,
+  ...rest
 }: AppImageProps) => {
   // Determine if we should skip fetch (for blob URLs, http URLs, or empty src)
   const skipFetch =
@@ -362,7 +340,7 @@ const AppImageComponent = ({
   }
 
   // No preview for non-image files
-  if ((!ext || !IMAGE_EXTENSIONS.includes(ext)) && !forceLoad) {
+  if ((!ext || !IMAGE_EXTENSIONS.has(ext)) && !forceLoad) {
     if (noPreviewComponent) {
       return <>{noPreviewComponent}</>;
     }
@@ -378,25 +356,13 @@ const AppImageComponent = ({
 
   // Image component with error handling
   if (!imageError && !isError && finalSrc && typeof finalSrc === "string") {
-    const imgStyle = fill
-      ? {
-          ...style,
-          position: "absolute" as const,
-          inset: 0,
-          width: "100%",
-          height: "100%",
-        }
-      : style;
-
     return (
-      <img
+      <Image
+        {...rest}
         src={finalSrc}
         alt={alt || "image"}
         onError={() => setImageError(true)}
-        style={imgStyle}
-        className={className}
-        width={width}
-        height={height}
+        style={style}
       />
     );
   }

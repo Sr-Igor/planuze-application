@@ -67,7 +67,8 @@ export const AppCardSelector = ({
   iconSize = 16,
 }: AppCardSelectorProps) => {
   const pathText = item.path?.join(" / ") || "";
-  const tooltipText = item.tooltip || `${item.title}${pathText ? ` / ${pathText}` : ""}`;
+  const pathSuffix = pathText ? " / " + pathText : "";
+  const tooltipText = item.tooltip || item.title + pathSuffix;
 
   return (
     <div className={cn("flex w-full items-center gap-2 text-sm", className)}>

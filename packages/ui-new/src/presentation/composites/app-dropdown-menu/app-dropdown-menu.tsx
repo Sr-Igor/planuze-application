@@ -118,7 +118,7 @@ function hasVisibleItems(group: AppDropdownMenuGroup): boolean {
  * />
  * ```
  */
-function AppDropdownMenu({ title, trigger, groups, className }: AppDropdownMenuProps) {
+function AppDropdownMenu({ title, trigger, groups, className }: Readonly<AppDropdownMenuProps>) {
   const hasAnyVisibleItems = groups.some((group) => hasVisibleItems(group));
 
   if (!hasAnyVisibleItems) return null;
@@ -143,7 +143,7 @@ function AppDropdownMenu({ title, trigger, groups, className }: AppDropdownMenuP
                 .filter((subItem) => subItem.isVisible !== false)
                 .map((subItem, subIndex) => (
                   <DropdownMenuItem
-                    key={`sub-item-${subIndex}`}
+                    key={`sub-item-${subIndex}-${subItem.label}`}
                     onClick={subItem.onClick}
                     disabled={subItem.disabled}
                   >

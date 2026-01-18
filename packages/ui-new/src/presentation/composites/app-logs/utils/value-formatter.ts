@@ -7,8 +7,8 @@ import { isHtmlContent, stripHtmlTags } from "./html-processor";
 export const formatDisplayValue = <T>(
   field: keyof T | undefined,
   value: unknown,
-  maxLength: number = 50,
-  displayValue: (field: keyof T | undefined, value: unknown) => string
+  displayValue: (field: keyof T | undefined, value: unknown) => string,
+  maxLength: number = 50
 ): FormattedValue => {
   const fullValue = displayValue(field, value);
   const isHtml = isHtmlContent(fullValue);

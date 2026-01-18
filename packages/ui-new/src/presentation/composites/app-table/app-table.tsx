@@ -57,7 +57,7 @@ function TableComponent<T extends BaseTableItem>({
   height,
   labels: userLabels,
   ...props
-}: TableProps<T>) {
+}: Readonly<TableProps<T>>) {
   const labels = { ...DEFAULT_LABELS, ...userLabels };
   const windowWidth = useWindowWidth();
   const headerScrollRef = useRef<HTMLDivElement>(null);

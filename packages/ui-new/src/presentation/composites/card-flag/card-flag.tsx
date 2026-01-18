@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 "use client";
 
+import Image from "next/image";
 import { CreditCard } from "lucide-react";
 
 import { cn } from "../../../shared/utils";
@@ -34,60 +36,30 @@ export interface CardFlagProps {
    * Additional class name
    */
   className?: string;
-  /**
-   * Custom Image component (e.g., Next.js Image)
-   */
-  ImageComponent?: React.ComponentType<{
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  }>;
-  /**
-   * Function to get the flag image source
-   * Receives the normalized brand name and should return the image source
-   */
-  getFlagSrc?: (brand: SupportedCardBrand) => string;
 }
-
-const DefaultImage = ({
-  src,
-  alt,
-  width,
-  height,
-}: {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-}) => <img src={src} alt={alt} width={width} height={height} />;
 
 export const CardFlag = ({
   brand,
   width = 28,
   height = 18,
   className,
-  ImageComponent = DefaultImage,
-  getFlagSrc,
 }: CardFlagProps) => {
   const normalized = brand?.toLowerCase()?.replace(/[^a-z]/g, "") || "";
 
-  if (SUPPORTED_FLAGS.includes(normalized as SupportedCardBrand) && getFlagSrc) {
-    const flagSrc = getFlagSrc(normalized as SupportedCardBrand);
-
-    return (
-      <div
-        className={cn("flex items-center gap-2", className)}
-        style={{ display: "flex", alignItems: "center", gap: "8px" }}
-      >
-        <ImageComponent
-          src={flagSrc}
-          alt={brand || ""}
-          width={width}
-          height={height}
-        />
-      </div>
-    );
+  if (SUPPORTED_FLAGS.includes(normalized as SupportedCardBrand)) {
+    try {
+      const flag = require(`payment-icons/min/flat/${normalized}.svg`);
+      return (
+        <div
+          className={cn("flex items-center gap-2", className)}
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
+        >
+          <Image src={flag} alt={brand || ""} width={width} height={height} />
+        </div>
+      );
+    } catch {
+      return null;
+    }
   }
 
   return (
@@ -96,8 +68,11 @@ export const CardFlag = ({
       style={{ display: "flex", alignItems: "center", gap: "8px" }}
     >
       <CreditCard
-        className="text-gray-400"
-        style={{ width, height }}
+        className={cn(
+          "h-5 w-5 text-gray-400",
+          width && `w-[${width}px]`,
+          height && `h-[${height}px]`
+        )}
       />
     </div>
   );

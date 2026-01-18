@@ -20,7 +20,7 @@ import { cn } from "../../../shared/utils";
 
 export type ContextMenuProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Root>;
 
-function ContextMenu({ ...props }: ContextMenuProps) {
+function ContextMenu({ ...props }: Readonly<ContextMenuProps>) {
   return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />;
 }
 
@@ -54,13 +54,13 @@ export type ContextMenuPortalProps = ComponentPropsWithoutRef<
   typeof ContextMenuPrimitive.Portal
 >;
 
-function ContextMenuPortal({ ...props }: ContextMenuPortalProps) {
+function ContextMenuPortal({ ...props }: Readonly<ContextMenuPortalProps>) {
   return <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />;
 }
 
 export type ContextMenuSubProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Sub>;
 
-function ContextMenuSub({ ...props }: ContextMenuSubProps) {
+function ContextMenuSub({ ...props }: Readonly<ContextMenuSubProps>) {
   return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} />;
 }
 
@@ -99,7 +99,7 @@ const ContextMenuSubTrigger = forwardRef<
       "flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
       "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-      "data-[inset]:pl-8",
+      "data-inset:pl-8",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
     )}
@@ -193,12 +193,12 @@ const ContextMenuItem = forwardRef<
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      "data-[inset]:pl-8",
+      "data-disabled:pointer-events-none data-disabled:opacity-50",
+      "data-inset:pl-8",
       "data-[variant=destructive]:text-destructive-foreground",
       "data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/40",
       "data-[variant=destructive]:focus:text-destructive-foreground",
-      "data-[variant=destructive]:*:[svg]:!text-destructive-foreground",
+      "data-[variant=destructive]:*:[svg]:text-destructive-foreground!",
       "[&_svg:not([class*='text-'])]:text-muted-foreground",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
@@ -223,7 +223,7 @@ const ContextMenuCheckboxItem = forwardRef<
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none data-disabled:opacity-50",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
     )}
@@ -255,7 +255,7 @@ const ContextMenuRadioItem = forwardRef<
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none data-disabled:opacity-50",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
     )}
@@ -290,7 +290,7 @@ const ContextMenuLabel = forwardRef<
     ref={ref}
     data-slot="context-menu-label"
     data-inset={inset}
-    className={cn("text-foreground px-2 py-1.5 text-sm font-medium data-[inset]:pl-8", className)}
+    className={cn("text-foreground px-2 py-1.5 text-sm font-medium data-inset:pl-8", className)}
     {...props}
   />
 ));

@@ -102,7 +102,7 @@ const NavigationMenuTrigger = forwardRef<
   >
     {children}{" "}
     <ChevronDownIcon
-      className="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+      className="relative top-px ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
       aria-hidden="true"
     />
   </NavigationMenuPrimitive.Trigger>
@@ -162,7 +162,7 @@ const NavigationMenuViewport = forwardRef<
       data-slot="navigation-menu-viewport"
       className={cn(
         "origin-top-center bg-popover text-popover-foreground relative mt-1.5 overflow-hidden rounded-md border shadow",
-        "h-[var(--radix-navigation-menu-viewport-height)] w-full md:w-[var(--radix-navigation-menu-viewport-width)]",
+        "h-(--radix-navigation-menu-viewport-height) w-full md:w-(--radix-navigation-menu-viewport-width)",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90",
         className
@@ -214,7 +214,7 @@ const NavigationMenuIndicator = forwardRef<
     ref={ref}
     data-slot="navigation-menu-indicator"
     className={cn(
-      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden",
+      "top-full z-1 flex h-1.5 items-end justify-center overflow-hidden",
       "data-[state=visible]:animate-in data-[state=hidden]:animate-out",
       "data-[state=hidden]:fade-out data-[state=visible]:fade-in",
       className
@@ -236,5 +236,6 @@ export {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-  navigationMenuTriggerStyle,
 };
+
+export { navigationMenuTriggerStyle } from "./navigation-menu.variants";

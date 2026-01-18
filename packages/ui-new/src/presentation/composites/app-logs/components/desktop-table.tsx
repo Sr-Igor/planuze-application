@@ -41,22 +41,24 @@ export const DesktopTable = <T,>({
               </td>
               <td className="max-w-[200px] px-3 py-2 text-xs">
                 <AppTooltip text={oldFormatted.full} className="block w-full">
-                  <div
-                    className="block w-full truncate select-text"
+                  <button
+                    type="button"
+                    className="block w-full truncate text-left select-text"
                     onDoubleClick={() => copyToClipboard(oldFormatted.full)}
                   >
                     {oldFormatted.display}
-                  </div>
+                  </button>
                 </AppTooltip>
               </td>
               <td className="max-w-[200px] px-3 py-2 text-xs">
                 <AppTooltip text={newFormatted.full} className="block w-full">
-                  <div
-                    className="block w-full truncate text-gray-700 select-text dark:text-gray-200"
+                  <button
+                    type="button"
+                    className="block w-full truncate text-left text-gray-700 select-text dark:text-gray-200"
                     onDoubleClick={() => copyToClipboard(newFormatted.full)}
                   >
                     {newFormatted.display}
-                  </div>
+                  </button>
                 </AppTooltip>
               </td>
             </tr>

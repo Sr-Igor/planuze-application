@@ -36,7 +36,7 @@ function TableActionsComponent<T extends BaseTableItem>({
   actions,
   isLoading,
   labels,
-}: TableActionsProps<T>) {
+}: Readonly<TableActionsProps<T>>) {
   const [openAlert, setOpenAlert] = useState<string | null>(null);
   const [executingAction, setExecutingAction] = useState<string | null>(null);
 

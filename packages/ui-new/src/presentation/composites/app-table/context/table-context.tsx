@@ -22,7 +22,7 @@ export interface TableProviderProps<T extends BaseTableItem> {
 export function TableProvider<T extends BaseTableItem>({
   children,
   value,
-}: TableProviderProps<T>) {
+}: Readonly<TableProviderProps<T>>) {
   return (
     <TableContext.Provider value={value as unknown as TableContextValue<BaseTableItem>}>
       {children}

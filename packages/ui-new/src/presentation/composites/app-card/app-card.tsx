@@ -74,7 +74,7 @@ function AppCard({
   loading = false,
   contentClassName,
   cardClassName,
-}: AppCardProps) {
+}: Readonly<AppCardProps>) {
   return (
     <Card className={cn("relative py-0", cardClassName)}>
       <Skeleton

@@ -15,7 +15,7 @@ import { cn } from "../../../shared/utils";
 
 export type HoverCardProps = ComponentPropsWithoutRef<typeof HoverCardPrimitive.Root>;
 
-function HoverCard({ ...props }: HoverCardProps) {
+function HoverCard({ ...props }: Readonly<HoverCardProps>) {
   return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />;
 }
 

@@ -15,9 +15,52 @@ import { ComponentProps } from "react";
 import { DayPicker } from "react-day-picker";
 
 import { cn } from "../../../shared/utils";
-import { Button } from "../button";
+import { Button, ButtonProps } from "../button";
 
 const locales: Record<string, Locale> = allLocales;
+
+/**
+ * Navigation button for next month.
+ */
+function NextMonthButton(props: ButtonProps) {
+  return (
+    <Button {...props} variant="ghost" size="icon" className="hover:bg-transparent">
+      <ChevronRight className="h-4 w-4" />
+    </Button>
+  );
+}
+
+/**
+ * Navigation button for previous month.
+ */
+function PreviousMonthButton(props: ButtonProps) {
+  return (
+    <Button {...props} variant="ghost" size="icon" className="hover:bg-transparent">
+      <ChevronLeft className="h-4 w-4" />
+    </Button>
+  );
+}
+
+/**
+ * Day button component.
+ */
+function DayButton(props: ButtonProps & { modifiers: { selected?: boolean } }) {
+  const { modifiers, ...buttonProps } = props;
+  const isSelected = modifiers.selected;
+  return (
+    <Button
+      {...buttonProps}
+      variant="ghost"
+      size="icon"
+      className={cn(
+        "h-9 w-9 p-0 font-normal",
+        isSelected
+          ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+          : "hover:bg-transparent hover:text-current"
+      )}
+    />
+  );
+}
 
 /**
  * Gets the date-fns locale based on the locale string.
@@ -96,36 +139,9 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        NextMonthButton(buttonProps) {
-          return (
-            <Button {...buttonProps} variant="ghost" size="icon" className="hover:bg-transparent">
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          );
-        },
-        PreviousMonthButton(buttonProps) {
-          return (
-            <Button {...buttonProps} variant="ghost" size="icon" className="hover:bg-transparent">
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-          );
-        },
-        DayButton(buttonProps) {
-          const isSelected = buttonProps.modifiers.selected;
-          return (
-            <Button
-              {...buttonProps}
-              variant="ghost"
-              size="icon"
-              className={cn(
-                "h-9 w-9 p-0 font-normal",
-                isSelected
-                  ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
-                  : "hover:bg-transparent hover:text-current"
-              )}
-            />
-          );
-        },
+        NextMonthButton,
+        PreviousMonthButton,
+        DayButton,
       }}
       formatters={{
         formatWeekdayName: (day) => format(day, "EEEEE", { locale: dateFnsLocale }).toUpperCase(),

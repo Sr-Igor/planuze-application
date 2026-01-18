@@ -32,7 +32,7 @@ const BreadcrumbList = forwardRef<HTMLOListElement, BreadcrumbListProps>(
       ref={ref}
       data-slot="breadcrumb-list"
       className={cn(
-        "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5",
+        "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm warp-break-words sm:gap-2.5",
         className
       )}
       {...props}
@@ -89,8 +89,6 @@ const BreadcrumbPage = forwardRef<HTMLSpanElement, BreadcrumbPageProps>(
     <span
       ref={ref}
       data-slot="breadcrumb-page"
-      role="link"
-      aria-disabled="true"
       aria-current="page"
       className={cn("text-foreground font-normal", className)}
       {...props}
@@ -111,7 +109,6 @@ const BreadcrumbSeparator = forwardRef<HTMLLIElement, BreadcrumbSeparatorProps>(
     <li
       ref={ref}
       data-slot="breadcrumb-separator"
-      role="presentation"
       aria-hidden="true"
       className={cn("[&>svg]:size-3.5", className)}
       {...props}
@@ -130,7 +127,6 @@ const BreadcrumbEllipsis = forwardRef<HTMLSpanElement, BreadcrumbEllipsisProps>(
     <span
       ref={ref}
       data-slot="breadcrumb-ellipsis"
-      role="presentation"
       aria-hidden="true"
       className={cn("flex size-9 items-center justify-center", className)}
       {...props}

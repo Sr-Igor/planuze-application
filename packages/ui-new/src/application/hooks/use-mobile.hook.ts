@@ -38,7 +38,7 @@ export function useIsMobile(breakpoint: number = MOBILE_BREAKPOINT): boolean {
   const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const mql = globalThis.window?.matchMedia(`(max-width: ${breakpoint - 1}px)`);
 
     const onChange = () => {
       setIsMobile(window.innerWidth < breakpoint);

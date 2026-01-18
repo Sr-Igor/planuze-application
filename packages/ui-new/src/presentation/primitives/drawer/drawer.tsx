@@ -37,7 +37,7 @@ DrawerTrigger.displayName = "DrawerTrigger";
 
 export type DrawerPortalProps = ComponentPropsWithoutRef<typeof DrawerPrimitive.Portal>;
 
-function DrawerPortal({ ...props }: DrawerPortalProps) {
+function DrawerPortal({ ...props }: Readonly<DrawerPortalProps>) {
   return <DrawerPrimitive.Portal data-slot="drawer-portal" {...props} />;
 }
 

@@ -14,19 +14,17 @@ function TableColgroupComponent<T extends BaseTableItem>({
   columns,
   selectable,
   hasActions,
-}: TableColgroupProps<T>) {
+}: Readonly<TableColgroupProps<T>>) {
   const getCellStyles = (column: TableColumn<T>): CSSProperties => {
     const styles: CSSProperties = {};
 
     if (!column.width && !column.minWidth && !column.maxWidth) {
       styles.width = "auto";
-    } else {
-      if (column.width) {
-        styles.width = typeof column.width === "number" ? `${column.width}px` : column.width;
-      } else if (column.minWidth) {
-        styles.width =
-          typeof column.minWidth === "number" ? `${column.minWidth}px` : column.minWidth;
-      }
+    } else if (column.width) {
+      styles.width = typeof column.width === "number" ? `${column.width}px` : column.width;
+    } else if (column.minWidth) {
+      styles.width =
+        typeof column.minWidth === "number" ? `${column.minWidth}px` : column.minWidth;
     }
 
     return styles;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useMemo } from "react";
 
 import type { DndComponents } from "../types";
 
@@ -30,8 +30,10 @@ export interface DndContextProviderProps {
  * This allows the library to be framework-agnostic by injecting the DnD components
  */
 export const DndContextProvider = ({ components, children }: DndContextProviderProps) => {
+  const value = useMemo(() => ({ components, isReady: true }), [components]);
+
   return (
-    <DndContext.Provider value={{ components, isReady: true }}>
+    <DndContext.Provider value={value}>
       {children}
     </DndContext.Provider>
   );

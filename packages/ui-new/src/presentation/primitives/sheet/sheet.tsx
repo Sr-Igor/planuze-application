@@ -20,7 +20,7 @@ import { cn } from "../../../shared/utils";
 
 export type SheetProps = ComponentPropsWithoutRef<typeof SheetPrimitive.Root>;
 
-function Sheet({ ...props }: SheetProps) {
+function Sheet({ ...props }: Readonly<SheetProps>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />;
 }
 
@@ -48,7 +48,7 @@ SheetClose.displayName = "SheetClose";
 
 export type SheetPortalProps = ComponentPropsWithoutRef<typeof SheetPrimitive.Portal>;
 
-function SheetPortal({ ...props }: SheetPortalProps) {
+function SheetPortal({ ...props }: Readonly<SheetPortalProps>) {
   return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />;
 }
 

@@ -45,7 +45,7 @@ export type AppTooltipProps = {
 function formatText(text: string): ReactNode[] {
   const lines = text.split("\n");
   return lines.map((line, index) => (
-    <span key={index}>
+    <span key={`line-${line}-${index}`}>
       {line}
       {index < lines.length - 1 && <br />}
     </span>
@@ -71,7 +71,7 @@ function AppTooltip({
   contentClassName,
   side,
   align,
-}: AppTooltipProps) {
+}: Readonly<AppTooltipProps>) {
   if (!text) {
     return <>{children}</>;
   }

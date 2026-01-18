@@ -22,7 +22,7 @@ export function TableTooltip({
   text,
   className,
   showOnlyWhenTruncated = true,
-}: TableTooltipProps) {
+}: Readonly<TableTooltipProps>) {
   const [isTruncated, setIsTruncated] = useState(false);
   const textRef = useRef<HTMLSpanElement>(null);
 
@@ -47,7 +47,7 @@ export function TableTooltip({
   const formatText = (text: string) => {
     const lines = text.split("\n");
     return lines.map((line, index) => (
-      <span key={index}>
+      <span key={`line-${line}-${index}`}>
         {line}
         {index < lines.length - 1 && <br />}
       </span>

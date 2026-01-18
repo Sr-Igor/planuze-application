@@ -4,7 +4,7 @@ import React from "react";
 
 import { EmptyState, LogContent, LogHeader } from "./components";
 import { useDisplayValue, useFormatApply } from "./hooks";
-import type { LogEntry, LogsComparisonProps, LogsLabels } from "./types";
+import type { LogsComparisonProps, LogsLabels } from "./types";
 import { computeDiffs, copyToClipboard, formatDisplayValue } from "./utils";
 
 const defaultLabels: LogsLabels = {
@@ -50,7 +50,7 @@ export const AppLogs = <T = Record<string, unknown>,>({
 
   const formatValue = React.useCallback(
     (field: keyof T | undefined, value: unknown, maxLength: number = 50) =>
-      formatDisplayValue(field, value, maxLength, displayValue),
+      formatDisplayValue(field, value, displayValue, maxLength),
     [displayValue]
   );
 
@@ -121,4 +121,4 @@ export const AppLogs = <T = Record<string, unknown>,>({
 
 AppLogs.displayName = "AppLogs";
 
-export type { LogEntry, LogsComparisonProps };
+export type { LogEntry, LogsComparisonProps } from "./types";

@@ -102,49 +102,41 @@ export const AppTrash = <T extends Record<string, unknown>>({
 
   /* ------------------------------------------------------------------ */
   /* prepare value for display ---------------------------------------- */
+
+  const applyFormat = (field: keyof T, value: unknown, item: T): unknown => {
+    if (!format?.[field]) return value;
+    try {
+      return format[field](value, item);
+    } catch {
+      return value;
+    }
+  };
+
+  const applyConversor = (field: keyof T, value: unknown): unknown => {
+    if (!conversor?.[field] || value == null) return value;
+    const opts = conversor[field];
+    const mapOne = (x: unknown) =>
+      opts.find((o) => String(o.value) === String(x))?.label ?? x;
+    return Array.isArray(value) ? opts.length && value.map(mapOne).join(", ") : mapOne(value);
+  };
+
+  const stringify = (value: unknown): string => {
+    if (typeof value === "string") return value;
+    if (typeof value === "number" || typeof value === "bigint") return value.toString();
+    if (typeof value === "symbol") return value.toString();
+    return JSON.stringify(value);
+  };
+
   const prepareDisplay = (field: keyof T, raw: unknown, item: T): string => {
-    let v = raw;
+    let v = applyFormat(field, raw, item);
+    v = applyConversor(field, v);
 
-    /* 1. format ----------------------------------------------------- */
-    if (format?.[field]) {
-      try {
-        v = format[field]!(v, item);
-      } catch {
-        /* if error, use original value */
-      }
-    }
+    if (typeof v === "boolean") return v ? labels.true : labels.false;
+    if (v === null || v === undefined) return "—";
+    if (isDate(v)) return new Date(v).toLocaleString(dateLocale);
+    if (typeof v === "object") return JSON.stringify(v);
 
-    /* 2. conversor -------------------------------------------------- */
-    if (conversor?.[field] && v != null) {
-      const opts = conversor[field]!;
-      const mapOne = (x: unknown) =>
-        opts.find((o) => String(o.value) === String(x))?.label ?? x;
-
-      v = Array.isArray(v) ? opts.length && v.map(mapOne).join(", ") : mapOne(v);
-    }
-
-    /* 3. boolean ---------------------------------------------------- */
-    if (typeof v === "boolean") {
-      return v ? labels.true : labels.false;
-    }
-
-    /* 4. empty ------------------------------------------------------ */
-    if (v === null || v === undefined) {
-      return "—";
-    }
-
-    /* 5. date ------------------------------------------------------- */
-    if (isDate(v)) {
-      return new Date(v as Date).toLocaleString(dateLocale);
-    }
-
-    /* 6. object ----------------------------------------------------- */
-    if (typeof v === "object") {
-      return JSON.stringify(v);
-    }
-
-    /* 7. fallback --------------------------------------------------- */
-    return String(v);
+    return stringify(v);
   };
   /* ------------------------------------------------------------------ */
 
@@ -174,7 +166,7 @@ export const AppTrash = <T extends Record<string, unknown>>({
           >
             {items.map((item, idx) => (
               <div
-                key={idx}
+                key={`card-${idx}-${String(item.id)}`}
                 className="flex flex-col gap-2 rounded-xl border border-gray-200 bg-neutral-50 p-3 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/80"
               >
                 {allKeys.map((key) => (
@@ -228,7 +220,7 @@ export const AppTrash = <T extends Record<string, unknown>>({
 
               <tbody className="divide-y divide-gray-400">
                 {items.map((item, idx) => (
-                  <tr key={idx}>
+                  <tr key={`row-${idx}-${String(item.id)}`}>
                     {allKeys.map((key) => (
                       <td key={String(key)} className="px-4 py-2 capitalize">
                         {prepareDisplay(key, item[key], item)}

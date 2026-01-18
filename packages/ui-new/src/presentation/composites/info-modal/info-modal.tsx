@@ -43,7 +43,7 @@ export type InfoModalLayoutProps = {
  * />
  * ```
  */
-function InfoModalLayout({ icon, title, description, className }: InfoModalLayoutProps) {
+function InfoModalLayout({ icon, title, description, className }: Readonly<InfoModalLayoutProps>) {
   return (
     <div
       className={cn(

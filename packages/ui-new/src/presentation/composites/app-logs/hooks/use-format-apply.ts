@@ -12,7 +12,7 @@ export const useFormatApply = <T>(
     (field: keyof T, value: unknown, item: T) => {
       if (format?.[field]) {
         try {
-          return format[field]!(value, item);
+          return format[field](value, item);
         } catch {
           return value;
         }

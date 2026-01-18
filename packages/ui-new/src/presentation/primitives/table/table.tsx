@@ -21,14 +21,17 @@ export type TableProps = ComponentPropsWithoutRef<"table"> & {
 };
 
 const Table = forwardRef<HTMLTableElement, TableProps>(
-  ({ className, containerClassName, ...props }, ref) => (
+  ({ className, containerClassName, children, ...props }, ref) => (
     <div className={cn("relative w-full", containerClassName)}>
+      {/* Table header is provided by consumers via TableHeader + TableHead components */}
       <table
         ref={ref}
         data-slot="table"
         className={cn("w-full caption-bottom text-sm", className)}
         {...props}
-      />
+      >
+        {children}
+      </table>
     </div>
   )
 );
@@ -103,7 +106,7 @@ const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
       data-slot="table-head"
       className={cn(
         "text-muted-foreground h-10 px-2 text-left align-middle font-medium",
-        "[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "[&:has([role=checkbox])]:pr-0 *:[[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props}
@@ -122,7 +125,7 @@ const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
       data-slot="table-cell"
       className={cn(
         "p-2 align-middle",
-        "[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "[&:has([role=checkbox])]:pr-0 *:[[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props}

@@ -45,13 +45,13 @@ export type DynamicScrollAreaProps = ComponentPropsWithoutRef<typeof ScrollArea>
 const DynamicScrollArea = forwardRef<HTMLDivElement, DynamicScrollAreaProps>(
   ({ children, className, containerClassName, height, viewportOffset = 300, ...props }, ref) => {
     const [viewportHeight, setViewportHeight] = useState(
-      typeof window === "undefined" ? 0 : window.innerHeight
+      globalThis.window === undefined ? 0 : globalThis.window.innerHeight
     );
 
     useEffect(() => {
-      const onResize = () => setViewportHeight(window.innerHeight);
-      window.addEventListener("resize", onResize);
-      return () => window.removeEventListener("resize", onResize);
+      const onResize = () => setViewportHeight(globalThis.window.innerHeight);
+      globalThis.window.addEventListener("resize", onResize);
+      return () => globalThis.window.removeEventListener("resize", onResize);
     }, []);
 
     const containerRef = useRef<HTMLDivElement>(null);

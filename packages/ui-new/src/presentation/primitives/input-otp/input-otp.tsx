@@ -100,7 +100,7 @@ export type InputOTPSeparatorProps = ComponentPropsWithoutRef<"div">;
 
 const InputOTPSeparator = forwardRef<HTMLDivElement, InputOTPSeparatorProps>(
   ({ ...props }, ref) => (
-    <div ref={ref} data-slot="input-otp-separator" role="separator" {...props}>
+    <div ref={ref} data-slot="input-otp-separator" aria-hidden="true" {...props}>
       <MinusIcon />
     </div>
   )

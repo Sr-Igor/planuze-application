@@ -15,8 +15,9 @@ export type IconProps = Omit<icons.LucideProps, "ref"> & {
   /**
    * The name of the Lucide icon to render.
    * Falls back to CircleHelp if undefined, null, or not found.
+   * Use IconName type for autocomplete suggestions.
    */
-  name?: IconName | string | null;
+  name?: string | null;
 };
 
 /**

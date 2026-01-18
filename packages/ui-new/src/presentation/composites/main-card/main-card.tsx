@@ -96,7 +96,7 @@ function MainCard({
   children,
   isEmpty,
   emptyMessage = "No results",
-}: MainCardProps) {
+}: Readonly<MainCardProps>) {
   return (
     <Card className={className}>
       {(title || description) && (

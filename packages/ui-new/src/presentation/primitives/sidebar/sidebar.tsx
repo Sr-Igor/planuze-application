@@ -84,8 +84,8 @@ const SidebarProvider = forwardRef<HTMLDivElement, SidebarProviderProps>(
   ({ defaultOpen = true, open: openProp, onOpenChange: setOpenProp, className, style, children, ...props }, ref) => {
     const isMobile = useIsMobile();
     const [openMobile, setOpenMobile] = useState(false);
-    const [_open, _setOpen] = useState(defaultOpen);
-    const open = openProp ?? _open;
+    const [internalOpen, setInternalOpen] = useState(defaultOpen);
+    const open = openProp ?? internalOpen;
 
     const setOpen = useCallback(
       (value: boolean | ((value: boolean) => boolean)) => {
@@ -93,7 +93,7 @@ const SidebarProvider = forwardRef<HTMLDivElement, SidebarProviderProps>(
         if (setOpenProp) {
           setOpenProp(openState);
         } else {
-          _setOpen(openState);
+          setInternalOpen(openState);
         }
         document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
       },
@@ -111,8 +111,8 @@ const SidebarProvider = forwardRef<HTMLDivElement, SidebarProviderProps>(
           toggleSidebar();
         }
       };
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
+      globalThis.addEventListener("keydown", handleKeyDown);
+      return () => globalThis.removeEventListener("keydown", handleKeyDown);
     }, [toggleSidebar]);
 
     const state = open ? "expanded" : "collapsed";

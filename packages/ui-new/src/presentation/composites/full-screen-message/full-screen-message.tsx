@@ -54,7 +54,7 @@ function FullScreenMessage({
   description,
   actions,
   className,
-}: FullScreenMessageProps) {
+}: Readonly<FullScreenMessageProps>) {
   return (
     <div
       className={cn(

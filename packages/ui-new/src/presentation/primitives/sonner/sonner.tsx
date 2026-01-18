@@ -9,9 +9,10 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { Toaster as Sonner, ToasterProps } from "sonner";
+import type { ToasterProps } from "sonner";
+import { Toaster as Sonner } from "sonner";
 
-export type { ToasterProps };
+export type { ToasterProps } from "sonner";
 
 /**
  * Toaster component.
@@ -28,7 +29,7 @@ export type { ToasterProps };
  * toast.success('Success!')
  * ```
  */
-function Toaster({ ...props }: ToasterProps) {
+function Toaster({ ...props }: Readonly<ToasterProps>) {
   const { theme = "system" } = useTheme();
 
   return (

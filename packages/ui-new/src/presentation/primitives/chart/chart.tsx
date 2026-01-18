@@ -71,7 +71,7 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
     configLabelKey = payloadPayload[key as keyof typeof payloadPayload] as string;
   }
 
-  return configLabelKey in config ? config[configLabelKey] : config[key as keyof typeof config];
+  return configLabelKey in config ? config[configLabelKey] : config[key];
 }
 
 // ============================================================================
@@ -81,7 +81,7 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
 /**
  * Chart style component for injecting CSS variables.
  */
-function ChartStyle({ id, config }: ChartStyleProps) {
+function ChartStyle({ id, config }: Readonly<ChartStyleProps>) {
   const colorConfig = Object.entries(config).filter(([, cfg]) => cfg.theme || cfg.color);
 
   if (!colorConfig.length) {
@@ -116,9 +116,10 @@ ${colorConfig
 function ChartContainer({ id, className, children, config, ...props }: ChartContainerProps) {
   const uniqueId = useId();
   const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
+  const contextValue = useMemo(() => ({ config }), [config]);
 
   return (
-    <ChartContext.Provider value={{ config }}>
+    <ChartContext.Provider value={contextValue}>
       <div
         data-slot="chart"
         data-chart={chartId}
@@ -182,7 +183,7 @@ function ChartTooltipContent({
     const itemConfig = getPayloadConfigFromPayload(config, item, key);
     const value =
       !labelKey && typeof label === "string"
-        ? config[label as keyof typeof config]?.label || label
+        ? config[label]?.label || label
         : itemConfig?.label;
 
     if (labelFormatter) {
@@ -211,7 +212,7 @@ function ChartTooltipContent({
         className
       )}
     >
-      {!nestLabel ? tooltipLabel : null}
+      {nestLabel ? null : tooltipLabel}
       <div className="grid gap-1.5">
         {payload.map((item, index) => {
           const key = `${nameKey || item.name || item.dataKey || "value"}`;

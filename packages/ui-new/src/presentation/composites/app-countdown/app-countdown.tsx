@@ -89,7 +89,8 @@ export const AppCountdown = ({
 
   const defaultFormat = (mins: number, secs: number) => (
     <>
-      <span>{mins.toString().padStart(2, "0")}</span>:
+      <span>{mins.toString().padStart(2, "0")}</span>
+      {":"}
       <span>{secs.toString().padStart(2, "0")}</span>
     </>
   );

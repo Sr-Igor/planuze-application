@@ -9,7 +9,7 @@
 "use client";
 
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
-import { ComponentPropsWithoutRef, createContext, forwardRef, useContext } from "react";
+import { ComponentPropsWithoutRef, createContext, forwardRef, useContext, useMemo } from "react";
 
 import { cn } from "../../../shared/utils";
 import { toggleVariants, ToggleVariantProps } from "../toggle/toggle.variants";
@@ -45,24 +45,28 @@ export type ToggleGroupProps = ComponentPropsWithoutRef<typeof ToggleGroupPrimit
 const ToggleGroup = forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Root>,
   ToggleGroupProps
->(({ className, variant, size, children, ...props }, ref) => (
-  <ToggleGroupPrimitive.Root
-    ref={ref}
-    data-slot="toggle-group"
-    data-variant={variant}
-    data-size={size}
-    className={cn(
-      "group/toggle-group flex items-center rounded-md",
-      "data-[variant=outline]:shadow-xs",
-      className
-    )}
-    {...props}
-  >
-    <ToggleGroupContext.Provider value={{ variant, size }}>
-      {children}
-    </ToggleGroupContext.Provider>
-  </ToggleGroupPrimitive.Root>
-));
+>(({ className, variant, size, children, ...props }, ref) => {
+  const contextValue = useMemo(() => ({ variant, size }), [variant, size]);
+
+  return (
+    <ToggleGroupPrimitive.Root
+      ref={ref}
+      data-slot="toggle-group"
+      data-variant={variant}
+      data-size={size}
+      className={cn(
+        "group/toggle-group flex items-center rounded-md",
+        "data-[variant=outline]:shadow-xs",
+        className
+      )}
+      {...props}
+    >
+      <ToggleGroupContext.Provider value={contextValue}>
+        {children}
+      </ToggleGroupContext.Provider>
+    </ToggleGroupPrimitive.Root>
+  );
+});
 
 ToggleGroup.displayName = "ToggleGroup";
 

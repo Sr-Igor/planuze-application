@@ -207,15 +207,15 @@ const IconButton = forwardRef<
 IconButton.displayName = "IconButton";
 
 /**
- * Export variant configuration for external use.
- * Enables custom components to use the same styling system.
- */
-export { buttonVariants };
-
-/**
  * Export components.
  */
 export { Button, IconButton };
+
+/**
+ * Re-export variant configuration for external use.
+ * Enables custom components to use the same styling system.
+ */
+export { buttonVariants } from "./button.variants";
 
 /**
  * Re-export types for consumers.

@@ -31,7 +31,7 @@ export type PopoverProps = ComponentPropsWithoutRef<typeof PopoverPrimitive.Root
  * </Popover>
  * ```
  */
-function Popover({ ...props }: PopoverProps) {
+function Popover({ ...props }: Readonly<PopoverProps>) {
   return <PopoverPrimitive.Root data-slot="popover" {...props} />;
 }
 

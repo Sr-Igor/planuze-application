@@ -28,14 +28,8 @@ export function useTableSorting<T extends BaseTableItem>({
 
       let newOrderValue: "asc" | "desc" | "" = "asc";
 
-      if (currentOrderKey === columnAccessor) {
-        if (currentOrderValue === "asc") {
-          newOrderValue = "desc";
-        } else if (currentOrderValue === "desc") {
-          newOrderValue = "asc";
-        } else {
-          newOrderValue = "asc";
-        }
+      if (currentOrderKey === columnAccessor && currentOrderValue === "asc") {
+        newOrderValue = "desc";
       }
 
       const finalOrderKey = columnAccessor as string;

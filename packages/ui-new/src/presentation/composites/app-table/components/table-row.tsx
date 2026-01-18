@@ -33,7 +33,7 @@ function TableRowComponent<T extends BaseTableItem>({
   actions = [],
   disabledCheckbox,
   labels,
-}: TableRowProps<T>) {
+}: Readonly<TableRowProps<T>>) {
   const handleClick = useCallback(
     (e: MouseEvent) => {
       if ((e.target as HTMLElement).closest('button, [role="checkbox"]')) {

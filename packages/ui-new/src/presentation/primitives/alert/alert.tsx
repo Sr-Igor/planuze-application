@@ -9,7 +9,7 @@
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 import { cn } from "../../../shared/utils";
-import { AlertVariantProps, alertVariants } from "./alert.variants";
+import { alertVariants, type AlertVariantProps } from "./alert.variants";
 
 /**
  * Alert component props.
@@ -100,4 +100,5 @@ const AlertDescription = forwardRef<HTMLDivElement, AlertDescriptionProps>(
 
 AlertDescription.displayName = "AlertDescription";
 
-export { Alert, AlertDescription, AlertTitle, alertVariants };
+export { Alert, AlertDescription, AlertTitle };
+export { alertVariants } from "./alert.variants";

@@ -15,7 +15,7 @@ export const copyToClipboard = async (
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
-    document.body.removeChild(textArea);
+    textArea.remove();
   }
   toast.info(copiedMessage);
 };

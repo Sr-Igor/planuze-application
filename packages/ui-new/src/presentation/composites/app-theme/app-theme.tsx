@@ -42,7 +42,7 @@ export type AppThemeProps = {
  * <AppTheme labels={{ light: "Claro", dark: "Escuro", system: "Sistema" }} />
  * ```
  */
-function AppTheme({ labels }: AppThemeProps) {
+function AppTheme({ labels }: Readonly<AppThemeProps>) {
   const { setTheme } = useTheme();
 
   const lightLabel = labels?.light ?? "Light";

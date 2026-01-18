@@ -10,6 +10,24 @@ const defaultLabels: Pick<LogsLabels, "true" | "false" | "empty"> = {
   empty: "Empty",
 };
 
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
+
+/**
+ * Check if value is empty (null, undefined, empty string, or whitespace only)
+ */
+const isEmpty = (v: unknown): boolean =>
+  v === null || v === undefined || v === "" || (typeof v === "string" && v.trim() === "");
+
+/**
+ * Stringify a value safely without producing [object Object]
+ */
+const stringify = (v: unknown): string => {
+  if (typeof v === "string") return v;
+  if (typeof v === "number" || typeof v === "bigint") return v.toString();
+  if (typeof v === "symbol") return v.toString();
+  return JSON.stringify(v);
+};
+
 /**
  * Hook to format display values with conversor support
  */
@@ -24,7 +42,7 @@ export const useDisplayValue = <T>(
 
       // Conversor value → label
       if (field && conversor?.[field]) {
-        const opts = conversor[field]!;
+        const opts = conversor[field];
         const mapOne = (x: unknown) =>
           opts.find((o) => String(o.value) === String(x))?.label ?? null;
 
@@ -37,23 +55,16 @@ export const useDisplayValue = <T>(
       }
 
       // null / undefined / empty string / whitespace only
-      if (v === null || v === undefined || v === "" || (typeof v === "string" && v.trim() === "")) {
+      if (isEmpty(v)) {
         return `[${labels.empty}]`;
       }
 
-      // Date
-      const dateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
-      if (typeof v === "string" && dateRegex.test(v)) {
+      // Date string
+      if (typeof v === "string" && DATE_REGEX.test(v)) {
         return new Date(v).toLocaleString(dateLocale);
       }
 
-      // Object
-      if (typeof v === "object") {
-        return JSON.stringify(v);
-      }
-
-      // Fallback
-      return String(v);
+      return stringify(v);
     },
     [conversor, labels, dateLocale]
   );

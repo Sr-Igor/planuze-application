@@ -10,7 +10,7 @@ import { forwardRef } from "react";
 
 import { Slot } from "../../../infrastructure/adapters";
 import { cn } from "../../../shared/utils";
-import { BadgeProps } from "./badge.types";
+import type { BadgeProps } from "./badge.types";
 import { badgeVariants } from "./badge.variants";
 
 /**
@@ -43,5 +43,6 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 
 Badge.displayName = "Badge";
 
-export { Badge, badgeVariants };
-export type { BadgeProps };
+export { Badge };
+export { badgeVariants } from "./badge.variants";
+export type { BadgeProps } from "./badge.types";

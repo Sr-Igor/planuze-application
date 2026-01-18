@@ -1,22 +1,10 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import Image, { ImageProps } from "next/image";
+import Link from "next/link";
 
-import { cn } from "../../../shared/utils";
-
-export interface AppLogoProps {
-  /**
-   * Width of the logo image
-   */
-  width: number;
-  /**
-   * Height of the logo image
-   */
-  height: number;
-  /**
-   * Additional class name
-   */
-  className?: string;
+export interface AppLogoProps extends Omit<ImageProps, "alt" | "src"> {
   /**
    * Light theme logo image path
    */
@@ -33,81 +21,26 @@ export interface AppLogoProps {
    * Alt text for the image
    */
   alt?: string;
-  /**
-   * Custom Image component (e.g., Next.js Image)
-   */
-  ImageComponent?: React.ComponentType<{
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-    className?: string;
-  }>;
-  /**
-   * Custom Link component (e.g., Next.js Link)
-   */
-  LinkComponent?: React.ComponentType<{
-    href: string;
-    children: React.ReactNode;
-  }>;
 }
 
-const DefaultImage = ({
-  src,
-  alt,
-  width,
-  height,
-  className,
-}: {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
-}) => (
-  <img
-    src={src}
-    alt={alt}
-    width={width}
-    height={height}
-    className={className}
-  />
-);
-
-const DefaultLink = ({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) => <a href={href}>{children}</a>;
-
 export const AppLogo = ({
-  width,
-  height,
-  className,
   logoLight = "/images/logo-dark.png",
   logoDark = "/images/logo-light.png",
   href = "/",
-  alt = "Logo",
-  ImageComponent = DefaultImage,
-  LinkComponent = DefaultLink,
+  alt,
+  ...rest
 }: AppLogoProps) => {
   const { resolvedTheme } = useTheme();
 
   const effectiveTheme = resolvedTheme ?? "light";
   const logo = effectiveTheme === "dark" ? logoDark : logoLight;
 
+  const imageAlt = alt ?? process.env.NEXT_PUBLIC_SYSTEM_NAME ?? "Logo";
+
   return (
-    <LinkComponent href={href}>
-      <ImageComponent
-        alt={alt}
-        src={logo}
-        width={width}
-        height={height}
-        className={cn(className)}
-      />
-    </LinkComponent>
+    <Link href={href}>
+      <Image alt={imageAlt} src={logo} {...rest} />
+    </Link>
   );
 };
 

@@ -148,17 +148,17 @@ const Carousel = forwardRef<HTMLDivElement, CarouselRootProps>(
 
     return (
       <CarouselContext.Provider value={contextValue}>
-        <div
+        <section
           ref={ref}
           onKeyDownCapture={handleKeyDown}
           className={cn("relative", className)}
-          role="region"
           aria-roledescription="carousel"
+          aria-label="carousel"
           data-slot="carousel"
           {...props}
         >
           {children}
-        </div>
+        </section>
       </CarouselContext.Provider>
     );
   }
@@ -203,7 +203,6 @@ const CarouselItem = forwardRef<HTMLDivElement, CarouselItemProps>(
     return (
       <div
         ref={ref}
-        role="group"
         aria-roledescription="slide"
         data-slot="carousel-item"
         className={cn(

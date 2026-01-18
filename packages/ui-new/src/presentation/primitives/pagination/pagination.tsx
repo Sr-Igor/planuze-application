@@ -66,10 +66,11 @@ export type PaginationLinkProps = {
 } & ComponentPropsWithoutRef<"a">;
 
 const PaginationLink = forwardRef<HTMLAnchorElement, PaginationLinkProps>(
-  ({ className, isActive, size = "md", ...props }, ref) => (
+  ({ className, isActive, size = "md", "aria-label": ariaLabel, children, ...props }, ref) => (
     <a
       ref={ref}
       aria-current={isActive ? "page" : undefined}
+      aria-label={ariaLabel || (children ? undefined : "Pagination link")}
       data-slot="pagination-link"
       data-active={isActive}
       className={cn(
@@ -80,7 +81,9 @@ const PaginationLink = forwardRef<HTMLAnchorElement, PaginationLinkProps>(
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </a>
   )
 );
 

@@ -20,7 +20,7 @@ import { cn } from "../../../shared/utils";
 
 export type DropdownMenuProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Root>;
 
-function DropdownMenu({ ...props }: DropdownMenuProps) {
+function DropdownMenu({ ...props }: Readonly<DropdownMenuProps>) {
   return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
 }
 
@@ -28,7 +28,7 @@ export type DropdownMenuPortalProps = ComponentPropsWithoutRef<
   typeof DropdownMenuPrimitive.Portal
 >;
 
-function DropdownMenuPortal({ ...props }: DropdownMenuPortalProps) {
+function DropdownMenuPortal({ ...props }: Readonly<DropdownMenuPortalProps>) {
   return <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />;
 }
 
@@ -152,12 +152,12 @@ const DropdownMenuItem = forwardRef<
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      "data-[inset]:pl-8",
+      "data-disabled:pointer-events-none data-disabled:opacity-50",
+      "data-inset:pl-8",
       "data-[variant=destructive]:text-destructive-foreground",
       "data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/40",
       "data-[variant=destructive]:focus:text-destructive-foreground",
-      "data-[variant=destructive]:*:[svg]:!text-destructive-foreground",
+      "data-[variant=destructive]:*:[svg]:text-destructive-foreground!",
       "[&_svg:not([class*='text-'])]:text-muted-foreground",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
@@ -186,7 +186,7 @@ const DropdownMenuCheckboxItem = forwardRef<
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none data-disabled:opacity-50",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
     )}
@@ -231,7 +231,7 @@ const DropdownMenuRadioItem = forwardRef<
     className={cn(
       "relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
-      "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "data-disabled:pointer-events-none data-disabled:opacity-50",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className
     )}
@@ -266,7 +266,7 @@ const DropdownMenuLabel = forwardRef<
     ref={ref}
     data-slot="dropdown-menu-label"
     data-inset={inset}
-    className={cn("px-2 py-1.5 text-sm font-medium data-[inset]:pl-8", className)}
+    className={cn("px-2 py-1.5 text-sm font-medium data-inset:pl-8", className)}
     {...props}
   />
 ));
@@ -312,7 +312,7 @@ DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
 
 export type DropdownMenuSubProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Sub>;
 
-function DropdownMenuSub({ ...props }: DropdownMenuSubProps) {
+function DropdownMenuSub({ ...props }: Readonly<DropdownMenuSubProps>) {
   return <DropdownMenuPrimitive.Sub data-slot="dropdown-menu-sub" {...props} />;
 }
 
@@ -334,7 +334,7 @@ const DropdownMenuSubTrigger = forwardRef<
       "flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
       "focus:bg-accent focus:text-accent-foreground",
       "data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-      "data-[inset]:pl-8",
+      "data-inset:pl-8",
       className
     )}
     {...props}

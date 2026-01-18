@@ -20,7 +20,7 @@ import { buttonVariants } from "../button";
 
 export type AlertDialogProps = ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Root>;
 
-function AlertDialog({ ...props }: AlertDialogProps) {
+function AlertDialog({ ...props }: Readonly<AlertDialogProps>) {
   return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
 }
 
@@ -41,7 +41,7 @@ export type AlertDialogPortalProps = ComponentPropsWithoutRef<
   typeof AlertDialogPrimitive.Portal
 >;
 
-function AlertDialogPortal({ ...props }: AlertDialogPortalProps) {
+function AlertDialogPortal({ ...props }: Readonly<AlertDialogPortalProps>) {
   return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />;
 }
 

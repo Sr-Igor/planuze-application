@@ -99,7 +99,7 @@ function AppDialog({
   modal = true,
   height,
   backLabel = "Back",
-}: AppDialogProps) {
+}: Readonly<AppDialogProps>) {
   return (
     <Dialog open={open} onOpenChange={(open) => !loading && onOpenChange?.(open)} modal={modal}>
       <DialogContent className={className} closeButton={!loading}>
