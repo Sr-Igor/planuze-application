@@ -21,6 +21,8 @@
         "@paralleldrive/cuid2": "^2.3.1",
         "@reduxjs/toolkit": "^1.9.7",
         "@repo/api": "workspace:*",
+        "@repo/form": "workspace:*",
+        "@repo/form": "workspace:*",
         "@repo/hooks": "workspace:*",
         "@repo/fonts": "workspace:*",
         "@repo/language": "workspace:*",

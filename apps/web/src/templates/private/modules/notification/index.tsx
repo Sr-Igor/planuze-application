@@ -18,7 +18,7 @@ import {
 } from "@repo/ui";
 
 import { useNotification } from "@repo/api/web/callers/notification";
-import { Calendar } from "@/components/form/calendar";
+import { Calendar } from "@repo/form";
 import { useModal } from "@/hooks/modal";
 
 import { Card } from "./card";

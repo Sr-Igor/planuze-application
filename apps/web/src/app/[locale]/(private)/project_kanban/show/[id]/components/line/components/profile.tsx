@@ -1,7 +1,7 @@
 import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 
-import { CheckboxSelect } from "@/components/form/select/cases/checkbox";
+import { CheckboxSelect } from "@repo/form";
 import { AppAvatar } from "@/components/ui/app-avatar";
 
 import { IProfile } from "../../../types";

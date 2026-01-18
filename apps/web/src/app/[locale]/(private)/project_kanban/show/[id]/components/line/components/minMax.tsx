@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 
-import { Numeric } from "@/components/form/numeric";
+import { Numeric } from "@repo/form";
 import { useDebounce } from "@/hooks/debounce";
 
 import { FilterKey } from "../types";

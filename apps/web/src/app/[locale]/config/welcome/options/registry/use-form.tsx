@@ -4,8 +4,8 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 
 type WType = "cnpj" | "cpf" | "string";
 

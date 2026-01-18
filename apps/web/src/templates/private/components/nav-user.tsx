@@ -32,10 +32,10 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   useSidebar,
+Img
 } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { Img } from "@/components/image";
 import { useAccess } from "@/hooks/access";
 import { useSignOut } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";

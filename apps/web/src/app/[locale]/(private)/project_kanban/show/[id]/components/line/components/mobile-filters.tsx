@@ -19,7 +19,7 @@ import {
 } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { SimpleSelect } from "@/components/form/select/cases/simple";
+import { SimpleSelect } from "@repo/form";
 
 import {
   CardType,

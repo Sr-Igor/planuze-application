@@ -18,7 +18,7 @@ import {
 } from "@repo/ui";
 import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui/app";
 
-import { Input } from "@/components/form/input";
+import { Input } from "@repo/form";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
 

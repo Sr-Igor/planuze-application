@@ -5,8 +5,8 @@ import { profile, user } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 
 export type FormType = {
   avatar?: string | File | Blob | null;

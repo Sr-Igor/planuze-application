@@ -5,8 +5,8 @@ import { Button } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";
-import { Editor } from "@/components/form/editor";
-import { isHtmlEmpty } from "@/components/form/editor/utils/html-utils";
+import { Editor } from "@repo/form";
+import { isHtmlEmpty } from "@repo/form/utils";
 
 export const NewComment = () => {
   const lang = useLang();

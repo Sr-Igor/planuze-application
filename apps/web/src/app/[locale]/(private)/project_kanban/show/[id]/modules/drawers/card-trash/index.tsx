@@ -16,7 +16,7 @@ import {
   ScrollArea,
 } from "@repo/ui";
 
-import { Input } from "@/components/form/input";
+import { Input } from "@repo/form";
 import { Permission } from "@/components/ui/permission";
 import { useDebounce } from "@/hooks/debounce";
 

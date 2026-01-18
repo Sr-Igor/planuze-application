@@ -4,8 +4,8 @@ import { client, project } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { index } from "@repo/api/web/req/client";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 
 export interface IUseFormProps {
   data?: Partial<project>;

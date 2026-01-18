@@ -5,7 +5,7 @@ import { PageKeys } from "@repo/language/types";
 import { ILogsComparison, TableAction, TableColumn, TableEventHandlers } from "@repo/ui/app";
 
 import { Permissions } from "@/hooks/access/types";
-import { Field, IUseFormListReturn } from "@/hooks/form/types";
+import { Field, IUseFormListReturn } from "@repo/form";
 import { PaginationParams } from "@/hooks/search-params/utils";
 import { HookReq, Requests } from "@/types/hookReq";
 

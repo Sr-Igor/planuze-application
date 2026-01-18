@@ -2,8 +2,8 @@ import { IValidatorRequest } from "@deviobr/validator";
 
 import { level } from "@repo/types";
 
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 
 export const defaultValues = {
   active: true,

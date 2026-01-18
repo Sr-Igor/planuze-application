@@ -11,7 +11,7 @@ import { usePathname, useRouter } from "@repo/language/navigation";
 
 import { cn } from "@/lib/utils";
 
-import { SimpleSelect } from "../form/select/cases/simple";
+import { SimpleSelect } from "@repo/form";
 import { languages } from "./options";
 
 export const AppLanguage = () => {

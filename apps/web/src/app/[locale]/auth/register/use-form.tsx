@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { useFormList } from '@/hooks/form';
-import { Field } from '@/hooks/form/types';
+import { useFormList } from '@repo/form';
+import { Field } from '@repo/form';
 import { IValidatorRequest } from '@deviobr/validator';
 
 export type FormType = {

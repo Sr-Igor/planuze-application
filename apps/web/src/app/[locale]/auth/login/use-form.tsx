@@ -1,5 +1,4 @@
-import { useFormList } from '@/hooks/form';
-import { Field } from '@/hooks/form/types';
+import { useFormList, Field } from '@repo/form';
 import { IValidatorRequest } from '@deviobr/validator';
 
 export type FormType = {
@@ -13,14 +12,14 @@ export const useForm = () => {
             {
                 key: 'email',
                 method: 'email',
-                coerse: 'string'
+                coerse: 'string',
             },
             {
                 key: 'password',
                 method: 'string',
-                coerse: 'string'
-            }
-        ]
+                coerse: 'string',
+            },
+        ],
     };
 
     const fields: Field<FormType>[] = [
@@ -29,7 +28,7 @@ export const useForm = () => {
             name: 'email',
             label: 'email',
             required: true,
-            className: 'col-span-2'
+            className: 'col-span-2',
         },
         {
             field: 'input',
@@ -37,17 +36,9 @@ export const useForm = () => {
             label: 'password',
             required: true,
             type: 'password',
-            className: 'col-span-2'
-        }
+            className: 'col-span-2',
+        },
     ];
 
-    const form = useFormList({ fields, schema });
-
-    return {
-        ...form,
-        config: {
-            schema,
-            fields
-        }
-    };
+    return useFormList<FormType>({ fields, schema });
 };

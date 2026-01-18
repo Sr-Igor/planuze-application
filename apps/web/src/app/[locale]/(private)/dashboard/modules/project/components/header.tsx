@@ -5,7 +5,7 @@ import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 
-import { Currency } from "@/components/form/currency";
+import { Currency } from "@repo/form";
 
 export interface IHeaderProps {
   onExport: () => void;

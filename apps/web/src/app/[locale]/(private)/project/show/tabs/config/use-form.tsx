@@ -4,8 +4,8 @@ import { project_config, project_version } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
 

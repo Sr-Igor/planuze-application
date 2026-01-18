@@ -3,7 +3,7 @@ import { FileDown } from "lucide-react";
 import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 
-import { Currency } from "@/components/form/currency";
+import { Currency } from "@repo/form";
 
 export interface IHeaderProps {
   onExport: () => void;

@@ -9,7 +9,7 @@ import { z, ZodSchema } from "zod";
 
 import { project_kanban_cycle_card } from "@repo/types";
 
-import { ISelected } from "@/components/form/tags";
+import { ISelected } from "@repo/form";
 import { useValidator } from "@/hooks/validator";
 import { hookValidate } from "@repo/utils/submitForm";
 

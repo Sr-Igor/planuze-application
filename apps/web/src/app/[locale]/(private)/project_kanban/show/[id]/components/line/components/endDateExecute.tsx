@@ -1,7 +1,7 @@
 import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 
-import { CalendarRange } from "@/components/form/calendar-range";
+import { CalendarRange } from "@repo/form";
 
 import { FilterKey } from "../types";
 

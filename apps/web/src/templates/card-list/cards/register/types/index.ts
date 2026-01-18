@@ -3,7 +3,7 @@ import { DefaultValues } from "react-hook-form";
 
 import { ILogsComparison } from "@repo/ui/app";
 
-import { Field, IUseFormListReturn } from "@/hooks/form/types";
+import { Field, IUseFormListReturn } from "@repo/form";
 import { ICardProps } from "@/templates/card-list/types";
 import { HookReq } from "@/types/hookReq";
 

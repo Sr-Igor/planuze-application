@@ -5,8 +5,8 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { kanban_template_card_type } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useForm = ({ disabled, state }: IUseHookProps<kanban_template_card_type>) => {

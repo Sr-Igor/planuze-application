@@ -12,9 +12,9 @@ import { Button } from "@repo/ui";
 import { useAuth } from "@repo/api/web/callers/auth";
 import { useUserSet } from "@/hooks/user-set";
 import { fingerprint } from "@repo/utils/fingerprint";
-import { hookValidate } from "@repo/utils/submitForm";
+import { hookValidate } from "@repo/form";
 
-import { useForm } from "./use-form";
+import { useForm, FormType } from "./use-form";
 
 export const AuthLogic = () => {
   const t = useLang();
@@ -36,21 +36,24 @@ export const AuthLogic = () => {
   const { Form, formProps, hook, isDirty } = useForm();
 
   const handleSubmit = () => {
-    const hooks = [{ hook }];
-    hookValidate(hooks, (form) => {
-      login.mutate(form);
-    });
+    hookValidate(
+      [{ hook }],
+      (form: FormType) => {
+        login.mutate(form);
+      },
+    );
   };
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center px-10">
       <Form
         {...formProps}
-        hook={hook}
         className="mb-2 grid w-full grid-cols-1 gap-4"
-        onSubmit={(e) => {
+        onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
-          isDirty && handleSubmit();
+          if (isDirty) {
+            handleSubmit();
+          }
         }}
       />
       <div className="mb-5 flex w-full justify-end">
@@ -79,7 +82,7 @@ export const AuthLogic = () => {
         variant="outline"
         onClick={async () => {
           const currentDeviceId = await fingerprint();
-          window.location.href = `${process.env.NEXT_PUBLIC_LOGIN_URL}/${currentDeviceId}`;
+          globalThis.location.href = `${process.env.NEXT_PUBLIC_LOGIN_URL}/${currentDeviceId}`;
         }}
         className="flex w-full items-center justify-center gap-2 py-3 text-base font-semibold shadow transition-all duration-200"
       >

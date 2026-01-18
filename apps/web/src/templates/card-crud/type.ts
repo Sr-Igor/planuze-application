@@ -7,7 +7,7 @@ import { PageKeys } from "@repo/language/types";
 import { ILogsComparison, TrashProps } from "@repo/ui/app";
 
 import { Permissions } from "@/hooks/access/types";
-import { Field, IUseFormListReturn } from "@/hooks/form/types";
+import { Field, IUseFormListReturn } from "@repo/form";
 import { HookReq } from "@/types/hookReq";
 import { Shallow } from "@/types/shallowType";
 

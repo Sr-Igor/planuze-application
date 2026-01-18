@@ -6,7 +6,7 @@ import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
-import { ISelected } from "@/components/form/tags";
+import { ISelected } from "@repo/form";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";
 

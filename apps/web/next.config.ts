@@ -23,6 +23,8 @@ const nextConfig: NextConfig = {
     "@repo/ui",
     "@repo/fonts",
     "@repo/api",
+    "@repo/form",
+    "@repo/form",
     "@repo/tailwind-config",
     "@repo/language",
     "@repo/utils",

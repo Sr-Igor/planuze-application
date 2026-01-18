@@ -6,7 +6,7 @@ import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { EditorController } from "@/components/controllers/editor";
+import { EditorController } from "@repo/form";
 import { useAccess } from "@/hooks/access";
 
 import { Collapsible } from "../../collapsible";

@@ -1,6 +1,6 @@
 import { useLang } from "@repo/language/hook";
 
-import { Input } from "@/components/form/input";
+import { Input } from "@repo/form";
 
 export interface SearchProps {
   value?: string;

@@ -3,7 +3,7 @@ import { BellRing, ChevronRight, Trash } from "lucide-react";
 import { notification } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { Img } from "@/components/image";
+import { Img } from "@repo/ui";
 import { useIntlFormat } from "@/hooks/intl-format";
 import { cn } from "@/lib/utils";
 

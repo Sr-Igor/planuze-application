@@ -8,8 +8,8 @@ import {
 import { Icon } from "@repo/ui/app";
 
 import { index } from "@repo/api/web/req/kanban_template_card_type";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { useShow } from "@/templates/show/context";
 import { Shallow } from "@/types/shallowType";

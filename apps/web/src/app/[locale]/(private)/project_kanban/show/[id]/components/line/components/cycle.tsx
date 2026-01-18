@@ -1,8 +1,8 @@
 import { project_kanban_cycle } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
-import { CheckboxSelect } from "@/components/form/select/cases/checkbox";
-import { SimpleSelect } from "@/components/form/select/cases/simple";
+import { CheckboxSelect } from "@repo/form";
+import { SimpleSelect } from "@repo/form";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 export interface CycleProps {

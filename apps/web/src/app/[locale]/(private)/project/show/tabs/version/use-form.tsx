@@ -7,8 +7,8 @@ import { profile, project_version } from "@repo/types";
 
 import { index as indexProfile } from "@repo/api/web/req/profile";
 import { useAuth } from "@repo/redux/hook";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
 

@@ -6,11 +6,10 @@ import { Download, File } from "lucide-react";
 import { toast } from "sonner";
 
 import { useLang } from "@repo/language/hook";
-import { Button } from "@repo/ui";
+import { Button , Img } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
 import { downloadFile } from "@repo/api/global/download";
-import { Img } from "@/components/image";
 
 import { IUploadFile } from "../types";
 

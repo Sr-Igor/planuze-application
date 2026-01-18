@@ -10,7 +10,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, ScrollArea } fr
 import { useDebounce } from "@/hooks/debounce";
 import { cn } from "@/lib/utils";
 
-import { Input } from "../form/input";
+import { Input } from "@repo/form";
 
 export interface AppInputSearchProps<T extends { id: string }> {
   data: T[];

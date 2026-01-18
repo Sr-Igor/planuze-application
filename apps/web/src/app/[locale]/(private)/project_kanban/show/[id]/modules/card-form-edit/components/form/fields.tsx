@@ -15,16 +15,10 @@ import { index as indexKanbanTemplateTag } from "@repo/api/web/req/kanban_templa
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
 import { index as indexProjectKanbanObjectiveTarget } from "@repo/api/web/req/project_kanban_objective_target";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { CalendarController } from "@/components/controllers/calendar";
-import { InfinitySelectController } from "@/components/controllers/infinity-select";
-import { InputController } from "@/components/controllers/input";
-import { NumericController } from "@/components/controllers/numeric";
-import { SelectController } from "@/components/controllers/select";
-import { TagsController } from "@/components/controllers/tags";
+import { CalendarController , SimpleInfinitySelectController , InputController , NumericController , SimpleSelectController , TagsController , Field } from "@repo/form";
 import { AppAvatarLine } from "@/components/ui/app-avatar-line";
 import { AppCardSelector } from "@/components/ui/app-cycle-card-selector";
 import { useConstants } from "@/hooks/constants";
-import { Field } from "@/hooks/form/types";
 import { cn } from "@/lib/utils";
 
 import { styles } from "./styles";
@@ -82,7 +76,7 @@ export const Responsible = ({
   const t = lang.page.kanban;
 
   return (
-    <InfinitySelectController
+    <SimpleInfinitySelectController
       name="profile_id"
       control={hook.control}
       index={select.profile}
@@ -136,7 +130,7 @@ export const Cycle = ({
   return (
     <span className="flex items-center gap-2">
       <span className="hidden xl:block">{label}</span>
-      <SelectController
+      <SimpleSelectController
         className="p-0"
         placeholder="select_a_cycle"
         inputClassName={styles.foreground}
@@ -164,7 +158,7 @@ export const Column = ({
   return (
     <span className="flex items-center gap-2">
       <span className="hidden xl:block">{label}</span>
-      <SelectController
+      <SimpleSelectController
         className="p-0"
         inputClassName={styles.foreground}
         name="project_kanban_cycle_column_id"
@@ -200,7 +194,7 @@ export const Parent = ({
   return (
     <span className="flex items-center gap-2">
       <span className="hidden xl:block">{label}</span>
-      <InfinitySelectController
+      <SimpleInfinitySelectController
         name="card_id"
         control={hook.control}
         className="min-w-40 p-0"
@@ -248,7 +242,7 @@ export const WorkType = ({
 
   return (
     <LabelContent label={label}>
-      <InfinitySelectController
+      <SimpleInfinitySelectController
         name="work_type_id"
         control={hook.control}
         className={cn("min-w-40 p-0", className)}
@@ -421,7 +415,7 @@ export const Unit = ({
   const { units } = useConstants();
 
   return (
-    <SelectController
+    <SimpleSelectController
       name={name}
       control={hook.control}
       label={label}
@@ -471,7 +465,7 @@ export const Objective = ({
   return (
     <span className="flex w-full items-center gap-2">
       <p className="text-sm">{label}</p>
-      <InfinitySelectController
+      <SimpleInfinitySelectController
         name="project_kanban_objective_id"
         control={hook.control}
         className={cn("max-w-60 min-w-40 p-0", className)}
@@ -524,7 +518,7 @@ export const Target = ({
   return (
     <span className="flex w-full items-center gap-2">
       <p className="text-sm">{label}</p>
-      <InfinitySelectController
+      <SimpleInfinitySelectController
         name="project_kanban_objective_target_id"
         control={hook.control}
         className={cn("max-w-60 min-w-40 p-0", className)}

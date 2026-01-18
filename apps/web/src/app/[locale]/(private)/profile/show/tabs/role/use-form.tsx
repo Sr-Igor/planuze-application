@@ -11,8 +11,8 @@ import { useLang } from "@repo/language/hook";
 import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
 import { index as indexRole } from "@repo/api/web/req/role";
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 

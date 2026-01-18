@@ -5,8 +5,8 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { invite, level } from "@repo/types";
 
 import { index } from "@repo/api/web/req/level";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useForm = ({ disabled, state }: IUseHookProps<invite>) => {

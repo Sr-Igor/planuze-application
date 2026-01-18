@@ -6,8 +6,8 @@ import { company_document } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 export type FormType = {

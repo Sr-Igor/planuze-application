@@ -58,8 +58,12 @@
       "default": "./src/web/callers/*/*/*.ts"
     },
     "./web/req/*": {
-      "types": "./src/web/req/*.ts",
-      "default": "./src/web/req/*.ts"
+      "types": "./src/web/req/*/index.ts",
+      "default": "./src/web/req/*/index.ts"
+    },
+    "./web/req/*/index": {
+      "types": "./src/web/req/*/index.ts",
+      "default": "./src/web/req/*/index.ts"
     },
     "./hooks/*": {
       "types": "./src/hooks/*/index.ts",

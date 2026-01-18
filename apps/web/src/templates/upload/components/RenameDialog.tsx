@@ -8,8 +8,8 @@ import { useLang } from "@repo/language/hook";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { hookValidate } from "@repo/utils/submitForm";
 
 import { IRenameProps } from "../types/interfaces";

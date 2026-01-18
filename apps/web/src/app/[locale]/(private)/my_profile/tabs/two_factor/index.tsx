@@ -7,7 +7,7 @@ import { useLang } from "@repo/language/hook";
 import { Button, Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui";
 import { AppDialog, StatusCircle } from "@repo/ui/app";
 
-import { Form } from "@/hooks/form/form";
+import { Form } from "@repo/form";
 import { useIntlFormat } from "@/hooks/intl-format";
 
 import { NeedRedefine } from "../../components/NeedRedefine";

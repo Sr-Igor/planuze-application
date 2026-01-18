@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
 
 import { cn } from "@/lib/utils";
 
-import { SimpleSelect } from "../form/select/cases/simple";
+import { SimpleSelect } from "@repo/form";
 
 export interface IAppTabsProps {
   tabs: {

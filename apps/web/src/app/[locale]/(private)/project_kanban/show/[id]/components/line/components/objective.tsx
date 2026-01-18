@@ -2,7 +2,7 @@ import { project_kanban_objective } from "@repo/types";
 import { useLang } from "@repo/language/hook";
 import { Label } from "@repo/ui";
 
-import { CheckboxInfinitySelect } from "@/components/form/select/cases/checkbox-infinity";
+import { CheckboxInfinitySelect } from "@repo/form";
 
 import { useKanbanShow } from "../../../context";
 

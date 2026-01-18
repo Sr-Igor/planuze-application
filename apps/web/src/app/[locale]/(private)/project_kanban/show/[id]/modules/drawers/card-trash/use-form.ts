@@ -5,8 +5,8 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { kanban_template, project_kanban_cycle } from "@repo/types";
 
 import { index } from "@repo/api/web/req/kanban_template";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 export const useForm = ({ disabled, item }: IUseHookProps<project_kanban_cycle>) => {

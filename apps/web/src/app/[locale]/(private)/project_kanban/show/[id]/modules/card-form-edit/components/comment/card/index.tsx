@@ -9,8 +9,8 @@ import { AppDialog } from "@repo/ui/app";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";
-import { Editor } from "@/components/form/editor";
-import { isHtmlEmpty, normalizeHtml } from "@/components/form/editor/utils/html-utils";
+import { Editor } from "@repo/form";
+import { isHtmlEmpty, normalizeHtml } from "@repo/form/utils";
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { Permission } from "@/components/ui/permission";
 import { useAccess } from "@/hooks/access";

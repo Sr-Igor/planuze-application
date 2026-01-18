@@ -14,8 +14,8 @@ import {
 import { useLang } from "@repo/language/hook";
 
 import { index } from "@repo/api/web/req/kanban_template";
-import { useFormList } from "@/hooks/form";
-import { Field } from "@/hooks/form/types";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
 
