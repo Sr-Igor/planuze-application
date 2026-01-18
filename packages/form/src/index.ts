@@ -30,6 +30,9 @@ export type {
   EditorProps,
   MenuBarProps,
   InsertModalProps,
+  ISelectedTag,
+  ITagsProps,
+  ITagsOption,
 } from "./shared/types";
 
 // Re-export Field type for convenience

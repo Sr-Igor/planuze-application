@@ -9,9 +9,8 @@ import { z, ZodSchema } from "zod";
 
 import { project_kanban_cycle_card } from "@repo/types";
 
-import { ISelected } from "@repo/form";
-import { useValidator } from "@/hooks/validator";
-import { hookValidate } from "@repo/utils/submitForm";
+import { ISelectedTag, useValidator, hookValidate } from "@repo/form";
+
 
 type FormType = {
   title?: string;
@@ -33,7 +32,7 @@ type FormType = {
   severity?: number | null;
   end_date_estimate?: string | null;
   end_date_execute?: string | null;
-  project_kanban_cycle_card_tags?: ISelected[];
+  project_kanban_cycle_card_tags?: ISelectedTag[];
   project_kanban_objective_id?: string | null;
   project_kanban_objective_target_id?: string | null;
 };
