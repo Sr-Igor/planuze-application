@@ -1,5 +1,5 @@
 import { profile_role } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@repo/form";

@@ -1,4 +1,4 @@
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 
 import type { ModalConfig, ModalType } from '#/shared/types/editor.types';
 

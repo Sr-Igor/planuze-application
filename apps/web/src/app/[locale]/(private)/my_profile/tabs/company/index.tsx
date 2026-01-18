@@ -4,15 +4,13 @@ import { useRouter } from "next/navigation";
 
 import { Plus } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
-import { Button } from "@repo/ui";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
+import { Button , cn } from "@repo/ui";
 import { StatusCircle } from "@repo/ui/app";
 
 import { AppAvatar } from "@/components/ui/app-avatar";
 import { getProfile } from "@repo/cookies";
-import { useIntlFormat } from "@/hooks/intl-format";
 import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
 
 export const Company = () => {
   const t = useLang();

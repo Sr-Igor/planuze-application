@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { Upload, X } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { Button, Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, Label } from '@repo/ui';
 
 import { useModalConfig } from '../../../hooks/editor/use-modal-configs.hook';

@@ -4,7 +4,7 @@ import React, { memo, useCallback, useState } from "react";
 
 import { Loader2, MoreHorizontal } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   AlertDialog,
   AlertDialogAction,

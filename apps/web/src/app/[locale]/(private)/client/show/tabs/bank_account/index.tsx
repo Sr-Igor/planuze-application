@@ -1,5 +1,5 @@
 import { client_bank_account } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useClientBankAccount } from "@repo/api/web/callers/client_bank_account";
 import { useLogs } from "@/hooks/logs";

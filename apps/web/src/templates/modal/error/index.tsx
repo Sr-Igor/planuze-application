@@ -2,7 +2,7 @@
 
 import { RotateCcw, XCircle } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Dialog,

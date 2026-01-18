@@ -2,7 +2,7 @@
 
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { cn, Table, TableBody } from "@repo/ui";
 
 import {

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { ChevronDown, Save } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, Popover, PopoverContent, PopoverTrigger } from "@repo/ui";
 
 import { cn } from "@repo/ui";

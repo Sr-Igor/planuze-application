@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@repo/ui";
 
 import { AuthLogic } from "./logic";

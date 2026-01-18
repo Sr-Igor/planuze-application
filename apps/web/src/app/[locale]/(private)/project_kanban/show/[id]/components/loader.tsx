@@ -1,6 +1,6 @@
 import { Kanban, Loader2 } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { cn } from "@repo/ui";
 

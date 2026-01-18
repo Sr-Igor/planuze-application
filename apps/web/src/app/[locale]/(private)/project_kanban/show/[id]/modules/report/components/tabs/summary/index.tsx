@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { ISummary } from "@repo/api/web/callers/project_kanban_report/types";
 

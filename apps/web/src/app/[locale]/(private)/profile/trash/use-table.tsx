@@ -1,9 +1,8 @@
 import { profile } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { TableColumn } from "@repo/ui/app";
 
 import { AppAvatarLine } from "@/components/ui/app-avatar-line";
-import { useIntlFormat } from "@/hooks/intl-format";
 
 export const useTable = () => {
   const t = useLang();

@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 export const useDisplayValue = <T>(
   conversor?: Partial<Record<keyof T, { label: string; value: string }[]>>

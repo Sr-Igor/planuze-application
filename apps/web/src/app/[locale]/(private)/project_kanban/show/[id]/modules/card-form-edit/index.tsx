@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
 import { ISelected } from "@repo/form";

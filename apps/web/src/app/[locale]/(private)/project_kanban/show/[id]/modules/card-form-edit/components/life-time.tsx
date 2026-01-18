@@ -1,7 +1,6 @@
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 
 export interface LifeTimeProps {
   item?: project_kanban_cycle_card;

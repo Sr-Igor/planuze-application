@@ -11,7 +11,7 @@ import {
   project_version,
   work_type,
 } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { index } from "@repo/api/web/req/kanban_template";
 import { useFormList } from "@repo/form";

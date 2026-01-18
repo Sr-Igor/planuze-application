@@ -1,6 +1,6 @@
 import { ClockArrowDown, Trash2 } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { ScrollArea } from "@repo/ui";
 import { AppDialog, Trash as TrashComponent } from "@repo/ui/app";
 

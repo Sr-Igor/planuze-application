@@ -13,11 +13,16 @@
         "./routing": "./src/routing.ts",
         "./navigation": "./src/navigation.ts",
         "./request": "./src/request.ts",
-        "./hook": "./src/hook/index.ts",
+        "./hooks": "./src/hooks/index.ts",
         "./types": "./src/types.ts"
     },
-    "dependencies": {
-        "next-intl": "^4.5.5"
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "next": "^15.5.0",
+        "next-intl": "^4.5.5",
+        "date-fns": "^4.1.0",
+        "lucide-react": "^0.562.0"
     },
     "devDependencies": {
         "@repo/eslint-config": "workspace:*",

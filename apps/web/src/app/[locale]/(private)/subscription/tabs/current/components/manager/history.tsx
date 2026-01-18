@@ -1,5 +1,5 @@
 import { subscription_changes } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import {
   Card,
   CardContent,
@@ -16,7 +16,6 @@ import {
   TableRow,
 } from "@repo/ui";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 
 interface HistoryModalProps {
   isOpen: boolean;

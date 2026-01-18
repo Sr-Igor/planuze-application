@@ -8,7 +8,7 @@ import { addDays, format, startOfYear } from 'date-fns';
 import * as locations from 'date-fns/locale';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import {
     Button,
     Command,

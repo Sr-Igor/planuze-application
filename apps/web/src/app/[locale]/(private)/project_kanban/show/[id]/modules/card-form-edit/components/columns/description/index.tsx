@@ -3,7 +3,7 @@
 import { UseFormReturn } from "react-hook-form";
 
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { EditorController } from "@repo/form";

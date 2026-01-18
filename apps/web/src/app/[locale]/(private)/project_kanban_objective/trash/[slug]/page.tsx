@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Icon } from "@repo/ui/app";
 
 import { useProjectKanbanObjective } from "@repo/api/web/callers/project_kanban_objective";

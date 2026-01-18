@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 export const useConstants = () => {
   const t = useLang();

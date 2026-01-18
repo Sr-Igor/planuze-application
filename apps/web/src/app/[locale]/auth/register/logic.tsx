@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { LogInIcon } from "lucide-react";
 
 import { user } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useUser } from "@repo/api/web/callers/user";

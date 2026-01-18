@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 import { BotMessageSquare, User } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Skeleton } from "@repo/ui";
 
 import { cn } from "@repo/ui";

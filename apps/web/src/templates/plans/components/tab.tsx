@@ -1,7 +1,7 @@
 import { Zap } from "lucide-react";
 
 import { plan } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { cn } from "@repo/ui";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { usePlan } from "@repo/api/web/callers/plan";
 import { useSubscription } from "@repo/api/web/callers/subscription";

@@ -1,11 +1,9 @@
 import { BellRing, ChevronRight, Trash } from "lucide-react";
 
 import { notification } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { Img } from "@repo/ui";
-import { useIntlFormat } from "@/hooks/intl-format";
-import { cn } from "@repo/ui";
+import { Img , cn } from "@repo/ui";
 
 export interface ICard {
   notification: notification;

@@ -9,7 +9,7 @@ import {
   project_kanban_objective_target,
   work_type,
 } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { index as indexKanbanTemplateTag } from "@repo/api/web/req/kanban_template_tag";
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";

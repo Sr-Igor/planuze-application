@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { CommandInput } from '@repo/ui';
 
 import { ISelectedTag } from '#/shared/types/tags.types';

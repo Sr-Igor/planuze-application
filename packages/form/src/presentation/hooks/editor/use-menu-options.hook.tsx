@@ -36,7 +36,7 @@ import {
     Youtube,
 } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 
 import { EDITOR_SETTINGS } from '#/shared/constants/editor-settings.constant';
 import type { MenuOption, ModalType } from '#/shared/types/editor.types';

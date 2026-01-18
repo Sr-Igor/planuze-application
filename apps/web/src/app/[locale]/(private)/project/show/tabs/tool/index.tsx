@@ -1,7 +1,7 @@
 import { useLocale } from "next-intl";
 
 import { project_tool } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useProjectTool } from "@repo/api/web/callers/project_tool";
 import { useLogs } from "@/hooks/logs";

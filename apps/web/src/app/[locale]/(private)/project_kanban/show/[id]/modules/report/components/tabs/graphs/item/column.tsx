@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { Bar, BarChart, CartesianGrid, Cell, Tooltip, XAxis } from "recharts";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { ChartConfig, ChartContainer } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 

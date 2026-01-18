@@ -6,7 +6,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
 import { cost_center, profile_bonus } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
 import { useConstants } from "@/hooks/constants";

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { IValidatorRequest } from "@deviobr/validator";
 
 import { company_document } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useConstants } from "@/hooks/constants";
 import { useFormList } from "@repo/form";

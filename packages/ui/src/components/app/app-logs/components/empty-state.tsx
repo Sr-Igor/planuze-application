@@ -1,6 +1,6 @@
 import { Clock3 } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 export const EmptyState = () => {
   const t = useLang();

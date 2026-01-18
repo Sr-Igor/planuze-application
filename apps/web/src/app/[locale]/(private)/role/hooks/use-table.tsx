@@ -1,10 +1,9 @@
 import { useLocale } from "next-intl";
 
 import { role } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 import { formatCurrency } from "@repo/utils/currency";
 
 export const useTable = () => {

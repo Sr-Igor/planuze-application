@@ -2,7 +2,7 @@
 
 import { memo, useCallback } from 'react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { Popover, PopoverTrigger, cn } from '@repo/ui';
 import * as C from '@repo/ui';
 

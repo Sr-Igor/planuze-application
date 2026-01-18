@@ -1,5 +1,5 @@
 import { plan } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Accordion,
   AccordionContent,

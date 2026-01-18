@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { PackageOpen, UserPlus } from "lucide-react";
 
 import { level, profile } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useProfile } from "@repo/api/web/callers/profile";

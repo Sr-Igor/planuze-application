@@ -1,7 +1,7 @@
 import { ArrowRightLeft, MoreHorizontal, Pencil, Replace, Trash } from "lucide-react";
 
 import { project_kanban_cycle_card, project_kanban_cycle_column } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import * as Cn from "@repo/ui";
 

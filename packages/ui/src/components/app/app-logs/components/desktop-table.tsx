@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { AppTooltip } from "../../app-tooltip";
 import { DiffItem, FormattedValue } from "../types";

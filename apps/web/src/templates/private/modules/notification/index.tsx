@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { Bell, X } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Drawer,

@@ -1,6 +1,6 @@
 import { AlertCircleIcon } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Alert, AlertDescription, AlertTitle, Label, RadioGroup, RadioGroupItem } from "@repo/ui";
 
 import { cn } from "@repo/ui";

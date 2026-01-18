@@ -5,7 +5,7 @@ import { useState } from "react";
 import { plan } from "@repo/types";
 
 import { useAuth } from "@repo/redux/hook";
-import { useIntlFormat } from "@/hooks/intl-format";
+import { useIntlFormat } from "@repo/language/hooks";
 
 import { IPlanTemplateProps } from "../types";
 import { useUtilsPlan } from "./use-utils-plan";

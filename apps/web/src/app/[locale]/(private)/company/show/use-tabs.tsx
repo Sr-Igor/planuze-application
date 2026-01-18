@@ -1,5 +1,5 @@
 import { company } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useAuth } from "@repo/redux/hook";
 import { IShowHookProps } from "@/templates/show/types";

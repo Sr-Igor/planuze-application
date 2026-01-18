@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { Loader2, PackageOpen, X } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Drawer,

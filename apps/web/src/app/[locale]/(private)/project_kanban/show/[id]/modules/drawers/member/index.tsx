@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "lucide-react";
 
 import { project_member } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Drawer,

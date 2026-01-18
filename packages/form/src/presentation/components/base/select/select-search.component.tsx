@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 
 import { Loader2, Trash } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import * as C from '@repo/ui';
 import { cn } from '@repo/ui';
 

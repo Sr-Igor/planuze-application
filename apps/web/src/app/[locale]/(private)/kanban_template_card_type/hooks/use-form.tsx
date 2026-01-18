@@ -3,7 +3,7 @@
 import { IValidatorRequest } from "@deviobr/validator";
 
 import { kanban_template_card_type } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";

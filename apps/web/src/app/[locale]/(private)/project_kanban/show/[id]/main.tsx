@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Columns, Kanban } from "lucide-react";
 
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { Permission } from "@/components/ui/permission";
 import { cn } from "@repo/ui";

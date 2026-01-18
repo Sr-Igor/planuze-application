@@ -1,5 +1,5 @@
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { CardMovements } from "../../card-movements";
 import { Collapsible } from "../../collapsible";

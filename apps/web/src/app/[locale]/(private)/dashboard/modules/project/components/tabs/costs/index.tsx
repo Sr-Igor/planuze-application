@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { ChartContainer } from "@repo/ui";
 import { MainCard } from "@repo/ui/app";
 

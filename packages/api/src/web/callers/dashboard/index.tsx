@@ -4,15 +4,11 @@ import { IUseCallerProps } from "#/types";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { getModule } from "@repo/cookies";
-// import { useIntlFormat } from "#/hooks/intl-format";
 import { useAppSelector } from "@repo/redux/hook";
 
 export const useDashboard = (props: IUseCallerProps<any>) => {
   const moduleIdCookie = getModule();
-  // const { money } = useIntlFormat();
-  const money = {
-    currency: "BRL",
-  };
+  const money = { currency: "BRL" };
 
   const { moduleId: moduleIdStore } = useAppSelector((state) => state.module);
   const moduleId = moduleIdCookie || moduleIdStore;

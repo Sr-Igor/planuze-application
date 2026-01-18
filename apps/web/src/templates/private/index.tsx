@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ToggleLeft, UserLock } from "lucide-react";
 
 import { profile } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, SidebarProvider } from "@repo/ui";
 import { FullScreenMessage } from "@repo/ui/app";
 

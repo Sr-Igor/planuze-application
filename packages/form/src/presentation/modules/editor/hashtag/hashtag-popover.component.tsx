@@ -8,7 +8,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { LoaderCircle, PackageOpen } from 'lucide-react';
 
 import { project_kanban_cycle_card, Pagination } from '@repo/types';
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList, cn } from '@repo/ui';
 import { AppTooltip, Icon } from '@repo/ui/app';
 

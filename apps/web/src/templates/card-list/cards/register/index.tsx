@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { CircleX, HistoryIcon, Trash } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import * as C from "@repo/ui";
 import { AppDialog, AppLogsModal } from "@repo/ui/app";

@@ -2,7 +2,7 @@
 
 import { Info } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { AppTooltip } from '@repo/ui/app';
 
 import { cn } from '@repo/ui';

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 
 import { ChevronLeft, ChevronRight, PackageOpen } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, ScrollArea } from "@repo/ui";
 
 import { IRenameProps, IUploadConfig, IUploadFile } from "../types/interfaces";

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { Ban, UserLock } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Dialog,

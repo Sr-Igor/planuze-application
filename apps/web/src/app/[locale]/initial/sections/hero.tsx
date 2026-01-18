@@ -1,6 +1,6 @@
 import { ArrowRight, Play } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
 import { Button } from "@repo/ui";
 import { AppClock } from "@repo/ui/app";

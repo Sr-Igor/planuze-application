@@ -7,7 +7,7 @@ import { useLocale } from 'next-intl';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 import { NumericFormat } from 'react-number-format';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import {
     Button,
     Command,

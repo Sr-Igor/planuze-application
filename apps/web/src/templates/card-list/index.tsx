@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { createId } from "@paralleldrive/cuid2";
 import { ClockArrowDown, PackageOpen, Plus, Trash2 } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, ScrollArea } from "@repo/ui";
 import { AppDialog, Trash } from "@repo/ui/app";
 

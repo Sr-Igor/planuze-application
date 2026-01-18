@@ -2,11 +2,10 @@ import { differenceInDays } from "date-fns";
 import { Check, X } from "lucide-react";
 
 import { invite } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from "@repo/ui";
 
 import { AppAvatar } from "@/components/ui/app-avatar";
-import { useIntlFormat } from "@/hooks/intl-format";
 
 export interface IAppInviteProps {
   invite: invite;

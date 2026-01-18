@@ -2,7 +2,7 @@
 
 import { Plus } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 
 interface ActionButtonsProps {
     editing: boolean;

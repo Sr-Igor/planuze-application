@@ -2,11 +2,10 @@ import { useLocale } from "next-intl";
 
 import { Clock, FileText } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { Badge, Card, Skeleton } from "@repo/ui";
 import { CardFlag } from "@repo/ui/app";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 import { formatCurrency } from "@repo/utils/currency";
 
 import { ITabProps } from "../types";

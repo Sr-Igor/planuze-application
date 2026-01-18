@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import * as lucideIcons from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Collapsible,
   CollapsibleContent,

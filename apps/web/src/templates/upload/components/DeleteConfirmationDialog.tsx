@@ -1,6 +1,6 @@
 "use client";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 

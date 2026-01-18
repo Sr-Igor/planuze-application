@@ -6,7 +6,7 @@ import { differenceInDays, isAfter, isBefore } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import { DateRange } from 'react-day-picker';
 
-import { useLang } from '@repo/language/hook';
+import { useLang, useIntlFormat } from '@repo/language/hooks';
 import {
     Button,
     Calendar as PickerCalendar,
@@ -15,8 +15,6 @@ import {
     PopoverTrigger,
     cn,
 } from '@repo/ui';
-
-import { useIntlFormat } from '@repo/hooks';
 
 export interface ICalendarRangeProps {
     dateRange?: DateRange | null;

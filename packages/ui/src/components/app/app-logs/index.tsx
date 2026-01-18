@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { EmptyState, LogContent, LogHeader } from "./components";
 import { useDisplayValue, useFormatApply } from "./hooks";

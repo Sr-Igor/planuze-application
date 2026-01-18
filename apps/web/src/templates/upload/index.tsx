@@ -2,7 +2,7 @@
 
 import { memo, useCallback, useState } from "react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { AppLogsModal } from "@repo/ui/app";
 
 import { useLogs } from "@/hooks/logs";

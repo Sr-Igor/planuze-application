@@ -3,7 +3,7 @@
 import { IValidatorRequest } from "@deviobr/validator";
 
 import { project_config, project_version } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";

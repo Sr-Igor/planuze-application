@@ -3,8 +3,8 @@
 import { useAction } from "@repo/api/web/callers/action";
 import { useCountry } from "@repo/api/web/callers/country";
 import { useModule } from "@repo/api/web/callers/module";
-import { useIntlFormat } from "@/hooks/intl-format";
 import { useTabId } from "@repo/hooks";
+import { useIntlFormat } from "@repo/language/hooks";
 //Modals
 import { ErrorModal } from "@/templates/modal/error";
 import { InactiveModal } from "@/templates/modal/inactive";

@@ -5,10 +5,9 @@ import { useMemo } from "react";
 import { differenceInDays, differenceInHours, differenceInMinutes } from "date-fns";
 
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { Badge, Card, CardContent, CardHeader, CardTitle, Separator } from "@repo/ui";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 import { timeLabel } from "@repo/utils/timeLabel";
 
 interface CardMovementsProps {

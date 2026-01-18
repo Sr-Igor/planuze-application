@@ -1,6 +1,6 @@
 import { CalendarDays, DecimalsArrowRight, MousePointerClick, PencilLine } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { TabsList, TabsTrigger } from "@repo/ui";
 import { AppTooltip } from "@repo/ui/app";
 

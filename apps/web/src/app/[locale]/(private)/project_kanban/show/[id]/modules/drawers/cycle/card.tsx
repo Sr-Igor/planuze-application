@@ -1,7 +1,7 @@
 import { FolderKanban, History, Pen, Trash } from "lucide-react";
 
 import { project_kanban_cycle } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import {
   Button,
   Card as CardComponent,
@@ -11,12 +11,10 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
-} from "@repo/ui";
+ cn } from "@repo/ui";
 import { StatusCircle } from "@repo/ui/app";
 
 import { Permission } from "@/components/ui/permission";
-import { useIntlFormat } from "@/hooks/intl-format";
-import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 

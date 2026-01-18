@@ -7,7 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import { differenceInSeconds } from "date-fns";
 import { LogOut } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";
 import { AppCountdown } from "@repo/ui/app";
 

@@ -4,7 +4,7 @@ import React, { memo } from "react";
 
 import { Inbox } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { TableEmptyStateProps } from "../types/index";

@@ -2,7 +2,7 @@
 
 import { LoaderCircle, PackageOpen } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { CommandEmpty, CommandGroup, CommandItem, CommandList } from '@repo/ui';
 
 import { ITagsOption } from '#/shared/types/tags.types';

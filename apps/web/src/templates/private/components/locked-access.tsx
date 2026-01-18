@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { FilePen, MousePointerBan } from "lucide-react";
 
 import { profile } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";

@@ -8,7 +8,7 @@ import { BookOpenText, CopyIcon } from "lucide-react";
 import { toast } from "sonner";
 
 import { integration } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Dialog,

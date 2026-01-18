@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, Skeleton } from "@repo/ui";
 
 import { Permission } from "@/components/ui/permission";

@@ -1,6 +1,6 @@
 import { Trash } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppCard, Icon } from "@repo/ui/app";
 

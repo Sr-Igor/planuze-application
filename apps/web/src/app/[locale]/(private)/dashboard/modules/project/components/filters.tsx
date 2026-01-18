@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { CheckIcon, TrashIcon } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 

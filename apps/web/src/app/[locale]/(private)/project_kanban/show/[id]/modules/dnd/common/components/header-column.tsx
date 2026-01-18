@@ -4,7 +4,7 @@ import { useCallback, useMemo } from "react";
 
 import { CircleAlert, Loader2, MoreHorizontal, Pencil, Plus, Trash } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Badge,
   Button,

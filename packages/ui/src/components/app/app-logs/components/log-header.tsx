@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { LogAction, LogEntry } from "../types";
 import { logIcons } from "./log-icons";

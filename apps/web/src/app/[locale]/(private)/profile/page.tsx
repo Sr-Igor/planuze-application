@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Ticket } from "lucide-react";
 
 import { profile } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useProfile } from "@repo/api/web/callers/profile";

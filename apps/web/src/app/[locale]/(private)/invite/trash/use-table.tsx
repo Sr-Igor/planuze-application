@@ -1,10 +1,9 @@
 import { Check, FileQuestion, X } from "lucide-react";
 
 import { invite } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { TableColumn } from "@repo/ui/app";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 
 export const useTable = () => {
   const t = useLang();

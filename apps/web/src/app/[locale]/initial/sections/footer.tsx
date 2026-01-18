@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
 import { AppLogo } from "@repo/ui/app";
 

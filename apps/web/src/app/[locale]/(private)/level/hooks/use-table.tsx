@@ -1,8 +1,7 @@
 import { level, profile } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { StatusCircle, TableColumn } from "@repo/ui/app";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useTable = ({ profile }: IUseHookProps<level> & { profile?: profile }) => {

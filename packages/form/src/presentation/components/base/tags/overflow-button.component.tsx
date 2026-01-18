@@ -2,7 +2,7 @@
 
 import { MoreHorizontal, X } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { Popover, PopoverContent, PopoverTrigger } from '@repo/ui';
 
 import { ISelectedTag } from '#/shared/types/tags.types';

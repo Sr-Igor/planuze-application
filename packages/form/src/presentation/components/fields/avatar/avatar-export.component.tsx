@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 
 import { ExternalLink, Trash2, UserRound } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { Button, cn, Img } from '@repo/ui';
 
 export interface FieldProps

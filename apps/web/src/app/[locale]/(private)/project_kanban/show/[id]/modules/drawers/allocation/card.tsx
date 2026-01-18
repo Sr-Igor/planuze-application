@@ -1,6 +1,6 @@
 import { History, Pen, Trash } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Card as CardComponent,

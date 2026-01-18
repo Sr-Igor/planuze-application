@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useModal } from "@/hooks/modal";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";

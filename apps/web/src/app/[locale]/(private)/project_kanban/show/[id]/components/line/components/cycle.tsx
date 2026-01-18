@@ -1,9 +1,7 @@
 import { project_kanban_cycle } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { CheckboxSelect } from "@repo/form";
-import { SimpleSelect } from "@repo/form";
-import { useIntlFormat } from "@/hooks/intl-format";
+import { CheckboxSelect , SimpleSelect } from "@repo/form";
 
 export interface CycleProps {
   isList: boolean;

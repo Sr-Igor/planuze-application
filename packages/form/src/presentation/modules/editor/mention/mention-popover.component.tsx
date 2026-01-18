@@ -9,7 +9,7 @@ import { LoaderCircle, PackageOpen } from "lucide-react";
 
 import { index } from "@repo/api/web/req/profile";
 import { useDebounce } from "@repo/hooks";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Pagination, profile } from "@repo/types";
 import { cn, Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from "@repo/ui";
 

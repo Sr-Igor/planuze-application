@@ -1,6 +1,6 @@
 "use client";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { IRenameProps, IUploadConfig, IUploadFile } from "../types/interfaces";
 import { PaginatedFileList } from "./PaginatedFileList";

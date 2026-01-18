@@ -3,9 +3,8 @@ import { useLocale } from "next-intl";
 import { AlertCircle, BadgeDollarSign, ClockAlert } from "lucide-react";
 
 import { plan, subscription } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 import { formatCurrency } from "@repo/utils/currency";
 
 export interface IWarningProps {

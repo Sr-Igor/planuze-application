@@ -1,7 +1,7 @@
 import { Eye, Pen, Trash } from "lucide-react";
 
 import { cost_center } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { TableAction } from "@repo/ui/app";
 
 import { useAccess } from "@/hooks/access";

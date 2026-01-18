@@ -4,7 +4,7 @@ import { memo } from 'react';
 
 import { ChevronDown, Loader2 } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import { Badge, inputClassName, cn } from '@repo/ui';
 
 import { IOption } from '#/shared/types/select.types';

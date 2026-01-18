@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 export interface BenefitsProps {
   benefits: {

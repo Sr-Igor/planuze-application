@@ -6,7 +6,7 @@ import Image, { ImageProps } from "next/image";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Skeleton } from "@repo/ui";
 
 import { getFile } from "@repo/api/global/file";

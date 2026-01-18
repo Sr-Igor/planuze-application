@@ -1,6 +1,6 @@
 import { Cog, Plus } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDropdownMenu } from "@repo/ui/app";
 

@@ -6,7 +6,7 @@ import { DndContext, pointerWithin, rectIntersection } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useKanbanShow } from "../../../context";
 import { fakeColumn } from "../../../utils/fake-column";

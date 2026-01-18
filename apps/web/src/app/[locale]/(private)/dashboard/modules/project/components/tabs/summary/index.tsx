@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { formatCurrencySimple } from "@repo/utils/currency";
 

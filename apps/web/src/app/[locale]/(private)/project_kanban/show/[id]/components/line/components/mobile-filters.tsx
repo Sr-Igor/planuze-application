@@ -3,7 +3,7 @@ import { useState } from "react";
 import { CopyIcon, Filter, X } from "lucide-react";
 import { toast } from "sonner";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Dialog,

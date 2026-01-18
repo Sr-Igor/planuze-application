@@ -6,7 +6,7 @@ import * as icons from 'lucide-react';
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 import { FixedSizeList, FixedSizeList as List } from 'react-window';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import {
     Button,
     Command,

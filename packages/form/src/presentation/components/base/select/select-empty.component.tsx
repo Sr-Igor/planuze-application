@@ -4,7 +4,7 @@ import { memo } from 'react';
 
 import { PackageOpen } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import * as C from '@repo/ui';
 
 interface SelectEmptyProps {

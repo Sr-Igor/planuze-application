@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 
 import { module } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   DropdownMenu,
   DropdownMenuContent,

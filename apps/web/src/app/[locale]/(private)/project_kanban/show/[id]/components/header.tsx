@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 
 import { Columns3Cog, Plus, Target } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, Skeleton } from "@repo/ui";
 import { AppDropdownMenu, AppTooltip, Icon } from "@repo/ui/app";
 

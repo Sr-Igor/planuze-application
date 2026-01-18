@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { isDate } from "date-fns";
 import { LoaderCircle, PackageOpen } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { cn, Skeleton } from "@repo/ui";
 
 import { AppTableActions } from "./table";

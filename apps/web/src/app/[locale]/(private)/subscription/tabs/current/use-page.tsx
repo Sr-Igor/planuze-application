@@ -4,9 +4,8 @@ import { useMemo } from "react";
 
 import { differenceInDays, isAfter } from "date-fns";
 
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { useIntlFormat } from "@/hooks/intl-format";
 
 import { ITabProps } from "../types";
 

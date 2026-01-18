@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { createId } from "@paralleldrive/cuid2";
 import { AlignJustify, ArrowUpDown } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   Button,
   Dialog,

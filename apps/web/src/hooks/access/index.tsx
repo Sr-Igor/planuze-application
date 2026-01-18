@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { addDays, differenceInDays, isAfter, isBefore } from "date-fns";
 
 import { module, profile, subscription, user } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useAuth } from "@repo/redux/hook";
 import type { AccessView, FeatureWithActions, Warning } from "./types";

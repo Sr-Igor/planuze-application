@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { CheckIcon, ChevronsUpDown, LoaderCircle, Plus } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import {
     Button,
     Command,

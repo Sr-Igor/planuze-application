@@ -5,7 +5,7 @@ import { memo, useState } from "react";
 import { Download, File } from "lucide-react";
 import { toast } from "sonner";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button , Img } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 

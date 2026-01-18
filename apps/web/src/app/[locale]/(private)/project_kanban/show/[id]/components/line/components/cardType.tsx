@@ -1,4 +1,4 @@
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Label } from "@repo/ui";
 
 import { CheckboxSelect } from "@repo/form";

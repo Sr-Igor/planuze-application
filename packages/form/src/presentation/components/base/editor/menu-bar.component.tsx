@@ -9,7 +9,7 @@ import { EDITOR_CLASSES } from '#/shared/constants/editor-settings.constant';
 import { useMenuOptions } from '../../../hooks/editor/use-menu-options.hook';
 import type { MenuBarProps, MenuOption } from '#/shared/types/editor.types';
 import { ColorPicker } from './color-picker.component';
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 
 export const MenuBar: React.FC<MenuBarProps> = ({ editor, className, onOpenModal }) => {
     const menuOptions = useMenuOptions(editor, onOpenModal);

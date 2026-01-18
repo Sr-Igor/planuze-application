@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 
 import { ChartLine, ClipboardList, LayoutList, Logs } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useAccess } from "@/hooks/access";
 

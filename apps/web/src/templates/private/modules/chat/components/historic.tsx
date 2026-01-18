@@ -3,7 +3,7 @@ import * as React from "react";
 import { X } from "lucide-react";
 
 import { chat } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, Skeleton } from "@repo/ui";
 
 import { cn } from "@repo/ui";

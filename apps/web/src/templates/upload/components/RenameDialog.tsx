@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 import { AppDialog } from "@repo/ui/app";
 

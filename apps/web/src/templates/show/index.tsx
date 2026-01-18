@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 
 import { z } from "zod";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { useAccess } from "@/hooks/access";
 import { useSearchParams } from "@/hooks/search-params";

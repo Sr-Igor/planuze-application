@@ -3,12 +3,11 @@
 import { CircleCheck, PackageOpen, Pen, Plus, RefreshCw, Trash } from "lucide-react";
 
 import { user_two_auth } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang , useIntlFormat } from "@repo/language/hooks";
 import { Button, Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui";
 import { AppDialog, StatusCircle } from "@repo/ui/app";
 
 import { Form } from "@repo/form";
-import { useIntlFormat } from "@/hooks/intl-format";
 
 import { NeedRedefine } from "../../components/NeedRedefine";
 import { usePage } from "./hooks/use-page";

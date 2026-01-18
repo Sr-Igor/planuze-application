@@ -6,7 +6,7 @@ import { isAfter } from "date-fns";
 import { AlertTriangle, ExternalLink, InfoIcon, X } from "lucide-react";
 
 import { subscription } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
 
 import { useSubscription } from "@repo/api/web/callers/subscription";

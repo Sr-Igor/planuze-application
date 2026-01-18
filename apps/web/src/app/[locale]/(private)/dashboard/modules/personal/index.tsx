@@ -3,7 +3,7 @@
 import { ScrollArea } from "@repo/ui";
 
 import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/personal";
-import { useIntlFormat } from "@/hooks/intl-format";
+import { useIntlFormat } from "@repo/language/hooks";
 
 import { Header } from "./components/header";
 import { Metadata } from "./components/metadata";

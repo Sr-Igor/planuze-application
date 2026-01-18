@@ -1,5 +1,5 @@
 import { kanban_template, kanban_template_card } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Icon } from "@repo/ui/app";
 
 import { useKanbanTemplateCard } from "@repo/api/web/callers/kanban_template_card";

@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { BarChart3, DollarSign, FileText, PieChart } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { cn } from "@repo/ui";
 

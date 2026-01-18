@@ -1,7 +1,7 @@
 "use client";
 
 import { user } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
 import { useAuth } from "@repo/api/web/callers/auth";

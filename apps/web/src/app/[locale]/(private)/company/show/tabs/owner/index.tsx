@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { RotateCcwKey } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, Card, CardHeader } from "@repo/ui";
 
 import { useAuth } from "@repo/api/web/callers/auth";

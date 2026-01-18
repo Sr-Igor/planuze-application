@@ -13,7 +13,7 @@ import {
   Users,
 } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 export const useLpConstants = () => {
   const t = useLang();

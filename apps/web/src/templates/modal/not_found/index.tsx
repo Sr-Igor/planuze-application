@@ -5,7 +5,7 @@ import { useCallback, useEffect } from "react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, Dialog, DialogContent, DialogFooter, DialogHeader } from "@repo/ui";
 import { InfoModalLayout } from "@repo/ui/app";
 

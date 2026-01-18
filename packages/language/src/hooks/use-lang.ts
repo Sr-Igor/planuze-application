@@ -5,9 +5,8 @@ export const useLang = () => {
         const t = useTranslations(key);
 
         return (value: string, options?: Record<string, any>) => {
-            let item = value;
-
-            item = t(value, options);
+            let item = t(value, options) || value;
+            
             const isEquals = item === (key ? `${key}.${value}` : value);
             if (isEquals) item = (item.split('.').pop() || '')?.replaceAll('_', ' ');
             return item;

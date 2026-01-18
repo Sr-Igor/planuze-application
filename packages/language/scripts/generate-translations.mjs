@@ -94,9 +94,8 @@ function generateHookCode(structure) {
         const t = useTranslations(key);
 
         return (value: string, options?: Record<string, any>) => {
-            let item = value;
-
-            item = t(value, options);
+            let item = t(value, options) || value;
+            
             const isEquals = item === (key ? \`\${key}.\${value}\` : value);
             if (isEquals) item = (item.split('.').pop() || '')?.replaceAll('_', ' ');
             return item;
@@ -142,7 +141,7 @@ ${translations.join(",\n")}
 function generateTranslations() {
   const packageRoot = path.resolve(__dirname, "..");
   const localesPath = path.join(packageRoot, "locales", "pt-BR");
-  const hooksPath = path.join(packageRoot, "src", "hook", "index.ts");
+  const hooksPath = path.join(packageRoot, "src", "hooks", "use-lang.ts");
   const typesPath = path.join(packageRoot, "src", "types.ts");
 
   console.log("🔍 Analisando estrutura de traduções...");

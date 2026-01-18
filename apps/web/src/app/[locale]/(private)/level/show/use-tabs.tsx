@@ -1,5 +1,5 @@
 import { level } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 
 import { IShowHookProps } from "@/templates/show/types";
 

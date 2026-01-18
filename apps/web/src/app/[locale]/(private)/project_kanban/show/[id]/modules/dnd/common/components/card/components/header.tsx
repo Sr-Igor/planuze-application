@@ -7,7 +7,7 @@ import {
   project_kanban_cycle_card_type,
   project_kanban_cycle_column,
 } from "@repo/types";
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Button, CardHeader, CardTitle } from "@repo/ui";
 import { AppTooltip, Icon } from "@repo/ui/app";
 

@@ -6,7 +6,7 @@ import { useLocale } from 'next-intl';
 
 import { CheckIcon, ChevronsUpDown } from 'lucide-react';
 
-import { useLang } from '@repo/language/hook';
+import { useLang } from '@repo/language/hooks';
 import {
     Button,
     Command,

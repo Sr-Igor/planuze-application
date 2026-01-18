@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { PlusCircle } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import {
   AlertDialog,
   AlertDialogContent,

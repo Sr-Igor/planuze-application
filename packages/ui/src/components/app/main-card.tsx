@@ -1,6 +1,6 @@
 import { PackageOpen } from "lucide-react";
 
-import { useLang } from "@repo/language/hook";
+import { useLang } from "@repo/language/hooks";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, cn, Skeleton } from "@repo/ui";
 
 export interface iMainCard {
