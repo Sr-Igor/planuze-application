@@ -2,12 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_kanban_cycle } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_kanban_cycle } from "@repo/types";
 
 export interface FormValues {
   project_kanban_cycle_id?: string | null;

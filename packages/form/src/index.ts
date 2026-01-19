@@ -37,6 +37,7 @@ export type {
 
 // Re-export Field type for convenience
 export type { Field as FieldType } from "./shared/types";
+export type { IValidatorRequest } from "@deviobr/validator";
 
 // ============================================================================
 // PUBLIC API - Utils

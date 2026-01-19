@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { profile_bank_account } from "@repo/types";
-
 import { IBank } from "@repo/api/global/bank";
-import { useConstants } from "@/hooks/constants";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { profile_bank_account } from "@repo/types";
+
+import { useConstants } from "@/hooks/constants";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
 

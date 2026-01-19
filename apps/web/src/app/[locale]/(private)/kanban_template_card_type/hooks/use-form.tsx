@@ -1,12 +1,11 @@
 "use client";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { kanban_template_card_type } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { kanban_template_card_type } from "@repo/types";
+
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useForm = ({ disabled, state }: IUseHookProps<kanban_template_card_type>) => {

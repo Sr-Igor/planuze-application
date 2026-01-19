@@ -1,11 +1,10 @@
 "use client";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { cost_center } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { cost_center } from "@repo/types";
+
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useForm = ({ disabled, state }: IUseHookProps<cost_center>) => {

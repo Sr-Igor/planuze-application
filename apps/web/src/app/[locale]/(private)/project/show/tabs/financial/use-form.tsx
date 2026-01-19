@@ -1,16 +1,15 @@
 import { useLocale } from "next-intl";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_financial, project_version, work_type } from "@repo/types";
-
 import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
 import { index as indexWorkType } from "@repo/api/web/req/work_type";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_financial, project_version, work_type } from "@repo/types";
+import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
+
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
-import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 type Form = Shallow<project_financial>;
 

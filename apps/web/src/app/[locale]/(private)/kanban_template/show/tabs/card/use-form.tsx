@@ -1,15 +1,10 @@
-import { IValidatorRequest } from "@deviobr/validator";
-
-import {
-  kanban_template,
-  kanban_template_card,
-  kanban_template_card_type,
-} from "@repo/types";
-import { Icon } from "@repo/ui";
-
 import { index } from "@repo/api/web/req/kanban_template_card_type";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { kanban_template, kanban_template_card, kanban_template_card_type } from "@repo/types";
+import { Icon } from "@repo/ui";
+
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { useShow } from "@/templates/show/context";
 import { Shallow } from "@/types/shallowType";

@@ -1,9 +1,7 @@
 import { useEffect, useRef } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
 import { getCep } from "@repo/api/global/cep";
-import { Field, useFormList } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { client_address } from "@repo/types";
 
 export type FormType = {

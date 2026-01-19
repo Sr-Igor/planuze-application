@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
-import { profile, project_version } from "@repo/types";
-
 import { index as indexProfile } from "@repo/api/web/req/profile";
-import { useAuth } from "@repo/redux/hook";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { useAuth } from "@repo/redux/hook";
+import { profile, project_version } from "@repo/types";
+
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
 

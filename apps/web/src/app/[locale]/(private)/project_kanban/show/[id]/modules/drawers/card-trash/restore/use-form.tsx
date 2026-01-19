@@ -2,15 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_kanban_cycle_card } from "@repo/types";
-
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { AppCardTypeSelector } from "@/components/app-card-type-selector";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_kanban_cycle_card } from "@repo/types";
+
+import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
+import { AppCardTypeSelector } from "@/components/app-card-type-selector";
 
 export interface IUseFormProps {
   disabled: boolean;

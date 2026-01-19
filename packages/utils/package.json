@@ -26,12 +26,14 @@
     "check-types": "tsc --noEmit --skipLibCheck || true",
     "lint": "eslint . --max-warnings 0"
   },
+  "peerDependencies": {
+    "date-fns": "^4.1.0",
+    "react-hook-form": "^7.66.1"
+  },
   "dependencies": {
     "@deviobr/validator": "^0.0.135",
     "@fingerprintjs/fingerprintjs": "^4.6.2",
-    "currency-list": "^1.0.8",
-    "date-fns": "^4.1.0",
-    "react-hook-form": "^7.66.1"
+    "currency-list": "^1.0.8"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

@@ -2,17 +2,16 @@ import { useEffect } from "react";
 
 import { useLocale } from "next-intl";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_financial, project_financial_employees, role } from "@repo/types";
-
 import { index as indexProjectFinancial } from "@repo/api/web/req/project_financial";
 import { index as indexRole } from "@repo/api/web/req/role";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_financial, project_financial_employees, role } from "@repo/types";
+import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
+
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
-import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 type Form = Shallow<project_financial_employees>;
 

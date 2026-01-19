@@ -2,20 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
 import { differenceInDays } from "date-fns";
 
-import {
-  kanban_template,
-  project_kanban_cycle,
-  project_version,
-  work_type,
-} from "@repo/types";
-import { useLang } from "@repo/language/hooks";
-
 import { index } from "@repo/api/web/req/kanban_template";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { kanban_template, project_kanban_cycle, project_version, work_type } from "@repo/types";
+
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
 

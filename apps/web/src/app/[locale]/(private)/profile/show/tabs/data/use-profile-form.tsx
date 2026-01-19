@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { level, profile } from "@repo/types";
-
 import { index } from "@repo/api/web/req/level";
-import { useConstants } from "@/hooks/constants";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { level, profile } from "@repo/types";
+
+import { useConstants } from "@/hooks/constants";
 import { Shallow } from "@/types/shallowType";
 
 export type FormType = {

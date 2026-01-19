@@ -1,9 +1,7 @@
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { user_two_auth } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { user_two_auth } from "@repo/types";
 
 export type FormType = {
   code?: string;

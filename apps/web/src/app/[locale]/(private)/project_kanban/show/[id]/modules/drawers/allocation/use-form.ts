@@ -1,12 +1,11 @@
 "use client";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
+import { IValidatorRequest } from "@repo/form";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { profile, project_kanban_cycle_allocation } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
 

@@ -1,12 +1,10 @@
 import { useEffect, useRef } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { profile_address } from "@repo/types";
-
 import { getCep } from "@repo/api/global/cep";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { profile_address } from "@repo/types";
 
 export type FormType = {
   street?: string | null;

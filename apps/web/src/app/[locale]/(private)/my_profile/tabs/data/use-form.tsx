@@ -1,12 +1,12 @@
-import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
-import { profile, user } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
-
-import { useConstants } from "@/hooks/constants";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { profile, user } from "@repo/types";
+
+import { useConstants } from "@/hooks/constants";
 
 export type FormType = {
   avatar?: string | File | Blob | null;

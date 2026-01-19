@@ -1,9 +1,8 @@
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_kanban_objective_target } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_kanban_objective_target } from "@repo/types";
+
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 export type FormType = {

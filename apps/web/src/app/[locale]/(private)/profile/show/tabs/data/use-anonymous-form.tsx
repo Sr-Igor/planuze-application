@@ -1,12 +1,12 @@
 "use client";
 
-import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
-import { profile } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { profile } from "@repo/types";
+
 import { Shallow } from "@/types/shallowType";
 
 export type FormType = {

@@ -2,14 +2,13 @@
 
 import { useEffect, useMemo } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
-
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { AppCardSelector } from "@/components/app-cycle-card-selector";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
+
+import { AppCardSelector } from "@/components/app-cycle-card-selector";
 
 import { useKanbanShow } from "../../context";
 

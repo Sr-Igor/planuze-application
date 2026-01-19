@@ -1,101 +1,104 @@
 {
-    "name": "@repo/api",
-    "version": "0.0.0",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "check-types": "tsc --noEmit --skipLibCheck || true",
-        "lint": "eslint . --max-warnings 0"
+  "name": "@repo/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-types": "tsc --noEmit --skipLibCheck || true",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "@tanstack/react-query": "^5.90.10",
+    "sonner": "^2.0.7"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "@repo/utils": "workspace:*",
+    "@repo/cookies": "workspace:*",
+    "@repo/redux": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/types": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.3"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
     },
-    "dependencies": {
-        "axios": "^1.13.2",
-        "sonner": "^2.0.7",
-        "@repo/utils": "workspace:*",
-        "@tanstack/react-query": "^5.90.10",
-        "@repo/cookies": "workspace:*",
-        "@repo/redux": "workspace:*"
+    "./cache": {
+      "types": "./src/cache/index.ts",
+      "default": "./src/cache/index.ts"
     },
-    "devDependencies": {
-        "@repo/types": "workspace:*",
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
-        "eslint": "^9.39.1",
-        "typescript": "5.9.3"
+    "./cache/keys": {
+      "types": "./src/cache/keys.ts",
+      "default": "./src/cache/keys.ts"
     },
-    "main": "./src/index.ts",
-    "types": "./src/index.ts",
-    "exports": {
-        ".": {
-            "types": "./src/index.ts",
-            "default": "./src/index.ts"
-        },
-        "./cache": {
-            "types": "./src/cache/index.ts",
-            "default": "./src/cache/index.ts"
-        },
-        "./cache/keys": {
-            "types": "./src/cache/keys.ts",
-            "default": "./src/cache/keys.ts"
-        },
-        "./cache/index": {
-            "types": "./src/cache/index.ts",
-            "default": "./src/cache/index.ts"
-        },
-        "./web/callers/*": {
-            "types": "./src/web/callers/*/index.tsx",
-            "default": "./src/web/callers/*/index.tsx"
-        },
-        "./web/callers/*/index": {
-            "types": "./src/web/callers/*/index.tsx",
-            "default": "./src/web/callers/*/index.tsx"
-        },
-        "./web/callers/*/*": {
-            "types": "./src/web/callers/*/*.ts",
-            "default": "./src/web/callers/*/*.ts"
-        },
-        "./web/callers/*/*/*": {
-            "types": "./src/web/callers/*/*/*.ts",
-            "default": "./src/web/callers/*/*/*.ts"
-        },
-        "./web/req/*": {
-            "types": "./src/web/req/*/index.ts",
-            "default": "./src/web/req/*/index.ts"
-        },
-        "./web/req/*/index": {
-            "types": "./src/web/req/*/index.ts",
-            "default": "./src/web/req/*/index.ts"
-        },
-        "./hooks/*": {
-            "types": "./src/hooks/*/index.ts",
-            "default": "./src/hooks/*/index.ts"
-        },
-        "./hooks/*/index": {
-            "types": "./src/hooks/*/index.ts",
-            "default": "./src/hooks/*/index.ts"
-        },
-        "./hooks/*/index.tsx": {
-            "types": "./src/hooks/*/index.tsx",
-            "default": "./src/hooks/*/index.tsx"
-        },
-        "./global/*": {
-            "types": "./src/global/*.ts",
-            "default": "./src/global/*.ts"
-        },
-        "./types": {
-            "types": "./src/types.ts",
-            "default": "./src/types.ts"
-        },
-        "./handle": {
-            "types": "./src/handle.ts",
-            "default": "./src/handle.ts"
-        },
-        "./@types": {
-            "types": "./src/@types/index.ts",
-            "default": "./src/@types/index.ts"
-        },
-        "./utils/form-data": {
-            "types": "./src/utils/form-data.ts",
-            "default": "./src/utils/form-data.ts"
-        }
+    "./cache/index": {
+      "types": "./src/cache/index.ts",
+      "default": "./src/cache/index.ts"
+    },
+    "./web/callers/*": {
+      "types": "./src/web/callers/*/index.tsx",
+      "default": "./src/web/callers/*/index.tsx"
+    },
+    "./web/callers/*/index": {
+      "types": "./src/web/callers/*/index.tsx",
+      "default": "./src/web/callers/*/index.tsx"
+    },
+    "./web/callers/*/*": {
+      "types": "./src/web/callers/*/*.ts",
+      "default": "./src/web/callers/*/*.ts"
+    },
+    "./web/callers/*/*/*": {
+      "types": "./src/web/callers/*/*/*.ts",
+      "default": "./src/web/callers/*/*/*.ts"
+    },
+    "./web/req/*": {
+      "types": "./src/web/req/*/index.ts",
+      "default": "./src/web/req/*/index.ts"
+    },
+    "./web/req/*/index": {
+      "types": "./src/web/req/*/index.ts",
+      "default": "./src/web/req/*/index.ts"
+    },
+    "./hooks/*": {
+      "types": "./src/hooks/*/index.ts",
+      "default": "./src/hooks/*/index.ts"
+    },
+    "./hooks/*/index": {
+      "types": "./src/hooks/*/index.ts",
+      "default": "./src/hooks/*/index.ts"
+    },
+    "./hooks/*/index.tsx": {
+      "types": "./src/hooks/*/index.tsx",
+      "default": "./src/hooks/*/index.tsx"
+    },
+    "./global/*": {
+      "types": "./src/global/*.ts",
+      "default": "./src/global/*.ts"
+    },
+    "./types": {
+      "types": "./src/types.ts",
+      "default": "./src/types.ts"
+    },
+    "./handle": {
+      "types": "./src/handle.ts",
+      "default": "./src/handle.ts"
+    },
+    "./@types": {
+      "types": "./src/@types/index.ts",
+      "default": "./src/@types/index.ts"
+    },
+    "./utils/form-data": {
+      "types": "./src/utils/form-data.ts",
+      "default": "./src/utils/form-data.ts"
     }
+  }
 }

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
+import { IValidatorRequest } from "@repo/form";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import { client_contact } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 export type FormType = {

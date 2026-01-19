@@ -1,9 +1,7 @@
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { integration } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { integration } from "@repo/types";
 
 export const defaultValues = {
   active: true,

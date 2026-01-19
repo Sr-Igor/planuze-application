@@ -1,7 +1,9 @@
 "use client";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
+import { index as indexKanbanTemplateCardType } from "@repo/api/web/req/kanban_template_card_type";
+import { IValidatorRequest } from "@repo/form";
+import { useFormList } from "@repo/form";
+import { Field } from "@repo/form";
 import {
   kanban_template_card,
   kanban_template_card_type,
@@ -9,9 +11,6 @@ import {
 } from "@repo/types";
 import { Icon } from "@repo/ui";
 
-import { index as indexKanbanTemplateCardType } from "@repo/api/web/req/kanban_template_card_type";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
 

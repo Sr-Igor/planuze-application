@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
-import { useConstants } from "@/hooks/constants";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+
+import { useConstants } from "@/hooks/constants";
 
 type WType = "cnpj" | "cpf" | "string";
 

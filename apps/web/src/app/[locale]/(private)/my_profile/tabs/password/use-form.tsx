@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { user } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { user } from "@repo/types";
 
 export type FormType = {
   current_password?: string;

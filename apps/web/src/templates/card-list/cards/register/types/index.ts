@@ -1,9 +1,9 @@
-import { IValidatorRequest } from "@deviobr/validator";
 import { DefaultValues } from "react-hook-form";
 
+import { IValidatorRequest } from "@repo/form";
+import { Field, IUseFormListReturn } from "@repo/form";
 import { ILogsComparison } from "@repo/ui";
 
-import { Field, IUseFormListReturn } from "@repo/form";
 import { ICardProps } from "@/templates/card-list/types";
 import { HookReq } from "@/types/hookReq";
 

@@ -1,9 +1,7 @@
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { company_config } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { company_config } from "@repo/types";
 
 export type FormType = {
   util_hour_day?: number | null;

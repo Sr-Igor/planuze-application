@@ -1,6 +1,7 @@
-import { IValidatorRequest } from "@deviobr/validator";
 import { FieldValues, UseFormProps, UseFormReturn } from "react-hook-form";
 import { ZodSchema } from "zod";
+
+import { IValidatorRequest } from "@repo/form";
 
 import { IField } from "../../core/domain/interfaces";
 

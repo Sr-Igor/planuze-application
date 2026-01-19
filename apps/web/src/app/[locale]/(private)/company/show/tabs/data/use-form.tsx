@@ -1,9 +1,8 @@
-import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
+import { IValidatorRequest } from "@repo/form";
+import { Field, IUseFormListReturn, useFormList } from "@repo/form";
 import { company } from "@repo/types";
-
-import { useFormList , Field, IUseFormListReturn } from "@repo/form";
 
 export type FormType = {
   logo?: string | File | Blob | null;

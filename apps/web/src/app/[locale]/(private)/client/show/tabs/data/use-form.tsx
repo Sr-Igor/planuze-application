@@ -1,10 +1,9 @@
-import { IValidatorRequest } from "@deviobr/validator";
 import { z } from "zod";
 
-import { client } from "@repo/types";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { client } from "@repo/types";
 
 export type FormType = {
   avatar: string | File | Blob | null;

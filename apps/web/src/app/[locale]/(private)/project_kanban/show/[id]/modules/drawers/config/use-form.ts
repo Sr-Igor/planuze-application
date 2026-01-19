@@ -1,12 +1,11 @@
 "use client";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import { project_config, project_version } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
-
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { project_config, project_version } from "@repo/types";
+
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
 

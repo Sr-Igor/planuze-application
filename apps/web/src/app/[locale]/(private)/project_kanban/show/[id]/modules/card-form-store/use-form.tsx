@@ -2,20 +2,15 @@
 
 import { useEffect, useMemo } from "react";
 
-import { IValidatorRequest } from "@deviobr/validator";
-
-import {
-  profile,
-  project_kanban_cycle_card,
-  project_kanban_cycle_card_type,
-} from "@repo/types";
-
 import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { AppCardTypeSelector } from "@/components/app-card-type-selector";
-import { AppCardSelector } from "@/components/app-cycle-card-selector";
-import { useAuth } from "@repo/redux/hook";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { useAuth } from "@repo/redux/hook";
+import { profile, project_kanban_cycle_card, project_kanban_cycle_card_type } from "@repo/types";
+
+import { AppCardTypeSelector } from "@/components/app-card-type-selector";
+import { AppCardSelector } from "@/components/app-cycle-card-selector";
 import { Shallow } from "@/types/shallowType";
 
 import { useKanbanShow } from "../../context";

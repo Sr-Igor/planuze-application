@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 
 import { useLocale } from "next-intl";
 
-import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
-
-import { cost_center, profile_role, role } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
 
 import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
 import { index as indexRole } from "@repo/api/web/req/role";
-import { useConstants } from "@/hooks/constants";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
-import { IUseHookProps } from "@/templates/card-list/cards/register/types";
+import { useLang } from "@repo/language/hooks";
+import { cost_center, profile_role, role } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
+
+import { useConstants } from "@/hooks/constants";
+import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 type FormType = {
   role_id?: string;

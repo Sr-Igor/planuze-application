@@ -2,18 +2,18 @@ import { useEffect } from "react";
 
 import { useLocale } from "next-intl";
 
-import { IValidatorRequest } from "@deviobr/validator";
 import { useWatch } from "react-hook-form";
 
-import { project_tool, project_version } from "@repo/types";
-
 import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
-import { useConstants } from "@/hooks/constants";
+import { IValidatorRequest } from "@repo/form";
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";
+import { project_tool, project_version } from "@repo/types";
+import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
+
+import { useConstants } from "@/hooks/constants";
 import { IUseHookProps } from "@/templates/card-crud/type";
 import { Shallow } from "@/types/shallowType";
-import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 type Form = Shallow<project_tool>;
 
