@@ -1,12 +1,10 @@
 //Create Store
 import { configureStore } from "@reduxjs/toolkit";
-import { AnyAction, Store } from "redux";
 import { persistReducer, persistStore } from "redux-persist";
 import createSagaMiddleware from "redux-saga";
 
 import { persistConfig } from "./modules/rootPersistors";
 import rootReducer from "./modules/rootReducers";
-
 //Modules Configs
 import rootSaga from "./modules/rootSagas";
 
@@ -19,7 +17,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const sagaMiddleware = createSagaMiddleware();
 
 //Default Store
-const store: Store<unknown, AnyAction> = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

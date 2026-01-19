@@ -1,29 +1,16 @@
 {
-    "extends": "@repo/typescript-config/base.json",
-    "compilerOptions": {
-        "jsx": "react-jsx",
-        "module": "ESNext",
-        "moduleResolution": "bundler",
-        "skipLibCheck": true,
-        "noEmit": true,
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "target": "ES2023",
-        "baseUrl": ".",
-        "paths": {
-            "#/*": [
-                "./src/*"
-            ]
-        },
-        "lib": [
-            "ES2023",
-            "DOM"
-        ]
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "noEmit": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
