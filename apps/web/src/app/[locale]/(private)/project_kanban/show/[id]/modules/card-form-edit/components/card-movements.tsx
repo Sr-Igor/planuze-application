@@ -6,7 +6,7 @@ import { differenceInDays, differenceInHours, differenceInMinutes } from "date-f
 
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Badge, Card, CardContent, CardHeader, CardTitle, Separator } from "@repo/ui-new";
+import { Badge, Card, CardContent, CardHeader, CardTitle, Separator } from "@repo/ui";
 
 import { timeLabel } from "@repo/utils/timeLabel";
 

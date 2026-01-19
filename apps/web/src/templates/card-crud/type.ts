@@ -4,7 +4,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { DefaultValues } from "react-hook-form";
 
 import { PageKeys } from "@repo/language/types";
-import { ILogsComparison, TrashProps } from "@repo/ui-new";
+import { ILogsComparison, TrashProps } from "@repo/ui";
 
 import { Permissions } from "@/hooks/access/types";
 import { Field, IUseFormListReturn } from "@repo/form";

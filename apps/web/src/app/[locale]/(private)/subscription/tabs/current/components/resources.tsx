@@ -8,8 +8,8 @@ import {
   AccordionTrigger,
   Badge,
   Skeleton,
-} from "@repo/ui-new";
-import { Icon } from "@repo/ui-new";
+} from "@repo/ui";
+import { Icon } from "@repo/ui";
 
 export interface IResourcesProps {
   groupedFeatures: {

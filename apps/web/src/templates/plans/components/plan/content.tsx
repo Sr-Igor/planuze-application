@@ -7,8 +7,8 @@ import {
   AccordionTrigger,
   ScrollArea,
   Skeleton,
-} from "@repo/ui-new";
-import { Icon } from "@repo/ui-new";
+} from "@repo/ui";
+import { Icon } from "@repo/ui";
 
 import { FeaturesByModule } from "../../types";
 

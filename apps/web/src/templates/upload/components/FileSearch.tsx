@@ -5,7 +5,7 @@ import { memo, useCallback, useState } from "react";
 import { Search, X } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Input } from "@repo/ui-new";
+import { Button, Input } from "@repo/ui";
 
 interface FileSearchProps {
   value: string;

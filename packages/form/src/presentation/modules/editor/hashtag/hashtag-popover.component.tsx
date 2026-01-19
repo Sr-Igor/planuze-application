@@ -10,7 +10,7 @@ import { LoaderCircle, PackageOpen } from 'lucide-react';
 import { project_kanban_cycle_card, Pagination } from '@repo/types';
 import { useLang } from '@repo/language/hooks';
 import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList, cn } from '@repo/ui';
-import { AppTooltip, Icon } from '@repo/ui/app';
+import { AppTooltip, Icon } from '@repo/ui';
 
 import { index } from '@repo/api/web/req/project_kanban_cycle_card';
 import { useDebounce } from '@repo/hooks';

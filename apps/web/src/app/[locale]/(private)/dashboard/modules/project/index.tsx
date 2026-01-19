@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { ScrollArea } from "@repo/ui-new";
+import { ScrollArea } from "@repo/ui";
 
 import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/project";
 import { useIntlFormat } from "@repo/language/hooks";

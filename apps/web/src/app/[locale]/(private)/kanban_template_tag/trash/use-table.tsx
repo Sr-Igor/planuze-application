@@ -1,6 +1,6 @@
 import { kanban_template_tag } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { TableColumn } from "@repo/ui-new";
+import { TableColumn } from "@repo/ui";
 
 
 export const useTable = () => {

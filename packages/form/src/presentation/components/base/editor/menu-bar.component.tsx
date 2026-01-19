@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { Separator, Toggle, cn } from '@repo/ui';
-import { AppTooltip } from '@repo/ui/app';
+import { AppTooltip } from '@repo/ui';
 
 import { EDITOR_CLASSES } from '#/shared/constants/editor-settings.constant';
 import { useMenuOptions } from '../../../hooks/editor/use-menu-options.hook';

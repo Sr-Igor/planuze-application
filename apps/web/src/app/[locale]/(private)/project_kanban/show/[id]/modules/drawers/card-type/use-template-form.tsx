@@ -7,7 +7,7 @@ import {
   kanban_template_card_type,
   project_kanban_cycle_card_type,
 } from "@repo/types";
-import { Icon } from "@repo/ui-new";
+import { Icon } from "@repo/ui";
 
 import { index as indexKanbanTemplateCardType } from "@repo/api/web/req/kanban_template_card_type";
 import { useFormList } from "@repo/form";

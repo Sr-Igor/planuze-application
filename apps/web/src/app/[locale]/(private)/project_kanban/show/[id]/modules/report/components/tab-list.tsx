@@ -1,9 +1,9 @@
 import { FileDown } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 import { tabs } from "../constants";

@@ -3,7 +3,7 @@
 import { icons } from 'lucide-react';
 
 import { Input as InputComponent, cn } from '@repo/ui';
-import { Icon } from '@repo/ui/app';
+import { Icon } from '@repo/ui';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     icon?: keyof typeof icons;

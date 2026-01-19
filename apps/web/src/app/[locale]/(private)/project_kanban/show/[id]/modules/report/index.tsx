@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { ScrollArea } from "@repo/ui-new";
+import { ScrollArea } from "@repo/ui";
 
 import { placeholder } from "@repo/api/web/callers/project_kanban_report/placeholder";
 

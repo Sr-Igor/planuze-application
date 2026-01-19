@@ -3,7 +3,7 @@ import { Check, X } from "lucide-react";
 
 import { invite } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton , AppAvatar } from "@repo/ui-new";
+import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton , AppAvatar } from "@repo/ui";
 
 
 export interface IAppInviteProps {

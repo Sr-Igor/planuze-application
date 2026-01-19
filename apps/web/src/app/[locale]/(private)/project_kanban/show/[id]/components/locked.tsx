@@ -2,7 +2,7 @@ import { Ban } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 export const Locked = () => {
   const lang = useLang();

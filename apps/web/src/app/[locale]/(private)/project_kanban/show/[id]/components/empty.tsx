@@ -1,9 +1,9 @@
 import { Plus } from "lucide-react";
 
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 export interface EmptyProps {
   visible: boolean;

@@ -1,8 +1,8 @@
 import { Cog, Plus } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppDropdownMenu } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDropdownMenu } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";

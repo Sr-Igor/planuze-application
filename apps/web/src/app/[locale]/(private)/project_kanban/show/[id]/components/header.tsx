@@ -3,13 +3,13 @@ import { useRouter } from "next/navigation";
 import { Columns3Cog, Plus, Target } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Skeleton } from "@repo/ui-new";
-import { AppDropdownMenu, AppTooltip, Icon } from "@repo/ui-new";
+import { Button, Skeleton } from "@repo/ui";
+import { AppDropdownMenu, AppTooltip, Icon } from "@repo/ui";
 
 import { AppInputSearch } from "@/components/app-input-search";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../context";
 

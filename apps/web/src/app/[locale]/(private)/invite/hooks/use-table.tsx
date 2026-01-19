@@ -1,6 +1,6 @@
 import { invite } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { StatusCircle, TableColumn } from "@repo/ui-new";
+import { StatusCircle, TableColumn } from "@repo/ui";
 
 
 export const useTable = () => {

@@ -1,6 +1,6 @@
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { AppCardSelector, TableColumn } from "@repo/ui-new";
+import { AppCardSelector, TableColumn } from "@repo/ui";
 
 
 export const useTable = () => {

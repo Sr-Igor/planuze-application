@@ -2,8 +2,8 @@ import { ArrowRightLeft, MoreHorizontal, Pencil, Replace, Trash } from "lucide-r
 
 import { project_kanban_cycle_card, project_kanban_cycle_column } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import * as Cn from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import * as Cn from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { Permission } from "@/components/permission";

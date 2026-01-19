@@ -1,4 +1,4 @@
-# @repo/ui-new
+# @repo/ui
 
 A scalable and maintainable UI component library built with **SOLID principles** and **Clean Architecture** patterns.
 
@@ -68,7 +68,7 @@ High-level modules don't depend on low-level modules:
 ## Installation
 
 ```bash
-pnpm add @repo/ui-new
+pnpm add @repo/ui
 ```
 
 ## Usage
@@ -76,7 +76,7 @@ pnpm add @repo/ui-new
 ### Basic Component Usage
 
 ```tsx
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 function MyComponent() {
   return (
@@ -108,7 +108,7 @@ function MyComponent() {
 ### With Loading State
 
 ```tsx
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 function SaveButton({ onSave }) {
   const [loading, setLoading] = useState(false);
@@ -130,7 +130,7 @@ function SaveButton({ onSave }) {
 ### With Icons
 
 ```tsx
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 import { PlusIcon, ArrowRightIcon } from "lucide-react";
 
 // Left icon
@@ -148,7 +148,7 @@ import { PlusIcon, ArrowRightIcon } from "lucide-react";
 ### Polymorphic Components (asChild)
 
 ```tsx
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 import Link from "next/link";
 
 // Button styled as a link
@@ -164,7 +164,7 @@ function NavButton() {
 ### Using Design Tokens
 
 ```tsx
-import { cn, SIZE_TOKENS, SPACING_TOKENS } from "@repo/ui-new";
+import { cn, SIZE_TOKENS, SPACING_TOKENS } from "@repo/ui";
 
 function CustomComponent({ className }) {
   return (
@@ -184,7 +184,7 @@ function CustomComponent({ className }) {
 ### Custom Hooks
 
 ```tsx
-import { useControllableState } from "@repo/ui-new";
+import { useControllableState } from "@repo/ui";
 
 function CustomInput({ value, defaultValue, onChange }) {
   const [internalValue, setValue] = useControllableState({
@@ -207,7 +207,7 @@ function CustomInput({ value, defaultValue, onChange }) {
 ### 1. Define Types (`component.types.ts`)
 
 ```tsx
-import { ISlottableComponent, ILoadableComponent } from "@repo/ui-new";
+import { ISlottableComponent, ILoadableComponent } from "@repo/ui";
 
 export interface MyComponentProps
   extends ISlottableComponent,
@@ -220,7 +220,7 @@ export interface MyComponentProps
 ### 2. Define Variants (`component.variants.ts`)
 
 ```tsx
-import { cva } from "@repo/ui-new";
+import { cva } from "@repo/ui";
 
 export const myComponentVariants = cva(
   "base-classes here",
@@ -250,7 +250,7 @@ export const myComponentVariants = cva(
 "use client";
 
 import { forwardRef } from "react";
-import { Slot, cn } from "@repo/ui-new";
+import { Slot, cn } from "@repo/ui";
 import { MyComponentProps } from "./component.types";
 import { myComponentVariants } from "./component.variants";
 
@@ -298,7 +298,7 @@ Complex, opinionated UI solutions:
 
 ### Components
 ```tsx
-import { Button, IconButton } from "@repo/ui-new";
+import { Button, IconButton } from "@repo/ui";
 ```
 
 ### Hooks
@@ -308,12 +308,12 @@ import {
   useControllableBooleanState,
   useSlotChildren,
   useCompoundComponent,
-} from "@repo/ui-new";
+} from "@repo/ui";
 ```
 
 ### Utilities
 ```tsx
-import { cn, Slot, Slottable, cva } from "@repo/ui-new";
+import { cn, Slot, Slottable, cva } from "@repo/ui";
 ```
 
 ### Types
@@ -326,7 +326,7 @@ import type {
   ColorIntent,
   ILoadableComponent,
   ISlottableComponent,
-} from "@repo/ui-new";
+} from "@repo/ui";
 ```
 
 ### Constants
@@ -338,7 +338,7 @@ import {
   Z_LAYER_TOKENS,
   ANIMATION_DURATION_TOKENS,
   BREAKPOINT_TOKENS,
-} from "@repo/ui-new";
+} from "@repo/ui";
 ```
 
 ## File Naming Conventions

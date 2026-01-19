@@ -2,8 +2,8 @@ import { memo } from "react";
 
 import * as icons from "lucide-react";
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@repo/ui-new";
-import { Icon } from "@repo/ui-new";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@repo/ui";
+import { Icon } from "@repo/ui";
 
 import { GroupCollapsibleProps } from "../types";
 import { PermissionTable } from "./permission-table";

@@ -1,5 +1,5 @@
-import { Button } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 import { CancelProps } from "../types";
 

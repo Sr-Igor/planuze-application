@@ -4,7 +4,7 @@ import { Pen, Trash } from "lucide-react";
 
 import { project_kanban_cycle_card_comment } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button , cn , AppDialog , AppAvatar } from "@repo/ui-new";
+import { Button , cn , AppDialog , AppAvatar } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";

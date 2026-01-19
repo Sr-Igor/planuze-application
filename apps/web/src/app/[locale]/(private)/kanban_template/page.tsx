@@ -4,8 +4,8 @@ import { useState } from "react";
 
 import { kanban_template } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 import { useKanbanTemplate } from "@repo/api/web/callers/kanban_template";
 import { BaseTemplate, defaultState } from "@/templates/list/base";

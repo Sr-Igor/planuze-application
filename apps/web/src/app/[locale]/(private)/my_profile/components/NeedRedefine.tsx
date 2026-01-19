@@ -2,7 +2,7 @@ import { Key } from "lucide-react";
 
 import { user } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 import { useSignOut } from "@repo/cookies";
 

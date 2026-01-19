@@ -3,7 +3,7 @@
 import { LogInIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 import { hookValidate } from "@repo/form";
 

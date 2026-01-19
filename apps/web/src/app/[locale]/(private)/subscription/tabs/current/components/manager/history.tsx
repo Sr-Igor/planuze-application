@@ -14,7 +14,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 
 interface HistoryModalProps {

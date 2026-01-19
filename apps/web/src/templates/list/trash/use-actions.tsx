@@ -1,7 +1,7 @@
 import { ArchiveRestore } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { TableAction } from "@repo/ui-new";
+import { TableAction } from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
 

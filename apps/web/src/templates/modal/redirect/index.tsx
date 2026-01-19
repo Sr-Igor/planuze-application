@@ -10,7 +10,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 import { useAppSelector } from "@repo/redux/hook";
 

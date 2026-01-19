@@ -1,7 +1,7 @@
 import { project_kanban_cycle_card } from "@repo/types";
-import { AppTooltip, Icon } from "@repo/ui-new";
+import { AppTooltip, Icon } from "@repo/ui";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 export interface IAppCardSelectorProps {
   item: project_kanban_cycle_card;

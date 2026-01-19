@@ -3,7 +3,7 @@
 import { memo, useCallback, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { AppLogsModal } from "@repo/ui-new";
+import { AppLogsModal } from "@repo/ui";
 
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";

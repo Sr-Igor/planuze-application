@@ -2,14 +2,14 @@
 
 import { user } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 import { useAuth } from "@repo/api/web/callers/auth";
 import { useSignOut } from "@repo/cookies";
 import { useAppSelector } from "@repo/redux/hook";
 import { useUnload } from "@/hooks/unload";
 import { useUserSet } from "@/hooks/user-set";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 import { useShow } from "@/templates/show/context";
 import { hookValidate } from "@repo/form";
 

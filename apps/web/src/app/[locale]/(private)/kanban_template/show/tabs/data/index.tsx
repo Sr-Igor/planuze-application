@@ -7,7 +7,7 @@ import { kanban_template } from "@repo/types";
 import { useKanbanTemplate } from "@repo/api/web/callers/kanban_template";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { hookValidate } from "@repo/form";

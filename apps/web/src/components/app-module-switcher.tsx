@@ -20,8 +20,8 @@ import {
   SidebarMenuItem,
   useSidebar,
   cn,
- } from "@repo/ui-new";
-import { AppTooltip, Icon } from "@repo/ui-new";
+ } from "@repo/ui";
+import { AppTooltip, Icon } from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
 import { ModuleWithFeatures } from "@/hooks/access/types";

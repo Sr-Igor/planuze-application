@@ -9,10 +9,10 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@repo/ui-new";
-import { Icon } from "@repo/ui-new";
+} from "@repo/ui";
+import { Icon } from "@repo/ui";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import { GroupCollapsible } from "./components/group-collapsible";
 import { SmallScreenView } from "./components/small-screen-view";

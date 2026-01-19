@@ -1,6 +1,6 @@
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 interface DestroyGlobalAllocationProps {
   open: boolean;

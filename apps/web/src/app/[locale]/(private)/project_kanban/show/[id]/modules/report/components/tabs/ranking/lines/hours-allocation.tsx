@@ -1,5 +1,5 @@
 import { useLang } from "@repo/language/hooks";
-import { Separator } from "@repo/ui-new";
+import { Separator } from "@repo/ui";
 
 import { IHoursByAllocation } from "@repo/api/web/callers/project_kanban_report/types";
 

@@ -1,5 +1,5 @@
 import { useLang } from "@repo/language/hooks";
-import { Label , AppAvatar } from "@repo/ui-new";
+import { Label , AppAvatar } from "@repo/ui";
 
 import { CheckboxSelect } from "@repo/form";
 

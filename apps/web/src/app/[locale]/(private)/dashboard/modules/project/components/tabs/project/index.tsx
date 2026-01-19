@@ -3,10 +3,10 @@
 import * as React from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Badge } from "@repo/ui-new";
-import { MainCard } from "@repo/ui-new";
+import { Badge } from "@repo/ui";
+import { MainCard } from "@repo/ui";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { IProjectFinancial } from "../../../types";

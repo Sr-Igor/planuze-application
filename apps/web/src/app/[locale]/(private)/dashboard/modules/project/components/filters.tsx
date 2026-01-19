@@ -5,8 +5,8 @@ import * as React from "react";
 import { CheckIcon, TrashIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 import { useFilters } from "../hooks/use-filters";
 import { QueryFilters } from "../types";

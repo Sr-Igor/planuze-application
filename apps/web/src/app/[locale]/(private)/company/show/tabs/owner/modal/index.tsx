@@ -6,8 +6,8 @@ import { AlertCircleIcon } from "lucide-react";
 
 import { profile, user } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, Button , cn } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Alert, AlertDescription, Button , cn } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 import { NeedRedefine } from "@/app/[locale]/(private)/my_profile/components/NeedRedefine";
 import { hookValidate } from "@repo/form";

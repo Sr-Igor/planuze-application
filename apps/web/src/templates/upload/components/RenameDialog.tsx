@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { IValidatorRequest } from "@deviobr/validator";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 import { useFormList } from "@repo/form";
 import { Field } from "@repo/form";

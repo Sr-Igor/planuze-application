@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 
 import { project_kanban_objective } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Icon } from "@repo/ui-new";
+import { Icon } from "@repo/ui";
 
 import { useProjectKanbanObjective } from "@repo/api/web/callers/project_kanban_objective";
 import { BaseTemplate } from "@/templates/list/base";

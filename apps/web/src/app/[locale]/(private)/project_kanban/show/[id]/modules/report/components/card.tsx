@@ -1,7 +1,7 @@
-import { Card, CardDescription, CardHeader, CardTitle , Skeleton } from "@repo/ui-new";
-import { Icon } from "@repo/ui-new";
+import { Card, CardDescription, CardHeader, CardTitle , Skeleton } from "@repo/ui";
+import { Icon } from "@repo/ui";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 export interface iCardItemProps {
   icon?: string;

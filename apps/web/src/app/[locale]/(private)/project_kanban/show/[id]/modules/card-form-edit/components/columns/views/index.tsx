@@ -6,9 +6,9 @@ import { ArrowRight, CheckCircle, Eye, EyeOff } from "lucide-react";
 
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import * as C from "@repo/ui-new";
+import * as C from "@repo/ui";
 
-import { AppAvatarLine } from "@repo/ui-new";
+import { AppAvatarLine } from "@repo/ui";
 import { useAuth } from "@repo/redux/hook";
 
 import { ScrollColumn } from "../../scroll-column";

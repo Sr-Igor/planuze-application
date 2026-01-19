@@ -13,7 +13,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 import { getProfile } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";

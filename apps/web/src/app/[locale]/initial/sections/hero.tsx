@@ -2,8 +2,8 @@ import { ArrowRight, Play } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
-import { Button } from "@repo/ui-new";
-import { AppClock } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppClock } from "@repo/ui";
 
 export const Hero = () => {
   const t = useLang();

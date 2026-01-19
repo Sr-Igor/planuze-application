@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, CardContent, CardFooter, CardHeader } from "@repo/ui-new";
+import { Card, CardContent, CardFooter, CardHeader } from "@repo/ui";
 
 import { useUtilsPlan } from "../../hooks/use-utils-plan";
 import { IPlanCardProps } from "../../types";

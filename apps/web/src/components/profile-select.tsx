@@ -1,7 +1,7 @@
 import { BadgeCheck, ShieldBan } from "lucide-react";
 
 import { profile } from "@repo/types";
-import { DropdownMenuItem , cn , AppAvatar } from "@repo/ui-new";
+import { DropdownMenuItem , cn , AppAvatar } from "../../../../packages/ui/src";
 
 
 

@@ -1,5 +1,5 @@
 import { useLang } from "@repo/language/hooks";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@repo/ui-new";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@repo/ui";
 
 import { AuthLogic } from "./logic";
 

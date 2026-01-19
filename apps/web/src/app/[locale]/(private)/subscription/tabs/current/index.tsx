@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@repo/ui-new";
+import { Card, CardContent, CardHeader } from "@repo/ui";
 
 import { ITabProps } from "../types";
 import { Empty, Header, Manager, Resources, Warning } from "./components";

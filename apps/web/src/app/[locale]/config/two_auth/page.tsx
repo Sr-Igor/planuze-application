@@ -19,12 +19,12 @@ import {
   InputOTPSlot,
   RadioGroup,
   RadioGroupItem,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 import { useUserTwoAuthCode } from "@repo/api/web/callers/user_two_auth_code";
 import { useAuth } from "@repo/redux/hook";
 import { useSignOut, setTwoAuth } from "@repo/cookies";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 import { CenterTemplate } from "@/templates/center";
 
 const inputClassName = "bg-muted/10 text-muted-foreground border-border bg-sidebar/80";

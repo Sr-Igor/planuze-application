@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Label } from "@repo/ui-new";
+import { Label } from "@repo/ui";
 
 import { Numeric } from "@repo/form";
 import { useDebounce } from "@repo/hooks";

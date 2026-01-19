@@ -14,7 +14,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   ScrollArea,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 import { Input } from "@repo/form";
 import { Permission } from "@/components/permission";

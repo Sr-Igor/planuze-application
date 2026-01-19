@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { Zap } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
+import { Button } from "@repo/ui";
 
 export const Empty = () => {
   const t = useLang();

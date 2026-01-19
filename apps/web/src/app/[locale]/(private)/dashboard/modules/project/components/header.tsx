@@ -2,8 +2,8 @@ import { Copy, FileDown, Filter } from "lucide-react";
 import { toast } from "sonner";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppTooltip } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppTooltip } from "@repo/ui";
 
 import { Currency } from "@repo/form";
 

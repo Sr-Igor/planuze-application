@@ -1,6 +1,6 @@
 import { project_kanban_cycle_card_tag } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { ILogsComparison } from "@repo/ui-new";
+import { ILogsComparison } from "@repo/ui";
 
 import { useConstants } from "@/hooks/constants";
 

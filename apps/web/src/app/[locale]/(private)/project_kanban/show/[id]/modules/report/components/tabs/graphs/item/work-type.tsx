@@ -5,8 +5,8 @@ import * as React from "react";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis } from "recharts";
 
 import { useLang } from "@repo/language/hooks";
-import { ChartConfig, ChartContainer } from "@repo/ui-new";
-import { AppTooltip } from "@repo/ui-new";
+import { ChartConfig, ChartContainer } from "@repo/ui";
+import { AppTooltip } from "@repo/ui";
 
 import { ICardsByWorkType } from "@repo/api/web/callers/project_kanban_report/types";
 

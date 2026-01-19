@@ -1,6 +1,6 @@
 import { profile } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { TableColumn , AppAvatarLine } from "@repo/ui-new";
+import { TableColumn , AppAvatarLine } from "@repo/ui";
 
 
 export const useTable = () => {

@@ -4,7 +4,7 @@ import { ChartNoAxesGantt, Eye, Pen, Trash } from "lucide-react";
 
 import { project } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { TableAction } from "@repo/ui-new";
+import { TableAction } from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";

@@ -7,7 +7,7 @@ import {
   project_kanban_cycle_column,
   project_tool,
 } from "@repo/types";
-import { AppLogsModal, ILogsComparison } from "@repo/ui-new";
+import { AppLogsModal, ILogsComparison } from "@repo/ui";
 
 import { useLogs } from "@/hooks/logs";
 

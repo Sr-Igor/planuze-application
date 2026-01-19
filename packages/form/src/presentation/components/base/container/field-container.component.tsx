@@ -3,7 +3,7 @@
 import { Info } from 'lucide-react';
 
 import { useLang } from '@repo/language/hooks';
-import { AppTooltip } from '@repo/ui/app';
+import { AppTooltip } from '@repo/ui';
 
 import { cn } from '@repo/ui';
 

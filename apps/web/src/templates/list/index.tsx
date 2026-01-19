@@ -3,17 +3,17 @@
 import { useEffect, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Input } from "@repo/ui-new";
+import { Input } from "@repo/ui";
 import {
   AppTable,
   type TableAction,
   type TableColumn,
   TableEventHandlers,
   type TableFilters,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 import { useDebounce } from "@repo/hooks";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import * as styles from "./styles";
 

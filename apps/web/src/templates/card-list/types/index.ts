@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 import { PageKeys } from "@repo/language/types";
-import { TrashProps } from "@repo/ui-new";
+import { TrashProps } from "@repo/ui";
 
 import { Permissions } from "@/hooks/access/types";
 import { IShowContextType, State } from "@/templates/show/types";

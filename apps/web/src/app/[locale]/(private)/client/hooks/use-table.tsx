@@ -1,6 +1,6 @@
 import { client } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { TableColumn , AppAvatar } from "@repo/ui-new";
+import { TableColumn , AppAvatar } from "@repo/ui";
 
 import { IUseHookProps } from "@/templates/list/base/types";
 

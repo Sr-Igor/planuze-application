@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
   Skeleton,
- cn , AppAvatar } from "@repo/ui-new";
+ cn , AppAvatar } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 

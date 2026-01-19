@@ -7,7 +7,7 @@ import { client } from "@repo/types";
 import { useClient } from "@repo/api/web/callers/client";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
 import { hookValidate } from "@repo/form";

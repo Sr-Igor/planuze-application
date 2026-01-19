@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Plus } from "lucide-react";
 
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button , cn , StatusCircle , AppAvatar } from "@repo/ui-new";
+import { Button , cn , StatusCircle , AppAvatar } from "@repo/ui";
 
 import { getProfile } from "@repo/cookies";
 import { useAppSelector } from "@repo/redux/hook";

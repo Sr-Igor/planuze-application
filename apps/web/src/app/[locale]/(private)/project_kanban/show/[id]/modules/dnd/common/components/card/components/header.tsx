@@ -8,13 +8,13 @@ import {
   project_kanban_cycle_column,
 } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button, CardHeader, CardTitle } from "@repo/ui-new";
-import { AppTooltip, Icon } from "@repo/ui-new";
+import { Button, CardHeader, CardTitle } from "@repo/ui";
+import { AppTooltip, Icon } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import { Actions } from "./actions";
 

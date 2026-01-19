@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   ScrollArea,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
 import { useInvite } from "@repo/api/web/callers/invite";
 import { Invite } from "@/app/[locale]/config/welcome/options/invite";

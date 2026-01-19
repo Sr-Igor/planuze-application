@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Input as InputComponent, Label } from "@repo/ui-new";
+import { Input as InputComponent, Label } from "@repo/ui";
 
 import { useDebounce } from "@repo/hooks";
 

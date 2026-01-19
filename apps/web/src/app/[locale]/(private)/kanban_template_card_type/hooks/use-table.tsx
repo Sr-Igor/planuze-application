@@ -1,6 +1,6 @@
 import { kanban_template_card_type } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Icon, StatusCircle, TableColumn } from "@repo/ui-new";
+import { Icon, StatusCircle, TableColumn } from "@repo/ui";
 
 
 export const useTable = () => {

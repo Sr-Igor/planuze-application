@@ -4,8 +4,8 @@ import { CircleCheck, PackageOpen, Pen, Plus, RefreshCw, Trash } from "lucide-re
 
 import { user_two_auth } from "@repo/types";
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button, Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui-new";
-import { AppDialog, StatusCircle } from "@repo/ui-new";
+import { Button, Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui";
+import { AppDialog, StatusCircle } from "@repo/ui";
 
 import { Form } from "@repo/form";
 

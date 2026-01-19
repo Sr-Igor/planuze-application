@@ -1,6 +1,6 @@
 import { useLocale } from "next-intl";
 
-import { TrashProps } from "@repo/ui-new";
+import { TrashProps } from "@repo/ui";
 
 import { useConstants } from "@/hooks/constants";
 import { formatCurrency } from "@repo/utils/currency";

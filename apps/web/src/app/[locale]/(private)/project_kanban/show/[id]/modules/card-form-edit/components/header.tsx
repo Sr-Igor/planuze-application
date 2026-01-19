@@ -1,5 +1,5 @@
 import { project_kanban_cycle_card_type } from "@repo/types";
-import { DialogHeader } from "@repo/ui-new";
+import { DialogHeader } from "@repo/ui";
 
 export interface IHeaderProps {
   cardType?: project_kanban_cycle_card_type;

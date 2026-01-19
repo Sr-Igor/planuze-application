@@ -1,7 +1,7 @@
 "use client";
 
 import { useLang } from "@repo/language/hooks";
-import { Icon } from "@repo/ui-new";
+import { Icon } from "@repo/ui";
 
 import { usePrivateContext } from "@/templates/private/context";
 

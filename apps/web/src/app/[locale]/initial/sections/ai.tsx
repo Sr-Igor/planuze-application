@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Badge } from "@repo/ui-new";
+import { Badge } from "@repo/ui";
 
 export const Ia = () => {
   const t = useLang();

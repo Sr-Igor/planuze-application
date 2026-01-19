@@ -8,7 +8,7 @@ import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 import { Cancel } from "@/templates/show/components";
 
 import { Empty } from "./components/empty";

@@ -2,7 +2,7 @@ import { IValidatorRequest } from "@deviobr/validator";
 import { DefaultValues } from "react-hook-form";
 
 import { PageKeys } from "@repo/language/types";
-import { ILogsComparison, TableAction, TableColumn, TableEventHandlers } from "@repo/ui-new";
+import { ILogsComparison, TableAction, TableColumn, TableEventHandlers } from "@repo/ui";
 
 import { Permissions } from "@/hooks/access/types";
 import { Field, IUseFormListReturn } from "@repo/form";

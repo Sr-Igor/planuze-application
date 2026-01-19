@@ -2,11 +2,11 @@ import { BookCheck } from "lucide-react";
 
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppTooltip } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppTooltip } from "@repo/ui";
 
 import { useAuth } from "@repo/redux/hook";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 import { useCardRead } from "../../../hooks/use-req/services/use-card-read";

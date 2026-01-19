@@ -6,9 +6,9 @@ import {
   CollapsibleContent,
   Collapsible as CollapsiblePrimitive,
   CollapsibleTrigger,
-} from "@repo/ui-new";
+} from "@repo/ui";
 
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 export interface ICollapsibleProps {
   title: string;

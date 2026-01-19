@@ -18,7 +18,7 @@ import {
     PopoverTrigger,
     cn,
 } from '@repo/ui';
-import { Icon } from '@repo/ui/app';
+import { Icon } from '@repo/ui';
 
 export interface IIconProps {
     value: string;

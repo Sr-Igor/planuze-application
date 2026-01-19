@@ -1,6 +1,6 @@
 "use client";
 
-import { SidebarProvider } from "@repo/ui-new";
+import { SidebarProvider } from "@repo/ui";
 
 import { Nav } from "@/components/nav";
 

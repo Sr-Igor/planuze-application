@@ -23,8 +23,8 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@repo/ui-new";
-import { AppTheme, Icon } from "@repo/ui-new";
+} from "@repo/ui";
+import { AppTheme, Icon } from "@repo/ui";
 
 import { AppLanguage } from "@/components/language";
 import { ModuleSwitcher } from "@/components/app-module-switcher";

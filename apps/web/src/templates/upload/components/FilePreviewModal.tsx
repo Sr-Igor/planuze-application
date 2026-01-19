@@ -6,8 +6,8 @@ import { Download, File } from "lucide-react";
 import { toast } from "sonner";
 
 import { useLang } from "@repo/language/hooks";
-import { Button , Img } from "@repo/ui-new";
-import { AppDialog } from "@repo/ui-new";
+import { Button , Img } from "@repo/ui";
+import { AppDialog } from "@repo/ui";
 
 import { downloadFile } from "@repo/api/global/download";
 

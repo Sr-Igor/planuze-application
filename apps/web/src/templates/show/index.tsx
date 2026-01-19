@@ -10,7 +10,7 @@ import { useLang } from "@repo/language/hooks";
 
 import { useAccess } from "@/hooks/access";
 import { useSearchParams } from "@/hooks/search-params";
-import { cn } from "@repo/ui-new";
+import { cn } from "@repo/ui";
 
 import { Cancel, Header, Tabs } from "./components";
 import { Delete } from "./components/delete";

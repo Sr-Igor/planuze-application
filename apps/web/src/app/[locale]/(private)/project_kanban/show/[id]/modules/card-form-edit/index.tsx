@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui-new";
+import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
 import { ISelected } from "@repo/form";
 import { Permission } from "@/components/permission";

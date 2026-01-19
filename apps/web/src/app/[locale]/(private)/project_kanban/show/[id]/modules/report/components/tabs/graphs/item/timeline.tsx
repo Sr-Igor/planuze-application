@@ -5,7 +5,7 @@ import * as React from "react";
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from "recharts";
 
 import { useLang } from "@repo/language/hooks";
-import { ChartConfig, ChartContainer } from "@repo/ui-new";
+import { ChartConfig, ChartContainer } from "@repo/ui";
 
 import { ITimeAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
 

@@ -5,8 +5,8 @@ import { useCallback, useState } from "react";
 import { ArchiveRestore, Eraser, History, Plus, Trash2 } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui-new";
-import { AppDialog, AppLogsModal, Icon } from "@repo/ui-new";
+import { Button } from "@repo/ui";
+import { AppDialog, AppLogsModal, Icon } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";

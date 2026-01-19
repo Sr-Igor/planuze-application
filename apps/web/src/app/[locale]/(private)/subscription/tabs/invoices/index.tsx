@@ -3,8 +3,8 @@ import { useLocale } from "next-intl";
 import { Clock, FileText } from "lucide-react";
 
 import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Badge, Card, Skeleton } from "@repo/ui-new";
-import { CardFlag } from "@repo/ui-new";
+import { Badge, Card, Skeleton } from "@repo/ui";
+import { CardFlag } from "@repo/ui";
 
 import { formatCurrency } from "@repo/utils/currency";
 

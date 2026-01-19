@@ -2,17 +2,31 @@
     "extends": "@repo/typescript-config/react-library.json",
     "compilerOptions": {
         "baseUrl": ".",
+        "lib": [
+            "ES2023",
+            "DOM",
+            "DOM.Iterable"
+        ],
         "paths": {
-            "#/*": [
-                "./src/*"
+            "@core/*": [
+                "./src/core/*"
+            ],
+            "@application/*": [
+                "./src/application/*"
+            ],
+            "@infrastructure/*": [
+                "./src/infrastructure/*"
+            ],
+            "@presentation/*": [
+                "./src/presentation/*"
+            ],
+            "@shared/*": [
+                "./src/shared/*"
             ]
         }
     },
     "include": [
-        "src",
-        "../../apps/web/src/components/app-avatar.tsx",
-        "../../apps/web/src/components/app-tabs.tsx",
-        "../../apps/web/src/components/profile-select.tsx"
+        "src"
     ],
     "exclude": [
         "node_modules",
