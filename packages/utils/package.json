@@ -27,8 +27,8 @@
     "lint": "eslint . --max-warnings 0"
   },
   "peerDependencies": {
-    "date-fns": "^4.1.0",
-    "react-hook-form": "^7.66.1"
+    "date-fns": "catalog:",
+    "react-hook-form": "catalog:"
   },
   "dependencies": {
     "@deviobr/validator": "^0.0.135",
