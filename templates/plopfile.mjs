@@ -1,12 +1,11 @@
-import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, "..");
 
 export default function (plop) {
-
   plop.setPlopfilePath(projectRoot);
 
   plop.setHelper("eq", function (a, b) {
@@ -64,13 +63,6 @@ export default function (plop) {
       },
       {
         type: "confirm",
-        name: "usePathAlias",
-        message: "Use path alias (#/*)?",
-        default: true,
-        when: (answers) => answers.type !== "config",
-      },
-      {
-        type: "confirm",
         name: "hasExports",
         message: "Have custom exports in package.json?",
         default: false,
@@ -79,7 +71,7 @@ export default function (plop) {
     ],
     actions: (data) => {
       const templateBase = join(__dirname, "package");
-      
+
       const actions = [
         {
           type: "add",
