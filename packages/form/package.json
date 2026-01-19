@@ -34,7 +34,7 @@
         "zod": "^3.25.76",
         "lucide-react": "^0.562.0",
         "react-hook-form": "^7.66.1",
-        "react-day-picker": "^9.7.0",
+        "react-day-picker": "^9.11.1",
         "date-fns": "^4.1.0",
         "react-window": "^1.8.11",
         "@paralleldrive/cuid2": "^2.3.1",
