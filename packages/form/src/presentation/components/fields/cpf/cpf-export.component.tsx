@@ -2,7 +2,7 @@
 
 import { Input } from '@repo/ui';
 
-import { formatCpf } from '#/shared/utils';
+import { formatCpf } from '../../../../shared/utils';
 
 export const Cpf = (
     props: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>

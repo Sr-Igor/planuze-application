@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Controller, FieldValues } from 'react-hook-form';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../core/domain/interfaces';
 import { FieldContainer } from '../../base/container/field-container.component';
 import { Avatar } from './avatar-export.component';
 

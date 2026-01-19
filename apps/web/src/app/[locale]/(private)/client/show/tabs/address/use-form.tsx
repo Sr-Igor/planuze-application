@@ -2,10 +2,9 @@ import { useEffect, useRef } from "react";
 
 import { IValidatorRequest } from "@deviobr/validator";
 
-import { client_address } from "@repo/types";
-
 import { getCep } from "@repo/api/global/cep";
-import { useFormList , Field } from "@repo/form";
+import { Field, useFormList } from "@repo/form";
+import { client_address } from "@repo/types";
 
 export type FormType = {
   street?: string | null;
@@ -224,9 +223,9 @@ export const useForm = ({ data, disabled }: UseFormProps) => {
     }
 
     if (data?.country === country) {
-        form.hook.resetField("state");
+      form.hook.resetField("state");
     } else {
-        form.hook.setValue("state", "");
+      form.hook.setValue("state", "");
     }
   }, [country, data?.country]);
 
@@ -238,9 +237,9 @@ export const useForm = ({ data, disabled }: UseFormProps) => {
     }
 
     if (data?.state === stateField) {
-        form.hook.resetField("city");
+      form.hook.resetField("city");
     } else {
-        form.hook.setValue("city", "");
+      form.hook.setValue("city", "");
     }
   }, [stateField, data?.state]);
 

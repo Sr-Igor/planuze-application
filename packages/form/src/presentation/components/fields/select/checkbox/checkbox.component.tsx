@@ -4,10 +4,10 @@ import { Controller, FieldValues } from 'react-hook-form';
 
 import { cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../../core/domain/interfaces';
 import { FieldContainer } from '../../../base/container/field-container.component';
 import { CheckboxSelect } from './checkbox-export.component';
-import { ICheckboxSelectProps } from '#/shared/types/select.types';
+import { ICheckboxSelectProps } from '../../../../../shared/types/select.types';
 
 export function CheckboxSelectField<FormType extends FieldValues>({
     name,

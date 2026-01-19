@@ -17,7 +17,7 @@ import {
     SelectTrigger,
 } from '../../../base/select';
 import { useCheckbox, useCheckboxHandlers } from '../../../../hooks/select';
-import { ICheckboxSelectProps } from '#/shared/types/select.types';
+import { ICheckboxSelectProps } from '../../../../../shared/types/select.types';
 
 export const CheckboxSelect = memo(
     ({

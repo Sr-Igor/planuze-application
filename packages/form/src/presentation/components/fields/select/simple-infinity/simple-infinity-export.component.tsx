@@ -18,7 +18,7 @@ import {
     SelectTrigger,
 } from '../../../base/select';
 import { useInfinity } from '../../../../hooks/select';
-import { ISimpleInfinityProps } from '#/shared/types/select.types';
+import { ISimpleInfinityProps } from '../../../../../shared/types/select.types';
 
 export const SimpleInfinitySelect = memo(function SimpleInfinitySelect<T>({
     value,

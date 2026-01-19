@@ -7,7 +7,7 @@ import { Controller, FieldValues } from 'react-hook-form';
 
 import { Button, Input, cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../core/domain/interfaces';
 import { FieldContainer } from '../../base/container/field-container.component';
 
 export function InputField<FormType extends FieldValues>({

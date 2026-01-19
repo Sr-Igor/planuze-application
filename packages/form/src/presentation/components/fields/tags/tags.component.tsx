@@ -4,10 +4,10 @@ import { Controller, FieldValues } from 'react-hook-form';
 
 import { cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../core/domain/interfaces';
 import { FieldContainer } from '../../base/container/field-container.component';
 import { Tags } from './tags-export.component';
-import { ITagsProps } from '#/shared/types/tags.types';
+import { ITagsProps } from '../../../../shared/types/tags.types';
 
 export function TagsField<FormType extends FieldValues, T = any>({
     name,

@@ -16,7 +16,7 @@ import {
     SelectTrigger,
 } from '../../../base/select';
 import { useSimpleData } from '../../../../hooks/select';
-import { ISimpleSelectProps } from '#/shared/types/select.types';
+import { ISimpleSelectProps } from '../../../../../shared/types/select.types';
 
 export const SimpleSelect = memo(
     ({

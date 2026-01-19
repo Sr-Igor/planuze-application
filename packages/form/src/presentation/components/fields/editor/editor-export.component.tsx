@@ -8,12 +8,12 @@ import { EditorContent } from '@tiptap/react';
 import { InsertModal, MenuBar } from '../../base/editor';
 import { Placeholder } from '../../base/editor/placeholder.component';
 import { HashtagPopover } from '../../../modules/editor/hashtag';
-import { EDITOR_CLASSES } from '#/shared/constants/editor-settings.constant';
+import { EDITOR_CLASSES } from '../../../../shared/constants/editor-settings.constant';
 import { EditorLinksProvider } from '../../../contexts/editor-links.context';
 import { useEditorActions, useEditorEvents, useEditorState, useTiptapEditor } from '../../../hooks/editor';
 import { MentionPopover } from '../../../modules/editor/mention';
-import type { EditorProps } from '#/shared/types/editor.types';
-import { isHtmlEmpty } from '#/shared/utils/html.utils';
+import type { EditorProps } from '../../../../shared/types/editor.types';
+import { isHtmlEmpty } from '../../../../shared/utils/html.utils';
 
 export const Editor: React.FC<EditorProps> = ({
     value,

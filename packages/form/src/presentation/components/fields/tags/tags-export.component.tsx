@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { ActionButtons, SelectedTags, TagEditor } from '../../base/tags';
 import { useTags } from '../../../hooks/tags';
-import { ITagsProps, ITagsOption, ISelectedTag } from '#/shared/types/tags.types';
+import { ITagsProps, ITagsOption, ISelectedTag } from '../../../../shared/types/tags.types';
 
 export function Tags<T>({
     cacheKey,

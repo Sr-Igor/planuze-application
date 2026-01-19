@@ -2,7 +2,7 @@
 
 import { Input } from '@repo/ui';
 
-import { formatCep } from '#/shared/utils';
+import { formatCep } from '../../../../shared/utils';
 
 export const Cep = (
     props: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>

@@ -8,7 +8,7 @@ import { useLang } from '@repo/language/hooks';
 import { Button, Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, Input, Label } from '@repo/ui';
 
 import { useModalConfig } from '../../../hooks/editor/use-modal-configs.hook';
-import type { InsertModalProps } from '#/shared/types/editor.types';
+import type { InsertModalProps } from '../../../../shared/types/editor.types';
 
 export const InsertModal: React.FC<InsertModalProps> = ({
     open,

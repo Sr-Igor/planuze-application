@@ -19,7 +19,7 @@ import {
     SelectTrigger,
 } from '../../../base/select';
 import { useCheckboxHandlers, useInfinity } from '../../../../hooks/select';
-import { ISimpleInfinityProps } from '#/shared/types/select.types';
+import { ISimpleInfinityProps } from '../../../../../shared/types/select.types';
 
 export const CheckboxInfinitySelect = memo(function CheckboxInfinitySelect<T>({
     value,

@@ -2,7 +2,7 @@
 
 import { Input } from '@repo/ui';
 
-import { formatCnpj } from '#/shared/utils';
+import { formatCnpj } from '../../../../shared/utils';
 
 export const Cnpj = (
     props: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>

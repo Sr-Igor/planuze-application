@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 
 import { AppTooltip } from '@repo/ui';
 
-import { ISelectedTag } from '#/shared/types/tags.types';
+import { ISelectedTag } from '../../../../shared/types/tags.types';
 import { OverflowButton } from './overflow-button.component';
 
 interface SelectedTagsProps {

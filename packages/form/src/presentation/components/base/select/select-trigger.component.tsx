@@ -7,7 +7,7 @@ import { ChevronDown, Loader2 } from 'lucide-react';
 import { useLang } from '@repo/language/hooks';
 import { Badge, inputClassName, cn } from '@repo/ui';
 
-import { IOption } from '#/shared/types/select.types';
+import { IOption } from '../../../../shared/types/select.types';
 
 interface SelectTriggerProps {
     placeholder?: string;

@@ -4,10 +4,10 @@ import { Controller, FieldValues } from 'react-hook-form';
 
 import { cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../../core/domain/interfaces';
 import { FieldContainer } from '../../../base/container/field-container.component';
 import { SimpleSelect } from './simple-export.component';
-import { ISimpleSelectProps } from '#/shared/types/select.types';
+import { ISimpleSelectProps } from '../../../../../shared/types/select.types';
 
 export function SimpleSelectField<FormType extends FieldValues>({
     name,

@@ -4,7 +4,7 @@ import { Controller, FieldValues } from 'react-hook-form';
 
 import { cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../core/domain/interfaces';
 import { FieldContainer } from '../../base/container/field-container.component';
 import { Cpf } from './cpf-export.component';
 

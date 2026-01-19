@@ -4,10 +4,10 @@ import { Controller, FieldValues } from 'react-hook-form';
 
 import { cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../core/domain/interfaces';
 import { FieldContainer } from '../../base/container/field-container.component';
 import { Editor } from './editor-export.component';
-import type { EditorProps } from '#/shared/types/editor.types';
+import type { EditorProps } from '../../../../shared/types/editor.types';
 
 export function EditorField<FormType extends FieldValues>({
     name,

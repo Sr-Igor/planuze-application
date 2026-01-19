@@ -1,26 +1,26 @@
 {
-    "name": "@repo/cookies",
-    "version": "0.0.0",
-    "private": true,
-    "main": "./src/index.ts",
-    "types": "./src/index.ts",
-    "type": "module",
-    "exports": {
-        ".": "./index.ts"
-    },
-    "scripts": {
-        "check-types": "tsc --noEmit --skipLibCheck || true",
-        "lint": "eslint . --max-warnings 0"
-    },
-    "dependencies": {
-        "js-cookie": "^3.0.5",
-        "@repo/hooks": "workspace:*"
-    },
-    "devDependencies": {
-        "@repo/eslint-config": "workspace:*",
-        "@repo/typescript-config": "workspace:*",
-        "eslint": "^9.39.1",
-        "typescript": "5.9.3",
-        "@types/js-cookie": "^3.0.6"
-    }
+  "name": "@repo/cookies",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit --skipLibCheck || true",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "js-cookie": "^3.0.5",
+    "@repo/hooks": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.3",
+    "@types/js-cookie": "^3.0.6"
+  }
 }

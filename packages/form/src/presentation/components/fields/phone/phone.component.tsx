@@ -5,7 +5,7 @@ import { Country } from 'react-phone-number-input';
 
 import { cn } from '@repo/ui';
 
-import { IFieldComponentProps } from '#/core/domain/interfaces';
+import { IFieldComponentProps } from '../../../../core/domain/interfaces';
 import { FieldContainer } from '../../base/container/field-container.component';
 import { Phone } from './phone-export.component';
 

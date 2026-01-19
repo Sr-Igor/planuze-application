@@ -2,7 +2,7 @@
 
 import { Popover, PopoverContentInModal, PopoverTrigger, Command, cn } from '@repo/ui';
 
-import { ITagsOption, ISelectedTag } from '#/shared/types/tags.types';
+import { ITagsOption, ISelectedTag } from '../../../../shared/types/tags.types';
 import { CommandListComponent } from './command-list.component';
 import { TagInput } from './tag-input.component';
 

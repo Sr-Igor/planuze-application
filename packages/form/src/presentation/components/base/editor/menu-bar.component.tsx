@@ -5,9 +5,9 @@ import React from 'react';
 import { Separator, Toggle, cn } from '@repo/ui';
 import { AppTooltip } from '@repo/ui';
 
-import { EDITOR_CLASSES } from '#/shared/constants/editor-settings.constant';
+import { EDITOR_CLASSES } from '../../../../shared/constants/editor-settings.constant';
 import { useMenuOptions } from '../../../hooks/editor/use-menu-options.hook';
-import type { MenuBarProps, MenuOption } from '#/shared/types/editor.types';
+import type { MenuBarProps, MenuOption } from '../../../../shared/types/editor.types';
 import { ColorPicker } from './color-picker.component';
 import { useLang } from '@repo/language/hooks';
 
