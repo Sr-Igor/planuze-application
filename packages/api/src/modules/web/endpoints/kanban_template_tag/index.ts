@@ -1,6 +1,7 @@
 import type { kanban_template_tag } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const kanbanTemplateTagEndpoint = createSimpleEndpoint<kanban_template_tag>()({
   basePath: "/api/private/kanban_template_tag",
@@ -12,6 +13,9 @@ export const kanbanTemplateTagEndpoint = createSimpleEndpoint<kanban_template_ta
     many: "/api/private/kanban_template_tag/many",
     trash: "/api/private/kanban_template_tag/trash",
     restore: "/api/private/kanban_template_tag/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

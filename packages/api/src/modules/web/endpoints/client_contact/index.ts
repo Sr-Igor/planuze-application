@@ -1,6 +1,7 @@
 import type { client_contact } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 /**
  * Client Contact endpoint
@@ -13,6 +14,9 @@ export const clientContactEndpoint = createSimpleEndpoint<client_contact>()({
     destroy: "/api/private/client_contact/destroy",
     trash: "/api/private/client_contact/trash",
     restore: "/api/private/client_contact/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

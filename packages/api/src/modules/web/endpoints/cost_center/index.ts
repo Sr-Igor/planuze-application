@@ -1,6 +1,7 @@
 import type { cost_center } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const costCenterEndpoint = createSimpleEndpoint<cost_center>()({
   basePath: "/api/private/cost_center",
@@ -13,6 +14,9 @@ export const costCenterEndpoint = createSimpleEndpoint<cost_center>()({
     many: "/api/private/cost_center/many",
     trash: "/api/private/cost_center/trash",
     restore: "/api/private/cost_center/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

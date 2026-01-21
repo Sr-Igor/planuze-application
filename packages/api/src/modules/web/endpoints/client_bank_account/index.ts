@@ -1,6 +1,7 @@
 import type { client_bank_account } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 /**
  * Client Bank Account endpoint
@@ -14,6 +15,9 @@ export const clientBankAccountEndpoint = createSimpleEndpoint<client_bank_accoun
     destroy: "/api/private/client_bank_account/destroy",
     trash: "/api/private/client_bank_account/trash",
     restore: "/api/private/client_bank_account/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

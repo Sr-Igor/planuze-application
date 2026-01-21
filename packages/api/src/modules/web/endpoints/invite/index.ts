@@ -2,6 +2,7 @@ import type { EndpointBody, EndpointParams, invite, Pagination, user } from "@re
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
 import { typedRequest } from "../../../../infrastructure/http/axios-client";
+import { logs } from "../../../../shared/constants";
 
 // =============================================================================
 // Invite DTOs - derived from endpoint types
@@ -24,6 +25,16 @@ export const inviteEndpoint = createSimpleEndpoint<invite>()({
     many: "/api/private/invite/many",
     trash: "/api/private/invite/trash",
     restore: "/api/private/invite/restore",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      level: {
+        select: {
+          title: true,
+        },
+      },
+    },
   },
 });
 

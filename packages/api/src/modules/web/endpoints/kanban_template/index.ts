@@ -1,6 +1,7 @@
 import type { kanban_template } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const kanbanTemplateEndpoint = createSimpleEndpoint<kanban_template>()({
   basePath: "/api/private/kanban_template",
@@ -13,6 +14,35 @@ export const kanbanTemplateEndpoint = createSimpleEndpoint<kanban_template>()({
     many: "/api/private/kanban_template/many",
     trash: "/api/private/kanban_template/trash",
     restore: "/api/private/kanban_template/restore",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      kanban_template_cards: {
+        include: {
+          logs,
+          kanban_template_card_type: true,
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
+      kanban_template_columns: {
+        include: { logs },
+        orderBy: {
+          order: "desc",
+        },
+      },
+      profile: {
+        include: {
+          user: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      },
+    },
   },
 });
 

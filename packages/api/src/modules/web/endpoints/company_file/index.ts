@@ -1,6 +1,7 @@
 import type { company_file } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const companyFileEndpoint = createSimpleEndpoint<company_file>()({
   basePath: "/api/private/company_file",
@@ -12,6 +13,9 @@ export const companyFileEndpoint = createSimpleEndpoint<company_file>()({
     restore: "/api/private/company_file/restore",
   },
   formDataFields: ["file"],
+  defaultQuery: {
+    include: { logs },
+  },
 });
 
 export type CompanyFile = company_file;

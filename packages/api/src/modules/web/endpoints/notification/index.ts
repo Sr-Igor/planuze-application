@@ -10,6 +10,17 @@ export const notificationEndpoint = createSimpleEndpoint<notification>()({
     update: "/api/private/notification/update",
     many: "/api/private/notification/many",
   },
+  defaultQuery: {
+    orderKey: "createdAt",
+    orderValue: "desc",
+    include: {
+      company: {
+        select: {
+          logo: true,
+        },
+      },
+    },
+  },
 });
 
 // Custom endpoints

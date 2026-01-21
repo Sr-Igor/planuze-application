@@ -1,6 +1,7 @@
 import type { client_file } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 /**
  * Client File endpoint - with file upload support
@@ -15,6 +16,9 @@ export const clientFileEndpoint = createSimpleEndpoint<client_file>()({
     restore: "/api/private/client_file/restore",
   },
   formDataFields: ["file"],
+  defaultQuery: {
+    include: { logs },
+  },
 });
 
 export type ClientFile = client_file;

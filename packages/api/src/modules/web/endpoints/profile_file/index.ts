@@ -1,6 +1,7 @@
 import type { profile_file } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const profileFileEndpoint = createSimpleEndpoint<profile_file>()({
   basePath: "/api/private/profile_file",
@@ -12,6 +13,9 @@ export const profileFileEndpoint = createSimpleEndpoint<profile_file>()({
     restore: "/api/private/profile_file/restore",
   },
   formDataFields: ["file"],
+  defaultQuery: {
+    include: { logs },
+  },
 });
 
 export type ProfileFile = profile_file;

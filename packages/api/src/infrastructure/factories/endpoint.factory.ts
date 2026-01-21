@@ -9,7 +9,6 @@ import type {
   IEndpoint,
   QueryFilters,
 } from "../../core/domain/interfaces/endpoint.interface";
-import { logs } from "../../shared/constants";
 import { handleRequest } from "../http/axios-client";
 
 /**
@@ -268,14 +267,22 @@ export interface CreateSimpleEndpointOptions<R extends SimpleEndpointRoutes> {
   routes: R;
 
   /**
-   * Include logs in queries (default: true)
+   * Default query parameters to include in all requests
+   * Use this for includes, orderBy, etc.
+   *
+   * @example
+   * ```ts
+   * defaultQuery: {
+   *   include: {
+   *     company: { select: { logo: true } },
+   *     logs: logsInclude, // Only for entities with logs relation
+   *   },
+   *   orderKey: 'createdAt',
+   *   orderValue: 'desc',
+   * }
+   * ```
    */
-  includeLogs?: boolean;
-
-  /**
-   * Additional includes for queries
-   */
-  additionalIncludes?: Record<string, unknown>;
+  defaultQuery?: Record<string, unknown>;
 
   /**
    * Fields that should be sent as FormData
@@ -340,20 +347,7 @@ export const createSimpleEndpoint = <T>() => {
   return <R extends SimpleEndpointRoutes>(
     config: CreateSimpleEndpointOptions<R>
   ): InferredEndpoint<T, R> => {
-    const {
-      basePath,
-      routes,
-      includeLogs = true,
-      additionalIncludes = {},
-      formDataFields,
-    } = config;
-
-    const baseQuery = {
-      include: {
-        ...(includeLogs ? logs.include : {}),
-        ...additionalIncludes,
-      },
-    };
+    const { basePath, routes, defaultQuery = {}, formDataFields } = config;
 
     const buildUrl = (action: string) => `${basePath}/${action}`;
 
@@ -362,7 +356,7 @@ export const createSimpleEndpoint = <T>() => {
     if (routes.index) {
       endpoint.index = async (filters?: QueryFilters): Promise<Pagination<T>> => {
         return handleRequest<Pagination<T>>("GET", buildUrl("index"), undefined, {
-          params: { ...filters, ...baseQuery },
+          params: { ...defaultQuery, ...filters },
         });
       };
     }
@@ -373,7 +367,7 @@ export const createSimpleEndpoint = <T>() => {
           "GET",
           buildUrl("show"),
           undefined,
-          { params: { id, ...baseQuery } },
+          { params: { id, ...defaultQuery } },
           { hideError: true }
         );
       };
@@ -389,7 +383,7 @@ export const createSimpleEndpoint = <T>() => {
           "POST",
           buildUrl("store"),
           prepared.body,
-          { ...prepared.config, params: { ...filters, ...baseQuery } },
+          { ...prepared.config, params: { ...defaultQuery, ...filters } },
           { showSuccess: true }
         );
       };
@@ -406,7 +400,7 @@ export const createSimpleEndpoint = <T>() => {
           "PUT",
           buildUrl("update"),
           prepared.body,
-          { ...prepared.config, params: { ...filters, ...baseQuery } },
+          { ...prepared.config, params: { ...defaultQuery, ...filters } },
           { showSuccess: true }
         );
       };
@@ -418,7 +412,7 @@ export const createSimpleEndpoint = <T>() => {
           "DELETE",
           buildUrl("destroy"),
           undefined,
-          { params: { id, ...filters, ...baseQuery } },
+          { params: { id, ...defaultQuery, ...filters } },
           { showSuccess: true }
         );
       };
@@ -434,7 +428,7 @@ export const createSimpleEndpoint = <T>() => {
           "PUT",
           buildUrl("many"),
           body,
-          { params: { ids, ...filters, ...baseQuery } },
+          { params: { ids, ...defaultQuery, ...filters } },
           { showSuccess: true }
         );
       };
@@ -443,7 +437,7 @@ export const createSimpleEndpoint = <T>() => {
     if (routes.trash) {
       endpoint.trash = async (filters?: QueryFilters): Promise<Pagination<T>> => {
         return handleRequest<Pagination<T>>("GET", buildUrl("trash"), undefined, {
-          params: { ...filters, ...baseQuery },
+          params: { ...defaultQuery, ...filters },
         });
       };
     }
@@ -454,7 +448,7 @@ export const createSimpleEndpoint = <T>() => {
           "PUT",
           buildUrl("restore"),
           undefined,
-          { params: { id, ...filters, ...baseQuery } },
+          { params: { id, ...defaultQuery, ...filters } },
           { showSuccess: true }
         );
       };

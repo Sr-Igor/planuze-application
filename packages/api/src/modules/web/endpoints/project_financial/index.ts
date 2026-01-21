@@ -1,6 +1,7 @@
 import type { project_financial } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const projectFinancialEndpoint = createSimpleEndpoint<project_financial>()({
   basePath: "/api/private/project_financial",
@@ -10,6 +11,13 @@ export const projectFinancialEndpoint = createSimpleEndpoint<project_financial>(
     update: "/api/private/project_financial/update",
     destroy: "/api/private/project_financial/destroy",
     many: "/api/private/project_financial/many",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      work_type: true,
+      project_version: true,
+    },
   },
 });
 

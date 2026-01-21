@@ -1,14 +1,26 @@
-import { useInfiniteQuery, useMutation, useQuery } from "@tanstack/react-query";
+import {
+  type InfiniteData,
+  useInfiniteQuery,
+  type UseInfiniteQueryResult,
+  useMutation,
+  type UseMutationResult,
+  useQuery,
+  type UseQueryResult,
+} from "@tanstack/react-query";
 
 import type { chat, Pagination } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
 import { chatEndpoint } from "../endpoints/chat";
 
+// =============================================================================
+// Types
+// =============================================================================
+
 export interface UseChatCallbacks {
   messages?: {
-    onSuccess?: (data: unknown) => void;
-    onError?: (error: unknown) => void;
+    onSuccess?: (data: { chat: string; new?: boolean }) => void;
+    onError?: (error: Error) => void;
   };
 }
 
@@ -20,18 +32,36 @@ export interface UseChatProps {
   callbacks?: UseChatCallbacks;
 }
 
+export interface UseChatReturn {
+  index: UseInfiniteQueryResult<InfiniteData<Pagination<chat>>, Error>;
+  show: UseQueryResult<chat, Error>;
+  messages: UseMutationResult<
+    { chat: string; new?: boolean },
+    Error,
+    { chat?: string; features?: string; question?: string }
+  >;
+  category: UseQueryResult<{ keys: string[] }, Error>;
+}
+
+// =============================================================================
+// Hook
+// =============================================================================
+
 export const useChat = ({
   id,
   callbacks,
   enabledIndex,
   enabledShow,
   enabledCategory,
-}: UseChatProps = {}) => {
+}: UseChatProps = {}): UseChatReturn => {
   const indexKey = cacheKeys.chat.index();
   const showKey = cacheKeys.chat.show(id);
   const categoryKey = cacheKeys.chat.category();
 
-  const index = useInfiniteQuery<Pagination<chat>>({
+  /**
+   * Index query with infinite pagination support
+   */
+  const index = useInfiniteQuery<Pagination<chat>, Error>({
     queryKey: indexKey,
     queryFn: ({ pageParam = 1 }) =>
       chatEndpoint.index({ page: String(pageParam), limit: "10" }),
@@ -41,14 +71,24 @@ export const useChat = ({
     enabled: !!enabledIndex,
   });
 
-  const show = useQuery<chat>({
+  /**
+   * Show query for a specific chat
+   */
+  const show = useQuery<chat, Error>({
     queryKey: showKey,
     queryFn: () => chatEndpoint.show({ id: id! }),
     enabled: !!enabledShow && !!id,
   });
 
-  const messages = useMutation({
-    mutationFn: (body: { chat?: string; features?: string; question?: string }) =>
+  /**
+   * Send message mutation
+   */
+  const messages = useMutation<
+    { chat: string; new?: boolean },
+    Error,
+    { chat?: string; features?: string; question?: string }
+  >({
+    mutationFn: (body) =>
       chatEndpoint.messages({
         chat: body.chat,
         features: body.features || "",
@@ -62,7 +102,10 @@ export const useChat = ({
     },
   });
 
-  const category = useQuery<{ keys: string[] }>({
+  /**
+   * Category query
+   */
+  const category = useQuery<{ keys: string[] }, Error>({
     queryKey: categoryKey,
     queryFn: () => chatEndpoint.category(),
     enabled: !!enabledCategory,

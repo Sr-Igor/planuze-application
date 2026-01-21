@@ -1,6 +1,7 @@
 import type { kanban_template_card_type } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const kanbanTemplateCardTypeEndpoint = createSimpleEndpoint<kanban_template_card_type>()({
   basePath: "/api/private/kanban_template_card_type",
@@ -12,6 +13,9 @@ export const kanbanTemplateCardTypeEndpoint = createSimpleEndpoint<kanban_templa
     many: "/api/private/kanban_template_card_type/many",
     trash: "/api/private/kanban_template_card_type/trash",
     restore: "/api/private/kanban_template_card_type/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

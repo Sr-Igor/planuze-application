@@ -1,6 +1,7 @@
 import type { project_kanban_objective_target } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const projectKanbanObjectiveTargetEndpoint =
   createSimpleEndpoint<project_kanban_objective_target>()({
@@ -11,6 +12,11 @@ export const projectKanbanObjectiveTargetEndpoint =
       update: "/api/private/project_kanban_objective_target/update",
       destroy: "/api/private/project_kanban_objective_target/destroy",
       many: "/api/private/project_kanban_objective_target/many",
+      trash: "/api/private/project_kanban_objective_target/trash",
+      restore: "/api/private/project_kanban_objective_target/restore",
+    },
+    defaultQuery: {
+      include: { logs },
     },
   });
 

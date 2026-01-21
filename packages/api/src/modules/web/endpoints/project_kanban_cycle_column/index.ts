@@ -1,6 +1,7 @@
 import type { project_kanban_cycle_column } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const projectKanbanCycleColumnEndpoint = createSimpleEndpoint<project_kanban_cycle_column>()(
   {
@@ -12,6 +13,9 @@ export const projectKanbanCycleColumnEndpoint = createSimpleEndpoint<project_kan
       many: "/api/private/project_kanban_cycle_column/many",
       trash: "/api/private/project_kanban_cycle_column/trash",
       restore: "/api/private/project_kanban_cycle_column/restore",
+    },
+    defaultQuery: {
+      include: { logs },
     },
   }
 );

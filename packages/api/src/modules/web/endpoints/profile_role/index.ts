@@ -1,6 +1,7 @@
 import type { profile_role } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const profileRoleEndpoint = createSimpleEndpoint<profile_role>()({
   basePath: "/api/private/profile_role",
@@ -10,6 +11,13 @@ export const profileRoleEndpoint = createSimpleEndpoint<profile_role>()({
     destroy: "/api/private/profile_role/destroy",
     trash: "/api/private/profile_role/trash",
     restore: "/api/private/profile_role/restore",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      role: true,
+      cost_center: true,
+    },
   },
 });
 

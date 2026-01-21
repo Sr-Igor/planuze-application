@@ -1,6 +1,7 @@
 import type { project_config } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const projectConfigEndpoint = createSimpleEndpoint<project_config>()({
   basePath: "/api/private/project_config",
@@ -11,6 +12,12 @@ export const projectConfigEndpoint = createSimpleEndpoint<project_config>()({
     update: "/api/private/project_config/update",
     destroy: "/api/private/project_config/destroy",
     many: "/api/private/project_config/many",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      project_version: true,
+    },
   },
 });
 

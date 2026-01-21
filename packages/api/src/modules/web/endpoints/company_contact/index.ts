@@ -1,6 +1,7 @@
 import type { company_contact } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const companyContactEndpoint = createSimpleEndpoint<company_contact>()({
   basePath: "/api/private/company_contact",
@@ -10,6 +11,9 @@ export const companyContactEndpoint = createSimpleEndpoint<company_contact>()({
     destroy: "/api/private/company_contact/destroy",
     trash: "/api/private/company_contact/trash",
     restore: "/api/private/company_contact/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

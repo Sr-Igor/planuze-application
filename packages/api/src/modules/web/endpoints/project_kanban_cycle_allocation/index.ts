@@ -40,7 +40,7 @@ export const projectKanbanCycleAllocationEndpoint =
       trash: "/api/private/project_kanban_cycle_allocation/trash",
       restore: "/api/private/project_kanban_cycle_allocation/restore",
     },
-    additionalIncludes: projectKanbanCycleAllocationQuery.include,
+    defaultQuery: projectKanbanCycleAllocationQuery,
   });
 
 export type ProjectKanbanCycleAllocation = project_kanban_cycle_allocation;

@@ -1,6 +1,7 @@
 import type { work_type } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const workTypeEndpoint = createSimpleEndpoint<work_type>()({
   basePath: "/api/private/work_type",
@@ -13,6 +14,9 @@ export const workTypeEndpoint = createSimpleEndpoint<work_type>()({
     many: "/api/private/work_type/many",
     trash: "/api/private/work_type/trash",
     restore: "/api/private/work_type/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

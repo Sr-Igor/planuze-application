@@ -1,6 +1,7 @@
 import type { profile_document } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const profileDocumentEndpoint = createSimpleEndpoint<profile_document>()({
   basePath: "/api/private/profile_document",
@@ -10,6 +11,9 @@ export const profileDocumentEndpoint = createSimpleEndpoint<profile_document>()(
     destroy: "/api/private/profile_document/destroy",
     trash: "/api/private/profile_document/trash",
     restore: "/api/private/profile_document/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

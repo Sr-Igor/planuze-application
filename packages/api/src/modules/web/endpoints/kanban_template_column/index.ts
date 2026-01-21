@@ -1,6 +1,7 @@
 import type { kanban_template_column } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const kanbanTemplateColumnEndpoint = createSimpleEndpoint<kanban_template_column>()({
   basePath: "/api/private/kanban_template_column",
@@ -9,6 +10,9 @@ export const kanbanTemplateColumnEndpoint = createSimpleEndpoint<kanban_template
     update: "/api/private/kanban_template_column/update",
     destroy: "/api/private/kanban_template_column/destroy",
     many: "/api/private/kanban_template_column/many",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 

@@ -1,6 +1,7 @@
 import type { integration } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const integrationEndpoint = createSimpleEndpoint<integration>()({
   basePath: "/api/private/integration",
@@ -13,6 +14,17 @@ export const integrationEndpoint = createSimpleEndpoint<integration>()({
     many: "/api/private/integration/many",
     trash: "/api/private/integration/trash",
     restore: "/api/private/integration/restore",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      integration_actions: {
+        include: {
+          action: true,
+          feature: true,
+        },
+      },
+    },
   },
 });
 

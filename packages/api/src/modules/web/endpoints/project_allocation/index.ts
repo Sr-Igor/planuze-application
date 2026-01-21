@@ -1,6 +1,7 @@
 import type { project_allocation } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const projectAllocationEndpoint = createSimpleEndpoint<project_allocation>()({
   basePath: "/api/private/project_allocation",
@@ -10,6 +11,23 @@ export const projectAllocationEndpoint = createSimpleEndpoint<project_allocation
     update: "/api/private/project_allocation/update",
     destroy: "/api/private/project_allocation/destroy",
     many: "/api/private/project_allocation/many",
+  },
+  defaultQuery: {
+    include: {
+      logs,
+      project_version: true,
+      profile: {
+        include: {
+          user: {
+            select: {
+              id: true,
+              name: true,
+              avatar: true,
+            },
+          },
+        },
+      },
+    },
   },
 });
 

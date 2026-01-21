@@ -1,6 +1,7 @@
 import type { profile_bank_account } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const profileBankAccountEndpoint = createSimpleEndpoint<profile_bank_account>()({
   basePath: "/api/private/profile_bank_account",
@@ -11,6 +12,9 @@ export const profileBankAccountEndpoint = createSimpleEndpoint<profile_bank_acco
     destroy: "/api/private/profile_bank_account/destroy",
     trash: "/api/private/profile_bank_account/trash",
     restore: "/api/private/profile_bank_account/restore",
+  },
+  defaultQuery: {
+    include: { logs },
   },
 });
 
