@@ -2,15 +2,18 @@
 //Types
 import { useMemo } from "react";
 
-import type { AppDispatch, RootState } from "../store/index";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
-import { subscription } from "@repo/types";
 import { getModule, getProfile, getTwoAuth } from "@repo/cookies";
+import { subscription } from "@repo/types";
+
+import type { AppDispatch, RootState } from "../store/index";
 
 export type { AppDispatch, RootState } from "../store/index";
 export const useAppDispatch: () => AppDispatch = useDispatch;
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+export const useAppSelector: TypedUseSelectorHook<RootState> =
+  useSelector as TypedUseSelectorHook<RootState>;
 
 export const useAuth = () => {
   // Usando selectors separados para evitar criar objetos novos

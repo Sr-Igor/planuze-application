@@ -14,6 +14,8 @@ export interface ApiError {
   error: string;
   code?: string;
   status: number;
+  method?: string;
+  connectionError?: boolean;
   details?: Record<string, unknown>;
 }
 

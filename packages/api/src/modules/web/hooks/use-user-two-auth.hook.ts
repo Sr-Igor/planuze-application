@@ -2,7 +2,13 @@ import { useMutation } from "@tanstack/react-query";
 
 import type { user_two_auth } from "@repo/types";
 
-import { userTwoAuthEndpoint } from "../endpoints/user_two_auth";
+import {
+  userTwoAuthEndpoint,
+  type UserTwoAuthStoreBody,
+  type UserTwoAuthUpdateBody,
+  type UserTwoAuthDestroyBody,
+  type UserTwoAuthConfirmBody,
+} from "../endpoints/user_two_auth";
 
 export interface UseUserTwoAuthCallbacks {
   confirm?: {
@@ -33,16 +39,17 @@ export interface UseUserTwoAuthProps {
 }
 
 export const useUserTwoAuth = ({ callbacks, id }: UseUserTwoAuthProps = {}) => {
-  const store = useMutation<user_two_auth[]>({
-    mutationFn: (body: unknown) => userTwoAuthEndpoint.store(body) as unknown as Promise<user_two_auth[]>,
+  const store = useMutation<user_two_auth[], Error, UserTwoAuthStoreBody>({
+    mutationFn: (body) =>
+      userTwoAuthEndpoint.store(body) as unknown as Promise<user_two_auth[]>,
     onSuccess: (e) => {
       callbacks?.store?.onSuccess?.(e);
     },
     onError: callbacks?.store?.onError,
   });
 
-  const update = useMutation<user_two_auth[]>({
-    mutationFn: (body: unknown) =>
+  const update = useMutation<user_two_auth[], Error, UserTwoAuthUpdateBody>({
+    mutationFn: (body) =>
       userTwoAuthEndpoint.update(id!, body) as unknown as Promise<user_two_auth[]>,
     onSuccess: (e) => {
       callbacks?.update?.onSuccess?.(e);
@@ -50,8 +57,8 @@ export const useUserTwoAuth = ({ callbacks, id }: UseUserTwoAuthProps = {}) => {
     onError: callbacks?.update?.onError,
   });
 
-  const destroy = useMutation<user_two_auth[]>({
-    mutationFn: (body: unknown) =>
+  const destroy = useMutation<user_two_auth[], Error, UserTwoAuthDestroyBody>({
+    mutationFn: (body) =>
       userTwoAuthEndpoint.destroy(id!, body) as unknown as Promise<user_two_auth[]>,
     onSuccess: (e) => {
       callbacks?.destroy?.onSuccess?.(e);
@@ -59,18 +66,18 @@ export const useUserTwoAuth = ({ callbacks, id }: UseUserTwoAuthProps = {}) => {
     onError: callbacks?.destroy?.onError,
   });
 
-  const resend = useMutation({
-    mutationFn: (internalId?: string) => userTwoAuthEndpoint.resend(internalId || id!),
+  const resend = useMutation<void, Error, string | undefined>({
+    mutationFn: (internalId) => userTwoAuthEndpoint.resend(internalId || id!),
     onSuccess: (e) => {
-      callbacks?.resend?.onSuccess?.(e as user_two_auth[]);
+      callbacks?.resend?.onSuccess?.(e as unknown as user_two_auth[]);
     },
     onError: callbacks?.resend?.onError,
   });
 
-  const confirm = useMutation({
-    mutationFn: (body: unknown) => userTwoAuthEndpoint.confirm(id!, body),
+  const confirm = useMutation<void, Error, UserTwoAuthConfirmBody>({
+    mutationFn: (body) => userTwoAuthEndpoint.confirm(id!, body),
     onSuccess: (e) => {
-      callbacks?.confirm?.onSuccess?.(e as user_two_auth[]);
+      callbacks?.confirm?.onSuccess?.(e as unknown as user_two_auth[]);
     },
     onError: callbacks?.confirm?.onError,
   });

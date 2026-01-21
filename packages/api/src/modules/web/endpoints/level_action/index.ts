@@ -1,6 +1,20 @@
 import type { level_action } from "@repo/types";
 
-import { handleRequest } from "../../../../infrastructure/http/axios-client";
+import { typedRequest } from "../../../../infrastructure/http/axios-client";
+
+// =============================================================================
+// Level Action Types
+// =============================================================================
+
+/**
+ * Body type for level action update
+ * Note: The endpoint type says 'actions: string' but the frontend sends Record<string, string[]>
+ * which gets serialized by the backend. We use a custom type to match actual usage.
+ */
+export type LevelActionUpdateBody = {
+  actions: Record<string, string[]> | string;
+  module_id: string;
+};
 
 /**
  * Level Action endpoints
@@ -9,14 +23,13 @@ export const levelActionEndpoint = {
   /**
    * Update level action
    */
-  update: async (id: string, body: any) => {
-    return handleRequest<level_action>(
-      "PUT",
-      `/api/private/level_action/update`,
-      body,
+  update: (id: string, body: LevelActionUpdateBody) =>
+    typedRequest<level_action>()(
       {
-        params: {
-          id,
+        route: "/api/private/level_action/update",
+        params: { id },
+        body: body as any,
+        query: {
           include: {
             action: true,
             feature: true,
@@ -24,8 +37,7 @@ export const levelActionEndpoint = {
         },
       },
       { showSuccess: true }
-    );
-  },
+    ),
 };
 
 export type LevelAction = level_action;

@@ -1,6 +1,20 @@
 import type { notification_subscription } from "@repo/types";
 
-import { handleRequest } from "../../../../infrastructure/http/axios-client";
+import { typedRequest } from "../../../../infrastructure/http/axios-client";
+
+// =============================================================================
+// Notification Subscription Types
+// =============================================================================
+
+/**
+ * Body type for notification subscription store
+ * Note: The endpoint type says 'subscription: string' but the frontend sends PushSubscription object
+ * which gets serialized. We use a union type to match actual usage.
+ */
+export type NotificationSubscriptionStoreBody = {
+  subscription: PushSubscription | string;
+  force?: boolean | string;
+};
 
 /**
  * Notification Subscription (Push Notifications) endpoints
@@ -9,20 +23,19 @@ export const notificationSubscriptionEndpoint = {
   /**
    * Subscribe to push notifications
    */
-  store: async (body: any) => {
-    return handleRequest<notification_subscription>(
-      "POST",
-      "/api/private/notification_subscription/store",
-      body
-    );
-  },
+  store: (body: NotificationSubscriptionStoreBody) =>
+    typedRequest<notification_subscription>()({
+      route: "/api/private/notification_subscription/store",
+      body: body as any,
+    }),
 
   /**
    * Get VAPID public key for push notifications
    */
-  key: async () => {
-    return handleRequest<{ key: string }>("GET", "/api/private/notification_subscription/key");
-  },
+  key: () =>
+    typedRequest<{ key: string }>()({
+      route: "/api/private/notification_subscription/key",
+    }),
 };
 
 export type NotificationSubscription = notification_subscription;

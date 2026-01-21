@@ -1,6 +1,9 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { userTwoAuthCodeEndpoint } from "../endpoints/user_two_auth_code";
+import {
+  type UserTwoAuthCodeConfirmBody,
+  userTwoAuthCodeEndpoint,
+} from "../endpoints/user_two_auth_code";
 
 export interface UseUserTwoAuthCodeCallbacks {
   confirm?: {
@@ -28,9 +31,10 @@ export const useUserTwoAuthCode = ({ callbacks, id }: UseUserTwoAuthCodeProps = 
   });
 
   const confirm = useMutation({
-    mutationFn: (body: unknown) => userTwoAuthCodeEndpoint.confirm(id!, body),
+    mutationFn: (body: UserTwoAuthCodeConfirmBody) =>
+      userTwoAuthCodeEndpoint.confirm(id!, body) as unknown as Promise<boolean>,
     onSuccess: (e) => {
-      callbacks?.confirm?.onSuccess?.(e as boolean);
+      callbacks?.confirm?.onSuccess?.(e);
     },
     onError: callbacks?.confirm?.onError,
   });

@@ -1,6 +1,9 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { notificationSubscriptionEndpoint } from "../endpoints/notification_subscription";
+import {
+  notificationSubscriptionEndpoint,
+  type NotificationSubscriptionStoreBody,
+} from "../endpoints/notification_subscription";
 
 export interface UseNotificationSubscriptionCallbacks {
   key?: {
@@ -21,7 +24,8 @@ export const useNotificationSubscription = ({
   callbacks,
 }: UseNotificationSubscriptionProps = {}) => {
   const store = useMutation({
-    mutationFn: (body: unknown) => notificationSubscriptionEndpoint.store(body),
+    mutationFn: (body: NotificationSubscriptionStoreBody) =>
+      notificationSubscriptionEndpoint.store(body),
     onSuccess: callbacks?.store?.onSuccess,
     onError: callbacks?.store?.onError,
   });

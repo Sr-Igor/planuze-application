@@ -4,7 +4,10 @@ import type { project_kanban_cycle_card, project_kanban_cycle_card_read } from "
 
 import { useCache } from "../../../infrastructure/cache/cache.service";
 import { cacheKeys } from "../../../infrastructure/cache/keys";
-import { projectKanbanCycleCardReadEndpoint } from "../endpoints/project_kanban_cycle_card_read";
+import {
+  projectKanbanCycleCardReadEndpoint,
+  type ProjectKanbanCycleCardReadStoreBody,
+} from "../endpoints/project_kanban_cycle_card_read";
 
 export interface UseProjectKanbanCycleCardReadCallbacks {
   store?: {
@@ -26,7 +29,8 @@ export const useProjectKanbanCycleCardRead = ({
   const cache = useCache();
 
   const store = useMutation({
-    mutationFn: (body: unknown) => projectKanbanCycleCardReadEndpoint.store(body),
+    mutationFn: (body: ProjectKanbanCycleCardReadStoreBody) =>
+      projectKanbanCycleCardReadEndpoint.store(body),
     onSuccess: (e) => {
       try {
         cache.setQueryData(showKey, (old: project_kanban_cycle_card | undefined) => {

@@ -4,7 +4,10 @@ import type { integration, integration_action } from "@repo/types";
 
 import { useCache } from "../../../infrastructure/cache/cache.service";
 import { cacheKeys } from "../../../infrastructure/cache/keys";
-import { integrationActionEndpoint } from "../endpoints/integration_action";
+import {
+  integrationActionEndpoint,
+  type IntegrationActionUpdateBody,
+} from "../endpoints/integration_action";
 
 export interface UseIntegrationActionCallbacks {
   update?: {
@@ -23,7 +26,7 @@ export const useIntegrationAction = ({ callbacks, id }: UseIntegrationActionProp
   const cache = useCache();
 
   const update = useMutation({
-    mutationFn: (body: { module_id?: string; [key: string]: unknown }) =>
+    mutationFn: (body: IntegrationActionUpdateBody) =>
       integrationActionEndpoint.update(id!, body),
     onSuccess: (e, variables) => {
       const moduleId = variables?.module_id;

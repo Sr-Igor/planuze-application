@@ -1,6 +1,15 @@
-import type { user_two_auth } from "@repo/types";
+import type { EndpointBody, user_two_auth } from "@repo/types";
 
-import { handleRequest } from "../../../../infrastructure/http/axios-client";
+import { typedRequest } from "../../../../infrastructure/http/axios-client";
+
+// =============================================================================
+// User Two-Factor Authentication Types
+// =============================================================================
+
+export type UserTwoAuthStoreBody = EndpointBody<"/api/private/user_two_auth/store">;
+export type UserTwoAuthUpdateBody = EndpointBody<"/api/private/user_two_auth/update">;
+export type UserTwoAuthDestroyBody = EndpointBody<"/api/private/user_two_auth/destroy">;
+export type UserTwoAuthConfirmBody = EndpointBody<"/api/private/user_two_auth/confirm">;
 
 /**
  * User Two-Factor Authentication endpoints
@@ -9,69 +18,65 @@ export const userTwoAuthEndpoint = {
   /**
    * Enable 2FA
    */
-  store: async (body: any) => {
-    return handleRequest<user_two_auth>(
-      "POST",
-      "/api/private/user_two_auth/store",
-      body,
-      undefined,
+  store: (body: UserTwoAuthStoreBody) =>
+    typedRequest<user_two_auth>()(
       {
-        showSuccess: true,
-      }
-    );
-  },
+        route: "/api/private/user_two_auth/store",
+        body,
+      },
+      { showSuccess: true }
+    ),
 
   /**
    * Update 2FA settings
    */
-  update: async (id: string, body: any) => {
-    return handleRequest<user_two_auth>(
-      "PUT",
-      `/api/private/user_two_auth/update`,
-      body,
-      { params: { id } },
+  update: (id: string, body: UserTwoAuthUpdateBody) =>
+    typedRequest<user_two_auth>()(
+      {
+        route: "/api/private/user_two_auth/update",
+        params: { id },
+        body,
+      },
       { showSuccess: true }
-    );
-  },
+    ),
 
   /**
    * Disable 2FA
    */
-  destroy: async (id: string, body: any) => {
-    return handleRequest<user_two_auth>(
-      "DELETE",
-      `/api/private/user_two_auth/destroy`,
-      body,
-      { params: { id } },
+  destroy: (id: string, body: UserTwoAuthDestroyBody) =>
+    typedRequest<user_two_auth>()(
+      {
+        route: "/api/private/user_two_auth/destroy",
+        params: { id },
+        body,
+      },
       { showSuccess: true }
-    );
-  },
+    ),
 
   /**
    * Resend 2FA code
    */
-  resend: async (id: string) => {
-    return handleRequest(
-      "POST",
-      `/api/private/user_two_auth/resend`,
-      undefined,
-      { params: { id } },
+  resend: (id: string) =>
+    typedRequest<void>()(
+      {
+        route: "/api/private/user_two_auth/resend",
+        params: { id },
+      },
       { showSuccess: true }
-    );
-  },
+    ),
 
   /**
    * Confirm 2FA setup
    */
-  confirm: async (id: string, body: any) => {
-    return handleRequest(
-      "POST",
-      `/api/private/user_two_auth/confirm`,
-      body,
-      { params: { id } },
+  confirm: (id: string, body: UserTwoAuthConfirmBody) =>
+    typedRequest<void>()(
+      {
+        route: "/api/private/user_two_auth/confirm",
+        params: { id },
+        body,
+      },
       { showSuccess: true }
-    );
-  },
+    ),
 };
 
 export type UserTwoAuth = user_two_auth;

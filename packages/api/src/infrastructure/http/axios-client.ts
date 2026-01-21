@@ -161,6 +161,20 @@ export const axiosHttpClient: IHttpClient = {
 type TypedRequestArgs<R extends Routes> = Parameters<typeof callEndpoint<R>>[0];
 
 /**
+ * Extended options for typedRequest including axios config
+ */
+export interface TypedRequestOptions extends RequestOptions {
+  /**
+   * Custom axios config (headers, etc.)
+   */
+  axiosConfig?: AxiosRequestConfig;
+  /**
+   * Transform body before sending (e.g., for FormData)
+   */
+  transformBody?: (body: unknown) => unknown;
+}
+
+/**
  * Executes a typed HTTP request using callEndpoint for route validation.
  *
  * This function provides compile-time type safety for API routes, ensuring that:
@@ -188,15 +202,39 @@ type TypedRequestArgs<R extends Routes> = Parameters<typeof callEndpoint<R>>[0];
  *   route: "/api/private/chat/show",
  *   params: { id: "123" }
  * });
+ *
+ * // Request with FormData
+ * const user = await typedRequest<UserType>()({
+ *   route: "/api/private/user/update",
+ *   params: { id: "123" },
+ *   body: formData
+ * }, {
+ *   axiosConfig: { headers: { "Content-Type": "multipart/form-data" } },
+ *   transformBody: (body) => setFormData(body, ["avatar"])
+ * });
  * ```
  */
 export const typedRequest = <T>() => {
   return async <R extends Routes>(
     args: TypedRequestArgs<R>,
-    options?: RequestOptions
+    options?: TypedRequestOptions
   ): Promise<T> => {
     const result = callEndpoint(args);
-    const body = "body" in result ? result.body : undefined;
-    return handleRequest<T>(result.method, result.url, body, undefined, options);
+    let body = "body" in result ? result.body : undefined;
+
+    // Apply body transformation if provided (e.g., for FormData)
+    if (body && options?.transformBody) {
+      body = options.transformBody(body);
+    }
+
+    const { axiosConfig, transformBody, ...requestOptions } = options ?? {};
+
+    return handleRequest<T>(
+      result.method,
+      result.url,
+      body,
+      axiosConfig,
+      requestOptions
+    );
   };
 };

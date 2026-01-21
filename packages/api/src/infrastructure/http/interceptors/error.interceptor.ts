@@ -41,6 +41,9 @@ export const handleResponseError = (
   const status = response?.status ?? 0;
   const responseData = response?.data;
 
+  // Extract method from error config if not provided in options
+  const requestMethod = method || error.config?.method?.toUpperCase() || "GET";
+
   // 401 - Unauthorized
   if (status === 401) {
     const { out } = useSignOut(true);
@@ -49,6 +52,7 @@ export const handleResponseError = (
       error: "Unauthorized",
       code: ResponseCodes.UNAUTHORIZED,
       status: 401,
+      method: requestMethod,
     });
   }
 
@@ -61,13 +65,14 @@ export const handleResponseError = (
       error: "Two-factor authentication required",
       code: ResponseCodes.TWO_AUTH_REQUIRED,
       status: 422,
+      method: requestMethod,
     });
   }
 
   const errorMessage = responseData?.error || GENERIC_ERROR;
   const isGenericError = errorMessage === GENERIC_ERROR;
   const isInternalError = errorMessage === INTERNAL_SERVER_ERROR;
-  const isGetMethod = method === "GET";
+  const isGetMethod = requestMethod === "GET";
 
   // Show error toast
   const shouldShowError = (!isGetMethod && !isGenericError && !hideError) || showError;
@@ -83,6 +88,8 @@ export const handleResponseError = (
         responseData?.code ??
         (isGenericError ? ResponseCodes.CONNECTION_ERROR : ResponseCodes.INTERNAL_SERVER_ERROR),
       status: status || 400,
+      method: requestMethod,
+      connectionError: isGenericError,
     },
     isInternalError
   );

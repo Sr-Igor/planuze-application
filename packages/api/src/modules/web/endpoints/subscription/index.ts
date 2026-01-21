@@ -1,9 +1,10 @@
 import type { Pagination, subscription } from "@repo/types";
 
-import { handleRequest } from "../../../../infrastructure/http/axios-client";
+import { typedRequest } from "../../../../infrastructure/http/axios-client";
 
 /**
  * Default query for subscription with full includes
+ * Note: Complex nested includes require explicit casting due to Prisma type constraints
  */
 const subscriptionQuery = {
   include: {
@@ -25,7 +26,7 @@ const subscriptionQuery = {
       include: {
         company_invoices: {
           orderBy: {
-            createdAt: "desc",
+            createdAt: "desc" as const,
           },
         },
         subscription_changes: {
@@ -34,7 +35,7 @@ const subscriptionQuery = {
             from_plan: true,
           },
           orderBy: {
-            createdAt: "desc",
+            createdAt: "desc" as const,
           },
         },
       },
@@ -51,34 +52,33 @@ export const subscriptionEndpoint = {
   /**
    * List subscriptions
    */
-  index: async (): Promise<Pagination<subscription>> => {
-    return handleRequest<Pagination<subscription>>(
-      "GET",
-      "/api/private/subscription/index",
-      undefined,
-      {
-        params: subscriptionQuery,
-      }
-    );
-  },
+  index: () =>
+    typedRequest<Pagination<subscription>>()({
+      route: "/api/private/subscription/index",
+      query: subscriptionQuery as any,
+    }),
 
   /**
    * Get current subscription
+   * Note: id is optional - if not provided, returns current user's subscription
    */
-  show: async (): Promise<subscription> => {
-    return handleRequest<subscription>("GET", `/api/private/subscription/show`, undefined, {
-      params: { id: "" },
-    });
-  },
+  show: () =>
+    typedRequest<subscription>()(
+      {
+        route: "/api/private/subscription/show",
+        params: { id: "" },
+      },
+      { hideError: true }
+    ),
 
   /**
    * Update subscription to a new price
    */
-  update: async (priceId: string): Promise<{ url: string }> => {
-    return handleRequest<{ url: string }>("PUT", `/api/private/subscription/update`, undefined, {
+  update: (priceId: string) =>
+    typedRequest<{ url: string }>()({
+      route: "/api/private/subscription/update",
       params: { price_id: priceId },
-    });
-  },
+    }),
 };
 
 export type Subscription = subscription;

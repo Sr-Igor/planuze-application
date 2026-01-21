@@ -130,3 +130,5 @@ export * from "./shared/services";
 // - '@repo/api-new/manager' for manager app endpoints
 // - '@repo/api-new/shared' for shared endpoints
 // =============================================================================
+
+export * as reactQuery from "@tanstack/react-query";

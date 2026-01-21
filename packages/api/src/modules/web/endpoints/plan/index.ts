@@ -1,6 +1,6 @@
 import type { Pagination, plan, Prisma } from "@repo/types";
 
-import { handleRequest } from "../../../../infrastructure/http/axios-client";
+import { typedRequest } from "../../../../infrastructure/http/axios-client";
 
 /**
  * Default query for plans with features
@@ -26,20 +26,20 @@ export const planEndpoint = {
   /**
    * List plans (public)
    */
-  indexPublic: async () => {
-    return handleRequest<Pagination<plan>>("GET", "/api/public/plan/index", undefined, {
-      params: planQuery,
-    });
-  },
+  indexPublic: () =>
+    typedRequest<Pagination<plan>>()({
+      route: "/api/public/plan/index",
+      query: planQuery,
+    }),
 
   /**
    * List plans (private/authenticated)
    */
-  indexPrivate: async () => {
-    return handleRequest<Pagination<plan>>("GET", "/api/private/plan/index", undefined, {
-      params: planQuery,
-    });
-  },
+  indexPrivate: () =>
+    typedRequest<Pagination<plan>>()({
+      route: "/api/private/plan/index",
+      query: planQuery,
+    }),
 };
 
 export type Plan = plan;

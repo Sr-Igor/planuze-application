@@ -1,7 +1,14 @@
-import type { user } from "@repo/types";
+import type { EndpointBody, user } from "@repo/types";
 
 import { setFormData } from "../../../../application/services/form-data.service";
-import { handleRequest } from "../../../../infrastructure/http/axios-client";
+import { typedRequest } from "../../../../infrastructure/http/axios-client";
+
+// =============================================================================
+// User Types
+// =============================================================================
+
+export type UserStoreBody = EndpointBody<"/api/public/user/store">;
+export type UserUpdateBody = EndpointBody<"/api/private/user/update">;
 
 /**
  * User endpoints
@@ -10,27 +17,32 @@ export const userEndpoint = {
   /**
    * Register a new user (public)
    */
-  store: async (body: any) => {
-    return handleRequest<user>("POST", "/api/public/user/store", body);
-  },
+  store: (body: UserStoreBody) =>
+    typedRequest<user>()({
+      route: "/api/public/user/store",
+      body,
+    }),
 
   /**
    * Update user profile (with avatar upload)
    */
-  update: async (id: string, body: any) => {
-    return handleRequest<user>(
-      "PUT",
-      `/api/private/user/update`,
-      setFormData(body, ["avatar"]),
+  update: (id: string, body: UserUpdateBody) =>
+    typedRequest<user>()(
       {
+        route: "/api/private/user/update",
         params: { id },
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+        body,
       },
-      { showSuccess: true }
-    );
-  },
+      {
+        showSuccess: true,
+        axiosConfig: {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        },
+        transformBody: (b) => setFormData(b as Record<string, unknown>, ["avatar"]),
+      }
+    ),
 };
 
 export type User = user;

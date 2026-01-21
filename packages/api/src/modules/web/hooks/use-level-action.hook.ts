@@ -4,7 +4,7 @@ import type { level, level_action } from "@repo/types";
 
 import { useCache } from "../../../infrastructure/cache/cache.service";
 import { cacheKeys } from "../../../infrastructure/cache/keys";
-import { levelActionEndpoint } from "../endpoints/level_action";
+import { levelActionEndpoint, type LevelActionUpdateBody } from "../endpoints/level_action";
 
 export interface UseLevelActionCallbacks {
   update?: {
@@ -23,7 +23,7 @@ export const useLevelAction = ({ callbacks, id }: UseLevelActionProps = {}) => {
   const cache = useCache();
 
   const update = useMutation({
-    mutationFn: (body: { module_id?: string; [key: string]: unknown }) =>
+    mutationFn: (body: LevelActionUpdateBody) =>
       levelActionEndpoint.update(id!, body),
     onSuccess: (e, variables) => {
       const moduleId = variables?.module_id;
