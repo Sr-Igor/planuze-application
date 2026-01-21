@@ -1,12 +1,11 @@
 import { useLocale } from "next-intl";
 
+import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { subscription, subscription_plan } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Badge, CardDescription, CardTitle, Skeleton } from "@repo/ui";
-import { Icon } from "@repo/ui";
+import { Badge, CardDescription, CardTitle, Icon, Skeleton } from "@repo/ui";
+import { formatCurrency } from "@repo/utils/currency";
 
 import { useUtilsPlan } from "@/templates/plans/hooks/use-utils-plan";
-import { formatCurrency } from "@repo/utils/currency";
 
 export interface IHeaderProps {
   isLoading: boolean;

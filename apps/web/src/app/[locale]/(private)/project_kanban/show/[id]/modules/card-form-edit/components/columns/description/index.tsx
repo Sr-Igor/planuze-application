@@ -2,11 +2,11 @@
 
 import { UseFormReturn } from "react-hook-form";
 
-import { project_kanban_cycle_card } from "@repo/types";
+import { EditorController } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { project_kanban_cycle_card } from "@repo/types";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { EditorController } from "@repo/form";
 import { useAccess } from "@/hooks/access";
 
 import { Collapsible } from "../../collapsible";
@@ -33,8 +33,8 @@ export const Description = ({ hook, item }: IDescriptionProps) => {
           name="description"
           disabled={!perm.update}
           control={hook.control}
-          field="editor"
           skipHtmlFor={true}
+          field="editor"
           placeholder={
             !perm.update ? t("no_value.description") : t("card-form-edit.placeholder.description")
           }
@@ -62,8 +62,8 @@ export const Description = ({ hook, item }: IDescriptionProps) => {
           name="accept_description"
           disabled={!perm.update}
           control={hook.control}
-          field="editor"
           skipHtmlFor={true}
+          field="editor"
           placeholder={
             !perm.update
               ? t("no_value.accept_description")

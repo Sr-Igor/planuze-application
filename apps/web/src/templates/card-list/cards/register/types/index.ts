@@ -1,7 +1,6 @@
 import { DefaultValues } from "react-hook-form";
 
-import { IValidatorRequest } from "@repo/form";
-import { Field, IUseFormListReturn } from "@repo/form";
+import { Field, IUseFormListReturn, IValidatorRequest } from "@repo/form";
 import { ILogsComparison } from "@repo/ui";
 
 import { ICardProps } from "@/templates/card-list/types";

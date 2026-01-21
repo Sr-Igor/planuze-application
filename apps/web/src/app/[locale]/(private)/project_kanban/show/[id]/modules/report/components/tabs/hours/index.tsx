@@ -2,9 +2,8 @@
 
 import * as React from "react";
 
+import { IHoursAnalysis } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-
-import { IHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
 
 import { CardItem } from "../../card";
 import { CyclesAnalysis } from "./cycles-analysis";

@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-import { CopyIcon, Filter, X } from "lucide-react";
+import { CopyIcon, Filter } from "lucide-react";
 import { toast } from "sonner";
 
+import { SimpleSelect } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import {
+  AppTooltip,
   Button,
   Dialog,
   DialogContent,
@@ -17,9 +19,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "@repo/ui";
-import { AppTooltip } from "@repo/ui";
-
-import { SimpleSelect } from "@repo/form";
 
 import {
   CardType,

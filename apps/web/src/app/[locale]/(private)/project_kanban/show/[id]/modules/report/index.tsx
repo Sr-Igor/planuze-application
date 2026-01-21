@@ -2,10 +2,9 @@
 
 import * as React from "react";
 
+import { projectKanbanReportPlaceholder } from "@repo/api/placeholders";
 import { useLang } from "@repo/language/hooks";
 import { ScrollArea } from "@repo/ui";
-
-import { placeholder } from "@repo/api/web/callers/project_kanban_report/placeholder";
 
 import { useKanbanShow } from "../../context";
 import { Graphs } from "./components/tabs/graphs";
@@ -21,7 +20,7 @@ export const Report = () => {
 
   const isLoading = loadings.report.index;
 
-  const report = callers.report.onIndex?.() || placeholder;
+  const report = callers.report.onIndex?.() || projectKanbanReportPlaceholder;
 
   return (
     <ScrollArea className="mt-4 h-full">

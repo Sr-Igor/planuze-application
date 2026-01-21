@@ -4,8 +4,7 @@ import { createId } from "@paralleldrive/cuid2";
 import { ClockArrowDown, PackageOpen, Plus, Trash2 } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, ScrollArea } from "@repo/ui";
-import { AppDialog, Trash } from "@repo/ui";
+import { AppDialog, Button, ScrollArea, Trash } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 
@@ -38,7 +37,7 @@ export const CardListTemplate = <T extends { id: string }, R extends { id: strin
   useEffect(() => {
     setItems((prev) => {
       const newItems = [...prev];
-      const newData = (data as any)?.[dataAccess] as R[];
+      const newData = data?.[dataAccess] as R[];
 
       if (!newData) return prev;
 

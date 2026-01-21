@@ -6,15 +6,15 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { LogInIcon } from "lucide-react";
 
+import { useAuth } from "@repo/api/web";
+import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
-
-import { useAuth } from "@repo/api/web/callers/auth";
-import { useUserSet } from "@/hooks/user-set";
 import { fingerprint } from "@repo/utils/fingerprint";
-import { hookValidate } from "@repo/form";
 
-import { useForm, FormType } from "./use-form";
+import { useUserSet } from "@/hooks/user-set";
+
+import { FormType, useForm } from "./use-form";
 
 export const AuthLogic = () => {
   const t = useLang();
@@ -36,12 +36,9 @@ export const AuthLogic = () => {
   const { Form, formProps, hook, isDirty } = useForm();
 
   const handleSubmit = () => {
-    hookValidate(
-      [{ hook }],
-      (form: FormType) => {
-        login.mutate(form);
-      },
-    );
+    hookValidate([{ hook }], (form: FormType) => {
+      login.mutate(form);
+    });
   };
 
   return (

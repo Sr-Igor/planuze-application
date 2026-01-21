@@ -1,44 +1,43 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import { useFormList , Field } from '@repo/form';
-import { IValidatorRequest } from '@deviobr/validator';
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 
 export type FormType = {
-    email: string;
+  email: string;
 };
 
 export const useForm = (data?: FormType) => {
-    const schema: IValidatorRequest = {
-        body: [
-            {
-                key: 'email',
-                method: 'email',
-                coerse: 'string'
-            }
-        ]
-    };
+  const schema: IValidatorRequest = {
+    body: [
+      {
+        key: "email",
+        method: "email",
+        coerse: "string",
+      },
+    ],
+  };
 
-    const fields: Field<FormType>[] = [
-        {
-            field: 'input',
-            name: 'email',
-            label: 'email',
-            required: true,
-            className: 'col-span-2'
-        }
-    ];
+  const fields: Field<FormType>[] = [
+    {
+      field: "input",
+      name: "email",
+      label: "email",
+      required: true,
+      className: "col-span-2",
+    },
+  ];
 
-    const form = useFormList({ fields, schema });
+  const form = useFormList({ fields, schema });
 
-    useEffect(() => {
-        if (data) form.hook.setValue('email', data.email, { shouldDirty: true });
-    }, []);
+  useEffect(() => {
+    if (data) form.hook.setValue("email", data.email, { shouldDirty: true });
+  }, []);
 
-    return {
-        ...form,
-        config: {
-            schema,
-            fields
-        }
-    };
+  return {
+    ...form,
+    config: {
+      schema,
+      fields,
+    },
+  };
 };

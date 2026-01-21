@@ -6,9 +6,7 @@ import { Upload } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 
 import { useLang } from "@repo/language/hooks";
-import { AppDialog } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { AppDialog, cn } from "@repo/ui";
 
 import { useFileValidation } from "../hooks/useFileValidation";
 

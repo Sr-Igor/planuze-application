@@ -1,8 +1,6 @@
 "use client";
 
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { profile, project_allocation, project_version } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
@@ -52,7 +50,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
 
   const fields: Field<Partial<Form>>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "profile_id",
       label: "profile_id",
       className: "col-span-1",
@@ -70,7 +68,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
       fallbackValue: item?.profile?.user?.name,
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "project_version_id",
       label: "project_version_id",
       disabled,

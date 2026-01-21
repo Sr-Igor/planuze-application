@@ -1,6 +1,6 @@
+import { useProjectConfig } from "@repo/api/web";
 import { project_kanban } from "@repo/types";
 
-import { useProjectConfig } from "@repo/api/web/callers/project_config";
 import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";

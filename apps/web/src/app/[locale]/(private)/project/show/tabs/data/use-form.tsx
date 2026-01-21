@@ -1,8 +1,5 @@
-import { index } from "@repo/api/web/req/client";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
-import { useLang } from "@repo/language/hooks";
+import { clientIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { client, project } from "@repo/types";
 
 export interface IUseFormProps {
@@ -11,8 +8,6 @@ export interface IUseFormProps {
 }
 
 export const useForm = ({ data, disabled }: IUseFormProps) => {
-  const t = useLang();
-
   const schema: IValidatorRequest = {
     body: [
       {
@@ -42,14 +37,14 @@ export const useForm = ({ data, disabled }: IUseFormProps) => {
       className: "col-span-1",
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "client_id",
       label: "client",
       disabled,
       className: "col-span-1",
       cacheKey: "client_infinity",
       fallbackValue: data?.client?.name,
-      request: index,
+      request: clientIndex,
       formatter: (items: client[]) =>
         items?.map((client) => ({
           label: client.name,

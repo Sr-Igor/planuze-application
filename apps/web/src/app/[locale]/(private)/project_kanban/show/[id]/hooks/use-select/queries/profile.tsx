@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
-import { profile } from "@repo/types";
+import { profileIndex } from "@repo/api/web";
+import { Pagination, profile } from "@repo/types";
 
-import { index } from "@repo/api/web/req/profile";
 import { useAccess } from "@/hooks/access";
-import { Pagination } from "@/types/pagination";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
@@ -23,7 +22,7 @@ export const useIndexProfile = ({ search }: ISelectProps): ISelectReturnProps =>
     queryFn: ({ pageParam = 1 }) => {
       const params: Record<string, any> = { page: pageParam, ...queryParams };
       if (search) params.search = search;
-      return index(params);
+      return profileIndex(params);
     },
     getNextPageParam: (lastPage) =>
       lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,

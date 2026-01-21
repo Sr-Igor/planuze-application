@@ -2,10 +2,8 @@
 
 import { useEffect, useMemo } from "react";
 
-import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { projectKanbanCycleCardIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
 
 import { AppCardSelector } from "@/components/app-cycle-card-selector";
@@ -83,13 +81,13 @@ export const useForm = ({ disabled, card }: IUseFormProps) => {
       className: "col-span-2",
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "card_id",
       label: "card_id",
       disabled,
       className: "col-span-2",
       cacheKey: "project_kanban_cycle_card_anchored_infinity",
-      request: indexProjectKanbanCycleCard,
+      request: projectKanbanCycleCardIndex,
       queryParams: {
         project_kanban_cycle_id: page.cycle?.id,
         principal: true,

@@ -1,8 +1,6 @@
-import { user } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Badge } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { user } from "@repo/types";
+import { Badge, cn } from "@repo/ui";
 
 export interface IInitialProps {
   user?: user | null;

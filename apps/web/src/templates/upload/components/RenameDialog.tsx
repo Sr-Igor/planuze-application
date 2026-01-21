@@ -2,13 +2,9 @@
 
 import { useEffect } from "react";
 
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
-import { hookValidate } from "@repo/form";
+import { Field, hookValidate, IValidatorRequest, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui";
+import { AppDialog, Button } from "@repo/ui";
 
 import { IRenameProps } from "../types/interfaces";
 

@@ -1,6 +1,6 @@
+import { useCompanyDocument } from "@repo/api/web";
 import { company, company_document } from "@repo/types";
 
-import { useCompanyDocument } from "@repo/api/web/callers/company_document";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

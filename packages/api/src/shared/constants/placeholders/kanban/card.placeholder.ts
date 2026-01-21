@@ -1,0 +1,44 @@
+/**
+ * Project kanban cycle card placeholder data
+ * Used for initial data loading and skeleton states
+ */
+import type { project_kanban_cycle_card } from "@repo/types";
+
+export const projectKanbanCycleCardPlaceholder: project_kanban_cycle_card[] = Array.from(
+  { length: 10 },
+  (_, index) => ({
+    id: index.toString(),
+    title: "",
+    description: "",
+    public_id: index + 1,
+    work_type_id: index.toString(),
+    accept_description: "",
+    estimate: 1,
+    estimate_unit: "1",
+    execute: 1,
+    execute_unit: "1",
+    work_in_progress: 1,
+    work_in_progress_unit: "1",
+    priority: 1,
+    severity: 1,
+    end_date_estimate: "2021-01-01",
+    end_date_execute: "2021-01-01",
+    project_kanban_objective_id: index.toString(),
+    project_kanban_objective_target_id: index.toString(),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    deleted: false,
+    deletedAt: null,
+    project_member_id: index.toString(),
+    profile_id: index.toString(),
+    project_kanban_cycle_card_type_id: index.toString(),
+    card_id: index.toString(),
+    project_kanban_cycle_column_id: index.toString(),
+    project_version_id: index.toString(),
+    company_id: index.toString(),
+    order: index,
+    project_kanban_cycle_id: index.toString(),
+    project_kanban_id: index.toString(),
+    project_id: index.toString(),
+  })
+);

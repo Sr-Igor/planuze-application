@@ -4,11 +4,9 @@ import * as React from "react";
 
 import { Area, AreaChart, CartesianGrid, Tooltip, XAxis } from "recharts";
 
+import { ICycleStats } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-import { ChartConfig, ChartContainer } from "@repo/ui";
-import { AppTooltip } from "@repo/ui";
-
-import { ICycleStats } from "@repo/api/web/callers/project_kanban_report/types";
+import { AppTooltip, ChartConfig, ChartContainer } from "@repo/ui";
 
 import { Container } from "../container";
 

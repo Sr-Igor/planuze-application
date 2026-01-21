@@ -1,8 +1,7 @@
 "use client";
 
-import { index } from "@repo/api/web/req/level";
-import { IValidatorRequest } from "@repo/form";
-import { Field, useFormList } from "@repo/form";
+import { levelIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { invite, level } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/list/base/types";
@@ -50,7 +49,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<invite>) => {
       className: "col-span-2",
       cacheKey: "level_infinity",
       fallbackValue: state?.item?.level?.title,
-      request: index,
+      request: levelIndex,
       formatter: (items: level[]) =>
         items?.map((level) => ({
           label: level.title,

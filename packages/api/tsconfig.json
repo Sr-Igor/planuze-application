@@ -9,21 +9,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "target": "ES2023",
-    "baseUrl": ".",
-    "paths": {
-      "#/*": [
-        "./src/*"
-      ]
-    },
-    "lib": [
-      "ES2023"
-    ]
+    "lib": ["ES2023", "DOM"]
   },
-  "include": [
-    "src/**/*",
-  ],
-  "exclude": [
-    "node_modules",
-    "generator"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

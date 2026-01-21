@@ -4,12 +4,12 @@ import { memo, useCallback } from "react";
 
 import { Loader2 } from "lucide-react";
 
+import { useProjectKanbanCycleCard } from "@repo/api/web";
 import { project_kanban_cycle_card } from "@repo/types";
+import { cn } from "@repo/ui";
 
-import { useProjectKanbanCycleCard } from "@repo/api/web/callers/project_kanban_cycle_card";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui";
 
 import { useCardForm } from "../../../../card-form-edit/use-form";
 import { KanbanCardProps } from "../../../types";
@@ -36,7 +36,7 @@ const KanbanCardComponent = ({
 
   const { update } = useProjectKanbanCycleCard({
     id: card.id,
-    cycleId: page.cycle?.id,
+    filters: { project_kanban_cycle_id: page.cycle?.id },
   });
 
   const loading = update.isPending || externalLoading || general.state.inLoading?.includes(card.id);

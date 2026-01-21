@@ -5,9 +5,7 @@ import * as React from "react";
 import { PackageOpen } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, cn, Skeleton } from "@repo/ui";
 
 export interface iContainerProps {
   title: string;

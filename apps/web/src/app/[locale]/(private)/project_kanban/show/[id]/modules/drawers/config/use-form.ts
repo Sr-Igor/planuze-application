@@ -1,8 +1,6 @@
 "use client";
 
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { project_config, project_version } from "@repo/types";
 
@@ -50,7 +48,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
   };
   const fields: Field<Partial<Form>>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "project_version_id",
       label: "project_version_id",
       disabled,

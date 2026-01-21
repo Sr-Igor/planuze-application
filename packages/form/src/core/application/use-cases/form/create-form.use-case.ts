@@ -3,7 +3,7 @@ import { ZodSchema } from 'zod';
 import { ValidationService } from '../../services/validation.service';
 import { FormStateService } from '../../services/form-state.service';
 import { ValidationConfigVO } from '../../../domain/value-objects/validation-config.vo';
-import { IField } from '../../../domain/interfaces/field.interface';
+import { AnyField } from '../../../domain/interfaces/field.interface';
 
 /**
  * Use Case for form configuration creation
@@ -27,7 +27,7 @@ export class CreateFormUseCase<FormType extends FieldValues> {
      * Calculates initial form values
      */
     calculateInitialValues(
-        fields: IField<FormType>[],
+        fields: AnyField<FormType>[],
         defaultValues?: UseFormProps<FormType>['defaultValues'],
         values?: FormType
     ): Partial<FormType> {

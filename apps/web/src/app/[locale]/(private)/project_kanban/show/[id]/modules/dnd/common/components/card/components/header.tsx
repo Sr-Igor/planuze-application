@@ -2,19 +2,17 @@
 
 import { Plus } from "lucide-react";
 
+import { useLang } from "@repo/language/hooks";
 import {
   project_kanban_cycle_card,
   project_kanban_cycle_card_type,
   project_kanban_cycle_column,
 } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
-import { Button, CardHeader, CardTitle } from "@repo/ui";
-import { AppTooltip, Icon } from "@repo/ui";
+import { AppTooltip, Button, CardHeader, CardTitle, cn, Icon } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui";
 
 import { Actions } from "./actions";
 

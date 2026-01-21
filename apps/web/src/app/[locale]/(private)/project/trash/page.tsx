@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { useProject } from '@repo/api/web/callers/project';
-import { TrashTemplate } from '@/templates/list/trash';
+import { useProject } from "@repo/api/web";
 
-import { useTable } from './use-table';
+import { TrashTemplate } from "@/templates/list/trash";
+
+import { useTable } from "./use-table";
 
 export default function Page() {
-    //Render
-    return <TrashTemplate path='project' hookReq={useProject} useTable={useTable} />;
+  //Render
+  return <TrashTemplate path="project" hookReq={useProject} useTable={useTable} />;
 }

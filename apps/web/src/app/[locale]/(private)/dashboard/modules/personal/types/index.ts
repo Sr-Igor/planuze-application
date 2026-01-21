@@ -2,21 +2,23 @@ import { module } from "@repo/types";
 
 import { IDashboardModule } from "../../types";
 
+type DateType = string | Date | null;
+
 export interface QueryFilters {
   start_date?: Date | string;
   end_date?: Date | string;
   projectIds?: string[];
 }
 export interface IProfileInfo {
-  companyEntryDate: string | Date | null;
+  companyEntryDate: DateType;
   timeInCompany: {
     years: number;
     months: number;
     days: number;
     totalDays: number;
   };
-  profileCreatedAt: string | Date | null;
-  profileUpdatedAt: string | Date | null;
+  profileCreatedAt: DateType;
+  profileUpdatedAt: DateType;
 }
 
 // ============================================================================
@@ -149,7 +151,7 @@ export interface IProjectActivity {
   progress: number;
 }
 
-export interface IIndexResponseDTO {
+export interface IPersonalIndexResponseDTO {
   profile: {
     id: string;
     userId: string;
@@ -180,5 +182,5 @@ export interface IIndexResponseDTO {
 }
 
 export interface IIndexProps extends IDashboardModule {
-  data?: IIndexResponseDTO;
+  data?: IPersonalIndexResponseDTO;
 }

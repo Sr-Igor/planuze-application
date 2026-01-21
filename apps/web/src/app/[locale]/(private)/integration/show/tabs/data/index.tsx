@@ -7,10 +7,13 @@ import { useRouter } from "next/navigation";
 import { BookOpenText, CopyIcon } from "lucide-react";
 import { toast } from "sonner";
 
-import { integration } from "@repo/types";
+import { useIntegration } from "@repo/api/web";
+import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { integration } from "@repo/types";
 import {
   Button,
+  cn,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -19,13 +22,10 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { useIntegration } from "@repo/api/web/callers/integration";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 

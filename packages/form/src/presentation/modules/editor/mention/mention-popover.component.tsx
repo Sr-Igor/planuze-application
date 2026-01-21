@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { LoaderCircle, PackageOpen } from "lucide-react";
 
-import { index } from "@repo/api/web/req/profile";
+import { profileIndex } from "@repo/api/web";
 import { useDebounce } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { Pagination, profile } from "@repo/types";
@@ -44,7 +44,7 @@ export const MentionPopover: React.FC<MentionPopoverProps> = ({
     queryFn: ({ pageParam = 1 }) => {
       const params: Record<string, any> = { page: pageParam, limit: 10, ...mentionQuery };
       if (inputDebounced) params.search = inputDebounced;
-      return index(params);
+      return profileIndex(params);
     },
     getNextPageParam: (lastPage) =>
       lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,

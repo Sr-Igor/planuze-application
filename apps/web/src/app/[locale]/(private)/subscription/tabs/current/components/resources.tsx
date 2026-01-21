@@ -7,9 +7,9 @@ import {
   AccordionItem,
   AccordionTrigger,
   Badge,
+  Icon,
   Skeleton,
 } from "@repo/ui";
-import { Icon } from "@repo/ui";
 
 export interface IResourcesProps {
   groupedFeatures: {

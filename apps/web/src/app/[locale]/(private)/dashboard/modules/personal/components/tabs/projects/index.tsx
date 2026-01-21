@@ -3,10 +3,7 @@
 import * as React from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Badge } from "@repo/ui";
-import { MainCard } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { Badge, cn, MainCard } from "@repo/ui";
 
 import { IPersonalSummary, IProjectActivity } from "../../../types";
 import { getStatusColor } from "../../../utils";

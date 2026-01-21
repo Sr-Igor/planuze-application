@@ -1,9 +1,8 @@
 "use client";
 
-import { ScrollArea } from "@repo/ui";
-
-import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/personal";
+import { personalDashboardPlaceholder } from "@repo/api/placeholders";
 import { useIntlFormat } from "@repo/language/hooks";
+import { ScrollArea } from "@repo/ui";
 
 import { Header } from "./components/header";
 import { Metadata } from "./components/metadata";
@@ -16,7 +15,7 @@ export default function ({
   filters,
   setFilters,
   handleExport,
-  data = placeholder,
+  data = personalDashboardPlaceholder,
   isLoading,
   isExporting,
 }: IIndexProps) {

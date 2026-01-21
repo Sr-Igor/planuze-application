@@ -1,11 +1,11 @@
 import { useLocale } from "next-intl";
 
 import { TrashProps } from "@repo/ui";
-
-import { useConstants } from "@/hooks/constants";
 import { formatCurrency } from "@repo/utils/currency";
 
-type TrashKey<T extends Record<string, any> = any> = Omit<TrashProps<T>, "items" | "loading">;
+import { useConstants } from "@/hooks/constants";
+
+type TrashKey<T extends { id: string } = { id: string }> = Omit<TrashProps<T>, "items" | "loading">;
 
 export const useTrash = (): Record<string, () => any> => {
   const locale = useLocale();

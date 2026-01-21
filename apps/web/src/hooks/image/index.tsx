@@ -2,7 +2,7 @@
 
 import { useCallback } from "react";
 
-import { getFile } from "@repo/api/global/file";
+import { getFile } from "@repo/api";
 import { useAuth } from "@repo/redux/hook";
 
 type ImagePath =

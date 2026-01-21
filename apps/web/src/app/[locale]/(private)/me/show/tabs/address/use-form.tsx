@@ -1,7 +1,5 @@
+import { Field, useFormList } from "@repo/form";
 import { profile_address } from "@repo/types";
-
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
 
 export type FormType = {
   street?: string | null;

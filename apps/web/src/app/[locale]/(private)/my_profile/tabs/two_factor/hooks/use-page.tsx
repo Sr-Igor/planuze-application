@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 
 import { KeyRound, Mail, Phone } from "lucide-react";
 
-import { user_two_auth } from "@repo/types";
-
-import { useUserTwoAuth } from "@repo/api/web/callers/user_two_auth";
+import { useUserTwoAuth } from "@repo/api/web";
+import { hookValidate } from "@repo/form";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
-import { hookValidate } from "@repo/form";
+import { user_two_auth } from "@repo/types";
 
 import { useConfirmForm } from "../use-confirm-form";
 import { useDestroyForm } from "../use-destroy-form";

@@ -2,7 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
+import { getProfile } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { useAppSelector } from "@repo/redux/hook";
 import {
   AppAvatar,
   Button,
@@ -15,10 +17,8 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { getProfile } from "@repo/cookies";
-import { useModal } from "@/hooks/modal";
 import { useFetchImage } from "@/hooks/image";
-import { useAppSelector } from "@repo/redux/hook";
+import { useModal } from "@/hooks/modal";
 
 export const ProfileModal = () => {
   const t = useLang();
@@ -66,6 +66,7 @@ export const ProfileModal = () => {
               <AppAvatar
                 src={profile?.company?.logo || ""}
                 name={profile?.company?.name || ""}
+                path="company/logo"
                 className="h-25 w-25"
                 fallbackClassName="text-5xl"
                 fetchImage={fetchImage}

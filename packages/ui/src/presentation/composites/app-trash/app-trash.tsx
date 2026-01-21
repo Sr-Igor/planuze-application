@@ -5,11 +5,10 @@ import { useMemo } from "react";
 import { isDate } from "date-fns";
 import { LoaderCircle, PackageOpen } from "lucide-react";
 
+import { cn } from "../../../shared/utils";
 import { Skeleton } from "../../primitives/skeleton";
 import { AppTableActions } from "../app-table";
 import type { TableAction } from "../app-table";
-
-import { cn } from "../../../shared/utils";
 
 export interface TrashLabels {
   /**
@@ -42,7 +41,7 @@ const defaultLabels: TrashLabels = {
   property: (key: string) => key,
 };
 
-export interface AppTrashProps<T extends Record<string, unknown>> {
+export interface AppTrashProps<T extends { id: string }> {
   /**
    * Items to display
    */
@@ -77,7 +76,7 @@ export interface AppTrashProps<T extends Record<string, unknown>> {
   dateLocale?: string;
 }
 
-export const AppTrash = <T extends Record<string, unknown>>({
+export const AppTrash = <T extends { id: string }>({
   items,
   actions = [],
   showKeys,
@@ -115,8 +114,7 @@ export const AppTrash = <T extends Record<string, unknown>>({
   const applyConversor = (field: keyof T, value: unknown): unknown => {
     if (!conversor?.[field] || value == null) return value;
     const opts = conversor[field];
-    const mapOne = (x: unknown) =>
-      opts.find((o) => String(o.value) === String(x))?.label ?? x;
+    const mapOne = (x: unknown) => opts.find((o) => String(o.value) === String(x))?.label ?? x;
     return Array.isArray(value) ? opts.length && value.map(mapOne).join(", ") : mapOne(value);
   };
 
@@ -171,10 +169,10 @@ export const AppTrash = <T extends Record<string, unknown>>({
               >
                 {allKeys.map((key) => (
                   <div key={String(key)} className="flex flex-col gap-0.5">
-                    <span className="text-[11px] font-semibold capitalize text-gray-700 dark:text-gray-200">
+                    <span className="text-[11px] font-semibold text-gray-700 capitalize dark:text-gray-200">
                       {labels.property(String(key))}
                     </span>
-                    <span className="break-all text-[12px] text-gray-800 dark:text-gray-100">
+                    <span className="text-[12px] break-all text-gray-800 dark:text-gray-100">
                       {prepareDisplay(key, item[key], item)}
                     </span>
                   </div>
@@ -203,17 +201,12 @@ export const AppTrash = <T extends Record<string, unknown>>({
               <thead>
                 <tr>
                   {allKeys.map((key) => (
-                    <th
-                      key={String(key)}
-                      className="px-4 py-2 text-left font-medium capitalize"
-                    >
+                    <th key={String(key)} className="px-4 py-2 text-left font-medium capitalize">
                       {labels.property(String(key))}
                     </th>
                   ))}
                   {actions.length > 0 && (
-                    <th className="px-4 py-2 text-center font-medium">
-                      {labels.actions}
-                    </th>
+                    <th className="px-4 py-2 text-center font-medium">{labels.actions}</th>
                   )}
                 </tr>
               </thead>

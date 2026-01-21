@@ -2,11 +2,8 @@
 
 import { useLocale } from "next-intl";
 
-import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
-import { index } from "@repo/api/web/req/work_type";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { costCenterIndex, workTypeIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { cost_center, role, work_type } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
@@ -84,7 +81,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<role>) => {
     ],
   };
 
-  const fields: Field<Partial<role>>[] = [
+  const fields: Field<FormType>[] = [
     {
       field: "input",
       name: "title",
@@ -111,13 +108,13 @@ export const useForm = ({ disabled, state }: IUseHookProps<role>) => {
       className: "col-span-1",
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "work_type_id",
       label: "work_type_id",
       disabled,
       required: true,
       cacheKey: "work_type_infinity",
-      request: index,
+      request: workTypeIndex,
       queryParams: {
         orderKey: "title",
         orderValue: "asc",
@@ -131,12 +128,12 @@ export const useForm = ({ disabled, state }: IUseHookProps<role>) => {
       fallbackValue: state?.item?.work_type?.title,
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "cost_center_id",
       label: "cost_center_id",
       disabled,
       cacheKey: "cost_center_infinity",
-      request: indexCostCenter,
+      request: costCenterIndex,
       formatter: (items: cost_center[]) =>
         items?.map((costCenter) => ({
           label: costCenter.title,

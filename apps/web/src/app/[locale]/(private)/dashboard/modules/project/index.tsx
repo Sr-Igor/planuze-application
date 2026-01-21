@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 
-import { ScrollArea } from "@repo/ui";
-
-import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/project";
+import { projectDashboardPlaceholder } from "@repo/api/placeholders";
 import { useIntlFormat } from "@repo/language/hooks";
+import { ScrollArea } from "@repo/ui";
 
 import { Filters } from "./components/filters";
 import { Header } from "./components/header";
@@ -22,7 +21,7 @@ export default function ({
   setFilters,
   resetFilters,
   handleExport,
-  data = placeholder,
+  data = projectDashboardPlaceholder,
   isLoading,
   isExporting,
 }: IIndexProps) {

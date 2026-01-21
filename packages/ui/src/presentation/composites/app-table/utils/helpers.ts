@@ -5,7 +5,6 @@
  *
  * @module presentation/composites/app-table/utils
  */
-
 import { BaseTableItem, TableColumn } from "../types";
 
 /**
@@ -14,8 +13,8 @@ import { BaseTableItem, TableColumn } from "../types";
 export function getNestedValue(obj: unknown, path: string): unknown {
   if (!obj || !path) return undefined;
 
-  return path.split(".").reduce((current, key) => {
-    if (current && typeof current === "object" && key in current) {
+  return path.split(".").reduce((current: unknown, key: string) => {
+    if (current && typeof current === "object" && key in (current as Record<string, unknown>)) {
       return (current as Record<string, unknown>)[key];
     }
     return undefined;

@@ -2,11 +2,13 @@ import { module } from "@repo/types";
 
 import { IDashboardModule } from "../../types";
 
+type DateType = string | Date | null;
+
 export interface ICompanyInfo {
   id: string;
   name: string;
-  createdAt: string | Date | null;
-  updatedAt: string | Date | null;
+  createdAt: DateType;
+  updatedAt: DateType;
   hasAddress: boolean;
   hasDocuments: boolean;
   hasContacts: boolean;
@@ -33,7 +35,7 @@ export interface ISubscriptionInfo {
   planTitle: string;
   status: string;
   model: string;
-  startDate: string | Date | null;
+  startDate: DateType;
   endDate: string | Date | null;
   cancelAtPeriodEnd: boolean;
   canceledAt: string | Date | null;

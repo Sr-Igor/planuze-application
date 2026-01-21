@@ -1,6 +1,6 @@
+import { useProjectAllocation } from "@repo/api/web";
 import { project_kanban } from "@repo/types";
 
-import { useProjectAllocation } from "@repo/api/web/callers/project_allocation";
 import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";

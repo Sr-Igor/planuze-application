@@ -1,8 +1,8 @@
 "use client";
 
+import { useRole } from "@repo/api/web";
 import { role } from "@repo/types";
 
-import { useRole } from "@repo/api/web/callers/role";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useForm, useTable } from "./hooks";

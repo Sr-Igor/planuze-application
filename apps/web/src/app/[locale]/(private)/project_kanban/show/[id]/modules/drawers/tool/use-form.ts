@@ -2,10 +2,8 @@
 
 import { useLocale } from "next-intl";
 
-import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { projectVersionIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_tool, project_version } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
@@ -112,13 +110,13 @@ export const useForm = ({ disabled, item }: IUseHookProps<project_tool>) => {
       disabled,
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "project_version_id",
       label: "project_version_id",
       disabled,
       required: true,
       cacheKey: "project_version_infinity",
-      request: indexProjectVersion,
+      request: projectVersionIndex,
       queryParams: {
         project_id: page?.kanban?.project_id,
         orderKey: "createdAt",

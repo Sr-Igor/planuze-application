@@ -3,12 +3,21 @@ import { ZodSchema } from "zod";
 
 import { IValidatorRequest } from "@repo/form";
 
-import { IField } from "../../core/domain/interfaces";
+import { Field as FieldUnion } from "../../core/domain/interfaces";
 
 /**
- * Form field type
+ * Form field type - discriminated union that provides type-safe props based on field type
+ *
+ * @example
+ * ```tsx
+ * const fields: Field<FormType>[] = [
+ *   { field: "input", name: "email" },           // Only input props available
+ *   { field: "select", name: "role", options: [] }, // options prop is available
+ *   { field: "calendar", name: "date", disabledPast: true }, // date props available
+ * ];
+ * ```
  */
-export type Field<FormType extends FieldValues> = IField<FormType>;
+export type Field<FormType extends FieldValues> = FieldUnion<FormType>;
 
 /**
  * Props for useFormList hook

@@ -1,8 +1,6 @@
 "use client";
 
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { kanban_template_card_type } from "@repo/types";
 

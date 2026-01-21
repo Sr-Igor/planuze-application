@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { index } from "@repo/api/web/req/level";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { levelIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { level, profile } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
@@ -87,7 +85,7 @@ export const useProfileForm = ({ data, disabled, profile }: IUseFormProps) => {
 
   const fields: Field<Partial<FormType>>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "level_id",
       label: "level_id",
       className: "col-span-1",
@@ -95,7 +93,7 @@ export const useProfileForm = ({ data, disabled, profile }: IUseFormProps) => {
       required: true,
       fallbackValue: data?.level?.title,
       cacheKey: "level_infinity",
-      request: index,
+      request: levelIndex,
       formatter: (items: level[]) =>
         items?.map((level) => ({
           label: level.title,

@@ -2,14 +2,12 @@
 
 import { useEffect } from "react";
 
-import { project_kanban_cycle_card_type } from "@repo/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
-import { Icon } from "@repo/ui";
-
-import { useProjectKanbanCycleCard } from "@repo/api/web/callers/project_kanban_cycle_card";
-import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
+import { useProjectKanbanCycleCard } from "@repo/api/web";
 import { useAuth } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
+import { project_kanban_cycle_card_type } from "@repo/types";
+import { Card, CardContent, CardHeader, CardTitle, cn, Icon } from "@repo/ui";
+
+import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 
 import { useForm } from "./use-form";
 
@@ -25,8 +23,10 @@ export const KanbanCardForm = ({ cardType, columnId, onCancel, parentCardId }: I
   const { page } = useKanbanShow();
 
   const { store } = useProjectKanbanCycleCard({
-    cycleId: page.cycle?.id,
-    filters: { project_kanban_id: page.kanban?.id },
+    filters: {
+      project_kanban_id: page.kanban?.id,
+      project_kanban_cycle_id: page.cycle?.id,
+    },
     callbacks: {
       store: {
         onSuccess: () => {
@@ -68,7 +68,7 @@ export const KanbanCardForm = ({ cardType, columnId, onCancel, parentCardId }: I
         project_kanban_cycle_column_id: columnId,
         project_kanban_cycle_card_type_id: cardType.id,
         card_id: parentCardId !== "unlinked" ? parentCardId : undefined,
-      });
+      } as any);
     }
   };
 

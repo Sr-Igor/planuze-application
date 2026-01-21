@@ -1,36 +1,36 @@
-import { useCompany } from '@repo/api/web/callers/company';
-import { useInvite } from '@repo/api/web/callers/invite';
-import { useUserSet } from '@/hooks/user-set';
+import { useCompany, useInvite } from "@repo/api/web";
+
+import { useUserSet } from "@/hooks/user-set";
 
 export const useReq = () => {
-    const { setter } = useUserSet();
+  const { setter } = useUserSet();
 
-    const { me, feedback } = useInvite({
-        enabledMe: true,
-        callbacks: {
-            feedback: {
-                onSuccess: (data) => {
-                    if (data.invite.accepted) {
-                        setter(data.user);
-                    }
-                }
-            }
-        }
-    });
+  const { me, feedback } = useInvite({
+    enabledMe: true,
+    callbacks: {
+      feedback: {
+        onSuccess: (data) => {
+          if (data.invite.accepted) {
+            setter(data.user);
+          }
+        },
+      },
+    },
+  });
 
-    const { store } = useCompany({
-        callbacks: {
-            store: {
-                onSuccess: (user) => {
-                    setter(user as any);
-                }
-            }
-        }
-    });
+  const { store } = useCompany({
+    callbacks: {
+      store: {
+        onSuccess: (user) => {
+          setter(user as any);
+        },
+      },
+    },
+  });
 
-    return {
-        store,
-        feedback,
-        me
-    };
+  return {
+    store,
+    feedback,
+    me,
+  };
 };

@@ -1,6 +1,6 @@
+import { useProjectMember } from "@repo/api/web";
 import { project_member } from "@repo/types";
 
-import { useProjectMember } from "@repo/api/web/callers/project_member";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

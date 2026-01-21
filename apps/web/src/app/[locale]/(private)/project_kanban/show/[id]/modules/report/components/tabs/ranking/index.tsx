@@ -2,13 +2,8 @@
 
 import * as React from "react";
 
+import { ICriticalCard, IRankings, ITopEngagedCard } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-
-import {
-  ICriticalCard,
-  IRankings,
-  ITopEngagedCard,
-} from "@repo/api/web/callers/project_kanban_report/types";
 
 import { Rank } from "../../rank";
 import { LineEngagement } from "./lines/engagement";

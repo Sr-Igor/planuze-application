@@ -9,6 +9,7 @@ export {
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogDNDContent,
   DialogFooter,
   DialogHeader,
   DialogOverlay,

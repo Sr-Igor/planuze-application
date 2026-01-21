@@ -1,6 +1,6 @@
+import { useProfileContact } from "@repo/api/web";
 import { profile, profile_contact } from "@repo/types";
 
-import { useProfileContact } from "@repo/api/web/callers/profile_contact";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

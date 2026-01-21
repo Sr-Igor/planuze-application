@@ -88,7 +88,7 @@ export interface LogsComparisonProps<T> {
   /**
    * Custom formatters for specific keys
    */
-  format?: Partial<Record<keyof T, (value: unknown, item: T) => unknown>>;
+  format?: Partial<Record<keyof T, (value: any, item: T) => unknown>>;
   /**
    * Labels for the component
    */

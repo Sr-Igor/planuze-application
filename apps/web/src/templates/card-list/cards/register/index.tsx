@@ -2,15 +2,13 @@ import { useState } from "react";
 
 import { CircleX, HistoryIcon, Trash } from "lucide-react";
 
+import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
+import { AppDialog, AppLogsModal, Button, cn } from "@repo/ui";
 import * as C from "@repo/ui";
-import { AppDialog, AppLogsModal } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 import { useUnload } from "@/hooks/unload";
-import { cn } from "@repo/ui";
-import { hookValidate } from "@repo/form";
 
 import { IRegisterCardProps } from "./types";
 import { useReq } from "./use-req";

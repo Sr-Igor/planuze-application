@@ -1,14 +1,14 @@
 import { FieldValues } from 'react-hook-form';
-import { IField } from '../interfaces/field.interface';
+import { AnyField } from '../interfaces/field.interface';
 
 /**
  * Value Object for field configuration
  * Ensures immutability and validation
  */
 export class FieldConfigVO<FormType extends FieldValues> {
-    private readonly config: Readonly<IField<FormType>>;
+    private readonly config: Readonly<AnyField<FormType>>;
 
-    constructor(config: IField<FormType>) {
+    constructor(config: AnyField<FormType>) {
         // Basic validations
         if (!config.name) {
             throw new Error('Field name is required');
@@ -23,18 +23,18 @@ export class FieldConfigVO<FormType extends FieldValues> {
     /**
      * Returns the immutable configuration
      */
-    getValue(): Readonly<IField<FormType>> {
+    getValue(): Readonly<AnyField<FormType>> {
         return this.config;
     }
 
     /**
      * Creates a new instance with updates
      */
-    withUpdates(updates: Partial<IField<FormType>>): FieldConfigVO<FormType> {
+    withUpdates(updates: Partial<AnyField<FormType>>): FieldConfigVO<FormType> {
         return new FieldConfigVO<FormType>({
             ...this.config,
             ...updates,
-        });
+        } as AnyField<FormType>);
     }
 
     /**

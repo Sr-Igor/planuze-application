@@ -1,6 +1,8 @@
 "use client";
 
+import { useInvite } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
+import { useAppSelector, useAuth } from "@repo/redux/hook";
 import {
   Button,
   Dialog,
@@ -12,11 +14,8 @@ import {
   ScrollArea,
 } from "@repo/ui";
 
-import { useInvite } from "@repo/api/web/callers/invite";
 import { Invite } from "@/app/[locale]/config/welcome/options/invite";
-import { useAuth } from "@repo/redux/hook";
 import { useModal } from "@/hooks/modal";
-import { useAppSelector } from "@repo/redux/hook";
 import { useUserSet } from "@/hooks/user-set";
 
 export const InviteModal = () => {
@@ -48,7 +47,7 @@ export const InviteModal = () => {
 
   const { setter } = useUserSet();
 
-  const invites = me.data?.data || [];
+  const invites = me?.data?.data || [];
 
   return (
     <Dialog open={isModalOpen} onOpenChange={(isOpen) => !isOpen && handleClose()}>

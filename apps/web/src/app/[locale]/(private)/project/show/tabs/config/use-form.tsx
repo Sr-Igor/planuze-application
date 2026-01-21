@@ -1,7 +1,5 @@
-import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { projectVersionIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { project_config, project_version } from "@repo/types";
 
@@ -46,14 +44,14 @@ export const useForm = ({ disabled, state, data, indexData }: IUseHookProps<Form
 
   const fields: Field<Form>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "project_version_id",
       label: "project_version_id",
       disabled,
       className: "col-span-2",
       required: true,
       cacheKey: "project_version_infinity",
-      request: indexProjectVersion,
+      request: projectVersionIndex,
       queryParams: {
         project_id: data?.id,
         orderKey: "createdAt",

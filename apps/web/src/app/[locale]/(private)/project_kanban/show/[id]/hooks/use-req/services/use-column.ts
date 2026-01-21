@@ -1,6 +1,6 @@
+import { useProjectKanbanCycleColumn } from "@repo/api/web";
 import { project_kanban } from "@repo/types";
 
-import { useProjectKanbanCycleColumn } from "@repo/api/web/callers/project_kanban_cycle_column";
 import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";

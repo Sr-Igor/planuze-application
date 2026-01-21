@@ -1,8 +1,6 @@
 import { InfiniteData, UseInfiniteQueryResult } from "@tanstack/react-query";
 
-import { project_kanban } from "@repo/types";
-
-import { Pagination } from "@/types/pagination";
+import { Pagination, project_kanban } from "@repo/types";
 
 export type ISelectReturnProps = UseInfiniteQueryResult<
   InfiniteData<Pagination<any>, unknown>,

@@ -1,9 +1,8 @@
 "use client";
 
+import { usePlan, useSubscription } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
 
-import { usePlan } from "@repo/api/web/callers/plan";
-import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAccess } from "@/hooks/access";
 import { useLoading } from "@/hooks/loading";
 
@@ -14,7 +13,7 @@ export const useTabs = () => {
 
   const { profile } = useAccess();
   const { index } = useSubscription({ enabledIndex: true });
-  const { index: indexPlan } = usePlan({ company_id: profile?.company_id, enabled: true });
+  const { index: indexPlan } = usePlan({ companyId: profile?.company_id, enabled: true });
 
   const subscriptions = index?.data?.data || [];
   const plans = indexPlan?.data?.data || [];

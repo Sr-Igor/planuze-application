@@ -6,22 +6,22 @@ import { CircleAlert, Loader2, MoreHorizontal, Pencil, Plus, Trash } from "lucid
 
 import { useLang } from "@repo/language/hooks";
 import {
+  AppTooltip,
   Badge,
   Button,
+  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   Skeleton,
 } from "@repo/ui";
-import { AppTooltip } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { calcColumnTime } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-time";
 import { calcColumnTotal } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-total";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
-import { cn } from "@repo/ui";
 
 import { KanbanColumnProps } from "../../types";
 

@@ -1,8 +1,6 @@
 "use client";
 
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { profile, project_member } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
@@ -31,7 +29,7 @@ export const useForm = ({ disabled }: IUseHookProps<Form>) => {
 
   const fields: Field<Form>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "profile_id",
       label: "profile_id",
       className: "col-span-2",

@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useState } from "react";
 
+import { useModule } from "@repo/api/web";
 import { integration, integration_action, module } from "@repo/types";
 
-import { useModule } from "@repo/api/web/callers/module";
 import { useUnload } from "@/hooks/unload";
 import { useShow } from "@/templates/show/context";
 

@@ -2,11 +2,11 @@ import { useState } from "react";
 
 import { CreditCard, History } from "lucide-react";
 
-import { subscription } from "@repo/types";
+import { useSubscription } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
+import { subscription } from "@repo/types";
 import { Button } from "@repo/ui";
 
-import { useSubscription } from "@repo/api/web/callers/subscription";
 import { Permission } from "@/components/permission";
 import { useShow } from "@/templates/show/context";
 

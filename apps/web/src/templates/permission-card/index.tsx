@@ -6,13 +6,12 @@ import {
   Card,
   CardContent,
   Checkbox,
+  cn,
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
+  Icon,
 } from "@repo/ui";
-import { Icon } from "@repo/ui";
-
-import { cn } from "@repo/ui";
 
 import { GroupCollapsible } from "./components/group-collapsible";
 import { SmallScreenView } from "./components/small-screen-view";

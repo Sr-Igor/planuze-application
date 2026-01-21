@@ -1,9 +1,9 @@
 "use client";
 
+import { useLevel } from "@repo/api/web";
+import { useAuth } from "@repo/redux/hook";
 import { level } from "@repo/types";
 
-import { useLevel } from "@repo/api/web/callers/level";
-import { useAuth } from "@repo/redux/hook";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useTable } from "./hooks";

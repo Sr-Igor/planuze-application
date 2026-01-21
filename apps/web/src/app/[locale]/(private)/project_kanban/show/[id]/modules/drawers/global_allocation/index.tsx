@@ -4,12 +4,15 @@ import { useMemo, useState } from "react";
 
 import { ClockArrowDown, EllipsisVertical, Info, PackageOpen, Plus, Trash2, X } from "lucide-react";
 
-import { project_allocation } from "@repo/types";
+import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { project_allocation } from "@repo/types";
 import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AppDialog,
+  AppDropdownMenu,
   Button,
   Drawer,
   DrawerClose,
@@ -18,10 +21,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   ScrollArea,
+  Trash,
 } from "@repo/ui";
-import { AppDialog, AppDropdownMenu, Trash } from "@repo/ui";
 
-import { Input } from "@repo/form";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 import { useTrash } from "@/hooks/trash";

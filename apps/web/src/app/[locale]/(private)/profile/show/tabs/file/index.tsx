@@ -1,6 +1,6 @@
+import { useProfileFile } from "@repo/api/web";
 import { profile } from "@repo/types";
 
-import { useProfileFile } from "@repo/api/web/callers/profile_file";
 import { useShow } from "@/templates/show/context";
 import { UploadTemplate } from "@/templates/upload";
 

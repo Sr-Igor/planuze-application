@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 
 import { Ticket } from "lucide-react";
 
-import { profile } from "@repo/types";
+import { useProfile } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
+import { profile } from "@repo/types";
 import { Button } from "@repo/ui";
 
-import { useProfile } from "@repo/api/web/callers/profile";
 import { useAccess } from "@/hooks/access";
 import { BaseTemplate } from "@/templates/list/base";
 

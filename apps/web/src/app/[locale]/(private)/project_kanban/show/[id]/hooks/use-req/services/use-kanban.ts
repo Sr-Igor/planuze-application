@@ -1,15 +1,16 @@
-import { useProjectKanban } from '@repo/api/web/callers/project_kanban';
-import { useAccess } from '@/hooks/access';
+import { useProjectKanban } from "@repo/api/web";
+
+import { useAccess } from "@/hooks/access";
 
 export interface IUseKanbanProps {
-    id: string;
+  id: string;
 }
 
 export const useKanban = ({ id }: IUseKanbanProps) => {
-    const { permissions } = useAccess();
-    const perm = permissions('project_kanban');
+  const { permissions } = useAccess();
+  const perm = permissions("project_kanban");
 
-    const { show } = useProjectKanban({ enabledShow: !!id && perm.show, id });
+  const { show } = useProjectKanban({ enabledShow: !!id && perm.show, id });
 
-    return { show };
+  return { show };
 };

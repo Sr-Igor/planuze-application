@@ -1,8 +1,8 @@
 "use client";
 
+import { useCostCenter } from "@repo/api/web";
 import { cost_center } from "@repo/types";
 
-import { useCostCenter } from "@repo/api/web/callers/cost_center";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useForm, useTable } from "./hooks";

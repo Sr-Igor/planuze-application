@@ -2,10 +2,8 @@ import { useEffect } from "react";
 
 import { useWatch } from "react-hook-form";
 
-import { index as indexProfile } from "@repo/api/web/req/profile";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { profileIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { useAuth } from "@repo/redux/hook";
 import { profile, project_version } from "@repo/types";
 
@@ -132,14 +130,14 @@ export const useForm = ({ disabled, state }: IUseHookProps<Form>) => {
       disabled,
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "owner_id",
       label: "responsible",
       className: "col-span-2",
       disabled: false,
       required: true,
       cacheKey: "profile_infinity",
-      request: indexProfile,
+      request: profileIndex,
       formatter: (items: profile[]) =>
         items?.map((item) => ({
           label: item.user?.name || item.anonymous_name || item.id,

@@ -1,14 +1,14 @@
 import { FieldValues } from 'react-hook-form';
-import { IField } from '../interfaces/field.interface';
+import { AnyField } from '../interfaces/field.interface';
 
 /**
  * Entity representing a form field
  * Following the Single Responsibility Principle (SRP)
  */
 export class FieldEntity<FormType extends FieldValues> {
-    private readonly config: IField<FormType>;
+    private readonly config: AnyField<FormType>;
 
-    constructor(config: IField<FormType>) {
+    constructor(config: AnyField<FormType>) {
         this.config = config;
     }
 
@@ -50,24 +50,24 @@ export class FieldEntity<FormType extends FieldValues> {
     /**
      * Returns the complete field configuration
      */
-    getConfig(): IField<FormType> {
+    getConfig(): AnyField<FormType> {
         return { ...this.config };
     }
 
     /**
      * Returns a specific configuration value
      */
-    get<K extends keyof IField<FormType>>(key: K): IField<FormType>[K] {
+    get<K extends keyof AnyField<FormType>>(key: K): AnyField<FormType>[K] {
         return this.config[key];
     }
 
     /**
      * Creates a new instance with updated configuration
      */
-    withConfig(updates: Partial<IField<FormType>>): FieldEntity<FormType> {
+    withConfig(updates: Partial<AnyField<FormType>>): FieldEntity<FormType> {
         return new FieldEntity<FormType>({
             ...this.config,
             ...updates,
-        });
+        } as AnyField<FormType>);
     }
 }

@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import { Loader2, PackageOpen, X } from "lucide-react";
+import { PackageOpen, X } from "lucide-react";
 
+import { Input } from "@repo/form";
+import { useDebounce } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import {
   Button,
@@ -16,9 +18,7 @@ import {
   ScrollArea,
 } from "@repo/ui";
 
-import { Input } from "@repo/form";
 import { Permission } from "@/components/permission";
-import { useDebounce } from "@repo/hooks";
 
 import { useKanbanShow } from "../../../context";
 import { Card } from "./card";
@@ -43,19 +43,15 @@ export const CardTrash = ({ open, onOpenChange }: ICardTrashProps) => {
     setParams({ trash_search: debouncedValue });
   }, [debouncedValue]);
 
-  const index = callers.card.onTrash();
-  const cards = index?.data?.pages.flatMap((page) => page.data) ?? [];
-  const isLoading = index?.isLoading || index?.isPlaceholderData || isDebouncing;
+  const trashData = callers.card.onTrash();
+  const cards = trashData?.pages?.flatMap((page) => page.data) ?? [];
+  const isLoading = isDebouncing;
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    // Scroll handling for future pagination support
     const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-    if (
-      scrollTop + clientHeight >= scrollHeight - 10 &&
-      index.hasNextPage &&
-      !index.isFetchingNextPage &&
-      index.hasNextPage
-    ) {
-      index.fetchNextPage();
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+      // Future: implement pagination
     }
   };
 
@@ -73,7 +69,7 @@ export const CardTrash = ({ open, onOpenChange }: ICardTrashProps) => {
             <span>
               <DrawerTitle>
                 {t("drawer.cardTrash.title")}
-                {!isLoading && ` (${index?.data?.pages[0]?.count})`}
+                {!isLoading && ` (${trashData?.pages?.[0]?.count ?? 0})`}
               </DrawerTitle>
               <DrawerDescription>{t("drawer.cardTrash.description")}</DrawerDescription>
             </span>
@@ -108,18 +104,16 @@ export const CardTrash = ({ open, onOpenChange }: ICardTrashProps) => {
                   </p>
                 </div>
               )}
-              {index.isFetchingNextPage && (
-                <div className="flex h-full min-h-[30px] flex-col items-center justify-center gap-2">
-                  <Loader2 className="size-4 animate-spin" />
-                </div>
-              )}
-              {!isLoading && !index.hasNextPage && !!cards?.length && (
-                <div className="flex h-full min-h-[30px] flex-col items-center justify-center gap-2 pt-10">
-                  <p className="text-muted-foreground text-center text-sm font-thin">
-                    {t("drawer.cardTrash.no_more_results")}
-                  </p>
-                </div>
-              )}
+              {!isLoading &&
+                !!cards?.length &&
+                (trashData?.pages?.slice(-1)?.[0]?.page ?? 0) >=
+                  (trashData?.pages?.slice(-1)?.[0]?.pages ?? 0) && (
+                  <div className="flex h-full min-h-[30px] flex-col items-center justify-center gap-2 pt-10">
+                    <p className="text-muted-foreground text-center text-sm font-thin">
+                      {t("drawer.cardTrash.no_more_results")}
+                    </p>
+                  </div>
+                )}
             </div>
           </ScrollArea>
         </DrawerContent>

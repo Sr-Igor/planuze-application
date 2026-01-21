@@ -6,14 +6,18 @@ import { useRouter } from "next/navigation";
 
 import { KeyRound, Mail, Phone } from "lucide-react";
 
-import { user_two_auth } from "@repo/types";
+import { useUserTwoAuthCode } from "@repo/api/web";
+import { setTwoAuth, useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { useAuth } from "@repo/redux/hook";
+import { user_two_auth } from "@repo/types";
 import {
   Button,
   Card,
   CardFooter,
   CardHeader,
   CardTitle,
+  cn,
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
@@ -21,10 +25,6 @@ import {
   RadioGroupItem,
 } from "@repo/ui";
 
-import { useUserTwoAuthCode } from "@repo/api/web/callers/user_two_auth_code";
-import { useAuth } from "@repo/redux/hook";
-import { useSignOut, setTwoAuth } from "@repo/cookies";
-import { cn } from "@repo/ui";
 import { CenterTemplate } from "@/templates/center";
 
 const inputClassName = "bg-muted/10 text-muted-foreground border-border bg-sidebar/80";

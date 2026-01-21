@@ -1,6 +1,5 @@
+import { IMemberStats } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-
-import { IMemberStats } from "@repo/api/web/callers/project_kanban_report/types";
 
 export interface iLineMemberProps {
   member: IMemberStats;

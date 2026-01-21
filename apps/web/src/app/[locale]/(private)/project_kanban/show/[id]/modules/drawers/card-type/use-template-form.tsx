@@ -1,9 +1,7 @@
 "use client";
 
-import { index as indexKanbanTemplateCardType } from "@repo/api/web/req/kanban_template_card_type";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { kanbanTemplateCardTypeIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import {
   kanban_template_card,
   kanban_template_card_type,
@@ -13,8 +11,6 @@ import { Icon } from "@repo/ui";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 import { Shallow } from "@/types/shallowType";
-
-import { useKanbanShow } from "../../../context";
 
 type Form = Shallow<kanban_template_card>;
 
@@ -35,18 +31,16 @@ const schema: IValidatorRequest = {
 };
 
 export const useTemplateForm = ({ disabled }: IUseHookProps<project_kanban_cycle_card_type>) => {
-  const { select } = useKanbanShow();
-
   const fields: Field<Form>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "kanban_template_card_type_id",
       label: "kanban_template_card_type_id",
       required: true,
       className: "col-span-2",
       disabled,
       cacheKey: "kanban_template_card_type_infinity",
-      request: indexKanbanTemplateCardType,
+      request: kanbanTemplateCardTypeIndex,
       formatter: (items: kanban_template_card_type[]) => {
         return items.map((i) => ({ label: i.title, value: i.id, item: i }));
       },

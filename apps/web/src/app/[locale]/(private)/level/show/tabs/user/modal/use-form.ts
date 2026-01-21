@@ -1,9 +1,7 @@
 "use client";
 
-import { index } from "@repo/api/web/req/profile";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { profileIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { profile, project_member } from "@repo/types";
 
 import { Shallow } from "@/types/shallowType";
@@ -32,14 +30,14 @@ export const useForm = ({ disabled, profiles }: IUseFormProps) => {
 
   const fields: Field<Form>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "profile_id",
       label: "profile_id",
       className: "col-span-2",
       required: true,
       disabled,
       cacheKey: "profile_infinity",
-      request: index,
+      request: profileIndex,
       formatter: (items: profile[]) =>
         items
           ?.filter(

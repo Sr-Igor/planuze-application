@@ -1,8 +1,8 @@
-import { kanban_template, kanban_template_card } from "@repo/types";
+import { useKanbanTemplateCard } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
+import { kanban_template, kanban_template_card } from "@repo/types";
 import { Icon } from "@repo/ui";
 
-import { useKanbanTemplateCard } from "@repo/api/web/callers/kanban_template_card";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

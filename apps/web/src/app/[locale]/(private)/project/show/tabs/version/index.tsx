@@ -1,7 +1,7 @@
+import { useProjectVersion } from "@repo/api/web";
+import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { project_version } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { useProjectVersion } from "@repo/api/web/callers/project_version";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

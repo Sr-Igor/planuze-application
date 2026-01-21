@@ -4,12 +4,10 @@ import { useEffect } from "react";
 
 import { AlertCircleIcon } from "lucide-react";
 
-import { profile } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui";
-
 import { hookValidate } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { profile } from "@repo/types";
+import { Alert, AlertDescription, AppDialog, Button } from "@repo/ui";
 
 import { useForm } from "./use-form";
 

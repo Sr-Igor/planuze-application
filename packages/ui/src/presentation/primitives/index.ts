@@ -97,14 +97,7 @@ export type {
 } from "./button";
 
 // Card
-export {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./card";
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
 export type {
   CardContentProps,
   CardDescriptionProps,
@@ -132,6 +125,7 @@ export {
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogDNDContent,
   DialogFooter,
   DialogHeader,
   DialogOverlay,
@@ -217,14 +211,10 @@ export type {
 
 // HoverCard
 export { HoverCard, HoverCardContent, HoverCardTrigger } from "./hover-card";
-export type {
-  HoverCardContentProps,
-  HoverCardProps,
-  HoverCardTriggerProps,
-} from "./hover-card";
+export type { HoverCardContentProps, HoverCardProps, HoverCardTriggerProps } from "./hover-card";
 
 // Input
-export { Input, inputBaseClassName } from "./input";
+export { Input, inputClassName } from "./input";
 export type { InputProps } from "./input";
 
 // Label
@@ -325,12 +315,7 @@ export type { SwitchProps } from "./switch";
 
 // Tabs
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
-export type {
-  TabsContentProps,
-  TabsListProps,
-  TabsProps,
-  TabsTriggerProps,
-} from "./tabs";
+export type { TabsContentProps, TabsListProps, TabsProps, TabsTriggerProps } from "./tabs";
 
 // Textarea
 export { Textarea } from "./textarea";

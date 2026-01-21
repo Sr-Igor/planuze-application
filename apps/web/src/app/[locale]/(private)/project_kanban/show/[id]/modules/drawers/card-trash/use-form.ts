@@ -1,9 +1,7 @@
 "use client";
 
-import { index } from "@repo/api/web/req/kanban_template";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { kanbanTemplateIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { kanban_template, project_kanban_cycle } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
@@ -65,13 +63,13 @@ export const useForm = ({ disabled, item }: IUseHookProps<project_kanban_cycle>)
       className: "col-span-1",
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "kanban_template_id",
       label: "kanban_template_id",
       className: "col-span-1",
       disabled: disabled || !!item?.id,
       cacheKey: "kanban_template_infinity",
-      request: index,
+      request: kanbanTemplateIndex,
       formatter: (items: kanban_template[]) =>
         items?.map((template) => ({
           label: template.title,

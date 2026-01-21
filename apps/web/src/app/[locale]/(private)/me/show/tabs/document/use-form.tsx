@@ -1,8 +1,7 @@
+import { Field, useFormList } from "@repo/form";
 import { profile_document } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 export type FormType = {

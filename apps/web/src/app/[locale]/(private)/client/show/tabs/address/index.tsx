@@ -1,6 +1,6 @@
 "use client";
 
-import { useClientAddress } from "@repo/api/web/callers/client_address";
+import { useClientAddress } from "@repo/api/web";
 import { hookValidate } from "@repo/form";
 import { client } from "@repo/types";
 import { cn } from "@repo/ui";

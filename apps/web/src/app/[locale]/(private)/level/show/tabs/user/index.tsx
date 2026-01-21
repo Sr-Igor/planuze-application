@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 import { PackageOpen, UserPlus } from "lucide-react";
 
-import { level, profile } from "@repo/types";
+import { useProfile } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
+import { level, profile } from "@repo/types";
 import { Button } from "@repo/ui";
 
-import { useProfile } from "@repo/api/web/callers/profile";
 import { Permission } from "@/components/permission";
 import { useShow } from "@/templates/show/context";
 

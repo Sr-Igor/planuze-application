@@ -1,12 +1,7 @@
-import { useEffect } from "react";
-
 import { useLocale } from "next-intl";
 
-import { index as indexProjectFinancial } from "@repo/api/web/req/project_financial";
-import { index as indexRole } from "@repo/api/web/req/role";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { projectFinancialIndex, roleIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_financial, project_financial_employees, role } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
@@ -59,13 +54,13 @@ export const useForm = ({ disabled, state, data }: IUseHookProps<Form>) => {
 
   const fields: Field<Form>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "project_financial_id",
       label: "project_financial_id",
       required: true,
       disabled,
       cacheKey: "project_financial_infinity",
-      request: indexProjectFinancial,
+      request: projectFinancialIndex,
       queryParams: {
         orderKey: "createdAt",
         orderValue: "desc",
@@ -89,13 +84,13 @@ export const useForm = ({ disabled, state, data }: IUseHookProps<Form>) => {
       disabled,
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "role_id",
       label: "role_id",
       required: true,
       disabled,
       cacheKey: "role_infinity",
-      request: indexRole,
+      request: roleIndex,
       queryParams: {
         orderKey: "title",
         orderValue: "asc",

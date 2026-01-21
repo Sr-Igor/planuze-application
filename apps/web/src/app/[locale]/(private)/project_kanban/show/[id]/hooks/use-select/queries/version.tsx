@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
-import { project_version } from "@repo/types";
+import { projectVersionIndex } from "@repo/api/web";
+import { Pagination, project_version } from "@repo/types";
 
-import { index } from "@repo/api/web/req/project_version";
 import { useAccess } from "@/hooks/access";
-import { Pagination } from "@/types/pagination";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
@@ -24,7 +23,7 @@ export const useIndexVersion = ({ search, kanban }: ISelectProps): ISelectReturn
     queryFn: ({ pageParam = 1 }) => {
       const params: Record<string, any> = { page: pageParam, ...queryParams };
       if (search) params.search = search;
-      return index(params);
+      return projectVersionIndex(params);
     },
     getNextPageParam: (lastPage) =>
       lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,

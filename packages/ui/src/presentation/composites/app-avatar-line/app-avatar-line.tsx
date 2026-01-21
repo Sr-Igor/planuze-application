@@ -3,7 +3,7 @@
 import { Skeleton } from "../../primitives/skeleton";
 import { AppAvatar, type AppAvatarProps } from "../app-avatar";
 
-export interface AppAvatarLineProps extends Omit<AppAvatarProps, "name" | "loading"> {
+export interface AppAvatarLineProps extends Omit<AppAvatarProps, "name" | "loading" | "path"> {
   /**
    * Whether the component is in loading state
    */
@@ -16,12 +16,23 @@ export interface AppAvatarLineProps extends Omit<AppAvatarProps, "name" | "loadi
    * Avatar image source
    */
   avatar?: string | null;
+  /**
+   * Path segment for building the URL (e.g., "profile/avatar")
+   * @default "profile/avatar"
+   */
+  path?: string;
+  /**
+   * Whether the user is internal/anonymous
+   */
+  internal?: boolean;
 }
 
 export const AppAvatarLine = ({
   loading,
   name,
   avatar,
+  path = "profile/avatar",
+  internal,
   ...rest
 }: AppAvatarLineProps) => {
   if (loading) {
@@ -37,12 +48,7 @@ export const AppAvatarLine = ({
 
   return (
     <span className="flex items-center gap-2">
-      <AppAvatar
-        {...rest}
-        src={avatar || ""}
-        name={name || ""}
-        className="h-7 w-7"
-      />
+      <AppAvatar {...rest} path={path} src={avatar || ""} name={name || ""} className="h-7 w-7" />
       <p>{name}</p>
     </span>
   );

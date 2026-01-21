@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
+import { useProjectKanban } from "@repo/api/web";
 import { project_kanban } from "@repo/types";
 
-import { useProjectKanban } from "@repo/api/web/callers/project_kanban";
 import { useAccess } from "@/hooks/access";
 import { BaseTemplate } from "@/templates/list/base";
 

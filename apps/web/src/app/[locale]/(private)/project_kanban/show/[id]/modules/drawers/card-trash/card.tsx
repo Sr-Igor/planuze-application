@@ -2,18 +2,19 @@ import { ClockArrowDown, History } from "lucide-react";
 
 import { project_kanban_cycle_card } from "@repo/types";
 import {
+  AppTooltip,
   Button,
   Card as CardComponent,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
+  cn,
+  Icon,
   Skeleton,
 } from "@repo/ui";
-import { AppTooltip, Icon } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 

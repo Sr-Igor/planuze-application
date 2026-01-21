@@ -11,7 +11,7 @@ import rootSaga from "./modules/rootSagas";
 //--------------------------------------Configure Store--------------------------------------//
 
 //Persistor Module
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer as any);
 
 //Create Saga
 const sagaMiddleware = createSagaMiddleware();

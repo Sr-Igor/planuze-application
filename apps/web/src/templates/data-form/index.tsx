@@ -5,8 +5,7 @@ import { useState } from "react";
 import { HistoryIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppLogsModal, ILogsComparison } from "@repo/ui";
+import { AppLogsModal, Button, ILogsComparison } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 

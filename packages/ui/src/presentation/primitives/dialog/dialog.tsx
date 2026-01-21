@@ -8,11 +8,36 @@
 
 "use client";
 
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { XIcon } from "lucide-react";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { XIcon } from "lucide-react";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * Dialog Component Module
+ *
+ * A modal dialog that interrupts the user with important content.
+ *
+ * @module presentation/primitives/dialog
+ */
+
+/**
+ * Dialog Component Module
+ *
+ * A modal dialog that interrupts the user with important content.
+ *
+ * @module presentation/primitives/dialog
+ */
+
+/**
+ * Dialog Component Module
+ *
+ * A modal dialog that interrupts the user with important content.
+ *
+ * @module presentation/primitives/dialog
+ */
 
 /**
  * Dialog component props.
@@ -86,12 +111,9 @@ export type DialogCloseProps = ComponentPropsWithoutRef<typeof DialogPrimitive.C
  *
  * Closes the dialog when clicked.
  */
-const DialogClose = forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Close>,
-  DialogCloseProps
->(({ ...props }, ref) => (
-  <DialogPrimitive.Close ref={ref} data-slot="dialog-close" {...props} />
-));
+const DialogClose = forwardRef<React.ElementRef<typeof DialogPrimitive.Close>, DialogCloseProps>(
+  ({ ...props }, ref) => <DialogPrimitive.Close ref={ref} data-slot="dialog-close" {...props} />
+);
 
 DialogClose.displayName = "DialogClose";
 
@@ -237,26 +259,23 @@ export type DialogTitleProps = ComponentPropsWithoutRef<typeof DialogPrimitive.T
  *
  * The title of the dialog.
  */
-const DialogTitle = forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
-  DialogTitleProps
->(({ className, ...props }, ref) => (
-  <DialogPrimitive.Title
-    ref={ref}
-    data-slot="dialog-title"
-    className={cn("text-lg leading-none font-semibold", className)}
-    {...props}
-  />
-));
+const DialogTitle = forwardRef<React.ElementRef<typeof DialogPrimitive.Title>, DialogTitleProps>(
+  ({ className, ...props }, ref) => (
+    <DialogPrimitive.Title
+      ref={ref}
+      data-slot="dialog-title"
+      className={cn("text-lg leading-none font-semibold", className)}
+      {...props}
+    />
+  )
+);
 
 DialogTitle.displayName = "DialogTitle";
 
 /**
  * DialogDescription component props.
  */
-export type DialogDescriptionProps = ComponentPropsWithoutRef<
-  typeof DialogPrimitive.Description
->;
+export type DialogDescriptionProps = ComponentPropsWithoutRef<typeof DialogPrimitive.Description>;
 
 /**
  * DialogDescription component.
@@ -277,11 +296,61 @@ const DialogDescription = forwardRef<
 
 DialogDescription.displayName = "DialogDescription";
 
+/**
+ * DialogDNDContent component.
+ *
+ * A dialog content variant that prevents closing on outside click,
+ * useful for drag and drop interactions.
+ */
+const DialogDNDContent = forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  DialogContentProps
+>(({ className, children, closeButton = true, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      ref={ref}
+      data-slot="dialog-dnd-content"
+      onPointerDownOutside={(e) => e.preventDefault()}
+      onInteractOutside={(e) => e.preventDefault()}
+      className={cn(
+        "bg-background fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%]",
+        "gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out",
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+        "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      {closeButton && (
+        <DialogPrimitive.Close
+          className={cn(
+            "ring-offset-background absolute top-4 right-4 rounded-xs opacity-70",
+            "transition-opacity hover:opacity-100",
+            "focus:ring-ring focus:ring-2 focus:ring-offset-2 focus:outline-hidden",
+            "disabled:pointer-events-none",
+            "data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
+            "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+          )}
+        >
+          <XIcon />
+          <span className="sr-only">Close</span>
+        </DialogPrimitive.Close>
+      )}
+    </DialogPrimitive.Content>
+  </DialogPortal>
+));
+
+DialogDNDContent.displayName = "DialogDNDContent";
+
 export {
   Dialog,
   DialogClose,
   DialogContent,
   DialogDescription,
+  DialogDNDContent,
   DialogFooter,
   DialogHeader,
   DialogOverlay,

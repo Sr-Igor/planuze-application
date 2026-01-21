@@ -133,7 +133,7 @@ export interface IExportInfo {
   mimeType: string;
 }
 
-export interface IIndexResponseDTO {
+export interface IProjectIndexResponseDTO {
   summary: IFinancialSummary;
   projects: IProjectFinancial[];
   costBreakdown: ICostBreakdown[];
@@ -160,5 +160,5 @@ export interface IIndexResponseDTO {
 }
 
 export interface IIndexProps extends IDashboardModule {
-  data?: IIndexResponseDTO;
+  data?: IProjectIndexResponseDTO;
 }

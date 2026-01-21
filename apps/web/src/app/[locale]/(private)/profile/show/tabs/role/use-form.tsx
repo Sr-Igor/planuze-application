@@ -4,11 +4,8 @@ import { useLocale } from "next-intl";
 
 import { useWatch } from "react-hook-form";
 
-import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
-import { index as indexRole } from "@repo/api/web/req/role";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { costCenterIndex, roleIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { cost_center, profile_role, role } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
@@ -123,14 +120,14 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_role>) => {
   const { paymentRoutine, recurrenceType } = useConstants();
   const fields: Field<Partial<FormType>>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "role_id",
       ref_key: "role_id",
       label: "role",
       required: true,
       disabled,
       cacheKey: "role_infinity",
-      request: indexRole,
+      request: roleIndex,
       queryParams: {
         orderKey: "title",
         orderValue: "asc",
@@ -222,12 +219,12 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_role>) => {
     },
 
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "cost_center_id",
       label: "cost_center_id",
       disabled,
       cacheKey: "cost_center_infinity",
-      request: indexCostCenter,
+      request: costCenterIndex,
       formatter: (items: cost_center[]) =>
         items?.map((costCenter) => ({
           label: costCenter.title,

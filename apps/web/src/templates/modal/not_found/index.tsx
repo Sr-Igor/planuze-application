@@ -6,8 +6,14 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Dialog, DialogContent, DialogFooter, DialogHeader } from "@repo/ui";
-import { InfoModalLayout } from "@repo/ui";
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  InfoModalLayout,
+} from "@repo/ui";
 
 import { useModal } from "@/hooks/modal";
 

@@ -1,9 +1,7 @@
 import { useEffect, useRef } from "react";
 
-import { getCep } from "@repo/api/global/cep";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { getCep } from "@repo/api";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { profile_address } from "@repo/types";
 
 export type FormType = {

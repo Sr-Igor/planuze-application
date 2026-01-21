@@ -1,8 +1,8 @@
 "use client";
 
+import { useKanbanTemplateCardType } from "@repo/api/web";
 import { kanban_template_card_type } from "@repo/types";
 
-import { useKanbanTemplateCardType } from "@repo/api/web/callers/kanban_template_card_type";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useForm, useTable } from "./hooks";

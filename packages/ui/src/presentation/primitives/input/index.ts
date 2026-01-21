@@ -4,5 +4,5 @@
  * @module presentation/primitives/input
  */
 
-export { Input, inputBaseClassName } from "./input";
+export { Input, inputClassName } from "./input";
 export type { InputProps } from "./input";

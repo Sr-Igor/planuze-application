@@ -2,11 +2,9 @@
 
 import { useEffect } from "react";
 
-import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui";
-
 import { hookValidate } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { AppDialog, Button } from "@repo/ui";
 
 import { IDialogProps } from "../types";
 

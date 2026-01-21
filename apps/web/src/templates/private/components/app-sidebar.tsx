@@ -9,9 +9,11 @@ import * as lucideIcons from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import {
+  AppTheme,
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
+  Icon,
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -24,10 +26,9 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@repo/ui";
-import { AppTheme, Icon } from "@repo/ui";
 
-import { AppLanguage } from "@/components/language";
 import { ModuleSwitcher } from "@/components/app-module-switcher";
+import { AppLanguage } from "@/components/language";
 import { useAccess } from "@/hooks/access";
 import { FeatureWithActions, ModuleWithFeatures } from "@/hooks/access/types";
 

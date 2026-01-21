@@ -1,8 +1,6 @@
 "use client";
 
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { work_type } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/list/base/types";

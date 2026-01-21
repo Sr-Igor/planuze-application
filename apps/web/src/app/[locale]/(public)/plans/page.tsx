@@ -4,7 +4,11 @@ import { useRouter } from "next/navigation";
 
 import { Ban, UserLock } from "lucide-react";
 
+import { usePlan, useSubscription } from "@repo/api/web";
+import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { useAppDispatch } from "@repo/redux/hook";
+import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import {
   Button,
   Dialog,
@@ -14,12 +18,7 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { usePlan } from "@repo/api/web/callers/plan";
-import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@repo/cookies";
-import { useAppDispatch } from "@repo/redux/hook";
-import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import { PlansTemplate } from "@/templates/plans";
 import { ProfileSwitcher } from "@/templates/private/components/profile-switch";
 
@@ -37,7 +36,7 @@ export default function Page() {
   const enabled = (has.ok && module?.id === has.moduleId) || isPublic;
 
   const { index } = useSubscription({ enabledIndex: enabled });
-  const { index: indexPlan } = usePlan({ company_id: profile?.company_id, enabled });
+  const { index: indexPlan } = usePlan({ companyId: profile?.company_id, enabled });
 
   const { out } = useSignOut();
 

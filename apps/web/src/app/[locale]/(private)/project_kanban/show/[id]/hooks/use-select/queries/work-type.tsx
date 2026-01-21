@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
-import { work_type } from "@repo/types";
+import { workTypeIndex } from "@repo/api/web";
+import { Pagination, work_type } from "@repo/types";
 
-import { index } from "@repo/api/web/req/work_type";
 import { useAccess } from "@/hooks/access";
-import { Pagination } from "@/types/pagination";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
@@ -23,7 +22,7 @@ export const useIndexWorkType = ({ search }: ISelectProps): ISelectReturnProps =
     queryFn: ({ pageParam = 1 }) => {
       const params: Record<string, any> = { page: pageParam, ...queryParams };
       if (search) params.search = search;
-      return index(params);
+      return workTypeIndex(params);
     },
     getNextPageParam: (lastPage) =>
       lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,

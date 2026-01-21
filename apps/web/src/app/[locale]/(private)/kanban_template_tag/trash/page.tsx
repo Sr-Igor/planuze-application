@@ -1,11 +1,14 @@
-'use client';
+"use client";
 
-import { useKanbanTemplateTag } from '@repo/api/web/callers/kanban_template_tag';
-import { TrashTemplate } from '@/templates/list/trash';
+import { useKanbanTemplateTag } from "@repo/api/web";
 
-import { useTable } from './use-table';
+import { TrashTemplate } from "@/templates/list/trash";
+
+import { useTable } from "./use-table";
 
 export default function Page() {
-    //Render
-    return <TrashTemplate path='kanban_template_tag' hookReq={useKanbanTemplateTag} useTable={useTable} />;
+  //Render
+  return (
+    <TrashTemplate path="kanban_template_tag" hookReq={useKanbanTemplateTag} useTable={useTable} />
+  );
 }

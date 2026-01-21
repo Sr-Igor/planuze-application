@@ -4,13 +4,8 @@ import { useEffect, useRef } from "react";
 
 import { useWatch } from "react-hook-form";
 
-import { index as indexCostCenter } from "@repo/api/web/req/cost_center";
-import { index as indexProfile } from "@repo/api/web/req/profile";
-import { index as indexProjectVersion } from "@repo/api/web/req/project_version";
-import { index as indexWorkType } from "@repo/api/web/req/work_type";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { costCenterIndex, profileIndex, projectVersionIndex, workTypeIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { cost_center, profile, project_version, work_type } from "@repo/types";
 
 import { QueryFilters } from "../types";
@@ -101,13 +96,13 @@ export const useFilters = ({ filters }: IUseFiltersProps) => {
 
   const fields: Field<FiltersFormType>[] = [
     {
-      field: "infinity_checkbox",
+      field: "select-checkbox-infinity",
       name: "project_version_id",
       label: "project",
       className: "col-span-2 lg:col-span-1",
       disabled: false,
       cacheKey: "project_version_dashboard_filter_infinity",
-      request: indexProjectVersion,
+      request: projectVersionIndex,
       formatter: (items: project_version[]) =>
         items?.map((item) => ({
           label: item.name || item.id,
@@ -120,13 +115,13 @@ export const useFilters = ({ filters }: IUseFiltersProps) => {
       enabledOnOpen: true,
     },
     {
-      field: "infinity_checkbox",
+      field: "select-checkbox-infinity",
       name: "owner_id",
       label: "responsible",
       className: "col-span-2 lg:col-span-1",
       disabled: false,
       cacheKey: "profile_infinity",
-      request: indexProfile,
+      request: profileIndex,
       formatter: (items: profile[]) =>
         items?.map((item) => ({
           label: item.user?.name || item.id,
@@ -137,13 +132,13 @@ export const useFilters = ({ filters }: IUseFiltersProps) => {
       enabledOnOpen: true,
     },
     {
-      field: "infinity_checkbox",
+      field: "select-checkbox-infinity",
       name: "work_type_id",
       label: "work_type_id",
       className: "col-span-2 lg:col-span-1",
       disabled: false,
       cacheKey: "work_type_dashboard_filter_infinity",
-      request: indexWorkType,
+      request: workTypeIndex,
       formatter: (items: work_type[]) =>
         items?.map((item) => ({
           label: item.title,
@@ -153,13 +148,13 @@ export const useFilters = ({ filters }: IUseFiltersProps) => {
       enabledOnOpen: true,
     },
     {
-      field: "infinity_checkbox",
+      field: "select-checkbox-infinity",
       name: "cost_center_id",
       label: "cost_center_id",
       className: "col-span-2 lg:col-span-1",
       disabled: false,
       cacheKey: "cost_center_dashboard_filter_infinity",
-      request: indexCostCenter,
+      request: costCenterIndex,
       formatter: (items: cost_center[]) =>
         items?.map((item) => ({
           label: item.title,

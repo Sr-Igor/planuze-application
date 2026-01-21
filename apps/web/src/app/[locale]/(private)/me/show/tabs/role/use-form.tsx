@@ -1,9 +1,7 @@
+import { Field, IUseFormListReturn, useFormList } from "@repo/form";
 import { profile_role } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
 
 import { useConstants } from "@/hooks/constants";
-import { useFormList } from "@repo/form";
-import { Field, IUseFormListReturn } from "@repo/form";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
 
 type FormType = {

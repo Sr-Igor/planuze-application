@@ -1,7 +1,9 @@
-import { InfiniteData, UseInfiniteQueryResult } from "@tanstack/react-query";
+import { InfiniteData } from "@tanstack/react-query";
 import { LucideIcon } from "lucide-react";
 
+import { IKanbanReportResponse } from "@repo/api/types";
 import {
+  Pagination,
   project_allocation,
   project_config,
   project_kanban_cycle,
@@ -12,9 +14,6 @@ import {
   project_member,
   project_tool,
 } from "@repo/types";
-
-import { IIndexResponseDTO } from "@repo/api/web/callers/project_kanban_report/types";
-import { Pagination } from "@/types/pagination";
 
 import { IParams } from "../hooks/use-query/types";
 import {
@@ -140,10 +139,7 @@ export interface IUseCallersReturnProps {
     onShow: () => project_kanban_cycle_card | undefined;
     onIndex: () => Pagination<project_kanban_cycle_card> | undefined;
     onSubmit: (card: Partial<project_kanban_cycle_card>, close?: boolean) => void;
-    onTrash: () => UseInfiniteQueryResult<
-      InfiniteData<Pagination<project_kanban_cycle_card>, unknown>,
-      Error
-    >;
+    onTrash: () => InfiniteData<Pagination<project_kanban_cycle_card>> | undefined;
     onRestore: (data: project_kanban_cycle_card) => void;
   };
   cardType: {
@@ -170,7 +166,7 @@ export interface IUseCallersReturnProps {
     onDelete: () => void;
   };
   report: {
-    onIndex: () => IIndexResponseDTO | undefined;
+    onIndex: () => IKanbanReportResponse | undefined;
     onExport: () => void;
   };
   onDestroy: (data: any) => void;

@@ -1,9 +1,9 @@
 import { UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
-import { profile } from "@repo/types";
+import { UseCallerProps } from "@repo/api/types";
 import { PageKeys } from "@repo/language/types";
+import { profile } from "@repo/types";
 
-import { IUseCallerProps } from "@repo/api/web/types";
 import { AccessView, Permissions } from "@/hooks/access/types";
 
 export interface IShowTab {
@@ -76,7 +76,7 @@ export type Requests<T> = {
   destroy?: UseMutationResult<any, any, any, any>;
 };
 
-export type HookReq<T> = (params: IUseCallerProps<T>) => Requests<T>;
+export type HookReq<T> = (params: UseCallerProps<T>) => Requests<T>;
 
 export interface IShowTemplateProps<T extends { id: string }> {
   useTabs: (props: IShowHookProps<T>) => IShowTab[];

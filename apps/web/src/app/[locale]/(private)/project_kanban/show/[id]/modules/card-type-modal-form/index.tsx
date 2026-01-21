@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui";
+import { Button , AppDialog } from "@repo/ui";
 
 import { AppTabs } from "@/components/app-tabs";
 import { hookValidate } from "@repo/form";
@@ -52,7 +51,7 @@ export const CardTypeModalForm = <T extends { id: string }>({
 
   //Handlers
   const handleSubmit = () => {
-    const hooks = [tab === "template" ? { hook: hookTemplate } : { hook, data: item }];
+    const hooks = [tab === "template" ? { hook: hookTemplate } : { hook, data: item }] as any;
     hookValidate(
       hooks,
       (form) => {

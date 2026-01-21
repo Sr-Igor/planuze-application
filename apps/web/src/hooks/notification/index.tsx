@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 
 import { useSearchParams } from "next/navigation";
 
+import { useNotificationSubscription } from "@repo/api/web";
+import { useAppDispatch, useAuth } from "@repo/redux/hook";
+import { set } from "@repo/redux/store/modules/module/actions";
 import { urlToBase64 } from "@repo/utils";
 
-import { useNotificationSubscription } from "@repo/api/web/callers/notification_subscription";
-import { set } from "@repo/redux/store/modules/module/actions";
-
 import { useModal } from "../modal";
-import { useAuth , useAppDispatch } from "@repo/redux/hook";
 
 function areSubscriptionsEqual(sub1: any, sub2: any) {
   if (!sub1 || !sub2) return false;

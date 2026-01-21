@@ -2,10 +2,10 @@
 
 import { useParams } from "next/navigation";
 
+import { useProjectKanbanObjective } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
 import { Icon } from "@repo/ui";
 
-import { useProjectKanbanObjective } from "@repo/api/web/callers/project_kanban_objective";
 import { TrashTemplate } from "@/templates/list/trash";
 import { usePrivateContext } from "@/templates/private/context";
 

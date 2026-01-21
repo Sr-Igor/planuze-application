@@ -3,10 +3,7 @@
 import * as React from "react";
 
 import { useLang } from "@repo/language/hooks";
-import { Badge, Separator } from "@repo/ui";
-import { MainCard } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { Badge, cn, MainCard, Separator } from "@repo/ui";
 
 import { IAdminSummary } from "../../../types";
 import { CardItem } from "../../card";

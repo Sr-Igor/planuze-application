@@ -2,8 +2,8 @@ import { useLocale } from "next-intl";
 
 import { History, Pen, Ruler, Trash } from "lucide-react";
 
-import { project_tool } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { project_tool } from "@repo/types";
 import {
   Button,
   Card as CardComponent,
@@ -12,12 +12,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  cn,
   Skeleton,
 } from "@repo/ui";
+import { formatCurrency } from "@repo/utils/currency";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
-import { formatCurrency } from "@repo/utils/currency";
 
 import { useKanbanShow } from "../../../context";
 

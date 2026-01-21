@@ -1,8 +1,7 @@
 "use client";
 
+import { adminDashboardPlaceholder } from "@repo/api/placeholders";
 import { ScrollArea } from "@repo/ui";
-
-import { placeholder } from "@repo/api/web/callers/dashboard/placeholder/admin";
 
 import { Header } from "./components/header";
 import { Metadata } from "./components/metadata";
@@ -13,7 +12,7 @@ export default function ({
   filters,
   setFilters,
   handleExport,
-  data = placeholder,
+  data = adminDashboardPlaceholder,
   isLoading,
   isExporting,
 }: IIndexProps) {

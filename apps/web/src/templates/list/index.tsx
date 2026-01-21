@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+import { useDebounce } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-import { Input } from "@repo/ui";
+import { cn, Input } from "@repo/ui";
 import {
   AppTable,
   type TableAction,
@@ -11,9 +12,6 @@ import {
   TableEventHandlers,
   type TableFilters,
 } from "@repo/ui";
-
-import { useDebounce } from "@repo/hooks";
-import { cn } from "@repo/ui";
 
 import * as styles from "./styles";
 

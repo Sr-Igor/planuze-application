@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 
-import { IBank } from "@repo/api/global/bank";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { IBank } from "@repo/api";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { profile_bank_account } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
@@ -100,9 +98,8 @@ export const useForm = ({ disabled, state }: IUseHookProps<Form>) => {
       name: "bank_number",
       label: "bank_number",
       disabled,
-      int: true,
       className: "col-span-2",
-      changeCallback: (bank: IBank | null) => {
+      onChangeCallback: (bank: IBank | null) => {
         form.hook.setValue("bank_name", bank?.name || "");
       },
     },

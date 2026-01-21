@@ -1,6 +1,20 @@
 import { UseFormReturn } from "react-hook-form";
 
 import {
+  kanbanTemplateTagIndex,
+  projectKanbanCycleCardIndex,
+  projectKanbanObjectiveTargetIndex,
+} from "@repo/api/web";
+import {
+  CalendarController,
+  InputController,
+  NumericController,
+  SimpleInfinitySelectController,
+  SimpleSelectController,
+  TagsController,
+} from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import {
   kanban_template_tag,
   profile,
   project_kanban_cycle,
@@ -9,26 +23,27 @@ import {
   project_kanban_objective_target,
   work_type,
 } from "@repo/types";
-import { useLang } from "@repo/language/hooks";
+import { AppAvatarLine, cn } from "@repo/ui";
 
-import { index as indexKanbanTemplateTag } from "@repo/api/web/req/kanban_template_tag";
-import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { index as indexProjectKanbanObjectiveTarget } from "@repo/api/web/req/project_kanban_objective_target";
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { CalendarController , SimpleInfinitySelectController , InputController , NumericController , SimpleSelectController , TagsController , Field } from "@repo/form";
-import { AppAvatarLine , cn } from "@repo/ui";
 import { AppCardSelector } from "@/components/app-cycle-card-selector";
 import { useConstants } from "@/hooks/constants";
 
 import { styles } from "./styles";
 
-interface IFieldsProps extends Partial<Field<any>> {
+interface IFieldsProps {
   hook: UseFormReturn<any>;
   cardId?: string;
   item?: project_kanban_cycle_card;
   value?: string;
   isCardField?: boolean;
   disabled?: boolean;
+  label?: string;
+  placeholder?: string;
+  className?: string;
+  inputClassName?: string;
+  objectiveId?: string | null;
+  showArrows?: boolean;
 }
 
 const LabelContent = ({ label, children }: { label?: string; children: React.ReactNode }) => {
@@ -94,13 +109,13 @@ export const Responsible = ({
           item,
         }));
       }}
-      customSelect={(item: profile, fallbackValue?: string) => {
+      customSelect={(item?: profile, fallbackValue?: string) => {
         return (
           <AppAvatarLine
             loading={false}
-            name={item?.user?.name || item.anonymous_name || fallbackValue || ""}
+            name={item?.user?.name || item?.anonymous_name || fallbackValue || ""}
             avatar={""}
-            internal={item.anonymous}
+            internal={item?.anonymous}
           />
         );
       }}
@@ -200,7 +215,7 @@ export const Parent = ({
         placeholder={disabled ? t("no_value.parent") : placeholder}
         field="infinity_select"
         inputClassName={styles.foreground}
-        request={indexProjectKanbanCycleCard}
+        request={projectKanbanCycleCardIndex}
         queryParams={{
           principal: true,
           project_kanban_cycle_id: cycleId,
@@ -435,7 +450,7 @@ export const CardTags = ({ hook, disabled }: IFieldsProps) => {
       control={hook.control}
       field="tags"
       className="hidden p-0 xl:block"
-      request={indexKanbanTemplateTag}
+      request={kanbanTemplateTagIndex!}
       formatter={(items: kanban_template_tag[]) => {
         return items.map((item) => ({
           label: item.title,
@@ -488,7 +503,7 @@ export const Objective = ({
             </p>
           );
         }}
-        customSelect={(item: project_kanban_objective, fallbackValue?: string) => {
+        customSelect={(item?: project_kanban_objective, fallbackValue?: string) => {
           return (
             <p className="line-clamp-1 truncate text-sm">
               {item ? `[${item?.public_id}] ${item?.title}` : fallbackValue}
@@ -524,7 +539,7 @@ export const Target = ({
         placeholder={disabled ? t("no_value.target") : placeholder}
         field="infinity_select"
         inputClassName={styles.foreground}
-        request={indexProjectKanbanObjectiveTarget}
+        request={projectKanbanObjectiveTargetIndex}
         formatter={(items: project_kanban_objective_target[]) => {
           return items.map((item) => ({
             label: item.title,
@@ -543,7 +558,7 @@ export const Target = ({
             </p>
           );
         }}
-        customSelect={(item: project_kanban_objective_target, fallbackValue?: string) => {
+        customSelect={(item?: project_kanban_objective_target, fallbackValue?: string) => {
           return (
             <p className="line-clamp-1 truncate text-sm">
               {item ? `[${item?.public_id}] ${item?.title}` : fallbackValue}

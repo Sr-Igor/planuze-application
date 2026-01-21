@@ -1,6 +1,5 @@
+import { ISummary } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-
-import { ISummary } from "@repo/api/web/callers/project_kanban_report/types";
 
 import { CardItem } from "../../card";
 import { CardCategory } from "../../card-category";

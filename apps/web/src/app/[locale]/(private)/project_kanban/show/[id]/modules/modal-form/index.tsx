@@ -4,12 +4,11 @@ import { useEffect } from "react";
 
 import { AlertCircleIcon } from "lucide-react";
 
+import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui";
+import { Alert, AlertDescription, AlertTitle, AppDialog, Button } from "@repo/ui";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { hookValidate } from "@repo/form";
 
 import { useKanbanShow } from "../../context";
 import { Feature } from "../../types";

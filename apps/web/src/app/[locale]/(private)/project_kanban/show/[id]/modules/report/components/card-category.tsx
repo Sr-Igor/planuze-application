@@ -1,11 +1,17 @@
 import { PackageOpen } from "lucide-react";
 
+import { ICardsTotalByType } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
-import { Icon } from "@repo/ui";
-
-import { ICardsTotalByType } from "@repo/api/web/callers/project_kanban_report/types";
-import { cn } from "@repo/ui";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  cn,
+  Icon,
+  Skeleton,
+} from "@repo/ui";
 
 export interface iCardCategoryProps {
   cardsTotalByType: ICardsTotalByType[];

@@ -6,7 +6,9 @@ import {
   UseQueryResult,
 } from "@tanstack/react-query";
 
+import { IKanbanReportResponse } from "@repo/api/types";
 import {
+  Pagination,
   project_allocation,
   project_config,
   project_kanban,
@@ -19,12 +21,10 @@ import {
   project_tool,
 } from "@repo/types";
 
-import { IIndexResponseDTO } from "@repo/api/web/callers/project_kanban_report/types";
 import {
   BoardUpdateProps,
   IProfile,
 } from "@/app/[locale]/(private)/project_kanban/show/[id]/types";
-import { Pagination } from "@/types/pagination";
 
 import { Mode, State } from "../../../types";
 import { IParams } from "../../use-query/types";
@@ -199,74 +199,71 @@ export interface Services {
   cycle: {
     show: UseQueryResult<project_kanban_cycle, Error>;
     update: UseMutationResult<
-      project_kanban_cycle | Pagination<project_kanban_cycle>,
+      project_kanban_cycle,
       Error,
       { id: string; body: Partial<project_kanban_cycle> }
     >;
-    store: UseMutationResult<
-      project_kanban_cycle | Pagination<project_kanban_cycle>,
-      Error,
-      Partial<project_kanban_cycle>
-    >;
+    store: UseMutationResult<project_kanban_cycle, Error, Partial<project_kanban_cycle>>;
     destroy: UseMutationResult<
-      project_kanban_cycle | Pagination<project_kanban_cycle>,
+      project_kanban_cycle,
       Error,
-      { id: string; query: Partial<project_kanban_cycle> }
+      { id: string; query?: { project_kanban_cycle_id?: string } }
     >;
-    many: UseMutationResult<project_kanban_cycle[] | Pagination<project_kanban_cycle>, Error, any>;
+    many: UseMutationResult<
+      project_kanban_cycle[],
+      Error,
+      { ids: string; body: { data: Partial<project_kanban_cycle>[] } }
+    >;
     trash: UseQueryResult<Pagination<project_kanban_cycle>, Error>;
-    restore: UseMutationResult<
-      project_kanban_cycle | Pagination<project_kanban_cycle>,
-      Error,
-      { id: string }
-    >;
+    restore: UseMutationResult<project_kanban_cycle, Error, { id: string }>;
   };
   column: {
     update: UseMutationResult<
-      project_kanban_cycle_column | Pagination<project_kanban_cycle_column>,
+      project_kanban_cycle_column,
       Error,
-      Partial<project_kanban_cycle_column>
+      { id?: string; body: Partial<project_kanban_cycle_column> }
     >;
     store: UseMutationResult<
-      project_kanban_cycle_column | Pagination<project_kanban_cycle_column>,
+      project_kanban_cycle_column,
       Error,
       Partial<project_kanban_cycle_column>
     >;
     destroy: UseMutationResult<
-      project_kanban_cycle_column | Pagination<project_kanban_cycle_column>,
+      project_kanban_cycle_column,
       Error,
-      { id: string; query: Partial<project_kanban_cycle_column> }
+      { id: string; query?: { project_kanban_cycle_column_id?: string } }
     >;
     many: UseMutationResult<
-      project_kanban_cycle_column[] | Pagination<project_kanban_cycle_column>,
+      project_kanban_cycle_column[],
       Error,
-      any
+      { ids: string; body: { data: Partial<project_kanban_cycle_column>[] } }
     >;
     trash: UseQueryResult<Pagination<project_kanban_cycle_column>, Error>;
-    restore: UseMutationResult<
-      project_kanban_cycle_column | Pagination<project_kanban_cycle_column>,
-      Error,
-      string
-    >;
+    restore: UseMutationResult<project_kanban_cycle_column, Error, string>;
   };
   allocation: {
     index: UseQueryResult<Pagination<project_kanban_cycle_allocation>, Error>;
     update: UseMutationResult<
       project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
       Error,
-      Partial<project_kanban_cycle_allocation>
+      | Partial<project_kanban_cycle_allocation>
+      | { id: string; body: Partial<project_kanban_cycle_allocation> }
     >;
     store: UseMutationResult<
       project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
       Error,
       Partial<project_kanban_cycle_allocation>
     >;
-    destroy: UseMutationResult<any | Pagination<project_kanban_cycle_allocation>, Error, void>;
+    destroy: UseMutationResult<
+      any | Pagination<project_kanban_cycle_allocation>,
+      Error,
+      void | { id: string; query?: any }
+    >;
     trash: UseQueryResult<Pagination<project_kanban_cycle_allocation>, Error>;
     restore: UseMutationResult<
       project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
       Error,
-      string
+      string | undefined
     >;
   };
   card: {
@@ -274,41 +271,31 @@ export interface Services {
     index: UseQueryResult<Pagination<project_kanban_cycle_card>, Error>;
     show: UseQueryResult<project_kanban_cycle_card, Error>;
     update: UseMutationResult<
-      project_kanban_cycle_card | Pagination<project_kanban_cycle_card>,
+      project_kanban_cycle_card,
       Error,
-      Partial<project_kanban_cycle_card>
+      Partial<project_kanban_cycle_card> & { action?: string }
     >;
-    store: UseMutationResult<
-      project_kanban_cycle_card | Pagination<project_kanban_cycle_card>,
-      Error,
-      Partial<project_kanban_cycle_card>
-    >;
+    store: UseMutationResult<project_kanban_cycle_card, Error, Partial<project_kanban_cycle_card>>;
     destroy: UseMutationResult<
-      project_kanban_cycle_card | Pagination<project_kanban_cycle_card>,
+      project_kanban_cycle_card,
       Error,
-      { id: string; query: Partial<project_kanban_cycle_card> }
+      { id: string; query?: { delete_cards?: boolean; unlink_cards?: boolean; card_id?: string } }
     >;
     many: UseMutationResult<
-      project_kanban_cycle_card | Pagination<project_kanban_cycle_card>,
+      project_kanban_cycle_card,
       Error,
-      any
+      { id: string; body: Partial<project_kanban_cycle_card> }
     >;
-    trash: UseInfiniteQueryResult<
-      InfiniteData<Pagination<project_kanban_cycle_card>, unknown>,
-      Error
-    >;
-    restore: UseMutationResult<
-      project_kanban_cycle_card | Pagination<project_kanban_cycle_card>,
-      Error,
-      Partial<project_kanban_cycle_card>
-    >;
+    trash: UseInfiniteQueryResult<InfiniteData<Pagination<project_kanban_cycle_card>>, Error>;
+    restore: UseMutationResult<project_kanban_cycle_card, Error, string | undefined>;
   };
   cardType: {
     index: UseQueryResult<Pagination<project_kanban_cycle_card_type>, Error>;
     update: UseMutationResult<
       project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
       Error,
-      Partial<project_kanban_cycle_card_type>
+      | Partial<project_kanban_cycle_card_type>
+      | { id: string; body: Partial<project_kanban_cycle_card_type> }
     >;
     store: UseMutationResult<
       project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
@@ -318,13 +305,13 @@ export interface Services {
     destroy: UseMutationResult<
       project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
       Error,
-      { id: string; query: Partial<project_kanban_cycle_card_type> }
+      void | { id: string; query?: Partial<project_kanban_cycle_card_type> }
     >;
     trash: UseQueryResult<Pagination<project_kanban_cycle_card_type>, Error>;
     restore: UseMutationResult<
       project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
       Error,
-      string
+      string | undefined
     >;
   };
   member: {
@@ -334,7 +321,11 @@ export interface Services {
       Error,
       Partial<project_member>
     >;
-    destroy: UseMutationResult<project_member | Pagination<project_member>, Error, void>;
+    destroy: UseMutationResult<
+      project_member | Pagination<project_member>,
+      Error,
+      void | { id: string; query?: any }
+    >;
     trash: UseQueryResult<Pagination<project_member>, Error>;
     restore: UseMutationResult<
       project_member | Pagination<project_member>,
@@ -343,7 +334,7 @@ export interface Services {
     >;
   };
   report: {
-    index: UseQueryResult<IIndexResponseDTO, Error>;
+    index: UseQueryResult<IKanbanReportResponse, Error>;
     exported: UseMutationResult<any, Error, any>;
   };
   config: {
@@ -356,9 +347,13 @@ export interface Services {
     update: UseMutationResult<
       project_config | Pagination<project_config>,
       Error,
-      Partial<project_config>
+      Partial<project_config> | { id: string; body: Partial<project_config> }
     >;
-    destroy: UseMutationResult<project_config | Pagination<project_config>, Error, void>;
+    destroy: UseMutationResult<
+      project_config | Pagination<project_config>,
+      Error,
+      void | { id: string; query?: any }
+    >;
     trash: UseQueryResult<Pagination<project_config>, Error>;
     restore: UseMutationResult<
       project_config | Pagination<project_config>,
@@ -376,9 +371,13 @@ export interface Services {
     update: UseMutationResult<
       project_allocation | Pagination<project_allocation>,
       Error,
-      Partial<project_allocation>
+      Partial<project_allocation> | { id: string; body: Partial<project_allocation> }
     >;
-    destroy: UseMutationResult<project_allocation | Pagination<project_allocation>, Error, void>;
+    destroy: UseMutationResult<
+      project_allocation | Pagination<project_allocation>,
+      Error,
+      void | { id: string; query?: any }
+    >;
     trash: UseQueryResult<Pagination<project_allocation>, Error>;
     restore: UseMutationResult<
       project_allocation | Pagination<project_allocation>,
@@ -392,9 +391,13 @@ export interface Services {
     update: UseMutationResult<
       project_tool | Pagination<project_tool>,
       Error,
-      Partial<project_tool>
+      Partial<project_tool> | { id: string; body: Partial<project_tool> }
     >;
-    destroy: UseMutationResult<project_tool | Pagination<project_tool>, Error, void>;
+    destroy: UseMutationResult<
+      project_tool | Pagination<project_tool>,
+      Error,
+      void | { id: string; query?: any }
+    >;
     trash: UseQueryResult<Pagination<project_tool>, Error>;
     restore: UseMutationResult<project_tool | Pagination<project_tool>, Error, string | undefined>;
   };

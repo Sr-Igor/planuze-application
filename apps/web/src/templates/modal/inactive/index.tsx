@@ -7,7 +7,10 @@ import { useRouter } from "next/navigation";
 
 import { PlusCircle } from "lucide-react";
 
+import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { update } from "@repo/redux/store/modules/modal/actions";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -16,6 +19,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   Button,
+  cn,
   DropdownMenu,
   DropdownMenuContentInModal,
   DropdownMenuGroup,
@@ -26,10 +30,6 @@ import {
 
 import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@repo/cookies";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
-import { update } from "@repo/redux/store/modules/modal/actions";
 
 export const InactiveModal = () => {
   const t = useLang();

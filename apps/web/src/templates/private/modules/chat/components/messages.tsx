@@ -3,9 +3,7 @@ import { useEffect, useRef } from "react";
 import { BotMessageSquare, User } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Skeleton } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { cn, Skeleton } from "@repo/ui";
 
 export interface IMessagesProps {
   localMessages: any[];

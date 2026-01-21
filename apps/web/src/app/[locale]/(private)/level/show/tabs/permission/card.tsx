@@ -1,8 +1,8 @@
 import { memo } from "react";
 
+import { useLevelAction } from "@repo/api/web";
 import { level_action, module as TModule } from "@repo/types";
 
-import { useLevelAction } from "@repo/api/web/callers/level_action";
 import { ModuleWithFeatures } from "@/hooks/access/types";
 import { PermissionCard } from "@/templates/permission-card";
 

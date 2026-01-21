@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import { getCep } from "@repo/api/global/cep";
+import { getCep } from "@repo/api";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { client_address } from "@repo/types";
 

@@ -1,7 +1,7 @@
+import { useProjectAllocation } from "@repo/api/web";
+import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { project_allocation } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
 
-import { useProjectAllocation } from "@repo/api/web/callers/project_allocation";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardCrud } from "@/templates/card-crud";

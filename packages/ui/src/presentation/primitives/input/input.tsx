@@ -5,7 +5,6 @@
  *
  * @module presentation/primitives/input
  */
-
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 import { cn } from "../../../shared/utils";
@@ -13,7 +12,7 @@ import { cn } from "../../../shared/utils";
 /**
  * Base input class names for reuse.
  */
-export const inputBaseClassName = cn(
+export const inputClassName = cn(
   "border-input file:text-foreground placeholder:text-muted-foreground",
   "selection:bg-primary selection:text-primary-foreground",
   "flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1",
@@ -48,7 +47,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       ref={ref}
       type={type}
       data-slot="input"
-      className={cn(inputBaseClassName, className)}
+      className={cn(inputClassName, className)}
       value={value ?? ""}
       {...props}
     />

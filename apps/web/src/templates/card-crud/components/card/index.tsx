@@ -3,12 +3,10 @@ import { useState } from "react";
 import { History, Pen, Trash } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { Button, Skeleton } from "@repo/ui";
+import { AppDialog, Button, cn, Icon, Skeleton } from "@repo/ui";
 import * as C from "@repo/ui";
-import { AppDialog, Icon } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { cn } from "@repo/ui";
 
 import { ICardProps } from "../../type";
 

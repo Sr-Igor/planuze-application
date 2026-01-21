@@ -6,12 +6,12 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { SendHorizontal } from "lucide-react";
 
+import { useAuth } from "@repo/api/web";
+import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
-import { useAuth } from "@repo/api/web/callers/auth";
 import { CenterTemplate } from "@/templates/center";
-import { hookValidate } from "@repo/form";
 
 import { useForm } from "./use-form";
 

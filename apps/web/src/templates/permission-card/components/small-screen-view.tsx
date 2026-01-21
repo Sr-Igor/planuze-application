@@ -2,8 +2,7 @@ import { memo } from "react";
 
 import * as icons from "lucide-react";
 
-import { Checkbox } from "@repo/ui";
-import { AppTooltip } from "@repo/ui";
+import { AppTooltip, Checkbox } from "@repo/ui";
 
 import { SmallScreenViewProps } from "../types";
 import { getCheckboxState } from "../utils/checkbox-state";

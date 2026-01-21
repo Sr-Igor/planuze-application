@@ -1,14 +1,14 @@
-import { plan } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { plan } from "@repo/types";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Icon,
   ScrollArea,
   Skeleton,
 } from "@repo/ui";
-import { Icon } from "@repo/ui";
 
 import { FeaturesByModule } from "../../types";
 

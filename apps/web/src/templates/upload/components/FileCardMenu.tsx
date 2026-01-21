@@ -14,9 +14,11 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
+import { downloadFile } from "@repo/api";
 import { useLang } from "@repo/language/hooks";
 import {
   Button,
+  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -24,9 +26,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@repo/ui";
-
-import { downloadFile } from "@repo/api/global/download";
-import { cn } from "@repo/ui";
 
 import { FileStatus } from "../types/enums";
 import { IRenameProps, IUploadConfig, IUploadFile } from "../types/interfaces";

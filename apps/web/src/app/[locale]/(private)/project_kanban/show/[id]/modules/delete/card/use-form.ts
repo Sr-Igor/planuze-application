@@ -1,9 +1,7 @@
 "use client";
 
-import { index } from "@repo/api/web/req/project_kanban_cycle_card";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { projectKanbanCycleCardIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_cycle_card } from "@repo/types";
 
 export interface FormValues {
@@ -32,7 +30,7 @@ export const useForm = ({ disabled, item }: IUseFormProps) => {
 
   const fields: Field<Partial<FormValues>>[] = [
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "card_id",
       label: "move_to",
       className: "col-span-2",
@@ -40,7 +38,7 @@ export const useForm = ({ disabled, item }: IUseFormProps) => {
       required: true,
       cacheKey: "project_kanban_cycle_card_infinity",
       request: (filters: any) =>
-        index({
+        projectKanbanCycleCardIndex({
           ...filters,
           project_kanban_cycle_id: item?.project_kanban_cycle_id,
           principal: true,

@@ -5,15 +5,13 @@ import { useRouter } from "next/navigation";
 import { isAfter } from "date-fns";
 import { AlertTriangle, ExternalLink, InfoIcon, X } from "lucide-react";
 
-import { subscription } from "@repo/types";
+import { useSubscription } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
-import { Alert, AlertDescription, AlertTitle, Button } from "@repo/ui";
-
-import { useSubscription } from "@repo/api/web/callers/subscription";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { update } from "@repo/redux/store/modules/warning/actions";
+import { subscription } from "@repo/types";
+import { Alert, AlertDescription, AlertTitle, Button, cn } from "@repo/ui";
 
 export interface IWarningProps {
   type: "info" | "warning" | "error";

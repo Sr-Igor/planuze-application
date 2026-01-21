@@ -2,10 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { index as indexProjectKanbanCycleCard } from "@repo/api/web/req/project_kanban_cycle_card";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { projectKanbanCycleCardIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_cycle_card } from "@repo/types";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
@@ -184,13 +182,13 @@ export const useForm = ({ disabled, item, open }: IUseFormProps) => {
         },
       },
       {
-        field: "infinity_select",
+        field: "select-simple-infinity",
         name: "card_id",
         label: "card_id",
         disabled,
         className: "col-span-2",
         cacheKey: "project_kanban_cycle_card_anchored_infinity",
-        request: indexProjectKanbanCycleCard,
+        request: projectKanbanCycleCardIndex,
         queryParams: {
           project_kanban_cycle_id: watches.cycle,
           principal: true,

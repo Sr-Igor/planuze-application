@@ -5,13 +5,13 @@
  *
  * @module presentation/composites/icon
  */
+import { forwardRef } from "react";
 
 import * as icons from "lucide-react";
-import { forwardRef } from "react";
 
 export type IconName = keyof typeof icons;
 
-export type IconProps = Omit<icons.LucideProps, "ref"> & {
+export type IconProps = Omit<icons.LucideProps, "ref" | "name"> & {
   /**
    * The name of the Lucide icon to render.
    * Falls back to CircleHelp if undefined, null, or not found.
@@ -33,7 +33,7 @@ export type IconProps = Omit<icons.LucideProps, "ref"> & {
  */
 const Icon = forwardRef<SVGSVGElement, IconProps>(({ name, ...props }, ref) => {
   const iconName = name as IconName;
-  const LucideIcon = (iconName && icons[iconName] as icons.LucideIcon) ?? icons.CircleHelp;
+  const LucideIcon = (iconName && (icons[iconName] as icons.LucideIcon)) ?? icons.CircleHelp;
   return <LucideIcon ref={ref} {...props} />;
 });
 

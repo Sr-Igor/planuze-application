@@ -11,10 +11,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  DndWrapper,
+  DraggableItem,
+  ProviderDND,
   ScrollArea,
 } from "@repo/ui";
-
-import { DndWrapper, ProviderDND, DraggableItem } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 

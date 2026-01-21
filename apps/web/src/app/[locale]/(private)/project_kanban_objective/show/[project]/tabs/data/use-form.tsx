@@ -1,6 +1,4 @@
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_objective } from "@repo/types";
 
 export type FormType = {

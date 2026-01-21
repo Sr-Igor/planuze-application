@@ -17,11 +17,15 @@ import {
   UserCog,
 } from "lucide-react";
 
-import { invite, profile as TProfile } from "@repo/types";
+import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { useAppSelector } from "@repo/redux/hook";
+import { invite, Pagination, profile as TProfile } from "@repo/types";
 import {
+  AppTooltip,
   Avatar,
   AvatarFallback,
+  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -29,19 +33,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  Img,
   SidebarMenu,
   SidebarMenuItem,
   useSidebar,
-Img
 } from "@repo/ui";
-import { AppTooltip } from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@repo/cookies";
 import { useModal } from "@/hooks/modal";
-import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
-import { Pagination } from "@/types/pagination";
 
 interface NavUserProps {
   variant?: "large" | "small";

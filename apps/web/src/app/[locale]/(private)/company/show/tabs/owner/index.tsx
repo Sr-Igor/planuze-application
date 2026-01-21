@@ -2,11 +2,11 @@ import { useState } from "react";
 
 import { RotateCcwKey } from "lucide-react";
 
+import { useAuth } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
-import { Button, Card, CardHeader , AppAvatar } from "@repo/ui";
-
-import { useAuth } from "@repo/api/web/callers/auth";
 import { useAuth as useAuthHook } from "@repo/redux/hook";
+import { AppAvatar, Button, Card, CardHeader } from "@repo/ui";
+
 import { useShow } from "@/templates/show/context";
 
 import { ModalForm } from "./modal";

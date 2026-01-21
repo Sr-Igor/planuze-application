@@ -1,15 +1,23 @@
 "use client";
 
-import { useDashboard } from "@repo/api/web/callers/dashboard";
+import { useDashboard } from "@repo/api/web";
 import { useAuth } from "@repo/redux/hook";
+
 import { useSearchParams } from "@/hooks/search-params";
 
 import { Loader } from "./components/Loader";
 import { schema } from "./constants/schema";
 import Admin from "./modules/admin";
+import type { IAdminIndexResponseDTO } from "./modules/admin/types";
 import Default from "./modules/default";
 import Personal from "./modules/personal";
+import type { IPersonalIndexResponseDTO } from "./modules/personal/types";
 import Project from "./modules/project";
+import type { IProjectIndexResponseDTO } from "./modules/project/types";
+
+type UnionDashboardData = IProjectIndexResponseDTO &
+  IPersonalIndexResponseDTO &
+  IAdminIndexResponseDTO;
 
 export default function Dashboard() {
   const { module } = useAuth();
@@ -20,7 +28,7 @@ export default function Dashboard() {
     scroll: false,
   });
 
-  const { index, exported } = useDashboard({ filters: params });
+  const { index, exported } = useDashboard<UnionDashboardData>({ filters: params });
 
   const modules = {
     project: Project,
@@ -47,7 +55,7 @@ export default function Dashboard() {
   return (
     <div className="relative flex h-[calc(100vh-68px)] items-center justify-center overflow-hidden">
       <Module
-        data={index.data}
+        data={index.data as UnionDashboardData}
         filters={params}
         setFilters={setParams}
         resetFilters={handleResetFilters}

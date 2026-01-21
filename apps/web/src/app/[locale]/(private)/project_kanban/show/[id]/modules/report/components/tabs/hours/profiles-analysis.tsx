@@ -4,10 +4,19 @@ import * as React from "react";
 
 import { PackageOpen } from "lucide-react";
 
+import { IProfileHoursAnalysis } from "@repo/api/types";
 import { useLang } from "@repo/language/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton , cn , Icon , AppAvatar } from "@repo/ui";
-
-import { IProfileHoursAnalysis } from "@repo/api/web/callers/project_kanban_report/types";
+import {
+  AppAvatar,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  cn,
+  Icon,
+  Skeleton,
+} from "@repo/ui";
 
 export interface iProfilesAnalysisProps {
   data: IProfileHoursAnalysis[];

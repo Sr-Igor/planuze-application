@@ -2,17 +2,17 @@
 
 import { useParams, useRouter } from "next/navigation";
 
+import { useProfile } from "@repo/api/web";
+import { hookValidate } from "@repo/form";
+import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { profile } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
+import { AppAvatar, cn } from "@repo/ui";
+import { timeLabel } from "@repo/utils/timeLabel";
 
-import { useProfile } from "@repo/api/web/callers/profile";
-import { AppAvatar , cn } from "@repo/ui";
 import { useLogs } from "@/hooks/logs";
 import { useUnload } from "@/hooks/unload";
 import { DataForm } from "@/templates/data-form";
 import { useShow } from "@/templates/show/context";
-import { hookValidate } from "@repo/form";
-import { timeLabel } from "@repo/utils/timeLabel";
 
 import { useAnonymousForm } from "./use-anonymous-form";
 import { useProfileForm } from "./use-profile-form";

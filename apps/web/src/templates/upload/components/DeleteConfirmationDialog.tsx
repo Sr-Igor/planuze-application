@@ -1,8 +1,7 @@
 "use client";
 
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-import { AppDialog } from "@repo/ui";
+import { AppDialog, Button } from "@repo/ui";
 
 import { IUploadFile } from "../types/interfaces";
 

@@ -1,10 +1,10 @@
 import { useLang } from "@repo/language/hooks";
 
-import { IIndexResponseDTO } from "../types";
+import { IPersonalIndexResponseDTO } from "../types";
 
 export interface IMetadataProps {
-  metadata: IIndexResponseDTO["metadata"];
-  currencyMetadata: IIndexResponseDTO["currencyMetadata"];
+  metadata: IPersonalIndexResponseDTO["metadata"];
+  currencyMetadata: IPersonalIndexResponseDTO["currencyMetadata"];
 }
 
 export const Metadata = ({ metadata, currencyMetadata }: IMetadataProps) => {

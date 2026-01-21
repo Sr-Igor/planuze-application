@@ -1,6 +1,6 @@
+import { useProfileRole } from "@repo/api/web";
 import { profile, profile_role } from "@repo/types";
 
-import { useProfileRole } from "@repo/api/web/callers/profile_role";
 import { useLogs } from "@/hooks/logs";
 import { useTrash } from "@/hooks/trash";
 import { CardListTemplate } from "@/templates/card-list";

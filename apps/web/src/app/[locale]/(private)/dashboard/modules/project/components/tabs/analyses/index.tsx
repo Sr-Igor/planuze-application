@@ -4,11 +4,8 @@ import * as React from "react";
 
 import { Globe } from "lucide-react";
 
-import { useLang } from "@repo/language/hooks";
-import { AppTooltip, MainCard } from "@repo/ui";
-
-import { useIntlFormat } from "@repo/language/hooks";
-import { cn } from "@repo/ui";
+import { useIntlFormat, useLang } from "@repo/language/hooks";
+import { AppTooltip, cn, MainCard } from "@repo/ui";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import {

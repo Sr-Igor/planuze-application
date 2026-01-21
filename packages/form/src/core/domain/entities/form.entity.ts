@@ -1,6 +1,6 @@
 import { FieldValues, UseFormReturn } from 'react-hook-form';
 import { FieldEntity } from './field.entity';
-import { IField } from '../interfaces/field.interface';
+import { AnyField } from '../interfaces/field.interface';
 
 /**
  * Entity representing a complete form
@@ -10,7 +10,7 @@ export class FormEntity<FormType extends FieldValues> {
     private readonly fields: FieldEntity<FormType>[];
     private readonly hook: UseFormReturn<FormType>;
 
-    constructor(fields: IField<FormType>[], hook: UseFormReturn<FormType>) {
+    constructor(fields: AnyField<FormType>[], hook: UseFormReturn<FormType>) {
         this.fields = fields.map((field) => new FieldEntity(field));
         this.hook = hook;
     }

@@ -1,10 +1,7 @@
 import { CalendarDays, DecimalsArrowRight, MousePointerClick, PencilLine } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { TabsList, TabsTrigger } from "@repo/ui";
-import { AppTooltip } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { AppTooltip, cn, TabsList, TabsTrigger } from "@repo/ui";
 
 export interface IFilterTabsProps {
   countFilters: {

@@ -5,10 +5,14 @@ import * as React from "react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 
 import { useLang } from "@repo/language/hooks";
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@repo/ui";
-import { MainCard } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  cn,
+  MainCard,
+} from "@repo/ui";
 import { formatCurrencySimple } from "@repo/utils/currency";
 
 import { IFinancialEvolutionResponse, IFinancialInfo, IProfileInfo } from "../../../types";

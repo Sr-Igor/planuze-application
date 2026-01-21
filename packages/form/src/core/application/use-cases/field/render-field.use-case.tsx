@@ -1,5 +1,5 @@
 import { FieldValues } from 'react-hook-form';
-import { IField } from '../../../domain/interfaces/field.interface';
+import { AnyField } from '../../../domain/interfaces/field.interface';
 import { IComponentRegistry } from '../../../domain/interfaces/component.interface';
 
 /**
@@ -12,7 +12,7 @@ export class RenderFieldUseCase<FormType extends FieldValues> {
     /**
      * Renders a field using the appropriate component
      */
-    execute(field: IField<FormType>, control: any, onlyRead?: boolean): React.ReactElement | null {
+    execute(field: AnyField<FormType>, control: any, onlyRead?: boolean): React.ReactElement | null {
         const Component = this.componentRegistry[field.field];
 
         if (!Component) {

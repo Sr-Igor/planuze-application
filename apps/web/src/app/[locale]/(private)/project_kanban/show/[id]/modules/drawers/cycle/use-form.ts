@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 
 import { differenceInDays } from "date-fns";
 
-import { index } from "@repo/api/web/req/kanban_template";
-import { IValidatorRequest } from "@repo/form";
-import { useFormList } from "@repo/form";
-import { Field } from "@repo/form";
+import { kanbanTemplateIndex } from "@repo/api/web";
+import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { kanban_template, project_kanban_cycle, project_version, work_type } from "@repo/types";
 
@@ -116,14 +114,14 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
       className: "col-span-1",
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "kanban_template_id",
       label: "kanban_template_id",
       placeholder: disabled || !!item?.id ? t.helper("none") : undefined,
       className: "col-span-1",
       disabled: disabled || !!item?.id,
       cacheKey: "kanban_template_infinity",
-      request: index,
+      request: kanbanTemplateIndex,
       formatter: (items: kanban_template[]) =>
         items?.map((template) => ({
           label: template.title,
@@ -132,7 +130,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
         })) || [],
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "project_version_id",
       label: "project_version_id",
       required: true,
@@ -150,7 +148,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
         })) || [],
     },
     {
-      field: "infinity_select",
+      field: "select-simple-infinity",
       name: "work_type_id",
       label: "work_type_id",
       disabled,

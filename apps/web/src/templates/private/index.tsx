@@ -4,16 +4,14 @@ import { usePathname } from "next/navigation";
 
 import { ToggleLeft, UserLock } from "lucide-react";
 
-import { profile } from "@repo/types";
+import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { Button, SidebarProvider } from "@repo/ui";
-import { FullScreenMessage } from "@repo/ui";
+import { useAppSelector } from "@repo/redux/hook";
+import { profile } from "@repo/types";
+import { Button, cn, FullScreenMessage, SidebarProvider } from "@repo/ui";
 
 import { Nav } from "@/components/nav";
 import { useAccess } from "@/hooks/access";
-import { useSignOut } from "@repo/cookies";
-import { useAppSelector } from "@repo/redux/hook";
-import { cn } from "@repo/ui";
 
 import { AppSidebar } from "./components/app-sidebar";
 import { ForbiddenAccess } from "./components/forbidden-access";

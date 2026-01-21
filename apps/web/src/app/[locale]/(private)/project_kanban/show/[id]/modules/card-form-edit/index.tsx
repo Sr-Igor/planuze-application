@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-import { project_kanban_cycle_card } from "@repo/types";
+import { ISelectedTag } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { project_kanban_cycle_card } from "@repo/types";
 import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
-import { ISelected } from "@repo/form";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 
@@ -49,7 +49,7 @@ interface CardEditFormProps {
   onSubmit: (
     data: Partial<
       Omit<project_kanban_cycle_card, "project_kanban_cycle_card_tags"> & {
-        project_kanban_cycle_card_tags?: ISelected[];
+        project_kanban_cycle_card_tags?: ISelectedTag[];
       }
     >,
     close?: boolean

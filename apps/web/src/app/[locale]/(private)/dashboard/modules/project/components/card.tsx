@@ -1,7 +1,4 @@
-import { Card, CardDescription, CardHeader, CardTitle, Skeleton } from "@repo/ui";
-import { Icon } from "@repo/ui";
-
-import { cn } from "@repo/ui";
+import { Card, CardDescription, CardHeader, CardTitle, cn, Icon, Skeleton } from "@repo/ui";
 
 export interface ICardItemProps {
   isLoading: boolean;

@@ -1,6 +1,6 @@
+import { useClientFile } from "@repo/api/web";
 import { client } from "@repo/types";
 
-import { useClientFile } from "@repo/api/web/callers/client_file";
 import { useShow } from "@/templates/show/context";
 import { UploadTemplate } from "@/templates/upload";
 

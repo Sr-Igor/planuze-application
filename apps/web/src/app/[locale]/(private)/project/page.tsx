@@ -1,8 +1,8 @@
 "use client";
 
+import { useProject } from "@repo/api/web";
 import { project } from "@repo/types";
 
-import { useProject } from "@repo/api/web/callers/project";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useTable } from "./hooks";

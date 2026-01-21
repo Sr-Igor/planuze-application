@@ -1,8 +1,8 @@
 "use client";
 
+import { useInvite } from "@repo/api/web";
 import { invite } from "@repo/types";
 
-import { useInvite } from "@repo/api/web/callers/invite";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useForm, useTable } from "./hooks";

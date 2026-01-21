@@ -6,6 +6,12 @@
 import "./presentation/components/fields/component-registry";
 
 // ============================================================================
+// PUBLIC API - Re-exports from dependencies
+// ============================================================================
+
+export { zodResolver } from "@hookform/resolvers/zod";
+
+// ============================================================================
 // PUBLIC API - Hooks and Main Components
 // ============================================================================
 
@@ -88,28 +94,28 @@ export { DaysOfMonth } from "./presentation/components/fields/days_of_month/days
 export { DaysOfWeek } from "./presentation/components/fields/days_of_week/days_of_week-export.component";
 export { DaysOfYear } from "./presentation/components/fields/days_of_year/days_of_year-export.component";
 
-//Controllers
-export { Input as InputController } from "./presentation/components/fields/input/input-export.component";
-export { SimpleSelect as SimpleSelectController } from "./presentation/components/fields/select/simple/simple-export.component";
-export { SimpleInfinitySelect as SimpleInfinitySelectController } from "./presentation/components/fields/select/simple-infinity/simple-infinity-export.component";
-export { CheckboxSelect as CheckboxSelectController } from "./presentation/components/fields/select/checkbox/checkbox-export.component";
-export { CheckboxInfinitySelect as CheckboxInfinitySelectController } from "./presentation/components/fields/select/checkbox-infinity/checkbox-infinity-export.component";
-export { Calendar as CalendarController } from "./presentation/components/fields/calendar/calendar-export.component";
-export { CalendarRange as CalendarRangeController } from "./presentation/components/fields/calendar-range/calendar-range-export.component";
-export { Currency as CurrencyController } from "./presentation/components/fields/currency/currency-export.component";
-export { Numeric as NumericController } from "./presentation/components/fields/numeric/numeric-export.component";
-export { Editor as EditorController } from "./presentation/components/fields/editor/editor-export.component";
-export { Tags as TagsController } from "./presentation/components/fields/tags/tags-export.component";
-export { Avatar as AvatarController } from "./presentation/components/fields/avatar/avatar-export.component";
-export { Bank as BankController } from "./presentation/components/fields/bank/bank-export.component";
-export { Icons as IconsController } from "./presentation/components/fields/icon/icon-export.component";
-export { Switch as SwitchController } from "./presentation/components/fields/switch/switch-export.component";
-export { Checkbox as CheckboxController } from "./presentation/components/fields/checkbox/checkbox-export.component";
-export { Percentage as PercentageController } from "./presentation/components/fields/percentage/percentage-export.component";
-export { Money as MoneyController } from "./presentation/components/fields/money/money-export.component";
-export { Country as CountryController } from "./presentation/components/fields/country/country-export.component";
-export { States as StatesController } from "./presentation/components/fields/state/state-export.component";
-export { Cities as CitiesController } from "./presentation/components/fields/city/city-export.component";
-export { DaysOfMonth as DaysOfMonthController } from "./presentation/components/fields/days_of_month/days_of_month-export.component";
-export { DaysOfWeek as DaysOfWeekController } from "./presentation/components/fields/days_of_week/days_of_week-export.component";
-export { DaysOfYear as DaysOfYearController } from "./presentation/components/fields/days_of_year/days_of_year-export.component";
+//Controllers (react-hook-form wrappers)
+export { InputField as InputController } from "./presentation/components/fields/input/input.component";
+export { SimpleSelectField as SimpleSelectController } from "./presentation/components/fields/select/simple/simple.component";
+export { SimpleInfinitySelectField as SimpleInfinitySelectController } from "./presentation/components/fields/select/simple-infinity/simple-infinity.component";
+export { CheckboxSelectField as CheckboxSelectController } from "./presentation/components/fields/select/checkbox/checkbox.component";
+export { CheckboxInfinitySelectField as CheckboxInfinitySelectController } from "./presentation/components/fields/select/checkbox-infinity/checkbox-infinity.component";
+export { CalendarField as CalendarController } from "./presentation/components/fields/calendar/calendar.component";
+export { CalendarRangeField as CalendarRangeController } from "./presentation/components/fields/calendar-range/calendar-range.component";
+export { CurrencyField as CurrencyController } from "./presentation/components/fields/currency/currency.component";
+export { NumericField as NumericController } from "./presentation/components/fields/numeric/numeric.component";
+export { EditorField as EditorController } from "./presentation/components/fields/editor/editor.component";
+export { TagsField as TagsController } from "./presentation/components/fields/tags/tags.component";
+export { AvatarField as AvatarController } from "./presentation/components/fields/avatar/avatar.component";
+export { BankField as BankController } from "./presentation/components/fields/bank/bank.component";
+export { IconField as IconsController } from "./presentation/components/fields/icon/icon.component";
+export { SwitchField as SwitchController } from "./presentation/components/fields/switch/switch.component";
+export { CheckboxField as CheckboxController } from "./presentation/components/fields/checkbox/checkbox.component";
+export { PercentageField as PercentageController } from "./presentation/components/fields/percentage/percentage.component";
+export { MoneyField as MoneyController } from "./presentation/components/fields/money/money.component";
+export { CountryField as CountryController } from "./presentation/components/fields/country/country.component";
+export { StateField as StatesController } from "./presentation/components/fields/state/state.component";
+export { CityField as CitiesController } from "./presentation/components/fields/city/city.component";
+export { DaysOfMonthField as DaysOfMonthController } from "./presentation/components/fields/days_of_month/days_of_month.component";
+export { DaysOfWeekField as DaysOfWeekController } from "./presentation/components/fields/days_of_week/days_of_week.component";
+export { DaysOfYearField as DaysOfYearController } from "./presentation/components/fields/days_of_year/days_of_year.component";

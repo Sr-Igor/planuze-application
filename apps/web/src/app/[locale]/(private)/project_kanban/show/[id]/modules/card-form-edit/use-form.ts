@@ -2,12 +2,16 @@
 
 import { useEffect } from "react";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z, ZodSchema } from "zod";
 
-import { IValidatorRequest } from "@repo/form";
-import { hookValidate, ISelectedTag, useValidator } from "@repo/form";
+import {
+  hookValidate,
+  ISelectedTag,
+  IValidatorRequest,
+  useValidator,
+  zodResolver,
+} from "@repo/form";
 import { project_kanban_cycle_card } from "@repo/types";
 
 type FormType = {

@@ -7,28 +7,29 @@ import { useRouter } from "next/navigation";
 
 import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 
-import { module } from "@repo/types";
+import { getModule } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { set } from "@repo/redux/store/modules/module/actions";
+import { module } from "@repo/types";
 import {
+  AppTooltip,
+  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
+  Icon,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-  cn,
- } from "@repo/ui";
-import { AppTooltip, Icon } from "@repo/ui";
+} from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
 import { ModuleWithFeatures } from "@/hooks/access/types";
-import { getModule } from "@repo/cookies";
 import { useNextRouter } from "@/hooks/next-router";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
-import { set } from "@repo/redux/store/modules/module/actions";
 
 export function ModuleSwitcher() {
   const { isMobile } = useSidebar();

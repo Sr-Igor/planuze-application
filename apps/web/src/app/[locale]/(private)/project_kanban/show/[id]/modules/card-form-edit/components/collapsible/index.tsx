@@ -3,12 +3,11 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 import {
+  cn,
   CollapsibleContent,
   Collapsible as CollapsiblePrimitive,
   CollapsibleTrigger,
 } from "@repo/ui";
-
-import { cn } from "@repo/ui";
 
 export interface ICollapsibleProps {
   title: string;
