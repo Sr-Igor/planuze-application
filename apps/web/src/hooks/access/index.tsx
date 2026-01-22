@@ -2,18 +2,17 @@ import { useCallback, useMemo } from "react";
 
 import { usePathname } from "next/navigation";
 
-import { addDays, differenceInDays, isAfter, isBefore } from "date-fns";
-
-import { module, profile, subscription, user } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { useAuth, Warning } from "@repo/redux/hook";
+import { module, profile, subscription, user } from "@repo/types";
 
-import { useAuth } from "@repo/redux/hook";
-import type { AccessView, FeatureWithActions, Warning } from "./types";
+import type { AccessView, FeatureWithActions } from "./types";
 
 export const useAccess = (): IAccess => {
   const t = useLang();
 
-  const { profile, module, modules, user, actions, hasProfile, activeSubscription } = useAuth();
+  const { profile, module, modules, user, actions, hasProfile, activeSubscription, warning } =
+    useAuth();
 
   const pathname = usePathname();
 
@@ -341,63 +340,6 @@ export const useAccess = (): IAccess => {
     },
     [access, module?.id, pathname, actions]
   );
-
-  const warning: Warning | undefined = useMemo(() => {
-    const subscription = profile?.company?.subscriptions?.[0];
-
-    const endDate = new Date(subscription?.end_date ?? "");
-    const today = new Date();
-
-    if (subscription?.status === "deleted") {
-      return {
-        type: "error",
-        title: t.warning("subscription_canceled.title"),
-        description: t.warning("subscription_canceled.description"),
-        locked: true,
-      };
-    } else if (subscription?.is_test) {
-      if (isAfter(today, endDate)) {
-        return {
-          type: "error",
-          title: t.warning("test_expired.title"),
-          description: t.warning("test_expired.description"),
-          locked: true,
-        };
-      } else if (isBefore(today, endDate)) {
-        const daysLeft = differenceInDays(endDate, today);
-        const MIN_DAYS_TO_RENEW = 3;
-
-        if (daysLeft <= MIN_DAYS_TO_RENEW) {
-          return {
-            type: "info",
-            title: t.warning("test_ending.title"),
-            description: t.warning("test_ending.description", { days: daysLeft }),
-            locked: false,
-          };
-        }
-      }
-    } else if (isAfter(today, addDays(endDate, 1))) {
-      const daysOff = subscription?.days_off ?? 0;
-      const maxDate = addDays(endDate, daysOff);
-      const daysLeft = differenceInDays(maxDate, today);
-
-      if (isBefore(today, maxDate)) {
-        return {
-          type: "warning",
-          title: t.warning("subscription_not_renewed.title"),
-          description: t.warning("subscription_not_renewed.description", { days: daysLeft }),
-          locked: false,
-        };
-      } else {
-        return {
-          type: "error",
-          title: t.warning("subscription_expired.title"),
-          description: t.warning("subscription_expired.description"),
-          locked: true,
-        };
-      }
-    }
-  }, [profile]);
 
   const verifyAccess = (path: string, action: string, currentModule?: string) => {
     let hasSomeOne = {

@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+
+import { useAppDispatch } from "@repo/redux/hook";
+import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import type { action } from "@repo/types";
 
 import { useInsert, type UseInsertReturn } from "../../../application/hooks/use-insert.hook";
@@ -7,11 +11,14 @@ import { actionEndpoint } from "../endpoints/action";
 
 /**
  * Hook for Action operations
+ *
+ * IMPORTANT: This hook dispatches actions to Redux state (matches old-project behavior)
  */
 export const useAction = (props: UseCallerProps<action> = {}): UseInsertReturn<action> => {
   const { filters, id, enabledIndex, enabledShow, enableTrash, callbacks } = props;
+  const dispatch = useAppDispatch();
 
-  return useInsert<action>({
+  const result = useInsert<action>({
     endpoint: actionEndpoint as any,
     cacheKeys: cacheKeys.action,
     id,
@@ -26,4 +33,13 @@ export const useAction = (props: UseCallerProps<action> = {}): UseInsertReturn<a
       restore: callbacks?.restore,
     },
   });
+
+  // Dispatch to Redux when data arrives (matches old-project behavior)
+  useEffect(() => {
+    if (result.index?.data?.data) {
+      dispatch(setModule({ actions: result.index.data.data }));
+    }
+  }, [result.index.data, dispatch]);
+
+  return result;
 };

@@ -118,7 +118,24 @@ export const PrivateTemplate = ({ children }: { children?: React.ReactNode }) =>
     <Provider value={{ feature: currentFeature }}>
       <SidebarProvider>
         {hasProfile && (
-          <MainAppLayout warning={warning} profile={profile}>
+          <MainAppLayout
+            warning={
+              warning
+                ? {
+                    title: t.warning(
+                      warning?.title()?.message ?? "",
+                      warning?.title()?.params ?? {}
+                    ),
+                    description: t.warning(
+                      warning?.description()?.message ?? "",
+                      warning?.description()?.params ?? {}
+                    ),
+                    type: warning?.type ?? "info",
+                  }
+                : undefined
+            }
+            profile={profile}
+          >
             <>
               {(canAccessCurrentRoute && !warning?.locked) || isBasicAccess ? (
                 children

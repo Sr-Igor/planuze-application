@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from "react";
 
 import { useModule } from "@repo/api/web";
+import { useUnload } from "@repo/hooks";
 import { integration, integration_action, module } from "@repo/types";
 
-import { useUnload } from "@/hooks/unload";
 import { useShow } from "@/templates/show/context";
 
 import { CardModule } from "./card";

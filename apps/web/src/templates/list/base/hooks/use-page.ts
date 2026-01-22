@@ -2,8 +2,7 @@ import { useEffect, useMemo, useRef } from "react";
 
 import { useRouter } from "next/navigation";
 
-import { usePaginationParams } from "@/hooks/search-params";
-import { baseFilterParams, paginationSchema } from "@/hooks/search-params/utils";
+import { baseFilterParams, paginationSchema, usePaginationParams } from "@repo/hooks";
 
 import { IUsePageProps } from "../types";
 

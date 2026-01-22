@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
 
-import { useWindowWidth } from "@/hooks/width";
+import { useWindowWidth } from "@repo/hooks";
 
 import { PermissionStatus, UsePermissionStatusProps } from "../types";
 

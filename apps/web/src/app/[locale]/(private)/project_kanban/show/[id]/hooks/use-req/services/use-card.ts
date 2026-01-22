@@ -36,7 +36,7 @@ export const useCard = ({ state, id, cycleId, params, search, onSuccess }: IUseC
       limit: params?.limit || 10,
       orderKey: params?.orderKey || "createdAt",
       orderValue: params?.orderValue || "desc",
-      project_kanban_cycle_id: params?.list_cycle || cycleId || undefined,
+      project_kanban_cycle_id: params?.list_cycle || undefined,
       card_type: params?.list_cardType || undefined,
       profile_id: params?.list_member || undefined,
       project_version_id: params?.list_version || undefined,

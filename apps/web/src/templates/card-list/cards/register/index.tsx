@@ -8,7 +8,7 @@ import { AppDialog, AppLogsModal, Button, cn } from "@repo/ui";
 import * as C from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useUnload } from "@/hooks/unload";
+import { useUnload } from "@repo/hooks";
 
 import { IRegisterCardProps } from "./types";
 import { useReq } from "./use-req";

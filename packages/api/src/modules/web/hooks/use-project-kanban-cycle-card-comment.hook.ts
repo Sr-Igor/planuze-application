@@ -10,6 +10,9 @@ import { projectKanbanCycleCardCommentEndpoint } from "../endpoints/project_kanb
 
 /**
  * Hook for Project Kanban Cycle Card Comment operations (nested in card)
+ *
+ * Matches old-project behavior: comments are added at the beginning of the array
+ * (no specific ordering needed - newest first is the default)
  */
 export const useProjectKanbanCycleCardComment = (
   props: UseCallerProps<project_kanban_cycle_card_comment>
@@ -25,6 +28,7 @@ export const useProjectKanbanCycleCardComment = (
     id,
     filters,
     enableTrash,
+    // No nestedArrayOptions needed - comments are added at the beginning (newest first)
     callbacks: {
       store: callbacks?.store,
       update: callbacks?.update,

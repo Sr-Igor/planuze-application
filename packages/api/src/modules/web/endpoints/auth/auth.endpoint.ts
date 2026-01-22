@@ -5,6 +5,7 @@ import type {
   AuthCodeParams,
   ChangePasswordDTO,
   LoginDTO,
+  OwnerDTO,
   OwnerDTOInput,
   RecoveryDTO,
   ResetPasswordDTO,
@@ -56,7 +57,12 @@ export const authEndpoint = {
 
   /**
    * Register as owner (new company)
+   * Note: OwnerDTOInput is flexible (Partial) for forms, but API accepts full OwnerDTO
+   * The type assertion is safe because OwnerDTOInput includes required profile_id
    */
   owner: (body: OwnerDTOInput) =>
-    typedRequest<void>()({ route: "/api/private/auth/owner", body } as any, { showSuccess: true }),
+    typedRequest<void>()(
+      { route: "/api/private/auth/owner", body: body as OwnerDTO },
+      { showSuccess: true }
+    ),
 };

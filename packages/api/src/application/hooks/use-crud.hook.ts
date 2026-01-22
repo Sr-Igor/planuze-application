@@ -163,7 +163,10 @@ export function useCrud<T, CreateDTO = unknown, UpdateDTO = unknown>(
 
   const show = useQuery<T, Error>({
     queryKey: showKey,
-    queryFn: () => endpoint.show(id!),
+    queryFn: () => {
+      if (!id) throw new Error("ID is required for show operation");
+      return endpoint.show(id);
+    },
     enabled: !!enabled?.show && !!id,
   });
 

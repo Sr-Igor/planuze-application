@@ -17,11 +17,11 @@ export const useCardType = ({ state, id, cycleId, onSuccess }: IUseCardTypeProps
 
   const requests = useProjectKanbanCycleCardType({
     id: state?.cardType?.id,
+    cycleId,
     enabledIndex: !!id && perm.index,
     enableTrash: state.type === "cardType" && state.modes?.includes("trash") && perm.trash,
     filters: {
       project_kanban_id: id,
-      project_kanban_cycle_id: cycleId,
     },
     trashFilters: {
       project_kanban_id: id,

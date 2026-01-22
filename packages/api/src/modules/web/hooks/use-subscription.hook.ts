@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
+import { useAuth } from "@repo/redux/hook";
 import type { Pagination, subscription } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -20,20 +21,22 @@ export interface UseSubscriptionCallbacks {
 export interface UseSubscriptionProps {
   enabledIndex?: boolean;
   callbacks?: UseSubscriptionCallbacks;
-  isAuthenticated?: boolean;
 }
 
-export const useSubscription = ({
-  enabledIndex = false,
-  callbacks,
-  isAuthenticated = false,
-}: UseSubscriptionProps = {}) => {
+/**
+ * Hook for Subscription operations
+ * Matches old-project behavior: hasLevel && hasProfile && hasTwoAuth ? api.index() : Promise.resolve({ data: { data: [] } })
+ */
+export const useSubscription = ({ enabledIndex = false, callbacks }: UseSubscriptionProps = {}) => {
   const indexKey = cacheKeys.subscription.index();
+  const { hasLevel, hasProfile, hasTwoAuth } = useAuth();
 
   const index = useQuery<Pagination<subscription>>({
     queryKey: indexKey,
-    queryFn: async (): Promise<Pagination<subscription>> =>
-      isAuthenticated ? subscriptionEndpoint.index() : { data: [], page: 1, pages: 1, count: 0 },
+    queryFn: () =>
+      hasLevel && hasProfile && hasTwoAuth
+        ? subscriptionEndpoint.index()
+        : Promise.resolve({ data: { data: [] } } as unknown as Pagination<subscription>),
     placeholderData: subscriptionPlaceholder,
     initialData: subscriptionPlaceholder,
     enabled: !!enabledIndex,
@@ -50,7 +53,7 @@ export const useSubscription = ({
   const portal = useMutation({
     mutationFn: () => subscriptionEndpoint.show(),
     onSuccess: (e) => {
-      callbacks?.portal?.onSuccess?.({ url: (e as unknown as { url: string }).url });
+      callbacks?.portal?.onSuccess?.(e as any);
     },
     onError: callbacks?.portal?.onError,
   });

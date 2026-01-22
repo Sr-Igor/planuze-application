@@ -8,6 +8,7 @@ import {
   type UseQueryResult,
 } from "@tanstack/react-query";
 
+import { useAuth } from "@repo/redux/hook";
 import type { chat, Pagination } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -58,17 +59,18 @@ export const useChat = ({
   const showKey = cacheKeys.chat.show(id);
   const categoryKey = cacheKeys.chat.category();
 
+  const { enabledPrivateRoutes, hasProfile, hasTwoAuth, warning } = useAuth();
+
   /**
    * Index query with infinite pagination support
    */
   const index = useInfiniteQuery<Pagination<chat>, Error>({
     queryKey: indexKey,
-    queryFn: ({ pageParam = 1 }) =>
-      chatEndpoint.index({ page: String(pageParam), limit: "10" }),
+    queryFn: ({ pageParam = 1 }) => chatEndpoint.index({ page: String(pageParam), limit: "10" }),
     getNextPageParam: (lastPage) =>
       lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,
     initialPageParam: 1,
-    enabled: !!enabledIndex,
+    enabled: !!enabledIndex && enabledPrivateRoutes && !warning?.locked,
   });
 
   /**
@@ -77,7 +79,7 @@ export const useChat = ({
   const show = useQuery<chat, Error>({
     queryKey: showKey,
     queryFn: () => chatEndpoint.show({ id: id! }),
-    enabled: !!enabledShow && !!id,
+    enabled: !!enabledShow && !!id && !warning?.locked,
   });
 
   /**
@@ -108,7 +110,8 @@ export const useChat = ({
   const category = useQuery<{ keys: string[] }, Error>({
     queryKey: categoryKey,
     queryFn: () => chatEndpoint.category(),
-    enabled: !!enabledCategory,
+    enabled:
+      !!enabledCategory && enabledPrivateRoutes && hasProfile && hasTwoAuth && !warning?.locked,
   });
 
   return { messages, index, show, category };

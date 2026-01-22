@@ -6,6 +6,9 @@ import { z } from "zod";
 
 import { SearchParamsUtils } from "./utils";
 
+// Re-export utils for convenience
+export * from "./utils";
+
 export interface UseSearchParamsOptions<T> {
   schema: z.ZodSchema<T>;
   replace?: boolean;
@@ -27,7 +30,8 @@ export function useSearchParams<T>(options: UseSearchParamsOptions<T>) {
     (updates: Partial<T> | ((current: T) => Partial<T>), replaceAll = false) => {
       startTransition(() => {
         try {
-          const updatesValue = typeof updates === "function" ? updates(currentParams) : updates;
+          const updatesValue =
+            typeof updates === "function" ? updates(currentParams as T) : updates;
 
           const newSearchParams = SearchParamsUtils.merge(
             searchParams,
@@ -93,7 +97,7 @@ export function useSearchParams<T>(options: UseSearchParamsOptions<T>) {
 
   const getParam = useCallback(
     <K extends keyof T>(key: K): T[K] => {
-      return currentParams[key];
+      return currentParams[key] as T[K];
     },
     [currentParams]
   );

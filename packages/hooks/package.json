@@ -14,8 +14,15 @@
   },
   "peerDependencies": {
     "react": "catalog:",
+    "next": "catalog:",
     "next-intl": "catalog:",
-    "date-fns": "catalog:"
+    "next-themes": "catalog:",
+    "date-fns": "catalog:",
+    "zod": "catalog:"
+  },
+  "dependencies": {
+    "@repo/api": "workspace:*",
+    "@repo/redux": "workspace:*"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

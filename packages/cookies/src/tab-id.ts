@@ -10,6 +10,19 @@ if (globalThis.window) {
   channel = new BroadcastChannel(CHANNEL_NAME);
 }
 
+/**
+ * Gets the current tab ID from sessionStorage
+ * This is used to isolate cookies per browser tab
+ */
+export function getTabId(): string | null {
+  if (!globalThis.window) return null;
+  return sessionStorage.getItem(TAB_ID_KEY);
+}
+
+/**
+ * React hook that manages tab ID with BroadcastChannel for multi-tab support
+ * Detects if multiple tabs are open and generates unique IDs for each
+ */
 export function useTabId() {
   const [tabId, setTabId] = useState(() => getTabId());
 
@@ -65,9 +78,4 @@ export function useTabId() {
   }, []);
 
   return tabId;
-}
-
-export function getTabId() {
-  if (!globalThis.window) return null;
-  return sessionStorage.getItem(TAB_ID_KEY);
 }

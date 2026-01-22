@@ -1,9 +1,8 @@
 "use client";
 
 import { useDashboard } from "@repo/api/web";
+import { useSearchParams } from "@repo/hooks";
 import { useAuth } from "@repo/redux/hook";
-
-import { useSearchParams } from "@/hooks/search-params";
 
 import { Loader } from "./components/Loader";
 import { schema } from "./constants/schema";

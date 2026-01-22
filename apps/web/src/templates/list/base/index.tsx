@@ -4,19 +4,19 @@ import { useCallback, useState } from "react";
 
 import { ArchiveRestore, Eraser, History, Plus, Trash2 } from "lucide-react";
 
+import {
+  baseFilterParams,
+  defaultPaginationParams,
+  PaginationParams,
+  paginationSchema,
+  usePaginationParams,
+} from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { AppDialog, AppLogsModal, Button, Icon } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 import { useLogs } from "@/hooks/logs";
-import { usePaginationParams } from "@/hooks/search-params";
-import {
-  baseFilterParams,
-  defaultPaginationParams,
-  PaginationParams,
-  paginationSchema,
-} from "@/hooks/search-params/utils";
 import { ListTemplate } from "@/templates/list";
 import { usePrivateContext } from "@/templates/private/context";
 

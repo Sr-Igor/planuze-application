@@ -57,9 +57,9 @@ export const handleResponseError = (
   }
 
   // 422 - Two-Factor Auth required
-  if (status === 422 && typeof window !== "undefined") {
-    if (!window.location.pathname.includes("/config/two_auth")) {
-      window.location.href = "/config/two_auth";
+  if (status === 422 && typeof globalThis.window !== "undefined") {
+    if (!globalThis.window.location.pathname.includes("/config/two_auth")) {
+      globalThis.window.location.href = "/config/two_auth";
     }
     throw new ApiRequestError("Two-factor authentication required", {
       error: "Two-factor authentication required",

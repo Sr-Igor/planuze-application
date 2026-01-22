@@ -20,7 +20,22 @@ import { ElementRef, forwardRef } from "react";
 import { Slot } from "../../../infrastructure/adapters";
 import { cn } from "../../../shared/utils";
 import { ButtonLoaderProps, ButtonProps } from "./button.types";
-import { buttonLoaderVariants, buttonVariants } from "./button.variants";
+import { buttonVariants } from "./button.variants";
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
 
 /**
  * Default loading indicator component.
@@ -34,14 +49,7 @@ const DefaultLoader = () => (
     viewBox="0 0 24 24"
     aria-hidden="true"
   >
-    <circle
-      className="opacity-25"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
-    />
+    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
     <path
       className="opacity-75"
       fill="currentColor"
@@ -64,9 +72,11 @@ const ButtonLoader = ({
 }: ButtonLoaderProps & { loading?: boolean; variant?: string }) => (
   <span
     className={cn(
-      buttonLoaderVariants({ loading }),
-      // Inherit variant background for seamless appearance
+      // Apply variant styles to match button appearance
       variant && buttonVariants({ variant: variant as ButtonProps["variant"] }),
+      // Overlay positioning and opacity
+      "absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300",
+      loading && "opacity-100",
       className
     )}
     aria-hidden={!loading}
@@ -135,10 +145,7 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
         ref={ref}
         data-slot="button"
         data-loading={loading || undefined}
-        className={cn(
-          buttonVariants({ variant, size, fullWidth }),
-          className
-        )}
+        className={cn(buttonVariants({ variant, size, fullWidth }), className)}
         disabled={isDisabled}
         aria-disabled={isDisabled}
         aria-busy={loading}

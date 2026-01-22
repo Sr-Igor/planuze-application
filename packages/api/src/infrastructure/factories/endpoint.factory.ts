@@ -363,13 +363,16 @@ export const createSimpleEndpoint = <T>() => {
 
     if (routes.show) {
       endpoint.show = async (id: string): Promise<T> => {
-        return handleRequest<T>(
-          "GET",
-          buildUrl("show"),
-          undefined,
-          { params: { id, ...defaultQuery } },
-          { hideError: true }
-        );
+        // Use callEndpoint to properly handle params as path parameters (like old project)
+        const handle = callEndpoint({
+          route: routes.show,
+          params: { id },
+          query: defaultQuery,
+        } as Parameters<typeof callEndpoint>[0]);
+
+        return handleRequest<T>(handle.method, handle.url, undefined, undefined, {
+          hideError: true,
+        });
       };
     }
 
@@ -396,11 +399,19 @@ export const createSimpleEndpoint = <T>() => {
         filters?: QueryFilters
       ): Promise<T | Pagination<T>> => {
         const prepared = prepareBody({ id, ...body }, formDataFields);
+        // Use callEndpoint to properly handle params as path parameters (like old project)
+        const handle = callEndpoint({
+          route: routes.update,
+          params: { id },
+          body: prepared.body,
+          query: { ...defaultQuery, ...filters },
+        } as Parameters<typeof callEndpoint>[0]);
+
         return handleRequest<T | Pagination<T>>(
-          "PUT",
-          buildUrl("update"),
+          handle.method,
+          handle.url,
           prepared.body,
-          { ...prepared.config, params: { ...defaultQuery, ...filters } },
+          prepared.config,
           { showSuccess: true }
         );
       };
@@ -408,13 +419,16 @@ export const createSimpleEndpoint = <T>() => {
 
     if (routes.destroy) {
       endpoint.destroy = async (id: string, filters?: QueryFilters): Promise<T | Pagination<T>> => {
-        return handleRequest<T | Pagination<T>>(
-          "DELETE",
-          buildUrl("destroy"),
-          undefined,
-          { params: { id, ...defaultQuery, ...filters } },
-          { showSuccess: true }
-        );
+        // Use callEndpoint to properly handle params as path parameters (like old project)
+        const handle = callEndpoint({
+          route: routes.destroy,
+          params: { id },
+          query: { ...defaultQuery, ...filters },
+        } as Parameters<typeof callEndpoint>[0]);
+
+        return handleRequest<T | Pagination<T>>(handle.method, handle.url, undefined, undefined, {
+          showSuccess: true,
+        });
       };
     }
 
@@ -424,13 +438,17 @@ export const createSimpleEndpoint = <T>() => {
         body: BatchDTO,
         filters?: QueryFilters
       ): Promise<T[] | Pagination<T>> => {
-        return handleRequest<T[] | Pagination<T>>(
-          "PUT",
-          buildUrl("many"),
+        // Use callEndpoint to properly handle params as path parameters (like old project)
+        const handle = callEndpoint({
+          route: routes.many,
+          params: { ids },
           body,
-          { params: { ids, ...defaultQuery, ...filters } },
-          { showSuccess: true }
-        );
+          query: { ...defaultQuery, ...filters },
+        } as Parameters<typeof callEndpoint>[0]);
+
+        return handleRequest<T[] | Pagination<T>>(handle.method, handle.url, body, undefined, {
+          showSuccess: true,
+        });
       };
     }
 
@@ -444,13 +462,16 @@ export const createSimpleEndpoint = <T>() => {
 
     if (routes.restore) {
       endpoint.restore = async (id: string, filters?: QueryFilters): Promise<T | Pagination<T>> => {
-        return handleRequest<T | Pagination<T>>(
-          "PUT",
-          buildUrl("restore"),
-          undefined,
-          { params: { id, ...defaultQuery, ...filters } },
-          { showSuccess: true }
-        );
+        // Use callEndpoint to properly handle params as path parameters (like old project)
+        const handle = callEndpoint({
+          route: routes.restore,
+          params: { id },
+          query: { ...defaultQuery, ...filters },
+        } as Parameters<typeof callEndpoint>[0]);
+
+        return handleRequest<T | Pagination<T>>(handle.method, handle.url, undefined, undefined, {
+          showSuccess: true,
+        });
       };
     }
 

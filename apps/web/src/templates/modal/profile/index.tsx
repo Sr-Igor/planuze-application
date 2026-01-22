@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { getProfile } from "@repo/cookies";
+import { useFetchImage } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -17,7 +18,6 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { useFetchImage } from "@/hooks/image";
 import { useModal } from "@/hooks/modal";
 
 export const ProfileModal = () => {

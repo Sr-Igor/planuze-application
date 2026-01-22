@@ -11,7 +11,15 @@ import { profileIndex } from "@repo/api/web";
 import { useDebounce } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { Pagination, profile } from "@repo/types";
-import { cn, Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from "@repo/ui";
+import {
+  AppAvatar,
+  cn,
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandList,
+} from "@repo/ui";
 
 interface MentionPopoverProps {
   open: boolean;
@@ -208,6 +216,16 @@ export const MentionPopover: React.FC<MentionPopoverProps> = ({
                   className={cn("cursor-pointer", selectedIndex === index && "bg-accent/50")}
                 >
                   <div className="flex w-full items-center gap-2 text-sm">
+                    {item && (
+                      <AppAvatar
+                        src={item?.item.user?.avatar || item?.item.anonymous_avatar || ""}
+                        path="user/avatar"
+                        publicFile
+                        name={item?.item.user?.name || item?.item.anonymous_name || "-"}
+                        className="h-4 w-4"
+                        fallbackClassName="text-[10px]"
+                      />
+                    )}
                     <span>
                       <p className="line-clamp-1 flex-1 truncate">
                         {item?.item.user?.name || item?.item.anonymous_name || item?.label}

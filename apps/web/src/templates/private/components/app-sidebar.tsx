@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import * as lucideIcons from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useAppSelector } from "@repo/redux/hook";
 import {
   AppTheme,
   Collapsible,
@@ -46,6 +47,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
   const t = useLang();
 
   const { access, module } = useAccess();
+
+  const store = useAppSelector((state) => state);
+
+  console.log(store);
 
   const sidebarFeatures = useMemo(() => {
     if (!module || !access) {

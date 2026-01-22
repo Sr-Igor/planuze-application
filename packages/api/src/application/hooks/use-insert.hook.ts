@@ -175,7 +175,8 @@ export function useInsert<T extends { id: string }>(
     queryKey: showKey,
     queryFn: () => {
       if (!endpoint.show) throw new Error("Show method not implemented");
-      return endpoint.show(id!);
+      if (!id) throw new Error("ID is required for show operation");
+      return endpoint.show(id);
     },
     enabled: !!enabledShow && !!id && !!endpoint.show,
   });

@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
+import { useAuth as useAuthRedux } from "@repo/redux/hook";
 import type { user } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -50,7 +51,11 @@ export interface UseAuthProps {
 }
 
 export const useAuth = ({ callbacks, enableHydrate = false, userId }: UseAuthProps = {}) => {
-  const hydrateKey = cacheKeys.auth.hydrate(userId);
+  // Fallback to Redux user.id if userId not provided
+  const { user: userFromRedux } = useAuthRedux();
+  const effectiveUserId = userId ?? userFromRedux?.id;
+
+  const hydrateKey = cacheKeys.auth.hydrate(effectiveUserId);
 
   const login = useMutation({
     mutationFn: (body: LoginDTO) => authEndpoint.login(body),
@@ -76,6 +81,10 @@ export const useAuth = ({ callbacks, enableHydrate = false, userId }: UseAuthPro
     onError: callbacks?.confirm?.onError,
   });
 
+  /**
+   * Verify 2FA code
+   * Note: API accepts object { code: string } but hook maintains string parameter for consistency
+   */
   const code = useMutation({
     mutationFn: (authCode: string) => authEndpoint.code({ code: authCode }),
     onSuccess: (e) => {
@@ -95,16 +104,20 @@ export const useAuth = ({ callbacks, enableHydrate = false, userId }: UseAuthPro
   const reset = useMutation({
     mutationFn: (data: { code: string; body: ResetPasswordDTO }) =>
       authEndpoint.reset({ code: data.code }, data.body),
-    onSuccess: () => {
-      callbacks?.reset?.onSuccess?.({} as user);
+    onSuccess: async () => {
+      // Refetch user data after password reset to get updated user object
+      const userData = await hidrate.refetch();
+      callbacks?.reset?.onSuccess?.(userData.data || ({} as user));
     },
     onError: callbacks?.reset?.onError,
   });
 
   const changePassword = useMutation({
     mutationFn: (body: ChangePasswordDTO) => authEndpoint.changePassword(body),
-    onSuccess: () => {
-      callbacks?.changePassword?.onSuccess?.({} as user);
+    onSuccess: async () => {
+      // Refetch user data after password change to get updated user object
+      const userData = await hidrate.refetch();
+      callbacks?.changePassword?.onSuccess?.(userData.data || ({} as user));
     },
     onError: callbacks?.changePassword?.onError,
   });

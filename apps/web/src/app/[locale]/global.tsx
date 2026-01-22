@@ -1,7 +1,7 @@
 "use client";
 
 import { useAction, useCountry, useModule } from "@repo/api/web";
-import { useTabId } from "@repo/hooks";
+import { useTabId } from "@repo/cookies";
 import { useIntlFormat } from "@repo/language/hooks";
 
 //Modals

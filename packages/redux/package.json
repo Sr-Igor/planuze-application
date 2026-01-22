@@ -27,7 +27,8 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "date-fns": "catalog:"
   },
   "dependencies": {
     "@repo/types": "workspace:*",

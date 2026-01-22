@@ -76,7 +76,7 @@ export const useReq = ({
       boardProps: { board, item, type, moment },
       manyCard: services.card.many,
       manyColumn: services.column.many,
-      showCycle: services.cycle.show!,
+      showCycle: services.cycle.show,
       state,
       setState,
     });

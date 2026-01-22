@@ -2,13 +2,16 @@
 //Types
 import { useMemo } from "react";
 
+import { addDays, differenceInDays, isAfter, isBefore } from "date-fns";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import { getModule, getProfile, getTwoAuth } from "@repo/cookies";
 import { subscription } from "@repo/types";
 
 import type { AppDispatch, RootState } from "../store/index";
+import type { Warning } from "./types";
 
+export type { Warning } from "./types";
 export type { AppDispatch, RootState } from "../store/index";
 export const useAppDispatch: () => AppDispatch = useDispatch;
 
@@ -55,6 +58,69 @@ export const useAuth = () => {
     return hasLevel && activeSubscription;
   }, [hasLevel, activeSubscription]);
 
+  const warning: Warning | undefined = useMemo(() => {
+    const subscription = profile?.company?.subscriptions?.[0];
+
+    const endDate = new Date(subscription?.end_date ?? "");
+    const today = new Date();
+
+    if (subscription?.status === "deleted") {
+      return {
+        type: "error",
+        title: () => ({ message: "subscription_canceled.title" }),
+        description: () => ({ message: "subscription_canceled.description" }),
+        locked: true,
+      };
+    } else if (subscription?.is_test) {
+      if (isAfter(today, endDate)) {
+        return {
+          type: "error",
+          title: () => ({ message: "test_expired.title" }),
+          description: () => ({ message: "test_expired.description" }),
+          locked: true,
+        };
+      } else if (isBefore(today, endDate)) {
+        const daysLeft = differenceInDays(endDate, today);
+        const MIN_DAYS_TO_RENEW = 3;
+
+        if (daysLeft <= MIN_DAYS_TO_RENEW) {
+          return {
+            type: "info",
+            title: () => ({ message: "test_ending.title" }),
+            description: () => ({
+              message: "test_ending.description",
+              params: { days: daysLeft },
+            }),
+            locked: false,
+          };
+        }
+      }
+    } else if (isAfter(today, addDays(endDate, 1))) {
+      const daysOff = subscription?.days_off ?? 0;
+      const maxDate = addDays(endDate, daysOff);
+      const daysLeft = differenceInDays(maxDate, today);
+
+      if (isBefore(today, maxDate)) {
+        return {
+          type: "warning",
+          title: () => ({ message: "subscription_not_renewed.title" }),
+          description: () => ({
+            message: "subscription_not_renewed.description",
+            params: { days: daysLeft },
+          }),
+          locked: false,
+        };
+      } else {
+        return {
+          type: "error",
+          title: () => ({ message: "subscription_expired.title" }),
+          description: () => ({ message: "subscription_expired.description" }),
+          locked: true,
+        };
+      }
+    }
+  }, [profile]);
+
   return {
     user,
     profile,
@@ -67,5 +133,6 @@ export const useAuth = () => {
     hasLevel,
     hasProfile,
     activeSubscription,
+    warning,
   };
 };

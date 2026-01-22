@@ -13,8 +13,10 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
-    "js-cookie": "^3.0.5",
-    "@repo/hooks": "workspace:*"
+    "js-cookie": "^3.0.5"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

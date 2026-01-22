@@ -1,10 +1,10 @@
 "use client";
 
 import { usePlan, useSubscription } from "@repo/api/web";
+import { useLoading } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 
 import { useAccess } from "@/hooks/access";
-import { useLoading } from "@/hooks/loading";
 
 import { Current, Invoices, Plans } from "./tabs";
 

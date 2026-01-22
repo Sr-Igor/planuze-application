@@ -1,6 +1,5 @@
-import { getTabId } from "@repo/hooks";
-
 import Cookies from "../";
+import { getTabId } from "../tab-id";
 
 export const getModule = () => {
   const tabId = getTabId();
