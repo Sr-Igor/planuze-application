@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 
 import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 
-import { getModule } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { set } from "@repo/redux/store/modules/module/actions";
@@ -30,6 +29,8 @@ import {
 import { useAccess } from "@/hooks/access";
 import { ModuleWithFeatures } from "@/hooks/access/types";
 import { useNextRouter } from "@/hooks/next-router";
+
+import { getModule } from "../../../../packages/cookies/src";
 
 export function ModuleSwitcher() {
   const { isMobile } = useSidebar();

@@ -2,7 +2,6 @@
 
 import { RotateCcw, XCircle } from "lucide-react";
 
-import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -16,6 +15,8 @@ import {
 } from "@repo/ui";
 
 import { useModal } from "@/hooks/modal";
+
+import { useSignOut } from "../../../../../../packages/cookies/src";
 
 export const ErrorModal = () => {
   const t = useLang();

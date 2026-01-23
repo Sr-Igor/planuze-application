@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 
 import { PlusCircle } from "lucide-react";
 
-import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update } from "@repo/redux/store/modules/modal/actions";
@@ -30,6 +29,8 @@ import {
 
 import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
+
+import { useSignOut } from "../../../../../../packages/cookies/src";
 
 export const InactiveModal = () => {
   const t = useLang();

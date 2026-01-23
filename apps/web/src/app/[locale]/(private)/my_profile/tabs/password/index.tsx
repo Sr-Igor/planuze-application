@@ -1,7 +1,6 @@
 "use client";
 
 import { useAuth } from "@repo/api/web";
-import { useSignOut } from "@repo/cookies";
 import { hookValidate } from "@repo/form";
 import { useUnload } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
@@ -12,6 +11,7 @@ import { Button, cn } from "@repo/ui";
 import { useUserSet } from "@/hooks/user-set";
 import { useShow } from "@/templates/show/context";
 
+import { useSignOut } from "../../../../../../../../../packages/cookies/src";
 import { NeedRedefine } from "../../components/NeedRedefine";
 import { useForm } from "./use-form";
 

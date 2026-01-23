@@ -1,7 +1,8 @@
 import type { InternalAxiosRequestConfig } from "axios";
 
-import { getModule, getProfile, getToken, getTwoAuth } from "@repo/cookies";
 import { store } from "@repo/redux/store";
+
+import { getModule, getProfile, getToken, getTwoAuth } from "../../../../../cookies/src";
 
 /**
  * Authentication interceptor

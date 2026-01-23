@@ -1,8 +1,7 @@
 import type { AxiosError } from "axios";
 import { toast } from "sonner";
 
-import { useSignOut } from "@repo/cookies";
-
+import { useSignOut } from "../../../../../cookies/src";
 import { type ApiError, ResponseCodes } from "../../../core/domain/value-objects/api-response.vo";
 
 const GENERIC_ERROR = "Connection Error";

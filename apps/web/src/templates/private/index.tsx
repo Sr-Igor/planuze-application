@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 import { ToggleLeft, UserLock } from "lucide-react";
 
-import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { profile } from "@repo/types";
@@ -13,6 +12,7 @@ import { Button, cn, FullScreenMessage, SidebarProvider } from "@repo/ui";
 import { Nav } from "@/components/nav";
 import { useAccess } from "@/hooks/access";
 
+import { useSignOut } from "../../../../../packages/cookies/src";
 import { AppSidebar } from "./components/app-sidebar";
 import { ForbiddenAccess } from "./components/forbidden-access";
 import { LockedAccess } from "./components/locked-access";

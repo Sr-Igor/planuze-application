@@ -8,13 +8,14 @@ import { differenceInSeconds } from "date-fns";
 import { LogOut } from "lucide-react";
 
 import { useAuth } from "@repo/api/web";
-import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update } from "@repo/redux/store/modules/user/actions";
 import { AppCountdown, Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";
 
 import { CenterTemplate } from "@/templates/center";
+
+import { useSignOut } from "../../../../../../../../packages/cookies/src";
 
 const TIME = 1;
 

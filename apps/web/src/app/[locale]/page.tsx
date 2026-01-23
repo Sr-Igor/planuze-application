@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 
-import { getToken } from "@repo/cookies";
+import { getToken } from "../../../../../packages/cookies/src";
 
 export default function Home() {
   const { replace } = useRouter();

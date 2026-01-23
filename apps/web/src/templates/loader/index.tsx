@@ -5,8 +5,7 @@ import { LoaderCircle } from "lucide-react";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
-import { useSignOut } from "@repo/cookies";
-
+import { useSignOut } from "../../../../../packages/cookies/src";
 import { CenterTemplate } from "../center";
 
 export interface LoaderTemplateProps {

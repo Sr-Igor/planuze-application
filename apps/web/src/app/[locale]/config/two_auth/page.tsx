@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { KeyRound, Mail, Phone } from "lucide-react";
 
 import { useUserTwoAuthCode } from "@repo/api/web";
-import { setTwoAuth, useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAuth } from "@repo/redux/hook";
 import { user_two_auth } from "@repo/types";
@@ -26,6 +25,8 @@ import {
 } from "@repo/ui";
 
 import { CenterTemplate } from "@/templates/center";
+
+import { setTwoAuth, useSignOut } from "../../../../../../../packages/cookies/src";
 
 const inputClassName = "bg-muted/10 text-muted-foreground border-border bg-sidebar/80";
 

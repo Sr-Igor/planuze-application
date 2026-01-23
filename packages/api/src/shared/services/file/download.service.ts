@@ -1,5 +1,6 @@
-import { getModule, getProfile, getToken } from "@repo/cookies";
 import { fingerprint } from "@repo/utils";
+
+import { getModule, getProfile, getToken } from "../../../../../cookies/src";
 
 /**
  * Download a file from a URL with authentication headers

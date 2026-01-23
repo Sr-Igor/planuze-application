@@ -5,9 +5,9 @@ import { useMemo } from "react";
 import { addDays, differenceInDays, isAfter, isBefore } from "date-fns";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
-import { getModule, getProfile, getTwoAuth } from "@repo/cookies";
 import { subscription } from "@repo/types";
 
+import { getModule, getProfile, getTwoAuth } from "../../../cookies/src";
 import type { AppDispatch, RootState } from "../store/index";
 import type { Warning } from "./types";
 

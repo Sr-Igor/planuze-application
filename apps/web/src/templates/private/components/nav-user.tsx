@@ -17,7 +17,6 @@ import {
   UserCog,
 } from "lucide-react";
 
-import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { invite, Pagination, profile as TProfile } from "@repo/types";
@@ -41,6 +40,8 @@ import {
 
 import { useAccess } from "@/hooks/access";
 import { useModal } from "@/hooks/modal";
+
+import { useSignOut } from "../../../../../../packages/cookies/src";
 
 interface NavUserProps {
   variant?: "large" | "small";

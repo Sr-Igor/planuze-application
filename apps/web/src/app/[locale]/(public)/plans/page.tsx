@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { Ban, UserLock } from "lucide-react";
 
 import { usePlan, useSubscription } from "@repo/api/web";
-import { useSignOut } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch } from "@repo/redux/hook";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
@@ -21,6 +20,8 @@ import {
 import { useAccess } from "@/hooks/access";
 import { PlansTemplate } from "@/templates/plans";
 import { ProfileSwitcher } from "@/templates/private/components/profile-switch";
+
+import { useSignOut } from "../../../../../../../packages/cookies/src";
 
 export default function Page() {
   const t = useLang();
