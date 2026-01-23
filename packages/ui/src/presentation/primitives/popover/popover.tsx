@@ -8,10 +8,19 @@
 
 "use client";
 
-import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as PopoverPrimitive from "@radix-ui/react-popover";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * Popover Component Module
+ *
+ * A popup that displays rich content in a portal.
+ *
+ * @module presentation/primitives/popover
+ */
 
 /**
  * Popover component props.
@@ -94,7 +103,7 @@ const PopoverContent = forwardRef<
       align={align}
       sideOffset={sideOffset}
       className={cn(
-        "bg-popover text-popover-foreground z-50 w-72 rounded-md border p-4 shadow-md outline-hidden",
+        "bg-popover/95 text-popover-foreground z-50 w-72 rounded-md border p-4 shadow-lg outline-hidden backdrop-blur-sm",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",

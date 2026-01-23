@@ -8,20 +8,35 @@
 
 "use client";
 
+import { ComponentPropsWithoutRef, forwardRef } from "react";
+
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { ChevronDownIcon } from "lucide-react";
-import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 import { cn } from "../../../shared/utils";
 import { navigationMenuTriggerStyle } from "./navigation-menu.variants";
+
+/**
+ * NavigationMenu Component Module
+ *
+ * A collection of links for navigating websites.
+ *
+ * @module presentation/primitives/navigation-menu
+ */
+
+/**
+ * NavigationMenu Component Module
+ *
+ * A collection of links for navigating websites.
+ *
+ * @module presentation/primitives/navigation-menu
+ */
 
 // ============================================================================
 // Root Components
 // ============================================================================
 
-export type NavigationMenuProps = ComponentPropsWithoutRef<
-  typeof NavigationMenuPrimitive.Root
-> & {
+export type NavigationMenuProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> & {
   viewport?: boolean;
 };
 
@@ -46,9 +61,7 @@ const NavigationMenu = forwardRef<
 
 NavigationMenu.displayName = "NavigationMenu";
 
-export type NavigationMenuListProps = ComponentPropsWithoutRef<
-  typeof NavigationMenuPrimitive.List
->;
+export type NavigationMenuListProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>;
 
 const NavigationMenuList = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.List>,
@@ -64,9 +77,7 @@ const NavigationMenuList = forwardRef<
 
 NavigationMenuList.displayName = "NavigationMenuList";
 
-export type NavigationMenuItemProps = ComponentPropsWithoutRef<
-  typeof NavigationMenuPrimitive.Item
->;
+export type NavigationMenuItemProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Item>;
 
 const NavigationMenuItem = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Item>,
@@ -161,7 +172,7 @@ const NavigationMenuViewport = forwardRef<
       ref={ref}
       data-slot="navigation-menu-viewport"
       className={cn(
-        "origin-top-center bg-popover text-popover-foreground relative mt-1.5 overflow-hidden rounded-md border shadow",
+        "origin-top-center bg-popover/95 text-popover-foreground relative mt-1.5 overflow-hidden rounded-md border shadow-lg backdrop-blur-sm",
         "h-(--radix-navigation-menu-viewport-height) w-full md:w-(--radix-navigation-menu-viewport-width)",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90",
@@ -174,9 +185,7 @@ const NavigationMenuViewport = forwardRef<
 
 NavigationMenuViewport.displayName = "NavigationMenuViewport";
 
-export type NavigationMenuLinkProps = ComponentPropsWithoutRef<
-  typeof NavigationMenuPrimitive.Link
->;
+export type NavigationMenuLinkProps = ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Link>;
 
 const NavigationMenuLink = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Link>,
@@ -192,7 +201,7 @@ const NavigationMenuLink = forwardRef<
       "data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground",
       "ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50",
       "[&_svg:not([class*='text-'])]:text-muted-foreground",
-      "transition-[color,box-shadow] focus-visible:ring-4 focus-visible:outline-1",
+      "transition-all duration-200 focus-visible:ring-4 focus-visible:outline-1",
       "[&_svg:not([class*='size-'])]:size-4",
       className
     )}

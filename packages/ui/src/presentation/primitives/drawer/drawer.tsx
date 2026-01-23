@@ -10,9 +10,19 @@
 "use client";
 
 import { ComponentPropsWithoutRef, forwardRef } from "react";
+
 import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "../../../shared/utils";
+
+/**
+ * Drawer Component Module
+ *
+ * A drawer component that slides in from the edge of the screen.
+ * Uses vaul library for smooth animations.
+ *
+ * @module presentation/primitives/drawer
+ */
 
 // ============================================================================
 // Root Components
@@ -43,12 +53,9 @@ function DrawerPortal({ ...props }: Readonly<DrawerPortalProps>) {
 
 export type DrawerCloseProps = ComponentPropsWithoutRef<typeof DrawerPrimitive.Close>;
 
-const DrawerClose = forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Close>,
-  DrawerCloseProps
->(({ ...props }, ref) => (
-  <DrawerPrimitive.Close ref={ref} data-slot="drawer-close" {...props} />
-));
+const DrawerClose = forwardRef<React.ElementRef<typeof DrawerPrimitive.Close>, DrawerCloseProps>(
+  ({ ...props }, ref) => <DrawerPrimitive.Close ref={ref} data-slot="drawer-close" {...props} />
+);
 
 DrawerClose.displayName = "DrawerClose";
 
@@ -89,7 +96,7 @@ const DrawerContent = forwardRef<
       ref={ref}
       data-slot="drawer-content"
       className={cn(
-        "group/drawer-content bg-background fixed z-50 flex h-auto flex-col",
+        "group/drawer-content bg-background/95 fixed z-50 flex h-auto flex-col shadow-xl backdrop-blur-sm",
         // Top direction
         "data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0",
         "data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh]",
@@ -156,23 +163,20 @@ DrawerFooter.displayName = "DrawerFooter";
 
 export type DrawerTitleProps = ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>;
 
-const DrawerTitle = forwardRef<
-  React.ElementRef<typeof DrawerPrimitive.Title>,
-  DrawerTitleProps
->(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Title
-    ref={ref}
-    data-slot="drawer-title"
-    className={cn("text-foreground font-semibold", className)}
-    {...props}
-  />
-));
+const DrawerTitle = forwardRef<React.ElementRef<typeof DrawerPrimitive.Title>, DrawerTitleProps>(
+  ({ className, ...props }, ref) => (
+    <DrawerPrimitive.Title
+      ref={ref}
+      data-slot="drawer-title"
+      className={cn("text-foreground font-semibold", className)}
+      {...props}
+    />
+  )
+);
 
 DrawerTitle.displayName = "DrawerTitle";
 
-export type DrawerDescriptionProps = ComponentPropsWithoutRef<
-  typeof DrawerPrimitive.Description
->;
+export type DrawerDescriptionProps = ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>;
 
 const DrawerDescription = forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,

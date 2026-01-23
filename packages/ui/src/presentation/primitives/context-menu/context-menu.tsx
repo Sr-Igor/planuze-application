@@ -8,11 +8,20 @@
 
 "use client";
 
-import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * ContextMenu Component Module
+ *
+ * Displays a menu to the user triggered by a right-click.
+ *
+ * @module presentation/primitives/context-menu
+ */
 
 // ============================================================================
 // Root Components
@@ -24,9 +33,7 @@ function ContextMenu({ ...props }: Readonly<ContextMenuProps>) {
   return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />;
 }
 
-export type ContextMenuTriggerProps = ComponentPropsWithoutRef<
-  typeof ContextMenuPrimitive.Trigger
->;
+export type ContextMenuTriggerProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Trigger>;
 
 const ContextMenuTrigger = forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Trigger>,
@@ -37,9 +44,7 @@ const ContextMenuTrigger = forwardRef<
 
 ContextMenuTrigger.displayName = "ContextMenuTrigger";
 
-export type ContextMenuGroupProps = ComponentPropsWithoutRef<
-  typeof ContextMenuPrimitive.Group
->;
+export type ContextMenuGroupProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Group>;
 
 const ContextMenuGroup = forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Group>,
@@ -50,9 +55,7 @@ const ContextMenuGroup = forwardRef<
 
 ContextMenuGroup.displayName = "ContextMenuGroup";
 
-export type ContextMenuPortalProps = ComponentPropsWithoutRef<
-  typeof ContextMenuPrimitive.Portal
->;
+export type ContextMenuPortalProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Portal>;
 
 function ContextMenuPortal({ ...props }: Readonly<ContextMenuPortalProps>) {
   return <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />;
@@ -140,9 +143,7 @@ const ContextMenuSubContent = forwardRef<
 
 ContextMenuSubContent.displayName = "ContextMenuSubContent";
 
-export type ContextMenuContentProps = ComponentPropsWithoutRef<
-  typeof ContextMenuPrimitive.Content
->;
+export type ContextMenuContentProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Content>;
 
 const ContextMenuContent = forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.Content>,
@@ -153,7 +154,7 @@ const ContextMenuContent = forwardRef<
       ref={ref}
       data-slot="context-menu-content"
       className={cn(
-        "bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md",
+        "bg-popover/95 text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg backdrop-blur-sm",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -174,9 +175,7 @@ ContextMenuContent.displayName = "ContextMenuContent";
 // Items
 // ============================================================================
 
-export type ContextMenuItemProps = ComponentPropsWithoutRef<
-  typeof ContextMenuPrimitive.Item
-> & {
+export type ContextMenuItemProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Item> & {
   inset?: boolean;
   variant?: "default" | "destructive";
 };
@@ -276,9 +275,7 @@ ContextMenuRadioItem.displayName = "ContextMenuRadioItem";
 // Label, Separator & Shortcut
 // ============================================================================
 
-export type ContextMenuLabelProps = ComponentPropsWithoutRef<
-  typeof ContextMenuPrimitive.Label
-> & {
+export type ContextMenuLabelProps = ComponentPropsWithoutRef<typeof ContextMenuPrimitive.Label> & {
   inset?: boolean;
 };
 

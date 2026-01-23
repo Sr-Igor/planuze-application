@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 
@@ -11,21 +11,19 @@ import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
   AppTheme,
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
+  cn,
   Icon,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  useSidebar,
 } from "@repo/ui";
 
 import { ModuleSwitcher } from "@/components/app-module-switcher";
@@ -41,16 +39,199 @@ interface GroupedSidebarItems {
 
 export interface AppSidebarProps {}
 
+/**
+ * NavItem - Modern pill-style navigation item
+ */
+function NavItem({
+  item,
+  isActive,
+  onClick,
+  t,
+}: {
+  item: FeatureWithActions;
+  isActive: boolean;
+  onClick: () => void;
+  t: ReturnType<typeof useLang>;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "group relative flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5",
+        "transition-all duration-200 ease-out",
+        "hover:bg-sidebar-accent/60",
+        isActive && ["bg-sidebar-accent text-sidebar-accent-foreground", "shadow-sm"]
+      )}
+    >
+      {/* Active indicator bar */}
+      <span
+        className={cn(
+          "absolute top-1/2 left-0 h-6 w-1 -translate-y-1/2 rounded-r-full",
+          "bg-primary transition-all duration-300",
+          isActive ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+        )}
+      />
+
+      {/* Icon with glow effect on active */}
+      <span
+        className={cn(
+          "flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
+          "transition-all duration-200",
+          isActive
+            ? "bg-primary/10 text-primary"
+            : "text-sidebar-foreground/70 group-hover:text-sidebar-foreground"
+        )}
+      >
+        <Icon
+          name={item.icon || "Circle"}
+          className="h-4 w-4 transition-transform duration-200 group-hover:scale-110"
+        />
+      </span>
+
+      {/* Label */}
+      <span
+        className={cn(
+          "flex-1 truncate text-left text-sm font-medium",
+          "transition-colors duration-200",
+          isActive ? "text-sidebar-accent-foreground" : "text-sidebar-foreground/80"
+        )}
+      >
+        {t.navBar(`labels.${item.path}`)}
+      </span>
+    </button>
+  );
+}
+
+/**
+ * NavGroup - Group with popover submenu
+ */
+function NavGroup({
+  groupKey,
+  items,
+  isItemActive,
+  router,
+  t,
+}: {
+  groupKey: string;
+  items: FeatureWithActions[];
+  isItemActive: (item: FeatureWithActions) => boolean;
+  router: ReturnType<typeof useRouter>;
+  t: ReturnType<typeof useLang>;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const hasActiveItem = items.some((item) => isItemActive(item));
+
+  return (
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <PopoverTrigger asChild>
+        <button
+          className={cn(
+            "group relative flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5",
+            "transition-all duration-200 ease-out",
+            "hover:bg-sidebar-accent/60",
+            (hasActiveItem || isOpen) && ["bg-sidebar-accent/50"]
+          )}
+        >
+          {/* Active indicator bar */}
+          <span
+            className={cn(
+              "absolute top-1/2 left-0 h-6 w-1 -translate-y-1/2 rounded-r-full",
+              "bg-primary/60 transition-all duration-300",
+              hasActiveItem ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+            )}
+          />
+
+          {/* Icon */}
+          <span
+            className={cn(
+              "flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
+              "transition-all duration-200",
+              hasActiveItem
+                ? "bg-primary/10 text-primary"
+                : "text-sidebar-foreground/70 group-hover:text-sidebar-foreground"
+            )}
+          >
+            <lucideIcons.LayersIcon className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+          </span>
+
+          {/* Label */}
+          <span
+            className={cn(
+              "flex-1 truncate text-left text-sm font-medium",
+              "transition-colors duration-200",
+              hasActiveItem ? "text-sidebar-accent-foreground" : "text-sidebar-foreground/80"
+            )}
+          >
+            {t.navBar(`groups.${groupKey}`)}
+          </span>
+
+          {/* Arrow */}
+          <lucideIcons.ChevronRightIcon
+            className={cn(
+              "text-sidebar-foreground/50 h-4 w-4 transition-all duration-200",
+              "group-hover:text-sidebar-foreground/80 group-hover:translate-x-0.5",
+              isOpen && "rotate-90"
+            )}
+          />
+        </button>
+      </PopoverTrigger>
+
+      <PopoverContent
+        side="right"
+        align="start"
+        sideOffset={8}
+        className={cn(
+          "w-56 p-2",
+          "bg-popover/95 backdrop-blur-md",
+          "border-border/50 border",
+          "shadow-xl"
+        )}
+      >
+        <div className="space-y-1">
+          <p className="text-muted-foreground px-2 py-1.5 text-xs font-semibold tracking-wider uppercase">
+            {t.navBar(`groups.${groupKey}`)}
+          </p>
+          {items.map((subItem) => {
+            const active = isItemActive(subItem);
+            return (
+              <button
+                key={subItem.path}
+                onClick={() => {
+                  router.push(`/${subItem.route || subItem.path}`);
+                  setIsOpen(false);
+                }}
+                className={cn(
+                  "flex w-full items-center gap-3 rounded-lg px-2 py-2",
+                  "transition-all duration-150",
+                  "hover:bg-accent",
+                  active && "bg-accent text-accent-foreground"
+                )}
+              >
+                <Icon
+                  name={subItem.icon || "Circle"}
+                  className={cn("h-4 w-4", active ? "text-primary" : "text-muted-foreground")}
+                />
+                <span className="text-sm font-medium">{t.navBar(`labels.${subItem.path}`)}</span>
+              </button>
+            );
+          })}
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
+/**
+ * AppSidebar - Modern floating sidebar with glassmorphism
+ */
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & AppSidebarProps) {
   const router = useRouter();
   const pathname = usePathname();
   const t = useLang();
+  const { state } = useSidebar();
 
   const { access, module } = useAccess();
-
   const store = useAppSelector((state) => state);
-
-  console.log(store);
 
   const sidebarFeatures = useMemo(() => {
     if (!module || !access) {
@@ -90,11 +271,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
       if (!itemPath) return false;
 
       const normalizedPathname = pathname.replace(/\/$/, "");
-
       const pathnameWithoutQuery = normalizedPathname.split("?")[0].split("#")[0];
-
       const pathSegments = pathnameWithoutQuery.split("/").filter(Boolean);
-
       const pathWithoutLocale = pathSegments.slice(1);
 
       const normalizedItemPath = itemPath.replaceAll(/^\/+|\/+$/g, "");
@@ -111,93 +289,131 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
     };
   }, [pathname]);
 
+  const isCollapsed = state === "collapsed";
+
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
+    <Sidebar
+      collapsible="icon"
+      className={cn(
+        "*:data-[sidebar=sidebar]:bg-sidebar/90 *:data-[sidebar=sidebar]:backdrop-blur-xl",
+        "*:data-[sidebar=sidebar]:border-r-0",
+        "*:data-[sidebar=sidebar]:shadow-xl"
+      )}
+      {...props}
+    >
+      {/* Header - Company & Module Switcher */}
+      <SidebarHeader className="border-sidebar-border/50 border-b pb-3">
         <ModuleSwitcher />
       </SidebarHeader>
-      <SidebarContent>
-        <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-          <SidebarMenu>
-            {Object.keys(groupedSidebarItems).map((groupKey) => {
-              const items = groupedSidebarItems[groupKey];
 
-              if (groupKey !== "__UNGROUPED__" && items.length > 1) {
-                const hasActiveItem = items.some((item) => isItemActive(item));
+      {/* Navigation Content */}
+      <SidebarContent className="px-2 py-4">
+        <nav className="space-y-0.5">
+          {Object.keys(groupedSidebarItems).map((groupKey) => {
+            const items = groupedSidebarItems[groupKey];
 
+            // Group with multiple items - use popover
+            if (groupKey !== "__UNGROUPED__" && items.length > 1) {
+              if (isCollapsed) {
+                // Collapsed: show tooltip with icon only
                 return (
-                  <Collapsible
-                    key={groupKey}
-                    asChild
-                    className="group/collapsible"
-                    defaultOpen={hasActiveItem}
-                  >
-                    <SidebarMenuItem>
-                      <CollapsibleTrigger asChild>
-                        <SidebarMenuButton className="hover:bg-sidebar-accent/80 cursor-pointer transition-all duration-200">
-                          <lucideIcons.LayersIcon className="mr-2 size-4 transition-transform duration-200" />
-                          <span>{t.navBar(`groups.${groupKey}`)}</span>
-                          <lucideIcons.ChevronRightIcon className="ml-auto size-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                        </SidebarMenuButton>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent>
-                        <SidebarMenuSub>
-                          {items.map((subItem: FeatureWithActions) => {
-                            const active = isItemActive(subItem);
-                            return (
-                              <SidebarMenuSubItem key={subItem.path}>
-                                <SidebarMenuSubButton
-                                  isActive={active}
-                                  onClick={() => router.push(`/${subItem.route || subItem.path}`)}
-                                  className="hover:bg-sidebar-accent/80 cursor-pointer transition-all duration-200"
-                                >
-                                  <Icon
-                                    name={subItem.icon || "Circle"}
-                                    className="mr-2 h-4 w-4 transition-transform duration-200"
-                                  />
-                                  <p>{t.navBar(`labels.${subItem.path}`)}</p>
-                                </SidebarMenuSubButton>
-                              </SidebarMenuSubItem>
-                            );
-                          })}
-                        </SidebarMenuSub>
-                      </CollapsibleContent>
-                    </SidebarMenuItem>
-                  </Collapsible>
-                );
-              } else {
-                return items.map((item: FeatureWithActions) => {
-                  const active = isItemActive(item);
-                  return (
-                    <SidebarMenuItem key={item.path}>
-                      <SidebarMenuButton
-                        isActive={active}
-                        onClick={() => router.push(`/${item.route || item.path}`)}
-                        className="hover:bg-sidebar-accent/80 cursor-pointer transition-all duration-200"
+                  <Tooltip key={groupKey}>
+                    <TooltipTrigger asChild>
+                      <button
+                        className={cn(
+                          "mx-auto flex h-10 w-10 items-center justify-center rounded-xl",
+                          "transition-all duration-200",
+                          "hover:bg-sidebar-accent/60",
+                          items.some(isItemActive) && "bg-sidebar-accent"
+                        )}
                       >
-                        <span className="flex items-center gap-2">
-                          <Icon
-                            name={item.icon || "Circle"}
-                            className="mr-2 transition-transform duration-200"
-                            size={16}
-                          />
-                          <span>{t.navBar(`labels.${item.path}`)}</span>
-                        </span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  );
-                });
+                        <lucideIcons.LayersIcon className="h-4 w-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="right" className="flex flex-col gap-1">
+                      <p className="font-semibold">{t.navBar(`groups.${groupKey}`)}</p>
+                      {items.map((item) => (
+                        <button
+                          key={item.path}
+                          onClick={() => router.push(`/${item.route || item.path}`)}
+                          className="hover:text-primary text-left text-sm"
+                        >
+                          {t.navBar(`labels.${item.path}`)}
+                        </button>
+                      ))}
+                    </TooltipContent>
+                  </Tooltip>
+                );
               }
-            })}
-          </SidebarMenu>
-        </SidebarGroup>
+
+              return (
+                <NavGroup
+                  key={groupKey}
+                  groupKey={groupKey}
+                  items={items}
+                  isItemActive={isItemActive}
+                  router={router}
+                  t={t}
+                />
+              );
+            }
+
+            // Single items or ungrouped
+            return items.map((item: FeatureWithActions) => {
+              const active = isItemActive(item);
+
+              if (isCollapsed) {
+                return (
+                  <Tooltip key={item.path}>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => router.push(`/${item.route || item.path}`)}
+                        className={cn(
+                          "mx-auto flex h-10 w-10 items-center justify-center rounded-xl",
+                          "transition-all duration-200",
+                          "hover:bg-sidebar-accent/60",
+                          active && "bg-sidebar-accent text-primary"
+                        )}
+                      >
+                        <Icon name={item.icon || "Circle"} className="h-4 w-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">{t.navBar(`labels.${item.path}`)}</TooltipContent>
+                  </Tooltip>
+                );
+              }
+
+              return (
+                <NavItem
+                  key={item.path}
+                  item={item}
+                  isActive={active}
+                  onClick={() => router.push(`/${item.route || item.path}`)}
+                  t={t}
+                />
+              );
+            });
+          })}
+        </nav>
       </SidebarContent>
-      <SidebarFooter className="flex flex-col items-end justify-between">
-        <span className="flex items-center gap-2">
+
+      {/* Footer - Action Bar */}
+      <SidebarFooter
+        className={cn(
+          "border-sidebar-border/50 border-t pt-3",
+          "flex items-center justify-end gap-2"
+        )}
+      >
+        {/* Quick Actions */}
+        <div className={cn("flex w-full justify-end gap-1", isCollapsed && "flex-col")}>
           <AppLanguage />
           <AppTheme />
-        </span>
-        <NavUser />
+        </div>
+
+        {/* User */}
+        <div className={"p-2"}>
+          <NavUser variant={isCollapsed ? "small" : "large"} />
+        </div>
       </SidebarFooter>
     </Sidebar>
   );

@@ -8,9 +8,10 @@
 
 "use client";
 
+import { ComponentPropsWithoutRef, forwardRef } from "react";
+
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
-import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 import { cn } from "../../../shared/utils";
 import {
@@ -21,6 +22,14 @@ import {
   DialogProps,
   DialogTitle,
 } from "../dialog";
+
+/**
+ * Command Component Module
+ *
+ * A command palette component for searching and executing commands.
+ *
+ * @module presentation/primitives/command
+ */
 
 // ============================================================================
 // Root Components
@@ -34,7 +43,7 @@ const Command = forwardRef<React.ElementRef<typeof CommandPrimitive>, CommandPro
       ref={ref}
       data-slot="command"
       className={cn(
-        "bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md",
+        "bg-popover/95 text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md shadow-lg backdrop-blur-sm",
         className
       )}
       {...props}
@@ -62,7 +71,7 @@ function CommandDialog({
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
       <DialogContent className="overflow-hidden p-0">
-        <Command className="**:[[cmdk-group-heading]]:text-muted-foreground **:data-[slot=command-input-wrapper]:h-12 **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group]]:px-2 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 **:[[cmdk-input-wrapper]_svg]:h-5 **:[[cmdk-input-wrapper]_svg]:w-5 **:[[cmdk-input]]:h-12 **:[[cmdk-item]]:px-2 **:[[cmdk-item]]:py-3 **:[[cmdk-item]_svg]:h-5 **:[[cmdk-item]_svg]:w-5">
+        <Command className="**:[[cmdk-group-heading]]:text-muted-foreground **:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group]]:px-2 **:[[cmdk-input-wrapper]_svg]:h-5 **:[[cmdk-input-wrapper]_svg]:w-5 **:[[cmdk-input]]:h-12 **:[[cmdk-item]_svg]:h-5 **:[[cmdk-item]_svg]:w-5 **:[[cmdk-item]]:px-2 **:[[cmdk-item]]:py-3">
           {children}
         </Command>
       </DialogContent>
@@ -76,56 +85,53 @@ function CommandDialog({
 
 export type CommandInputProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Input>;
 
-const CommandInput = forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Input>,
-  CommandInputProps
->(({ className, ...props }, ref) => (
-  <div data-slot="command-input-wrapper" className="flex h-9 items-center gap-2 border-b px-3">
-    <SearchIcon className="size-4 shrink-0 opacity-50" />
-    <CommandPrimitive.Input
-      ref={ref}
-      data-slot="command-input"
-      className={cn(
-        "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden",
-        "disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
-      {...props}
-    />
-  </div>
-));
+const CommandInput = forwardRef<React.ElementRef<typeof CommandPrimitive.Input>, CommandInputProps>(
+  ({ className, ...props }, ref) => (
+    <div data-slot="command-input-wrapper" className="flex h-9 items-center gap-2 border-b px-3">
+      <SearchIcon className="size-4 shrink-0 opacity-50" />
+      <CommandPrimitive.Input
+        ref={ref}
+        data-slot="command-input"
+        className={cn(
+          "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden",
+          "disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        {...props}
+      />
+    </div>
+  )
+);
 
 CommandInput.displayName = "CommandInput";
 
 export type CommandListProps = ComponentPropsWithoutRef<typeof CommandPrimitive.List>;
 
-const CommandList = forwardRef<
-  React.ElementRef<typeof CommandPrimitive.List>,
-  CommandListProps
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
-    ref={ref}
-    data-slot="command-list"
-    className={cn("max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto", className)}
-    {...props}
-  />
-));
+const CommandList = forwardRef<React.ElementRef<typeof CommandPrimitive.List>, CommandListProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive.List
+      ref={ref}
+      data-slot="command-list"
+      className={cn("max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto", className)}
+      {...props}
+    />
+  )
+);
 
 CommandList.displayName = "CommandList";
 
 export type CommandEmptyProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>;
 
-const CommandEmpty = forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Empty>,
-  CommandEmptyProps
->(({ ...props }, ref) => (
-  <CommandPrimitive.Empty
-    ref={ref}
-    data-slot="command-empty"
-    className="py-6 text-center text-sm"
-    {...props}
-  />
-));
+const CommandEmpty = forwardRef<React.ElementRef<typeof CommandPrimitive.Empty>, CommandEmptyProps>(
+  ({ ...props }, ref) => (
+    <CommandPrimitive.Empty
+      ref={ref}
+      data-slot="command-empty"
+      className="py-6 text-center text-sm"
+      {...props}
+    />
+  )
+);
 
 CommandEmpty.displayName = "CommandEmpty";
 
@@ -135,27 +141,24 @@ CommandEmpty.displayName = "CommandEmpty";
 
 export type CommandGroupProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Group>;
 
-const CommandGroup = forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Group>,
-  CommandGroupProps
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Group
-    ref={ref}
-    data-slot="command-group"
-    className={cn(
-      "text-foreground overflow-hidden p-1",
-      "**:[[cmdk-group-heading]]:text-muted-foreground **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:py-1.5 **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium",
-      className
-    )}
-    {...props}
-  />
-));
+const CommandGroup = forwardRef<React.ElementRef<typeof CommandPrimitive.Group>, CommandGroupProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive.Group
+      ref={ref}
+      data-slot="command-group"
+      className={cn(
+        "text-foreground overflow-hidden p-1",
+        "**:[[cmdk-group-heading]]:text-muted-foreground **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:py-1.5 **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium",
+        className
+      )}
+      {...props}
+    />
+  )
+);
 
 CommandGroup.displayName = "CommandGroup";
 
-export type CommandSeparatorProps = ComponentPropsWithoutRef<
-  typeof CommandPrimitive.Separator
->;
+export type CommandSeparatorProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>;
 
 const CommandSeparator = forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
@@ -173,24 +176,23 @@ CommandSeparator.displayName = "CommandSeparator";
 
 export type CommandItemProps = ComponentPropsWithoutRef<typeof CommandPrimitive.Item>;
 
-const CommandItem = forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  CommandItemProps
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Item
-    ref={ref}
-    data-slot="command-item"
-    className={cn(
-      "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
-      "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
-      "[&_svg:not([class*='text-'])]:text-muted-foreground",
-      "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
-      "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-      className
-    )}
-    {...props}
-  />
-));
+const CommandItem = forwardRef<React.ElementRef<typeof CommandPrimitive.Item>, CommandItemProps>(
+  ({ className, ...props }, ref) => (
+    <CommandPrimitive.Item
+      ref={ref}
+      data-slot="command-item"
+      className={cn(
+        "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
+        "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
+        "[&_svg:not([class*='text-'])]:text-muted-foreground",
+        "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
+        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      {...props}
+    />
+  )
+);
 
 CommandItem.displayName = "CommandItem";
 

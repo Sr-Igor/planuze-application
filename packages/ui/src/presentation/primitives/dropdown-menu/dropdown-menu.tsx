@@ -8,11 +8,20 @@
 
 "use client";
 
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * DropdownMenu Component Module
+ *
+ * Displays a menu to the user triggered by a button.
+ *
+ * @module presentation/primitives/dropdown-menu
+ */
 
 // ============================================================================
 // Root Components
@@ -24,9 +33,7 @@ function DropdownMenu({ ...props }: Readonly<DropdownMenuProps>) {
   return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
 }
 
-export type DropdownMenuPortalProps = ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Portal
->;
+export type DropdownMenuPortalProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Portal>;
 
 function DropdownMenuPortal({ ...props }: Readonly<DropdownMenuPortalProps>) {
   return <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />;
@@ -53,9 +60,7 @@ const DropdownMenuTrigger = forwardRef<
 
 DropdownMenuTrigger.displayName = "DropdownMenuTrigger";
 
-export type DropdownMenuGroupProps = ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Group
->;
+export type DropdownMenuGroupProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Group>;
 
 const DropdownMenuGroup = forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Group>,
@@ -84,7 +89,7 @@ const DropdownMenuContent = forwardRef<
       data-slot="dropdown-menu-content"
       sideOffset={sideOffset}
       className={cn(
-        "bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md",
+        "bg-popover/95 text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg backdrop-blur-sm",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
@@ -133,9 +138,7 @@ DropdownMenuContentInModal.displayName = "DropdownMenuContentInModal";
 // Item Components
 // ============================================================================
 
-export type DropdownMenuItemProps = ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Item
-> & {
+export type DropdownMenuItemProps = ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
   inset?: boolean;
   variant?: "default" | "destructive";
 };

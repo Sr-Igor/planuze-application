@@ -5,7 +5,6 @@
  *
  * @module presentation/primitives/skeleton
  */
-
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 import { cn } from "../../../shared/utils";
@@ -26,16 +25,14 @@ export type SkeletonProps = ComponentPropsWithoutRef<"div">;
  * <Skeleton className="h-12 w-12 rounded-full" />
  * ```
  */
-const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      data-slot="skeleton"
-      className={cn("bg-primary/10 animate-pulse rounded-md", className)}
-      {...props}
-    />
-  )
-);
+const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    data-slot="skeleton"
+    className={cn("bg-muted animate-pulse rounded-md", className)}
+    {...props}
+  />
+));
 
 Skeleton.displayName = "Skeleton";
 

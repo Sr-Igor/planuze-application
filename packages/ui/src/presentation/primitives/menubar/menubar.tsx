@@ -8,11 +8,20 @@
 
 "use client";
 
-import * as MenubarPrimitive from "@radix-ui/react-menubar";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as MenubarPrimitive from "@radix-ui/react-menubar";
+import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * Menubar Component Module
+ *
+ * A visually persistent menu common in desktop applications.
+ *
+ * @module presentation/primitives/menubar
+ */
 
 // ============================================================================
 // Root Components
@@ -44,12 +53,9 @@ function MenubarMenu({ ...props }: MenubarMenuProps) {
 
 export type MenubarGroupProps = ComponentPropsWithoutRef<typeof MenubarPrimitive.Group>;
 
-const MenubarGroup = forwardRef<
-  React.ElementRef<typeof MenubarPrimitive.Group>,
-  MenubarGroupProps
->(({ ...props }, ref) => (
-  <MenubarPrimitive.Group ref={ref} data-slot="menubar-group" {...props} />
-));
+const MenubarGroup = forwardRef<React.ElementRef<typeof MenubarPrimitive.Group>, MenubarGroupProps>(
+  ({ ...props }, ref) => <MenubarPrimitive.Group ref={ref} data-slot="menubar-group" {...props} />
+);
 
 MenubarGroup.displayName = "MenubarGroup";
 
@@ -59,9 +65,7 @@ function MenubarPortal({ ...props }: Readonly<MenubarPortalProps>) {
   return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />;
 }
 
-export type MenubarRadioGroupProps = ComponentPropsWithoutRef<
-  typeof MenubarPrimitive.RadioGroup
->;
+export type MenubarRadioGroupProps = ComponentPropsWithoutRef<typeof MenubarPrimitive.RadioGroup>;
 
 const MenubarRadioGroup = forwardRef<
   React.ElementRef<typeof MenubarPrimitive.RadioGroup>,
@@ -117,7 +121,7 @@ const MenubarContent = forwardRef<
       alignOffset={alignOffset}
       sideOffset={sideOffset}
       className={cn(
-        "bg-popover text-popover-foreground z-50 min-w-[12rem] overflow-hidden rounded-md border p-1 shadow-md",
+        "bg-popover/95 text-popover-foreground z-50 min-w-[12rem] overflow-hidden rounded-md border p-1 shadow-lg backdrop-blur-sm",
         "data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
         "data-[side=bottom]:slide-in-from-top-2",
@@ -163,9 +167,7 @@ const MenubarSubTrigger = forwardRef<
 
 MenubarSubTrigger.displayName = "MenubarSubTrigger";
 
-export type MenubarSubContentProps = ComponentPropsWithoutRef<
-  typeof MenubarPrimitive.SubContent
->;
+export type MenubarSubContentProps = ComponentPropsWithoutRef<typeof MenubarPrimitive.SubContent>;
 
 const MenubarSubContent = forwardRef<
   React.ElementRef<typeof MenubarPrimitive.SubContent>,
@@ -200,31 +202,30 @@ export type MenubarItemProps = ComponentPropsWithoutRef<typeof MenubarPrimitive.
   variant?: "default" | "destructive";
 };
 
-const MenubarItem = forwardRef<
-  React.ElementRef<typeof MenubarPrimitive.Item>,
-  MenubarItemProps
->(({ className, inset, variant = "default", ...props }, ref) => (
-  <MenubarPrimitive.Item
-    ref={ref}
-    data-slot="menubar-item"
-    data-inset={inset}
-    data-variant={variant}
-    className={cn(
-      "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
-      "focus:bg-accent focus:text-accent-foreground",
-      "data-disabled:pointer-events-none data-disabled:opacity-50",
-      "data-inset:pl-8",
-      "data-[variant=destructive]:text-destructive-foreground",
-      "data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/40",
-      "data-[variant=destructive]:focus:text-destructive-foreground",
-      "data-[variant=destructive]:*:[svg]:text-destructive-foreground!",
-      "[&_svg:not([class*='text-'])]:text-muted-foreground",
-      "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-      className
-    )}
-    {...props}
-  />
-));
+const MenubarItem = forwardRef<React.ElementRef<typeof MenubarPrimitive.Item>, MenubarItemProps>(
+  ({ className, inset, variant = "default", ...props }, ref) => (
+    <MenubarPrimitive.Item
+      ref={ref}
+      data-slot="menubar-item"
+      data-inset={inset}
+      data-variant={variant}
+      className={cn(
+        "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none",
+        "focus:bg-accent focus:text-accent-foreground",
+        "data-disabled:pointer-events-none data-disabled:opacity-50",
+        "data-inset:pl-8",
+        "data-[variant=destructive]:text-destructive-foreground",
+        "data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/40",
+        "data-[variant=destructive]:focus:text-destructive-foreground",
+        "data-[variant=destructive]:*:[svg]:text-destructive-foreground!",
+        "[&_svg:not([class*='text-'])]:text-muted-foreground",
+        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      {...props}
+    />
+  )
+);
 
 MenubarItem.displayName = "MenubarItem";
 
@@ -260,9 +261,7 @@ const MenubarCheckboxItem = forwardRef<
 
 MenubarCheckboxItem.displayName = "MenubarCheckboxItem";
 
-export type MenubarRadioItemProps = ComponentPropsWithoutRef<
-  typeof MenubarPrimitive.RadioItem
->;
+export type MenubarRadioItemProps = ComponentPropsWithoutRef<typeof MenubarPrimitive.RadioItem>;
 
 const MenubarRadioItem = forwardRef<
   React.ElementRef<typeof MenubarPrimitive.RadioItem>,
@@ -299,24 +298,21 @@ export type MenubarLabelProps = ComponentPropsWithoutRef<typeof MenubarPrimitive
   inset?: boolean;
 };
 
-const MenubarLabel = forwardRef<
-  React.ElementRef<typeof MenubarPrimitive.Label>,
-  MenubarLabelProps
->(({ className, inset, ...props }, ref) => (
-  <MenubarPrimitive.Label
-    ref={ref}
-    data-slot="menubar-label"
-    data-inset={inset}
-    className={cn("px-2 py-1.5 text-sm font-medium data-inset:pl-8", className)}
-    {...props}
-  />
-));
+const MenubarLabel = forwardRef<React.ElementRef<typeof MenubarPrimitive.Label>, MenubarLabelProps>(
+  ({ className, inset, ...props }, ref) => (
+    <MenubarPrimitive.Label
+      ref={ref}
+      data-slot="menubar-label"
+      data-inset={inset}
+      className={cn("px-2 py-1.5 text-sm font-medium data-inset:pl-8", className)}
+      {...props}
+    />
+  )
+);
 
 MenubarLabel.displayName = "MenubarLabel";
 
-export type MenubarSeparatorProps = ComponentPropsWithoutRef<
-  typeof MenubarPrimitive.Separator
->;
+export type MenubarSeparatorProps = ComponentPropsWithoutRef<typeof MenubarPrimitive.Separator>;
 
 const MenubarSeparator = forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Separator>,

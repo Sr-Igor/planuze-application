@@ -41,7 +41,6 @@ const MainAppLayout = ({
       <AppSidebar />
       <main className="relative w-full overflow-hidden">
         {showWarning && <Warning {...warning} subscription={subscription} />}
-        {/* <Header /> */}
         <Nav />
         <div
           className={cn(

@@ -8,8 +8,6 @@
 
 "use client";
 
-import { Slot } from "@radix-ui/react-slot";
-import { PanelLeftIcon } from "lucide-react";
 import {
   ComponentPropsWithoutRef,
   createContext,
@@ -22,6 +20,9 @@ import {
   useState,
 } from "react";
 
+import { Slot } from "@radix-ui/react-slot";
+import { ChevronLeftIcon } from "lucide-react";
+
 import { useIsMobile } from "../../../application/hooks";
 import { cn } from "../../../shared/utils";
 import { Button, ButtonProps } from "../button";
@@ -29,8 +30,70 @@ import { Input, InputProps } from "../input";
 import { Separator, SeparatorProps } from "../separator";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../sheet";
 import { Skeleton } from "../skeleton";
-import { Tooltip, TooltipContent, TooltipContentProps, TooltipProvider, TooltipTrigger } from "../tooltip";
-import { sidebarMenuButtonVariants, SidebarMenuButtonVariantProps } from "./sidebar.variants";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipContentProps,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../tooltip";
+import { SidebarMenuButtonVariantProps, sidebarMenuButtonVariants } from "./sidebar.variants";
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
 
 // ============================================================================
 // Constants
@@ -81,7 +144,18 @@ export type SidebarProviderProps = ComponentPropsWithoutRef<"div"> & {
 };
 
 const SidebarProvider = forwardRef<HTMLDivElement, SidebarProviderProps>(
-  ({ defaultOpen = true, open: openProp, onOpenChange: setOpenProp, className, style, children, ...props }, ref) => {
+  (
+    {
+      defaultOpen = true,
+      open: openProp,
+      onOpenChange: setOpenProp,
+      className,
+      style,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const isMobile = useIsMobile();
     const [openMobile, setOpenMobile] = useState(false);
     const [internalOpen, setInternalOpen] = useState(defaultOpen);
@@ -128,12 +202,17 @@ const SidebarProvider = forwardRef<HTMLDivElement, SidebarProviderProps>(
           <div
             ref={ref}
             data-slot="sidebar-wrapper"
-            style={{
-              "--sidebar-width": SIDEBAR_WIDTH,
-              "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
-              ...style,
-            } as CSSProperties}
-            className={cn("group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full", className)}
+            style={
+              {
+                "--sidebar-width": SIDEBAR_WIDTH,
+                "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
+                ...style,
+              } as CSSProperties
+            }
+            className={cn(
+              "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full",
+              className
+            )}
             {...props}
           >
             {children}
@@ -157,7 +236,17 @@ export type SidebarProps = ComponentPropsWithoutRef<"div"> & {
 };
 
 const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(
-  ({ side = "left", variant = "sidebar", collapsible = "offcanvas", className, children, ...props }, ref) => {
+  (
+    {
+      side = "left",
+      variant = "sidebar",
+      collapsible = "offcanvas",
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 
     if (collapsible === "none") {
@@ -165,7 +254,10 @@ const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(
         <div
           ref={ref}
           data-slot="sidebar"
-          className={cn("bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col", className)}
+          className={cn(
+            "bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col",
+            className
+          )}
           {...props}
         >
           {children}
@@ -249,7 +341,7 @@ export type SidebarTriggerProps = ButtonProps;
 
 const SidebarTrigger = forwardRef<HTMLButtonElement, SidebarTriggerProps>(
   ({ className, onClick, ...props }, ref) => {
-    const { toggleSidebar } = useSidebar();
+    const { toggleSidebar, state } = useSidebar();
 
     return (
       <Button
@@ -258,14 +350,19 @@ const SidebarTrigger = forwardRef<HTMLButtonElement, SidebarTriggerProps>(
         data-slot="sidebar-trigger"
         variant="ghost"
         size="icon"
-        className={cn("h-7 w-7", className)}
+        className={cn("bg-background-secondary h-7 w-7 rounded-full", className)}
         onClick={(event) => {
           onClick?.(event);
           toggleSidebar();
         }}
         {...props}
       >
-        <PanelLeftIcon />
+        <ChevronLeftIcon
+          className={cn(
+            "size-4 transition-transform duration-200 ease-linear",
+            state === "collapsed" ? "rotate-180" : ""
+          )}
+        />
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     );
@@ -314,23 +411,21 @@ SidebarRail.displayName = "SidebarRail";
 
 export type SidebarInsetProps = ComponentPropsWithoutRef<"main">;
 
-const SidebarInset = forwardRef<HTMLElement, SidebarInsetProps>(
-  ({ className, ...props }, ref) => (
-    <main
-      ref={ref}
-      data-slot="sidebar-inset"
-      className={cn(
-        "bg-background relative flex min-h-svh flex-1 flex-col",
-        "peer-data-[variant=inset]:min-h-[calc(100svh-(--spacing(4)))]",
-        "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0",
-        "md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm",
-        "md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
-        className
-      )}
-      {...props}
-    />
-  )
-);
+const SidebarInset = forwardRef<HTMLElement, SidebarInsetProps>(({ className, ...props }, ref) => (
+  <main
+    ref={ref}
+    data-slot="sidebar-inset"
+    className={cn(
+      "bg-background relative flex min-h-svh flex-1 flex-col",
+      "peer-data-[variant=inset]:min-h-[calc(100svh-(--spacing(4)))]",
+      "md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0",
+      "md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm",
+      "md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
+      className
+    )}
+    {...props}
+  />
+));
 
 SidebarInset.displayName = "SidebarInset";
 
@@ -545,7 +640,18 @@ export type SidebarMenuButtonProps = ComponentPropsWithoutRef<"button"> & {
 } & SidebarMenuButtonVariantProps;
 
 const SidebarMenuButton = forwardRef<HTMLButtonElement, SidebarMenuButtonProps>(
-  ({ asChild = false, isActive = false, variant = "default", size = "default", tooltip, className, ...props }, ref) => {
+  (
+    {
+      asChild = false,
+      isActive = false,
+      variant = "default",
+      size = "default",
+      tooltip,
+      className,
+      ...props
+    },
+    ref
+  ) => {
     const Comp = asChild ? Slot : "button";
     const { isMobile, state } = useSidebar();
 
@@ -568,7 +674,12 @@ const SidebarMenuButton = forwardRef<HTMLButtonElement, SidebarMenuButtonProps>(
     return (
       <Tooltip>
         <TooltipTrigger asChild>{button}</TooltipTrigger>
-        <TooltipContent side="right" align="center" hidden={state !== "collapsed" || isMobile} {...tooltipProps} />
+        <TooltipContent
+          side="right"
+          align="center"
+          hidden={state !== "collapsed" || isMobile}
+          {...tooltipProps}
+        />
       </Tooltip>
     );
   }

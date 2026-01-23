@@ -1,28 +1,16 @@
 {
-    "extends": "@repo/typescript-config/base.json",
-    "compilerOptions": {
-        "module": "ESNext",
-        "moduleResolution": "bundler",
-        "skipLibCheck": true,
-        "noEmit": true,
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
-        "target": "ES2023",
-        "baseUrl": ".",
-        "paths": {
-            "#/*": [
-                "./*"
-            ]
-        },
-        "lib": [
-            "ES2023"
-        ]
-    },
-    "include": [
-        "index.ts",
-        "generator/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "noEmit": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "target": "ES2023",
+    "baseUrl": ".",
+    "lib": ["ES2023"]
+  },
+  "include": ["index.ts", "generator/**/*"],
+  "exclude": ["node_modules"]
 }

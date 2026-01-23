@@ -12,6 +12,14 @@ import { ComponentPropsWithoutRef, forwardRef } from "react";
 
 import { cn } from "../../../shared/utils";
 
+/**
+ * Table Component Module
+ *
+ * A responsive table component.
+ *
+ * @module presentation/primitives/table
+ */
+
 // ============================================================================
 // Root Components
 // ============================================================================
@@ -84,16 +92,18 @@ TableFooter.displayName = "TableFooter";
 
 export type TableRowProps = ComponentPropsWithoutRef<"tr">;
 
-const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
-  ({ className, ...props }, ref) => (
-    <tr
-      ref={ref}
-      data-slot="table-row"
-      className={cn("data-[state=selected]:bg-muted transition-colors", className)}
-      {...props}
-    />
-  )
-);
+const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ className, ...props }, ref) => (
+  <tr
+    ref={ref}
+    data-slot="table-row"
+    className={cn(
+      "data-[state=selected]:bg-muted transition-colors duration-150",
+      "hover:bg-muted/50",
+      className
+    )}
+    {...props}
+  />
+));
 
 TableRow.displayName = "TableRow";
 
@@ -150,13 +160,4 @@ const TableCaption = forwardRef<HTMLTableCaptionElement, TableCaptionProps>(
 
 TableCaption.displayName = "TableCaption";
 
-export {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-};
+export { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow };

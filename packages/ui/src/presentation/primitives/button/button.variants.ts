@@ -7,7 +7,6 @@
  *
  * @module presentation/primitives/button/variants
  */
-
 import { cva, type VariantProps } from "class-variance-authority";
 
 /**
@@ -24,7 +23,7 @@ export const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2",
     "whitespace-nowrap rounded-md text-sm font-medium",
-    "transition-[color,box-shadow]",
+    "transition-all duration-200 ease-out",
     "disabled:pointer-events-none disabled:opacity-50",
     "[&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0",
     "outline-none",
@@ -41,29 +40,28 @@ export const buttonVariants = cva(
        */
       variant: {
         default: [
-          "bg-primary text-primary-foreground shadow-xs",
-          "hover:bg-primary/90",
+          "bg-primary text-primary-foreground shadow-sm",
+          "hover:bg-primary/90 hover:shadow-md",
+          "active:bg-primary/95 active:shadow-sm",
         ],
         destructive: [
-          "bg-destructive text-white shadow-xs",
-          "hover:bg-destructive/90",
+          "bg-destructive text-white shadow-sm",
+          "hover:bg-destructive/90 hover:shadow-md",
+          "active:bg-destructive/95",
           "focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         ],
         outline: [
-          "border border-input bg-background shadow-xs",
-          "hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background/80 backdrop-blur-sm shadow-sm",
+          "hover:bg-accent hover:text-accent-foreground hover:border-accent",
+          "active:bg-accent/80",
         ],
         secondary: [
-          "bg-secondary text-secondary-foreground shadow-xs",
-          "hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground shadow-sm",
+          "hover:bg-secondary/80 hover:shadow-md",
+          "active:bg-secondary/90",
         ],
-        ghost: [
-          "hover:bg-accent hover:text-accent-foreground",
-        ],
-        link: [
-          "text-primary underline-offset-4",
-          "hover:underline",
-        ],
+        ghost: ["hover:bg-accent hover:text-accent-foreground", "active:bg-accent/80"],
+        link: ["text-primary underline-offset-4", "hover:underline hover:text-primary/80"],
       },
 
       /**

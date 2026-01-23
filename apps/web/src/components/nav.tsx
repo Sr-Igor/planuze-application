@@ -21,7 +21,9 @@ export interface INavProps {
 export const Nav = ({ intermediate = true }: INavProps) => {
   const t = useLang();
 
-  const className = intermediate ? " bg-sidebar absolute pr-10 z-1 w-full" : "container";
+  const className = intermediate
+    ? " bg-sidebar absolute pr-10 z-1 w-full shadow-sm shadow-foreground/10"
+    : "container";
 
   const pathname = usePathname();
   const route = useRouter();
@@ -32,9 +34,9 @@ export const Nav = ({ intermediate = true }: INavProps) => {
   const canGoBack = useMemo(() => {
     return backPaths.some((path) => pathname.includes(path)) && window.history.length > 1;
   }, [pathname]);
-
+  // "bg-background/95 supports-backdrop-filter:bg-background/10 shadow-foreground sticky top-0 z-50 w-full backdrop-blur"
   return (
-    <nav className="bg-background/95 supports-[backdrop-filter]:bg-background/40 shadow-foreground/10 sticky top-0 z-50 w-full shadow-sm backdrop-blur">
+    <nav className="supports-backdrop-filter:bg-muted-foreground/5 sticky top-0 z-50 w-full backdrop-blur">
       <div className={cn("mx-auto flex h-16 items-center justify-between px-4", className)}>
         <span className="flex items-center gap-2">
           {intermediate && <SidebarTrigger />}

@@ -1,14 +1,13 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-import path from "path";
-import { fileURLToPath } from "url";
-import fs from "fs";
 
 import initializeBundleAnalyzer from "@next/bundle-analyzer";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 const withBundleAnalyzer = initializeBundleAnalyzer({
   enabled: process.env.BUNDLE_ANALYZER_ENABLED === "true",
@@ -68,34 +67,6 @@ const nextConfig: NextConfig = {
       "node:path": "path",
     };
     config.plugins = config.plugins || [];
-    config.plugins.push({
-      apply: (compiler: any) => {
-        compiler.hooks.normalModuleFactory.tap("HashAliasResolver", (nmf: any) => {
-          nmf.hooks.beforeResolve.tap("HashAliasResolver", (data: any) => {
-            if (data.request?.startsWith("#/")) {
-              const contextPath = data.context || data.contextInfo?.issuer || "";
-              const packagesMatch = contextPath.match(/packages\/([^/]+)\//);
-
-              if (packagesMatch) {
-                const packageName = packagesMatch[1];
-                const packageSrcPath = path.resolve(
-                  __dirname,
-                  "../../packages",
-                  packageName,
-                  "src"
-                );
-
-                if (fs.existsSync(packageSrcPath)) {
-                  const requestPath = data.request.replace(/^#\//, "");
-                  data.request = path.join(packageSrcPath, requestPath);
-                }
-              }
-            }
-          });
-        });
-      },
-    });
-
     return config;
   },
 };

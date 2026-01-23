@@ -50,14 +50,14 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
       >
         <div className={cn("space-y-4", isLoading && "opacity-0")}>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <Info title={page("admin.overview.company.name")} value={summary.company.name} />
+            <Info title={page("admin.overview.company.name")} value={summary?.company?.name} />
             <Info
               title={page("admin.overview.company.created_at")}
-              value={formatDate(summary.company.createdAt)}
+              value={formatDate(summary?.company?.createdAt)}
             />
             <Info
               title={page("admin.overview.company.updated_at")}
-              value={formatDate(summary.company.updatedAt)}
+              value={formatDate(summary?.company?.updatedAt)}
             />
           </div>
           <Separator />
@@ -65,13 +65,15 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
             <Info
               title={page("admin.overview.company.has_address")}
               value={
-                summary.company.hasAddress ? page("admin.overview.yes") : page("admin.overview.no")
+                summary?.company?.hasAddress
+                  ? page("admin.overview.yes")
+                  : page("admin.overview.no")
               }
             />
             <Info
               title={page("admin.overview.company.has_documents")}
               value={
-                summary.company.hasDocuments
+                summary?.company?.hasDocuments
                   ? page("admin.overview.yes")
                   : page("admin.overview.no")
               }
@@ -79,19 +81,21 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
             <Info
               title={page("admin.overview.company.has_contacts")}
               value={
-                summary.company.hasContacts ? page("admin.overview.yes") : page("admin.overview.no")
+                summary?.company?.hasContacts
+                  ? page("admin.overview.yes")
+                  : page("admin.overview.no")
               }
             />
             <Info
               title={page("admin.overview.company.has_files")}
               value={
-                summary.company.hasFiles ? page("admin.overview.yes") : page("admin.overview.no")
+                summary?.company?.hasFiles ? page("admin.overview.yes") : page("admin.overview.no")
               }
             />
             <Info
               title={page("admin.overview.company.has_config")}
               value={
-                summary.company.hasConfig ? page("admin.overview.yes") : page("admin.overview.no")
+                summary?.company?.hasConfig ? page("admin.overview.yes") : page("admin.overview.no")
               }
             />
           </div>

@@ -8,10 +8,19 @@
 
 "use client";
 
-import * as SliderPrimitive from "@radix-ui/react-slider";
 import { ComponentPropsWithoutRef, forwardRef, useMemo } from "react";
 
+import * as SliderPrimitive from "@radix-ui/react-slider";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * Slider Component Module
+ *
+ * An input where the user selects a value from within a given range.
+ *
+ * @module presentation/primitives/slider
+ */
 
 /**
  * Slider component props.
@@ -61,7 +70,7 @@ const Slider = forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, SliderP
         <SliderPrimitive.Track
           data-slot="slider-track"
           className={cn(
-            "bg-muted relative grow overflow-hidden rounded-full",
+            "bg-muted relative grow overflow-hidden rounded-full shadow-inner",
             "data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full",
             "data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5"
           )}
@@ -69,7 +78,7 @@ const Slider = forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, SliderP
           <SliderPrimitive.Range
             data-slot="slider-range"
             className={cn(
-              "bg-primary absolute",
+              "bg-primary absolute transition-all duration-150",
               "data-[orientation=horizontal]:h-full",
               "data-[orientation=vertical]:w-full"
             )}
@@ -81,8 +90,9 @@ const Slider = forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, SliderP
             data-slot="slider-thumb"
             className={cn(
               "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full",
-              "border shadow-sm transition-[color,box-shadow]",
-              "hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden",
+              "border-2 shadow-md transition-all duration-200",
+              "hover:shadow-lg hover:ring-4",
+              "focus-visible:shadow-lg focus-visible:ring-4 focus-visible:outline-hidden",
               "disabled:pointer-events-none disabled:opacity-50"
             )}
           />

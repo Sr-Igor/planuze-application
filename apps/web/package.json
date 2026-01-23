@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "npm run generate:translations && NODE_OPTIONS='--max-http-header-size=12800000' next dev --port 3000",
+    "dev": "npm run generate:translations && NODE_OPTIONS='--max-http-header-size=12800000' next dev --turbopack --port 3000",
     "build": "npm run generate:translations && next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",

@@ -8,11 +8,20 @@
 
 "use client";
 
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDownIcon } from "lucide-react";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronDownIcon } from "lucide-react";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * Accordion Component Module
+ *
+ * A vertically stacked set of interactive headings that reveal content.
+ *
+ * @module presentation/primitives/accordion
+ */
 
 /**
  * Accordion component props.
@@ -34,12 +43,9 @@ export type AccordionProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.
  * </Accordion>
  * ```
  */
-const Accordion = forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Root>,
-  AccordionProps
->(({ ...props }, ref) => (
-  <AccordionPrimitive.Root ref={ref} data-slot="accordion" {...props} />
-));
+const Accordion = forwardRef<React.ElementRef<typeof AccordionPrimitive.Root>, AccordionProps>(
+  ({ ...props }, ref) => <AccordionPrimitive.Root ref={ref} data-slot="accordion" {...props} />
+);
 
 Accordion.displayName = "Accordion";
 
@@ -70,9 +76,7 @@ AccordionItem.displayName = "AccordionItem";
 /**
  * AccordionTrigger component props.
  */
-export type AccordionTriggerProps = ComponentPropsWithoutRef<
-  typeof AccordionPrimitive.Trigger
->;
+export type AccordionTriggerProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>;
 
 /**
  * AccordionTrigger component.
@@ -89,7 +93,7 @@ const AccordionTrigger = forwardRef<
       data-slot="accordion-trigger"
       className={cn(
         "flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium",
-        "transition-all outline-none hover:underline",
+        "hover:text-primary transition-all duration-200 outline-none",
         "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
         "disabled:pointer-events-none disabled:opacity-50",
         "[&[data-state=open]>svg]:rotate-180",
@@ -98,7 +102,7 @@ const AccordionTrigger = forwardRef<
       {...props}
     >
       {children}
-      <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+      <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-300 ease-out" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -108,9 +112,7 @@ AccordionTrigger.displayName = "AccordionTrigger";
 /**
  * AccordionContent component props.
  */
-export type AccordionContentProps = ComponentPropsWithoutRef<
-  typeof AccordionPrimitive.Content
->;
+export type AccordionContentProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>;
 
 /**
  * AccordionContent component.
