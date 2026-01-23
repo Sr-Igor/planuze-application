@@ -2,46 +2,36 @@
 
 import { useEffect, useState } from "react";
 
-const TAB_ID_KEY = process.env.NEXT_PUBLIC_TAB_ID_KEY || "app_tab_id";
-const CHANNEL_NAME = "tab_id_broadcast_channel";
+import { tabIdService } from "../../infrastructure/services/tab-id.service";
 
-let channel: BroadcastChannel | null = null;
-if (globalThis.window) {
-  channel = new BroadcastChannel(CHANNEL_NAME);
-}
-
-/**
- * Gets the current tab ID from sessionStorage
- * This is used to isolate cookies per browser tab
- */
-export function getTabId(): string | null {
-  if (!globalThis.window) return null;
-  return sessionStorage.getItem(TAB_ID_KEY);
-}
+const PING_TIMEOUT_MS = 100;
 
 /**
  * React hook that manages tab ID with BroadcastChannel for multi-tab support
  * Detects if multiple tabs are open and generates unique IDs for each
+ * 
+ * @returns The current tab ID or null if not yet initialized
  */
-export function useTabId() {
-  const [tabId, setTabId] = useState(() => getTabId());
+export function useTabId(): string | null {
+  const [tabId, setTabId] = useState(() => tabIdService.getTabId());
 
   useEffect(() => {
-    const currentTabId = sessionStorage.getItem(TAB_ID_KEY);
-    const PING_TIMEOUT_MS = 100;
+    const currentTabId = tabIdService.getTabId();
+    const channel = tabIdService.getChannel();
 
     const handleMessage = (event: MessageEvent) => {
       const { type, id } = event.data;
+      const myCurrentId = tabIdService.getTabId();
 
-      const myCurrentId = sessionStorage.getItem(TAB_ID_KEY);
       if (type === "PING" && id === myCurrentId) {
-        channel?.postMessage({ type: "PONG", id: myCurrentId });
+        tabIdService.broadcast({ type: "PONG", id: myCurrentId! });
       }
     };
 
     channel?.addEventListener("message", handleMessage);
 
     if (currentTabId) {
+      // Check if another tab already has this ID
       let pongReceived = false;
 
       const pongListener = (event: MessageEvent) => {
@@ -52,23 +42,24 @@ export function useTabId() {
       };
 
       channel?.addEventListener("message", pongListener);
-
-      channel?.postMessage({ type: "PING", id: currentTabId });
+      tabIdService.broadcast({ type: "PING", id: currentTabId });
 
       setTimeout(() => {
         channel?.removeEventListener("message", pongListener);
 
         if (pongReceived) {
-          const newId = crypto.randomUUID();
-          sessionStorage.setItem(TAB_ID_KEY, newId);
+          // Another tab has this ID, generate a new one
+          const newId = tabIdService.generateTabId();
+          tabIdService.setTabId(newId);
           setTabId(newId);
         } else {
           setTabId(currentTabId);
         }
       }, PING_TIMEOUT_MS);
     } else {
-      const newId = crypto.randomUUID();
-      sessionStorage.setItem(TAB_ID_KEY, newId);
+      // No tab ID, generate a new one
+      const newId = tabIdService.generateTabId();
+      tabIdService.setTabId(newId);
       setTabId(newId);
     }
 
@@ -79,3 +70,6 @@ export function useTabId() {
 
   return tabId;
 }
+
+// Re-export getTabId for non-React usage
+export { tabIdService };

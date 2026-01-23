@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from "next/navigation";
 
-import { getToken } from '@repo/cookies';
+import { getToken } from "@repo/cookies";
 
 export default function Home() {
-    const { replace } = useRouter();
-    const path = usePathname();
+  const { replace } = useRouter();
+  const path = usePathname();
 
-    useEffect(() => {
-        const token = getToken();
-        if (token) replace(`/dashboard`);
-        else replace(`/auth/login?callbackUrl=${path}`);
-    }, []);
+  useEffect(() => {
+    const token = getToken();
+    if (token) replace(`/dashboard`);
+    else replace(`/auth/login?callbackUrl=${path}`);
+  }, []);
 
-    return <></>;
+  return <></>;
 }
