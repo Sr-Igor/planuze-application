@@ -1,6 +1,6 @@
+import { setModule, setProfile } from "@repo/cookies";
 import { action, module } from "@repo/types";
 
-import { setModule, setProfile } from "../../../../../cookies/src";
 import * as types from "./types";
 
 export type ModuleState = {

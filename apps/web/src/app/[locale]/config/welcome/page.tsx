@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { differenceInDays } from "date-fns";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { Button, Skeleton } from "@repo/ui";
@@ -13,7 +14,6 @@ import { Button, Skeleton } from "@repo/ui";
 import { AppTabs } from "@/components/app-tabs";
 import { CenterTemplate } from "@/templates/center";
 
-import { useSignOut } from "../../../../../../../packages/cookies/src";
 import { Invite } from "./options/invite";
 import { Registry } from "./options/registry";
 import { useReq } from "./use-req";
@@ -22,7 +22,7 @@ export default function Page() {
   const [currentTab, setCurrentTab] = useState<string>("invite");
   const user = useAppSelector((state) => state.user);
   const route = useRouter();
-  const { out } = useSignOut();
+  const { clean } = useClean();
 
   const t = useLang();
 
@@ -90,7 +90,7 @@ export default function Page() {
           <Button
             variant="destructive"
             className="mt-5 w-full flex-1 md:w-[200px]"
-            onClick={() => out()}
+            onClick={() => clean()}
             disabled={isLoading}
           >
             {t.helper("exit")}

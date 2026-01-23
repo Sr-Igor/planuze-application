@@ -2,10 +2,10 @@
 
 import { LoaderCircle } from "lucide-react";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
-import { useSignOut } from "../../../../../packages/cookies/src";
 import { CenterTemplate } from "../center";
 
 export interface LoaderTemplateProps {
@@ -15,7 +15,7 @@ export interface LoaderTemplateProps {
 export const LoaderTemplate = ({ inConfig }: LoaderTemplateProps) => {
   const t = useLang();
 
-  const { out } = useSignOut();
+  const { clean } = useClean();
 
   return (
     <CenterTemplate>
@@ -27,7 +27,7 @@ export const LoaderTemplate = ({ inConfig }: LoaderTemplateProps) => {
       {/* )} */}
 
       <LoaderCircle className="animate-spin" size={100} />
-      <Button className="mt-10" variant="destructive" onClick={() => out()}>
+      <Button className="mt-10" variant="destructive" onClick={() => clean()}>
         {t.helper("exit")}
       </Button>
     </CenterTemplate>

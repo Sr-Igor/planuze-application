@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { ToggleLeft, UserLock } from "lucide-react";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { profile } from "@repo/types";
@@ -12,7 +13,6 @@ import { Button, cn, FullScreenMessage, SidebarProvider } from "@repo/ui";
 import { Nav } from "@/components/nav";
 import { useAccess } from "@/hooks/access";
 
-import { useSignOut } from "../../../../../packages/cookies/src";
 import { AppSidebar } from "./components/app-sidebar";
 import { ForbiddenAccess } from "./components/forbidden-access";
 import { LockedAccess } from "./components/locked-access";
@@ -69,7 +69,7 @@ export const PrivateTemplate = ({ children }: { children?: React.ReactNode }) =>
     activeSubscription,
   } = useAccess();
 
-  const { out } = useSignOut();
+  const { clean } = useClean();
   const t = useLang();
 
   const basicRoutes = ["/my_profile"];
@@ -87,7 +87,7 @@ export const PrivateTemplate = ({ children }: { children?: React.ReactNode }) =>
         actions={
           <>
             <ProfileSwitcher />
-            <Button variant="destructive" onClick={() => out()}>
+            <Button variant="destructive" onClick={() => clean()}>
               {t.helper("exit")}
             </Button>
           </>
@@ -105,7 +105,7 @@ export const PrivateTemplate = ({ children }: { children?: React.ReactNode }) =>
         actions={
           <>
             <ProfileSwitcher />
-            <Button variant="destructive" onClick={() => out()}>
+            <Button variant="destructive" onClick={() => clean()}>
               {t.helper("exit")}
             </Button>
           </>

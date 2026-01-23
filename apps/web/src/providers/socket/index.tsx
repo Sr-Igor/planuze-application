@@ -9,14 +9,13 @@ import { useQueryClient } from "@tanstack/react-query";
 import io from "socket.io-client";
 
 import { keys } from "@repo/api";
+import { getProfile, getToken } from "@repo/cookies";
 import { useAppDispatch, useAppSelector, useAuth } from "@repo/redux/hook";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import { update as updateSocket } from "@repo/redux/store/modules/socket/actions";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
 import { profile } from "@repo/types";
 import { fingerprint } from "@repo/utils/fingerprint";
-
-import { getProfile, getToken } from "../../../../../packages/cookies/src";
 
 //Global
 const URL = process.env.NEXT_PUBLIC_API_URL;

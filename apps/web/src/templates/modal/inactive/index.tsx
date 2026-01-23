@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { PlusCircle } from "lucide-react";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update } from "@repo/redux/store/modules/modal/actions";
@@ -30,8 +31,6 @@ import {
 import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
 
-import { useSignOut } from "../../../../../../packages/cookies/src";
-
 export const InactiveModal = () => {
   const t = useLang();
 
@@ -39,7 +38,7 @@ export const InactiveModal = () => {
   const dispatch = useAppDispatch();
   const { inactive: isModalOpen } = useAppSelector((state) => state.modal);
   const user = useAppSelector((state) => state.user);
-  const { out } = useSignOut();
+  const { clean } = useClean();
   const route = useRouter();
   const { all } = useAppSelector((state) => state.module);
 
@@ -89,7 +88,7 @@ export const InactiveModal = () => {
         </AlertDialogHeader>
 
         <AlertDialogFooter className="flex-col gap-2 sm:flex-row sm:justify-center">
-          <Button variant={"destructive"} onClick={() => out()}>
+          <Button variant={"destructive"} onClick={() => clean()}>
             {t.helper("exit")}
           </Button>
 

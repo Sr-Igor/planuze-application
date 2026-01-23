@@ -112,7 +112,7 @@ importers:
         version: link:../../packages/api
       '@repo/cookies':
         specifier: workspace:*
-        version: link:../../packages/cookies-new
+        version: link:../../packages/cookies
       '@repo/fonts':
         specifier: workspace:*
         version: link:../../packages/fonts
@@ -224,7 +224,7 @@ importers:
     dependencies:
       '@repo/cookies':
         specifier: workspace:*
-        version: link:../cookies-new
+        version: link:../cookies
       '@repo/redux':
         specifier: workspace:*
         version: link:../redux
@@ -260,7 +260,7 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
 
-  packages/cookies-new:
+  packages/cookies:
     dependencies:
       js-cookie:
         specifier: ^3.0.5
@@ -685,7 +685,7 @@ importers:
         version: 2.11.2(react-redux@9.2.0(@types/react@19.2.6)(react@19.2.0)(redux@5.0.1))(react@19.2.0)
       '@repo/cookies':
         specifier: workspace:*
-        version: link:../cookies-new
+        version: link:../cookies
       '@repo/types':
         specifier: workspace:*
         version: link:../types

@@ -1,6 +1,6 @@
+import { getProfile, setToken, setUser } from "@repo/cookies";
 import { user } from "@repo/types";
 
-import { getProfile, setToken, setUser } from "../../../../../cookies/src";
 import * as types from "./types";
 
 export type UserState = user | null;

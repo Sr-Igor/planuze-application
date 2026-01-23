@@ -2,6 +2,7 @@
 
 import { RotateCcw, XCircle } from "lucide-react";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -16,15 +17,13 @@ import {
 
 import { useModal } from "@/hooks/modal";
 
-import { useSignOut } from "../../../../../../packages/cookies/src";
-
 export const ErrorModal = () => {
   const t = useLang();
 
   const user = useAppSelector((state) => state.user);
   const { error: isModalOpen, message, code, canClose } = useAppSelector((state) => state.modal);
 
-  const { out } = useSignOut();
+  const { clean } = useClean();
 
   const handlePrimaryAction = () => {
     window.location.reload();
@@ -58,7 +57,7 @@ export const ErrorModal = () => {
               </Button>
             )}
             {!canClose && user?.id && (
-              <Button variant="destructive" onClick={() => out()} className="min-w-[150px]">
+              <Button variant="destructive" onClick={() => clean()} className="min-w-[150px]">
                 {t.helper("exit")}
               </Button>
             )}

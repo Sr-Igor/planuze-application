@@ -1,7 +1,8 @@
 import type { AxiosError } from "axios";
 import { toast } from "sonner";
 
-import { useSignOut } from "../../../../../cookies/src";
+import { useClean } from "@repo/cookies";
+
 import { type ApiError, ResponseCodes } from "../../../core/domain/value-objects/api-response.vo";
 
 const GENERIC_ERROR = "Connection Error";
@@ -45,8 +46,8 @@ export const handleResponseError = (
 
   // 401 - Unauthorized
   if (status === 401) {
-    const { out } = useSignOut(true);
-    out();
+    const { clean } = useClean(true);
+    clean();
     throw new ApiRequestError("Unauthorized", {
       error: "Unauthorized",
       code: ResponseCodes.UNAUTHORIZED,

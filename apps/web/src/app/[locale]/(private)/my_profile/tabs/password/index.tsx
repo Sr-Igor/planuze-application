@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuth } from "@repo/api/web";
+import { useClean } from "@repo/cookies";
 import { hookValidate } from "@repo/form";
 import { useUnload } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
@@ -11,7 +12,6 @@ import { Button, cn } from "@repo/ui";
 import { useUserSet } from "@/hooks/user-set";
 import { useShow } from "@/templates/show/context";
 
-import { useSignOut } from "../../../../../../../../../packages/cookies/src";
 import { NeedRedefine } from "../../components/NeedRedefine";
 import { useForm } from "./use-form";
 
@@ -20,7 +20,7 @@ export const Password = () => {
   const { handleState } = useShow<user>();
 
   const user = useAppSelector((state) => state.user);
-  const { out } = useSignOut();
+  const { clean } = useClean();
 
   const { setter } = useUserSet(null, false);
 
@@ -80,7 +80,7 @@ export const Password = () => {
               <span className="text-muted-foreground text-sm">
                 {t.page.my_profile("show.password.forgot_password")}
               </span>
-              <button className="text-sm text-blue-500" onClick={() => out(`/auth/recovery`)}>
+              <button className="text-sm text-blue-500" onClick={() => clean(`/auth/recovery`)}>
                 {t.page.my_profile("show.password.redefine_password")}
               </button>
             </div>

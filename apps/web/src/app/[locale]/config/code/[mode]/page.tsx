@@ -8,14 +8,13 @@ import { differenceInSeconds } from "date-fns";
 import { LogOut } from "lucide-react";
 
 import { useAuth } from "@repo/api/web";
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update } from "@repo/redux/store/modules/user/actions";
 import { AppCountdown, Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";
 
 import { CenterTemplate } from "@/templates/center";
-
-import { useSignOut } from "../../../../../../../../packages/cookies/src";
 
 const TIME = 1;
 
@@ -42,7 +41,7 @@ export default function Page() {
     }, 1000);
   }, []);
 
-  const { out } = useSignOut();
+  const { clean } = useClean();
 
   const { confirm, code } = useAuth({
     callbacks: {
@@ -133,7 +132,7 @@ export default function Page() {
         <Button
           variant="destructive"
           className="w-full max-w-[120px]"
-          onClick={() => out()}
+          onClick={() => clean()}
           disabled={code.isPending || confirm.isPending}
         >
           <LogOut />

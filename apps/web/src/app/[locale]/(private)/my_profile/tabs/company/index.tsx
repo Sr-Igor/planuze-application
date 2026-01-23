@@ -4,11 +4,10 @@ import { useRouter } from "next/navigation";
 
 import { Plus } from "lucide-react";
 
+import { getProfile } from "@repo/cookies";
 import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { AppAvatar, Button, cn, StatusCircle } from "@repo/ui";
-
-import { getProfile } from "../../../../../../../../../packages/cookies/src";
 
 export const Company = () => {
   const t = useLang();

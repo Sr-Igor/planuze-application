@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { KeyRound, Mail, Phone } from "lucide-react";
 
 import { useUserTwoAuthCode } from "@repo/api/web";
+import { setTwoAuth, useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAuth } from "@repo/redux/hook";
 import { user_two_auth } from "@repo/types";
@@ -26,8 +27,6 @@ import {
 
 import { CenterTemplate } from "@/templates/center";
 
-import { setTwoAuth, useSignOut } from "../../../../../../../packages/cookies/src";
-
 const inputClassName = "bg-muted/10 text-muted-foreground border-border bg-sidebar/80";
 
 export default function Page() {
@@ -36,7 +35,7 @@ export default function Page() {
   const auths: user_two_auth[] = user?.user_two_auths?.filter((i) => i.confirmed && i.active) || [];
   const router = useRouter();
 
-  const { out } = useSignOut();
+  const { clean } = useClean();
 
   const [otp, setOtp] = useState("");
   const [view, setView] = useState<"auths" | "code">("auths");
@@ -163,7 +162,7 @@ export default function Page() {
 
           <Button
             variant="destructive"
-            onClick={() => out()}
+            onClick={() => clean()}
             className="mt-4"
             disabled={confirm.isPending}
           >

@@ -1,10 +1,9 @@
 import { Key } from "lucide-react";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { user } from "@repo/types";
 import { Button } from "@repo/ui";
-
-import { useSignOut } from "../../../../../../../../packages/cookies/src";
 
 export interface INeedRedefineProps {
   user: user | null;
@@ -12,7 +11,7 @@ export interface INeedRedefineProps {
 
 export const NeedRedefine = ({ user }: INeedRedefineProps) => {
   const t = useLang();
-  const { out } = useSignOut();
+  const { clean } = useClean();
   return (
     <div className="flex h-full flex-col items-center justify-center gap-5 rounded-lg border p-4">
       <Key className="h-10 w-10" />
@@ -24,7 +23,7 @@ export const NeedRedefine = ({ user }: INeedRedefineProps) => {
         {t.page.my_profile("show.password.redirect_to_email")}
       </p>
       <Button
-        onClick={() => out(`/auth/recovery?email=${user?.email}`)}
+        onClick={() => clean(`/auth/recovery?email=${user?.email}`)}
         className="w-full text-xs sm:w-auto sm:text-sm"
       >
         {t.page.my_profile("show.password.define_password")}

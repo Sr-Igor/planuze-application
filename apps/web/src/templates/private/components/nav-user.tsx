@@ -17,6 +17,7 @@ import {
   UserCog,
 } from "lucide-react";
 
+import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { invite, Pagination, profile as TProfile } from "@repo/types";
@@ -41,8 +42,6 @@ import {
 import { useAccess } from "@/hooks/access";
 import { useModal } from "@/hooks/modal";
 
-import { useSignOut } from "../../../../../../packages/cookies/src";
-
 interface NavUserProps {
   variant?: "large" | "small";
   useSide?: () => { isMobile?: boolean };
@@ -62,7 +61,7 @@ export function NavUser({
   const { isMobile } = useSide();
   const { user, profile: activeProfile } = useAccess();
   const { all } = useAppSelector((state) => state.module);
-  const { out } = useSignOut();
+  const { clean } = useClean();
   const route = useRouter();
 
   const queryClient = useQueryClient();
@@ -245,7 +244,7 @@ export function NavUser({
 
           <DropdownMenuSeparator />
 
-          <DropdownMenuItem onClick={() => out()} variant="destructive">
+          <DropdownMenuItem onClick={() => clean()} variant="destructive">
             <LogOut className="mr-2 size-4" />
             {t.helper("exit")}
           </DropdownMenuItem>
