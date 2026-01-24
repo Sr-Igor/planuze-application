@@ -79,9 +79,9 @@ export const Nav = ({ intermediate = true }: INavProps) => {
                 </Button>
               </Link>
               <AppLanguage />
-              <AppTheme />
             </div>
           )}
+          <AppTheme />
         </span>
       </div>
     </nav>

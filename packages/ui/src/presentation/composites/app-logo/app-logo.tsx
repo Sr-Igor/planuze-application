@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { useTheme } from "next-themes";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
@@ -21,6 +23,10 @@ export interface AppLogoProps extends Omit<ImageProps, "alt" | "src"> {
    * Alt text for the image
    */
   alt?: string;
+  /**
+   * Whether to animate the logo
+   */
+  animated?: boolean;
 }
 
 export const AppLogo = ({
@@ -28,9 +34,17 @@ export const AppLogo = ({
   logoDark = "/images/logo-light.png",
   href = "/",
   alt,
+  animated = false,
   ...rest
 }: AppLogoProps) => {
   const { resolvedTheme } = useTheme();
+  const [startOffset, setStartOffset] = useState(0);
+
+  useEffect(() => {
+    const now = new Date();
+    const currentSeconds = now.getSeconds() + now.getMilliseconds() / 1000;
+    setStartOffset(currentSeconds);
+  }, []);
 
   const effectiveTheme = resolvedTheme ?? "light";
   const logo = effectiveTheme === "dark" ? logoDark : logoLight;
@@ -38,9 +52,28 @@ export const AppLogo = ({
   const imageAlt = alt ?? process.env.NEXT_PUBLIC_SYSTEM_NAME ?? "Logo";
 
   return (
-    <Link href={href}>
-      <Image alt={imageAlt} src={logo} {...rest} />
-    </Link>
+    <div className="relative">
+      <Link href={href}>
+        <Image alt={imageAlt} src={logo} {...rest} className="pointer-events-none" />
+      </Link>
+      {animated && (
+        <Image
+          alt={imageAlt}
+          src={"/images/clock-2.png"}
+          {...rest}
+          className={"absolute inset-0 animate-spin"}
+          style={{
+            animationDuration: "60s",
+            animationDelay: `-${startOffset}s`,
+            top: "10%",
+            left: "-17.5%",
+            width: "100%",
+            height: "100%",
+            pointerEvents: "none",
+          }}
+        />
+      )}
+    </div>
   );
 };
 

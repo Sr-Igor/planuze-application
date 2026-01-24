@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Ban, UserLock } from "lucide-react";
 
 import { usePlan, useSubscription } from "@repo/api/web";
-import { useClean } from "@repo/cookies";
+// import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch } from "@repo/redux/hook";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
@@ -20,7 +20,8 @@ import {
 
 import { useAccess } from "@/hooks/access";
 import { PlansTemplate } from "@/templates/plans";
-import { ProfileSwitcher } from "@/templates/private/components/profile-switch";
+
+// import { ProfileSwitcher } from "@/templates/private/components/profile-switch";
 
 export default function Page() {
   const t = useLang();
@@ -38,7 +39,7 @@ export default function Page() {
   const { index } = useSubscription({ enabledIndex: enabled });
   const { index: indexPlan } = usePlan({ companyId: profile?.company_id, enabled });
 
-  const { clean } = useClean();
+  // const { clean } = useClean();
 
   const subscriptions = index?.data?.data || [];
   const plans = indexPlan?.data?.data || [];
@@ -71,7 +72,7 @@ export default function Page() {
         </div>
       )}
 
-      <div className="mb-6 flex w-full flex-col items-center">
+      {/* <div className="mb-6 flex w-full flex-col items-center">
         {profile && (
           <div className="mt-5 flex items-center gap-4">
             <Button variant="destructive" className="min-w-[120px]" onClick={() => clean("/plans")}>
@@ -81,7 +82,7 @@ export default function Page() {
             <ProfileSwitcher callbackUrl="/plans" />
           </div>
         )}
-      </div>
+      </div> */}
 
       <Dialog open={has.ok && !enabled}>
         <DialogContent
