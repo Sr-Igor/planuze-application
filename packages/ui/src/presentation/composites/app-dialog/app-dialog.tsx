@@ -5,8 +5,9 @@
  *
  * @module presentation/composites/app-dialog
  */
-
 import { ReactNode } from "react";
+
+import { ChevronLeft } from "lucide-react";
 
 import { Button } from "../../primitives/button";
 import {
@@ -98,7 +99,7 @@ function AppDialog({
   className = "sm:max-w-[425px]",
   modal = true,
   height,
-  backLabel = "Back",
+  backLabel,
 }: Readonly<AppDialogProps>) {
   return (
     <Dialog open={open} onOpenChange={(open) => !loading && onOpenChange?.(open)} modal={modal}>
@@ -112,7 +113,7 @@ function AppDialog({
         {height ? <DynamicScrollArea height={height}>{children}</DynamicScrollArea> : children}
         <DialogFooter>
           <DialogClose asChild disabled={loading}>
-            <Button variant="outline">{backLabel}</Button>
+            <Button variant="outline">{backLabel || <ChevronLeft />}</Button>
           </DialogClose>
           {footer}
         </DialogFooter>

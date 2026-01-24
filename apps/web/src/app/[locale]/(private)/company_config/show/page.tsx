@@ -12,7 +12,7 @@ export default function Page() {
     <ShowTemplate<company_config>
       useTabs={useTabs}
       path="company_config"
-      id={"company_config"}
+      id="company_config"
       hookReq={useCompanyConfig}
       defaultTab="general"
       undeletableProps={() => ({ title: "" })}

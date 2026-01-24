@@ -34,7 +34,7 @@ export const AppLogo = ({
   logoDark = "/images/logo-light.png",
   href = "/",
   alt,
-  animated = false,
+  animated = true,
   ...rest
 }: AppLogoProps) => {
   const { resolvedTheme } = useTheme();
@@ -54,12 +54,12 @@ export const AppLogo = ({
   return (
     <div className="relative">
       <Link href={href}>
-        <Image alt={imageAlt} src={logo} {...rest} className="pointer-events-none" />
+        <Image alt={imageAlt} src={logo} {...rest} className="pointer-events-none z-2" />
       </Link>
       {animated && (
         <Image
           alt={imageAlt}
-          src={"/images/clock-2.png"}
+          src={"/images/clock-3.png"}
           {...rest}
           className={"absolute inset-0 animate-spin"}
           style={{

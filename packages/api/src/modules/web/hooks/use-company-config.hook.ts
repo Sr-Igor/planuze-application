@@ -32,12 +32,12 @@ export const useCompanyConfig = (props: UseCallerProps<company_config>): UseComp
 
   const show = useQuery<company_config, Error>({
     queryKey: showKey,
-    queryFn: () => companyConfigEndpoint.show!(id || ""),
-    enabled: !!enabledShow && !!id,
+    queryFn: () => companyConfigEndpoint.show(""),
+    enabled: !!enabledShow,
   });
 
   const store = useMutation<company_config, Error, Partial<company_config>>({
-    mutationFn: (body) => companyConfigEndpoint.store!(body) as Promise<company_config>,
+    mutationFn: (body) => companyConfigEndpoint.store(body) as Promise<company_config>,
     onSuccess: (data) => {
       cache.replaceShow({ key: showKey, item: data });
       callbacks?.store?.onSuccess?.(data);
@@ -46,7 +46,7 @@ export const useCompanyConfig = (props: UseCallerProps<company_config>): UseComp
   });
 
   const update = useMutation<company_config, Error, Partial<company_config>>({
-    mutationFn: (body) => companyConfigEndpoint.update!(id!, body) as Promise<company_config>,
+    mutationFn: (body) => companyConfigEndpoint.update(id!, body) as Promise<company_config>,
     onSuccess: (data) => {
       cache.replaceShow({ key: showKey, item: data });
       callbacks?.update?.onSuccess?.(data);

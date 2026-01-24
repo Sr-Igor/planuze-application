@@ -398,7 +398,7 @@ export const createSimpleEndpoint = <T>() => {
         body: Partial<T>,
         filters?: QueryFilters
       ): Promise<T | Pagination<T>> => {
-        const prepared = prepareBody({ id, ...body }, formDataFields);
+        const prepared = prepareBody({ ...body }, formDataFields);
         // Use callEndpoint to properly handle params as path parameters (like old project)
         const handle = callEndpoint({
           route: routes.update,
