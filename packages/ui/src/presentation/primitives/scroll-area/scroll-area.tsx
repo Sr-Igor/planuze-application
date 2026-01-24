@@ -8,10 +8,19 @@
 
 "use client";
 
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 import { ComponentPropsWithoutRef, forwardRef } from "react";
 
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
+
 import { cn } from "../../../shared/utils";
+
+/**
+ * ScrollArea Component Module
+ *
+ * Augments native scroll functionality for custom, cross-browser styling.
+ *
+ * @module presentation/primitives/scroll-area
+ */
 
 /**
  * ScrollArea component props.
@@ -30,30 +39,29 @@ export type ScrollAreaProps = ComponentPropsWithoutRef<typeof ScrollAreaPrimitiv
  * </ScrollArea>
  * ```
  */
-const ScrollArea = forwardRef<
-  React.ElementRef<typeof ScrollAreaPrimitive.Root>,
-  ScrollAreaProps
->(({ className, children, ...props }, ref) => (
-  <ScrollAreaPrimitive.Root
-    ref={ref}
-    data-slot="scroll-area"
-    className={cn("relative", className)}
-    {...props}
-  >
-    <ScrollAreaPrimitive.Viewport
-      data-slot="scroll-area-viewport"
-      className={cn(
-        "size-full rounded-[inherit] transition-[color,box-shadow]",
-        "ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50",
-        "focus-visible:ring-4 focus-visible:outline-1"
-      )}
+const ScrollArea = forwardRef<React.ElementRef<typeof ScrollAreaPrimitive.Root>, ScrollAreaProps>(
+  ({ className, children, ...props }, ref) => (
+    <ScrollAreaPrimitive.Root
+      ref={ref}
+      data-slot="scroll-area"
+      className={cn("relative", className)}
+      {...props}
     >
-      {children}
-    </ScrollAreaPrimitive.Viewport>
-    <ScrollBar />
-    <ScrollAreaPrimitive.Corner />
-  </ScrollAreaPrimitive.Root>
-));
+      <ScrollAreaPrimitive.Viewport
+        data-slot="scroll-area-viewport"
+        className={cn(
+          "size-full rounded-[inherit] transition-[color,box-shadow]",
+          "ring-ring/10 dark:ring-ring/20 dark:outline-ring/40 outline-ring/50",
+          "focus-visible:ring-4 focus-visible:outline-1"
+        )}
+      >
+        {children}
+      </ScrollAreaPrimitive.Viewport>
+      <ScrollBar />
+      <ScrollAreaPrimitive.Corner />
+    </ScrollAreaPrimitive.Root>
+  )
+);
 
 ScrollArea.displayName = "ScrollArea";
 

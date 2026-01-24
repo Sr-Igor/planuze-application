@@ -4,12 +4,10 @@ import { useEffect, useState } from "react";
 
 import { Loader2 } from "lucide-react";
 
-import { useLang } from "@repo/language/hooks";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, ScrollArea , cn } from "@repo/ui";
-
-import { useDebounce } from "@repo/hooks";
-
 import { Input } from "@repo/form";
+import { useDebounce } from "@repo/hooks";
+import { useLang } from "@repo/language/hooks";
+import { cn, DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, ScrollArea } from "@repo/ui";
 
 export interface AppInputSearchProps<T extends { id: string }> {
   data: T[];

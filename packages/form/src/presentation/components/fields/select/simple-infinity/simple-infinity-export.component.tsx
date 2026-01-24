@@ -1,170 +1,179 @@
-'use client';
+"use client";
 
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 
-import { useLang } from '@repo/language/hooks';
-import { Popover, PopoverTrigger, cn } from '@repo/ui';
-import * as C from '@repo/ui';
+import { useDebounce } from "@repo/hooks";
+import { useLang } from "@repo/language/hooks";
+import { cn, Popover, PopoverTrigger } from "@repo/ui";
+import * as C from "@repo/ui";
 
-import { useDebounce } from '@repo/hooks';
-
+import { ISimpleInfinityProps } from "../../../../../shared/types/select.types";
+import { useInfinity } from "../../../../hooks/select";
 import {
-    SelectContent,
-    SelectEmpty,
-    SelectItem,
-    SelectList,
-    SelectLoading,
-    SelectSearch,
-    SelectTrigger,
-} from '../../../base/select';
-import { useInfinity } from '../../../../hooks/select';
-import { ISimpleInfinityProps } from '../../../../../shared/types/select.types';
+  SelectContent,
+  SelectEmpty,
+  SelectItem,
+  SelectList,
+  SelectLoading,
+  SelectSearch,
+  SelectTrigger,
+} from "../../../base/select";
 
 export const SimpleInfinitySelect = memo(function SimpleInfinitySelect<T>({
-    value,
-    onChange,
-    onChangeCallback,
-    className,
-    placeholder,
-    disabled = false,
-    fallbackValue,
-    formatterOptions,
-    customSelect,
-    immediatelyCallback,
-    customTrigger,
-    containerClassName,
-    modal,
-    search: externalSearch,
-    setSearch: setExternalSearch,
-    ...rest
+  value,
+  onChange,
+  onChangeCallback,
+  className,
+  placeholder,
+  disabled = false,
+  fallbackValue,
+  formatterOptions,
+  customSelect,
+  immediatelyCallback,
+  customTrigger,
+  containerClassName,
+  modal,
+  search: externalSearch,
+  setSearch: setExternalSearch,
+  ...rest
 }: ISimpleInfinityProps<T>) {
-    const preSet = useRef(true);
-    const t = useLang();
+  const preSet = useRef(true);
+  const t = useLang();
 
-    const [open, setOpen] = useState(false);
-    const [internalSearch, setInternalSearch] = useState('');
+  const [open, setOpen] = useState(false);
+  const [internalSearch, setInternalSearch] = useState("");
 
-    const [pageSearch, setPageSearch] = useState('');
+  const [pageSearch, setPageSearch] = useState("");
 
-    const search = externalSearch || pageSearch;
-    const setSearch = setExternalSearch || setPageSearch;
+  const search = externalSearch || pageSearch;
+  const setSearch = setExternalSearch || setPageSearch;
 
-    const inputDebounced = useDebounce(internalSearch, 1000);
-    const isDebouncing = internalSearch !== inputDebounced;
+  const inputDebounced = useDebounce(internalSearch, 1000);
+  const isDebouncing = internalSearch !== inputDebounced;
 
-    useEffect(() => {
-        setSearch?.(inputDebounced || '');
-    }, [inputDebounced, setSearch]);
+  const setSearchRef = useRef(setSearch);
+  useEffect(() => {
+    setSearchRef.current = setSearch;
+  }, [setSearch]);
 
-    const { index, items, selected, handleScroll } = useInfinity({
-        ...rest,
-        value,
-        inputDebounced: search || '',
-        open,
-    });
+  useEffect(() => {
+    setSearchRef.current?.(inputDebounced || "");
+  }, [inputDebounced]);
 
-    useEffect(() => {
-        if (!value && immediatelyCallback && items.length > 0 && preSet.current) {
-            preSet.current = false;
-            immediatelyCallback?.(items[0].item);
-        }
-    }, [items, value, immediatelyCallback]);
+  const { index, items, selected, handleScroll } = useInfinity({
+    ...rest,
+    value,
+    inputDebounced: search || "",
+    open,
+  });
 
-    const handleSetSearch = useCallback(
-        (newValue: string | null) => {
-            setInternalSearch(newValue || '');
-        },
-        [setInternalSearch]
-    );
+  useEffect(() => {
+    if (!value && immediatelyCallback && items.length > 0 && preSet.current) {
+      preSet.current = false;
+      immediatelyCallback?.(items[0].item);
+    }
+  }, [items, value, immediatelyCallback]);
 
-    const handleClearAndClose = useCallback(() => {
-        setInternalSearch('');
-        onChange?.(null);
-        onChangeCallback?.(null);
-        setOpen(false);
-    }, [setInternalSearch, onChange, onChangeCallback]);
+  const handleSetSearch = useCallback(
+    (newValue: string | null) => {
+      setInternalSearch(newValue || "");
+    },
+    [setInternalSearch]
+  );
 
-    const handleItemSelect = useCallback(
-        (itemValue: string, item: T) => {
-            const newValue = itemValue === value ? null : itemValue;
-            onChange?.(newValue);
-            onChangeCallback?.(item);
-            setOpen(false);
-        },
-        [value, onChange, onChangeCallback]
-    );
+  const handleClearAndClose = useCallback(() => {
+    setInternalSearch("");
+    onChange?.(null);
+    onChangeCallback?.(null);
+    setOpen(false);
+  }, [setInternalSearch, onChange, onChangeCallback]);
 
-    const deletedInfoFallback = index.isLoading ? ' ' : t.helper('deleted_info');
+  const handleItemSelect = useCallback(
+    (itemValue: string, item: T) => {
+      const newValue = itemValue === value ? null : itemValue;
+      onChange?.(newValue);
+      onChangeCallback?.(item);
+      setOpen(false);
+    },
+    [value, onChange, onChangeCallback]
+  );
 
-    const showValue = value
-        ? customSelect?.(selected?.item, fallbackValue) ||
-          selected?.label ||
-          fallbackValue ||
-          deletedInfoFallback
-        : undefined;
+  const deletedInfoFallback = index.isLoading ? " " : t.helper("deleted_info");
 
-    const isDeleted = showValue === t.helper('deleted_info');
+  const showValue = value
+    ? customSelect?.(selected?.item, fallbackValue) ||
+      selected?.label ||
+      fallbackValue ||
+      deletedInfoFallback
+    : undefined;
 
-    return (
-        <Popover open={open} onOpenChange={setOpen} modal={modal}>
-            <PopoverTrigger disabled={disabled} className={cn('w-full', disabled && 'pointer-events-none')}>
-                {customTrigger && !isDeleted ? (
-                    customTrigger({ disabled })
-                ) : (
-                    <SelectTrigger
-                        placeholder={placeholder || t.helper('select')}
-                        value={showValue}
-                        className={className}
-                        isDeleted={isDeleted}
-                        disabled={disabled}
-                    />
-                )}
-            </PopoverTrigger>
-            <SelectContent className={containerClassName}>
-                <C.Command shouldFilter={false}>
-                    <SelectSearch
-                        search={internalSearch}
-                        setSearch={handleSetSearch}
-                        onClear={handleClearAndClose}
-                        placeholder={t.helper('search')}
-                        useCommandInput={true}
-                        loading={index.isLoading || isDebouncing}
-                    />
+  const isDeleted = showValue === t.helper("deleted_info");
 
-                    <SelectList
-                        onScroll={handleScroll}
-                        useCommandList={true}
-                        loading={(index.isLoading || isDebouncing) && !items?.length}
-                    >
-                        {!items.length && <SelectEmpty message={t.helper('no_results')} useCommandEmpty={true} />}
+  return (
+    <Popover open={open} onOpenChange={setOpen} modal={modal}>
+      <PopoverTrigger
+        disabled={disabled}
+        className={cn("w-full", disabled && "pointer-events-none")}
+      >
+        {customTrigger && !isDeleted ? (
+          customTrigger({ disabled })
+        ) : (
+          <SelectTrigger
+            placeholder={placeholder || t.helper("select")}
+            value={showValue}
+            className={className}
+            isDeleted={isDeleted}
+            disabled={disabled}
+          />
+        )}
+      </PopoverTrigger>
+      <SelectContent className={containerClassName}>
+        <C.Command shouldFilter={false}>
+          <SelectSearch
+            search={internalSearch}
+            setSearch={handleSetSearch}
+            onClear={handleClearAndClose}
+            placeholder={t.helper("search")}
+            useCommandInput={true}
+            loading={index.isLoading || isDebouncing}
+          />
 
-                        <C.CommandGroup>
-                            {items.map((item) => (
-                                <SelectItem
-                                    key={`${item.value}-${item.label}`}
-                                    value={item.value}
-                                    label={item.label}
-                                    checked={value === item.value}
-                                    onSelect={() => handleItemSelect(item.value, item.item)}
-                                    showCheckIcon={true}
-                                    useCommandItem={true}
-                                >
-                                    {formatterOptions?.(item.item) || item.label}
-                                </SelectItem>
-                            ))}
+          <SelectList
+            onScroll={handleScroll}
+            useCommandList={true}
+            loading={(index.isLoading || isDebouncing) && !items?.length}
+          >
+            {!items.length && (
+              <SelectEmpty message={t.helper("no_results")} useCommandEmpty={true} />
+            )}
 
-                            {index.isFetchingNextPage && (
-                                <SelectLoading
-                                    size={16}
-                                    text={t.helper('loading_more')}
-                                    className="p-2"
-                                    useLoaderCircle={true}
-                                />
-                            )}
-                        </C.CommandGroup>
-                    </SelectList>
-                </C.Command>
-            </SelectContent>
-        </Popover>
-    );
+            <C.CommandGroup>
+              {items.map((item) => (
+                <SelectItem
+                  key={`${item.value}-${item.label}`}
+                  value={item.value}
+                  label={item.label}
+                  checked={value === item.value}
+                  onSelect={() => handleItemSelect(item.value, item.item)}
+                  showCheckIcon={true}
+                  useCommandItem={true}
+                >
+                  {formatterOptions?.(item.item) || item.label}
+                </SelectItem>
+              ))}
+
+              {index.isFetchingNextPage && (
+                <SelectLoading
+                  size={16}
+                  text={t.helper("loading_more")}
+                  className="p-2"
+                  useLoaderCircle={true}
+                />
+              )}
+            </C.CommandGroup>
+          </SelectList>
+        </C.Command>
+      </SelectContent>
+    </Popover>
+  );
 }) as <T>(props: ISimpleInfinityProps<T>) => React.JSX.Element;
