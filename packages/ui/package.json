@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "payment-icons": "^1.2.1",
+    "react-beautiful-dnd": "^13.1.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-aspect-ratio": "^1.1.8",
@@ -75,6 +76,7 @@
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "@types/react-beautiful-dnd": "^13.1.8"
   }
 }

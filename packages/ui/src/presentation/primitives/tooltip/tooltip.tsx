@@ -69,7 +69,11 @@ export type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root
  * ```
  */
 function Tooltip({ ...props }: Readonly<TooltipProps>) {
-  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />;
+  return (
+    <TooltipProvider>
+      <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+    </TooltipProvider>
+  );
 }
 
 /**

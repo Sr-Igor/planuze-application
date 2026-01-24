@@ -50,6 +50,7 @@ export const Nav = ({ intermediate = true }: INavProps) => {
         </span>
 
         <span className="flex items-center gap-2">
+          <AppTheme />
           {!!user?.id && (
             <span className="flex items-center gap-2">
               <Notifications />
@@ -81,7 +82,6 @@ export const Nav = ({ intermediate = true }: INavProps) => {
               <AppLanguage />
             </div>
           )}
-          <AppTheme />
         </span>
       </div>
     </nav>
