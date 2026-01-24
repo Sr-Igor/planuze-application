@@ -45,11 +45,14 @@ export const inviteMe = () =>
   });
 
 export const inviteFeedback = (params: InviteFeedbackParams, body: InviteFeedbackInput) =>
-  typedRequest<{ invite: invite; user: user }>()({
-    route: "/api/private/invite/feedback",
-    params,
-    body: { accepted: String(body.accepted) },
-  });
+  typedRequest<{ invite: invite; user: user }>()(
+    {
+      route: "/api/private/invite/feedback",
+      params,
+      body: { accepted: String(body.accepted) },
+    },
+    { showSuccess: true }
+  );
 
 export type Invite = invite;
 
