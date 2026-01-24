@@ -1,6 +1,7 @@
 import type { project_kanban_cycle_card } from "@repo/types";
 
 import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { logs } from "../../../../shared/constants";
 
 export const projectKanbanCycleCardEndpoint = createSimpleEndpoint<project_kanban_cycle_card>()({
   basePath: "/api/private/project_kanban_cycle_card",
@@ -13,6 +14,106 @@ export const projectKanbanCycleCardEndpoint = createSimpleEndpoint<project_kanba
     many: "/api/private/project_kanban_cycle_card/many",
     trash: "/api/private/project_kanban_cycle_card/trash",
     restore: "/api/private/project_kanban_cycle_card/restore",
+  },
+  defaultQuery: {
+    include: {
+      logs: {
+        ...logs,
+        orderBy: {
+          createdAt: "asc",
+        },
+      },
+      project_member: {
+        select: {
+          profile: {
+            select: {
+              id: true,
+              user: {
+                select: {
+                  id: true,
+                  name: true,
+                  avatar: true,
+                },
+              },
+            },
+          },
+        },
+      },
+      project_kanban_cycle_cards: {
+        include: {
+          project_kanban_cycle_card_type: true,
+          project_kanban_cycle_column: true,
+          project_kanban_cycle: true,
+        },
+      },
+      project_kanban_cycle_card_comments: {
+        include: {
+          profile: {
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  name: true,
+                  avatar: true,
+                },
+              },
+            },
+          },
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
+      project_kanban_cycle_card_files: {
+        include: {
+          logs,
+        },
+        orderBy: [{ createdAt: "desc" }, { id: "asc" }],
+      },
+      work_type: true,
+      card: {
+        include: {
+          project_kanban_cycle_card_type: true,
+          project_kanban_cycle_column: true,
+          project_kanban_cycle: true,
+        },
+      },
+      profile: {
+        include: {
+          user: {
+            select: {
+              id: true,
+              name: true,
+              avatar: true,
+            },
+          },
+        },
+      },
+      project_kanban_cycle_card_tags: true,
+      project_kanban_cycle_card_type: true,
+      project_kanban_cycle_column: true,
+      project_kanban_cycle: true,
+      project_kanban_objective: true,
+      project_kanban_objective_target: true,
+      project_kanban_cycle_card_reads: {
+        include: {
+          profile: {
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  name: true,
+                  avatar: true,
+                },
+              },
+            },
+          },
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
+    },
   },
 });
 

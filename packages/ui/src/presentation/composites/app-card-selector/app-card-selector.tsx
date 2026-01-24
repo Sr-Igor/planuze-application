@@ -1,39 +1,22 @@
 "use client";
 
-import { Icon, type IconName } from "../icon";
-import { AppTooltip } from "../app-tooltip";
-
 import { cn } from "../../../shared/utils";
+import { AppTooltip } from "../app-tooltip";
+import { Icon } from "../icon";
 
 export interface CardSelectorItem {
-  /**
-   * Unique identifier
-   */
-  id?: string;
-  /**
-   * Public ID to display
-   */
-  public_id?: string | number;
-  /**
-   * Title of the item
-   */
   title: string;
-  /**
-   * Icon name (Lucide icon name)
-   */
-  icon?: IconName;
-  /**
-   * Icon color
-   */
-  iconColor?: string;
-  /**
-   * Path segments for breadcrumb display
-   */
-  path?: string[];
-  /**
-   * Tooltip text (defaults to path joined)
-   */
-  tooltip?: string;
+  public_id: number | string;
+  project_kanban_cycle?: {
+    title?: string;
+  };
+  project_kanban_cycle_column?: {
+    title?: string;
+  };
+  project_kanban_cycle_card_type?: {
+    icon?: string;
+    color?: string | null;
+  };
 }
 
 export interface AppCardSelectorProps {
@@ -53,10 +36,6 @@ export interface AppCardSelectorProps {
    * Additional class name
    */
   className?: string;
-  /**
-   * Icon size
-   */
-  iconSize?: number;
 }
 
 export const AppCardSelector = ({
@@ -64,32 +43,29 @@ export const AppCardSelector = ({
   showPath = true,
   showPublicId = false,
   className,
-  iconSize = 16,
 }: AppCardSelectorProps) => {
-  const pathText = item.path?.join(" / ") || "";
-  const pathSuffix = pathText ? " / " + pathText : "";
-  const tooltipText = item.tooltip || item.title + pathSuffix;
-
   return (
     <div className={cn("flex w-full items-center gap-2 text-sm", className)}>
       <div className="w-[20px]">
-        <AppTooltip text={tooltipText}>
+        <AppTooltip
+          text={`${item.title} / ${item.project_kanban_cycle?.title} / ${item.project_kanban_cycle_column?.title}`}
+        >
           <Icon
-            name={item.icon || "CircleHelp"}
-            size={iconSize}
-            color={item.iconColor || "inherit"}
+            name={item.project_kanban_cycle_card_type?.icon}
+            size={16}
+            color={item.project_kanban_cycle_card_type?.color || "inherit"}
           />
         </AppTooltip>
       </div>
 
       <span className="mr-2 flex w-[calc(100%-20px)] flex-1 flex-col items-start gap-1">
         <p className="line-clamp-1 w-full flex-1 truncate text-left">
-          {showPublicId && item.public_id && `[${item.public_id}] `}
+          {showPublicId && `[${item.public_id}] `}
           {item.title}
         </p>
-        {showPath && pathText && (
+        {showPath && (
           <span className="text-muted-foreground line-clamp-1 text-[10px]">
-            {pathText}
+            {item.project_kanban_cycle?.title} / {item.project_kanban_cycle_column?.title}
           </span>
         )}
       </span>
