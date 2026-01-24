@@ -7,7 +7,7 @@ import { ChevronLeft, HousePlus, LogInIcon } from "lucide-react";
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
 import { useAuth } from "@repo/redux/hook";
-import { AppLogo, Button, cn, SidebarTrigger } from "@repo/ui";
+import { AppLogo, AppTheme, Button, cn, SidebarTrigger } from "@repo/ui";
 
 import { NavUser } from "@/templates/private/components/nav-user";
 import { Notifications } from "@/templates/private/modules/notification";
@@ -79,6 +79,7 @@ export const Nav = ({ intermediate = true }: INavProps) => {
                 </Button>
               </Link>
               <AppLanguage />
+              <AppTheme />
             </div>
           )}
         </span>
