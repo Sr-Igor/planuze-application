@@ -25,6 +25,9 @@ export default function ({
   isLoading,
   isExporting,
 }: IIndexProps) {
+  const inLoading = isLoading || data?.module?.title !== "project";
+  const usualData = inLoading ? projectDashboardPlaceholder : data;
+
   const activeTab = filters.project_tab || "summary";
   const [openFilters, setOpenFilters] = useState(false);
 
@@ -35,7 +38,7 @@ export default function ({
   )?.length;
 
   const currencyToUse =
-    filters.convert_currency || data?.currencyMetadata?.targetCurrency || money.currency;
+    filters.convert_currency || usualData?.currencyMetadata?.targetCurrency || money.currency;
 
   return (
     <div className="flex h-full w-full flex-col overflow-hidden">
@@ -67,33 +70,44 @@ export default function ({
       <ScrollArea className="h-[calc(100%-268px)] flex-1">
         <div className="p-6">
           {activeTab === "summary" && (
-            <Summary summary={data?.summary} isLoading={isLoading} currencyCode={currencyToUse} />
+            <Summary
+              summary={usualData?.summary}
+              isLoading={inLoading}
+              currencyCode={currencyToUse}
+            />
           )}
           {activeTab === "projects" && (
             <Projects
-              projects={data?.projects || []}
-              isLoading={isLoading}
+              projects={usualData?.projects || []}
+              isLoading={inLoading}
               currencyCode={currencyToUse}
             />
           )}
           {activeTab === "costs" && (
-            <Cost data={data?.costBreakdown} isLoading={isLoading} currencyCode={currencyToUse} />
+            <Cost
+              data={usualData?.costBreakdown}
+              isLoading={inLoading}
+              currencyCode={currencyToUse}
+            />
           )}
           {activeTab === "analyses" && (
             <Analyses
-              employeeCosts={data?.employeeCosts || []}
-              costCenters={data?.costCenters || []}
-              workTypes={data?.workTypes || []}
-              timeline={data?.timeline || []}
-              profitability={data?.profitability}
-              isLoading={isLoading}
+              employeeCosts={usualData?.employeeCosts || []}
+              costCenters={usualData?.costCenters || []}
+              workTypes={usualData?.workTypes || []}
+              timeline={usualData?.timeline || []}
+              profitability={usualData?.profitability}
+              isLoading={inLoading}
               currencyCode={currencyToUse}
             />
           )}
 
           {/* Metadata */}
-          {!isLoading && data?.metadata && (
-            <Metadata metadata={data.metadata} currencyMetadata={data?.currencyMetadata} />
+          {!inLoading && usualData?.metadata && (
+            <Metadata
+              metadata={usualData.metadata}
+              currencyMetadata={usualData?.currencyMetadata}
+            />
           )}
         </div>
       </ScrollArea>

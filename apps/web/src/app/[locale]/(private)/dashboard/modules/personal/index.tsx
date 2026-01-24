@@ -19,12 +19,15 @@ export default function ({
   isLoading,
   isExporting,
 }: IIndexProps) {
+  const inLoading = isLoading || data?.module?.title !== "personal";
+  const usualData = inLoading ? personalDashboardPlaceholder : data;
+
   const activeTab = (filters.personal_tab as TabValue) || "general";
 
   const { money } = useIntlFormat();
 
   const currencyToUse =
-    filters.convert_currency || data?.currencyMetadata?.targetCurrency || money.currency;
+    filters.convert_currency || usualData?.currencyMetadata?.targetCurrency || money.currency;
 
   return (
     <div className="flex h-full w-full flex-col overflow-hidden">
@@ -47,24 +50,24 @@ export default function ({
         <div className="p-6">
           {activeTab === "general" && (
             <General
-              profile={data?.profile}
-              profileInfo={data?.profileInfo}
-              financial={data?.financial}
-              financialEvolution={data?.financialEvolution}
-              isLoading={isLoading}
+              profile={usualData?.profile}
+              profileInfo={usualData?.profileInfo}
+              financial={usualData?.financial}
+              financialEvolution={usualData?.financialEvolution}
+              isLoading={inLoading}
             />
           )}
           {activeTab === "projects" && (
             <Projects
-              summary={data?.summary}
-              projects={data?.projects || []}
-              isLoading={isLoading}
+              summary={usualData?.summary}
+              projects={usualData?.projects || []}
+              isLoading={inLoading}
             />
           )}
 
           {/* Metadata */}
-          {!isLoading && data?.metadata && (
-            <Metadata metadata={data.metadata} currencyMetadata={data.currencyMetadata} />
+          {!inLoading && usualData?.metadata && (
+            <Metadata metadata={usualData.metadata} currencyMetadata={usualData.currencyMetadata} />
           )}
         </div>
       </ScrollArea>

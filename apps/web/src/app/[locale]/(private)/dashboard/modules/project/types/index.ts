@@ -51,7 +51,7 @@ export interface IProjectFinancial {
   estimatedDuration: number;
   actualDuration: number;
   durationVariance: number;
-  status: "active" | "completed" | "late" | "on_schedule";
+  status: string; //"active" | "completed" | "late" | "on_schedule";
   progress: number;
   // Currency information
   currencies?: string[];

@@ -7,7 +7,7 @@ const now = new Date();
 const oneYearAgo = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000);
 const sixMonthsAgo = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000);
 
-export const adminDashboardPlaceholder: any = {
+export const adminDashboardPlaceholder = {
   summary: {
     company: {
       id: "1",

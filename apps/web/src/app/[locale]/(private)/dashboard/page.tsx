@@ -27,7 +27,10 @@ export default function Dashboard() {
     scroll: false,
   });
 
-  const { index, exported } = useDashboard<UnionDashboardData>({ filters: params });
+  const { index, exported } = useDashboard<UnionDashboardData>({
+    moduleId: module?.id,
+    filters: params,
+  });
 
   const modules = {
     project: Project,
@@ -50,6 +53,8 @@ export default function Dashboard() {
   };
 
   const Module = modules?.[module?.title as keyof typeof modules] || Loader;
+
+  // console.log(index.data);
 
   return (
     <div className="relative flex h-[calc(100vh-68px)] items-center justify-center overflow-hidden">

@@ -7,7 +7,7 @@ const now = new Date();
 const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 const sixtyDaysAgo = new Date(now.getTime() - 60 * 24 * 60 * 60 * 1000);
 
-export const projectDashboardPlaceholder: any = {
+export const projectDashboardPlaceholder = {
   summary: {
     totalBudget: 2500000,
     totalCost: 1950000,
@@ -118,9 +118,21 @@ export const projectDashboardPlaceholder: any = {
     },
   ],
   costBreakdown: [
-    { category: "labor_costs", planned: 1200000, executed: 1150000 },
-    { category: "external_services", planned: 350000, executed: 380000 },
-    { category: "remaining_budget", planned: 250000, executed: 240000 },
+    {
+      category: "labor_costs",
+      planned: 1200000,
+      executed: 1150000,
+    },
+    {
+      category: "external_services",
+      planned: 350000,
+      executed: 380000,
+    },
+    {
+      category: "remaining_budget",
+      planned: 250000,
+      executed: 240000,
+    },
   ],
   employeeCosts: [
     {
@@ -352,5 +364,10 @@ export const projectDashboardPlaceholder: any = {
       end: now.toISOString().split("T")[0],
     },
     generatedAt: now.toISOString(),
+  },
+  currencyMetadata: {
+    availableCurrencies: ["BRL", "USD", "EUR", "GBP", "JPY", "CAD", "AUD", "CHF", "NZD", "CNY"],
+    conversionApplied: true,
+    targetCurrency: "BRL",
   },
 };

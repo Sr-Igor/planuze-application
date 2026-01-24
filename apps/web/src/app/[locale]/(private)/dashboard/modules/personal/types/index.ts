@@ -143,7 +143,7 @@ export interface IProjectActivity {
   projectName: string;
   versionName?: string;
   role: string;
-  status: "active" | "completed" | "pending";
+  status: string; //"active" | "completed" | "pending";
   startDate: Date | null;
   endDate: Date | null;
   allocatedHours: number;

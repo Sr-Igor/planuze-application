@@ -6,9 +6,10 @@
 const now = new Date();
 const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 const sixtyDaysAgo = new Date(now.getTime() - 60 * 24 * 60 * 60 * 1000);
+
 const twoYearsAgo = new Date(now.getTime() - 730 * 24 * 60 * 60 * 1000);
 
-export const personalDashboardPlaceholder: any = {
+export const personalDashboardPlaceholder = {
   profile: {
     id: "1",
     userId: "user-1",
@@ -102,8 +103,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 2000,
         totalCompensation: 42000,
         currency: "BRL",
-        roles: [{ roleId: "1", roleName: "Desenvolvedor Pleno", amount: 40000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 2000 }],
+        roles: [
+          {
+            roleId: "1",
+            roleName: "Desenvolvedor Pleno",
+            amount: 40000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 2000,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 10 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -113,8 +126,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 1500,
         totalCompensation: 41500,
         currency: "BRL",
-        roles: [{ roleId: "1", roleName: "Desenvolvedor Pleno", amount: 40000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 1500 }],
+        roles: [
+          {
+            roleId: "1",
+            roleName: "Desenvolvedor Pleno",
+            amount: 40000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 1500,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 9 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -124,8 +149,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 2500,
         totalCompensation: 44500,
         currency: "BRL",
-        roles: [{ roleId: "1", roleName: "Desenvolvedor Pleno", amount: 42000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 2500 }],
+        roles: [
+          {
+            roleId: "1",
+            roleName: "Desenvolvedor Pleno",
+            amount: 42000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 2500,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 8 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -135,8 +172,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 2000,
         totalCompensation: 44000,
         currency: "BRL",
-        roles: [{ roleId: "1", roleName: "Desenvolvedor Pleno", amount: 42000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 2000 }],
+        roles: [
+          {
+            roleId: "1",
+            roleName: "Desenvolvedor Pleno",
+            amount: 42000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 2000,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 7 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -146,8 +195,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 3000,
         totalCompensation: 48000,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 45000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 3000 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 45000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 3000,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 6 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -157,8 +218,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 2500,
         totalCompensation: 47500,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 45000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 2500 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 45000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 2500,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 5 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -168,8 +241,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 3500,
         totalCompensation: 50500,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 47000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 3500 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 47000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 3500,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 4 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -179,8 +264,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 2800,
         totalCompensation: 49800,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 47000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 2800 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 47000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 2800,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 3 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -190,10 +287,24 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 4000,
         totalCompensation: 52000,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 48000 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 48000,
+          },
+        ],
         bonuses: [
-          { bonusId: "1", bonusName: "Bônus de Performance", amount: 3000 },
-          { bonusId: "2", bonusName: "Bônus de Projeto", amount: 1000 },
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 3000,
+          },
+          {
+            bonusId: "2",
+            bonusName: "Bônus de Projeto",
+            amount: 1000,
+          },
         ],
       },
       {
@@ -204,8 +315,20 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 3500,
         totalCompensation: 51500,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 48000 }],
-        bonuses: [{ bonusId: "1", bonusName: "Bônus de Performance", amount: 3500 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 48000,
+          },
+        ],
+        bonuses: [
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 3500,
+          },
+        ],
       },
       {
         date: new Date(now.getTime() - 1 * 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
@@ -215,10 +338,24 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 4200,
         totalCompensation: 52200,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 48000 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 48000,
+          },
+        ],
         bonuses: [
-          { bonusId: "1", bonusName: "Bônus de Performance", amount: 3000 },
-          { bonusId: "2", bonusName: "Bônus de Projeto", amount: 1200 },
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 3000,
+          },
+          {
+            bonusId: "2",
+            bonusName: "Bônus de Projeto",
+            amount: 1200,
+          },
         ],
       },
       {
@@ -229,10 +366,24 @@ export const personalDashboardPlaceholder: any = {
         totalBonuses: 4800,
         totalCompensation: 52800,
         currency: "BRL",
-        roles: [{ roleId: "2", roleName: "Desenvolvedor Sênior", amount: 48000 }],
+        roles: [
+          {
+            roleId: "2",
+            roleName: "Desenvolvedor Sênior",
+            amount: 48000,
+          },
+        ],
         bonuses: [
-          { bonusId: "1", bonusName: "Bônus de Performance", amount: 3000 },
-          { bonusId: "2", bonusName: "Bônus de Projeto", amount: 1800 },
+          {
+            bonusId: "1",
+            bonusName: "Bônus de Performance",
+            amount: 3000,
+          },
+          {
+            bonusId: "2",
+            bonusName: "Bônus de Projeto",
+            amount: 1800,
+          },
         ],
       },
     ],

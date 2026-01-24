@@ -16,6 +16,9 @@ export default function ({
   isLoading,
   isExporting,
 }: IIndexProps) {
+  const inLoading = isLoading || data?.module?.title !== "admin";
+  const usualData = inLoading ? adminDashboardPlaceholder : data;
+
   return (
     <div className="flex h-full w-full flex-col overflow-hidden">
       {/* Header */}
@@ -26,10 +29,10 @@ export default function ({
       {/* Content */}
       <ScrollArea className="h-[calc(100%-120px)] flex-1">
         <div className="p-6">
-          <Overview summary={data?.summary} isLoading={isLoading} />
+          <Overview summary={usualData?.summary} isLoading={inLoading} />
 
           {/* Metadata */}
-          {!isLoading && data?.metadata && <Metadata metadata={data.metadata} />}
+          {!inLoading && usualData?.metadata && <Metadata metadata={usualData.metadata} />}
         </div>
       </ScrollArea>
     </div>
