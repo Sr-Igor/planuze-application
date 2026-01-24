@@ -5,18 +5,31 @@
  *
  * @module presentation/composites/main-card
  */
-
-import { PackageOpen } from "lucide-react";
 import { ReactNode } from "react";
 
+import { PackageOpen } from "lucide-react";
+
+/**
+ * MainCard component.
+ *
+ * A card with built-in loading and empty states.
+ *
+ * @example
+ * ```tsx
+ * <MainCard
+ *   title="Users"
+ *   description="List of all users"
+ *   isLoading={isLoading}
+ *   isEmpty={users.length === 0}
+ * >
+ *   <UserList users={users} />
+ * </MainCard>
+ * ```
+ */
+import { useLang } from "@repo/language/hooks";
+
 import { cn } from "../../../shared/utils";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../../primitives/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../primitives/card";
 import { Skeleton } from "../../primitives/skeleton";
 
 export type MainCardProps = {
@@ -36,11 +49,6 @@ export type MainCardProps = {
    * Whether the card content is empty.
    */
   isEmpty?: boolean;
-  /**
-   * Empty state message.
-   * @default "No results"
-   */
-  emptyMessage?: string;
   /**
    * Additional class name for the card.
    */
@@ -67,23 +75,8 @@ export type MainCardProps = {
   children: ReactNode;
 };
 
-/**
- * MainCard component.
- *
- * A card with built-in loading and empty states.
- *
- * @example
- * ```tsx
- * <MainCard
- *   title="Users"
- *   description="List of all users"
- *   isLoading={isLoading}
- *   isEmpty={users.length === 0}
- * >
- *   <UserList users={users} />
- * </MainCard>
- * ```
- */
+// ...
+
 function MainCard({
   title,
   description,
@@ -95,8 +88,9 @@ function MainCard({
   contentClassName,
   children,
   isEmpty,
-  emptyMessage = "No results",
 }: Readonly<MainCardProps>) {
+  const t = useLang();
+
   return (
     <Card className={className}>
       {(title || description) && (
@@ -115,7 +109,7 @@ function MainCard({
         {!isLoading && isEmpty && (
           <div className="inset-0 flex min-h-[200px] flex-col items-center justify-center gap-2">
             <PackageOpen className="text-muted-foreground h-10 w-10" />
-            <p className="text-muted-foreground text-md font-semibold">{emptyMessage}</p>
+            <p className="text-muted-foreground text-md font-semibold">{t.helper("no_results")}</p>
           </div>
         )}
 

@@ -10,6 +10,8 @@
 
 import { CSSProperties, memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { useLang } from "@repo/language/hooks";
+
 import { cn } from "../../../shared/utils";
 import { Table, TableBody } from "../../primitives/table";
 import {
@@ -25,18 +27,39 @@ import { useTableState, useWindowWidth } from "./hooks";
 import { BaseTableItem, TableLabels, TableProps } from "./types";
 import { getTableVariantClasses } from "./utils/helpers";
 
-const DEFAULT_LABELS: TableLabels = {
-  selectAll: "Select all",
-  actions: "Actions",
-  openMenu: "Open menu",
-  confirmAction: "Confirm action",
-  cancel: "Cancel",
-  confirm: "Confirm",
-  limit: "Limit",
-  total: "Total",
-  noDataFound: "No data found",
-  emptyData: "No data available",
-};
+/**
+ * AppTable Component Module
+ *
+ * A feature-rich data table component with sorting, pagination, selection, and actions.
+ *
+ * @module presentation/composites/app-table
+ */
+
+/**
+ * AppTable Component Module
+ *
+ * A feature-rich data table component with sorting, pagination, selection, and actions.
+ *
+ * @module presentation/composites/app-table
+ */
+
+/**
+ * AppTable Component Module
+ *
+ * A feature-rich data table component with sorting, pagination, selection, and actions.
+ *
+ * @module presentation/composites/app-table
+ */
+
+/**
+ * AppTable Component Module
+ *
+ * A feature-rich data table component with sorting, pagination, selection, and actions.
+ *
+ * @module presentation/composites/app-table
+ */
+
+// ...
 
 function TableComponent<T extends BaseTableItem>({
   data,
@@ -55,10 +78,23 @@ function TableComponent<T extends BaseTableItem>({
   variant = "default",
   disabledCheckbox,
   height,
-  labels: userLabels,
   ...props
 }: Readonly<TableProps<T>>) {
-  const labels = { ...DEFAULT_LABELS, ...userLabels };
+  const { helper } = useLang();
+
+  const labels: TableLabels = {
+    selectAll: helper("select_all"),
+    actions: helper("actions"),
+    openMenu: helper("open_menu"),
+    confirmAction: helper("confirm_action"),
+    cancel: helper("cancel"),
+    confirm: helper("confirm"),
+    limit: helper("limit"),
+    total: helper("total"),
+    noDataFound: helper("no_data_found"),
+    emptyData: helper("empty_data"),
+  };
+  // ...
   const windowWidth = useWindowWidth();
   const headerScrollRef = useRef<HTMLDivElement>(null);
   const bodyScrollRef = useRef<HTMLDivElement>(null);
@@ -193,11 +229,13 @@ function TableComponent<T extends BaseTableItem>({
             ref={headerScrollRef}
             className="relative overflow-x-auto overflow-y-hidden [&::-webkit-scrollbar]:hidden"
             onScroll={handleHeaderScroll}
-            style={{
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              paddingRight: scrollbarWidth > 0 ? `${scrollbarWidth}px` : undefined,
-            } as CSSProperties}
+            style={
+              {
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+                paddingRight: scrollbarWidth > 0 ? `${scrollbarWidth}px` : undefined,
+              } as CSSProperties
+            }
           >
             <Table className={cn("min-w-full table-fixed", variantClasses.table)}>
               <AppTableColgroup

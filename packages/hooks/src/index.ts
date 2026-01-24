@@ -1,5 +1,4 @@
 export * from "./debounce";
-export * from "./image";
 export * from "./window-width";
 export * from "./loading";
 export * from "./unload";

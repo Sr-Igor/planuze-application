@@ -1,19 +1,21 @@
-import type { DiffItem, FormattedValue, LogsLabels } from "../types";
+import type { DiffItem, FormattedValue } from "../types";
 import { DesktopTable } from "./desktop-table";
 import { MobileCard } from "./mobile-card";
 
 interface LogContentProps<T> {
   diffs: DiffItem[];
-  formatDisplayValue: (field: keyof T | undefined, value: unknown, maxLength: number) => FormattedValue;
+  formatDisplayValue: (
+    field: keyof T | undefined,
+    value: unknown,
+    maxLength: number
+  ) => FormattedValue;
   copyToClipboard: (text: string) => void;
-  labels: LogsLabels;
 }
 
 export const LogContent = <T,>({
   diffs,
   formatDisplayValue,
   copyToClipboard,
-  labels,
 }: LogContentProps<T>) => {
   return (
     <div>
@@ -22,7 +24,6 @@ export const LogContent = <T,>({
           diffs={diffs}
           formatDisplayValue={formatDisplayValue}
           copyToClipboard={copyToClipboard}
-          labels={labels}
         />
       </div>
 
@@ -31,7 +32,6 @@ export const LogContent = <T,>({
           diffs={diffs}
           formatDisplayValue={formatDisplayValue}
           copyToClipboard={copyToClipboard}
-          labels={labels}
         />
       </div>
     </div>

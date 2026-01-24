@@ -1,27 +1,13 @@
-"use client";
-
-import { Avatar, AvatarFallback } from "../../primitives/avatar";
-import { AppImage, type AppImageProps } from "../app-image";
-
 import { cn } from "../../../shared/utils";
+import { Avatar, AvatarFallback } from "../../primitives/avatar";
+import { AppImage, IAppImage } from "../app-image";
 
-export interface AppAvatarProps extends Omit<AppImageProps, "alt" | "fill"> {
-  /**
-   * Name to display as fallback initials
-   */
+export interface AppAvatarProps extends Omit<IAppImage, "alt" | "fill"> {
   name: string;
-  /**
-   * Additional class name for the fallback
-   */
   fallbackClassName?: string;
 }
 
-export const AppAvatar = ({
-  name,
-  className,
-  fallbackClassName,
-  ...rest
-}: AppAvatarProps) => {
+export const AppAvatar = ({ name, className, fallbackClassName, ...rest }: AppAvatarProps) => {
   return (
     <Avatar
       className={cn(
@@ -42,5 +28,3 @@ export const AppAvatar = ({
     </Avatar>
   );
 };
-
-AppAvatar.displayName = "AppAvatar";

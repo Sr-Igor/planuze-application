@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 
 import { getProfile } from "@repo/cookies";
-import { useFetchImage } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -26,7 +25,6 @@ export const ProfileModal = () => {
   const profileIdCookie = getProfile();
   const { profileId: profileIdStore, all } = useAppSelector((state) => state.module);
   const route = useRouter();
-  const fetchImage = useFetchImage("company/logo", true);
 
   const profileId = profileIdCookie || profileIdStore;
 
@@ -69,7 +67,6 @@ export const ProfileModal = () => {
                 path="company/logo"
                 className="h-25 w-25"
                 fallbackClassName="text-5xl"
-                fetchImage={fetchImage}
               />
               <p className="text-md font-medium">{profile.company?.name}</p>
             </button>

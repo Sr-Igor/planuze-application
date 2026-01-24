@@ -5,41 +5,14 @@ import { useMemo } from "react";
 import { isDate } from "date-fns";
 import { LoaderCircle, PackageOpen } from "lucide-react";
 
+import { useLang } from "@repo/language/hooks";
+
 import { cn } from "../../../shared/utils";
 import { Skeleton } from "../../primitives/skeleton";
 import { AppTableActions } from "../app-table";
 import type { TableAction } from "../app-table";
 
-export interface TrashLabels {
-  /**
-   * Label for true boolean values
-   */
-  true: string;
-  /**
-   * Label for false boolean values
-   */
-  false: string;
-  /**
-   * Label for actions column
-   */
-  actions: string;
-  /**
-   * Label for empty state
-   */
-  empty: string;
-  /**
-   * Function to get property label
-   */
-  property: (key: string) => string;
-}
-
-const defaultLabels: TrashLabels = {
-  true: "Yes",
-  false: "No",
-  actions: "Actions",
-  empty: "No items",
-  property: (key: string) => key,
-};
+// ...
 
 export interface AppTrashProps<T extends { id: string }> {
   /**
@@ -67,10 +40,6 @@ export interface AppTrashProps<T extends { id: string }> {
    */
   loading?: boolean;
   /**
-   * Labels for the component
-   */
-  labels?: TrashLabels;
-  /**
    * Date locale for formatting
    */
   dateLocale?: string;
@@ -83,9 +52,10 @@ export const AppTrash = <T extends { id: string }>({
   conversor,
   format,
   loading,
-  labels = defaultLabels,
   dateLocale = "pt-BR",
 }: AppTrashProps<T>) => {
+  const { helper, property } = useLang();
+  // ...
   /* ------------------------------------------------------------------ */
   /* which columns to show -------------------------------------------- */
   const allKeys = useMemo(() => {
@@ -129,7 +99,7 @@ export const AppTrash = <T extends { id: string }>({
     let v = applyFormat(field, raw, item);
     v = applyConversor(field, v);
 
-    if (typeof v === "boolean") return v ? labels.true : labels.false;
+    if (typeof v === "boolean") return v ? helper("true") : helper("false");
     if (v === null || v === undefined) return "—";
     if (isDate(v)) return new Date(v).toLocaleString(dateLocale);
     if (typeof v === "object") return JSON.stringify(v);
@@ -170,7 +140,7 @@ export const AppTrash = <T extends { id: string }>({
                 {allKeys.map((key) => (
                   <div key={String(key)} className="flex flex-col gap-0.5">
                     <span className="text-[11px] font-semibold text-gray-700 capitalize dark:text-gray-200">
-                      {labels.property(String(key))}
+                      {property(String(key))}
                     </span>
                     <span className="text-[12px] break-all text-gray-800 dark:text-gray-100">
                       {prepareDisplay(key, item[key], item)}
@@ -202,11 +172,11 @@ export const AppTrash = <T extends { id: string }>({
                 <tr>
                   {allKeys.map((key) => (
                     <th key={String(key)} className="px-4 py-2 text-left font-medium capitalize">
-                      {labels.property(String(key))}
+                      {property(String(key))}
                     </th>
                   ))}
                   {actions.length > 0 && (
-                    <th className="px-4 py-2 text-center font-medium">{labels.actions}</th>
+                    <th className="px-4 py-2 text-center font-medium">{helper("actions")}</th>
                   )}
                 </tr>
               </thead>
@@ -241,7 +211,7 @@ export const AppTrash = <T extends { id: string }>({
         <div className="absolute flex h-full w-full flex-col items-center justify-center">
           <PackageOpen size={60} className="text-muted-foreground" />
           <div className="text-md text-center font-semibold text-gray-400 dark:text-gray-500">
-            {labels.empty}
+            {helper("no_data_found")}
           </div>
         </div>
       )}

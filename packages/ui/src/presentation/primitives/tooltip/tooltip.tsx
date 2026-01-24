@@ -23,6 +23,14 @@ import { cn } from "../../../shared/utils";
  */
 
 /**
+ * Tooltip Component Module
+ *
+ * A popup that displays information related to an element.
+ *
+ * @module presentation/primitives/tooltip
+ */
+
+/**
  * TooltipProvider component props.
  */
 export type TooltipProviderProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Provider>;
@@ -61,11 +69,7 @@ export type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root
  * ```
  */
 function Tooltip({ ...props }: Readonly<TooltipProps>) {
-  return (
-    <TooltipProvider>
-      <TooltipPrimitive.Root data-slot="tooltip" {...props} />
-    </TooltipProvider>
-  );
+  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />;
 }
 
 /**

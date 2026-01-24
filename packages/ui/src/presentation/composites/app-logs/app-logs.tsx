@@ -2,50 +2,33 @@
 
 import React from "react";
 
+import { useLang } from "@repo/language/hooks";
+
 import { EmptyState, LogContent, LogHeader } from "./components";
 import { useDisplayValue, useFormatApply } from "./hooks";
-import type { LogsComparisonProps, LogsLabels } from "./types";
+import type { LogsComparisonProps } from "./types";
 import { computeDiffs, copyToClipboard, formatDisplayValue } from "./utils";
-
-const defaultLabels: LogsLabels = {
-  true: "Yes",
-  false: "No",
-  empty: "Empty",
-  emptyData: "No data available",
-  nothingAction: "No changes",
-  field: "Field",
-  old: "Old",
-  new: "New",
-  date: "Date",
-  responsible: "Responsible",
-  integration: "Integration",
-  copied: "Copied",
-  logs: "Logs",
-  property: (key: string) => key,
-  logAction: (action: string) => action,
-};
 
 export const AppLogs = <T = Record<string, unknown>,>({
   logs = [],
   deleteKeys = [],
   conversor,
   format,
-  labels = defaultLabels,
   dateLocale = "pt-BR",
 }: LogsComparisonProps<T>) => {
-  const mergedLabels = { ...defaultLabels, ...labels };
+  const { helper } = useLang();
 
   const mergedDeleteKeys = React.useMemo(
     () => Array.from(new Set(["createdAt", "updatedAt", "deletedAt", "id", ...deleteKeys])),
     [deleteKeys]
   );
 
-  const displayValue = useDisplayValue(conversor, mergedLabels, dateLocale);
+  const displayValue = useDisplayValue(conversor, dateLocale);
   const applyFormat = useFormatApply(format);
 
   const handleCopyToClipboard = React.useCallback(
-    (text: string) => copyToClipboard(text, mergedLabels.copied),
-    [mergedLabels.copied]
+    (text: string) => copyToClipboard(text, helper("copied")),
+    [helper]
   );
 
   const formatValue = React.useCallback(
@@ -67,7 +50,7 @@ export const AppLogs = <T = Record<string, unknown>,>({
   return (
     <div className="w-full space-y-4 p-2 sm:space-y-6 sm:p-3">
       {logs.length === 0 ? (
-        <EmptyState message={mergedLabels.emptyData} />
+        <EmptyState message={helper("empty_data")} />
       ) : (
         logs
           .slice()
@@ -104,12 +87,11 @@ export const AppLogs = <T = Record<string, unknown>,>({
 
             return (
               <div key={log.id || idx} className="bg-accent w-full overflow-hidden rounded-lg">
-                <LogHeader log={log} labels={mergedLabels} dateLocale={dateLocale} />
+                <LogHeader log={log} dateLocale={dateLocale} />
                 <LogContent
                   diffs={diffs}
                   formatDisplayValue={formatValue}
                   copyToClipboard={handleCopyToClipboard}
-                  labels={mergedLabels}
                 />
               </div>
             );

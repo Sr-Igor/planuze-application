@@ -5,9 +5,11 @@
  *
  * @module presentation/composites/status-circle
  */
+import { useMemo } from "react";
 
 import { Check, Loader, X } from "lucide-react";
-import { useMemo } from "react";
+
+import { useLang } from "@repo/language/hooks";
 
 import { cn } from "../../../shared/utils";
 import { AppTooltip } from "../app-tooltip";
@@ -24,14 +26,6 @@ export type StatusCircleProps = {
    * Additional class name.
    */
   className?: string;
-  /**
-   * Labels for the tooltip.
-   */
-  labels?: {
-    true?: string;
-    false?: string;
-    null?: string;
-  };
 };
 
 /**
@@ -46,12 +40,14 @@ export type StatusCircleProps = {
  * <StatusCircle status={null} />
  * ```
  */
-function StatusCircle({ status, className, labels }: Readonly<StatusCircleProps>) {
+function StatusCircle({ status, className }: Readonly<StatusCircleProps>) {
+  const { helper } = useLang();
+
   const tooltip = useMemo(() => {
-    if (status === true) return labels?.true ?? "True";
-    if (status === false) return labels?.false ?? "False";
-    return labels?.null ?? "Pending";
-  }, [status, labels]);
+    if (status === true) return helper("true");
+    if (status === false) return helper("false");
+    return helper("null");
+  }, [status, helper]);
 
   return (
     <AppTooltip text={tooltip}>

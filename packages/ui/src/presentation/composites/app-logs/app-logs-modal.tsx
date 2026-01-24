@@ -1,11 +1,11 @@
-"use client";
-
 import { History } from "lucide-react";
+
+import { useLang } from "@repo/language/hooks";
 
 import { ScrollArea } from "../../primitives/scroll-area";
 import { AppDialog } from "../app-dialog";
 import { AppLogs } from "./app-logs";
-import type { LogEntry, LogsComparisonProps, LogsLabels } from "./types";
+import type { LogEntry, LogsComparisonProps } from "./types";
 
 export interface AppLogsModalProps<T = Record<string, unknown>> {
   /**
@@ -24,31 +24,22 @@ export interface AppLogsModalProps<T = Record<string, unknown>> {
    * Additional logs configuration
    */
   logs?: Partial<Omit<LogsComparisonProps<T>, "logs">>;
-  /**
-   * Labels for the component
-   */
-  labels?: LogsLabels;
 }
-
-const defaultLabels: Pick<LogsLabels, "logs"> = {
-  logs: "Logs",
-};
 
 export const AppLogsModal = <T = Record<string, unknown>,>({
   open,
   onOpenChange,
   data,
   logs,
-  labels,
 }: AppLogsModalProps<T>) => {
-  const mergedLabels = { ...defaultLabels, ...labels };
+  const { helper } = useLang();
 
   return (
     <AppDialog
       title={
         <span className="flex items-center text-sm font-bold md:text-base">
           <History className="mr-2 h-4 w-4" />
-          {mergedLabels.logs}
+          {helper("logs")}
         </span>
       }
       open={open}
@@ -59,11 +50,7 @@ export const AppLogsModal = <T = Record<string, unknown>,>({
         className="bg-background w-full overflow-hidden rounded-lg border p-3"
         style={{ maxHeight: "calc(100vh - 200px)" }}
       >
-        <AppLogs<T>
-          logs={data?.logs || []}
-          {...logs}
-          labels={labels}
-        />
+        <AppLogs<T> logs={data?.logs || []} {...logs} />
       </ScrollArea>
     </AppDialog>
   );

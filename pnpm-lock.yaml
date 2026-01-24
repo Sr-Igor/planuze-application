@@ -839,6 +839,18 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.6))(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@repo/api':
+        specifier: workspace:*
+        version: link:../api
+      '@repo/language':
+        specifier: workspace:*
+        version: link:../language
+      '@repo/redux':
+        specifier: workspace:*
+        version: link:../redux
+      '@tanstack/react-query':
+        specifier: 'catalog:'
+        version: 5.90.10(react@19.2.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1

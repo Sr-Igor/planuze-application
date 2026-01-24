@@ -2,13 +2,7 @@
 
 import { useCallback } from "react";
 
-import type { LogsLabels } from "../types";
-
-const defaultLabels: Pick<LogsLabels, "true" | "false" | "empty"> = {
-  true: "Yes",
-  false: "No",
-  empty: "Empty",
-};
+import { useLang } from "@repo/language/hooks";
 
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
 
@@ -33,9 +27,10 @@ const stringify = (v: unknown): string => {
  */
 export const useDisplayValue = <T>(
   conversor?: Partial<Record<keyof T, { label: string; value: string }[]>>,
-  labels: Pick<LogsLabels, "true" | "false" | "empty"> = defaultLabels,
   dateLocale: string = "pt-BR"
 ) => {
+  const { helper } = useLang();
+
   return useCallback(
     (field: keyof T | undefined, value: unknown): string => {
       let v = value;
@@ -51,12 +46,12 @@ export const useDisplayValue = <T>(
 
       // Boolean
       if (typeof v === "boolean") {
-        return v ? labels.true : labels.false;
+        return v ? helper("true") : helper("false");
       }
 
       // null / undefined / empty string / whitespace only
       if (isEmpty(v)) {
-        return `[${labels.empty}]`;
+        return `[${helper("empty")}]`;
       }
 
       // Date string
@@ -66,6 +61,6 @@ export const useDisplayValue = <T>(
 
       return stringify(v);
     },
-    [conversor, labels, dateLocale]
+    [conversor, helper, dateLocale]
   );
 };

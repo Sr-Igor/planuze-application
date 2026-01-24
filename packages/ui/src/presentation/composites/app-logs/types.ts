@@ -90,76 +90,9 @@ export interface LogsComparisonProps<T> {
    */
   format?: Partial<Record<keyof T, (value: any, item: T) => unknown>>;
   /**
-   * Labels for the component
-   */
-  labels?: LogsLabels;
-  /**
    * Date locale for formatting
    */
   dateLocale?: string;
-}
-
-export interface LogsLabels {
-  /**
-   * Label for true boolean values
-   */
-  true: string;
-  /**
-   * Label for false boolean values
-   */
-  false: string;
-  /**
-   * Label for empty values
-   */
-  empty: string;
-  /**
-   * Label for empty data state
-   */
-  emptyData: string;
-  /**
-   * Label for nothing action state
-   */
-  nothingAction: string;
-  /**
-   * Label for field column
-   */
-  field: string;
-  /**
-   * Label for old value column
-   */
-  old: string;
-  /**
-   * Label for new value column
-   */
-  new: string;
-  /**
-   * Label for date
-   */
-  date: string;
-  /**
-   * Label for responsible
-   */
-  responsible: string;
-  /**
-   * Label for integration
-   */
-  integration: string;
-  /**
-   * Label for copied toast
-   */
-  copied: string;
-  /**
-   * Label for logs title
-   */
-  logs: string;
-  /**
-   * Function to get property label
-   */
-  property: (key: string) => string;
-  /**
-   * Function to get log action label
-   */
-  logAction: (action: string) => string;
 }
 
 export interface FormattedValue {

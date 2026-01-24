@@ -24,7 +24,11 @@
     "next-themes": "catalog:",
     "react-hook-form": "catalog:",
     "recharts": "catalog:",
-    "sonner": "catalog:"
+    "sonner": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "@repo/api": "workspace:*",
+    "@repo/redux": "workspace:*",
+    "@repo/language": "workspace:*"
   },
   "dependencies": {
     "payment-icons": "^1.2.1",

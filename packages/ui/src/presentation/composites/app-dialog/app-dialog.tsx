@@ -7,7 +7,7 @@
  */
 import { ReactNode } from "react";
 
-import { ChevronLeft } from "lucide-react";
+import { useLang } from "@repo/language/hooks";
 
 import { Button } from "../../primitives/button";
 import {
@@ -63,11 +63,6 @@ export type AppDialogProps = {
    * Fixed height for scrollable content.
    */
   height?: number;
-  /**
-   * Label for the back/close button.
-   * @default "Back"
-   */
-  backLabel?: string;
 };
 
 /**
@@ -99,8 +94,9 @@ function AppDialog({
   className = "sm:max-w-[425px]",
   modal = true,
   height,
-  backLabel,
 }: Readonly<AppDialogProps>) {
+  const t = useLang();
+
   return (
     <Dialog open={open} onOpenChange={(open) => !loading && onOpenChange?.(open)} modal={modal}>
       <DialogContent className={className} closeButton={!loading}>
@@ -113,7 +109,7 @@ function AppDialog({
         {height ? <DynamicScrollArea height={height}>{children}</DynamicScrollArea> : children}
         <DialogFooter>
           <DialogClose asChild disabled={loading}>
-            <Button variant="outline">{backLabel || <ChevronLeft />}</Button>
+            <Button variant="outline">{t.helper("back")}</Button>
           </DialogClose>
           {footer}
         </DialogFooter>
