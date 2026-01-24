@@ -33,7 +33,7 @@ export type IconProps = Omit<icons.LucideProps, "ref" | "name"> & {
  */
 const Icon = forwardRef<SVGSVGElement, IconProps>(({ name, ...props }, ref) => {
   const iconName = name as IconName;
-  const LucideIcon = (iconName && (icons[iconName] as icons.LucideIcon)) ?? icons.CircleHelp;
+  const LucideIcon = (icons[iconName] as icons.LucideIcon) || icons.CircleHelp;
   return <LucideIcon ref={ref} {...props} />;
 });
 

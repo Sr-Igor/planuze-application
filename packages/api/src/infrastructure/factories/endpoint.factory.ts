@@ -150,7 +150,7 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
       filters?: QueryFilters
     ): Promise<T | Pagination<T>> => {
       const mergedFilters = mergeFilters(filters, queries?.update);
-      const prepared = prepareBody({ id, ...body }, formDataFields);
+      const prepared = prepareBody({ ...body }, formDataFields);
 
       const handle = callEndpoint({
         route: routes.update,
@@ -381,12 +381,14 @@ export const createSimpleEndpoint = <T>() => {
         body: Partial<T>,
         filters?: QueryFilters
       ): Promise<T | Pagination<T>> => {
+        const sendFilters = filters?.return ? filters : {};
+
         const prepared = prepareBody(body, formDataFields);
         return handleRequest<T | Pagination<T>>(
           "POST",
           buildUrl("store"),
           prepared.body,
-          { ...prepared.config, params: { ...defaultQuery, ...filters } },
+          { ...prepared.config, params: { ...defaultQuery, ...sendFilters } },
           { showSuccess: true }
         );
       };
@@ -398,13 +400,15 @@ export const createSimpleEndpoint = <T>() => {
         body: Partial<T>,
         filters?: QueryFilters
       ): Promise<T | Pagination<T>> => {
+        const sendFilters = filters?.return ? filters : {};
+
         const prepared = prepareBody({ ...body }, formDataFields);
         // Use callEndpoint to properly handle params as path parameters (like old project)
         const handle = callEndpoint({
           route: routes.update,
           params: { id },
           body: prepared.body,
-          query: { ...defaultQuery, ...filters },
+          query: { ...defaultQuery, ...sendFilters },
         } as Parameters<typeof callEndpoint>[0]);
 
         return handleRequest<T | Pagination<T>>(
@@ -419,11 +423,12 @@ export const createSimpleEndpoint = <T>() => {
 
     if (routes.destroy) {
       endpoint.destroy = async (id: string, filters?: QueryFilters): Promise<T | Pagination<T>> => {
+        const sendFilters = filters?.return ? filters : {};
         // Use callEndpoint to properly handle params as path parameters (like old project)
         const handle = callEndpoint({
           route: routes.destroy,
           params: { id },
-          query: { ...defaultQuery, ...filters },
+          query: { ...defaultQuery, ...sendFilters },
         } as Parameters<typeof callEndpoint>[0]);
 
         return handleRequest<T | Pagination<T>>(handle.method, handle.url, undefined, undefined, {
@@ -439,11 +444,12 @@ export const createSimpleEndpoint = <T>() => {
         filters?: QueryFilters
       ): Promise<T[] | Pagination<T>> => {
         // Use callEndpoint to properly handle params as path parameters (like old project)
+        const sendFilters = filters?.return ? filters : {};
         const handle = callEndpoint({
           route: routes.many,
           params: { ids },
           body,
-          query: { ...defaultQuery, ...filters },
+          query: { ...defaultQuery, ...sendFilters },
         } as Parameters<typeof callEndpoint>[0]);
 
         return handleRequest<T[] | Pagination<T>>(handle.method, handle.url, body, undefined, {

@@ -15,7 +15,7 @@ export const useProjectVersion = (
   const { filters, id, enabledIndex, enabledShow, enableTrash, callbacks } = props;
 
   return useInsert<project_version>({
-    endpoint: projectVersionEndpoint as any,
+    endpoint: projectVersionEndpoint,
     cacheKeys: cacheKeys.project_version,
     id,
     filters,
