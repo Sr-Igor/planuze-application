@@ -15,7 +15,7 @@ export const useProjectMember = (
   const { filters, id, enabledIndex, enabledShow, enableTrash, callbacks } = props;
 
   return useInsert<project_member>({
-    endpoint: projectMemberEndpoint as any,
+    endpoint: projectMemberEndpoint,
     cacheKeys: cacheKeys.project_member,
     id,
     filters,

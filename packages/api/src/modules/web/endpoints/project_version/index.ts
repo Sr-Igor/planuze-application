@@ -12,7 +12,7 @@ export const projectVersionEndpoint = createSimpleEndpoint<project_version>()({
     update: "/api/private/project_version/update",
     destroy: "/api/private/project_version/destroy",
     restore: "/api/private/project_version/restore",
-    many: "/api/private/project_version/many",
+    trash: "/api/private/project_version/trash",
   },
   defaultQuery: {
     include: {
@@ -43,4 +43,4 @@ export const projectVersionStore = projectVersionEndpoint.store;
 export const projectVersionUpdate = projectVersionEndpoint.update;
 export const projectVersionDestroy = projectVersionEndpoint.destroy;
 export const projectVersionRestore = projectVersionEndpoint.restore;
-export const projectVersionMany = projectVersionEndpoint.many;
+export const projectVersionTrash = projectVersionEndpoint.trash;

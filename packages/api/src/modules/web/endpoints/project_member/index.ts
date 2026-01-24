@@ -8,6 +8,7 @@ export const projectMemberEndpoint = createSimpleEndpoint<project_member>()({
   routes: {
     index: "/api/private/project_member/index",
     store: "/api/private/project_member/store",
+    trash: "/api/private/project_member/trash",
     destroy: "/api/private/project_member/destroy",
     restore: "/api/private/project_member/restore",
   },
@@ -35,5 +36,6 @@ export type ProjectMember = project_member;
 // Direct function exports for backwards compatibility
 export const projectMemberIndex = projectMemberEndpoint.index;
 export const projectMemberStore = projectMemberEndpoint.store;
+export const projectMemberTrash = projectMemberEndpoint.trash;
 export const projectMemberDestroy = projectMemberEndpoint.destroy;
 export const projectMemberRestore = projectMemberEndpoint.restore;
