@@ -10,3 +10,4 @@ export const profileShow = profileEndpoint.show;
 export const profileStore = profileEndpoint.store;
 export const profileUpdate = profileEndpoint.update;
 export const profileDestroy = profileEndpoint.destroy;
+export const profileRestore = profileEndpoint.restore;

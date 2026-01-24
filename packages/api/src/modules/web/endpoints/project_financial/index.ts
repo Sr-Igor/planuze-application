@@ -11,6 +11,7 @@ export const projectFinancialEndpoint = createSimpleEndpoint<project_financial>(
     update: "/api/private/project_financial/update",
     destroy: "/api/private/project_financial/destroy",
     many: "/api/private/project_financial/many",
+    restore: "/api/private/project_financial/restore",
   },
   defaultQuery: {
     include: {
@@ -29,3 +30,4 @@ export const projectFinancialStore = projectFinancialEndpoint.store;
 export const projectFinancialUpdate = projectFinancialEndpoint.update;
 export const projectFinancialDestroy = projectFinancialEndpoint.destroy;
 export const projectFinancialMany = projectFinancialEndpoint.many;
+export const projectFinancialRestore = projectFinancialEndpoint.restore;

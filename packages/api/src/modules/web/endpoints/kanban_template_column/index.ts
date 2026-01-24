@@ -10,6 +10,7 @@ export const kanbanTemplateColumnEndpoint = createSimpleEndpoint<kanban_template
     update: "/api/private/kanban_template_column/update",
     destroy: "/api/private/kanban_template_column/destroy",
     many: "/api/private/kanban_template_column/many",
+    restore: "/api/private/kanban_template_column/restore",
   },
   defaultQuery: {
     include: { logs },
@@ -23,3 +24,4 @@ export const kanbanTemplateColumnStore = kanbanTemplateColumnEndpoint.store;
 export const kanbanTemplateColumnUpdate = kanbanTemplateColumnEndpoint.update;
 export const kanbanTemplateColumnDestroy = kanbanTemplateColumnEndpoint.destroy;
 export const kanbanTemplateColumnMany = kanbanTemplateColumnEndpoint.many;
+export const kanbanTemplateColumnRestore = kanbanTemplateColumnEndpoint.restore;

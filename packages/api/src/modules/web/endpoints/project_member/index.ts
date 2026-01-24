@@ -11,6 +11,7 @@ export const projectMemberEndpoint = createSimpleEndpoint<project_member>()({
     update: "/api/private/project_member/update",
     destroy: "/api/private/project_member/destroy",
     many: "/api/private/project_member/many",
+    restore: "/api/private/project_member/restore",
   },
   defaultQuery: {
     include: {
@@ -39,3 +40,4 @@ export const projectMemberStore = projectMemberEndpoint.store;
 export const projectMemberUpdate = projectMemberEndpoint.update;
 export const projectMemberDestroy = projectMemberEndpoint.destroy;
 export const projectMemberMany = projectMemberEndpoint.many;
+export const projectMemberRestore = projectMemberEndpoint.restore;

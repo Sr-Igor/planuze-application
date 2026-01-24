@@ -1,0 +1,22 @@
+//Utils
+import { exporteXlsx } from "#/global/export-xlsx";
+import { handleReq } from "#/handle";
+
+import { callEndpoint } from "@repo/types";
+
+export const index = async (filters: any) => {
+  const handle = callEndpoint({
+    route: "/api/private/project_kanban_report/index",
+    query: filters,
+  });
+
+  return await handleReq({
+    ...handle,
+    config: filters.export ? { responseType: "arraybuffer" } : undefined,
+  });
+};
+
+export const exported = async (filters: any) => {
+  const response = await exporteXlsx("/api/private/project_kanban_report/index", filters);
+  return response;
+};

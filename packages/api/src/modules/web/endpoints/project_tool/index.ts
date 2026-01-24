@@ -11,6 +11,7 @@ export const projectToolEndpoint = createSimpleEndpoint<project_tool>()({
     update: "/api/private/project_tool/update",
     destroy: "/api/private/project_tool/destroy",
     many: "/api/private/project_tool/many",
+    restore: "/api/private/project_tool/restore",
   },
   defaultQuery: {
     include: {
@@ -28,3 +29,4 @@ export const projectToolStore = projectToolEndpoint.store;
 export const projectToolUpdate = projectToolEndpoint.update;
 export const projectToolDestroy = projectToolEndpoint.destroy;
 export const projectToolMany = projectToolEndpoint.many;
+export const projectToolRestore = projectToolEndpoint.restore;

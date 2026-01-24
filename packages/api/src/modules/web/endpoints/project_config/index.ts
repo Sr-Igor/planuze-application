@@ -12,6 +12,7 @@ export const projectConfigEndpoint = createSimpleEndpoint<project_config>()({
     update: "/api/private/project_config/update",
     destroy: "/api/private/project_config/destroy",
     many: "/api/private/project_config/many",
+    restore: "/api/private/project_config/restore",
   },
   defaultQuery: {
     include: {
@@ -30,3 +31,4 @@ export const projectConfigStore = projectConfigEndpoint.store;
 export const projectConfigUpdate = projectConfigEndpoint.update;
 export const projectConfigDestroy = projectConfigEndpoint.destroy;
 export const projectConfigMany = projectConfigEndpoint.many;
+export const projectConfigRestore = projectConfigEndpoint.restore;

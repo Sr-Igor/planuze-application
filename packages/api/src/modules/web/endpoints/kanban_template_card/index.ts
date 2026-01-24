@@ -10,6 +10,7 @@ export const kanbanTemplateCardEndpoint = createSimpleEndpoint<kanban_template_c
     update: "/api/private/kanban_template_card/update",
     destroy: "/api/private/kanban_template_card/destroy",
     many: "/api/private/kanban_template_card/many",
+    restore: "/api/private/kanban_template_card/restore",
   },
   defaultQuery: {
     include: {
@@ -26,3 +27,4 @@ export const kanbanTemplateCardStore = kanbanTemplateCardEndpoint.store;
 export const kanbanTemplateCardUpdate = kanbanTemplateCardEndpoint.update;
 export const kanbanTemplateCardDestroy = kanbanTemplateCardEndpoint.destroy;
 export const kanbanTemplateCardMany = kanbanTemplateCardEndpoint.many;
+export const kanbanTemplateCardRestore = kanbanTemplateCardEndpoint.restore;
