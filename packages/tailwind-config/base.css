@@ -175,8 +175,8 @@
   --destructive: oklch(0.45 0.15 25);
   --destructive-foreground: oklch(0.98 0.005 240);
 
-  --border: oklch(0.35 0.012 240); /* Bordas mais visíveis */
-  --input: oklch(0.28 0.01 240);
+  --border: oklch(26.264% 0.00715 248.2); /* Bordas mais visíveis */
+  --input: oklch(35.158% 0.01287 239.001);
   --ring: oklch(0.68 0.12 255);
 
   /* Charts */
