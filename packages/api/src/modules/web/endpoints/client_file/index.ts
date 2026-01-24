@@ -12,8 +12,6 @@ export const clientFileEndpoint = createSimpleEndpoint<client_file>()({
     store: "/api/private/client_file/store",
     update: "/api/private/client_file/update",
     destroy: "/api/private/client_file/destroy",
-    trash: "/api/private/client_file/trash",
-    restore: "/api/private/client_file/restore",
   },
   formDataFields: ["file"],
   defaultQuery: {
@@ -27,5 +25,3 @@ export type ClientFile = client_file;
 export const clientFileStore = clientFileEndpoint.store;
 export const clientFileUpdate = clientFileEndpoint.update;
 export const clientFileDestroy = clientFileEndpoint.destroy;
-export const clientFileTrash = clientFileEndpoint.trash;
-export const clientFileRestore = clientFileEndpoint.restore;

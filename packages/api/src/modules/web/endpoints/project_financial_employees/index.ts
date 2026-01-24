@@ -11,7 +11,6 @@ export const projectFinancialEmployeesEndpoint =
       store: "/api/private/project_financial_employees/store",
       update: "/api/private/project_financial_employees/update",
       destroy: "/api/private/project_financial_employees/destroy",
-      many: "/api/private/project_financial_employees/many",
       restore: "/api/private/project_financial_employees/restore",
     },
     defaultQuery: {
@@ -34,5 +33,4 @@ export const projectFinancialEmployeesIndex = projectFinancialEmployeesEndpoint.
 export const projectFinancialEmployeesStore = projectFinancialEmployeesEndpoint.store;
 export const projectFinancialEmployeesUpdate = projectFinancialEmployeesEndpoint.update;
 export const projectFinancialEmployeesDestroy = projectFinancialEmployeesEndpoint.destroy;
-export const projectFinancialEmployeesMany = projectFinancialEmployeesEndpoint.many;
 export const projectFinancialEmployeesRestore = projectFinancialEmployeesEndpoint.restore;

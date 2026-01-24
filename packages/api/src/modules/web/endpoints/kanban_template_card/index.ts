@@ -7,9 +7,7 @@ export const kanbanTemplateCardEndpoint = createSimpleEndpoint<kanban_template_c
   basePath: "/api/private/kanban_template_card",
   routes: {
     store: "/api/private/kanban_template_card/store",
-    update: "/api/private/kanban_template_card/update",
     destroy: "/api/private/kanban_template_card/destroy",
-    many: "/api/private/kanban_template_card/many",
     restore: "/api/private/kanban_template_card/restore",
   },
   defaultQuery: {
@@ -24,7 +22,5 @@ export type KanbanTemplateCard = kanban_template_card;
 
 // Direct function exports for backwards compatibility
 export const kanbanTemplateCardStore = kanbanTemplateCardEndpoint.store;
-export const kanbanTemplateCardUpdate = kanbanTemplateCardEndpoint.update;
 export const kanbanTemplateCardDestroy = kanbanTemplateCardEndpoint.destroy;
-export const kanbanTemplateCardMany = kanbanTemplateCardEndpoint.many;
 export const kanbanTemplateCardRestore = kanbanTemplateCardEndpoint.restore;

@@ -11,7 +11,6 @@ export const projectKanbanObjectiveTargetEndpoint =
       store: "/api/private/project_kanban_objective_target/store",
       update: "/api/private/project_kanban_objective_target/update",
       destroy: "/api/private/project_kanban_objective_target/destroy",
-      many: "/api/private/project_kanban_objective_target/many",
       trash: "/api/private/project_kanban_objective_target/trash",
       restore: "/api/private/project_kanban_objective_target/restore",
     },
@@ -27,4 +26,3 @@ export const projectKanbanObjectiveTargetIndex = projectKanbanObjectiveTargetEnd
 export const projectKanbanObjectiveTargetStore = projectKanbanObjectiveTargetEndpoint.store;
 export const projectKanbanObjectiveTargetUpdate = projectKanbanObjectiveTargetEndpoint.update;
 export const projectKanbanObjectiveTargetDestroy = projectKanbanObjectiveTargetEndpoint.destroy;
-export const projectKanbanObjectiveTargetMany = projectKanbanObjectiveTargetEndpoint.many;

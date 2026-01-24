@@ -8,9 +8,7 @@ export const projectMemberEndpoint = createSimpleEndpoint<project_member>()({
   routes: {
     index: "/api/private/project_member/index",
     store: "/api/private/project_member/store",
-    update: "/api/private/project_member/update",
     destroy: "/api/private/project_member/destroy",
-    many: "/api/private/project_member/many",
     restore: "/api/private/project_member/restore",
   },
   defaultQuery: {
@@ -37,7 +35,5 @@ export type ProjectMember = project_member;
 // Direct function exports for backwards compatibility
 export const projectMemberIndex = projectMemberEndpoint.index;
 export const projectMemberStore = projectMemberEndpoint.store;
-export const projectMemberUpdate = projectMemberEndpoint.update;
 export const projectMemberDestroy = projectMemberEndpoint.destroy;
-export const projectMemberMany = projectMemberEndpoint.many;
 export const projectMemberRestore = projectMemberEndpoint.restore;

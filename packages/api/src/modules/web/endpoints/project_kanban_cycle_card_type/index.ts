@@ -13,7 +13,6 @@ export const projectKanbanCycleCardTypeEndpoint =
       destroy: "/api/private/project_kanban_cycle_card_type/destroy",
       trash: "/api/private/project_kanban_cycle_card_type/trash",
       restore: "/api/private/project_kanban_cycle_card_type/restore",
-      many: "/api/private/project_kanban_cycle_card_type/many",
     },
     defaultQuery: {
       include: { logs },
@@ -26,4 +25,5 @@ export type ProjectKanbanCycleCardType = project_kanban_cycle_card_type;
 export const projectKanbanCycleCardTypeStore = projectKanbanCycleCardTypeEndpoint.store;
 export const projectKanbanCycleCardTypeUpdate = projectKanbanCycleCardTypeEndpoint.update;
 export const projectKanbanCycleCardTypeDestroy = projectKanbanCycleCardTypeEndpoint.destroy;
-export const projectKanbanCycleCardTypeMany = projectKanbanCycleCardTypeEndpoint.many;
+export const projectKanbanCycleCardTypeTrash = projectKanbanCycleCardTypeEndpoint.trash;
+export const projectKanbanCycleCardTypeRestore = projectKanbanCycleCardTypeEndpoint.restore;

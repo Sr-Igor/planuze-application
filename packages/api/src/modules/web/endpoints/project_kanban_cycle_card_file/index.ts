@@ -10,8 +10,6 @@ export const projectKanbanCycleCardFileEndpoint =
       store: "/api/private/project_kanban_cycle_card_file/store",
       update: "/api/private/project_kanban_cycle_card_file/update",
       destroy: "/api/private/project_kanban_cycle_card_file/destroy",
-      trash: "/api/private/project_kanban_cycle_card_file/trash",
-      restore: "/api/private/project_kanban_cycle_card_file/restore",
     },
     formDataFields: ["file"],
     defaultQuery: {
@@ -25,5 +23,3 @@ export type ProjectKanbanCycleCardFile = project_kanban_cycle_card_file;
 export const projectKanbanCycleCardFileStore = projectKanbanCycleCardFileEndpoint.store;
 export const projectKanbanCycleCardFileUpdate = projectKanbanCycleCardFileEndpoint.update;
 export const projectKanbanCycleCardFileDestroy = projectKanbanCycleCardFileEndpoint.destroy;
-export const projectKanbanCycleCardFileTrash = projectKanbanCycleCardFileEndpoint.trash;
-export const projectKanbanCycleCardFileRestore = projectKanbanCycleCardFileEndpoint.restore;

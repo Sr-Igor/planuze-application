@@ -7,7 +7,6 @@ export const costCenterEndpoint = createSimpleEndpoint<cost_center>()({
   basePath: "/api/private/cost_center",
   routes: {
     index: "/api/private/cost_center/index",
-    show: "/api/private/cost_center/show",
     store: "/api/private/cost_center/store",
     update: "/api/private/cost_center/update",
     destroy: "/api/private/cost_center/destroy",
@@ -24,7 +23,6 @@ export type CostCenter = cost_center;
 
 // Direct function exports for backwards compatibility
 export const costCenterIndex = costCenterEndpoint.index;
-export const costCenterShow = costCenterEndpoint.show;
 export const costCenterStore = costCenterEndpoint.store;
 export const costCenterUpdate = costCenterEndpoint.update;
 export const costCenterDestroy = costCenterEndpoint.destroy;

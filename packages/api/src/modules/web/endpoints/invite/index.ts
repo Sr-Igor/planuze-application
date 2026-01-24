@@ -18,7 +18,6 @@ export const inviteEndpoint = createSimpleEndpoint<invite>()({
   basePath: "/api/private/invite",
   routes: {
     index: "/api/private/invite/index",
-    show: "/api/private/invite/show",
     store: "/api/private/invite/store",
     update: "/api/private/invite/update",
     destroy: "/api/private/invite/destroy",
@@ -58,7 +57,6 @@ export type Invite = invite;
 
 // Direct function exports for backwards compatibility
 export const inviteIndex = inviteEndpoint.index;
-export const inviteShow = inviteEndpoint.show;
 export const inviteStore = inviteEndpoint.store;
 export const inviteUpdate = inviteEndpoint.update;
 export const inviteDestroy = inviteEndpoint.destroy;

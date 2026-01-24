@@ -1,6 +1,6 @@
 import type { AxiosRequestConfig } from "axios";
 
-import { callEndpoint, type Pagination } from "@repo/types";
+import { callEndpoint, type Pagination, type Routes } from "@repo/types";
 
 import { setFormData } from "../../application/services/form-data.service";
 import type {
@@ -47,14 +47,14 @@ const prepareBody = (
  * Route configuration for typed endpoints
  */
 export interface TypedEndpointRoutes {
-  index: string;
-  show: string;
-  store: string;
-  update: string;
-  destroy: string;
-  many?: string;
-  trash?: string;
-  restore?: string;
+  index?: Routes;
+  show?: Routes;
+  store?: Routes;
+  update?: Routes;
+  destroy?: Routes;
+  many?: Routes;
+  trash?: Routes;
+  restore?: Routes;
 }
 
 /**
@@ -242,14 +242,14 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
  * Simple route configuration - all routes are optional
  */
 export interface SimpleEndpointRoutes {
-  index?: string;
-  show?: string;
-  store?: string;
-  update?: string;
-  destroy?: string;
-  many?: string;
-  trash?: string;
-  restore?: string;
+  index?: Routes;
+  show?: Routes;
+  store?: Routes;
+  update?: Routes;
+  destroy?: Routes;
+  many?: Routes;
+  trash?: Routes;
+  restore?: Routes;
 }
 
 /**

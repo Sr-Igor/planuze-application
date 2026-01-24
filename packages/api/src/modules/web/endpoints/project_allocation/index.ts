@@ -10,7 +10,6 @@ export const projectAllocationEndpoint = createSimpleEndpoint<project_allocation
     store: "/api/private/project_allocation/store",
     update: "/api/private/project_allocation/update",
     destroy: "/api/private/project_allocation/destroy",
-    many: "/api/private/project_allocation/many",
     restore: "/api/private/project_allocation/restore",
   },
   defaultQuery: {
@@ -39,5 +38,4 @@ export const projectAllocationIndex = projectAllocationEndpoint.index;
 export const projectAllocationStore = projectAllocationEndpoint.store;
 export const projectAllocationUpdate = projectAllocationEndpoint.update;
 export const projectAllocationDestroy = projectAllocationEndpoint.destroy;
-export const projectAllocationMany = projectAllocationEndpoint.many;
 export const projectAllocationRestore = projectAllocationEndpoint.restore;

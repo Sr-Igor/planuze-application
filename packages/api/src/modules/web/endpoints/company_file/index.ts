@@ -9,8 +9,6 @@ export const companyFileEndpoint = createSimpleEndpoint<company_file>()({
     store: "/api/private/company_file/store",
     update: "/api/private/company_file/update",
     destroy: "/api/private/company_file/destroy",
-    trash: "/api/private/company_file/trash",
-    restore: "/api/private/company_file/restore",
   },
   formDataFields: ["file"],
   defaultQuery: {
@@ -24,5 +22,3 @@ export type CompanyFile = company_file;
 export const companyFileStore = companyFileEndpoint.store;
 export const companyFileUpdate = companyFileEndpoint.update;
 export const companyFileDestroy = companyFileEndpoint.destroy;
-export const companyFileTrash = companyFileEndpoint.trash;
-export const companyFileRestore = companyFileEndpoint.restore;

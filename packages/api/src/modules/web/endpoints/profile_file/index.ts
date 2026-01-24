@@ -9,8 +9,6 @@ export const profileFileEndpoint = createSimpleEndpoint<profile_file>()({
     store: "/api/private/profile_file/store",
     update: "/api/private/profile_file/update",
     destroy: "/api/private/profile_file/destroy",
-    trash: "/api/private/profile_file/trash",
-    restore: "/api/private/profile_file/restore",
   },
   formDataFields: ["file"],
   defaultQuery: {
@@ -24,5 +22,3 @@ export type ProfileFile = profile_file;
 export const profileFileStore = profileFileEndpoint.store;
 export const profileFileUpdate = profileFileEndpoint.update;
 export const profileFileDestroy = profileFileEndpoint.destroy;
-export const profileFileTrash = profileFileEndpoint.trash;
-export const profileFileRestore = profileFileEndpoint.restore;

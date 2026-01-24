@@ -8,7 +8,6 @@ export const notificationEndpoint = createSimpleEndpoint<notification>()({
   routes: {
     index: "/api/private/notification/index",
     update: "/api/private/notification/update",
-    many: "/api/private/notification/many",
   },
   defaultQuery: {
     orderKey: "createdAt",
@@ -34,4 +33,3 @@ export type Notification = notification;
 // Direct function exports for backwards compatibility
 export const notificationIndex = notificationEndpoint.index;
 export const notificationUpdate = notificationEndpoint.update;
-export const notificationMany = notificationEndpoint.many;
