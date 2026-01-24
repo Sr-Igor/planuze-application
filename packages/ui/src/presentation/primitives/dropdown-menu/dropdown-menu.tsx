@@ -23,6 +23,14 @@ import { cn } from "../../../shared/utils";
  * @module presentation/primitives/dropdown-menu
  */
 
+/**
+ * DropdownMenu Component Module
+ *
+ * Displays a menu to the user triggered by a button.
+ *
+ * @module presentation/primitives/dropdown-menu
+ */
+
 // ============================================================================
 // Root Components
 // ============================================================================
@@ -157,10 +165,10 @@ const DropdownMenuItem = forwardRef<
       "focus:bg-accent focus:text-accent-foreground",
       "data-disabled:pointer-events-none data-disabled:opacity-50",
       "data-inset:pl-8",
-      "data-[variant=destructive]:text-destructive-foreground",
-      "data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/40",
-      "data-[variant=destructive]:focus:text-destructive-foreground",
-      "data-[variant=destructive]:*:[svg]:text-destructive-foreground!",
+      "data-[variant=destructive]:text-destructive",
+      "data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20",
+      "data-[variant=destructive]:focus:text-destructive",
+      "data-[variant=destructive]:*:[svg]:text-destructive!",
       "[&_svg:not([class*='text-'])]:text-muted-foreground",
       "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
       className

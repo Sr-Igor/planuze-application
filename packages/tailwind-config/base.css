@@ -94,122 +94,106 @@
   @apply bg-transparent p-0;
 }
 
+/* ==========================================================================
+  PALETA DE CORES (Matte Slate & Indigo)
+  ========================================================================== 
+*/
+
 :root {
-  /* Planuze Theme - Light Mode */
-  /* Following 60-30-10 Rule & UX Psychology Principles */
+  /* Light Mode - Limpo e profissional */
+  --background: oklch(0.99 0.002 240);
+  --foreground: oklch(0.17 0.01 240);
 
-  /* 60% - Background (calming, neutral base with subtle navy tint) */
-  --background: oklch(0.98 0.003 250);
-  --foreground: oklch(0.15 0.025 250);
-
-  /* 30% - Surfaces (Cards, Popovers - slightly elevated) */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.025 250);
+  --card-foreground: oklch(0.17 0.01 240);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.025 250);
+  --popover-foreground: oklch(0.17 0.01 240);
 
-  /* 10% - Primary Action (Navy Blue from Planuze logo - Von Restorff) */
-  --primary: oklch(0.32 0.09 250);
+  --primary: oklch(0.51 0.18 255);
   --primary-foreground: oklch(0.99 0 0);
 
-  /* Secondary - Subtle, supporting */
-  --secondary: oklch(0.94 0.008 250);
-  --secondary-foreground: oklch(0.22 0.035 250);
+  --secondary: oklch(0.96 0.005 240);
+  --secondary-foreground: oklch(0.25 0.01 240);
 
-  /* Muted - For less important elements */
-  --muted: oklch(0.95 0.006 250);
-  --muted-foreground: oklch(0.45 0.02 250);
+  --muted: oklch(0.94 0.005 240);
+  --muted-foreground: oklch(0.45 0.015 240);
 
-  /* Accent - Teal-ish for standout moments (not primary) */
-  --accent: oklch(0.93 0.012 200);
-  --accent-foreground: oklch(0.22 0.04 200);
+  --accent: oklch(0.92 0.02 255);
+  --accent-foreground: oklch(0.3 0.1 255);
 
-  /* Destructive - Clear warning */
-  --destructive: oklch(0.5 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.99 0 0);
 
-  /* Borders & Inputs - Visible but subtle */
-  --border: oklch(0.9 0.008 250);
-  --input: oklch(0.92 0.006 250);
-  --ring: oklch(0.4 0.1 250);
+  --border: oklch(0.85 0.01 240);
+  --input: oklch(0.85 0.01 240);
+  --ring: oklch(0.51 0.18 255);
 
-  /* Charts - Diverse, accessible colors */
-  --chart-1: oklch(0.5 0.16 250);
+  /* Charts */
+  --chart-1: oklch(0.51 0.18 255);
   --chart-2: oklch(0.55 0.14 180);
   --chart-3: oklch(0.6 0.16 80);
   --chart-4: oklch(0.5 0.14 30);
   --chart-5: oklch(0.45 0.12 330);
 
-  /* Radius - Professional (slight curve, not rounded) */
-  --radius: 0.5rem;
+  --radius: 0.6rem;
 
-  /* Sidebar - Distinct but harmonious */
-  --sidebar: oklch(0.97 0.006 250);
-  --sidebar-foreground: oklch(0.15 0.025 250);
-  --sidebar-primary: oklch(0.32 0.09 250);
+  --sidebar: oklch(0.98 0.002 240);
+  --sidebar-foreground: oklch(0.17 0.01 240);
+  --sidebar-primary: oklch(0.51 0.18 255);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.93 0.012 200);
-  --sidebar-accent-foreground: oklch(0.22 0.04 200);
-  --sidebar-border: oklch(0.9 0.008 250);
-  --sidebar-ring: oklch(0.4 0.1 250);
+  --sidebar-accent: oklch(0.94 0.01 240);
+  --sidebar-accent-foreground: oklch(0.17 0.01 240);
+  --sidebar-border: oklch(0.85 0.01 240);
+  --sidebar-ring: oklch(0.51 0.18 255);
 }
 
 .dark {
-  /* Planuze Theme - Dark Mode (Modern & Refined) */
-  /* Lighter, more sophisticated dark with gray-blue undertones */
-  /* Elevation: higher layers = lighter backgrounds */
+  /* Dark Mode - Aspecto Fosco (Matte Carbon) */
+  /* Reduzimos o Chroma (segundo valor) para 0.005 - 0.01 para remover o brilho azulado */
 
-  /* 60% - Base Background (refined dark gray with subtle blue) */
-  --background: oklch(0.19 0.02 250);
-  --foreground: oklch(0.96 0.005 250);
+  --background: oklch(0.18 0.008 240); /* Cinza carvão fosco */
+  --foreground: oklch(0.92 0.005 240); /* Branco suave, não ofuscante */
 
-  /* 30% - Elevated Surfaces (visible elevation steps) */
-  --card: oklch(0.23 0.018 250);
-  --card-foreground: oklch(0.96 0.005 250);
-  --popover: oklch(0.25 0.018 250);
-  --popover-foreground: oklch(0.96 0.005 250);
+  --card: oklch(0.21 0.008 240); /* Elevação sutil, mantendo o aspecto fosco */
+  --card-foreground: oklch(0.92 0.005 240);
+  --popover: oklch(0.23 0.008 240);
+  --popover-foreground: oklch(0.92 0.005 240);
 
-  /* 10% - Primary Action (crisp white for maximum contrast) */
-  --primary: oklch(0.97 0.005 250);
-  --primary-foreground: oklch(0.19 0.02 250);
+  /* Primary: Indigo levemente menos saturado para combinar com o fundo fosco */
+  --primary: oklch(0.68 0.12 255);
+  --primary-foreground: oklch(0.18 0.008 240);
 
-  /* Secondary - Subtle elevation */
-  --secondary: oklch(0.27 0.02 250);
-  --secondary-foreground: oklch(0.94 0.008 250);
+  --secondary: oklch(0.25 0.008 240);
+  --secondary-foreground: oklch(0.92 0.005 240);
 
-  /* Muted - Soft, readable secondary text */
-  --muted: oklch(0.27 0.018 250);
-  --muted-foreground: oklch(0.68 0.015 250);
+  --muted: oklch(0.25 0.008 240);
+  --muted-foreground: oklch(0.65 0.01 240);
 
-  /* Accent - Teal touch for variety */
-  --accent: oklch(0.3 0.035 200);
-  --accent-foreground: oklch(0.94 0.01 200);
+  --accent: oklch(0.28 0.015 255);
+  --accent-foreground: oklch(0.92 0.005 240);
 
-  /* Destructive - Clear but not aggressive */
-  --destructive: oklch(0.55 0.18 25);
-  --destructive-foreground: oklch(0.96 0.01 25);
+  --destructive: oklch(0.45 0.15 25);
+  --destructive-foreground: oklch(0.98 0.005 240);
 
-  /* Borders & Inputs - Refined visibility */
-  --border: oklch(0.35 0.02 250);
-  --input: oklch(0.32 0.02 250);
-  --ring: oklch(0.58 0.1 250);
+  --border: oklch(0.35 0.012 240); /* Bordas mais visíveis */
+  --input: oklch(0.28 0.01 240);
+  --ring: oklch(0.68 0.12 255);
 
-  /* Charts - Vibrant but balanced */
-  --chart-1: oklch(0.62 0.15 250);
-  --chart-2: oklch(0.67 0.14 180);
-  --chart-3: oklch(0.72 0.15 80);
-  --chart-4: oklch(0.62 0.16 30);
-  --chart-5: oklch(0.58 0.13 330);
+  /* Charts */
+  --chart-1: oklch(0.68 0.12 255);
+  --chart-2: oklch(0.65 0.13 180);
+  --chart-3: oklch(0.7 0.14 80);
+  --chart-4: oklch(0.6 0.15 30);
+  --chart-5: oklch(0.55 0.12 330);
 
-  /* Sidebar - Slightly darker than main for hierarchy */
-  --sidebar: oklch(0.16 0.02 250);
-  --sidebar-foreground: oklch(0.96 0.005 250);
-  --sidebar-primary: oklch(0.62 0.14 250);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.3 0.035 200);
-  --sidebar-accent-foreground: oklch(0.94 0.01 200);
-  --sidebar-border: oklch(0.32 0.02 250);
-  --sidebar-ring: oklch(0.58 0.1 250);
+  --sidebar: oklch(0.16 0.008 240);
+  --sidebar-foreground: oklch(0.92 0.005 240);
+  --sidebar-primary: oklch(0.68 0.12 255);
+  --sidebar-primary-foreground: oklch(0.18 0.008 240);
+  --sidebar-accent: oklch(0.23 0.008 240);
+  --sidebar-accent-foreground: oklch(0.92 0.005 240);
+  --sidebar-border: oklch(0.23 0.008 240);
+  --sidebar-ring: oklch(0.68 0.12 255);
 }
 
 .theme-login-one {
