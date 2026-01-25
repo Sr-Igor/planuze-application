@@ -158,6 +158,21 @@ import { buttonVariants } from "./button.variants";
  */
 
 /**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
  * Default loading indicator component.
  * Renders an animated spinner icon.
  */
@@ -296,9 +311,9 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
         )}
 
         {/* Loading overlay */}
-        {/* <ButtonLoader loading={loading} variant={variant}>
+        <ButtonLoader loading={loading} variant={variant}>
           {loadingIndicator}
-        </ButtonLoader> */}
+        </ButtonLoader>
       </Comp>
     );
   }
