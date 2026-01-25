@@ -1,21 +1,23 @@
 import type { notification } from "@repo/types";
 
-import { createSimpleEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
+import { createTypedEndpoint } from "../../../../infrastructure/factories/endpoint.factory";
 import { typedRequest } from "../../../../infrastructure/http/axios-client";
 
-export const notificationEndpoint = createSimpleEndpoint<notification>()({
+export const notificationEndpoint = createTypedEndpoint<notification, any, any>({
   basePath: "/api/private/notification",
   routes: {
     index: "/api/private/notification/index",
     update: "/api/private/notification/update",
   },
-  defaultQuery: {
-    orderKey: "createdAt",
-    orderValue: "desc",
-    include: {
-      company: {
-        select: {
-          logo: true,
+  queries: {
+    index: {
+      orderKey: "createdAt",
+      orderValue: "desc",
+      include: {
+        company: {
+          select: {
+            logo: true,
+          },
         },
       },
     },
