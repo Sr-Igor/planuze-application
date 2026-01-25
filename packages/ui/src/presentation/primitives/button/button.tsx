@@ -53,6 +53,111 @@ import { buttonVariants } from "./button.variants";
  */
 
 /**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
+ * Button Component Module
+ *
+ * A versatile button component that supports multiple variants, sizes,
+ * and states. Built following SOLID principles:
+ *
+ * - Single Responsibility: Each subcomponent has one job
+ * - Open/Closed: Extendable via variants, closed for modification
+ * - Liskov Substitution: Can replace native button seamlessly
+ * - Interface Segregation: Props are composable interfaces
+ * - Dependency Inversion: Depends on abstractions (Slot adapter)
+ *
+ * @module presentation/primitives/button
+ */
+
+/**
  * Default loading indicator component.
  * Renders an animated spinner icon.
  */
@@ -176,7 +281,7 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
         {/* Main content */}
         <span
           className={cn(
-            "inline-flex flex-1 items-center gap-2 transition-opacity",
+            "inline-flex flex-1 items-center justify-center gap-2 transition-opacity",
             loading && "opacity-0"
           )}
         >
@@ -191,9 +296,9 @@ const Button = forwardRef<ElementRef<"button">, ButtonProps>(
         )}
 
         {/* Loading overlay */}
-        <ButtonLoader loading={loading} variant={variant}>
+        {/* <ButtonLoader loading={loading} variant={variant}>
           {loadingIndicator}
-        </ButtonLoader>
+        </ButtonLoader> */}
       </Comp>
     );
   }
