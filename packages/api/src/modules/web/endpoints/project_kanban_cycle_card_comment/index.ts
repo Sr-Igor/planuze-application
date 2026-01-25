@@ -10,6 +10,21 @@ export const projectKanbanCycleCardCommentEndpoint =
       update: "/api/private/project_kanban_cycle_card_comment/update",
       destroy: "/api/private/project_kanban_cycle_card_comment/destroy",
     },
+    defaultQuery: {
+      include: {
+        profile: {
+          include: {
+            user: {
+              select: {
+                id: true,
+                name: true,
+                avatar: true,
+              },
+            },
+          },
+        },
+      },
+    },
   });
 
 export type ProjectKanbanCycleCardComment = project_kanban_cycle_card_comment;
