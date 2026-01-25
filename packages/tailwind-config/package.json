@@ -9,7 +9,7 @@
     "./base.css": "./base.css"
   },
   "dependencies": {
-    "tailwindcss": "^4.1.17",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss": "catalog:",
+    "tailwindcss-animate": "catalog:"
   }
 }

@@ -21,8 +21,8 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "eslint": "^9.39.1",
-    "typescript": "5.9.3",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
     "@types/js-cookie": "^3.0.6"
   }
 }

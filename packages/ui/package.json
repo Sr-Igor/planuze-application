@@ -59,24 +59,24 @@
     "@radix-ui/react-toggle": "^1.1.10",
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "react-day-picker": "^9.11.1",
     "react-resizable-panels": "^3.0.6",
-    "tailwind-merge": "^3.4.0",
+    "tailwind-merge": "catalog:",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^24.10.1",
-    "@types/react": "^19.2.6",
-    "@types/react-dom": "^19.2.3",
-    "eslint": "^9.39.1",
-    "typescript": "5.9.3",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
     "@types/react-beautiful-dnd": "^13.1.8"
   }
 }
