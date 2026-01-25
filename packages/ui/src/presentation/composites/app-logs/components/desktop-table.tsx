@@ -49,6 +49,7 @@ export const DesktopTable = <T,>({
                 <AppTooltip text={oldFormatted.full} className="block w-full">
                   <button
                     type="button"
+                    tabIndex={-1}
                     className="block w-full truncate text-left select-text"
                     onDoubleClick={() => copyToClipboard(oldFormatted.full)}
                   >
@@ -60,6 +61,7 @@ export const DesktopTable = <T,>({
                 <AppTooltip text={newFormatted.full} className="block w-full">
                   <button
                     type="button"
+                    tabIndex={-1}
                     className="block w-full truncate text-left text-gray-700 select-text dark:text-gray-200"
                     onDoubleClick={() => copyToClipboard(newFormatted.full)}
                   >
