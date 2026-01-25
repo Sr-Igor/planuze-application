@@ -16,7 +16,7 @@ export const AppCardSelector = ({
 }: IAppCardSelectorProps) => {
   return (
     <div className={cn("flex w-full items-center gap-2 text-sm", className)}>
-      <div className="w-[20px]">
+      <div className="w-5">
         <AppTooltip
           text={`${item.title} / ${item.project_kanban_cycle?.title} / ${item.project_kanban_cycle_column?.title}`}
         >

@@ -1,8 +1,8 @@
 import { PackageOpen, Plus } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
 
-import { project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { project_kanban_cycle_card } from "@repo/types";
 import { Button } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
@@ -95,7 +95,7 @@ export const DependenciesAndObjectives = ({
                   });
                 }}
               >
-                <AppCardSelector item={subCard} />
+                <AppCardSelector item={subCard} className="justify-space-between w-ful" />
               </Button>
             ))}
           </div>
