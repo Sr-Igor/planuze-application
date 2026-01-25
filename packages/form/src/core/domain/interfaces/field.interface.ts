@@ -14,20 +14,15 @@ import { IOption } from "../../../shared/types/select.types";
  */
 export interface IFieldBaseProps<FormType extends FieldValues> {
   name: keyof FormType;
-  placeholder?: string;
   label?: string;
-  ref_key?: string;
-  type?: string;
   className?: string;
   inputClassName?: string;
   required?: boolean;
-  clearable?: boolean;
-  hide?: boolean;
   disabled?: boolean;
+  hide?: boolean;
   tooltip?: string;
   autoFocus?: boolean;
   id?: string;
-  loading?: boolean;
   skipHtmlFor?: boolean;
 }
 
@@ -46,6 +41,9 @@ export interface IOptionsProps {
   customSelect?: (item: any, fallbackValue?: string) => React.ReactNode;
   customTrigger?: (data: { selected?: IOption | null; disabled?: boolean }) => React.ReactNode;
   fallbackValue?: string | null;
+  loading?: boolean;
+  clearable?: boolean;
+  placeholder?: string;
 }
 
 /**
@@ -62,6 +60,7 @@ export interface IRequestProps {
   setSearch?: (search: string | null) => void;
   search?: string | null;
   enabledOnOpen?: boolean;
+  loading?: boolean;
 }
 
 /**
@@ -79,6 +78,7 @@ export interface IDateProps {
 export interface ICurrencyProps {
   currency?: string;
   onCurrencyChange?: (currency: string) => void;
+  placeholder?: string;
 }
 
 /**
@@ -88,6 +88,7 @@ export interface INumericProps {
   int?: boolean;
   positive?: boolean;
   showArrows?: boolean;
+  placeholder?: string;
 }
 
 /**
@@ -96,6 +97,7 @@ export interface INumericProps {
 export interface IFileProps {
   path?: string;
   publicFile?: boolean;
+  clearable?: boolean;
 }
 
 // =============================================================================
@@ -105,6 +107,8 @@ export interface IFileProps {
 /** Basic text input fields */
 type BasicInputField<T extends FieldValues> = IFieldBaseProps<T> & {
   field: "input" | "textarea" | "cep" | "cpf" | "cnpj" | "phone";
+  type?: string;
+  placeholder?: string;
 };
 
 /** Numeric input fields */
@@ -160,11 +164,13 @@ type TagsField<T extends FieldValues> = IFieldBaseProps<T> &
   IOptionsProps &
   IRequestProps & {
     field: "tags";
+    placeholder?: string;
   };
 
 /** Rich text editor field */
 type EditorField<T extends FieldValues> = IFieldBaseProps<T> & {
   field: "editor";
+  placeholder?: string;
 };
 
 /**
@@ -212,20 +218,18 @@ export interface IAllFieldProps
   field?: string;
   placeholder?: string;
   label?: string;
-  ref_key?: string;
   type?: string;
   className?: string;
   inputClassName?: string;
   required?: boolean;
   clearable?: boolean;
-  hide?: boolean;
   disabled?: boolean;
   tooltip?: string;
   autoFocus?: boolean;
   id?: string;
   loading?: boolean;
   skipHtmlFor?: boolean;
-  read?: string;
+  read?: string | boolean;
 }
 
 /**
