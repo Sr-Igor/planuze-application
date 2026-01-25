@@ -5,7 +5,6 @@
  *
  * @module presentation/composites/app-table/hooks
  */
-
 import { useMemo } from "react";
 
 import { BaseTableItem, TableProps } from "../types";
@@ -56,7 +55,15 @@ export function useTableState<T extends BaseTableItem>(props: TableProps<T>) {
       hasData: data.length > 0,
       hasActions: actions.length > 0,
     }),
-    [data, state.loadingItems, state.expandedItems, selectionState, loading, actions, disabledCheckbox]
+    [
+      data,
+      state.loadingItems,
+      state.expandedItems,
+      selectionState,
+      loading,
+      actions,
+      disabledCheckbox,
+    ]
   );
 
   const actionHandlers = useMemo(
@@ -80,7 +87,16 @@ export function useTableState<T extends BaseTableItem>(props: TableProps<T>) {
       handleLimitChange: filtersState.handleLimitChange,
       resetFilters: filtersState.resetFilters,
     }),
-    [selectionState, sortingState, events, filtersState, data, filters.orderKey, filters.orderValue, disabledCheckbox]
+    [
+      selectionState,
+      sortingState,
+      events,
+      filtersState,
+      data,
+      filters.orderKey,
+      filters.orderValue,
+      disabledCheckbox,
+    ]
   );
 
   return {

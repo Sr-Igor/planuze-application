@@ -59,6 +59,14 @@ import { getTableVariantClasses } from "./utils/helpers";
  * @module presentation/composites/app-table
  */
 
+/**
+ * AppTable Component Module
+ *
+ * A feature-rich data table component with sorting, pagination, selection, and actions.
+ *
+ * @module presentation/composites/app-table
+ */
+
 // ...
 
 function TableComponent<T extends BaseTableItem>({

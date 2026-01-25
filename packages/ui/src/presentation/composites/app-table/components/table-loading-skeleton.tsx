@@ -14,6 +14,12 @@ import { TableBody, TableCell, TableRow } from "../../../primitives/table";
 import { BaseTableItem, TableColumn, TableLoadingSkeletonProps } from "../types";
 
 /**
+ * TableLoadingSkeleton Component
+ *
+ * @module presentation/composites/app-table/components
+ */
+
+/**
  * Convert a dimension value to CSS string
  */
 const toCssDimension = (value: number | string): string =>
@@ -55,7 +61,7 @@ function TableLoadingSkeletonComponent<T extends BaseTableItem>({
       {Array.from({ length: rows }, (_, index) => (
         <TableRow
           key={`skeleton-row-${index}`}
-          className={cn("group transition-none", "animate-pulse", "border-border/50 border-b")}
+          className={cn("group transition-none", "border-border/50 border-b")}
         >
           {selectable && (
             <TableCell
