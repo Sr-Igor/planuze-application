@@ -1,21 +1,22 @@
 import { BadgeCheck, ShieldBan } from "lucide-react";
 
 import { profile } from "@repo/types";
-import { DropdownMenuItem , cn , AppAvatar } from "../../../../packages/ui/src";
 
+import { cn } from "../../../shared/utils";
+import { DropdownMenuItem } from "../../primitives/dropdown-menu";
+import { AppAvatar } from "../app-avatar";
 
-
-interface ProfileSelectItemProps {
+export interface AppProfileSelectProps {
   profile: profile;
   isCurrentProfile: boolean;
   onSelect: () => void;
 }
 
-export const ProfileSelectItem = ({
+export const AppProfileSelect = ({
   profile,
   isCurrentProfile,
   onSelect,
-}: ProfileSelectItemProps) => {
+}: AppProfileSelectProps) => {
   return (
     <DropdownMenuItem
       onClick={onSelect}

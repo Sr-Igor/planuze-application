@@ -912,6 +912,9 @@ importers:
       '@repo/redux':
         specifier: workspace:*
         version: link:../redux
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../types
       '@tanstack/react-query':
         specifier: 'catalog:'
         version: 5.90.10(react@19.2.0)

@@ -1,18 +1,19 @@
 import { differenceInDays } from "date-fns";
 import { Check, X } from "lucide-react";
 
+import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { invite } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton , AppAvatar } from "@repo/ui";
 
+import { Button, Card, CardContent, CardHeader, CardTitle, Skeleton } from "../../primitives";
+import { AppAvatar } from "../app-avatar";
 
-export interface IAppInviteProps {
+export interface AppInviteProps {
   invite: invite;
   loading: boolean;
   onFeedback: (data: { item: invite; mode: "accept" | "reject" }) => void;
 }
 
-export const AppInvite = ({ invite, loading, onFeedback }: IAppInviteProps) => {
+export const AppInvite = ({ invite, loading, onFeedback }: AppInviteProps) => {
   const t = useLang();
   const { dates } = useIntlFormat();
 

@@ -22,6 +22,7 @@ import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { invite, Pagination, profile as TProfile } from "@repo/types";
 import {
+  AppImage,
   AppTooltip,
   Avatar,
   AvatarFallback,
@@ -33,7 +34,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  Img,
   SidebarMenu,
   SidebarMenuItem,
   useSidebar,
@@ -90,7 +90,7 @@ export function NavUser({
             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground flex items-center gap-2 p-2"
           >
             <Avatar className="h-8 w-8 rounded-lg">
-              <Img
+              <AppImage
                 src={user?.avatar || ""}
                 alt={user?.name || "-"}
                 path="user/avatar"
@@ -120,7 +120,7 @@ export function NavUser({
           <DropdownMenuLabel className="p-0 font-normal">
             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
               <Avatar className="h-8 w-8 rounded-lg">
-                <Img
+                <AppImage
                   src={user?.avatar || ""}
                   alt={user?.name || "-"}
                   path="user/avatar"
@@ -162,7 +162,7 @@ export function NavUser({
                 >
                   <span className="relative flex items-center gap-2 text-xs">
                     <Avatar className="h-[20px] w-[20px] rounded-lg">
-                      <Img
+                      <AppImage
                         src={p.company?.logo || ""}
                         alt={p.company?.name || "logo"}
                         path="company/logo"

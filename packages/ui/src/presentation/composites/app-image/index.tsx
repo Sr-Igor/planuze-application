@@ -9,7 +9,7 @@ import { useLang } from "@repo/language/hooks";
 import { Skeleton } from "../../primitives/skeleton";
 import { useImage } from "./use-image";
 
-export interface IAppImage extends ImageProps {
+export interface AppImageProps extends ImageProps {
   callbackLink?: (url: string | null) => void;
   path: string;
   default?: string;
@@ -35,7 +35,7 @@ export const Component = ({
   skipDefault = false,
   publicFile = false,
   ...rest
-}: IAppImage) => {
+}: AppImageProps) => {
   const { helper } = useLang();
 
   const skipReq =

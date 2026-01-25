@@ -1,7 +1,9 @@
 import { useRouter } from "next/navigation";
 
 import { useLang } from "@repo/language/hooks";
+import { useAppSelector } from "@repo/redux/hook";
 import {
+  AppProfileSelect,
   Button,
   DropdownMenu,
   DropdownMenuContent,
@@ -10,9 +12,7 @@ import {
   useIsMobile,
 } from "@repo/ui";
 
-import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
-import { useAppSelector } from "@repo/redux/hook";
 
 export interface ProfileSwitcherProps {
   callbackUrl?: string;
@@ -45,7 +45,7 @@ export const ProfileSwitcher = ({ callbackUrl }: ProfileSwitcherProps) => {
       >
         <DropdownMenuGroup>
           {user?.profiles?.map((p) => (
-            <ProfileSelectItem
+            <AppProfileSelect
               key={p.id}
               profile={p}
               isCurrentProfile={p.id === currentProfile?.id}

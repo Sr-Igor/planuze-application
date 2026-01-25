@@ -18,6 +18,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
+  AppProfileSelect,
   Button,
   cn,
   DropdownMenu,
@@ -28,7 +29,6 @@ import {
   DropdownMenuTrigger,
 } from "@repo/ui";
 
-import { ProfileSelectItem } from "@/components/profile-select";
 import { useAccess } from "@/hooks/access";
 
 export const InactiveModal = () => {
@@ -108,7 +108,7 @@ export const InactiveModal = () => {
                   </span>
                 </DropdownMenuLabel>
                 {user?.profiles?.map((p) => (
-                  <ProfileSelectItem
+                  <AppProfileSelect
                     key={p.id}
                     profile={p}
                     isCurrentProfile={p.id === profile?.id}

@@ -2,9 +2,7 @@ import { useState } from "react";
 
 import { useLang } from "@repo/language/hooks";
 import { invite } from "@repo/types";
-import { AppDialog, Button } from "@repo/ui";
-
-import { AppInvite } from "@/components/app.invite";
+import { AppDialog, AppInvite, Button } from "@repo/ui";
 
 export interface IInviteProps {
   invites: invite[];

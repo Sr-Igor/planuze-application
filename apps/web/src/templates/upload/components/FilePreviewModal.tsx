@@ -7,7 +7,7 @@ import { toast } from "sonner";
 
 import { downloadFile } from "@repo/api";
 import { useLang } from "@repo/language/hooks";
-import { AppDialog, Button, Img } from "@repo/ui";
+import { AppDialog, AppImage, Button } from "@repo/ui";
 
 import { IUploadFile } from "../types";
 
@@ -60,7 +60,7 @@ export const FilePreviewModal = memo(
         }
       >
         <div className="bg-muted relative aspect-video h-[100%] w-[100%] overflow-hidden rounded-lg">
-          <Img
+          <AppImage
             src={file.preview}
             alt={file.file?.name || "file"}
             fill

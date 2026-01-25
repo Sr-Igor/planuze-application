@@ -1,19 +1,21 @@
 import { project_kanban_cycle_card } from "@repo/types";
-import { AppTooltip, cn, Icon } from "@repo/ui";
 
-export interface IAppCardSelectorProps {
+import { AppTooltip, Icon } from "..";
+import { cn } from "../../../shared/utils";
+
+export interface AppCardCycleSelectorProps {
   item: project_kanban_cycle_card;
   showPath?: boolean;
   showPublicId?: boolean;
   className?: string;
 }
 
-export const AppCardSelector = ({
+export const AppCardCycleSelector = ({
   item,
   showPath = true,
   showPublicId = false,
   className,
-}: IAppCardSelectorProps) => {
+}: AppCardCycleSelectorProps) => {
   return (
     <div className={cn("flex w-full items-center gap-2 text-sm", className)}>
       <div className="w-5">

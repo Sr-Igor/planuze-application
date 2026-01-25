@@ -1,9 +1,8 @@
 import { BellRing, ChevronRight, Trash } from "lucide-react";
 
+import { useIntlFormat, useLang } from "@repo/language/hooks";
 import { notification } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
-
-import { Img , cn } from "@repo/ui";
+import { AppImage, cn } from "@repo/ui";
 
 export interface ICard {
   notification: notification;
@@ -39,7 +38,7 @@ export const Card = ({ notification, onRemove, onRedirect }: ICard) => {
     >
       <div className="relative mt-0.5 flex h-8 w-8 items-center justify-center self-start rounded-md bg-transparent">
         {notification?.company?.logo ? (
-          <Img
+          <AppImage
             src={notification.company?.logo}
             alt="Logo"
             fill
