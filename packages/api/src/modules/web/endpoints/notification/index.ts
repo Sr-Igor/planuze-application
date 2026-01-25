@@ -9,6 +9,11 @@ export const notificationEndpoint = createTypedEndpoint<notification, any, any>(
     index: "/api/private/notification/index",
     update: "/api/private/notification/update",
   },
+  tooltips: {
+    update: {
+      success: false,
+    },
+  },
   queries: {
     index: {
       orderKey: "createdAt",

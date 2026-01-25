@@ -57,6 +57,21 @@ export interface TypedEndpointRoutes {
   restore?: Routes;
 }
 
+type TooltipState = {
+  success?: boolean;
+  error?: boolean;
+};
+export interface Tooltips {
+  index?: TooltipState;
+  show?: TooltipState;
+  store?: TooltipState;
+  update?: TooltipState;
+  destroy?: TooltipState;
+  many?: TooltipState;
+  trash?: TooltipState;
+  restore?: TooltipState;
+}
+
 /**
  * Options for typed endpoint creation using callEndpoint
  */
@@ -70,6 +85,11 @@ export interface CreateTypedEndpointOptions<T> extends EndpointConfig {
    * Placeholder for loading data
    */
   placeholder?: Pagination<T>;
+
+  /**
+   * Tooltips for each action
+   */
+  tooltips?: Tooltips;
 }
 
 /**
@@ -99,7 +119,7 @@ export interface CreateTypedEndpointOptions<T> extends EndpointConfig {
 export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Partial<T>>(
   config: CreateTypedEndpointOptions<T>
 ): IEndpoint<T, CreateDTO, UpdateDTO> => {
-  const { routes, queries, formDataFields } = config;
+  const { routes, queries, formDataFields, tooltips } = config;
 
   return {
     index: async (filters?: QueryFilters): Promise<Pagination<T>> => {
@@ -110,7 +130,10 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
         query: mergedFilters,
       } as Parameters<typeof callEndpoint>[0]);
 
-      return handleRequest<Pagination<T>>(handle.method, handle.url);
+      return handleRequest<Pagination<T>>(handle.method, handle.url, undefined, undefined, {
+        showSuccess: tooltips?.index?.success,
+        hideError: tooltips?.index ? !tooltips.index.error : undefined,
+      });
     },
 
     show: async (id: string): Promise<T> => {
@@ -121,7 +144,8 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
       } as Parameters<typeof callEndpoint>[0]);
 
       return handleRequest<T>(handle.method, handle.url, undefined, undefined, {
-        hideError: true,
+        showSuccess: tooltips?.show?.success,
+        hideError: tooltips?.show ? !tooltips.show.error : true,
       });
     },
 
@@ -140,7 +164,10 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
         handle.url,
         prepared.body,
         prepared.config,
-        { showSuccess: true }
+        {
+          showSuccess: tooltips?.store?.success ?? true,
+          hideError: tooltips?.store ? !tooltips.store.error : undefined,
+        }
       );
     },
 
@@ -164,7 +191,10 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
         handle.url,
         prepared.body,
         prepared.config,
-        { showSuccess: true }
+        {
+          showSuccess: tooltips?.update?.success ?? true,
+          hideError: tooltips?.update ? !tooltips.update.error : undefined,
+        }
       );
     },
 
@@ -178,7 +208,8 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
       } as Parameters<typeof callEndpoint>[0]);
 
       return handleRequest<T | Pagination<T>>(handle.method, handle.url, undefined, undefined, {
-        showSuccess: true,
+        showSuccess: tooltips?.destroy?.success ?? true,
+        hideError: tooltips?.destroy ? !tooltips.destroy.error : undefined,
       });
     },
 
@@ -198,7 +229,8 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
           } as Parameters<typeof callEndpoint>[0]);
 
           return handleRequest<T[] | Pagination<T>>(handle.method, handle.url, body, undefined, {
-            showSuccess: true,
+            showSuccess: tooltips?.many?.success ?? true,
+            hideError: tooltips?.many ? !tooltips.many.error : undefined,
           });
         }
       : undefined,
@@ -212,7 +244,10 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
             query: mergedFilters,
           } as Parameters<typeof callEndpoint>[0]);
 
-          return handleRequest<Pagination<T>>(handle.method, handle.url);
+          return handleRequest<Pagination<T>>(handle.method, handle.url, undefined, undefined, {
+            showSuccess: tooltips?.trash?.success,
+            hideError: tooltips?.trash ? !tooltips.trash.error : undefined,
+          });
         }
       : undefined,
 
@@ -227,7 +262,8 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
           } as Parameters<typeof callEndpoint>[0]);
 
           return handleRequest<T | Pagination<T>>(handle.method, handle.url, undefined, undefined, {
-            showSuccess: true,
+            showSuccess: tooltips?.restore?.success ?? true,
+            hideError: tooltips?.restore ? !tooltips.restore.error : undefined,
           });
         }
       : undefined,

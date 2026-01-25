@@ -61,7 +61,7 @@ export const useNotification = (props: UseCallerProps<notification>): UseNotific
     mutationFn: ({ id, read }) =>
       notificationEndpoint.update(id, { read }) as Promise<notification>,
     onSuccess: (data) => {
-      cache.invalidateQueries(indexKey);
+      cache.refetchQueries(indexKey);
       callbacks?.update?.onSuccess?.(data);
     },
     onError: callbacks?.update?.onError,
