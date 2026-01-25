@@ -163,7 +163,7 @@ export const HashtagPopover: React.FC<HashtagPopoverProps> = ({
     }
   }, [items.length, selectedIndex]);
 
-  if (!open) return null;
+  if (!open || (position.top === 0 && position.left === 0)) return null;
 
   const popoverContent = (
     <div

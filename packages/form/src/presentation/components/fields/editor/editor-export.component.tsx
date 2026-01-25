@@ -99,16 +99,9 @@ export const Editor: React.FC<EditorProps> = ({
       <div
         ref={refs.editorRef}
         className={cn("group relative", isEmptyAndNotDisabled && "cursor-pointer")}
+        onClick={handleClick}
+        onDoubleClick={handleDoubleClick}
       >
-        {isEmptyAndNotDisabled && (
-          <button
-            type="button"
-            className="absolute inset-0 z-10 h-full w-full cursor-pointer"
-            onClick={handleClick}
-            onDoubleClick={handleDoubleClick}
-            aria-label={placeholder || "Click to edit"}
-          />
-        )}
         <EditorContent editor={editor} disabled={disabled} />
         {isEmpty && <Placeholder placeholder={value ? "" : placeholder || ""} />}
         {editor && (
