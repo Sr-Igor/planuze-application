@@ -1,6 +1,5 @@
+import { PaginationParams } from "@repo/hooks";
 import { plan } from "@repo/types";
-
-import { PaginationParams } from "@/types/pagination";
 
 export interface State {
   filters: PaginationParams;

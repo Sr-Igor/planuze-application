@@ -1,6 +1,5 @@
+import { PaginationParams } from "@repo/hooks";
 import { billing_error } from "@repo/types";
-
-import { PaginationParams } from "@/types/pagination";
 
 export interface State {
   filters: PaginationParams;

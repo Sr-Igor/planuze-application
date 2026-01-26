@@ -1,5 +1,5 @@
+import { PaginationParams } from "@repo/hooks";
 import { feature } from "@repo/types";
-import { PaginationParams } from "@repo/types/pagination";
 
 export interface State {
   filters: PaginationParams;
