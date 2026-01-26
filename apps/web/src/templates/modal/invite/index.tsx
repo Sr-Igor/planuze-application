@@ -1,6 +1,7 @@
 "use client";
 
 import { useInvite } from "@repo/api/web";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector, useAuth } from "@repo/redux/hook";
 import {
@@ -15,7 +16,6 @@ import {
 } from "@repo/ui";
 
 import { Invite } from "@/app/[locale]/config/welcome/options/invite";
-import { useModal } from "@/hooks/modal";
 import { useUserSet } from "@/hooks/user-set";
 
 export const InviteModal = () => {

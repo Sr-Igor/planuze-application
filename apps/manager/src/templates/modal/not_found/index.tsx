@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
 import { NotFoundGif } from "@repo/assets";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -17,8 +18,6 @@ import {
   InfoModalLayout,
 } from "@repo/ui";
 
-import { useModal } from "@/hooks/modal";
-
 export const NotFoundModal = () => {
   const t = useLang();
 
@@ -26,7 +25,7 @@ export const NotFoundModal = () => {
   const pathName = usePathname();
 
   const { not_found: isModalOpen } = useAppSelector((state) => state.modal);
-  const setModal = useModal();
+  const { setModal } = useModal();
 
   useEffect(() => {
     setModal({ not_found: false });

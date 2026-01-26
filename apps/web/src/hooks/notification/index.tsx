@@ -5,11 +5,10 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import { useNotificationSubscription } from "@repo/api/web";
+import { useModal } from "@repo/hooks";
 import { useAppDispatch, useAuth } from "@repo/redux/hook";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { urlToBase64 } from "@repo/utils";
-
-import { useModal } from "../modal";
 
 function areSubscriptionsEqual(sub1: any, sub2: any) {
   if (!sub1 || !sub2) return false;

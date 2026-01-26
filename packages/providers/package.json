@@ -1,0 +1,40 @@
+{
+  "name": "@repo/providers",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit --skipLibCheck || true",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "next": "catalog:",
+    "next-intl": "catalog:",
+    "next-themes": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "zod": "catalog:",
+    "lucide-react": "catalog:",
+    "react-hook-form": "catalog:",
+    "date-fns": "catalog:",
+    "recharts": "catalog:",
+    "sonner": "catalog:"
+  },
+  "dependencies": {
+    "nprogress": "^0.2.0",
+    "@repo/hooks": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "@types/nprogress": "^0.2.3"
+  }
+}

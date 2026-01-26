@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 
 import { getProfile } from "@repo/cookies";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -16,8 +17,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@repo/ui";
-
-import { useModal } from "@/hooks/modal";
 
 export const ProfileModal = () => {
   const t = useLang();

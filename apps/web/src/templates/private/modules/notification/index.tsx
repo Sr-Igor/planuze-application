@@ -7,6 +7,7 @@ import { Bell, X } from "lucide-react";
 
 import { useNotification } from "@repo/api/web";
 import { Calendar } from "@repo/form";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import {
   Button,
@@ -18,8 +19,6 @@ import {
   DrawerTitle,
   Skeleton,
 } from "@repo/ui";
-
-import { useModal } from "@/hooks/modal";
 
 import { Card } from "./card";
 
@@ -53,7 +52,11 @@ export const Notifications = () => {
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
     // Load more when user scrolls near the bottom
-    if (scrollTop + clientHeight >= scrollHeight - 100 && hasNextPage && !index.isFetchingNextPage) {
+    if (
+      scrollTop + clientHeight >= scrollHeight - 100 &&
+      hasNextPage &&
+      !index.isFetchingNextPage
+    ) {
       index.fetchNextPage();
     }
   };

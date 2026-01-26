@@ -5,13 +5,13 @@ import { useState } from "react";
 //React-query
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { useModal } from "@/hooks/modal";
+import { useModal } from "@repo/hooks";
 
 export interface IProviderProps {
   children: React.ReactNode;
 }
 
-export const Provider = ({ children }: IProviderProps) => {
+export const QueryProvider = ({ children }: IProviderProps) => {
   const { setModal, modal } = useModal();
 
   const [queryClient] = useState(

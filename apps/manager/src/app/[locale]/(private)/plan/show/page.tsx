@@ -2,10 +2,9 @@
 
 import { useParams } from "next/navigation";
 
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { cn } from "@repo/ui";
-
-import { useModal } from "@/hooks/modal";
 
 import { PlanCancelDialog, PlanHeader, PlanTabs } from "./components";
 import { PlanShowProvider } from "./context";
@@ -20,7 +19,7 @@ export default function Page() {
   const { state, setState, show, handleTabChange } = useAdminPlanShow(id);
   const { handleCancel, handleCancelDialog } = usePlanActions();
 
-  useModal(show);
+  useModal();
 
   const tabs = [
     {

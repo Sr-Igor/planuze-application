@@ -6,11 +6,11 @@ import { useEffect, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { useAuth } from "@repo/api/web";
+import { useModal } from "@repo/hooks";
 import { useAppDispatch, useAuth as userAuth } from "@repo/redux/hook";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import { create } from "@repo/redux/store/modules/user/actions";
 
-import { useModal } from "@/hooks/modal";
 import { LoaderTemplate } from "@/templates/loader";
 
 export default function HidratePage() {

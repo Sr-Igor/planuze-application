@@ -5,12 +5,12 @@ import { useEffect } from "react";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-
-import { useModal } from "@/hooks/modal";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { create } from "@repo/redux/store/modules/user/actions";
+
 import { LoaderTemplate } from "@/templates/loader";
 
 export default function LoginPage() {

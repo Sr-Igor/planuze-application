@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
 import { geistMono, geistSans } from "@repo/fonts";
+import { Progress, QueryProvider } from "@repo/providers";
 import { Provider as Redux } from "@repo/redux/provider";
 import { Toaster } from "@repo/ui";
 
 import "@/app/globals.css";
-import { Progress } from "@/providers/progress";
-import { Provider as Query } from "@/providers/query";
 import { Provider as Socket } from "@/providers/socket";
 
 export const metadata: Metadata = {
@@ -33,11 +32,11 @@ const Layout = async ({
           <Progress />
           <div className="fixed top-0 right-10 z-50"></div>
           <Redux>
-            <Query>
+            <QueryProvider>
               {children}
               <Socket />
               <Toaster />
-            </Query>
+            </QueryProvider>
           </Redux>
         </ThemeProvider>
       </body>

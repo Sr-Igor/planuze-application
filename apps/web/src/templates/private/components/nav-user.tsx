@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import { useClean } from "@repo/cookies";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { invite, Pagination, profile as TProfile } from "@repo/types";
@@ -40,7 +41,6 @@ import {
 } from "@repo/ui";
 
 import { useAccess } from "@/hooks/access";
-import { useModal } from "@/hooks/modal";
 
 interface NavUserProps {
   variant?: "large" | "small";

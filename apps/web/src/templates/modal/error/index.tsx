@@ -3,6 +3,7 @@
 import { RotateCcw, XCircle } from "lucide-react";
 
 import { useClean } from "@repo/cookies";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -14,8 +15,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@repo/ui";
-
-import { useModal } from "@/hooks/modal";
 
 export const ErrorModal = () => {
   const t = useLang();

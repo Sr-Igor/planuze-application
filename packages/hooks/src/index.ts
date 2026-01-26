@@ -4,3 +4,4 @@ export * from "./loading";
 export * from "./unload";
 export * from "./meta-color";
 export * from "./search-params";
+export * from "./modal";

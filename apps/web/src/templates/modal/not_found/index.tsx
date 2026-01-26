@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
 import { NotFoundGif } from "@repo/assets";
+import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import {
   Button,
@@ -15,8 +16,6 @@ import {
   DialogHeader,
   InfoModalLayout,
 } from "@repo/ui";
-
-import { useModal } from "@/hooks/modal";
 
 export const NotFoundModal = () => {
   const t = useLang();
