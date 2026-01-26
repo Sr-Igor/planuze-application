@@ -9,7 +9,7 @@ import { routing } from "./routing";
 function getLocalesPath(): string {
   const cwd = process.cwd();
 
-  if (cwd.includes("apps/web")) {
+  if (cwd.includes("apps/")) {
     return join(cwd, "..", "..", "packages", "language", "locales");
   }
 
