@@ -4,9 +4,8 @@ import { LoaderCircle } from "lucide-react";
 
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
+import { CenterTemplate } from "@repo/templates";
 import { Button } from "@repo/ui";
-
-import { CenterTemplate } from "../center";
 
 export interface LoaderTemplateProps {
   inConfig?: boolean;

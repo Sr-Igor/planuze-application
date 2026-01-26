@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import { useLang } from "@repo/language/hooks";
-import { Button , AppDialog } from "@repo/ui";
-
-import { AppTabs } from "@/components/app-tabs";
 import { hookValidate } from "@repo/form";
+import { useLang } from "@repo/language/hooks";
+import { AppDialog, AppTabs, Button } from "@repo/ui";
 
 import { useKanbanShow } from "../../context";
 import { useForm } from "../drawers/card-type/use-form";

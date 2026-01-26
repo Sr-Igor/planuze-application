@@ -1,8 +1,6 @@
 import { memo } from "react";
 
-import { ScrollArea } from "@repo/ui";
-
-import { AppTabs } from "@/components/app-tabs";
+import { AppTabs, ScrollArea } from "@repo/ui";
 
 import { TabsProps } from "../types";
 

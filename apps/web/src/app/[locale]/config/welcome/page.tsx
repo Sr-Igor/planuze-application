@@ -10,9 +10,7 @@ import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import { CenterTemplate } from "@repo/templates";
-import { Button, Skeleton } from "@repo/ui";
-
-import { AppTabs } from "@/components/app-tabs";
+import { AppTabs, Button, Skeleton } from "@repo/ui";
 
 import { Invite } from "./options/invite";
 import { Registry } from "./options/registry";

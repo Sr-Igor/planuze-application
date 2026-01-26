@@ -2,10 +2,20 @@ import { memo } from "react";
 
 import { LockIcon } from "lucide-react";
 
-import { SimpleSelect } from "@repo/form";
-import { cn, Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
+import { cn } from "../../../shared/utils";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../primitives";
 
-export interface IAppTabsProps {
+export interface AppTabsProps {
   tabs: {
     value: string;
     title: string;
@@ -31,7 +41,7 @@ export const AppTabs = memo(function AppTabs({
   onChange,
   headerClassName,
   hideTabs = false,
-}: IAppTabsProps) {
+}: AppTabsProps) {
   return (
     <Tabs defaultValue={defaultValue} className={className} value={value} onValueChange={onChange}>
       {!hideTabs && (
@@ -39,17 +49,22 @@ export const AppTabs = memo(function AppTabs({
           {/* Mobile: Select */}
           <div className={cn("mb-4", headerClassName)}>
             <div className="block w-full md:hidden">
-              <SimpleSelect
-                options={tabs.map((tab) => ({
-                  label: tab.title,
-                  value: tab.value,
-                  disabled: tab.disabled || tab.loading,
-                }))}
-                value={value}
-                onChange={onChange}
-                triggerClassName="w-full"
-                className="text-xs"
-              />
+              <Select value={value} onValueChange={onChange}>
+                <SelectTrigger className="w-full text-xs">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {tabs.map((tab) => (
+                    <SelectItem
+                      key={tab.value}
+                      value={tab.value}
+                      disabled={tab.disabled || tab.loading}
+                    >
+                      {tab.title}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             {/* Desktop: Tabs */}
             <TabsList className="bg-secondary hidden w-full justify-between overflow-x-auto p-1 md:flex">

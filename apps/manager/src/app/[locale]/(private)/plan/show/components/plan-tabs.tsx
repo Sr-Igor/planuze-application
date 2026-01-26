@@ -1,4 +1,4 @@
-import { AppTabs } from "@/components/app-tabs";
+import { AppTabs } from "@repo/ui";
 
 import { PlanTabsProps } from "../types";
 

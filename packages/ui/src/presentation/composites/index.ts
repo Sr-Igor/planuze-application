@@ -183,3 +183,7 @@ export type { AppCardCycleSelectorProps } from "./app-card-cycle-selector";
 // AppCardTypeSelector
 export { AppCardTypeSelector } from "./app-card-type-selector";
 export type { AppCardTypeSelectorProps } from "./app-card-type-selector";
+
+// AppTabs
+export { AppTabs } from "./app-tabs";
+export type { AppTabsProps } from "./app-tabs";

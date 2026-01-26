@@ -8,9 +8,7 @@ import { usePlan } from "@repo/api/manager";
 import { hookValidate, useFormList } from "@repo/form";
 import { useUnload } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-import { Button, cn } from "@repo/ui";
-
-import { AppTabs } from "@/components/app-tabs";
+import { AppTabs, Button, cn } from "@repo/ui";
 
 import { usePlanShow } from "../../context";
 import { FormType, useFields } from "./hooks";
