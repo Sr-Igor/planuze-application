@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { ChevronLeft } from "lucide-react";
 
+import { NotFoundGif } from "@repo/assets";
 import { useLang } from "@repo/language/hooks";
 import { CenterTemplate } from "@repo/templates";
 import { Button } from "@repo/ui";
@@ -16,7 +17,7 @@ export default function NotFound() {
   return (
     <CenterTemplate>
       <>
-        <Image alt="not found" src={"/images/not_found.gif"} width={150} height={150} />
+        <Image alt="not found" src={NotFoundGif} width={150} height={150} />
         <h1 className="text-muted-foreground pb-5 text-center text-xl font-semibold">
           {t.helper("not_found_page")}
         </h1>

@@ -4,25 +4,27 @@ import { useTheme } from "next-themes";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 
+import { Clock1, Clock2, ClockDark, ClockLight } from "@repo/assets";
+
 import { cn } from "../../../shared/utils";
 
 export interface AppClockProps extends Omit<ImageProps, "alt" | "src"> {
   /**
    * Light theme clock base image path
    */
-  clockLightBase?: string;
+  clockLightBase?: any;
   /**
    * Light theme clock pointer image path
    */
-  clockLightPointer?: string;
+  clockLightPointer?: any;
   /**
    * Dark theme clock base image path
    */
-  clockDarkBase?: string;
+  clockDarkBase?: any;
   /**
    * Dark theme clock pointer image path
    */
-  clockDarkPointer?: string;
+  clockDarkPointer?: any;
   /**
    * Link href (defaults to "/")
    */
@@ -34,10 +36,10 @@ export interface AppClockProps extends Omit<ImageProps, "alt" | "src"> {
 }
 
 export const AppClock = ({
-  clockLightBase = "/images/clock-dark.png",
-  clockLightPointer = "/images/clock-dark-2.png",
-  clockDarkBase = "/images/clock-1.png",
-  clockDarkPointer = "/images/clock-2.png",
+  clockLightBase = ClockDark,
+  clockLightPointer = ClockLight,
+  clockDarkBase = Clock1,
+  clockDarkPointer = Clock2,
   href = "/",
   alt,
   className,

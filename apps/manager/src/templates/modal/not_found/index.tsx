@@ -5,6 +5,7 @@ import { useCallback, useEffect } from "react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
+import { NotFoundGif } from "@repo/assets";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hook";
 import {
@@ -56,7 +57,7 @@ export const NotFoundModal = () => {
       <DialogContent>
         <DialogHeader>
           <InfoModalLayout
-            icon={<Image src={"/images/not_found.gif"} height={100} width={100} alt="" />}
+            icon={<Image src={NotFoundGif} height={100} width={100} alt="" />}
             title={t.modal("not_found.title")}
             description={t.modal("not_found.description")}
           />

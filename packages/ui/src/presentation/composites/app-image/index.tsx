@@ -4,6 +4,7 @@ import { memo, useCallback, useEffect, useState } from "react";
 
 import Image, { ImageProps } from "next/image";
 
+import { ImageIcon } from "@repo/assets";
 import { useLang } from "@repo/language/hooks";
 
 import { Skeleton } from "../../primitives/skeleton";
@@ -12,7 +13,7 @@ import { useImage } from "./use-image";
 export interface AppImageProps extends ImageProps {
   callbackLink?: (url: string | null) => void;
   path: string;
-  default?: string;
+  default?: any;
   file?: File;
   mimeType?: string;
   forceLoad?: boolean;
@@ -25,7 +26,7 @@ export const Component = ({
   callbackLink,
   src,
   path,
-  default: def = "/svg/image.svg",
+  default: def = ImageIcon,
   alt,
   style = { objectFit: "cover" },
   file,
@@ -111,7 +112,7 @@ export const Component = ({
   }
 
   // Image component with error handling
-  if (!error && !isError && finalSrc && typeof finalSrc === "string") {
+  if (!error && !isError && finalSrc) {
     return (
       <Image
         {...rest}

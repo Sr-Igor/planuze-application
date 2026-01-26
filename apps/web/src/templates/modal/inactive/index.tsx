@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 import { PlusCircle } from "lucide-react";
 
+import { NotFoundGif } from "@repo/assets";
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
@@ -49,7 +50,7 @@ export const InactiveModal = () => {
   const getModalContent = () => {
     if (profile) {
       return {
-        image: "/images/not_found.gif",
+        image: NotFoundGif,
         title: t.modal("inactive.title"),
         description: t.modal("inactive.description", { company: profile.company?.name ?? "-" }),
       };

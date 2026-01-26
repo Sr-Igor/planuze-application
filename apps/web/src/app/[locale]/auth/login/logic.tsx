@@ -7,6 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { LogInIcon } from "lucide-react";
 
 import { useAuth } from "@repo/api/web";
+import { GoogleIcon } from "@repo/assets";
 import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
@@ -83,7 +84,7 @@ export const AuthLogic = () => {
         }}
         className="flex w-full items-center justify-center gap-2 py-3 text-base font-semibold shadow transition-all duration-200"
       >
-        <Image src="/svg/google.svg" alt="google" width={24} height={24} className="h-6 w-6" />
+        <Image src={GoogleIcon} alt="google" width={24} height={24} className="h-6 w-6" />
         <span>{t.page.login("enter_with_google")}</span>
       </Button>
       <div className="m-5 flex w-full flex-col items-center gap-2 border-t pt-5">
