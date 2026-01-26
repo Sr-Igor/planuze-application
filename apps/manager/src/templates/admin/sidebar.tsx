@@ -8,7 +8,6 @@ import { LogOutIcon } from "lucide-react";
 
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-// import { useAppSelector } from '@/hooks/redux';
 import {
   AppTheme,
   Button,
@@ -30,8 +29,6 @@ export interface AppSidebarProps {}
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & AppSidebarProps) {
   const router = useRouter();
   const t = useLang();
-
-  // const admin = useAppSelector((state) => state.admin);
 
   const { clean } = useClean();
 

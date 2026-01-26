@@ -41,7 +41,7 @@ export const AuthLogic = () => {
   };
 
   return (
-    <div className="mt-10 w-full border p-10">
+    <div className="flex h-full w-full flex-col items-center justify-center px-10">
       <Form
         {...formProps}
         hook={hook}
