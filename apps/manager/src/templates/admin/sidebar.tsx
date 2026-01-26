@@ -8,7 +8,6 @@ import { LogOutIcon } from "lucide-react";
 
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-// import { TeamSwitcher } from '@/components/ui/app-team-switcher';
 // import { useAppSelector } from '@/hooks/redux';
 import {
   AppTheme,
@@ -23,6 +22,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@repo/ui";
+
+import { TeamSwitcher } from "@/components/app-team-switcher";
 
 export interface AppSidebarProps {}
 
@@ -74,7 +75,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
 
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>{/* <TeamSwitcher /> */}</SidebarHeader>
+      <SidebarHeader>
+        <TeamSwitcher />
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup className="group-data-[collapsible=icon]:hidden">
           <SidebarMenu>

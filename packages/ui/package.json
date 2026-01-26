@@ -29,7 +29,8 @@
     "@repo/api": "workspace:*",
     "@repo/redux": "workspace:*",
     "@repo/language": "workspace:*",
-    "@repo/types": "workspace:*"
+    "@repo/types": "workspace:*",
+    "@repo/assets": "workspace:*"
   },
   "dependencies": {
     "payment-icons": "^1.2.1",

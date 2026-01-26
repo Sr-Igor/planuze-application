@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
     "@repo/utils",
     "@repo/hooks",
     "@repo/redux",
+    "@repo/assets",
   ],
   typescript: {
     ignoreBuildErrors: false,

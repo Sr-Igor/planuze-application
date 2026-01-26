@@ -12,9 +12,8 @@ import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
 import { update } from "@repo/redux/store/modules/user/actions";
+import { CenterTemplate } from "@repo/templates";
 import { AppCountdown, Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";
-
-import { CenterTemplate } from "@/templates/center";
 
 const TIME = 1;
 

@@ -10,6 +10,7 @@ import { useUserTwoAuthCode } from "@repo/api/web";
 import { setTwoAuth, useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAuth } from "@repo/redux/hook";
+import { CenterTemplate } from "@repo/templates";
 import { user_two_auth } from "@repo/types";
 import {
   Button,
@@ -24,8 +25,6 @@ import {
   RadioGroup,
   RadioGroupItem,
 } from "@repo/ui";
-
-import { CenterTemplate } from "@/templates/center";
 
 const inputClassName = "bg-muted/10 text-muted-foreground border-border bg-sidebar/80";
 

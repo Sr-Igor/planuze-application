@@ -3,16 +3,8 @@
 import { LoaderIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@repo/ui";
-
 import { useAppSelector } from "@repo/redux/hook";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@repo/ui";
 
 export const RedirectModal = () => {
   const t = useLang();

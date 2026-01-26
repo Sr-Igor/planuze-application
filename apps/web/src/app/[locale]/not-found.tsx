@@ -6,9 +6,8 @@ import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { CenterTemplate } from "@repo/templates";
 import { Button } from "@repo/ui";
-
-import { CenterTemplate } from "@/templates/center";
 
 export default function NotFound() {
   const { replace } = useRouter();

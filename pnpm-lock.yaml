@@ -173,6 +173,9 @@ importers:
       '@repo/api':
         specifier: workspace:*
         version: link:../../packages/api
+      '@repo/assets':
+        specifier: workspace:^
+        version: link:../../packages/assets
       '@repo/cookies':
         specifier: workspace:*
         version: link:../../packages/cookies
@@ -306,6 +309,9 @@ importers:
       '@repo/api':
         specifier: workspace:*
         version: link:../../packages/api
+      '@repo/assets':
+        specifier: workspace:^
+        version: link:../../packages/assets
       '@repo/cookies':
         specifier: workspace:*
         version: link:../../packages/cookies
@@ -458,6 +464,8 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+
+  packages/assets: {}
 
   packages/cookies:
     dependencies:
@@ -1109,6 +1117,9 @@ importers:
       '@repo/api':
         specifier: workspace:*
         version: link:../api
+      '@repo/assets':
+        specifier: workspace:*
+        version: link:../assets
       '@repo/language':
         specifier: workspace:*
         version: link:../language

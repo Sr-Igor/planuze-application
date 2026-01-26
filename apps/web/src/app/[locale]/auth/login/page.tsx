@@ -1,6 +1,6 @@
 "use client";
 
-import { CenterTemplate } from "@/templates/center";
+import { CenterTemplate } from "@repo/templates";
 
 import { AuthLogic } from "./logic";
 

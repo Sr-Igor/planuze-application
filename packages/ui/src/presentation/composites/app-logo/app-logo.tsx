@@ -4,6 +4,8 @@ import { useTheme } from "next-themes";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 
+import { LogoDark, LogoLight } from "@repo/assets";
+
 export interface AppLogoProps extends Omit<ImageProps, "alt" | "src"> {
   /**
    * Light theme logo image path
@@ -28,8 +30,8 @@ export interface AppLogoProps extends Omit<ImageProps, "alt" | "src"> {
 }
 
 export const AppLogo = ({
-  logoLight = "/images/logo-dark.png",
-  logoDark = "/images/logo-light.png",
+  logoLight = LogoLight,
+  logoDark = LogoDark,
   href = "/",
   alt,
   animated = true,
@@ -38,7 +40,7 @@ export const AppLogo = ({
   const { resolvedTheme } = useTheme();
 
   const effectiveTheme = resolvedTheme ?? "light";
-  const logo = effectiveTheme === "dark" ? logoDark : logoLight;
+  const logo = effectiveTheme === "light" ? logoDark : logoLight;
 
   const imageAlt = alt ?? process.env.NEXT_PUBLIC_SYSTEM_NAME ?? "Logo";
 

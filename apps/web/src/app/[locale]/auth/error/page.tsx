@@ -5,9 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronLeft, CircleX } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { CenterTemplate } from "@repo/templates";
 import { Button } from "@repo/ui";
-
-import { CenterTemplate } from "@/templates/center";
 
 import * as classes from "./styles";
 
