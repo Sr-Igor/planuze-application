@@ -1,7 +1,7 @@
 import { BookCheck } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
 import { AppTooltip, Button, cn } from "@repo/ui";
 
@@ -16,7 +16,7 @@ export const ReadButton = ({ item }: IReadButtonProps) => {
   const lang = useLang();
   const t = lang.page.kanban;
 
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
 
   const { general, page } = useKanbanShow();
 

@@ -10,7 +10,7 @@ import { useUser } from "@repo/api/web";
 import { GoogleIcon } from "@repo/assets";
 import { hookValidate } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch } from "@repo/redux/hook";
+import { useAppDispatch } from "@repo/redux/hooks";
 import { create } from "@repo/redux/store/modules/user/actions";
 import { user } from "@repo/types";
 import { Button } from "@repo/ui";

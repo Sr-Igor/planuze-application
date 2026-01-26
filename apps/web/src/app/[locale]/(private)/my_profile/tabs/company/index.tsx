@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 
 import { getProfile } from "@repo/cookies";
 import { useIntlFormat, useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 import { AppAvatar, Button, cn, StatusCircle } from "@repo/ui";
 
 export const Company = () => {

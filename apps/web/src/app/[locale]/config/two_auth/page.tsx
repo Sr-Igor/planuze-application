@@ -9,7 +9,7 @@ import { KeyRound, Mail, Phone } from "lucide-react";
 import { useUserTwoAuthCode } from "@repo/api/web";
 import { setTwoAuth, useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import { CenterTemplate } from "@repo/templates";
 import { user_two_auth } from "@repo/types";
 import {
@@ -30,7 +30,7 @@ const inputClassName = "bg-muted/10 text-muted-foreground border-border bg-sideb
 
 export default function Page() {
   const t = useLang();
-  const { user } = useAuth();
+  const { user } = useUserAuth();
   const auths: user_two_auth[] = user?.user_two_auths?.filter((i) => i.confirmed && i.active) || [];
   const router = useRouter();
 

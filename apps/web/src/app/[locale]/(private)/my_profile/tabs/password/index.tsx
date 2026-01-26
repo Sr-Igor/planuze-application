@@ -5,7 +5,7 @@ import { useClean } from "@repo/cookies";
 import { hookValidate } from "@repo/form";
 import { useUnload } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 import { user } from "@repo/types";
 import { Button, cn } from "@repo/ui";
 

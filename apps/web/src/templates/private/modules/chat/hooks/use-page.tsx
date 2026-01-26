@@ -4,7 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 
 import keys from "@repo/api/cache/keys";
 import { useChat } from "@repo/api/web";
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 
 //Socket
 import { socket } from "@/providers/socket";

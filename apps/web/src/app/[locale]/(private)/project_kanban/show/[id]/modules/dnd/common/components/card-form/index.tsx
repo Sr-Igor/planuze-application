@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 import { useProjectKanbanCycleCard } from "@repo/api/web";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import { project_kanban_cycle_card_type } from "@repo/types";
 import { Card, CardContent, CardHeader, CardTitle, cn, Icon } from "@repo/ui";
 
@@ -19,7 +19,7 @@ export interface ICardFormProps {
 }
 
 export const KanbanCardForm = ({ cardType, columnId, onCancel, parentCardId }: ICardFormProps) => {
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
   const { page } = useKanbanShow();
 
   const { store } = useProjectKanbanCycleCard({

@@ -2,7 +2,7 @@
 
 import { useDashboard } from "@repo/api/web";
 import { useSearchParams } from "@repo/hooks";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 
 import { Loader } from "./components/Loader";
 import { schema } from "./constants/schema";
@@ -19,7 +19,7 @@ type UnionDashboardData = IProjectIndexResponseDTO &
   IAdminIndexResponseDTO;
 
 export default function Dashboard() {
-  const { module } = useAuth();
+  const { module } = useUserAuth();
 
   const { setParams, params, resetParams } = useSearchParams({
     schema,

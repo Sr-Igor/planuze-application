@@ -3,12 +3,11 @@ import { useEffect } from "react";
 import { useWatch } from "react-hook-form";
 
 import { profileIndex } from "@repo/api/web";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { useAuth } from "@repo/redux/hook";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
+import { useUserAuth } from "@repo/redux/hooks";
 import { profile, project_version } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-crud/type";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<project_version>;
 
@@ -80,7 +79,7 @@ const schema: IValidatorRequest = {
 };
 
 export const useForm = ({ disabled, state }: IUseHookProps<Form>) => {
-  const { profile, user } = useAuth();
+  const { profile, user } = useUserAuth();
 
   const defaultValues: Partial<Form> = {
     version: null,

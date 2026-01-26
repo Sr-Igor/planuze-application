@@ -4,7 +4,7 @@ import { RotateCcwKey } from "lucide-react";
 
 import { useAuth } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
-import { useAuth as useAuthHook } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import { AppAvatar, Button, Card, CardHeader } from "@repo/ui";
 
 import { useShow } from "@/templates/show/context";
@@ -13,7 +13,7 @@ import { ModalForm } from "./modal";
 
 export const Owner = () => {
   const t = useLang();
-  const { profile, user } = useAuthHook();
+  const { profile, user } = useUserAuth();
   const [open, setOpen] = useState(false);
 
   const { handleState } = useShow();

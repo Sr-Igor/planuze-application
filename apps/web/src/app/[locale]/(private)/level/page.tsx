@@ -1,7 +1,7 @@
 "use client";
 
 import { useLevel } from "@repo/api/web";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import { level } from "@repo/types";
 
 import { BaseTemplate } from "@/templates/list/base";
@@ -9,7 +9,7 @@ import { BaseTemplate } from "@/templates/list/base";
 import { useActions, useTable } from "./hooks";
 
 export default function Page() {
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
   return (
     <BaseTemplate<level>
       path="level"

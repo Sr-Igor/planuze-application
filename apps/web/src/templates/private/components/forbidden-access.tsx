@@ -1,7 +1,7 @@
 import { Ban } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch } from "@repo/redux/hook";
+import { useAppDispatch } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { module } from "@repo/types";
 import { Button, Icon } from "@repo/ui";

@@ -7,7 +7,7 @@ import { Ban, UserLock } from "lucide-react";
 import { usePlan, useSubscription } from "@repo/api/web";
 // import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch } from "@repo/redux/hook";
+import { useAppDispatch } from "@repo/redux/hooks";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import {
   Button,

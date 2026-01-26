@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 
-import { plan } from "@repo/types";
-
-import { useAuth } from "@repo/redux/hook";
 import { useIntlFormat } from "@repo/language/hooks";
+import { useUserAuth } from "@repo/redux/hooks";
+import { plan } from "@repo/types";
 
 import { IPlanTemplateProps } from "../types";
 import { useUtilsPlan } from "./use-utils-plan";
@@ -14,7 +13,7 @@ export const usePage = ({ subscriptions, plans, isLoading }: IPlanTemplateProps)
   const [activeTab, setActiveTab] = useState("monthly");
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { dates } = useIntlFormat();
-  const { user } = useAuth();
+  const { user } = useUserAuth();
 
   const { filterPlansByBilling } = useUtilsPlan();
 

@@ -1,13 +1,13 @@
-import { company } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { useUserAuth } from "@repo/redux/hooks";
+import { company } from "@repo/types";
 
-import { useAuth } from "@repo/redux/hook";
 import { IShowHookProps } from "@/templates/show/types";
 
 import { Address, Contact, Data, Document, File, Owner } from "./tabs";
 
 export const useTabs = ({ data }: IShowHookProps<company>) => {
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
 
   const t = useLang();
   return [

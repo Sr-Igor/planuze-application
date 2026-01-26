@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { useAppDispatch, useAuth } from "@repo/redux/hook";
+import { useAppDispatch, useUserAuth } from "@repo/redux/hooks";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import type { module as ModuleType, Pagination } from "@repo/types";
 
@@ -11,7 +11,7 @@ import { cacheKeys } from "../../../infrastructure/cache/keys";
 import { moduleEndpoint } from "../endpoints/module";
 
 export const useModule = (): Pick<UseInsertReturn<ModuleType>, "index"> => {
-  const { user, hasProfile, hasTwoAuth } = useAuth();
+  const { user, hasProfile, hasTwoAuth } = useUserAuth();
 
   const indexKey = cacheKeys.module.index(user?.id || "unknown");
   const dispatch = useAppDispatch();

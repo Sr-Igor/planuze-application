@@ -10,7 +10,7 @@ import io from "socket.io-client";
 
 import { keys } from "@repo/api";
 import { getProfile, getToken } from "@repo/cookies";
-import { useAppDispatch, useAppSelector, useAuth } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector, useUserAuth } from "@repo/redux/hooks";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import { update as updateSocket } from "@repo/redux/store/modules/socket/actions";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
@@ -29,7 +29,7 @@ export const socket = io(URL, {
 export const Provider = () => {
   const queryClient = useQueryClient();
   const dispatch = useAppDispatch();
-  const { activeSubscription, user } = useAuth();
+  const { activeSubscription, user } = useUserAuth();
   const token = getToken();
   const router = useRouter();
   const { all } = useAppSelector((state) => state.module);

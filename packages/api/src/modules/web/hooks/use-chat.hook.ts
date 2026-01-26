@@ -8,7 +8,7 @@ import {
   type UseQueryResult,
 } from "@tanstack/react-query";
 
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import type { chat, Pagination } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -59,7 +59,7 @@ export const useChat = ({
   const showKey = cacheKeys.chat.show(id);
   const categoryKey = cacheKeys.chat.category();
 
-  const { enabledPrivateRoutes, hasProfile, hasTwoAuth, warning } = useAuth();
+  const { enabledPrivateRoutes, hasProfile, hasTwoAuth, warning } = useUserAuth();
 
   /**
    * Index query with infinite pagination support

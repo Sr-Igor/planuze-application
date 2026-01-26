@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@repo/api/web";
 import { hookValidate } from "@repo/form";
 import { useUnload } from "@repo/hooks";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
 import { user } from "@repo/types";
 import { cn } from "@repo/ui";

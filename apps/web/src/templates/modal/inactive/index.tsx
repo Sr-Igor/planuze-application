@@ -10,7 +10,7 @@ import { PlusCircle } from "lucide-react";
 import { NotFoundGif } from "@repo/assets";
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { update } from "@repo/redux/store/modules/modal/actions";
 import {
   AlertDialog,

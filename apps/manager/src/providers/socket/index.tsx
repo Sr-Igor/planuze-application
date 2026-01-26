@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import io from "socket.io-client";
 
 import { getToken } from "@repo/cookies";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { update as updateAdmin } from "@repo/redux/store/modules/admin/actions";
 import { update as updateSocket } from "@repo/redux/store/modules/socket/actions";
 import { fingerprint } from "@repo/utils/fingerprint";

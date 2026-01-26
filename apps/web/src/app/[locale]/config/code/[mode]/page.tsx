@@ -10,7 +10,7 @@ import { LogOut } from "lucide-react";
 import { useAuth } from "@repo/api/web";
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { update } from "@repo/redux/store/modules/user/actions";
 import { CenterTemplate } from "@repo/templates";
 import { AppCountdown, Button, InputOTP, InputOTPGroup, InputOTPSlot } from "@repo/ui";

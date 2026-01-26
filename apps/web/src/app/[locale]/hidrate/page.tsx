@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { useAuth } from "@repo/api/web";
 import { useModal } from "@repo/hooks";
-import { useAppDispatch, useAuth as userAuth } from "@repo/redux/hook";
+import { useAppDispatch, useUserAuth } from "@repo/redux/hooks";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import { create } from "@repo/redux/store/modules/user/actions";
 
@@ -21,7 +21,7 @@ export default function HidratePage() {
   const profileId = useSearchParams().get("profileId");
   const openProfileModal = useSearchParams().get("openProfileModal");
 
-  const { profile } = userAuth();
+  const { profile } = useUserAuth();
 
   const { setModal } = useModal();
 

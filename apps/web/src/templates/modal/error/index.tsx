@@ -5,7 +5,7 @@ import { RotateCcw, XCircle } from "lucide-react";
 import { useClean } from "@repo/cookies";
 import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 import {
   Button,
   Dialog,

@@ -3,7 +3,7 @@
 import { useInvite } from "@repo/api/web";
 import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector, useAuth } from "@repo/redux/hook";
+import { useAppSelector, useUserAuth } from "@repo/redux/hooks";
 import {
   Button,
   Dialog,
@@ -21,7 +21,7 @@ import { useUserSet } from "@/hooks/user-set";
 export const InviteModal = () => {
   const t = useLang();
 
-  const { hasTwoAuth, user } = useAuth();
+  const { hasTwoAuth, user } = useUserAuth();
   const { invite: isModalOpen } = useAppSelector((state) => state.modal);
   const { setModal } = useModal();
 

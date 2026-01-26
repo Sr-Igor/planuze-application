@@ -4,9 +4,13 @@ import { useMemo, useState } from "react";
 
 import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "lucide-react";
 
-import { project_member } from "@repo/types";
+import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { useUserAuth } from "@repo/redux/hooks";
+import { project_member } from "@repo/types";
 import {
+  AppDialog,
+  AppDropdownMenu,
   Button,
   Drawer,
   DrawerClose,
@@ -15,12 +19,11 @@ import {
   DrawerHeader,
   DrawerTitle,
   ScrollArea,
- AppDialog, AppDropdownMenu, Trash } from "@repo/ui";
+  Trash,
+} from "@repo/ui";
 
-import { Input } from "@repo/form";
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
-import { useAuth } from "@repo/redux/hook";
 
 import { useKanbanShow } from "../../../context";
 import { Card } from "./card";
@@ -37,7 +40,7 @@ export const Member = ({ open, onOpenChange }: IMemberProps) => {
   const lang = useLang();
   const t = lang.page.kanban;
 
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
 
   const [search, setSearch] = useState("");
 

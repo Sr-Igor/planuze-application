@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 
 import { useModal } from "@repo/hooks";
-import { useAppDispatch } from "@repo/redux/hook";
+import { useAppDispatch } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 
 import { useAccess } from "../access";

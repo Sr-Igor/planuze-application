@@ -4,7 +4,7 @@ import { KeyRound, Mail, Phone } from "lucide-react";
 
 import { useUserTwoAuth } from "@repo/api/web";
 import { hookValidate } from "@repo/form";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { update as updateUser } from "@repo/redux/store/modules/user/actions";
 import { user_two_auth } from "@repo/types";
 

@@ -7,7 +7,7 @@ import { LogInIcon } from "lucide-react";
 import { useAuth } from "@repo/api/manager";
 import { hookValidate, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch } from "@repo/redux/hook";
+import { useAppDispatch } from "@repo/redux/hooks";
 import { create } from "@repo/redux/store/modules/admin/actions";
 import { Button } from "@repo/ui";
 

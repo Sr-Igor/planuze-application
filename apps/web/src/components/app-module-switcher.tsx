@@ -9,7 +9,7 @@ import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 
 import { getModule } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { module } from "@repo/types";
 import {

@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
-import { useAuth as useAuthRedux } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import type { user } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -52,7 +52,7 @@ export interface UseAuthProps {
 
 export const useAuth = ({ callbacks, enableHydrate = false, userId }: UseAuthProps = {}) => {
   // Fallback to Redux user.id if userId not provided
-  const { user: userFromRedux } = useAuthRedux();
+  const { user: userFromRedux } = useUserAuth();
   const effectiveUserId = userId ?? userFromRedux?.id;
 
   const hydrateKey = cacheKeys.auth.hydrate(effectiveUserId);

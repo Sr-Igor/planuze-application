@@ -8,9 +8,9 @@
       "types": "./src/provider/index.tsx",
       "default": "./src/provider/index.tsx"
     },
-    "./hook": {
-      "types": "./src/hook/index.ts",
-      "default": "./src/hook/index.ts"
+    "./hooks": {
+      "types": "./src/hooks/index.ts",
+      "default": "./src/hooks/index.ts"
     },
     "./store": {
       "types": "./src/store/index.ts",

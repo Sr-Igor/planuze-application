@@ -8,7 +8,7 @@ import { differenceInDays } from "date-fns";
 
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 import { CenterTemplate } from "@repo/templates";
 import { AppTabs, Button, Skeleton } from "@repo/ui";
 

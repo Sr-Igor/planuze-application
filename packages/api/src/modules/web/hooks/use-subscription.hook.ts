@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import type { Pagination, subscription } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -29,7 +29,7 @@ export interface UseSubscriptionProps {
  */
 export const useSubscription = ({ enabledIndex = false, callbacks }: UseSubscriptionProps = {}) => {
   const indexKey = cacheKeys.subscription.index();
-  const { hasLevel, hasProfile, hasTwoAuth } = useAuth();
+  const { hasLevel, hasProfile, hasTwoAuth } = useUserAuth();
 
   const index = useQuery<Pagination<subscription>>({
     queryKey: indexKey,

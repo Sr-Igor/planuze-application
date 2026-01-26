@@ -39,6 +39,7 @@ export type {
   ISelectedTag,
   ITagsProps,
   ITagsOption,
+  Shallow,
 } from "./shared/types";
 
 // Re-export Field type for convenience

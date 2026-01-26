@@ -1,24 +1,14 @@
-//Redux
-//Types
 import { useMemo } from "react";
 
 import { addDays, differenceInDays, isAfter, isBefore } from "date-fns";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import { getModule, getProfile, getTwoAuth } from "@repo/cookies";
 import { subscription } from "@repo/types";
 
-import type { AppDispatch, RootState } from "../store/index";
 import type { Warning } from "./types";
+import { useAppSelector } from "./use-actions";
 
-export type { Warning } from "./types";
-export type { AppDispatch, RootState } from "../store/index";
-export const useAppDispatch: () => AppDispatch = useDispatch;
-
-export const useAppSelector: TypedUseSelectorHook<RootState> =
-  useSelector as TypedUseSelectorHook<RootState>;
-
-export const useAuth = () => {
+export const useUserAuth = () => {
   // Usando selectors separados para evitar criar objetos novos
   const user = useAppSelector((state) => state.user);
   const moduleState = useAppSelector((state) => state.module);

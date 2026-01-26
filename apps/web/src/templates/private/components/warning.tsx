@@ -7,7 +7,7 @@ import { AlertTriangle, ExternalLink, InfoIcon, X } from "lucide-react";
 
 import { useSubscription } from "@repo/api/web";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { update } from "@repo/redux/store/modules/warning/actions";
 import { subscription } from "@repo/types";

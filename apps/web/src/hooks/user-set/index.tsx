@@ -3,7 +3,7 @@ import { useSearchParams } from "next/navigation";
 import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useRouter } from "@repo/language/navigation";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { create } from "@repo/redux/store/modules/user/actions";
 import { user } from "@repo/types";

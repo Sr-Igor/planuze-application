@@ -6,7 +6,7 @@ import { ChevronLeft, HousePlus, LogInIcon } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import { AppLogo, AppTheme, Button, cn, SidebarTrigger } from "@repo/ui";
 
 import { NavUser } from "@/templates/private/components/nav-user";
@@ -27,7 +27,7 @@ export const Nav = ({ intermediate = true }: INavProps) => {
 
   const pathname = usePathname();
   const route = useRouter();
-  const { user } = useAuth();
+  const { user } = useUserAuth();
 
   const backPaths = ["/show/", "trash", "/index/"];
 

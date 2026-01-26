@@ -1,14 +1,14 @@
 "use client";
 
 import { useMe } from "@repo/api/web";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 
 import { ShowTemplate } from "@/templates/show";
 
 import { useTabs } from "./use-tabs";
 
 export default function Page() {
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
 
   return (
     <ShowTemplate

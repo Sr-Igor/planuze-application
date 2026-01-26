@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 import {
   DropdownMenu,
   DropdownMenuTrigger,

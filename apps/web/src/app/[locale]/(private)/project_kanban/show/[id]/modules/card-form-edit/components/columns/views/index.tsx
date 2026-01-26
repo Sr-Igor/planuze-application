@@ -4,12 +4,11 @@ import { useMemo } from "react";
 
 import { ArrowRight, CheckCircle, Eye, EyeOff } from "lucide-react";
 
+import { useIntlFormat, useLang } from "@repo/language/hooks";
+import { useUserAuth } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
 import * as C from "@repo/ui";
-
 import { AppAvatarLine } from "@repo/ui";
-import { useAuth } from "@repo/redux/hook";
 
 import { ScrollColumn } from "../../scroll-column";
 
@@ -43,7 +42,7 @@ export const Views = ({ item }: IViewsProps) => {
   const lang = useLang();
   const t = lang.page.kanban;
   const { dates } = useIntlFormat();
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
 
   const profileViews = useMemo(() => {
     if (!item?.project_kanban_cycle_card_reads) return [];

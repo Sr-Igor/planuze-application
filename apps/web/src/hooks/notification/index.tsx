@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 
 import { useNotificationSubscription } from "@repo/api/web";
 import { useModal } from "@repo/hooks";
-import { useAppDispatch, useAuth } from "@repo/redux/hook";
+import { useAppDispatch, useUserAuth } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { urlToBase64 } from "@repo/utils";
 
@@ -23,7 +23,7 @@ export const NotificationManager = () => {
   const moduleId = searchParams.get("module_id");
 
   const dispatch = useAppDispatch();
-  const { hasTwoAuth, user } = useAuth();
+  const { hasTwoAuth, user } = useUserAuth();
   const userSubscription = user?.notification_subscriptions?.[0]?.subscription;
 
   const { key, store } = useNotificationSubscription({});

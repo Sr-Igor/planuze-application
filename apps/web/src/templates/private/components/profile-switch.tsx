@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hook";
+import { useAppSelector } from "@repo/redux/hooks";
 import {
   AppProfileSelect,
   Button,

@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { update } from "@repo/redux/store/modules/modal/actions";
 import { ModalState } from "@repo/redux/store/modules/modal/reducers";
 

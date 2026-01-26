@@ -3,13 +3,10 @@
 import { useEffect, useMemo } from "react";
 
 import { projectKanbanCycleCardIndex } from "@repo/api/web";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { useAuth } from "@repo/redux/hook";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
+import { useUserAuth } from "@repo/redux/hooks";
 import { profile, project_kanban_cycle_card, project_kanban_cycle_card_type } from "@repo/types";
-
-import { AppCardTypeSelector } from "@/components/app-card-type-selector";
-import { AppCardSelector } from "@/components/app-cycle-card-selector";
-import { Shallow } from "@/types/shallowType";
+import { AppCardSelector, AppCardTypeSelector } from "@repo/ui";
 
 import { useKanbanShow } from "../../context";
 
@@ -23,7 +20,7 @@ type FormType = Shallow<project_kanban_cycle_card>;
 
 export const useForm = ({ disabled, anchor }: IUseFormProps) => {
   const { data, page, general, select } = useKanbanShow();
-  const { user, profile } = useAuth();
+  const { user, profile } = useUserAuth();
 
   const cycles = data.cycles?.map((cycle) => ({
     label: cycle.title,

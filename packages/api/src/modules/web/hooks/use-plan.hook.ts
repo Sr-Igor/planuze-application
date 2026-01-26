@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 import type { Pagination, plan } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
@@ -18,7 +18,7 @@ export interface UsePlanProps {
  */
 export const usePlan = ({ companyId, enabled = true }: UsePlanProps = {}) => {
   const indexKey = cacheKeys.plan.index(companyId);
-  const { hasProfile, hasTwoAuth } = useAuth();
+  const { hasProfile, hasTwoAuth } = useUserAuth();
 
   const index = useQuery<Pagination<plan>>({
     queryKey: indexKey,

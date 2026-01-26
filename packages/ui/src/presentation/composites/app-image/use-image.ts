@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { getFile } from "@repo/api";
-import { useAuth } from "@repo/redux/hook";
+import { useUserAuth } from "@repo/redux/hooks";
 
 export interface UseImageProps {
   src: string;
@@ -18,7 +18,7 @@ export const useImage = ({ src, path, skipReq, publicFile }: UseImageProps) => {
   const URL_BASE = process.env.NEXT_PUBLIC_FILE_URL!;
   const [loading, setLoading] = useState(true);
 
-  const { profile } = useAuth();
+  const { profile } = useUserAuth();
 
   const { data: blob, isError } = useQuery<Blob | null>({
     queryKey: ["file", src],

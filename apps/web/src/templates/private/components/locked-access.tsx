@@ -2,12 +2,11 @@ import { useRouter } from "next/navigation";
 
 import { FilePen, MousePointerBan } from "lucide-react";
 
-import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
-import { Button } from "@repo/ui";
-
-import { useAppDispatch, useAppSelector } from "@repo/redux/hook";
+import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
+import { profile } from "@repo/types";
+import { Button } from "@repo/ui";
 
 import { ProfileSwitcher } from "./profile-switch";
 
