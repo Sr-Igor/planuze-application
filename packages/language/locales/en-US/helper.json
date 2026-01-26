@@ -194,5 +194,11 @@
     "weekly": "Weekly",
     "yearly": "Yearly",
     "expired": "Expired",
-    "maxLength": "Max length reached"
+    "maxLength": "Max length reached",
+    "days": "days",
+    "free": "Free",
+    "paid": "Paid",
+    "all": "All",
+    "select_option": "Select an option",
+    "admin_panel": "Admin Panel"
 }

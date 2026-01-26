@@ -1,0 +1,40 @@
+{
+    "features": {
+        "add_to_plan": "Add Feature to Plan",
+        "add": "Add Feature",
+        "select": "Select features to add",
+        "search": "Search feature...",
+        "all_added": "All features are already in the plan or none found.",
+        "selected": "Selected",
+        "add_many": "Add Features",
+        "adding": "Adding..."
+    },
+    "modules": {
+        "features_count": "{count} Features",
+        "features_count_tooltip": "Number of features linked to the module",
+        "add_feature": "Add Feature",
+        "add_feature_tooltip": "Add new feature to the module",
+        "permissions": "permissions",
+        "permissions_tooltip": "Number of permissions linked to the feature",
+        "edit_actions": "Edit Actions",
+        "edit_permissions_tooltip": "Edit feature permissions",
+        "remove_feature_title": "Remove Feature from Plan",
+        "remove_feature_tooltip": "Remove feature from plan",
+        "remove_feature_confirm": "Are you sure you want to remove this feature and all linked permissions? This action cannot be undone.",
+        "cancel": "Cancel",
+        "remove": "Remove",
+        "no_features_linked": "No features linked"
+    },
+    "actions": {
+        "unknown": "Unknown action",
+        "none_linked": "No action linked"
+    },
+    "actions_modal": {
+        "edit_feature": "Edit Feature Actions",
+        "edit": "Edit Actions",
+        "saving": "Saving...",
+        "save_permissions": "Save Permissions",
+        "selected": "Selected",
+        "none_available": "No action available."
+    }
+}

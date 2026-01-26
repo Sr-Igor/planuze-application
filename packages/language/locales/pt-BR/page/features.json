@@ -1,0 +1,14 @@
+{
+    "title": "Funcionalidades",
+    "new": "Nova funcionalidade",
+    "modal": {
+        "new": {
+            "title": "Nova funcionalidade",
+            "description": "Crie uma nova funcionalidade para categorizar a gravidade dos bugs relatados."
+        },
+        "edit": {
+            "title": "Editar funcionalidade",
+            "description": "Edite a funcionalidade para atualizar suas informações."
+        }
+    }
+}

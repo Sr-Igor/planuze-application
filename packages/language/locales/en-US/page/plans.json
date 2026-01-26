@@ -40,5 +40,30 @@
     },
     "change_to_admin": "Change",
     "change_to_admin_description": "Change to administrator to access this page",
-    "change_to_admin_title": "Insufficient permissions!"
+    "change_to_admin_title": "Insufficient permissions!",
+    "new": "New Plan",
+    "show": {
+        "new": {
+            "title": "Register Plan",
+            "description": "Fill in the data below to register a new plan"
+        },
+        "edit": {
+            "title": "Edit Plan",
+            "description": "Edit the plan data by filling in the fields below"
+        },
+        "cancel": {
+            "title": "Exit",
+            "description": "Are you sure you want to exit? You have unsaved changes, they will be lost upon confirmation"
+        },
+        "tabs": {
+            "data": "Data",
+            "modules": "Modules"
+        },
+        "infos": {
+            "free_test": "Days to test the plan",
+            "licenses": "User limit, empty for unlimited",
+            "price": "Empty for free plan",
+            "company": "Associate the plan with a company"
+        }
+    }
 }

@@ -1,0 +1,9 @@
+{
+    "order_info": "Order in which it should appear in the sidebar",
+    "group_info": "Groups routes in the sidebar",
+    "path_info": "Validation path used for permission",
+    "reference_info": "Replaces the validation path for reference.",
+    "route_info": "Frontend route used to access functionality. Default: {path}",
+    "plan_title_info": "Title used in the plan card using translation.json",
+    "actions_available": "Actions available"
+}

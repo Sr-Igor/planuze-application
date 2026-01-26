@@ -8,8 +8,8 @@
         "description": "Seu perfil está desabilitado para {{company}}. Entre em contato com o administrador para mais informações."
     },
     "not_profile": {
-        "title": "Olá! {{name}}",
-        "description": "Parece que sua conta não está associada com a empresa. Que tal começar a usar o sistema?"
+        "title": "Bem vindo! {{name}}",
+        "description": "Parece que sua conta não está associada com nenhuma empresa. Que tal começar a usar o sistema?"
     },
     "error": {
         "title": "Ocorreu um erro..."

@@ -1,0 +1,9 @@
+{
+    "order_info": "Ordem em que deve aparecer no sidebar",
+    "group_info": "Agrupa as rotas na sidebar",
+    "path_info": "Caminho de validação utilizado para permissão",
+    "reference_info": "Substitui o caminho de validação para referência.",
+    "route_info": "Rota no frontend utilizada para acessar a funcionalidade. Default: {path}",
+    "plan_title_info": "Título usado no card de plano utilizando o translation.json",
+    "actions_available": "Ações disponíveis"
+}

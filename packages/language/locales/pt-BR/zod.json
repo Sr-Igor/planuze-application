@@ -9,7 +9,7 @@
         "invalid_type_major_condition": "O valor de {{first}} deve ser maior que {{second}}",
         "invalid_type_major_or_equal_condition": "O valor de {{first}} deve ser maior ou igual a {{second}}",
         "invalid_type_one_of_required_condition": "Um dos campos {names}} {{conjugation}} {{last}} deve ser preenchido",
-        "invalid_type_equal_condition": "Os campos {{names}} {{conjugation}} {{last}} devem ser iguais",
+        "invalid_type_equal_condition": "Os campos {names}} {{conjugation}} {{last}} devem ser iguais",
         "invalid_literal": "Valor literal inválido, era esperado {{expected}}",
         "unrecognized_keys": "Chave(s) não reconhecida(s) no objeto: {{- keys}}",
         "invalid_union": "Entrada inválida",
@@ -17,7 +17,7 @@
         "invalid_enum_value": "Enum no formato inválido. Foi esperado {{- options}}, porém foi recebido '{{received}}'",
         "invalid_arguments": "Argumento de função inválido",
         "invalid_return_type": "Tipo de retorno de função inválido",
-        "invalid_date": "Obrigatório",
+        "invalid_date": "Data inválida",
         "invalid_phone": "Formato do número inválido",
         "invalid_cep": "CEP deve ser válido",
         "invalid_cnpj": "CNPJ deve ser válido",
@@ -94,7 +94,8 @@
                 "inclusive": "Data deve ser menor ou igual a {{- maximum, datetime}}",
                 "not_inclusive": "Data deve ser menor que {{- maximum, datetime}}"
             }
-        }
+        },
+        "invalid_password": "Senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números"
     },
     "validations": {
         "email": "email",

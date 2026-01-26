@@ -1,0 +1,14 @@
+{
+    "title": "Ações",
+    "new": "Nova ação",
+    "modal": {
+        "new": {
+            "title": "Nova ação",
+            "description": "Crie uma nova ação para categorizar a gravidade dos bugs relatados."
+        },
+        "edit": {
+            "title": "Editar ação",
+            "description": "Edite a ação para atualizar suas informações."
+        }
+    }
+}

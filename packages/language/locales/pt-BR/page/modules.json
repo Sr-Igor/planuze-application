@@ -1,0 +1,14 @@
+{
+    "title": "Módulos",
+    "new": "Novo módulo",
+    "modal": {
+        "new": {
+            "title": "Novo módulo",
+            "description": "Crie um novo módulo para categorizar a gravidade dos bugs relatados."
+        },
+        "edit": {
+            "title": "Editar módulo",
+            "description": "Edite o módulo para atualizar suas informações."
+        }
+    }
+}

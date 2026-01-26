@@ -1,0 +1,14 @@
+{
+    "title": "Features",
+    "new": "New Feature",
+    "modal": {
+        "new": {
+            "title": "New Feature",
+            "description": "Create a new feature to categorize items."
+        },
+        "edit": {
+            "title": "Edit Feature",
+            "description": "Edit the feature to update its information."
+        }
+    }
+}

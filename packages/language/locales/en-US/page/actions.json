@@ -1,0 +1,14 @@
+{
+    "title": "Actions",
+    "new": "New Action",
+    "modal": {
+        "new": {
+            "title": "New Action",
+            "description": "Create a new action to categorize reported items."
+        },
+        "edit": {
+            "title": "Edit Action",
+            "description": "Edit the action to update its information."
+        }
+    }
+}

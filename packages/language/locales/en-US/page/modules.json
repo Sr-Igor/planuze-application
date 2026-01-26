@@ -1,0 +1,14 @@
+{
+    "title": "Modules",
+    "new": "New Module",
+    "modal": {
+        "new": {
+            "title": "New Module",
+            "description": "Create a new module to categorize items."
+        },
+        "edit": {
+            "title": "Edit Module",
+            "description": "Edit the module to update its information."
+        }
+    }
+}

@@ -38,5 +38,12 @@
     "message": {
         "upgrade": "Atualize seu plano para acessar esta funcionalidade.",
         "locked": "Você não tem permissão para acessar esse módulo."
-    }
+    },
+    "dashboard": "Dashboard",
+    "companies": "Empresas",
+    "action": "Ações",
+    "features": "Funcionalidades",
+    "plans": "Planos",
+    "modules": "Módulos",
+    "billing_error": "Erros"
 }

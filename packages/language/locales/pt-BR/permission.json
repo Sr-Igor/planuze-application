@@ -8,7 +8,7 @@
     "trash": "Lixeira",
     "many": "Múltiplos",
     "feature": "Funcionalidade",
-    "ai": "Chat IA",
+    "ai": "IA",
     "not_available": "Funcionalidade não disponível ou não existente",
     "dependency": "Os seguintes itens marcados dependem dessa funcionalidade:\n {list}"
 }

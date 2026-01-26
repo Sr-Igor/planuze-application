@@ -1,0 +1,40 @@
+{
+    "features": {
+        "add_to_plan": "Adicionar Feature ao Plano",
+        "add": "Adicionar Feature",
+        "select": "Selecione as features que deseja adicionar",
+        "search": "Buscar feature...",
+        "all_added": "Todas as features já estão no plano ou nenhuma encontrada.",
+        "selected": "Selecionada",
+        "add_many": "Adicionar Features",
+        "adding": "Adicionando..."
+    },
+    "modules": {
+        "features_count": "{count} Features",
+        "features_count_tooltip": "Quantidade de features vinculadas ao módulo",
+        "add_feature": "Adicionar Feature",
+        "add_feature_tooltip": "Adicionar nova feature ao módulo",
+        "permissions": "permissões",
+        "permissions_tooltip": "Quantidade de permissões vinculadas à feature",
+        "edit_actions": "Editar Actions",
+        "edit_permissions_tooltip": "Editar permissões da feature",
+        "remove_feature_title": "Remover Feature do Plano",
+        "remove_feature_tooltip": "Remover feature do plano",
+        "remove_feature_confirm": "Tem certeza que deseja remover esta feature e todas as permissões vinculadas? Esta ação não pode ser desfeita.",
+        "cancel": "Cancelar",
+        "remove": "Remover",
+        "no_features_linked": "Nenhuma feature vinculada"
+    },
+    "actions": {
+        "unknown": "Ação desconhecida",
+        "none_linked": "Nenhuma action vinculada"
+    },
+    "actions_modal": {
+        "edit_feature": "Editar Actions da Feature",
+        "edit": "Editar Actions",
+        "saving": "Salvando...",
+        "save_permissions": "Salvar Permissões",
+        "selected": "Selecionada",
+        "none_available": "Nenhuma action disponível."
+    }
+}

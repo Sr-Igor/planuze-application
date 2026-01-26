@@ -94,7 +94,8 @@
                 "inclusive": "Date must be smaller than or equal to {{- maximum, datetime}}",
                 "not_inclusive": "Date must be smaller than {{- maximum, datetime}}"
             }
-        }
+        },
+        "invalid_password": "Senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números"
     },
     "validations": {
         "email": "email",

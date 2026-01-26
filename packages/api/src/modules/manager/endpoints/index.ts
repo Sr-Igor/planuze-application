@@ -1,20 +1,13 @@
 /**
  * Manager module endpoints
- *
- * This module will be used by the admin app (manager).
- * Endpoints will be added as needed.
- *
- * @example
- * To add a new endpoint:
- *
- * 1. Create folder: endpoints/admin-user/
- * 2. Create files:
- *    - admin-user.types.ts
- *    - admin-user.queries.ts
- *    - admin-user.endpoint.ts
- *    - index.ts
- * 3. Export here: export * from "./admin-user";
  */
-
-// Endpoints will be exported here
-export {};
+export * from "./action";
+export * from "./auth";
+export * from "./bank";
+export * from "./billing_error";
+export * from "./company";
+export * from "./feature";
+export * from "./module";
+export * from "./plan";
+export * from "./plan_feature";
+export * from "./plan_feature_action";

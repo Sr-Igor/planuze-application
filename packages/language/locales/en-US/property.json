@@ -176,5 +176,17 @@
     "anonymous": "Internal",
     "method": "Method",
     "code": "Code",
-    "expire_date": "Expires on"
+    "expire_date": "Expires on",
+    "event": "evento",
+    "bug_id": "bug",
+    "billing_model": "modelo de cobrança",
+    "free_test": "teste gratuito",
+    "licenses": "licenças",
+    "is_popular": "popular",
+    "price": "preço",
+    "gateway": "gateway",
+    "error": "erro",
+    "basic": "basico",
+    "integration": "integração",
+    "new": "novo"
 }

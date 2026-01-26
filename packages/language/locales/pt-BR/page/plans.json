@@ -1,5 +1,5 @@
 {
-    "title": "Escolha o Plano Ideal",
+    "title": "Planos",
     "description": "Selecione o plano que melhor se adapta às suas necessidades e comece a aproveitar todos os recursos da nossa plataforma.",
     "monthly": "Mensal",
     "yearly": "Anual",
@@ -40,5 +40,30 @@
     },
     "change_to_admin": "Alterar",
     "change_to_admin_description": "Altere para administrador para acessar este página",
-    "change_to_admin_title": "Sem permissões suficientes!"
+    "change_to_admin_title": "Sem permissões suficientes!",
+    "new": "Novo plano",
+    "show": {
+        "new": {
+            "title": "Cadastrar plano",
+            "description": "Preencha os dados abaixo para cadastrar um novo plano"
+        },
+        "edit": {
+            "title": "Editar plano",
+            "description": "Edite os dados do plano preenchendo os campos abaixo"
+        },
+        "cancel": {
+            "title": "Sair",
+            "description": "Tem certeza que deseja sair? Você possui alterações não salvas, ao confirmar elas serão perdidas"
+        },
+        "tabs": {
+            "data": "Dados",
+            "modules": "Módulos"
+        },
+        "infos": {
+            "free_test": "Dias para testar o plano",
+            "licenses": "Limite de usuários, vazio para ilimitado",
+            "price": "Vazio para plano gratuito",
+            "company": "Associe o plano a uma empresa"
+        }
+    }
 }
