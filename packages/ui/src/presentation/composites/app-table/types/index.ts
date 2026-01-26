@@ -5,7 +5,6 @@
  *
  * @module presentation/composites/app-table/types
  */
-
 import { ReactNode } from "react";
 
 // ============================================================================

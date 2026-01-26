@@ -5,7 +5,7 @@ import { IUseReqProps } from "../types";
 export const useReq = ({ state, handleState }: IUseReqProps) => {
   const { index, store, update } = useAction({
     enabledIndex: true,
-    filters: state.filters,
+    filters: state.filters as any,
     id: state?.item?.id,
     callbacks: {
       store: {

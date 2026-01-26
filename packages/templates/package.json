@@ -1,0 +1,42 @@
+{
+  "name": "@repo/templates",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "check-types": "tsc --noEmit --skipLibCheck || true",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/index.ts"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "next": "catalog:",
+    "next-intl": "catalog:",
+    "next-themes": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "zod": "catalog:",
+    "lucide-react": "catalog:",
+    "react-hook-form": "catalog:",
+    "date-fns": "catalog:",
+    "recharts": "catalog:",
+    "sonner": "catalog:",
+    "@repo/api": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@repo/language": "workspace:*",
+    "@repo/hooks": "workspace:*",
+    "@repo/form": "workspace:*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "catalog:",
+    "typescript": "catalog:"
+  }
+}

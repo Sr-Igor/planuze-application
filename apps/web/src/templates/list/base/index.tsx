@@ -12,12 +12,12 @@ import {
   usePaginationParams,
 } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
+import { ListTemplate } from "@repo/templates";
 import { AppDialog, AppLogsModal, Button, Icon } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
 import { useAccess } from "@/hooks/access";
 import { useLogs } from "@/hooks/logs";
-import { ListTemplate } from "@/templates/list";
 import { usePrivateContext } from "@/templates/private/context";
 
 import { FormDialog } from "./form";

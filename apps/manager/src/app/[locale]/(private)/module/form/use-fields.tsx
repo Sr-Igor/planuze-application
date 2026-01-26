@@ -2,7 +2,7 @@
 
 import * as icons from "lucide-react";
 
-import { Field, IValidatorRequest } from "@repo/form/types";
+import { Field, IValidatorRequest } from "@repo/form";
 import { company } from "@repo/types";
 
 export type FormType = {

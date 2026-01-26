@@ -1,12 +1,12 @@
 import { DefaultValues } from "react-hook-form";
 
+import { HookReq, Requests } from "@repo/api";
 import { Field, IUseFormListReturn, IValidatorRequest } from "@repo/form";
 import { PaginationParams } from "@repo/hooks";
 import { PageKeys } from "@repo/language/types";
 import { ILogsComparison, TableAction, TableColumn, TableEventHandlers } from "@repo/ui";
 
 import { Permissions } from "@/hooks/access/types";
-import { HookReq, Requests } from "@/types/hookReq";
 
 export interface IUseHookProps<T extends { id: string }> {
   state: State<T>;

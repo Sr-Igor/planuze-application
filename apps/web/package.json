@@ -23,6 +23,7 @@
     "@repo/hooks": "workspace:*",
     "@repo/language": "workspace:*",
     "@repo/redux": "workspace:*",
+    "@repo/templates": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/ui": "workspace:*",
     "@repo/utils": "workspace:*",

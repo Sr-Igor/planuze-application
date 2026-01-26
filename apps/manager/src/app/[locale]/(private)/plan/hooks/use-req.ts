@@ -5,18 +5,8 @@ import { IUseReqProps } from "../types";
 export const useReq = ({ state, handleState }: IUseReqProps) => {
   const { index } = usePlan({
     enabledIndex: true,
-    filters: state.filters,
+    filters: state.filters as any,
     id: state?.item?.id,
-    callbacks: {
-      many: {
-        onSuccess: () => {
-          handleState({ open: undefined, item: undefined, selected: [], loadingLines: [] });
-        },
-        onError: () => {
-          handleState({ loadingLines: [] });
-        },
-      },
-    },
   });
 
   return {

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import type { client, Pagination } from "@repo/types";
+import type { billing_error, Pagination } from "@repo/types";
 
 import { billingErrorEndpoint } from "../endpoints/billing_error";
 import type { BillingErrorIndexQuery } from "../endpoints/billing_error/billing_error.types";
@@ -13,7 +13,7 @@ export interface UseBillingErrorProps {
 export const useBillingError = ({ filters, enabledIndex }: UseBillingErrorProps = {}) => {
   const indexKey = ["billing_error", filters];
 
-  const index = useQuery<Pagination<client>>({
+  const index = useQuery<Pagination<billing_error>>({
     queryKey: indexKey,
     queryFn: () => billingErrorEndpoint.index(filters),
     enabled: !!enabledIndex,

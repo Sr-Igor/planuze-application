@@ -1,6 +1,6 @@
 import { UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
-import { UseCallerProps } from "@repo/api/types";
+import { UseCallerProps } from "../../../shared/types";
 
 export interface Requests<T> extends Record<string, any> {
   index?: UseQueryResult<any, any>;

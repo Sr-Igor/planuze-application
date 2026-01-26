@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { CenterTemplate } from '@/templates/center';
+import { CenterTemplate } from "@repo/templates";
 
-import { AuthLogic } from './logic';
+import { AuthLogic } from "./logic";
 
 export default function Page() {
-    return (
-        <CenterTemplate>
-            <AuthLogic />
-        </CenterTemplate>
-    );
+  return (
+    <CenterTemplate>
+      <AuthLogic />
+    </CenterTemplate>
+  );
 }

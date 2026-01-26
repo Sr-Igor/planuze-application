@@ -47,7 +47,7 @@ export const usePage = ({ index, handleState, state, baseFilters }: IUsePageProp
 
   useEffect(() => {
     if (index.error?.cause === "internal") {
-      handleState({ filters: baseFilters });
+      handleState({ filters: baseFilters as any });
       resetParams();
     }
   }, [index.error, handleState, baseFilters, resetParams]);

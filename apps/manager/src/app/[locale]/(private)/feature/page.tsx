@@ -6,10 +6,9 @@ import { Atom, Eraser, Plus } from "lucide-react";
 
 import { baseFilterParams } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
+import { ListTemplate } from "@repo/templates";
 import { feature } from "@repo/types";
 import { Button } from "@repo/ui";
-
-import { ListTemplate } from "@/templates/list";
 
 import { FormDialog } from "./form";
 import { useActions, usePage, useReq, useTable } from "./hooks";
@@ -85,7 +84,19 @@ export default function Page() {
           columns,
           loading: index.isLoading || index.isError,
           actions,
-          handleEvent: (newFilter) => handleState({ filters: { ...state.filters, ...newFilter } }),
+          events: {
+            onFiltersChange: (newFilter) =>
+              handleState({
+                filters: {
+                  ...state.filters,
+                  ...newFilter,
+                  orderValue:
+                    newFilter.orderValue === ""
+                      ? "desc"
+                      : (newFilter.orderValue ?? state.filters.orderValue),
+                },
+              }),
+          },
         }}
       />
 
@@ -98,9 +109,9 @@ export default function Page() {
         loading={update.isPending || store.isPending}
         onSubmit={(data) => {
           if (state.item) {
-            update.mutate(data);
+            update.mutate(data as any);
           } else {
-            store.mutate(data);
+            store.mutate(data as any);
           }
         }}
       />

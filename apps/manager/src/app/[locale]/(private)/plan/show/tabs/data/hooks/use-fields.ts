@@ -8,7 +8,7 @@ import { useLang } from "@repo/language/hooks";
 import { company, plan } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils";
 
-export type FormType = any;
+export type FormType = Partial<plan>;
 
 export interface iUseFieldsProps {
   item?: plan | null;

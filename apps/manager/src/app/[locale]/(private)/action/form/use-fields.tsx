@@ -1,12 +1,9 @@
 "use client";
 
 import { Field, IValidatorRequest } from "@repo/form";
+import { action } from "@repo/types";
 
-export type FormType = {
-  title: string;
-  integration: boolean;
-  deleted: boolean;
-};
+export type FormType = Partial<action>;
 
 export interface iUseFieldsProps {
   disabled?: boolean;
