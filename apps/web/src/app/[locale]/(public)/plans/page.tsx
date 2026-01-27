@@ -8,6 +8,7 @@ import { usePlan, useSubscription } from "@repo/api/web";
 // import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { set as setModule } from "@repo/redux/store/modules/module/actions";
 import {
   Button,
@@ -18,7 +19,6 @@ import {
   DialogTitle,
 } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
 import { PlansTemplate } from "@/templates/plans";
 
 // import { ProfileSwitcher } from "@/templates/private/components/profile-switch";
@@ -29,7 +29,7 @@ export default function Page() {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  const { profile, verifyAccess, module, subscription } = useAccess();
+  const { profile, verifyAccess, module, subscription } = useUserAccess();
 
   const isPublic = !subscription;
 

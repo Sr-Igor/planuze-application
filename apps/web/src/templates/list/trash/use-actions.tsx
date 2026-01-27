@@ -1,15 +1,14 @@
 import { ArchiveRestore } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { TableAction } from "@repo/ui";
-
-import { useAccess } from "@/hooks/access";
 
 import { IUseHookProps } from "../base/types";
 
 export const useActions = <T extends { id: string }>({ state, handleState }: IUseHookProps<T>) => {
   const t = useLang();
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions();
 
   const actions: TableAction<T>[] = [

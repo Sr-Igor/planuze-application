@@ -1,14 +1,13 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { projectKanbanObjectiveIndex } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { Pagination, project_kanban_objective } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
 export const useIndexObjective = ({ search, kanban }: ISelectProps): ISelectReturnProps => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_objective");
 
   const queryParams = {

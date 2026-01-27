@@ -1,15 +1,15 @@
 import { Cog, Plus } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { AppDropdownMenu, Button } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../../context";
 
 export const Actions = () => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
 
   const lang = useLang();
   const t = lang.page.kanban;

@@ -1,14 +1,13 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { profileIndex } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { Pagination, profile } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
 export const useIndexProfile = ({ search }: ISelectProps): ISelectReturnProps => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("profile");
 
   const queryParams = {

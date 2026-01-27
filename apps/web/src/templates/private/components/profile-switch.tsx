@@ -2,6 +2,7 @@ import { useRouter } from "next/navigation";
 
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import {
   AppProfileSelect,
   Button,
@@ -12,15 +13,13 @@ import {
   useIsMobile,
 } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
-
 export interface ProfileSwitcherProps {
   callbackUrl?: string;
 }
 
 export const ProfileSwitcher = ({ callbackUrl }: ProfileSwitcherProps) => {
   const t = useLang();
-  const { user, profile: currentProfile } = useAccess();
+  const { user, profile: currentProfile } = useUserAccess();
   const { all } = useAppSelector((state) => state.module);
   const isMobile = useIsMobile();
   const route = useRouter();

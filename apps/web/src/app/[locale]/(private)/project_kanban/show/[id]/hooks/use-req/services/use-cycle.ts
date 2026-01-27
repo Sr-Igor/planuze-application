@@ -1,7 +1,6 @@
 import { useProjectKanbanCycle } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";
 
@@ -14,7 +13,7 @@ export interface IUseCycleProps {
 }
 
 export const useCycle = ({ cycleId, state, id, kanban, onSuccess }: IUseCycleProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle");
 
   const requests = useProjectKanbanCycle({

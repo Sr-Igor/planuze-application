@@ -6,6 +6,7 @@ import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "
 
 import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_allocation } from "@repo/types";
 import {
   AppDialog,
@@ -22,7 +23,6 @@ import {
 } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../../context";
 import { Card } from "./card";
@@ -33,7 +33,7 @@ interface IAllocationProps {
 }
 
 export const Allocation = ({ open, onOpenChange }: IAllocationProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle");
 
   const lang = useLang();

@@ -1,6 +1,5 @@
 import { useProjectKanbanCycleCard } from "@repo/api/web";
-
-import { useAccess } from "@/hooks/access";
+import { useUserAccess } from "@repo/redux/hooks";
 
 import { Mode, State } from "../../../types";
 import { IParams } from "../../use-query/types";
@@ -15,7 +14,7 @@ export interface IUseCardProps {
 }
 
 export const useCard = ({ state, id, cycleId, params, search, onSuccess }: IUseCardProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const requests = useProjectKanbanCycleCard({

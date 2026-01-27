@@ -11,6 +11,7 @@ import { NotFoundGif } from "@repo/assets";
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { update } from "@repo/redux/store/modules/modal/actions";
 import {
   AlertDialog,
@@ -30,12 +31,10 @@ import {
   DropdownMenuTrigger,
 } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
-
 export const InactiveModal = () => {
   const t = useLang();
 
-  const { profile } = useAccess();
+  const { profile } = useUserAccess();
   const dispatch = useAppDispatch();
   const { inactive: isModalOpen } = useAppSelector((state) => state.modal);
   const user = useAppSelector((state) => state.user);

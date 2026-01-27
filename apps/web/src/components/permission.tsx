@@ -1,23 +1,29 @@
-import { useAccess } from '@/hooks/access';
+import { useUserAccess } from "@repo/redux/hooks";
 
 export interface PermissionProps {
-    children: React.ReactNode;
-    permission: any;
-    method?: 'any' | 'all';
-    fallback?: React.ReactNode;
-    feature?: string;
+  children: React.ReactNode;
+  permission: any;
+  method?: "any" | "all";
+  fallback?: React.ReactNode;
+  feature?: string;
 }
 
-export const Permission = ({ children, permission, method = 'all', fallback = null, feature }: PermissionProps) => {
-    const { permissions } = useAccess();
+export const Permission = ({
+  children,
+  permission,
+  method = "all",
+  fallback = null,
+  feature,
+}: PermissionProps) => {
+  const { permissions } = useUserAccess();
 
-    if (method === 'all') {
-        const every = permission.every((p: any) => permissions(feature)[p]);
-        if (!every) return fallback;
-    } else {
-        const some = permission.some((p: any) => permissions(feature)[p]);
-        if (!some) return fallback;
-    }
+  if (method === "all") {
+    const every = permission.every((p: any) => permissions(feature)[p]);
+    if (!every) return fallback;
+  } else {
+    const some = permission.some((p: any) => permissions(feature)[p]);
+    if (!some) return fallback;
+  }
 
-    return <>{children}</>;
+  return <>{children}</>;
 };

@@ -1,14 +1,13 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { projectVersionIndex } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { Pagination, project_version } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
 export const useIndexVersion = ({ search, kanban }: ISelectProps): ISelectReturnProps => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_version");
 
   const queryParams = {

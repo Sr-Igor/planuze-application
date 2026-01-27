@@ -5,6 +5,7 @@ import { useCallback, useMemo } from "react";
 import { CircleAlert, Loader2, MoreHorizontal, Pencil, Plus, Trash } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import {
   AppTooltip,
   Badge,
@@ -21,7 +22,6 @@ import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]
 import { calcColumnTime } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-time";
 import { calcColumnTotal } from "@/app/[locale]/(private)/project_kanban/show/[id]/utils/calc-column-total";
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { KanbanColumnProps } from "../../types";
 
@@ -34,7 +34,7 @@ export const HeaderColumn = ({
 }: Pick<KanbanColumnProps, "column" | "loading" | "dragListeners" | "visibleCards"> & {
   view?: string;
 }) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle");
 
   const t = useLang();

@@ -6,6 +6,7 @@ import { ClockArrowDown, EllipsisVertical, Info, PackageOpen, Plus, Trash2, X } 
 
 import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_allocation } from "@repo/types";
 import {
   Alert,
@@ -25,7 +26,6 @@ import {
 } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 import { useTrash } from "@/hooks/trash";
 
 import { useKanbanShow } from "../../../context";
@@ -39,7 +39,7 @@ interface IGlobalAllocationProps {
 export const GlobalAllocation = ({ open, onOpenChange }: IGlobalAllocationProps) => {
   const trash = useTrash();
 
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_allocation");
 
   const lang = useLang();

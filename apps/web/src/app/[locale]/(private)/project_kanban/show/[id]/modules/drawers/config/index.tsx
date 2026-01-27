@@ -6,6 +6,7 @@ import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "
 
 import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_config } from "@repo/types";
 import {
   AppDialog,
@@ -22,7 +23,6 @@ import {
 } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 import { useTrash } from "@/hooks/trash";
 
 import { useKanbanShow } from "../../../context";
@@ -36,7 +36,7 @@ interface IConfigProps {
 export const Config = ({ open, onOpenChange }: IConfigProps) => {
   const trash = useTrash();
 
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_config");
 
   const lang = useLang();

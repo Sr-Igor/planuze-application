@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 import { ISelectedTag } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
 import { Dialog, DialogContent, Tabs, TabsContent } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../context";
 import { Actions } from "./components/actions";
@@ -57,7 +57,7 @@ interface CardEditFormProps {
 }
 
 export const CardEditForm = ({ open, onOpenChange, onSubmit, loading }: CardEditFormProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const lang = useLang();

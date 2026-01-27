@@ -5,14 +5,13 @@ import { useCallback, useState } from "react";
 import { ChartLine, ClipboardList, LayoutList, Logs } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-
-import { useAccess } from "@/hooks/access";
+import { useUserAccess } from "@repo/redux/hooks";
 
 import { IUseKanbanReturnProps, Mode, State, Viewer } from "../types";
 
 export const useKanban = (): IUseKanbanReturnProps => {
   const t = useLang();
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
 
   const viewers: Viewer[] = [
     {

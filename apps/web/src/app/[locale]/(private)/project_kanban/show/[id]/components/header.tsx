@@ -3,11 +3,11 @@ import { useRouter } from "next/navigation";
 import { Columns3Cog, Plus, Target } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { AppDropdownMenu, AppTooltip, Button, cn, Icon, Skeleton } from "@repo/ui";
 
 import { AppInputSearch } from "@/components/app-input-search";
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../context";
 
@@ -16,7 +16,7 @@ export const Header = () => {
   const t = lang.page.kanban;
 
   const router = useRouter();
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
 
   const { params, setParams, page, data, loadings, general, state } = useKanbanShow();
 

@@ -8,9 +8,8 @@ import { z } from "zod";
 
 import { useSearchParams } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { cn } from "@repo/ui";
-
-import { useAccess } from "@/hooks/access";
 
 import { Cancel, Header, Tabs } from "./components";
 import { Delete } from "./components/delete";
@@ -39,7 +38,7 @@ export const ShowTemplate = <T extends { id: string }>({
   const pageT = t.page[path];
   const pgKey = pageKey ? `${pageKey}.` : "";
 
-  const { permissions, profile, userView, companyView, access } = useAccess();
+  const { permissions, profile, userView, companyView, access } = useUserAccess();
   const perm = permissions();
 
   // Schema para tab do show

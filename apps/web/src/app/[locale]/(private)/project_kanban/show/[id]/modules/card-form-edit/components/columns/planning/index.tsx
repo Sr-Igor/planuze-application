@@ -1,9 +1,8 @@
 import { UseFormReturn } from "react-hook-form";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { Separator } from "@repo/ui";
-
-import { useAccess } from "@/hooks/access";
 
 import { Collapsible } from "../../collapsible";
 import {
@@ -23,7 +22,7 @@ export interface IPlanningAndEffortProps {
 }
 
 export const PlanningAndEffort = ({ hook }: IPlanningAndEffortProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const lang = useLang();

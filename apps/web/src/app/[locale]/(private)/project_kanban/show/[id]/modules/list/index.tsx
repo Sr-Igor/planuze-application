@@ -1,9 +1,8 @@
 "use client";
 
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
 import { AppTable } from "@repo/ui";
-
-import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../context";
 import { useActions, useTable } from "./hooks";
@@ -13,7 +12,7 @@ export interface ListProps {
 }
 
 export const List = ({ open }: ListProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const { state, params, setParams, callers, loadings } = useKanbanShow();

@@ -1,7 +1,6 @@
 import { useProjectAllocation } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";
 
@@ -18,7 +17,7 @@ export const useGlobalAllocation = ({
   kanban,
   onSuccess,
 }: IUseGlobalAllocationProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_allocation");
 
   const requests = useProjectAllocation({

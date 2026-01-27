@@ -2,23 +2,23 @@ import { useEffect, useState } from "react";
 
 import { Pen, Trash } from "lucide-react";
 
+import { Editor } from "@repo/form";
+import { isHtmlEmpty, normalizeHtml } from "@repo/form/utils";
+import { useIntlFormat, useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card_comment } from "@repo/types";
-import { useLang , useIntlFormat } from "@repo/language/hooks";
-import { Button , cn , AppDialog , AppAvatar } from "@repo/ui";
+import { AppAvatar, AppDialog, Button, cn } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { useCardComment } from "@/app/[locale]/(private)/project_kanban/show/[id]/hooks/use-req/services";
-import { Editor } from "@repo/form";
-import { isHtmlEmpty, normalizeHtml } from "@repo/form/utils";
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 export interface ICommentCardProps {
   comment: project_kanban_cycle_card_comment;
 }
 
 export const CommentCard = ({ comment }: ICommentCardProps) => {
-  const { permissions, profile } = useAccess();
+  const { permissions, profile } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card_comment");
 
   const { dates } = useIntlFormat();

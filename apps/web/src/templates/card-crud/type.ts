@@ -2,13 +2,11 @@ import { ReactNode } from "react";
 
 import { DefaultValues } from "react-hook-form";
 
-import { Field, IUseFormListReturn, IValidatorRequest } from "@repo/form";
+import { HookReq } from "@repo/api";
+import { Field, IUseFormListReturn, IValidatorRequest, Shallow } from "@repo/form";
 import { PageKeys } from "@repo/language/types";
+import { Permissions } from "@repo/redux/hooks";
 import { ILogsComparison, TrashProps } from "@repo/ui";
-
-import { Permissions } from "@/hooks/access/types";
-import { HookReq } from "@/types/hookReq";
-import { Shallow } from "@/types/shallowType";
 
 export type GenericItem<T> = T & { id: string; [key: string]: any };
 

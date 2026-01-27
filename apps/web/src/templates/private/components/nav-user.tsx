@@ -21,6 +21,7 @@ import { useClean } from "@repo/cookies";
 import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { invite, Pagination, profile as TProfile } from "@repo/types";
 import {
   AppImage,
@@ -40,8 +41,6 @@ import {
   useSidebar,
 } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
-
 interface NavUserProps {
   variant?: "large" | "small";
   useSide?: () => { isMobile?: boolean };
@@ -59,7 +58,7 @@ export function NavUser({
   intermediate = true,
 }: NavUserProps) {
   const { isMobile } = useSide();
-  const { user, profile: activeProfile } = useAccess();
+  const { user, profile: activeProfile } = useUserAccess();
   const { all } = useAppSelector((state) => state.module);
   const { clean } = useClean();
   const route = useRouter();

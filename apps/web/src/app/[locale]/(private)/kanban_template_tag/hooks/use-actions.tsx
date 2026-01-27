@@ -1,15 +1,15 @@
 import { Eye, Pen, Trash } from "lucide-react";
 
-import { kanban_template_tag } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
+import { kanban_template_tag } from "@repo/types";
 import { TableAction } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useActions = ({ state, handleState }: IUseHookProps<kanban_template_tag>) => {
   const t = useLang();
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
 
   const perm = permissions();
 

@@ -1,8 +1,7 @@
 import { Plus } from "lucide-react";
 
+import { useUserAccess } from "@repo/redux/hooks";
 import { Button, cn } from "@repo/ui";
-
-import { useAccess } from "@/hooks/access";
 
 export interface EmptyProps {
   visible: boolean;
@@ -16,7 +15,7 @@ export interface EmptyProps {
 }
 
 export const Empty = ({ visible, icon, title, description, button }: EmptyProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle");
 
   return (

@@ -1,18 +1,18 @@
 import { Ellipsis } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
 import { AppDropdownMenu, Button } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { useAccess } from "@/hooks/access";
 
 export interface IActionsProps {
   item?: project_kanban_cycle_card;
 }
 
 export const Actions = ({ item }: IActionsProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const t = useLang();

@@ -1,7 +1,6 @@
 import { useProjectConfig } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { State } from "../../../types";
 
@@ -13,7 +12,7 @@ export interface IUseConfigProps {
 }
 
 export const useConfig = ({ state, kanban, onSuccess }: IUseConfigProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_config");
 
   const requests = useProjectConfig({

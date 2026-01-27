@@ -1,7 +1,6 @@
 import { useProjectKanbanReport } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { IParams } from "../../use-query/types";
 
@@ -11,7 +10,7 @@ export interface IUseReportProps {
 }
 
 export const useReport = ({ kanban, params }: IUseReportProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_report");
 
   const requests = useProjectKanbanReport({

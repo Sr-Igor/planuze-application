@@ -1,6 +1,5 @@
 import { useProjectKanbanCycleAllocation } from "@repo/api/web";
-
-import { useAccess } from "@/hooks/access";
+import { useUserAccess } from "@repo/redux/hooks";
 
 import { State } from "../../../types";
 
@@ -12,7 +11,7 @@ export interface IUseAllocationProps {
 }
 
 export const useAllocation = ({ state, id, cycleId, onSuccess }: IUseAllocationProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle");
 
   const requests = useProjectKanbanCycleAllocation({

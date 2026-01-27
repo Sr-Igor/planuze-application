@@ -3,15 +3,14 @@
 import { usePlan, useSubscription } from "@repo/api/web";
 import { useLoading } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-
-import { useAccess } from "@/hooks/access";
+import { useUserAccess } from "@repo/redux/hooks";
 
 import { Current, Invoices, Plans } from "./tabs";
 
 export const useTabs = () => {
   const t = useLang();
 
-  const { profile } = useAccess();
+  const { profile } = useUserAccess();
   const { index } = useSubscription({ enabledIndex: true });
   const { index: indexPlan } = usePlan({ companyId: profile?.company_id, enabled: true });
 

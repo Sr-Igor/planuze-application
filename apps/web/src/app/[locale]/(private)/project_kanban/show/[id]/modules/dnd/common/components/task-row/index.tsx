@@ -2,9 +2,8 @@
 
 import { ChevronDown, ChevronRight } from "lucide-react";
 
+import { useUserAccess } from "@repo/redux/hooks";
 import { Badge, Button, cn } from "@repo/ui";
-
-import { useAccess } from "@/hooks/access";
 
 import { KanbanCard } from "../card";
 import { TaskRowColumn } from "../task-column";
@@ -22,7 +21,7 @@ export const TaskRow = ({
   activeCard,
   loading,
 }: ITaskRowProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const {

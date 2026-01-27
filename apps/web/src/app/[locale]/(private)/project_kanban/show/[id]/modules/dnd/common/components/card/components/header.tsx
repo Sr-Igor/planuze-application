@@ -3,6 +3,7 @@
 import { Plus } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import {
   project_kanban_cycle_card,
   project_kanban_cycle_card_type,
@@ -12,7 +13,6 @@ import { AppTooltip, Button, CardHeader, CardTitle, cn, Icon } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { Actions } from "./actions";
 
@@ -25,7 +25,7 @@ export interface IHeaderProps {
 }
 
 export const Header = ({ cardType, card, column, isUnlinked, cardId }: IHeaderProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const lang = useLang();

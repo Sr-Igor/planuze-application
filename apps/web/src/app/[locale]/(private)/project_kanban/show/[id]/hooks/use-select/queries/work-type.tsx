@@ -1,14 +1,13 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { workTypeIndex } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { Pagination, work_type } from "@repo/types";
-
-import { useAccess } from "@/hooks/access";
 
 import { ISelectProps, ISelectReturnProps } from "../types";
 
 export const useIndexWorkType = ({ search }: ISelectProps): ISelectReturnProps => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("work_type");
 
   const queryParams = {

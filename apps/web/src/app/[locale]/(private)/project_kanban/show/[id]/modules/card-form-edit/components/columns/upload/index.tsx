@@ -1,7 +1,7 @@
 import { useProjectKanbanCycleCardFile } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
 
-import { useAccess } from "@/hooks/access";
 import { UploadTemplate } from "@/templates/upload";
 
 import { useKanbanShow } from "../../../../../context";
@@ -11,7 +11,7 @@ export interface IUploadProps {
 }
 
 export const Upload = ({ item }: IUploadProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card_file");
 
   const { unload } = useKanbanShow();

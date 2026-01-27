@@ -7,6 +7,7 @@ import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "
 import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { useUserAuth } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_member } from "@repo/types";
 import {
   AppDialog,
@@ -23,7 +24,6 @@ import {
 } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 
 import { useKanbanShow } from "../../../context";
 import { Card } from "./card";
@@ -34,7 +34,7 @@ interface IMemberProps {
 }
 
 export const Member = ({ open, onOpenChange }: IMemberProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_member");
 
   const lang = useLang();

@@ -4,9 +4,8 @@ import { HookReq, Requests } from "@repo/api";
 import { Field, IUseFormListReturn, IValidatorRequest } from "@repo/form";
 import { PaginationParams } from "@repo/hooks";
 import { PageKeys } from "@repo/language/types";
+import { Permissions } from "@repo/redux/hooks";
 import { ILogsComparison, TableAction, TableColumn, TableEventHandlers } from "@repo/ui";
-
-import { Permissions } from "@/hooks/access/types";
 
 export interface IUseHookProps<T extends { id: string }> {
   state: State<T>;

@@ -5,11 +5,11 @@ import { memo, useCallback } from "react";
 import { Loader2 } from "lucide-react";
 
 import { useProjectKanbanCycleCard } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
 import { cn } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { useAccess } from "@/hooks/access";
 
 import { useCardForm } from "../../../../card-form-edit/use-form";
 import { KanbanCardProps } from "../../../types";
@@ -29,7 +29,7 @@ const KanbanCardComponent = ({
   invisible = false,
   isPlaceholder = false,
 }: KanbanCardProps) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions("project_kanban_cycle_card");
 
   const { page, general } = useKanbanShow();

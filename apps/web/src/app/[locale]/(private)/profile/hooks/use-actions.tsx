@@ -2,16 +2,16 @@ import { useRouter } from "next/navigation";
 
 import { Eye, Pen, Trash } from "lucide-react";
 
-import { profile } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
+import { profile } from "@repo/types";
 import { TableAction } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useActions = ({ state, handleState }: IUseHookProps<profile>) => {
   const route = useRouter();
-  const { permissions, profile } = useAccess();
+  const { permissions, profile } = useUserAccess();
   const perm = permissions();
   const t = useLang();
 

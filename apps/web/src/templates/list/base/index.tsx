@@ -12,11 +12,11 @@ import {
   usePaginationParams,
 } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
 import { ListTemplate } from "@repo/templates";
 import { AppDialog, AppLogsModal, Button, Icon } from "@repo/ui";
 
 import { Permission } from "@/components/permission";
-import { useAccess } from "@/hooks/access";
 import { useLogs } from "@/hooks/logs";
 import { usePrivateContext } from "@/templates/private/context";
 
@@ -59,7 +59,7 @@ export function BaseTemplate<T extends { id: string; logs?: any[] }>({
   const state = extendedState || internalState;
   const setState = setExtendedState || setInternalState;
 
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions();
   const { resetParams } = usePaginationParams(paginationSchema);
 

@@ -1,9 +1,9 @@
 import { memo } from "react";
 
 import { useLevelAction } from "@repo/api/web";
+import { ModuleWithFeatures } from "@repo/redux/hooks";
 import { level_action, module as TModule } from "@repo/types";
 
-import { ModuleWithFeatures } from "@/hooks/access/types";
 import { PermissionCard } from "@/templates/permission-card";
 
 export interface ICardFormProps {

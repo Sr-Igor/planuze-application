@@ -2,12 +2,12 @@ import { useCallback, useMemo } from "react";
 
 import { usePathname } from "next/navigation";
 
-import { useUserAuth, Warning } from "@repo/redux/hooks";
 import { module, profile, subscription, user } from "@repo/types";
 
-import type { AccessView, FeatureWithActions } from "./types";
+import type { AccessView, FeatureWithActions, Warning } from "./types";
+import { useUserAuth } from "./use-user-auth";
 
-export const useAccess = (): IAccess => {
+export const useUserAccess = (): IAccess => {
   const { profile, module, modules, user, actions, hasProfile, activeSubscription, warning } =
     useUserAuth();
 

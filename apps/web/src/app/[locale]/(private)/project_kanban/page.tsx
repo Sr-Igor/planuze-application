@@ -3,15 +3,15 @@
 import { useRouter } from "next/navigation";
 
 import { useProjectKanban } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban } from "@repo/types";
 
-import { useAccess } from "@/hooks/access";
 import { BaseTemplate } from "@/templates/list/base";
 
 import { useActions, useForm, useTable } from "./hooks";
 
 export default function Page() {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions();
   const router = useRouter();
 

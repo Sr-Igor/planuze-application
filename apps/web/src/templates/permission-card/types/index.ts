@@ -1,6 +1,5 @@
+import { ModuleWithFeatures } from "@repo/redux/hooks";
 import { module as TModule } from "@repo/types";
-
-import { ModuleWithFeatures } from "@/hooks/access/types";
 
 import { PermissionPayload } from "./common";
 

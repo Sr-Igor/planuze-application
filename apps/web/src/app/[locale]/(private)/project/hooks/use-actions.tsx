@@ -2,16 +2,16 @@ import { useRouter } from "next/navigation";
 
 import { ChartNoAxesGantt, Eye, Pen, Trash } from "lucide-react";
 
-import { project } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
+import { project } from "@repo/types";
 import { TableAction } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useActions = ({ state, handleState }: IUseHookProps<project>) => {
   const t = useLang();
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const router = useRouter();
 
   const perm = permissions();

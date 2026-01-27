@@ -9,6 +9,8 @@ import * as lucideIcons from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import { useAppSelector } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
+import { FeatureWithActions, ModuleWithFeatures } from "@repo/redux/hooks";
 import {
   AppTheme,
   cn,
@@ -28,8 +30,6 @@ import {
 
 import { ModuleSwitcher } from "@/components/app-module-switcher";
 import { AppLanguage } from "@/components/language";
-import { useAccess } from "@/hooks/access";
-import { FeatureWithActions, ModuleWithFeatures } from "@/hooks/access/types";
 
 import { NavUser } from "./nav-user";
 
@@ -230,7 +230,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
   const t = useLang();
   const { state } = useSidebar();
 
-  const { access, module } = useAccess();
+  const { access, module } = useUserAccess();
   const store = useAppSelector((state) => state);
 
   const sidebarFeatures = useMemo(() => {

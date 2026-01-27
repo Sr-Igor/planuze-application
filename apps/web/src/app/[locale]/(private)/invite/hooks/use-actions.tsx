@@ -1,14 +1,14 @@
 import { Mail, Pen, Trash } from "lucide-react";
 
-import { invite } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
+import { invite } from "@repo/types";
 import { TableAction } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
 import { IUseHookProps } from "@/templates/list/base/types";
 
 export const useActions = ({ state, handleState, requests }: IUseHookProps<invite>) => {
-  const { permissions } = useAccess();
+  const { permissions } = useUserAccess();
   const perm = permissions();
   const t = useLang();
 

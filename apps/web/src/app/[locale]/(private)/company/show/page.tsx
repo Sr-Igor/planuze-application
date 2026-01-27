@@ -1,14 +1,14 @@
 "use client";
 
 import { useCompany } from "@repo/api/web";
+import { useUserAccess } from "@repo/redux/hooks";
 
-import { useAccess } from "@/hooks/access";
 import { ShowTemplate } from "@/templates/show";
 
 import { useTabs } from "./use-tabs";
 
 export default function Page() {
-  const { profile } = useAccess();
+  const { profile } = useUserAccess();
   const id = profile?.company_id || "";
 
   return (

@@ -10,6 +10,8 @@ import { ChevronsUpDown, LockKeyhole } from "lucide-react";
 import { getModule } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
+import { useUserAccess } from "@repo/redux/hooks";
+import { ModuleWithFeatures } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { module } from "@repo/types";
 import {
@@ -27,15 +29,13 @@ import {
   useSidebar,
 } from "@repo/ui";
 
-import { useAccess } from "@/hooks/access";
-import { ModuleWithFeatures } from "@/hooks/access/types";
 import { useNextRouter } from "@/hooks/next-router";
 
 export function ModuleSwitcher() {
   const { isMobile } = useSidebar();
   const t = useLang();
 
-  const { profile, module: currentModule, companyView, access, verifyAccess } = useAccess();
+  const { profile, module: currentModule, companyView, access, verifyAccess } = useUserAccess();
 
   const route = useRouter();
 

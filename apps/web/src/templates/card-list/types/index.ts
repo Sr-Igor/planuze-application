@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 import { PageKeys } from "@repo/language/types";
+import { Permissions } from "@repo/redux/hooks";
 import { TrashProps } from "@repo/ui";
 
-import { Permissions } from "@/hooks/access/types";
 import { IShowContextType, State } from "@/templates/show/types";
 import { HookReq } from "@/types/hookReq";
 

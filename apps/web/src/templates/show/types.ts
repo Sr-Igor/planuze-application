@@ -2,9 +2,8 @@ import { UseMutationResult, UseQueryResult } from "@tanstack/react-query";
 
 import { UseCallerProps } from "@repo/api/types";
 import { PageKeys } from "@repo/language/types";
+import { AccessView, Permissions } from "@repo/redux/hooks";
 import { profile } from "@repo/types";
-
-import { AccessView, Permissions } from "@/hooks/access/types";
 
 export interface IShowTab {
   title: string;
