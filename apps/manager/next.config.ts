@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 import initializeBundleAnalyzer from "@next/bundle-analyzer";
+import path from "path";
 
 const withBundleAnalyzer = initializeBundleAnalyzer({
   enabled: process.env.BUNDLE_ANALYZER_ENABLED === "true",
@@ -29,6 +30,9 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: false,
+  },
+  turbopack: {
+    root: path.resolve(process.cwd(), "../../"),
   },
   images: {
     remotePatterns: [
