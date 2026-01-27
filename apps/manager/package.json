@@ -42,7 +42,6 @@
     "react-dom": "catalog:",
     "react-dropzone": "^14.3.8",
     "react-hook-form": "catalog:",
-    "react-window": "^1.8.11",
     "recharts": "catalog:",
     "socket.io-client": "^4.8.1",
     "sonner": "catalog:",
@@ -55,7 +54,6 @@
     "@repo/typescript-config": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/nprogress": "^0.2.3",
-    "@types/react-window": "^2.0.0",
     "eslint": "catalog:",
     "eslint-config-next": "catalog:",
     "typescript": "catalog:"
