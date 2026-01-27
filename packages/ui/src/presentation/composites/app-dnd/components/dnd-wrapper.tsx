@@ -9,19 +9,19 @@ import type { DndComponents } from "../types";
 import { DndLoadingFallback } from "./loading-fallback";
 
 const DragDropContext = dynamic(
-  () => import("react-beautiful-dnd").then((mod) => mod.DragDropContext),
+  () => import("@hello-pangea/dnd").then((mod) => mod.DragDropContext),
   {
     ssr: false,
     loading: () => <DndLoadingFallback />,
   }
 ) as unknown as DndComponents["DragDropContext"];
 
-const Droppable = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.Droppable), {
+const Droppable = dynamic(() => import("@hello-pangea/dnd").then((mod) => mod.Droppable), {
   ssr: false,
   loading: () => <DndLoadingFallback />,
 }) as unknown as DndComponents["Droppable"];
 
-const Draggable = dynamic(() => import("react-beautiful-dnd").then((mod) => mod.Draggable), {
+const Draggable = dynamic(() => import("@hello-pangea/dnd").then((mod) => mod.Draggable), {
   ssr: false,
   loading: () => <DndLoadingFallback />,
 }) as unknown as DndComponents["Draggable"];
