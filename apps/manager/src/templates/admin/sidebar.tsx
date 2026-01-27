@@ -93,7 +93,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
       </SidebarContent>
       <SidebarFooter className="flex flex-col items-end justify-between">
         <AppTheme />
-        <Button onClick={() => clean()} className="w-full" variant="destructive">
+        <Button
+          onClick={() => {
+            console.log("Out click");
+            clean();
+          }}
+          className="w-full"
+          variant="destructive"
+        >
           <LogOutIcon />
           <span>{t.helper("exit")}</span>
         </Button>

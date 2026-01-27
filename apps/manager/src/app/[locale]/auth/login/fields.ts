@@ -32,6 +32,7 @@ export const fields: Field<FormType>[] = [
     field: "input",
     name: "password",
     label: "password",
+    type: "password",
     required: true,
     className: "col-span-2",
   },

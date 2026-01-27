@@ -14,55 +14,55 @@ const TOKEN_COOKIE_NAME = process.env.NEXT_PUBLIC_TOKEN_LOCAL;
 const intlMiddleware = createIntlMiddleware(routing);
 
 export default function middleware(req: NextRequest) {
+  const response = intlMiddleware(req);
+
   if (!TOKEN_COOKIE_NAME) {
     console.error("A variável de ambiente NEXT_PUBLIC_TOKEN_LOCAL não está definida.");
-
-    return NextResponse.next();
+    return response;
   }
 
   const { pathname } = req.nextUrl;
   const token = req.cookies.get(TOKEN_COOKIE_NAME);
 
   const { pathWithoutLocale, locale } = extractPathInfo(pathname);
-  const isPublicRoute = PUBLIC_ROUTES.includes(pathWithoutLocale);
 
-  if (!isProtectedRoute(pathWithoutLocale)) {
-    return intlMiddleware(req) || NextResponse.next();
-  }
-
-  const loginUrl = new URL(`/${locale}${AUTH_PREFIX}/login`, req.url);
+  // URLs com locale
   const dashboardUrl = new URL(`/${locale}${DASHBOARD_PATH}`, req.url);
+  const loginUrl = new URL(`/${locale}/${AUTH_PREFIX}/login`, req.url);
 
-  if (token && pathWithoutLocale.startsWith(AUTH_PREFIX)) {
+  // Verifica se já está na rota correta antes de redirecionar (evita loops)
+  if (token && pathWithoutLocale.startsWith(AUTH_PREFIX) && pathname !== dashboardUrl.pathname) {
     return NextResponse.redirect(dashboardUrl);
   }
 
-  if (!token && !isPublicRoute) {
+  const isPublicRoute = PUBLIC_ROUTES.includes(pathWithoutLocale);
+
+  if (!token && !isPublicRoute && pathname !== loginUrl.pathname) {
     return NextResponse.redirect(loginUrl);
   }
 
-  return intlMiddleware(req) || NextResponse.next();
-}
-
-function isProtectedRoute(path: string): boolean {
-  return path.startsWith(AUTH_PREFIX) || path === DASHBOARD_PATH;
+  return response;
 }
 
 function extractPathInfo(pathname: string): { pathWithoutLocale: string; locale: string } {
-  const segments = pathname.split("/");
-  const locale = segments[1] || routing.defaultLocale || "pt";
+  const segments = pathname.split("/").filter(Boolean);
+  const locale = segments[0] || routing.defaultLocale;
+
+  if (!routing.locales.includes(locale as any)) {
+    return { pathWithoutLocale: pathname, locale: routing.defaultLocale };
+  }
 
   let pathWithoutLocale: string;
 
-  if (segments.length <= 2) {
+  if (segments.length <= 1) {
     pathWithoutLocale = "/";
   } else {
-    pathWithoutLocale = "/" + segments.slice(2).join("/");
+    pathWithoutLocale = "/" + segments.slice(1).join("/");
   }
 
   return { pathWithoutLocale, locale };
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|images|svg).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|images|svg|sw.js).*)"],
 };
