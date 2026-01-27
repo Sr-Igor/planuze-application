@@ -89,7 +89,10 @@ export const FormDialog = ({
     >
       <Square />
       <Form
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
         fields={formProps.fields}
         hook={hook}
         className="grid grid-cols-12 gap-4"

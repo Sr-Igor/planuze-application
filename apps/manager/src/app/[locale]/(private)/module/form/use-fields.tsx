@@ -106,7 +106,6 @@ export const useFields = ({ disabled = false, companies }: iUseFieldsProps) => {
       disabled,
       className: "col-span-1",
       options: [
-        { label: "Todas", value: null },
         ...(companies?.map((company) => ({
           label: company.name,
           value: company.id,
