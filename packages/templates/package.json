@@ -30,9 +30,12 @@
     "@repo/ui": "workspace:*",
     "@repo/language": "workspace:*",
     "@repo/hooks": "workspace:*",
-    "@repo/form": "workspace:*"
+    "@repo/form": "workspace:*",
+    "@repo/cookies": "workspace:*"
   },
-  "dependencies": {},
+  "dependencies": {
+    "simplex-noise": "^4.0.3"
+  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",

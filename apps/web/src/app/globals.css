@@ -3,6 +3,7 @@
 
 @source "../../../../packages/ui/src";
 @source "../../../../packages/form/src";
+@source "../../../../packages/templates/src";
 
 body {
   background-color: var(--background);

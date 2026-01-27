@@ -10,8 +10,7 @@ import { useLang } from "@repo/language/hooks";
 import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
 import { set } from "@repo/redux/store/modules/module/actions";
 import { create } from "@repo/redux/store/modules/user/actions";
-
-import { LoaderTemplate } from "@/templates/loader";
+import { LoaderTemplate } from "@repo/templates";
 
 export default function LoginPage() {
   const dispatch = useAppDispatch();
