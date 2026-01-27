@@ -18,18 +18,27 @@ import { projectKanbanCycleAllocationEndpoint } from "../endpoints/project_kanba
 export interface UseProjectKanbanCycleAllocationReturn {
   index: UseQueryResult<Pagination<project_kanban_cycle_allocation>, Error>;
   store: UseMutationResult<
-    project_kanban_cycle_allocation,
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
     Error,
     Partial<project_kanban_cycle_allocation>
   >;
   update: UseMutationResult<
-    project_kanban_cycle_allocation,
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
     Error,
-    Partial<project_kanban_cycle_allocation>
+    | Partial<project_kanban_cycle_allocation>
+    | { id: string; body: Partial<project_kanban_cycle_allocation> }
   >;
-  destroy: UseMutationResult<project_kanban_cycle_allocation, Error, void>;
+  destroy: UseMutationResult<
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
+    Error,
+    void | { id: string; query?: any }
+  >;
   trash: UseQueryResult<Pagination<project_kanban_cycle_allocation>, Error>;
-  restore: UseMutationResult<project_kanban_cycle_allocation, Error, string>;
+  restore: UseMutationResult<
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
+    Error,
+    string | undefined
+  >;
 }
 
 /**
@@ -54,7 +63,7 @@ export const useProjectKanbanCycleAllocation = (
   });
 
   const store = useMutation<
-    project_kanban_cycle_allocation,
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
     Error,
     Partial<project_kanban_cycle_allocation>
   >({
@@ -74,11 +83,22 @@ export const useProjectKanbanCycleAllocation = (
   });
 
   const update = useMutation<
-    project_kanban_cycle_allocation,
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
     Error,
-    Partial<project_kanban_cycle_allocation>
+    | Partial<project_kanban_cycle_allocation>
+    | { id: string; body: Partial<project_kanban_cycle_allocation> }
   >({
-    mutationFn: (body) => projectKanbanCycleAllocationEndpoint.update(id!, body),
+    mutationFn: (variables) => {
+      let updateId = id;
+      let body: Partial<project_kanban_cycle_allocation> = variables as any;
+
+      if ("id" in variables && "body" in variables) {
+        updateId = (variables as any).id;
+        body = (variables as any).body;
+      }
+
+      return projectKanbanCycleAllocationEndpoint.update(updateId!, body);
+    },
     onSuccess: (allocation) => {
       cache.updateInIndex({
         key: indexKey,
@@ -93,8 +113,16 @@ export const useProjectKanbanCycleAllocation = (
     onError: callbacks?.update?.onError,
   });
 
-  const destroy = useMutation<project_kanban_cycle_allocation, Error, void>({
-    mutationFn: () => projectKanbanCycleAllocationEndpoint.destroy(id!),
+  const destroy = useMutation<
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
+    Error,
+    void | { id: string; query?: any }
+  >({
+    mutationFn: (variables) => {
+      const destroyId = (variables && (variables as any).id) || id;
+      const query = variables && (variables as any).query;
+      return projectKanbanCycleAllocationEndpoint.destroy(destroyId!, query);
+    },
     onSuccess: (allocation) => {
       cache.destroyInIndex({
         key: indexKey,
@@ -119,12 +147,16 @@ export const useProjectKanbanCycleAllocation = (
 
   const trash = useQuery<Pagination<project_kanban_cycle_allocation>, Error>({
     queryKey: trashKey,
-    queryFn: () => projectKanbanCycleAllocationEndpoint.trash!(trashFilters || filters),
+    queryFn: () => projectKanbanCycleAllocationEndpoint.trash(trashFilters || filters),
     enabled: !!enableTrash,
   });
 
-  const restore = useMutation<project_kanban_cycle_allocation, Error, string>({
-    mutationFn: (allocationId) => projectKanbanCycleAllocationEndpoint.restore!(allocationId),
+  const restore = useMutation<
+    project_kanban_cycle_allocation | Pagination<project_kanban_cycle_allocation>,
+    Error,
+    string | undefined
+  >({
+    mutationFn: (allocationId) => projectKanbanCycleAllocationEndpoint.restore(allocationId || id!),
     onSuccess: (allocation) => {
       cache.destroyInIndex({
         key: trashKey,
@@ -147,5 +179,5 @@ export const useProjectKanbanCycleAllocation = (
     onError: callbacks?.restore?.onError,
   });
 
-  return { index, store, destroy, trash, restore, update };
+  return { index, store, update, destroy, trash, restore };
 };

@@ -1,7 +1,6 @@
 "use client";
 
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { profile, project_kanban_cycle_allocation } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
@@ -91,7 +90,6 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
       field: "select",
       name: "unit",
       label: "unit",
-      type: "select",
       className: "col-span-1",
       required: true,
       disabled,

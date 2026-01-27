@@ -1,8 +1,7 @@
 import { useLocale } from "next-intl";
 
 import { projectFinancialIndex, roleIndex } from "@repo/api/web";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { project_financial, project_financial_employees, role } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 

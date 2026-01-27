@@ -16,5 +16,4 @@ export type {
   LogAction,
   LogEntryIntegration,
   LogEntryUser,
-  LogsLabels,
 } from "./types";

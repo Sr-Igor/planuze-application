@@ -6,8 +6,7 @@ import { ToggleLeft, UserLock } from "lucide-react";
 
 import { useClean } from "@repo/cookies";
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hooks";
-import { useUserAccess } from "@repo/redux/hooks";
+import { useAppSelector, useUserAccess } from "@repo/redux/hooks";
 import { profile } from "@repo/types";
 import { Button, cn, FullScreenMessage, SidebarProvider } from "@repo/ui";
 

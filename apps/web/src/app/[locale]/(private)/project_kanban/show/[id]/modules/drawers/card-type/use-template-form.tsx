@@ -1,8 +1,7 @@
 "use client";
 
 import { kanbanTemplateCardTypeIndex } from "@repo/api/web";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import {
   kanban_template_card,
   kanban_template_card_type,

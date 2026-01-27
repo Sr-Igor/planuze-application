@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image";
 import Link from "next/link";
 
 import { LogoDark, LogoLight } from "@repo/assets";
@@ -10,11 +10,11 @@ export interface AppLogoProps extends Omit<ImageProps, "alt" | "src"> {
   /**
    * Light theme logo image path
    */
-  logoLight?: string;
+  logoLight?: string | StaticImageData;
   /**
    * Dark theme logo image path
    */
-  logoDark?: string;
+  logoDark?: string | StaticImageData;
   /**
    * Link href (defaults to "/")
    */

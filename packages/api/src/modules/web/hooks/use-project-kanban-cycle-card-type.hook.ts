@@ -40,18 +40,26 @@ export interface CardTypeDestroyInput {
 export interface UseProjectKanbanCycleCardTypeReturn {
   index: UseQueryResult<Pagination<project_kanban_cycle_card_type>, Error>;
   store: UseMutationResult<
-    project_kanban_cycle_card_type,
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
     Error,
     Partial<project_kanban_cycle_card_type>
   >;
   update: UseMutationResult<
-    project_kanban_cycle_card_type,
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
     Error,
     Partial<project_kanban_cycle_card_type>
   >;
-  destroy: UseMutationResult<project_kanban_cycle_card_type, Error, CardTypeDestroyInput>;
+  destroy: UseMutationResult<
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
+    Error,
+    CardTypeDestroyInput
+  >;
   trash: UseQueryResult<Pagination<project_kanban_cycle_card_type>, Error>;
-  restore: UseMutationResult<project_kanban_cycle_card_type, Error, string>;
+  restore: UseMutationResult<
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
+    Error,
+    string
+  >;
 }
 
 /**
@@ -78,7 +86,7 @@ export const useProjectKanbanCycleCardType = (
   });
 
   const store = useMutation<
-    project_kanban_cycle_card_type,
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
     Error,
     Partial<project_kanban_cycle_card_type>
   >({
@@ -98,7 +106,7 @@ export const useProjectKanbanCycleCardType = (
   });
 
   const update = useMutation<
-    project_kanban_cycle_card_type,
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
     Error,
     Partial<project_kanban_cycle_card_type>
   >({
@@ -117,7 +125,11 @@ export const useProjectKanbanCycleCardType = (
     onError: callbacks?.update?.onError,
   });
 
-  const destroy = useMutation<project_kanban_cycle_card_type, Error, CardTypeDestroyInput>({
+  const destroy = useMutation<
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
+    Error,
+    CardTypeDestroyInput
+  >({
     mutationFn: ({ id: cardTypeId, query: destroyQuery }) =>
       projectKanbanCycleCardTypeEndpoint.destroy(cardTypeId, destroyQuery as any),
     onSuccess: (cardType, variables) => {
@@ -128,39 +140,42 @@ export const useProjectKanbanCycleCardType = (
 
         // Update cycle cache if cycleId is provided
         if (projectCycleKey) {
-          cache.setQueryData<project_kanban_cycle>(projectCycleKey, (old) => {
-            if (!old) return old;
+          cache.setQueryData<project_kanban_cycle>(
+            projectCycleKey,
+            (old: project_kanban_cycle | undefined) => {
+              if (!old) return old;
 
-            return {
-              ...old,
-              project_kanban_cycle_columns: old.project_kanban_cycle_columns?.map((column) => {
-                if (isDelete) {
-                  // Delete all cards of this type
-                  return {
-                    ...column,
-                    project_kanban_cycle_cards: column.project_kanban_cycle_cards?.filter(
-                      (card) => card.project_kanban_cycle_card_type_id !== cardTypeId
-                    ),
-                  };
-                } else if (newCardTypeId) {
-                  // Transfer cards to new type
-                  return {
-                    ...column,
-                    project_kanban_cycle_cards: column.project_kanban_cycle_cards?.map((card) => {
-                      if (card.project_kanban_cycle_card_type_id === cardTypeId) {
-                        return {
-                          ...card,
-                          project_kanban_cycle_card_type_id: newCardTypeId,
-                        };
-                      }
-                      return card;
-                    }),
-                  };
-                }
-                return column;
-              }),
-            };
-          });
+              return {
+                ...old,
+                project_kanban_cycle_columns: old.project_kanban_cycle_columns?.map((column) => {
+                  if (isDelete) {
+                    // Delete all cards of this type
+                    return {
+                      ...column,
+                      project_kanban_cycle_cards: column.project_kanban_cycle_cards?.filter(
+                        (card) => card.project_kanban_cycle_card_type_id !== cardTypeId
+                      ),
+                    };
+                  } else if (newCardTypeId) {
+                    // Transfer cards to new type
+                    return {
+                      ...column,
+                      project_kanban_cycle_cards: column.project_kanban_cycle_cards?.map((card) => {
+                        if (card.project_kanban_cycle_card_type_id === cardTypeId) {
+                          return {
+                            ...card,
+                            project_kanban_cycle_card_type_id: newCardTypeId,
+                          };
+                        }
+                        return card;
+                      }),
+                    };
+                  }
+                  return column;
+                }),
+              };
+            }
+          );
         }
 
         // Update index and trash caches
@@ -189,12 +204,16 @@ export const useProjectKanbanCycleCardType = (
 
   const trash = useQuery<Pagination<project_kanban_cycle_card_type>, Error>({
     queryKey: trashKey,
-    queryFn: () => projectKanbanCycleCardTypeEndpoint.trash!(trashFilters || filters),
+    queryFn: () => projectKanbanCycleCardTypeEndpoint.trash(trashFilters || filters),
     enabled: !!enableTrash,
   });
 
-  const restore = useMutation<project_kanban_cycle_card_type, Error, string>({
-    mutationFn: (cardTypeId) => projectKanbanCycleCardTypeEndpoint.restore!(cardTypeId),
+  const restore = useMutation<
+    project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
+    Error,
+    string
+  >({
+    mutationFn: (cardTypeId) => projectKanbanCycleCardTypeEndpoint.restore(cardTypeId),
     onSuccess: (cardType) => {
       cache.destroyInIndex({
         key: trashKey,

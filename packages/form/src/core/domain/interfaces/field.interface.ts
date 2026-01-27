@@ -24,6 +24,7 @@ export interface IFieldBaseProps<FormType extends FieldValues> {
   autoFocus?: boolean;
   id?: string;
   skipHtmlFor?: boolean;
+  ref_key?: string;
 }
 
 // =============================================================================

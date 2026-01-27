@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import { differenceInDays } from "date-fns";
 
 import { kanbanTemplateIndex } from "@repo/api/web";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { kanban_template, project_kanban_cycle, project_version, work_type } from "@repo/types";
 

@@ -6,8 +6,7 @@ import { ClockArrowDown, EllipsisVertical, PackageOpen, Plus, Trash2, X } from "
 
 import { Input } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
-import { useUserAuth } from "@repo/redux/hooks";
-import { useUserAccess } from "@repo/redux/hooks";
+import { useUserAccess, useUserAuth } from "@repo/redux/hooks";
 import { project_member } from "@repo/types";
 import {
   AppDialog,

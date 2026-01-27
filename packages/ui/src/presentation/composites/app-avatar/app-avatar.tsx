@@ -1,8 +1,8 @@
 import { cn } from "../../../shared/utils";
 import { Avatar, AvatarFallback } from "../../primitives/avatar";
-import { AppImage, IAppImage } from "../app-image";
+import { AppImage, AppImageProps } from "../app-image";
 
-export interface AppAvatarProps extends Omit<IAppImage, "alt" | "fill"> {
+export interface AppAvatarProps extends Omit<AppImageProps, "alt" | "fill"> {
   name: string;
   fallbackClassName?: string;
 }

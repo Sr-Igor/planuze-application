@@ -7,4 +7,4 @@
  */
 
 export { AppTrash } from "./app-trash";
-export type { AppTrashProps, TrashLabels } from "./app-trash";
+export type { AppTrashProps } from "./app-trash";

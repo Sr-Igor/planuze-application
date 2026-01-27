@@ -1,7 +1,6 @@
 "use client";
 
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { project_config, project_version } from "@repo/types";
 

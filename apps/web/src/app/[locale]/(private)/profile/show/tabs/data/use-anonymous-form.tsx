@@ -2,8 +2,7 @@
 
 import { z } from "zod";
 
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { profile } from "@repo/types";
 
 export type FormType = {

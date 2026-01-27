@@ -126,7 +126,7 @@ export type { CardFlagProps } from "./card-flag";
 
 // AppTrash
 export { AppTrash, AppTrash as Trash } from "./app-trash";
-export type { AppTrashProps, AppTrashProps as TrashProps, TrashLabels } from "./app-trash";
+export type { AppTrashProps, AppTrashProps as TrashProps } from "./app-trash";
 
 // AppLogs
 export { AppLogs, AppLogs as Logs, AppLogsModal } from "./app-logs";
@@ -140,7 +140,6 @@ export type {
   LogEntryUser,
   LogsComparisonProps,
   LogsComparisonProps as ILogsComparison,
-  LogsLabels,
 } from "./app-logs";
 
 // AppDnd

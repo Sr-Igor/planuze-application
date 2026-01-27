@@ -1,7 +1,6 @@
 "use client";
 
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
-import { Shallow } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { profile, project_allocation, project_version } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";

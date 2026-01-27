@@ -254,14 +254,14 @@ export const useCache = () => {
     /**
      * Sets query data
      */
-    setQueryData: <T>(key: string[], updater: T | ((old: T | undefined) => T)) => {
+    setQueryData: <T>(key: string[], updater: T | ((old: T | undefined) => T | undefined)) => {
       queryClient.setQueryData(key, updater);
     },
 
     /**
      * Sets multiple queries data
      */
-    setQueriesData: <T>(key: string[], updater: (old: T | undefined) => T) => {
+    setQueriesData: <T>(key: string[], updater: (old: T | undefined) => T | undefined) => {
       queryClient.setQueriesData({ queryKey: key }, updater);
     },
 

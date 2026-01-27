@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-query";
 
 import { IKanbanReportResponse } from "@repo/api/types";
+import { CardTypeDestroyInput } from "@repo/api/web";
 import {
   Pagination,
   project_allocation,
@@ -305,13 +306,13 @@ export interface Services {
     destroy: UseMutationResult<
       project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
       Error,
-      void | { id: string; query?: Partial<project_kanban_cycle_card_type> }
+      CardTypeDestroyInput
     >;
     trash: UseQueryResult<Pagination<project_kanban_cycle_card_type>, Error>;
     restore: UseMutationResult<
       project_kanban_cycle_card_type | Pagination<project_kanban_cycle_card_type>,
       Error,
-      string | undefined
+      string
     >;
   };
   member: {
