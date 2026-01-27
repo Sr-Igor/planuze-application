@@ -1,10 +1,10 @@
 import { DefaultValues } from "react-hook-form";
 
+import { HookReq } from "@repo/api";
 import { Field, IUseFormListReturn, IValidatorRequest } from "@repo/form";
 import { ILogsComparison } from "@repo/ui";
 
 import { ICardProps } from "@/templates/card-list/types";
-import { HookReq } from "@/types/hookReq";
 
 export interface IUseHookProps<T extends { id: string }> {
   disabled?: boolean;

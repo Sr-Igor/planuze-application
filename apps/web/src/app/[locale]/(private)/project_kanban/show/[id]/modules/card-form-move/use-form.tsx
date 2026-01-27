@@ -5,8 +5,7 @@ import { useEffect, useMemo } from "react";
 import { projectKanbanCycleCardIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_cycle, project_kanban_cycle_card } from "@repo/types";
-
-import { AppCardSelector } from "@/components/app-cycle-card-selector";
+import { AppCardSelector } from "@repo/ui";
 
 import { useKanbanShow } from "../../context";
 

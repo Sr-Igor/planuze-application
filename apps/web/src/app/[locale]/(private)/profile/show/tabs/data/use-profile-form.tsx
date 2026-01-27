@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 import { levelIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { level, profile } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
-import { Shallow } from "@/types/shallowType";
 
 export type FormType = {
   id?: string | null;

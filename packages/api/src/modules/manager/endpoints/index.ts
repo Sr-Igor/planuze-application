@@ -3,7 +3,6 @@
  */
 export * from "./action";
 export * from "./auth";
-export * from "./bank";
 export * from "./billing_error";
 export * from "./company";
 export * from "./feature";

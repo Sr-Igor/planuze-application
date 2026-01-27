@@ -3,9 +3,8 @@
 import { z } from "zod";
 
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { profile } from "@repo/types";
-
-import { Shallow } from "@/types/shallowType";
 
 export type FormType = {
   anonymous_avatar: string | File | Blob | null;

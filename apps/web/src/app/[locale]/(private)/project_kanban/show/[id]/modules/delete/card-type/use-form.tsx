@@ -2,8 +2,7 @@
 
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_cycle_card_type } from "@repo/types";
-
-import { AppCardTypeSelector } from "@/components/app-card-type-selector";
+import { AppCardTypeSelector } from "@repo/ui";
 
 import { useKanbanShow } from "../../../context";
 

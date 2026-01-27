@@ -3,12 +3,12 @@
 import { useLocale } from "next-intl";
 
 import { companyEndpoint } from "@repo/api/manager";
-import { Field, IValidatorRequest } from "@repo/form";
+import { Field, IValidatorRequest, Shallow } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { company, plan } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils";
 
-export type FormType = Partial<plan>;
+export type FormType = Shallow<plan>;
 
 export interface iUseFieldsProps {
   item?: plan | null;

@@ -6,12 +6,12 @@ import { useWatch } from "react-hook-form";
 
 import { projectVersionIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { project_tool, project_version } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 import { useConstants } from "@/hooks/constants";
 import { IUseHookProps } from "@/templates/card-crud/type";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<project_tool>;
 

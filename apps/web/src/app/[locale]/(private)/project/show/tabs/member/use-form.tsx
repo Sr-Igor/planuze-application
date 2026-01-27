@@ -1,9 +1,9 @@
 import { profileIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { profile, project_member } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-crud/type";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<project_member>;
 

@@ -3,7 +3,6 @@
  */
 export * from "./use-action.hook";
 export * from "./use-auth.hook";
-export * from "./use-bank.hook";
 export * from "./use-billing-error.hook";
 export * from "./use-company.hook";
 export * from "./use-feature.hook";

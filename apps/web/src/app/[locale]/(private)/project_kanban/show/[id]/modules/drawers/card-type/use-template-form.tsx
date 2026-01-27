@@ -2,6 +2,7 @@
 
 import { kanbanTemplateCardTypeIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import {
   kanban_template_card,
   kanban_template_card_type,
@@ -10,7 +11,6 @@ import {
 import { Icon } from "@repo/ui";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<kanban_template_card>;
 

@@ -1,10 +1,10 @@
 import { projectVersionIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { project_config, project_version } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-crud/type";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<project_config>;
 

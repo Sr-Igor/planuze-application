@@ -4,10 +4,9 @@ import { UseFormReturn } from "react-hook-form";
 import { useLang } from "@repo/language/hooks";
 import { useUserAccess } from "@repo/redux/hooks";
 import { project_kanban_cycle_card } from "@repo/types";
-import { Button } from "@repo/ui";
+import { AppCardSelector, Button } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { AppCardSelector } from "@/components/app-cycle-card-selector";
 import { Permission } from "@/components/permission";
 
 import { Collapsible } from "../../collapsible";

@@ -2,11 +2,11 @@ import { useEffect } from "react";
 
 import { IBank } from "@repo/api";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { profile_bank_account } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Partial<Shallow<profile_bank_account>>;
 

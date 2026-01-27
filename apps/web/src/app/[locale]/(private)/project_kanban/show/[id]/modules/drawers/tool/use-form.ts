@@ -4,12 +4,12 @@ import { useLocale } from "next-intl";
 
 import { projectVersionIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { project_tool, project_version } from "@repo/types";
 import { getDefaultCurrencyByLocale } from "@repo/utils/currency";
 
 import { useConstants } from "@/hooks/constants";
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { Shallow } from "@/types/shallowType";
 
 import { useKanbanShow } from "../../../context";
 

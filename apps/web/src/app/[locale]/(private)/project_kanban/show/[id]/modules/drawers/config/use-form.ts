@@ -1,11 +1,11 @@
 "use client";
 
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { project_config, project_version } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { Shallow } from "@/types/shallowType";
 
 import { useKanbanShow } from "../../../context";
 

@@ -5,9 +5,9 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { projectKanbanCycleCardIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
 import { project_kanban_cycle_card } from "@repo/types";
+import { AppCardTypeSelector } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { AppCardTypeSelector } from "@/components/app-card-type-selector";
 
 export interface IUseFormProps {
   disabled: boolean;

@@ -23,10 +23,9 @@ import {
   project_kanban_objective_target,
   work_type,
 } from "@repo/types";
-import { AppAvatarLine, cn } from "@repo/ui";
+import { AppAvatarLine, AppCardSelector, cn } from "@repo/ui";
 
 import { useKanbanShow } from "@/app/[locale]/(private)/project_kanban/show/[id]/context";
-import { AppCardSelector } from "@/components/app-cycle-card-selector";
 import { useConstants } from "@/hooks/constants";
 
 import { styles } from "./styles";

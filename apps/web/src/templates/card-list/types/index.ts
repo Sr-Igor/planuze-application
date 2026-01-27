@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
+import { HookReq } from "@repo/api";
 import { PageKeys } from "@repo/language/types";
 import { Permissions } from "@repo/redux/hooks";
 import { TrashProps } from "@repo/ui";
 
 import { IShowContextType, State } from "@/templates/show/types";
-import { HookReq } from "@/types/hookReq";
 
 export interface ICardListTemplateProps<T extends { id: string }, R extends { id: string }> {
   dataAccess: string;

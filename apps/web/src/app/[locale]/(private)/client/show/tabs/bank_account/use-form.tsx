@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 
 import { IBank } from "@repo/api";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { client_bank_account } from "@repo/types";
 
 import { useConstants } from "@/hooks/constants";
 import { IUseHookProps } from "@/templates/card-crud/type";
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<client_bank_account>;
 

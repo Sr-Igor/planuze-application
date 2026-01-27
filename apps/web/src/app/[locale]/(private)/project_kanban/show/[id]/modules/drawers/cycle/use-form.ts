@@ -6,11 +6,11 @@ import { differenceInDays } from "date-fns";
 
 import { kanbanTemplateIndex } from "@repo/api/web";
 import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Shallow } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { kanban_template, project_kanban_cycle, project_version, work_type } from "@repo/types";
 
 import { IUseHookProps } from "@/templates/card-list/cards/register/types";
-import { Shallow } from "@/types/shallowType";
 
 import { useKanbanShow } from "../../../context";
 

@@ -9,7 +9,6 @@ export const projectKanbanEndpoint = createSimpleEndpoint<project_kanban>()({
     index: "/api/private/project_kanban/index",
     show: "/api/private/project_kanban/show",
     store: "/api/private/project_kanban/store",
-    update: "/api/private/project_kanban/update",
     destroy: "/api/private/project_kanban/destroy",
     many: "/api/private/project_kanban/many",
     trash: "/api/private/project_kanban/trash",
@@ -45,7 +44,6 @@ export type ProjectKanban = project_kanban;
 export const projectKanbanIndex = projectKanbanEndpoint.index;
 export const projectKanbanShow = projectKanbanEndpoint.show;
 export const projectKanbanStore = projectKanbanEndpoint.store;
-export const projectKanbanUpdate = projectKanbanEndpoint.update;
 export const projectKanbanDestroy = projectKanbanEndpoint.destroy;
 export const projectKanbanMany = projectKanbanEndpoint.many;
 export const projectKanbanTrash = projectKanbanEndpoint.trash;

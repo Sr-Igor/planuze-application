@@ -1,10 +1,8 @@
 "use client";
 
 import { profileIndex } from "@repo/api/web";
-import { Field, IValidatorRequest, useFormList } from "@repo/form";
+import { Field, IValidatorRequest, Shallow, useFormList } from "@repo/form";
 import { profile, project_member } from "@repo/types";
-
-import { Shallow } from "@/types/shallowType";
 
 type Form = Shallow<project_member>;
 
