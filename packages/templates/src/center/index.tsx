@@ -1,19 +1,30 @@
 import type { PropsWithChildren } from "react";
 
-import { AppLogo } from "@repo/ui";
+import { AppLogo, cn } from "@repo/ui";
 
 import * as styles from "./styles";
 
 interface CenterTemplateProps extends PropsWithChildren {
   hideLogo?: boolean;
+  containerClassName?: string;
+  headerClassName?: string;
+  contentClassName?: string;
 }
 
-export const CenterTemplate = ({ children, hideLogo }: CenterTemplateProps) => {
+export const CenterTemplate = ({
+  children,
+  hideLogo,
+  containerClassName,
+  headerClassName,
+  contentClassName,
+}: CenterTemplateProps) => {
   return (
-    <main className={styles.container}>
-      <div className={styles.header}>{!hideLogo && <AppLogo width={400} height={100} />}</div>
+    <main className={cn(styles.container, containerClassName)}>
+      <div className={cn(styles.header, headerClassName)}>
+        {!hideLogo && <AppLogo width={400} height={100} />}
+      </div>
 
-      <div className={styles.contentWrapper}>{children}</div>
+      <div className={cn(styles.contentWrapper, contentClassName)}>{children}</div>
     </main>
   );
 };

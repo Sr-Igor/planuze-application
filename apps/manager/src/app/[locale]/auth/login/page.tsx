@@ -6,7 +6,7 @@ import { AuthLogic } from "./logic";
 
 export default function Page() {
   return (
-    <CenterTemplate>
+    <CenterTemplate containerClassName="mt-10">
       <AuthLogic />
     </CenterTemplate>
   );
