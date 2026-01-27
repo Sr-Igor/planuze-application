@@ -1,10 +1,12 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 "use client";
 
 import Image from "next/image";
+
 import { CreditCard } from "lucide-react";
 
 import { cn } from "../../../shared/utils";
+
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 const SUPPORTED_FLAGS = [
   "visa",
@@ -38,17 +40,12 @@ export interface CardFlagProps {
   className?: string;
 }
 
-export const CardFlag = ({
-  brand,
-  width = 28,
-  height = 18,
-  className,
-}: CardFlagProps) => {
+export const CardFlag = ({ brand, width = 28, height = 18, className }: CardFlagProps) => {
   const normalized = brand?.toLowerCase()?.replace(/[^a-z]/g, "") || "";
 
   if (SUPPORTED_FLAGS.includes(normalized as SupportedCardBrand)) {
     try {
-      const flag = require(`payment-icons/min/flat/${normalized}.svg`);
+      const flag = require(`./svg/${normalized}.svg`);
       return (
         <div
           className={cn("flex items-center gap-2", className)}

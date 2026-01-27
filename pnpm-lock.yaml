@@ -1220,9 +1220,6 @@ importers:
       next-themes:
         specifier: 'catalog:'
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      payment-icons:
-        specifier: ^1.2.1
-        version: 1.2.1
       react:
         specifier: 'catalog:'
         version: 19.2.0
@@ -4849,10 +4846,6 @@ packages:
 
   path-to-regexp@8.3.0:
     resolution: {integrity: sha512-7jdwVIRtsP8MYpdXSwOS0YdD0Du+qOoF/AEPIt88PcCFrZCzx41oxku1jD88hZBwbNUIEfpqvuhjFaMAqMTWnA==}
-
-  payment-icons@1.2.1:
-    resolution: {integrity: sha512-nfIgiz/QoD63Gtv6VWYxJdUYDAJvh9B+MX3B2qJafVfyb4/Qx7O3K87pTJVeG1K0tOC+5eZPPnACVEaaQG7zxw==}
-    deprecated: This package is unmaintained
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -9423,8 +9416,6 @@ snapshots:
       path-root-regex: 0.1.2
 
   path-to-regexp@8.3.0: {}
-
-  payment-icons@1.2.1: {}
 
   picocolors@1.1.1: {}
 

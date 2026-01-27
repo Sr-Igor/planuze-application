@@ -34,7 +34,6 @@
     "@repo/assets": "workspace:*"
   },
   "dependencies": {
-    "payment-icons": "^1.2.1",
     "react-beautiful-dnd": "^13.1.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
