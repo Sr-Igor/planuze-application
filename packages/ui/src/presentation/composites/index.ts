@@ -187,3 +187,6 @@ export type { AppCardTypeSelectorProps } from "./app-card-type-selector";
 // AppTabs
 export { AppTabs } from "./app-tabs";
 export type { AppTabsProps } from "./app-tabs";
+
+// AppLanguage
+export { AppLanguage } from "./language/app-language";

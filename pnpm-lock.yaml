@@ -1220,6 +1220,9 @@ importers:
       next:
         specifier: 'catalog:'
         version: 15.5.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      next-intl:
+        specifier: 'catalog:'
+        version: 4.7.0(@swc/helpers@0.5.18)(next@15.5.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)(typescript@5.9.3)
       next-themes:
         specifier: 'catalog:'
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)

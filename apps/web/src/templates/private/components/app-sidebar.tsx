@@ -8,10 +8,14 @@ import { usePathname, useRouter } from "next/navigation";
 import * as lucideIcons from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
-import { useAppSelector } from "@repo/redux/hooks";
-import { useUserAccess } from "@repo/redux/hooks";
-import { FeatureWithActions, ModuleWithFeatures } from "@repo/redux/hooks";
 import {
+  FeatureWithActions,
+  ModuleWithFeatures,
+  useAppSelector,
+  useUserAccess,
+} from "@repo/redux/hooks";
+import {
+  AppLanguage,
   AppTheme,
   cn,
   Icon,
@@ -29,7 +33,6 @@ import {
 } from "@repo/ui";
 
 import { ModuleSwitcher } from "@/components/app-module-switcher";
-import { AppLanguage } from "@/components/language";
 
 import { NavUser } from "./nav-user";
 
@@ -405,8 +408,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
         )}
       >
         {/* Quick Actions */}
-        <div className={cn("flex w-full justify-end gap-1", isCollapsed && "flex-col")}>
-          <AppLanguage />
+        <div
+          className={cn("flex w-full items-center justify-end gap-1", isCollapsed && "flex-col")}
+        >
+          {!isCollapsed && <AppLanguage />}
           <AppTheme />
         </div>
 

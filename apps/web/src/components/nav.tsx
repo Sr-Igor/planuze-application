@@ -7,12 +7,10 @@ import { ChevronLeft, HousePlus, LogInIcon } from "lucide-react";
 import { useLang } from "@repo/language/hooks";
 import { Link } from "@repo/language/navigation";
 import { useUserAuth } from "@repo/redux/hooks";
-import { AppLogo, AppTheme, Button, cn, SidebarTrigger } from "@repo/ui";
+import { AppLanguage, AppLogo, AppTheme, Button, cn, SidebarTrigger } from "@repo/ui";
 
 import { NavUser } from "@/templates/private/components/nav-user";
 import { Notifications } from "@/templates/private/modules/notification";
-
-import { AppLanguage } from "./language";
 
 export interface INavProps {
   intermediate?: boolean;
@@ -50,37 +48,43 @@ export const Nav = ({ intermediate = true }: INavProps) => {
         </span>
 
         <span className="flex items-center gap-2">
-          <AppTheme />
           {!!user?.id && (
-            <span className="flex items-center gap-2">
-              <Notifications />
-              <NavUser
-                variant="small"
-                intermediate={intermediate}
-                useSide={() => ({ isMobile: false })}
-              />
-            </span>
+            <>
+              <AppLanguage />
+              <AppTheme />
+              <span className="flex items-center gap-2">
+                <Notifications />
+                <NavUser
+                  variant="small"
+                  intermediate={intermediate}
+                  useSide={() => ({ isMobile: false })}
+                />
+              </span>
+            </>
           )}
 
           {!user?.id && (
-            <div className="flex items-center gap-4">
-              <Link href="/plans">
-                <Button variant="ghost">{t.page.lp("nav.plans")}</Button>
-              </Link>
-              <Link href="/auth/login">
-                <Button variant="outline">
-                  <LogInIcon />
-                  {t.page.lp("nav.login")}
-                </Button>
-              </Link>
-              <Link href="/auth/register">
-                <Button>
-                  <HousePlus />
-                  {t.page.lp("nav.start_free")}
-                </Button>
-              </Link>
+            <>
+              <div className="flex items-center gap-4">
+                <Link href="/plans">
+                  <Button variant="ghost">{t.page.lp("nav.plans")}</Button>
+                </Link>
+                <Link href="/auth/login">
+                  <Button variant="outline">
+                    <LogInIcon />
+                    {t.page.lp("nav.login")}
+                  </Button>
+                </Link>
+                <Link href="/auth/register">
+                  <Button>
+                    <HousePlus />
+                    {t.page.lp("nav.start_free")}
+                  </Button>
+                </Link>
+              </div>
               <AppLanguage />
-            </div>
+              <AppTheme />
+            </>
           )}
         </span>
       </div>

@@ -17,6 +17,7 @@
   },
   "peerDependencies": {
     "next": "catalog:",
+    "next-intl": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "date-fns": "catalog:",
