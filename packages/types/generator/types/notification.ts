@@ -14,6 +14,8 @@ export interface notification {
   message_key: string;
   message_props: any | null;
   modal: string | null;
+  module_id: string | null;
+  profile_id: string | null;
   user?: user;
   company?: company;
 }
@@ -31,6 +33,8 @@ export interface notificationCreateInput {
   message_key: string;
   message_props?: any | null;
   modal?: string | null;
+  module_id?: string | null;
+  profile_id?: string | null;
   user?: userCreateInput;
   company?: companyCreateInput;
 }

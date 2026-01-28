@@ -16,6 +16,9 @@ export interface company_invoice {
   title: string | null;
   status: string | null;
   description: string | null;
+  gateway: string | null;
+  gateway_id: string | null;
+  gateway_date: string | null;
   company?: company;
 }
 
@@ -35,6 +38,9 @@ export interface company_invoiceCreateInput {
   title?: string | null;
   status?: string | null;
   description?: string | null;
+  gateway?: string | null;
+  gateway_id?: string | null;
+  gateway_date?: string | null;
   company?: companyCreateInput;
 }
 

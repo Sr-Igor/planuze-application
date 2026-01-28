@@ -9,6 +9,8 @@ import { useNotification } from "@repo/api/web";
 import { Calendar } from "@repo/form";
 import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
+import { useAppDispatch, useAppSelector, useUserAuth } from "@repo/redux/hooks";
+import { set } from "@repo/redux/store/modules/module/actions";
 import {
   Button,
   Drawer,
@@ -29,6 +31,10 @@ export const Notifications = () => {
   const [removed, setRemoved] = useState<string[]>([]);
   const [date, setDate] = useState<Date | null | undefined>();
   const router = useRouter();
+
+  const { all } = useAppSelector((state) => state.module);
+  const { user } = useUserAuth();
+  const dispatch = useAppDispatch();
 
   const { index, update, clean } = useNotification({
     enabledIndex: true,
@@ -96,8 +102,8 @@ export const Notifications = () => {
             <div className="flex flex-col gap-2">
               {isLoading && (
                 <div className="flex flex-col gap-2">
-                  {[...Array(LIMIT)].map((_, i) => (
-                    <Skeleton key={i} className="bg-muted h-14 w-full rounded-xl" />
+                  {...new Array(LIMIT).map((n, i) => (
+                    <Skeleton key={`${i}_${n}`} className="bg-muted h-14 w-full rounded-xl" />
                   ))}
                   <span className="text-muted-foreground px-2 text-xs">
                     {t.helper("loading_notifications")}
@@ -118,6 +124,19 @@ export const Notifications = () => {
                         onRedirect={() => {
                           setDrawer(false);
                           update.mutate({ id: notification?.id, read: true });
+                          const module = all.find((m) => m.id === notification?.module_id);
+                          const profile = user?.profiles?.find(
+                            (p) => p.id === notification?.profile_id && p.active
+                          );
+
+                          if (module && profile) {
+                            dispatch(set({ moduleId: module?.id, profileId: profile?.id }));
+                          } else if (module) {
+                            dispatch(set({ moduleId: module?.id }));
+                          } else if (profile) {
+                            dispatch(set({ profileId: profile?.id }));
+                          }
+
                           if (notification?.redirect) router.push(notification?.redirect);
                           else if (notification?.modal) setModal({ [notification?.modal]: true });
                         }}
