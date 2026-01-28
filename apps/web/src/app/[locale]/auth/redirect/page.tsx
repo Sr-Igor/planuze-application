@@ -3,27 +3,29 @@
 //React && Hooks
 import { useEffect } from "react";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-import { useModal } from "@repo/hooks";
 import { useLang } from "@repo/language/hooks";
-import { useAppDispatch, useAppSelector } from "@repo/redux/hooks";
-import { set } from "@repo/redux/store/modules/module/actions";
-import { create } from "@repo/redux/store/modules/user/actions";
 import { LoaderTemplate } from "@repo/templates";
 
+import { useUserSet } from "@/hooks/user-set";
+
 export default function LoginPage() {
-  const dispatch = useAppDispatch();
   const route = useRouter();
-  const callback = useSearchParams().get("callbackUrl");
-  const { all } = useAppSelector((state) => state.module);
 
   const t = useLang();
 
-  const { setModal } = useModal();
+  const { setter } = useUserSet();
 
   useEffect(() => {
+    const navElement = document.getElementById("global-nav-element");
+    if (navElement) navElement.style.opacity = "0";
+
     getUser();
+
+    return () => {
+      if (navElement) navElement.style.opacity = "1";
+    };
   }, []);
 
   const getUser = async () => {
@@ -35,31 +37,9 @@ export default function LoginPage() {
       const data = await res.json();
       const user = data.data;
       if (!user) route.push(`/auth/error?error=${t.error("error_user_not_found")}`);
-
-      try {
-        if (!user.user_tokens[0].token)
-          return route.push(`/auth/error?error=${t.error("error_token")}`);
-
-        const personalModule = all.find((m) => m.title === "personal");
-        const activeProfiles = user?.profiles?.filter((p: any) => p.active) || [];
-        const activeProfile = activeProfiles?.[0];
-        dispatch(set({ profileId: activeProfile?.id, moduleId: personalModule?.id || "" }));
-        dispatch(create(user));
-
-        const hasTwoAuth = user?.user_two_auths?.find((t: any) => t.confirmed && t.active);
-
-        if (hasTwoAuth) {
-          route.push("/config/two_auth");
-          return;
-        }
-
-        activeProfiles.length > 1 && setModal({ profile: true });
-
-        route.push(callback || "/dashboard");
-      } catch (error) {
-        route.push(`/auth/error?error=${t.error("error_register")}`);
-      }
+      setter(user);
     } catch (error) {
+      console.error(error);
       route.push(`/auth/error?error=${t.error("error_register")}`);
     }
   };

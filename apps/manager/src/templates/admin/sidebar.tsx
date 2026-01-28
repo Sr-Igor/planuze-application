@@ -95,7 +95,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar> & 
         <AppTheme />
         <Button
           onClick={() => {
-            console.log("Out click");
             clean();
           }}
           className="w-full"

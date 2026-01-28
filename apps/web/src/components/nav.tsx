@@ -34,7 +34,10 @@ export const Nav = ({ intermediate = true }: INavProps) => {
   }, [pathname]);
   // "bg-background/95 supports-backdrop-filter:bg-background/10 shadow-foreground sticky top-0 z-50 w-full backdrop-blur"
   return (
-    <nav className="supports-backdrop-filter:bg-muted-foreground/5 sticky top-0 z-50 w-full backdrop-blur">
+    <nav
+      className="supports-backdrop-filter:bg-muted-foreground/5 sticky top-0 z-50 w-full backdrop-blur"
+      id="global-nav-element"
+    >
       <div className={cn("mx-auto flex h-16 items-center justify-between px-4", className)}>
         <span className="flex items-center gap-2">
           {intermediate && <SidebarTrigger />}

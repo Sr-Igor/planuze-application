@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { LogInIcon } from "lucide-react";
+import qs from "qs";
 
 import { useAuth } from "@repo/api/web";
 import { GoogleIcon } from "@repo/assets";
@@ -23,6 +24,10 @@ export const AuthLogic = () => {
   const route = useRouter();
   const pathname = usePathname();
   const isAuth = pathname.includes("/auth/login");
+
+  const callbackUrl = useSearchParams().get("callbackUrl");
+  const moduleId = useSearchParams().get("moduleId");
+  const profileId = useSearchParams().get("profileId");
 
   const { setter } = useUserSet(isAuth ? "/dashboard" : null);
 
@@ -79,8 +84,16 @@ export const AuthLogic = () => {
         disabled={login.isPending}
         variant="outline"
         onClick={async () => {
+          const params = qs.stringify({
+            callbackUrl,
+            moduleId,
+            profileId,
+          });
+
           const currentDeviceId = await fingerprint();
-          globalThis.location.href = `${process.env.NEXT_PUBLIC_LOGIN_URL}/${currentDeviceId}`;
+          const url = `${process.env.NEXT_PUBLIC_LOGIN_URL}/${currentDeviceId}?${params}`;
+
+          globalThis.location.href = url;
         }}
         className="flex w-full items-center justify-center gap-2 py-3 text-base font-semibold shadow transition-all duration-200"
       >

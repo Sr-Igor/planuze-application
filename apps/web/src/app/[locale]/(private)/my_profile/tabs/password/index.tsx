@@ -22,7 +22,7 @@ export const Password = () => {
   const user = useAppSelector((state) => state.user);
   const { clean } = useClean();
 
-  const { setter } = useUserSet(null, false);
+  const { setter } = useUserSet(null, true);
 
   const { changePassword } = useAuth({
     callbacks: {

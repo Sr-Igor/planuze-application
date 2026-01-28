@@ -39,14 +39,20 @@ export default function middleware(req: NextRequest) {
   const { pathWithoutLocale, locale } = extractPathInfo(pathname);
 
   // URLs com locale
-  const initialUrl = new URL(`/${locale}/initial`, req.url);
+  const loginUrl = new URL(`/${locale}/${AUTH_PREFIX}/login`, req.url);
   const confirmUrl = new URL(`/${locale}/config/code/confirm`, req.url);
   const welcomeUrl = new URL(`/${locale}/config/welcome`, req.url);
   const plansUrl = new URL(`/${locale}/plans`, req.url);
   const dashboardUrl = new URL(`/${locale}${DASHBOARD_PATH}`, req.url);
+  const redirectUrl = new URL(`/${locale}${AUTH_PREFIX}/redirect`, req.url);
 
   // Verifica se já está na rota correta antes de redirecionar (evita loops)
-  if (token && pathWithoutLocale.startsWith(AUTH_PREFIX) && pathname !== dashboardUrl.pathname) {
+  if (
+    token &&
+    pathWithoutLocale.startsWith(AUTH_PREFIX) &&
+    pathname !== dashboardUrl.pathname &&
+    pathname !== redirectUrl.pathname
+  ) {
     return NextResponse.redirect(dashboardUrl);
   }
 
@@ -70,8 +76,8 @@ export default function middleware(req: NextRequest) {
 
   const isPublicRoute = PUBLIC_ROUTES.includes(pathWithoutLocale);
 
-  if (!token && !isPublicRoute && pathname !== initialUrl.pathname) {
-    return NextResponse.redirect(initialUrl);
+  if (!token && !isPublicRoute && pathname !== loginUrl.pathname) {
+    return NextResponse.redirect(loginUrl);
   }
 
   return response;

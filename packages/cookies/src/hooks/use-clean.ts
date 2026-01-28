@@ -1,11 +1,13 @@
 "use client";
 
+import qs from "qs";
+
 import Cookies from "../config";
 import { getModule } from "../modules/module";
 import { getProfile } from "../modules/profile";
 
 const unsubscribePush = async () => {
-  if ("serviceWorker" in navigator && "PushManager" in window) {
+  if ("serviceWorker" in navigator && "PushManager" in globalThis.window) {
     try {
       const unSub = async () => {
         const registration = await navigator.serviceWorker.ready;
@@ -33,22 +35,25 @@ export const useClean = (callback?: boolean) => {
 
     await unsubscribePush();
 
-    if (typeof window !== "undefined") {
-      localStorage.clear();
-    }
+    if (globalThis.window) localStorage.clear();
+
     Cookies.remove(process.env.NEXT_PUBLIC_TOKEN_LOCAL!);
 
     cleanCookies();
 
-    const rawPath = window.location.pathname?.split("/")?.filter((p) => !!p);
+    const rawPath = globalThis.window.location.pathname?.split("/")?.filter((p) => !!p);
     const currentPath = rawPath?.slice(1).join("/");
 
     if (redirect) {
-      window.location.href = redirect;
+      globalThis.window.location.href = redirect;
     } else {
-      window.location.href = callback
-        ? `/auth/login?callbackUrl=${currentPath}&moduleId=${moduleId}&profileId=${profileId}`
-        : "/auth/login";
+      const url = qs.stringify({
+        callbackUrl: currentPath,
+        moduleId,
+        profileId,
+      });
+
+      globalThis.window.location.href = `/auth/login?${callback ? url : ""}`;
     }
   };
 

@@ -54,8 +54,6 @@ export default function Dashboard() {
 
   const Module = modules?.[module?.title as keyof typeof modules] || Loader;
 
-  // console.log(index.data);
-
   return (
     <div className="relative flex h-[calc(100vh-68px)] items-center justify-center overflow-hidden">
       <Module
