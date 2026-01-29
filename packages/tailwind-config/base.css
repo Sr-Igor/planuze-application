@@ -172,7 +172,7 @@
   --accent: oklch(0.28 0.015 255);
   --accent-foreground: oklch(0.92 0.005 240);
 
-  --destructive: oklch(0.45 0.15 25);
+  --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: oklch(0.98 0.005 240);
 
   --border: oklch(26.264% 0.00715 248.2); /* Bordas mais visíveis */
