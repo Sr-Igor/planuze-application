@@ -41,6 +41,22 @@ export const inviteEndpoint = createSimpleEndpoint<invite>()({
 export const inviteMe = () =>
   typedRequest<Pagination<invite>>()({
     route: "/api/private/invite/me",
+    query: {
+      include: {
+        logs,
+        level: {
+          select: {
+            title: true,
+          },
+        },
+        company: {
+          select: {
+            logo: true,
+            name: true,
+          },
+        },
+      },
+    },
   });
 
 export const inviteFeedback = (params: InviteFeedbackParams, body: InviteFeedbackInput) =>

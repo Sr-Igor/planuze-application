@@ -69,9 +69,10 @@ export const useUserSet = (redirect: string | null = "/dashboard", skipSet: bool
       !skipSet && dispatch(set({ profileId: profileInfo.id, moduleId: moduleInfo?.id || "" }));
       dispatch(create(user));
       const hasTwoAuth = user?.user_two_auths?.find((t) => t.confirmed && t.active);
+      const path = callback || redirect;
 
       if (hasTwoAuth) {
-        route.push("/config/two_auth");
+        route.push(`/config/two_auth?callbackUrl=${path}`);
         return;
       }
 
@@ -79,7 +80,6 @@ export const useUserSet = (redirect: string | null = "/dashboard", skipSet: bool
         setModal({ profile: true });
       }
 
-      const path = callback || redirect;
       if (path) route.push(`/${path}`);
     } catch (error) {
       console.error(error);

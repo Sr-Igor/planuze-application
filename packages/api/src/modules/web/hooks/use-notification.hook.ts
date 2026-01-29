@@ -6,6 +6,7 @@ import {
   type UseMutationResult,
 } from "@tanstack/react-query";
 
+import { useUserAuth } from "@repo/redux/hooks";
 import type { notification, Pagination } from "@repo/types";
 
 import { useCache } from "../../../infrastructure/cache";
@@ -41,6 +42,8 @@ export const useNotification = (props: UseCallerProps<notification>): UseNotific
   const cache = useCache();
   const indexKey = cacheKeys.notification.index(filters);
 
+  const { hasTwoAuth } = useUserAuth();
+
   /**
    * Index query with infinite pagination support
    */
@@ -51,7 +54,7 @@ export const useNotification = (props: UseCallerProps<notification>): UseNotific
     getNextPageParam: (lastPage) =>
       lastPage?.page < lastPage?.pages ? lastPage?.page + 1 : undefined,
     initialPageParam: 1,
-    enabled: !!enabledIndex,
+    enabled: !!enabledIndex && hasTwoAuth,
   });
 
   /**

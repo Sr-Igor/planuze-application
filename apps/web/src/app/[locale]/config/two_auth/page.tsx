@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { KeyRound, Mail, Phone } from "lucide-react";
 
@@ -34,6 +34,8 @@ export default function Page() {
   const auths: user_two_auth[] = user?.user_two_auths?.filter((i) => i.confirmed && i.active) || [];
   const router = useRouter();
 
+  const callback = useSearchParams().get("callbackUrl") || "";
+
   const { clean } = useClean();
 
   const [otp, setOtp] = useState("");
@@ -49,7 +51,7 @@ export default function Page() {
       confirm: {
         onSuccess: () => {
           setTwoAuth(otp);
-          router.replace("/hidrate?openProfileModal=true");
+          router.replace(`/hidrate?openProfileModal=true&callbackUrl=${callback}`);
         },
       },
     },
