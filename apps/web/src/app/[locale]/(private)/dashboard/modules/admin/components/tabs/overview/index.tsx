@@ -118,7 +118,11 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
             className="col-span-1"
             icon="Key"
             title={page("admin.overview.licenses.total_licenses")}
-            value={summary.licenses.totalLicenses || t.helper("unlimited")}
+            value={
+              summary.licenses.totalLicenses === null
+                ? t.helper("unlimited")
+                : summary.licenses.totalLicenses
+            }
             isLoading={isLoading}
           />
           <CardItem
@@ -132,7 +136,11 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
             className="col-span-1"
             icon="KeyRound"
             title={page("admin.overview.licenses.available_licenses")}
-            value={summary.licenses.availableLicenses || t.helper("unlimited")}
+            value={
+              summary.licenses.availableLicenses === null
+                ? t.helper("unlimited")
+                : summary.licenses.availableLicenses
+            }
             isLoading={isLoading}
           />
           <CardItem

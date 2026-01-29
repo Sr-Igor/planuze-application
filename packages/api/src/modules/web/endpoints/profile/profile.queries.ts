@@ -10,6 +10,9 @@ export const profileQueries: {
   show: { include: Prisma.profileInclude };
   store: { include: Prisma.profileInclude };
   update: { include: Prisma.profileInclude };
+  destroy: { include: Prisma.profileInclude };
+  many: { include: Prisma.profileInclude };
+  restore: { include: Prisma.profileInclude };
 } = {
   /**
    * Query for listing (index) - lighter version
@@ -155,6 +158,63 @@ export const profileQueries: {
           cost_center: true,
         },
         orderBy: { createdAt: "desc" },
+      },
+    },
+  },
+
+  destroy: {
+    include: {
+      logs,
+      user: {
+        select: {
+          avatar: true,
+          email: true,
+          id: true,
+          name: true,
+        },
+      },
+      level: {
+        select: {
+          title: true,
+        },
+      },
+    },
+  },
+
+  many: {
+    include: {
+      logs,
+      user: {
+        select: {
+          avatar: true,
+          email: true,
+          id: true,
+          name: true,
+        },
+      },
+      level: {
+        select: {
+          title: true,
+        },
+      },
+    },
+  },
+
+  restore: {
+    include: {
+      logs,
+      user: {
+        select: {
+          avatar: true,
+          email: true,
+          id: true,
+          name: true,
+        },
+      },
+      level: {
+        select: {
+          title: true,
+        },
       },
     },
   },

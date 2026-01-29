@@ -30,6 +30,7 @@ export const Data = () => {
       },
       store: {
         onSuccess: (d) => router.replace(`/client/show/${(d as client).id}`),
+        onError: () => handleState({ loading: false }),
       },
     },
   });

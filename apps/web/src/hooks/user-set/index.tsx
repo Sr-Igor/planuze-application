@@ -27,7 +27,7 @@ export const useUserSet = (redirect: string | null = "/dashboard", skipSet: bool
       const profile = activeProfiles.find((p: any) => p.id === profileId);
       if (profile)
         return {
-          id: activeProfiles?.[0].id,
+          id: activeProfiles?.[0]?.id,
           default: false,
           activeProfiles,
         };
@@ -36,13 +36,13 @@ export const useUserSet = (redirect: string | null = "/dashboard", skipSet: bool
     const defaultProfile = activeProfiles.find((p: any) => p.id === user.default_profile_id);
     if (defaultProfile)
       return {
-        id: activeProfiles?.[0].id,
+        id: activeProfiles?.[0]?.id,
         default: true,
         activeProfiles,
       };
 
     return {
-      id: activeProfiles?.[0].id,
+      id: activeProfiles?.[0]?.id,
       default: false,
       activeProfiles,
     };

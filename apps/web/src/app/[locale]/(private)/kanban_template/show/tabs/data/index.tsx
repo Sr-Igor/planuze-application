@@ -31,6 +31,7 @@ export const Data = () => {
       },
       store: {
         onSuccess: (d) => router.replace(`/kanban_template/show/${(d as kanban_template).id}`),
+        onError: () => handleState({ loading: false }),
       },
     },
   });

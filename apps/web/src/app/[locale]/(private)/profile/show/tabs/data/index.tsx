@@ -39,6 +39,7 @@ export const Data = () => {
       },
       store: {
         onSuccess: (d) => router.replace(`/profile/show/${(d as profile).id}`),
+        onError: () => handleState({ loading: false }),
       },
     },
   });
