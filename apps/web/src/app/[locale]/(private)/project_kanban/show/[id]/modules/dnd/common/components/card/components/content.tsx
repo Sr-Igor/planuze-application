@@ -1,7 +1,7 @@
 import { UseFormReturn } from "react-hook-form";
 
-import { kanban_template_tag, project_kanban_cycle_card } from "@repo/types";
 import { useLang } from "@repo/language/hooks";
+import { kanban_template_tag, project_kanban_cycle_card } from "@repo/types";
 import { Badge, CardContent } from "@repo/ui";
 
 import {
@@ -56,7 +56,7 @@ export const Content = ({
             <WorkType
               hook={hook}
               className="w-full min-w-0"
-              inputClassName="w-full border-sidebar"
+              inputClassName="w-full"
               item={card}
               label={""}
               placeholder={t("component.card.placeholder.work_type")}
