@@ -91,7 +91,7 @@ export const General = ({
         `${months} ${months === 1 ? page("personal.time.month") : page("personal.time.months")}`
       );
     }
-    if (!!days && !!years) {
+    if (days) {
       parts.push(`${days} ${days === 1 ? page("personal.time.day") : page("personal.time.days")}`);
     }
 
