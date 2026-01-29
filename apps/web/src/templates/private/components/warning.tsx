@@ -29,7 +29,7 @@ export const Warning = ({ type = "info", title, description, subscription }: IWa
     callbacks: {
       portal: {
         onSuccess: (data) => {
-          window.location.href = data.url;
+          globalThis.window.location.href = data.url;
         },
       },
     },
@@ -78,7 +78,7 @@ export const Warning = ({ type = "info", title, description, subscription }: IWa
       {open && (
         <Alert
           variant="default"
-          className={cn("flex h-[80px] items-center rounded-none", warningTypes[type].alertClass)}
+          className={cn("flex h-20 items-center rounded-none", warningTypes[type].alertClass)}
         >
           <div className="flex flex-1 items-center gap-3">
             <span className="hidden lg:block">{icon}</span>

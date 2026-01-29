@@ -40,7 +40,7 @@ export const useUserAuth = () => {
   const hasTwoAuth =
     !!getTwoAuth() ||
     (!user?.user_two_auths?.find((t) => t.confirmed && t.active) &&
-      !window.location.pathname.includes("/config/two_auth"));
+      !globalThis.window.location.pathname.includes("/config/two_auth"));
 
   const activeSubscription = subscription && subscription?.status !== "deleted";
 

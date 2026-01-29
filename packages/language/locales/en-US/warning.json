@@ -1,47 +1,47 @@
 {
-    "title": "Warning",
-    "areYouSure": "Are you sure?",
-    "cannotBeUndone": "This action cannot be undone",
-    "confirmDelete": "Are you sure you want to delete?",
-    "unsavedChanges": "You have unsaved changes",
-    "forbidden": {
-        "title": "Oops! Access denied...",
-        "description": "You do not have permission to access this page.",
-        "list": "To access, you need to use one of the following modules:",
-        "change": "Change"
-    },
-    "locked": {
-        "title": "Access blocked",
-        "description": "Access for {{company}} has been blocked. Contact the administrator for more information.",
-        "regularize": "Regularize subscription",
-        "manage": "Manage subscription"
-    },
-    "level_empty": {
-        "title": "Access level without permissions...",
-        "description": "Contact the system administrator to assign permissions to this access level."
-    },
-    "level_inactive": {
-        "title": "Inactive access level...",
-        "description": "Contact the system administrator to change or reactivate the access level."
-    },
-    "test_expired": {
-        "title": "Trial period expired",
-        "description": "Your trial period has expired. Please update your subscription to continue using the system."
-    },
-    "test_ending": {
-        "title": "Trial period ending",
-        "description": "Your trial period ends in {{days}} days. Please update your subscription to continue using the system."
-    },
-    "subscription_not_renewed": {
-        "title": "Renewal not completed",
-        "description": "We were unable to renew your subscription. Regularize your payment to continue using the system. Your access will be blocked in {{days}} days."
-    },
-    "subscription_expired": {
-        "title": "Access blocked",
-        "description": "We were unable to renew your subscription. Regularize your payment to continue using the system."
-    },
-    "subscription_canceled": {
-        "title": "Subscription canceled",
-        "description": "Your subscription has been canceled. To continue using the system, you need to update your subscription."
-    }
+  "title": "Warning",
+  "areYouSure": "Are you sure?",
+  "cannotBeUndone": "This action cannot be undone",
+  "confirmDelete": "Are you sure you want to delete?",
+  "unsavedChanges": "You have unsaved changes",
+  "forbidden": {
+    "title": "Oops! Access denied...",
+    "description": "You do not have permission to access this page.",
+    "list": "To access, you need to use one of the following modules:",
+    "change": "Change"
+  },
+  "locked": {
+    "title": "Access blocked",
+    "description": "Access for {{company}} has been blocked. Contact the administrator for more information.",
+    "regularize": "Regularize subscription",
+    "manage": "Manage subscription"
+  },
+  "level_empty": {
+    "title": "Access level without permissions...",
+    "description": "Contact the system administrator to assign permissions to this access level."
+  },
+  "level_inactive": {
+    "title": "Inactive access level...",
+    "description": "Contact the system administrator to change or reactivate the access level."
+  },
+  "test_expired": {
+    "title": "Trial period expired",
+    "description": "Your trial period has expired. Please update your subscription to continue using the system."
+  },
+  "test_ending": {
+    "title": "Trial period ending",
+    "description": "Your trial period ends in {{days}} day(s). Please update your subscription to continue using the system."
+  },
+  "subscription_not_renewed": {
+    "title": "Renewal not completed",
+    "description": "We were unable to renew your subscription. Regularize your payment to continue using the system. Your access will be blocked in {{days}} day(s)."
+  },
+  "subscription_expired": {
+    "title": "Access blocked",
+    "description": "We were unable to renew your subscription. Regularize your payment to continue using the system."
+  },
+  "subscription_canceled": {
+    "title": "Subscription canceled",
+    "description": "Your subscription has been canceled. To continue using the system, you need to update your subscription."
+  }
 }

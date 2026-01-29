@@ -1,42 +1,42 @@
 {
-    "forbidden": {
-        "title": "Ops! Acesso negado...",
-        "description": "Você não tem permissão para acessar essa página.",
-        "list": "Para acessar, você precisa utilizar um dos seguintes módulos:",
-        "change": "Alterar"
-    },
-    "locked": {
-        "title": "Acesso bloqueado",
-        "description": "O acesso para {{company}} foi bloqueado. Entre em contato com o administrador para mais informações.",
-        "regularize": "Regularizar assinatura",
-        "manage": "Gerenciar assinatura"
-    },
-    "level_empty": {
-        "title": "Nível de acesso sem permissões...",
-        "description": "Contate o administrador do sistema para atribuir permissões a este nível de acesso."
-    },
-    "level_inactive": {
-        "title": "Nível de acesso inativo...",
-        "description": "Contate o administrador do sistema para alterar ou reativar o nível de acesso."
-    },
-    "test_expired": {
-        "title": "Período de teste expirado",
-        "description": "Seu período de teste expirou. Por favor, atualize sua assinatura para continuar usando o sistema."
-    },
-    "test_ending": {
-        "title": "Período de teste acabando",
-        "description": "Seu período de teste termina {{days}} dias. Por favor, atualize sua assinatura para continuar usando o sistema."
-    },
-    "subscription_not_renewed": {
-        "title": "Renovação não realizada",
-        "description": "Não conseguimos renovar sua assinatura. Regularize seu pagamento para continuar usando o sistema. Seu acesso será bloqueado {{days}} dias."
-    },
-    "subscription_expired": {
-        "title": "Acesso bloqueado",
-        "description": "Não conseguimos renovar sua assinatura. Regularize seu pagamento para continuar usando o sistema."
-    },
-    "subscription_canceled": {
-        "title": "Assinatura cancelada",
-        "description": "Sua assinatura foi cancelada. Para continuar usando o sistema, você precisa atualizar sua assinatura."
-    }
+  "forbidden": {
+    "title": "Ops! Acesso negado...",
+    "description": "Você não tem permissão para acessar essa página.",
+    "list": "Para acessar, você precisa utilizar um dos seguintes módulos:",
+    "change": "Alterar"
+  },
+  "locked": {
+    "title": "Acesso bloqueado",
+    "description": "O acesso para {{company}} foi bloqueado. Entre em contato com o administrador para mais informações.",
+    "regularize": "Regularizar assinatura",
+    "manage": "Gerenciar assinatura"
+  },
+  "level_empty": {
+    "title": "Nível de acesso sem permissões...",
+    "description": "Contate o administrador do sistema para atribuir permissões a este nível de acesso."
+  },
+  "level_inactive": {
+    "title": "Nível de acesso inativo...",
+    "description": "Contate o administrador do sistema para alterar ou reativar o nível de acesso."
+  },
+  "test_expired": {
+    "title": "Período de teste expirado",
+    "description": "Seu período de teste expirou. Por favor, atualize sua assinatura para continuar usando o sistema."
+  },
+  "test_ending": {
+    "title": "Período de teste acabando",
+    "description": "Seu período de teste termina {{days}} dia(s). Por favor, atualize sua assinatura para continuar usando o sistema."
+  },
+  "subscription_not_renewed": {
+    "title": "Renovação não realizada",
+    "description": "Não conseguimos renovar sua assinatura. Regularize seu pagamento para continuar usando o sistema. Seu acesso será bloqueado {{days}} dia(s)."
+  },
+  "subscription_expired": {
+    "title": "Acesso bloqueado",
+    "description": "Não conseguimos renovar sua assinatura. Regularize seu pagamento para continuar usando o sistema."
+  },
+  "subscription_canceled": {
+    "title": "Assinatura cancelada",
+    "description": "Sua assinatura foi cancelada. Para continuar usando o sistema, você precisa atualizar sua assinatura."
+  }
 }
