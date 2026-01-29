@@ -40,6 +40,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<work_type>) => {
       field: "switch",
       name: "active",
       disabled,
+      skipHtmlFor: true,
     },
   ];
 

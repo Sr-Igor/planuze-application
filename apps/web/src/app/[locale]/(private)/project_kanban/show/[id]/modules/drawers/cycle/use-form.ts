@@ -193,6 +193,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<Form>) => {
       disabled,
       tooltip: t.tooltip("prepare_cycle_tooltip"),
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 

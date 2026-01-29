@@ -190,6 +190,7 @@ export const useFields = ({ disabled = false, modulesOptions = [] }: iUseFieldsP
       label: "deleted",
       disabled,
       className: "col-span-3",
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -197,6 +198,7 @@ export const useFields = ({ disabled = false, modulesOptions = [] }: iUseFieldsP
       label: "sidebar",
       disabled,
       className: "col-span-3",
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -204,6 +206,7 @@ export const useFields = ({ disabled = false, modulesOptions = [] }: iUseFieldsP
       label: "show_plan",
       disabled,
       className: "col-span-3",
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -211,6 +214,7 @@ export const useFields = ({ disabled = false, modulesOptions = [] }: iUseFieldsP
       label: "new",
       disabled,
       className: "col-span-3",
+      skipHtmlFor: true,
     },
   ];
 

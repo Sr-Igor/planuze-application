@@ -69,6 +69,7 @@ export const useForm = ({ data, disabled }: IUseFormProps) => {
       label: "active",
       className: "col-span-1",
       disabled,
+      skipHtmlFor: true,
     },
     {
       field: "phone",

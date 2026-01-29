@@ -50,6 +50,7 @@ export const useForm = ({ disabled, data }: IUseFormProps) => {
       required: true,
       className: "col-span-1",
       disabled,
+      skipHtmlFor: true,
     },
     {
       field: "textarea",

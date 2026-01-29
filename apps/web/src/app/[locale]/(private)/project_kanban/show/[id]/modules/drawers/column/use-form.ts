@@ -75,6 +75,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<project_kanban_cycle_c
       disabled,
       tooltip: t.tooltip("cards_moved_for_this_column_will_be_finished"),
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 

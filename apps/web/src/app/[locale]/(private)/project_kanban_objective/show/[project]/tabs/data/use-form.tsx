@@ -55,6 +55,7 @@ export const useForm = ({ data, disabled }: IUseFormProps) => {
       name: "concluded",
       label: "concluded",
       disabled,
+      skipHtmlFor: true,
     },
     {
       field: "editor",

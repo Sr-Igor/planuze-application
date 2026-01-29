@@ -147,6 +147,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<role>) => {
       name: "active",
       label: "active",
       disabled,
+      skipHtmlFor: true,
     },
   ];
 

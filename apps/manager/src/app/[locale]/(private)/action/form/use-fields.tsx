@@ -54,6 +54,7 @@ export const useFields = ({ disabled = false }: iUseFieldsProps) => {
       required: true,
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -62,6 +63,7 @@ export const useFields = ({ disabled = false }: iUseFieldsProps) => {
       required: true,
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 

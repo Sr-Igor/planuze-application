@@ -243,6 +243,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_bonus>) => {
       label: "show_to_profile",
       tooltip: t.tooltip("show_to_profile_tooltip"),
       disabled,
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -250,6 +251,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_bonus>) => {
       label: "pro_rata",
       disabled,
       tooltip: t.tooltip("pro_rata_tooltip"),
+      skipHtmlFor: true,
     },
   ];
 

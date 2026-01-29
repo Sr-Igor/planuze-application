@@ -106,6 +106,7 @@ export const useProfileForm = ({ data, disabled, profile }: IUseFormProps) => {
       label: "active",
       className: "col-span-1",
       disabled: !!data?.owner || disabled || data?.id === profile?.id,
+      skipHtmlFor: true,
     },
     {
       field: "select",

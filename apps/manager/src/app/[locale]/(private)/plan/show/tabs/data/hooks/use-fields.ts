@@ -133,6 +133,7 @@ export const useFields = ({ disabled = false, item }: iUseFieldsProps) => {
       label: "deleted",
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 
@@ -213,6 +214,7 @@ export const useFields = ({ disabled = false, item }: iUseFieldsProps) => {
       name: "is_popular",
       label: "is_popular",
       disabled,
+      skipHtmlFor: true,
     },
   ];
 

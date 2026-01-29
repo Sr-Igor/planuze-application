@@ -90,6 +90,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_bank_account> 
       label: "principal",
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       field: "bank",

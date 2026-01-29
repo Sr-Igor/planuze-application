@@ -8,14 +8,41 @@
 
 "use client";
 
+import { ComponentProps } from "react";
+
+import { useLocale } from "next-intl";
+
 import { format, Locale } from "date-fns";
 import * as allLocales from "date-fns/locale";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { ComponentProps } from "react";
 import { DayPicker } from "react-day-picker";
 
 import { cn } from "../../../shared/utils";
 import { Button, ButtonProps } from "../button";
+
+/**
+ * Calendar Component Module
+ *
+ * A date picker calendar component.
+ *
+ * @module presentation/primitives/calendar
+ */
+
+/**
+ * Calendar Component Module
+ *
+ * A date picker calendar component.
+ *
+ * @module presentation/primitives/calendar
+ */
+
+/**
+ * Calendar Component Module
+ *
+ * A date picker calendar component.
+ *
+ * @module presentation/primitives/calendar
+ */
 
 const locales: Record<string, Locale> = allLocales;
 
@@ -108,7 +135,9 @@ function Calendar({
   localeString = "en-US",
   ...props
 }: CalendarProps) {
-  const dateFnsLocale = getDynamicDateFnsLocale(localeString);
+  const locale = useLocale?.();
+
+  const dateFnsLocale = getDynamicDateFnsLocale(locale || localeString);
 
   return (
     <DayPicker

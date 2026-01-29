@@ -202,5 +202,7 @@
   "paid": "Paid",
   "all": "All",
   "select_option": "Select an option",
-  "admin_panel": "Admin Panel"
+  "admin_panel": "Admin Panel",
+  "add_manual_value": "Add manual value",
+  "add_tag": "Add tag"
 }

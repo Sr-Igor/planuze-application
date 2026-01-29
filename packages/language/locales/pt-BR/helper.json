@@ -202,5 +202,7 @@
   "paid": "Pago",
   "all": "Todos",
   "select_option": "Selecione uma opção",
-  "admin_panel": "Painel do Administrador"
+  "admin_panel": "Painel do Administrador",
+  "add_manual_value": "Adicionar valor manual",
+  "add_tag": "Adicionar tag"
 }

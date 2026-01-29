@@ -15,6 +15,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  inputClassName,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -56,11 +57,15 @@ export function Cities({
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild disabled={disabled}>
         <Button
-          variant="outline"
+          variant="ghost"
           role="combobox"
           aria-expanded={open}
           disabled={disabled}
-          className={cn("w-full justify-between disabled:hover:bg-transparent", className)}
+          className={cn(
+            inputClassName,
+            "w-full disabled:hover:bg-transparent [&>span.flex-1]:w-full [&>span.flex-1]:justify-between",
+            className
+          )}
         >
           <span
             className={cn(

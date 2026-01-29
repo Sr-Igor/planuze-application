@@ -82,6 +82,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<kanban_template_card_
       disabled,
       tooltip: t.tooltip("principal_card_type_tooltip"),
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       label: "problem",
@@ -90,6 +91,7 @@ export const useForm = ({ disabled, state }: IUseHookProps<kanban_template_card_
       disabled,
       tooltip: t.tooltip("problem_card_type_tooltip"),
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 

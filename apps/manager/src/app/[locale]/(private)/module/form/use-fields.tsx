@@ -118,6 +118,7 @@ export const useFields = ({ disabled = false, companies }: iUseFieldsProps) => {
       label: "deleted",
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       field: "input",
@@ -134,6 +135,7 @@ export const useFields = ({ disabled = false, companies }: iUseFieldsProps) => {
       label: "basic",
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -141,6 +143,7 @@ export const useFields = ({ disabled = false, companies }: iUseFieldsProps) => {
       label: "integration",
       disabled,
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 

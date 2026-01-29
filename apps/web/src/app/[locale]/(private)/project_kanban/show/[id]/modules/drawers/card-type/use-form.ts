@@ -81,6 +81,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<project_kanban_cycle_c
       disabled: disabled || !!item,
       tooltip: t.tooltip("principal_card_type_tooltip"),
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       field: "switch",
@@ -89,6 +90,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<project_kanban_cycle_c
       disabled: disabled || !!item,
       tooltip: t.tooltip("problem_card_type_tooltip"),
       className: "col-span-1",
+      skipHtmlFor: true,
     },
   ];
 

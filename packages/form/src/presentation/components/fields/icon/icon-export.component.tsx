@@ -15,6 +15,7 @@ import {
   CommandInput,
   CommandItem,
   Icon,
+  inputClassName,
   Popover,
   PopoverContentInModal,
   PopoverTrigger,
@@ -119,15 +120,24 @@ export function Icons({ value, onChange, className, disabled = false }: Readonly
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
+          variant="ghost"
           role="combobox"
           aria-expanded={open}
           disabled={disabled}
-          className={cn("w-full justify-between disabled:hover:bg-transparent", className)}
+          className={cn(
+            inputClassName,
+            "w-full disabled:hover:bg-transparent [&>span.flex-1]:w-full [&>span.flex-1]:justify-between",
+            className
+          )}
         >
           <span className="line-clamp-1 flex min-w-0 items-center truncate text-left text-sm font-normal capitalize">
-            <Icon name={selected?.label} className="mr-2 flex-shrink-0" />
-            <span className="truncate">{selected?.label || t.helper("select_a_icon")}</span>
+            <Icon
+              name={selected?.label}
+              className={cn("mr-2 flex-shrink-0", selected?.label ? "" : "text-muted-foreground")}
+            />
+            <span className={cn("truncate", selected?.label ? "" : "text-muted-foreground")}>
+              {selected?.label || t.helper("select_a_icon")}
+            </span>
           </span>
           <span className="text-muted-foreground pointer-events-none flex items-center gap-1">
             <ChevronsUpDown className="text-muted-foreground" />

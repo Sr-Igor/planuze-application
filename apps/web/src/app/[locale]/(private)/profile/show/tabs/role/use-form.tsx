@@ -146,6 +146,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_role>) => {
       label: "show_to_profile",
       tooltip: t.tooltip("show_to_profile_tooltip"),
       disabled,
+      skipHtmlFor: true,
     },
 
     {
@@ -239,6 +240,7 @@ export const useForm = ({ disabled, item }: IUseHookProps<profile_role>) => {
       label: "pro_rata",
       disabled,
       tooltip: t.tooltip("pro_rata_tooltip"),
+      skipHtmlFor: true,
     },
   ];
 

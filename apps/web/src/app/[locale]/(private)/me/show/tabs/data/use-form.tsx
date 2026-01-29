@@ -36,6 +36,7 @@ export const useForm = ({ data }: IUseFormProps) => {
       name: "active",
       label: "active",
       className: "col-span-1",
+      skipHtmlFor: true,
     },
     {
       field: "select",
