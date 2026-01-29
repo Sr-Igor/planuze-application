@@ -11,7 +11,7 @@ export const onlyReadProps = {
   disabled: true,
   tabIndex: -1,
   inputClassName:
-    "disabled:opacity-100! border-t-0 border-l-0 border-r-0 rounded-none border-b-1 p-0 outline-none cursor-default opacity-100!",
+    "disabled:opacity-100! border-t-0 border-l-0 border-r-0 rounded-none border-b-1 p-0 outline-none cursor-default opacity-100! bg-transparent",
 };
 
 export function Form<FormType extends FieldValues>({
