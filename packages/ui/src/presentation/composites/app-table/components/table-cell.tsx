@@ -16,6 +16,24 @@ import { formatCellValue, getNestedValue } from "../utils/helpers";
 import { TableTooltip } from "./table-tooltip";
 
 /**
+ * TableCell Component
+ *
+ * @module presentation/composites/app-table/components
+ */
+
+/**
+ * TableCell Component
+ *
+ * @module presentation/composites/app-table/components
+ */
+
+/**
+ * TableCell Component
+ *
+ * @module presentation/composites/app-table/components
+ */
+
+/**
  * Convert a dimension value to CSS string
  */
 const toCssDimension = (value: number | string): string =>
@@ -60,7 +78,7 @@ function TableCellComponent<T extends BaseTableItem>({
     if (isLoading) {
       return (
         <div className="relative w-full">
-          <Skeleton className="absolute z-10 h-full w-full" />
+          <Skeleton className="bg-muted-foreground/50 absolute z-10 h-full w-full" />
           <span className="opacity-0" aria-hidden="true">
             {formattedValue}
           </span>

@@ -20,6 +20,12 @@ import { BaseTableItem, TableColumn, TableLoadingSkeletonProps } from "../types"
  */
 
 /**
+ * TableLoadingSkeleton Component
+ *
+ * @module presentation/composites/app-table/components
+ */
+
+/**
  * Convert a dimension value to CSS string
  */
 const toCssDimension = (value: number | string): string =>
