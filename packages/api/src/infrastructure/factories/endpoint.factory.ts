@@ -199,7 +199,7 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
     },
 
     destroy: async (id: string, filters?: QueryFilters): Promise<T | Pagination<T>> => {
-      const mergedFilters = mergeFilters(filters);
+      const mergedFilters = mergeFilters(filters, queries?.destroy);
 
       const handle = callEndpoint({
         route: routes.destroy,
@@ -219,7 +219,7 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
           body: BatchDTO,
           filters?: QueryFilters
         ): Promise<T[] | Pagination<T>> => {
-          const mergedFilters = mergeFilters(filters);
+          const mergedFilters = mergeFilters(filters, queries?.many);
 
           const handle = callEndpoint({
             route: routes.many!,
@@ -253,7 +253,7 @@ export const createTypedEndpoint = <T, CreateDTO = Partial<T>, UpdateDTO = Parti
 
     restore: routes.restore
       ? async (id: string, filters?: QueryFilters): Promise<T | Pagination<T>> => {
-          const mergedFilters = mergeFilters(filters);
+          const mergedFilters = mergeFilters(filters, queries?.restore);
 
           const handle = callEndpoint({
             route: routes.restore!,

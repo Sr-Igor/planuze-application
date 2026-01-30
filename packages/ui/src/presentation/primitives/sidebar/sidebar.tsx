@@ -21,7 +21,7 @@ import {
 } from "react";
 
 import { Slot } from "@radix-ui/react-slot";
-import { ChevronLeftIcon } from "lucide-react";
+import { PanelRightClose } from "lucide-react";
 
 import { useIsMobile } from "../../../application/hooks";
 import { cn } from "../../../shared/utils";
@@ -38,6 +38,54 @@ import {
   TooltipTrigger,
 } from "../tooltip";
 import { SidebarMenuButtonVariantProps, sidebarMenuButtonVariants } from "./sidebar.variants";
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
+
+/**
+ * Sidebar Component Module
+ *
+ * A composable sidebar component for application layouts.
+ *
+ * @module presentation/primitives/sidebar
+ */
 
 /**
  * Sidebar Component Module
@@ -350,17 +398,17 @@ const SidebarTrigger = forwardRef<HTMLButtonElement, SidebarTriggerProps>(
         data-slot="sidebar-trigger"
         variant="ghost"
         size="icon"
-        className={cn("bg-background-secondary h-7 w-7 rounded-full", className)}
+        className={cn("bg-muted h-8 w-8", className)}
         onClick={(event) => {
           onClick?.(event);
           toggleSidebar();
         }}
         {...props}
       >
-        <ChevronLeftIcon
+        <PanelRightClose
           className={cn(
             "size-4 transition-transform duration-200 ease-linear",
-            state === "collapsed" ? "rotate-180" : ""
+            state === "collapsed" ? "" : "rotate-180"
           )}
         />
         <span className="sr-only">Toggle Sidebar</span>

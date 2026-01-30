@@ -37,6 +37,10 @@ export interface EndpointConfig {
     show?: Record<string, unknown>;
     store?: Record<string, unknown>;
     update?: Record<string, unknown>;
+    destroy?: Record<string, unknown>;
+    many?: Record<string, unknown>;
+    trash?: Record<string, unknown>;
+    restore?: Record<string, unknown>;
   };
   formDataFields?: string[];
 }
