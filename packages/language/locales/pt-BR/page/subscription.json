@@ -1,83 +1,84 @@
 {
-    "expire_in": "Expira em {{date}}",
-    "new": {
-        "title": "Gerenciar assinatura",
-        "description": "Veja os detalhes do seu plano, histórico de pagamentos e muito mais."
-    },
-    "signature": {
-        "active": "Ativa",
-        "canceled": "Cancelamento solicitado",
-        "deleted": "Cancelada",
-        "past_due": "Vencida",
-        "incomplete": "Incompleta",
-        "expired": "Expirada"
-    },
-    "tabs": {
-        "current": "Plano atual",
-        "invoice": "Faturas",
-        "plans": "Planos"
-    },
-    "manager": {
-        "title": "Gerenciamento",
-        "toggler": {
-            "title": "Acesse seu histórico de faturas, altere ou cancele sua assinatura.",
-            "label": "Gerenciar Assinatura"
-        },
-        "history": {
-            "title": "Reveja todas as suas assinaturas anteriores e atuais.",
-            "label": "Ver Histórico"
-        }
+  "expire_in": "Expira em {{date}}",
+  "new": {
+    "title": "Gerenciar assinatura",
+    "description": "Veja os detalhes do seu plano, histórico de pagamentos e muito mais."
+  },
+  "signature": {
+    "active": "Ativa",
+    "canceled": "Cancelamento solicitado",
+    "deleted": "Cancelada",
+    "past_due": "Vencida",
+    "incomplete": "Incompleta",
+    "expired": "Expirada"
+  },
+  "tabs": {
+    "current": "Plano atual",
+    "invoice": "Faturas",
+    "plans": "Planos"
+  },
+  "manager": {
+    "title": "Gerenciamento",
+    "toggler": {
+      "title": "Acesse seu histórico de faturas, altere ou cancele sua assinatura.",
+      "label": "Gerenciar Assinatura"
     },
     "history": {
-        "title": "Histórico de Mudanças da Assinatura",
-        "description": "Aqui estão todas as mudanças de assinatura realizadas na sua empresa.",
-        "empty": "Nenhuma mudança de assinatura encontrada.",
-        "table": {
-            "date": "Data da Mudança",
-            "type": "Tipo de Ação",
-            "current_plan": "Plano Atual",
-            "new_plan": "Novo Plano",
-            "effective_date": "Data Efetiva"
-        },
-        "change_type": {
-            "created": "Criação",
-            "deleted": "Efetivação de cancelamento",
-            "updated": "Atualização",
-            "restored": "Restauração",
-            "change_plan": "Mudança de Plano",
-            "canceled": "Solicitação de cancelamento",
-            "downgrade": "Downgrade",
-            "renewed": "Renovação"
-        }
-    },
-    "empty": {
-        "plan": {
-            "title": "Nenhum plano ativo no momento",
-            "description": "Visite nossa página de planos para escolher a melhor opção para você.",
-            "button": "Ver Planos"
-        },
-        "invoice": {
-            "title": "Nenhuma fatura encontrada",
-            "description": "Quando os pagamentos forem processados, eles aparecerão aqui."
-        }
-    },
-    "header": {
-        "title": "Plano Atual",
-        "next_billing": "Renova em {{date}}"
-    },
-    "resources": {
-        "title": "Recursos do Plano",
-        "empty": "Nenhum requisito disponível"
-    },
-    "warning": {
-        "price_change": "Aviso: Em {{date}} o preço da sua assinatura será alterado de {{old_price}} para {{new_price}}.",
-        "scheduled_downgrade": "Aviso: O downgrade do plano {{from}} para {{to}} está agendado para {{date}}. Algumas funcionalidades podem não estar disponíveis no novo plano.",
-        "cancel_at_period_end": "Aviso: Sua assinatura será cancelada em {{date}}.",
-        "canceled": "Aviso: Sua assinatura foi cancelada. Para continuar usando o sistema, você precisa atualizar seu plano."
-    },
-    "invoices": {
-        "paid": "Pago",
-        "unpaid": "Pendente",
-        "failed": "Falhou"
+      "title": "Reveja todas as suas assinaturas anteriores e atuais.",
+      "label": "Ver Histórico"
     }
+  },
+  "history": {
+    "title": "Histórico de Mudanças da Assinatura",
+    "description": "Aqui estão todas as mudanças de assinatura realizadas na sua empresa.",
+    "empty": "Nenhuma mudança de assinatura encontrada.",
+    "table": {
+      "date": "Data da Mudança",
+      "type": "Tipo de Ação",
+      "current_plan": "Plano Atual",
+      "new_plan": "Novo Plano",
+      "effective_date": "Data Efetiva"
+    },
+    "change_type": {
+      "created": "Criação",
+      "deleted": "Efetivação de cancelamento",
+      "updated": "Atualização",
+      "upgrade": "Upgrade",
+      "restored": "Restauração",
+      "change_plan": "Mudança de Plano",
+      "canceled": "Solicitação de cancelamento",
+      "downgrade": "Downgrade",
+      "renewed": "Renovação"
+    }
+  },
+  "empty": {
+    "plan": {
+      "title": "Nenhum plano ativo no momento",
+      "description": "Visite nossa página de planos para escolher a melhor opção para você.",
+      "button": "Ver Planos"
+    },
+    "invoice": {
+      "title": "Nenhuma fatura encontrada",
+      "description": "Quando os pagamentos forem processados, eles aparecerão aqui."
+    }
+  },
+  "header": {
+    "title": "Plano Atual",
+    "next_billing": "Renova em {{date}}"
+  },
+  "resources": {
+    "title": "Recursos do Plano",
+    "empty": "Nenhum requisito disponível"
+  },
+  "warning": {
+    "price_change": "Aviso: Em {{date}} o preço da sua assinatura será alterado de {{old_price}} para {{new_price}}.",
+    "scheduled_downgrade": "Aviso: O downgrade do plano {{from}} para {{to}} está agendado para {{date}}. Algumas funcionalidades podem não estar disponíveis no novo plano.",
+    "cancel_at_period_end": "Aviso: Sua assinatura será cancelada em {{date}}.",
+    "canceled": "Aviso: Sua assinatura foi cancelada. Para continuar usando o sistema, você precisa atualizar seu plano."
+  },
+  "invoices": {
+    "paid": "Pago",
+    "unpaid": "Pendente",
+    "failed": "Falhou"
+  }
 }

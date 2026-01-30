@@ -1,83 +1,84 @@
 {
-    "expire_in": "Expires on {{date}}",
-    "new": {
-        "title": "Manage subscription",
-        "description": "See your plan details, payment history and more."
-    },
-    "signature": {
-        "active": "Active",
-        "canceled": "Cancellation requested",
-        "deleted": "Canceled",
-        "past_due": "Past due",
-        "incomplete": "Incomplete",
-        "expired": "Expired"
-    },
-    "tabs": {
-        "current": "Current plan",
-        "invoice": "Invoices",
-        "plans": "Plans"
-    },
-    "manager": {
-        "title": "Management",
-        "toggler": {
-            "title": "Access your invoice history, change or cancel your subscription.",
-            "label": "Manage Subscription"
-        },
-        "history": {
-            "title": "Review all your previous and current subscriptions.",
-            "label": "View History"
-        }
+  "expire_in": "Expires on {{date}}",
+  "new": {
+    "title": "Manage subscription",
+    "description": "See your plan details, payment history and more."
+  },
+  "signature": {
+    "active": "Active",
+    "canceled": "Cancellation requested",
+    "deleted": "Canceled",
+    "past_due": "Past due",
+    "incomplete": "Incomplete",
+    "expired": "Expired"
+  },
+  "tabs": {
+    "current": "Current plan",
+    "invoice": "Invoices",
+    "plans": "Plans"
+  },
+  "manager": {
+    "title": "Management",
+    "toggler": {
+      "title": "Access your invoice history, change or cancel your subscription.",
+      "label": "Manage Subscription"
     },
     "history": {
-        "title": "Subscription Change History",
-        "description": "Here are all the subscription changes made in your company.",
-        "empty": "No subscription changes found.",
-        "table": {
-            "date": "Change Date",
-            "type": "Action Type",
-            "current_plan": "Current Plan",
-            "new_plan": "New Plan",
-            "effective_date": "Effective Date"
-        },
-        "change_type": {
-            "created": "Creation",
-            "deleted": "Cancellation effective",
-            "updated": "Update",
-            "restored": "Restoration",
-            "change_plan": "Plan Change",
-            "canceled": "Cancellation request",
-            "downgrade": "Downgrade",
-            "renewed": "Renewal"
-        }
-    },
-    "empty": {
-        "plan": {
-            "title": "No active plan at the moment",
-            "description": "Visit our plans page to choose the best option for you.",
-            "button": "View Plans"
-        },
-        "invoice": {
-            "title": "No invoice found",
-            "description": "When payments are processed, they will appear here."
-        }
-    },
-    "header": {
-        "title": "Current Plan",
-        "next_billing": "Renews on {{date}}"
-    },
-    "resources": {
-        "title": "Plan Resources",
-        "empty": "No requirements available"
-    },
-    "warning": {
-        "price_change": "Warning: On {{date}} your subscription price will change from {{old_price}} to {{new_price}}.",
-        "scheduled_downgrade": "Warning: The downgrade from plan {{from}} to {{to}} is scheduled for {{date}}. Some features may not be available in the new plan.",
-        "cancel_at_period_end": "Warning: Your subscription will be canceled on {{date}}.",
-        "canceled": "Warning: Your subscription has been canceled. To continue using the system, you need to update your plan."
-    },
-    "invoices": {
-        "paid": "Paid",
-        "unpaid": "Pending",
-        "failed": "Failed"
+      "title": "Review all your previous and current subscriptions.",
+      "label": "View History"
     }
+  },
+  "history": {
+    "title": "Subscription Change History",
+    "description": "Here are all the subscription changes made in your company.",
+    "empty": "No subscription changes found.",
+    "table": {
+      "date": "Change Date",
+      "type": "Action Type",
+      "current_plan": "Current Plan",
+      "new_plan": "New Plan",
+      "effective_date": "Effective Date"
+    },
+    "change_type": {
+      "created": "Creation",
+      "deleted": "Cancellation effective",
+      "updated": "Update",
+      "upgrade": "Upgrade",
+      "restored": "Restoration",
+      "change_plan": "Plan Change",
+      "canceled": "Cancellation request",
+      "downgrade": "Downgrade",
+      "renewed": "Renewal"
+    }
+  },
+  "empty": {
+    "plan": {
+      "title": "No active plan at the moment",
+      "description": "Visit our plans page to choose the best option for you.",
+      "button": "View Plans"
+    },
+    "invoice": {
+      "title": "No invoice found",
+      "description": "When payments are processed, they will appear here."
+    }
+  },
+  "header": {
+    "title": "Current Plan",
+    "next_billing": "Renews on {{date}}"
+  },
+  "resources": {
+    "title": "Plan Resources",
+    "empty": "No requirements available"
+  },
+  "warning": {
+    "price_change": "Warning: On {{date}} your subscription price will change from {{old_price}} to {{new_price}}.",
+    "scheduled_downgrade": "Warning: The downgrade from plan {{from}} to {{to}} is scheduled for {{date}}. Some features may not be available in the new plan.",
+    "cancel_at_period_end": "Warning: Your subscription will be canceled on {{date}}.",
+    "canceled": "Warning: Your subscription has been canceled. To continue using the system, you need to update your plan."
+  },
+  "invoices": {
+    "paid": "Paid",
+    "unpaid": "Pending",
+    "failed": "Failed"
+  }
 }

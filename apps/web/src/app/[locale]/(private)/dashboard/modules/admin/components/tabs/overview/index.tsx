@@ -248,7 +248,10 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
         >
           <div className={cn("space-y-3", isLoading && "opacity-0")}>
             {summary.subscriptions.map((subscription) => (
-              <div key={subscription.subscriptionId} className="rounded-lg border p-4">
+              <div
+                key={subscription.subscriptionId}
+                className="flex flex-col items-center justify-between rounded-lg border p-4 md:flex-row"
+              >
                 <div className="mb-3 flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="mb-2 flex items-center gap-2">
@@ -258,7 +261,7 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
                     <p className="text-muted-foreground text-sm">{t.helper(subscription.model)}</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 border-t pt-3 md:grid-cols-4">
+                <div className="flex items-center gap-4">
                   <Info
                     title={page("admin.overview.subscriptions.start_date")}
                     value={formatDate(subscription.startDate)}
@@ -266,16 +269,6 @@ export const Overview = ({ summary, isLoading }: IOverviewProps) => {
                   <Info
                     title={page("admin.overview.subscriptions.end_date")}
                     value={formatDate(subscription.endDate)}
-                  />
-                  <Info
-                    title={page("admin.overview.subscriptions.days_off")}
-                    value={subscription.daysOff || 0}
-                  />
-                  <Info
-                    title={page("admin.overview.subscriptions.is_test")}
-                    value={
-                      subscription.isTest ? page("admin.overview.yes") : page("admin.overview.no")
-                    }
                   />
                 </div>
               </div>
