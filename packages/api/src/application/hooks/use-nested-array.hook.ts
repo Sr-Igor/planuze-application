@@ -113,7 +113,7 @@ export interface NestedArrayManyInput<T> {
 /**
  * Destroy mutation input type - supports both void and { id, query } format
  */
-export type NestedArrayDestroyInput<T> = void | { id: string; query?: Partial<T> };
+export type NestedArrayDestroyInput<T> = void | string | { id: string; query?: Partial<T> };
 
 /**
  * useNestedArray hook return
@@ -242,7 +242,8 @@ export function useNestedArray<T extends { id: string }>(
       if (!endpoint.destroy) throw new Error("Destroy method not implemented");
       // Support both { id, query } format and void format
       const isObjectWithId = input && typeof input === "object" && "id" in input;
-      const destroyId = isObjectWithId ? (input as { id: string }).id : id;
+
+      const destroyId = isObjectWithId ? input.id : id || input;
       if (!destroyId) throw new Error("ID is required for destroy operation");
       return endpoint.destroy(destroyId);
     },

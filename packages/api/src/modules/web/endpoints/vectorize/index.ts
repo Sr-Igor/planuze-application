@@ -18,20 +18,21 @@ export const vectorizeEndpoint = {
   /**
    * Update vectorization for a file
    */
-  update: (params: VectorizeUpdateParams, body: VectorizeUpdateBody) =>
+  update: (file: string, body: VectorizeUpdateBody) =>
     typedRequest<void>()(
-      { route: "/api/private/vectorize/update", params, body },
+      { route: "/api/private/vectorize/update", params: { file }, body },
       { showSuccess: true }
     ),
 
   /**
    * Remove vectorization for a file
    */
-  destroy: (params: VectorizeDestroyParams, body: VectorizeDestroyBody) =>
-    typedRequest<void>()(
-      { route: "/api/private/vectorize/destroy", params, body },
+  destroy: (file: string, body: VectorizeDestroyBody) => {
+    return typedRequest<void>()(
+      { route: "/api/private/vectorize/destroy", params: { file }, body },
       { showSuccess: true }
-    ),
+    );
+  },
 };
 
 // Direct function exports for backwards compatibility

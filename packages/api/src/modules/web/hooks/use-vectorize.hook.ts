@@ -1,11 +1,11 @@
 import { useMutation } from "@tanstack/react-query";
 
 import {
-  vectorizeEndpoint,
-  type VectorizeUpdateParams,
-  type VectorizeUpdateBody,
-  type VectorizeDestroyParams,
   type VectorizeDestroyBody,
+  type VectorizeDestroyParams,
+  vectorizeEndpoint,
+  type VectorizeUpdateBody,
+  type VectorizeUpdateParams,
 } from "../endpoints/vectorize";
 
 export interface UseVectorizeCallbacks {
@@ -25,13 +25,8 @@ export interface UseVectorizeProps {
 
 export const useVectorize = ({ callbacks }: UseVectorizeProps = {}) => {
   const update = useMutation({
-    mutationFn: ({
-      params,
-      body,
-    }: {
-      params: VectorizeUpdateParams;
-      body: VectorizeUpdateBody;
-    }) => vectorizeEndpoint.update(params, body),
+    mutationFn: ({ file, body }: { file: string; body: VectorizeUpdateBody }) =>
+      vectorizeEndpoint.update(file, body),
     onSuccess: (e) => {
       callbacks?.update?.onSuccess?.(e);
     },
@@ -39,13 +34,7 @@ export const useVectorize = ({ callbacks }: UseVectorizeProps = {}) => {
   });
 
   const destroy = useMutation({
-    mutationFn: ({
-      params,
-      body,
-    }: {
-      params: VectorizeDestroyParams;
-      body: VectorizeDestroyBody;
-    }) => vectorizeEndpoint.destroy(params, body),
+    mutationFn: ({ file, body }: any) => vectorizeEndpoint.destroy(file, body),
     onSuccess: (e) => {
       callbacks?.destroy?.onSuccess?.(e);
     },
