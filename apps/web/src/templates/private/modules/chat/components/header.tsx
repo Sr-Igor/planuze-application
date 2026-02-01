@@ -1,4 +1,4 @@
-import { History, Minus, X } from "lucide-react";
+import { Brain, History, Minus, X } from "lucide-react";
 
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
@@ -12,9 +12,14 @@ export interface IHeaderProps {
 export const Header = ({ setChat, setLocalMessages, setHistoryOpen, setOpen }: IHeaderProps) => {
   const t = useLang();
 
+  const chatName = process.env.NEXT_PUBLIC_AI_CHAT_NAME || t.chat("title");
+
   return (
     <div className="flex w-full min-w-0 items-center justify-between border-b border-gray-300 p-2 sm:p-4 dark:border-gray-700">
-      <p className="truncate text-xs sm:text-base">{t.chat("title")}</p>
+      <div className="flex items-center gap-1">
+        <Brain />
+        <p className="truncate text-xs font-bold sm:text-base">{chatName}</p>
+      </div>
       <div className="flex items-center gap-1 sm:gap-2">
         <Button
           variant="outline"

@@ -39,6 +39,8 @@ export const Messages = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const chatName = process.env.NEXT_PUBLIC_AI_CHAT_NAME || t.chat("ai");
+
   // Animação suave ao adicionar mensagens
   useEffect(() => {
     if (containerRef.current) {
@@ -79,10 +81,10 @@ export const Messages = ({
                       msg.error && "border border-red-800 text-red-600"
                     )}
                     tabIndex={0}
-                    aria-label={isUser ? t.chat("user") : isIa ? t.chat("ai") : msg.sender}
+                    aria-label={isUser ? t.chat("user") : isIa ? chatName : msg.sender}
                   >
                     <span className="mb-0.5 block text-[11px] opacity-70 sm:text-xs">
-                      {isUser ? t.chat("user") : isIa ? t.chat("ai") : msg.sender}
+                      {isUser ? t.chat("user") : isIa ? chatName : msg.sender}
                     </span>
                     <div className="relative">
                       {loading && <Skeleton className="absolute h-4 w-full" />}
