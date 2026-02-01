@@ -1,12 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 
-import {
-  type VectorizeDestroyBody,
-  type VectorizeDestroyParams,
-  vectorizeEndpoint,
-  type VectorizeUpdateBody,
-  type VectorizeUpdateParams,
-} from "../endpoints/vectorize";
+import { vectorizeEndpoint, VectorizeUpdateBody } from "../endpoints/vectorize";
 
 export interface UseVectorizeCallbacks {
   update?: {
