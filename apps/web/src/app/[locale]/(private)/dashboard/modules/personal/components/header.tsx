@@ -1,9 +1,8 @@
 import { FileDown } from "lucide-react";
 
+import { Currency } from "@repo/form";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
-
-import { Currency } from "@repo/form";
 
 export interface IHeaderProps {
   onExport: () => void;
@@ -42,7 +41,7 @@ export const Header = ({
           size="sm"
           variant="outline"
           loading={isExporting}
-          className="gap-2"
+          className="gap-2 px-8"
         >
           <FileDown className="h-4 w-4" />
           <span className="hidden xl:inline">{t.page.dashboard("personal.header.export")}</span>

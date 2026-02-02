@@ -6,44 +6,30 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*",
-        "!**/*.test.*",
-        "!**/*.spec.*"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        "dist/**",
-        "build/**"
-      ],
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "!**/*.test.*", "!**/*.spec.*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"],
       "env": ["NODE_ENV"]
     },
     "lint": {
       "dependsOn": ["^lint"],
       "cache": true,
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        "!**/*.test.*",
-        "!**/*.spec.*"
-      ]
+      "inputs": ["$TURBO_DEFAULT$", "!**/*.test.*", "!**/*.spec.*"]
     },
     "check-types": {
       "dependsOn": ["^check-types"],
       "cache": true,
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        "tsconfig.json",
-        "!**/*.test.*",
-        "!**/*.spec.*"
-      ],
+      "inputs": ["$TURBO_DEFAULT$", "tsconfig.json", "!**/*.test.*", "!**/*.spec.*"],
       "outputs": []
     },
     "dev": {
       "cache": false,
       "persistent": true,
       "dependsOn": ["^build"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
     },
     "generate:translations": {
       "cache": false,

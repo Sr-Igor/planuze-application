@@ -71,8 +71,9 @@ export const Currency = ({
             aria-expanded={open}
             disabled={disabled}
             className={cn(
-              "border-border h-9 rounded-r-none border-0 border-r bg-transparent px-3 hover:bg-transparent focus:bg-transparent focus-visible:ring-0",
-              disabled && "border-none"
+              "border-border h-9 rounded-r-none bg-transparent px-3 hover:bg-transparent focus:bg-transparent focus-visible:ring-0",
+              disabled && "border-none",
+              "w-full"
             )}
           >
             <span className="flex items-center gap-0 text-left text-sm font-normal">

@@ -27,7 +27,7 @@ export const Header = ({ onExport, isExporting }: IHeaderProps) => {
           size="sm"
           variant="outline"
           loading={isExporting}
-          className="gap-2"
+          className="gap-2 px-8"
         >
           <FileDown className="h-4 w-4" />
           <span className="hidden xl:inline">{t.page.dashboard("admin.header.export")}</span>

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run generate:translations && NODE_OPTIONS='--max-http-header-size=12800000' next dev --turbopack --port 3002",
     "build": "npm run generate:translations && next build",
-    "start": "next start",
+    "start": "next start -p 3002",
     "lint": "eslint --max-warnings 0",
     "check-types": "next typegen && node scripts/check-types-safe.mjs",
     "generate:translations": "cd ../../packages/language && npm run generate:translations"

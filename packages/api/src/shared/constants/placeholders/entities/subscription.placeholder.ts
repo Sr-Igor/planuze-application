@@ -149,6 +149,9 @@ export const subscriptionPlaceholder: Pagination<subscription> = {
           {
             id: "invoice_1",
             deleted: false,
+            gateway: "",
+            gateway_date: null,
+            gateway_id: "",
             deletedAt: null,
             updatedAt: new Date().toISOString(),
             createdAt: new Date().toISOString(),
@@ -215,6 +218,8 @@ export const subscriptionPlaceholder: Pagination<subscription> = {
             id: "notification_1",
             deleted: false,
             deletedAt: null,
+            module_id: "module_1",
+            profile_id: "profile_1",
             updatedAt: new Date().toISOString(),
             createdAt: new Date().toISOString(),
             user_id: "user_creator_1",

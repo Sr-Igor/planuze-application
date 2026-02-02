@@ -34,12 +34,13 @@ export const Header = ({
         </p>
       </div>
 
-      <div className="flex items-center justify-end gap-2">
+      <div className="flex flex-1 items-center justify-end gap-2">
         <Currency
           value={selectedCurrency}
           onChange={onCurrencyChange}
           disabled={isExporting}
           showSelectedName={true}
+          className="max-w-[300px]"
         />
         <Button
           onClick={onExport}
@@ -58,7 +59,7 @@ export const Header = ({
             size="sm"
             variant="default"
             disabled={isExporting}
-            className="gap-2"
+            className="gap-2 px-8"
           >
             <Filter className="h-4 w-4" />
             <span className="hidden xl:inline">{t.page.dashboard("project.header.filters")}</span>

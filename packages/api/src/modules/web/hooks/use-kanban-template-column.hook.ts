@@ -44,11 +44,11 @@ export const useKanbanTemplateColumn = (
     },
   });
 
-  const many = useMutation<kanban_template_column[], Error, { ids: string; body: any }>({
+  const many: any = useMutation<kanban_template_column[], Error, { ids: string; body: any }>({
     mutationFn: (data: { ids: string; body: any }) =>
       kanbanTemplateColumnEndpoint.many(data.ids, data.body) as Promise<kanban_template_column[]>,
     onSuccess: (e) => {
-      cache.setQueriesData(showKey, (oldData: kanban_template) => {
+      cache.setQueriesData(showKey, (oldData: any) => {
         return {
           ...oldData,
           kanban_template_columns: e.toSorted((a: any, b: any) => b.order - a.order),
