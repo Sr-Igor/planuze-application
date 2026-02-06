@@ -16,12 +16,14 @@ export interface IMessagesProps {
 
 const LoadingBubble = () => {
   const t = useLang();
+  const chatName = process.env.NEXT_PUBLIC_AI_CHAT_NAME || t.chat("ai");
+
   return (
     <div className="animate-fade-in flex items-end gap-2">
       <BotMessageSquare />
-      <div className="bg-muted dark:bg-background/80 text-foreground flex max-w-[80%] items-center rounded-lg rounded-bl-none px-2 py-1.5 shadow sm:max-w-[70%] sm:px-3 sm:py-2">
-        <span className="mb-0.5 block text-xs opacity-70">{t.chat("ai")}</span>
-        <span className="ml-2 flex gap-1">
+      <div className="bg-muted dark:bg-background/80 text-foreground flex max-w-[80%] flex-col items-start rounded-lg rounded-bl-none px-2 py-1.5 shadow sm:max-w-[70%] sm:px-3 sm:py-2">
+        <span className="mb-0.5 block text-xs opacity-70">{chatName}</span>
+        <span className="flex gap-1 pt-2">
           <span className="bg-foreground/40 inline-block h-2 w-2 animate-bounce rounded-full [animation-delay:0ms]"></span>
           <span className="bg-foreground/40 inline-block h-2 w-2 animate-bounce rounded-full [animation-delay:150ms]"></span>
           <span className="bg-foreground/40 inline-block h-2 w-2 animate-bounce rounded-full [animation-delay:300ms]"></span>
@@ -214,7 +216,9 @@ export const Messages = ({
                     </div>
                   </div>
                   {/* Avatar usuário */}
-                  {isUser && <User className="h-5 w-5 sm:h-6 sm:w-6" />}
+                  {isUser && (
+                    <User className={cn("h-5 w-5 sm:h-6 sm:w-6", msg.sending && "opacity-70")} />
+                  )}
                 </div>
               );
             })

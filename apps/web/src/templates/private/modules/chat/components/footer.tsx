@@ -37,6 +37,7 @@ export const Footer = ({
         sender: "user",
         message: question,
         createdAt: new Date().toISOString(),
+        sending: true,
       },
     ]);
     onSend();

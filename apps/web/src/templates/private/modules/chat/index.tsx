@@ -46,22 +46,37 @@ export const Chat = () => {
   const nextChatId = chat?.id;
   const transitionTimeout = useRef<NodeJS.Timeout | null>(null);
 
+  const shouldShowMessages = !!chat || isAwaitingIa;
+
   useEffect(() => {
     // Troca entre Initial/Messages OU troca de chat
-    if (!!chat !== showMessages || (showMessages && currentChatId !== nextChatId)) {
+    if (shouldShowMessages !== showMessages) {
       setTransitioning(true);
       if (transitionTimeout.current) clearTimeout(transitionTimeout.current);
       transitionTimeout.current = setTimeout(() => {
-        setShowMessages(!!chat);
+        setShowMessages(shouldShowMessages);
         setCurrentChatId(nextChatId);
         setTransitioning(false);
       }, 200); // duração da transição reduzida
+    } else if (showMessages && currentChatId !== nextChatId) {
+      if (!currentChatId && nextChatId) {
+        // Se não tinha ID e agora tem (chat criado), apenas atualiza sem transição
+        setCurrentChatId(nextChatId);
+      } else {
+        // Troca real de chat
+        setTransitioning(true);
+        if (transitionTimeout.current) clearTimeout(transitionTimeout.current);
+        transitionTimeout.current = setTimeout(() => {
+          setCurrentChatId(nextChatId);
+          setTransitioning(false);
+        }, 200);
+      }
     }
     // Cleanup
     return () => {
       if (transitionTimeout.current) clearTimeout(transitionTimeout.current);
     };
-  }, [chat, nextChatId, showMessages, currentChatId]);
+  }, [chat, nextChatId, showMessages, currentChatId, shouldShowMessages]);
 
   if (!categories.length) return null;
 
