@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { useQueryClient } from "@tanstack/react-query";
 
+import { useCleanCache } from "@repo/api";
 import keys from "@repo/api/cache/keys";
 import { useChat } from "@repo/api/web";
 import { useAppSelector } from "@repo/redux/hooks";
@@ -54,6 +55,8 @@ export const usePage = () => {
     );
   };
 
+  const { cleanCacheByBatch } = useCleanCache();
+
   const { messages, index, show, category, action } = useChat({
     enabledIndex: true,
     enabledShow: !!chat?.id,
@@ -78,13 +81,15 @@ export const usePage = () => {
         },
       },
       action: {
-        onSuccess: (data: any) => {
+        onSuccess: (data: any, vars: any) => {
           updateMessageAction(data.action_id, {
             action: data.action,
             error: data.error,
           });
+
+          cleanCacheByBatch({ keys: [vars.subject], clearSimilar: true });
         },
-        onError: (error, vars) => {
+        onError: (_, vars) => {
           if (vars?.action_id) {
             updateMessageAction(vars.action_id, {
               error: true,

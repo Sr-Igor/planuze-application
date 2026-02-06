@@ -113,6 +113,9 @@ export type {
   NestedFieldCacheConfig,
 } from "./application/hooks/use-nested-field.hook";
 
+export { useCleanCache } from "./application/hooks/use-clean-cache";
+export type { IClearCacheByBatch } from "./application/hooks/use-clean-cache";
+
 export { setFormData, extractFiles } from "./application/services/form-data.service";
 
 // =============================================================================
