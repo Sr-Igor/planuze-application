@@ -3,6 +3,8 @@ import { Brain, History, Minus, X } from "lucide-react";
 import { useLang } from "@repo/language/hooks";
 import { Button } from "@repo/ui";
 
+import { Mode } from "./mode";
+
 export interface IHeaderProps {
   setChat: React.Dispatch<React.SetStateAction<any>>;
   setLocalMessages: React.Dispatch<React.SetStateAction<any[]>>;

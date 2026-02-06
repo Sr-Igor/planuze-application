@@ -4,6 +4,8 @@ import { toast } from "sonner";
 import { useLang } from "@repo/language/hooks";
 import { Button, cn, Textarea } from "@repo/ui";
 
+import { Mode, Modes } from "./mode";
+
 export interface IFooterProps {
   question?: string;
   setQuestion: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -11,6 +13,8 @@ export interface IFooterProps {
   onSend: () => void;
   disabled?: boolean;
   show: boolean;
+  mode: Modes;
+  setMode: React.Dispatch<React.SetStateAction<Modes>>;
 }
 export const Footer = ({
   question,
@@ -19,6 +23,8 @@ export const Footer = ({
   onSend,
   disabled,
   show,
+  mode,
+  setMode,
 }: IFooterProps) => {
   const t = useLang();
 
@@ -72,6 +78,9 @@ export const Footer = ({
         }}
         disabled={disabled}
       />
+
+      <Mode mode={mode} setMode={setMode} disabled={disabled} />
+
       <Button
         onClick={() => {
           onSendMessage();

@@ -1,24 +1,35 @@
 {
-    "title": "AI Assistant",
-    "placeholder": "Ask me anything...",
-    "initial": "What would you like to talk about?",
-    "history": "Chat history",
-    "new_chat": "New chat",
-    "ai": "AI",
-    "user": "You",
-    "empty": "No messages.",
-    "close": "Close",
-    "minimize": "Minimize",
-    "send": "Send",
-    "hello": "Hello! {{name}}",
-    "categories": {
-        "company": "Your company information",
-        "client": "Client information",
-        "project": "Project information",
-        "project_kanban": "Kanban information"
-    },
-    "errors": {
-        "unknown_error": "An unknown error occurred. Please try again later.",
-        "no_permission": "Oops! It seems you don't have permission to access the content of this conversation."
-    }
+  "title": "AI Assistant",
+  "placeholder": "Ask me anything...",
+  "initial": "What would you like to talk about?",
+  "history": "Chat history",
+  "new_chat": "New chat",
+  "ai": "AI",
+  "user": "You",
+  "empty": "No messages.",
+  "close": "Close",
+  "minimize": "Minimize",
+  "send": "Send",
+  "hello": "Hello! {{name}}",
+  "accept": "Accept",
+  "decline": "Decline",
+  "error": "Error",
+  "ACCEPTED": "Accepted",
+  "REJECTED": "Rejected",
+  "categories": {
+    "company": "Your company information",
+    "client": "Client information",
+    "project": "Project information",
+    "project_kanban": "Kanban information"
+  },
+  "errors": {
+    "unknown_error": "An unknown error occurred. Please try again later.",
+    "no_permission": "Oops! It seems you don't have permission to access the content of this conversation."
+  },
+  "modes": {
+    "title": "Chat mode",
+    "ask": "Ask",
+    "action": "Action",
+    "auto": "Auto"
+  }
 }

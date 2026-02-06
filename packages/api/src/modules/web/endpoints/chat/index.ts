@@ -9,6 +9,7 @@ import { typedRequest } from "../../../../infrastructure/http/axios-client";
 export type ChatMessagesBody = EndpointBody<"/api/private/chat/messages">;
 export type ChatShowParams = EndpointParams<"/api/private/chat/show">;
 export type ChatIndexQuery = EndpointQuery<"/api/private/chat/index">;
+export type ChatActionBody = EndpointBody<"/api/private/chat/action">;
 
 /**
  * Chat endpoints
@@ -48,6 +49,21 @@ export const chatEndpoint = {
     typedRequest<{ keys: string[] }>()({
       route: "/api/private/chat/category",
     }),
+
+  /**
+   * Execute an action from a chat message
+   */
+  action: (params: ChatShowParams, body: ChatActionBody) =>
+    typedRequest<any>()(
+      {
+        route: "/api/private/chat/action",
+        params,
+        body,
+      },
+      {
+        hideError: true,
+      }
+    ),
 };
 
 // Direct function exports for backwards compatibility

@@ -9,6 +9,8 @@ import { useAppSelector } from "@repo/redux/hooks";
 //Socket
 import { socket } from "@/providers/socket";
 
+import { Modes } from "../components/mode";
+
 export const usePage = () => {
   const [open, setOpen] = useState(false);
   const [chat, setChat] = useState<any>();
@@ -19,12 +21,40 @@ export const usePage = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [unread, setUnread] = useState(false);
   const [isAwaitingIa, setIsAwaitingIa] = useState(false);
+  const [mode, setMode] = useState<Modes>("AUTO");
 
   const user = useAppSelector((state) => state.user);
 
   const queryClient = useQueryClient();
 
-  const { messages, index, show, category } = useChat({
+  const updateMessageAction = (actionId: string, updates: any) => {
+    setLocalMessages((prev) =>
+      prev.map((msg) => {
+        try {
+          if (
+            typeof msg.message === "string" &&
+            (msg.message.trim().startsWith("{") || msg.message.trim().startsWith("["))
+          ) {
+            const parsed = JSON.parse(msg.message);
+            if (parsed.action_id === actionId) {
+              return {
+                ...msg,
+                message: JSON.stringify({
+                  ...parsed,
+                  ...updates,
+                }),
+              };
+            }
+          }
+        } catch (e) {
+          // Ignore parsing errors
+        }
+        return msg;
+      })
+    );
+  };
+
+  const { messages, index, show, category, action } = useChat({
     enabledIndex: true,
     enabledShow: !!chat?.id,
     enabledCategory: true,
@@ -40,12 +70,32 @@ export const usePage = () => {
           setIsAwaitingIa(false);
         },
       },
+      action: {
+        onSuccess: (data: any) => {
+          updateMessageAction(data.action_id, {
+            action: data.action,
+            error: data.error,
+          });
+        },
+        onError: (error, vars) => {
+          if (vars?.action_id) {
+            updateMessageAction(vars.action_id, {
+              error: true,
+            });
+          }
+        },
+      },
     },
   });
 
   const submitMessage = () => {
     setIsAwaitingIa(true);
-    messages.mutate({ question, features: features.join(","), chat: chat?.id });
+    messages.mutate({
+      question: question || "",
+      features: features.join(","),
+      chat: chat?.id,
+      mode,
+    });
   };
 
   const categories = category.data?.keys || [];
@@ -96,6 +146,10 @@ export const usePage = () => {
     };
   }, [chat, socket, open]);
 
+  const handleAction = (body: any) => {
+    action.mutate(body);
+  };
+
   return {
     open,
     setOpen,
@@ -118,5 +172,9 @@ export const usePage = () => {
     setUnread,
     isAwaitingIa,
     submitMessage,
+    handleAction,
+    mode,
+    setMode,
+    actionLoading: action.isPending,
   };
 };

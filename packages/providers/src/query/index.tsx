@@ -76,7 +76,7 @@ export const QueryProvider = ({ children }: IProviderProps) => {
             if (isConnectionError && mutation.state.failureCount < 3) {
               return;
             } else if (isConnectionError && !modal.error) {
-              setModal({ error: true, message, code, canClose: true });
+              // setModal({ error: true, message, code, canClose: true });
             }
           },
         }),

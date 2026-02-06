@@ -9,10 +9,10 @@ import {
 } from "@tanstack/react-query";
 
 import { useUserAuth } from "@repo/redux/hooks";
-import type { chat, Pagination } from "@repo/types";
+import type { chat, chat_action, Pagination } from "@repo/types";
 
 import { cacheKeys } from "../../../infrastructure/cache/keys";
-import { chatEndpoint } from "../endpoints/chat";
+import { chatEndpoint, ChatMessagesBody } from "../endpoints/chat";
 
 // =============================================================================
 // Types
@@ -22,6 +22,10 @@ export interface UseChatCallbacks {
   messages?: {
     onSuccess?: (data: { chat: string; new?: boolean }) => void;
     onError?: (error: Error) => void;
+  };
+  action?: {
+    onSuccess?: (data: chat_action, vars: any) => void;
+    onError?: (error: Error, vars: any) => void;
   };
 }
 
@@ -36,12 +40,9 @@ export interface UseChatProps {
 export interface UseChatReturn {
   index: UseInfiniteQueryResult<InfiniteData<Pagination<chat>>, Error>;
   show: UseQueryResult<chat, Error>;
-  messages: UseMutationResult<
-    { chat: string; new?: boolean },
-    Error,
-    { chat?: string; features?: string; question?: string }
-  >;
+  messages: UseMutationResult<{ chat: string; new?: boolean }, Error, ChatMessagesBody>;
   category: UseQueryResult<{ keys: string[] }, Error>;
+  action: UseMutationResult<any, Error, any>;
 }
 
 // =============================================================================
@@ -85,16 +86,13 @@ export const useChat = ({
   /**
    * Send message mutation
    */
-  const messages = useMutation<
-    { chat: string; new?: boolean },
-    Error,
-    { chat?: string; features?: string; question?: string }
-  >({
+  const messages = useMutation<{ chat: string; new?: boolean }, Error, ChatMessagesBody>({
     mutationFn: (body) =>
       chatEndpoint.messages({
         chat: body.chat,
         features: body.features || "",
         question: body.question || "",
+        mode: body.mode,
       }),
     onSuccess: (data) => {
       callbacks?.messages?.onSuccess?.(data);
@@ -114,5 +112,18 @@ export const useChat = ({
       !!enabledCategory && enabledPrivateRoutes && hasProfile && hasTwoAuth && !warning?.locked,
   });
 
-  return { messages, index, show, category };
+  /**
+   * Action mutation
+   */
+  const action = useMutation<any, Error, any>({
+    mutationFn: (body) => chatEndpoint.action({ id: id! }, body),
+    onSuccess: (data, vars) => {
+      callbacks?.action?.onSuccess?.(data, vars);
+    },
+    onError: (error, vars) => {
+      callbacks?.action?.onError?.(error, vars);
+    },
+  });
+
+  return { messages, index, show, category, action };
 };

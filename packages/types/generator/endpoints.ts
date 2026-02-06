@@ -57,6 +57,20 @@ export type Endpoints = {
   "/api/private/billing/webhook": {
     "method": "POST";
   };
+  "/api/private/chat/action": {
+    "method": "POST";
+    "params": {
+      "id": string;
+    };
+    "body": {
+      "accepted": string;
+      "action": string;
+      "action_id": string;
+      "message": string;
+      "payload": string;
+      "subject": string;
+    };
+  };
   "/api/private/chat/category": {
     "method": "GET";
   };
@@ -79,6 +93,7 @@ export type Endpoints = {
     "body": {
       "chat"?: string;
       "features": string;
+      "mode": string;
       "question": string;
     };
   };
@@ -4644,13 +4659,6 @@ export type Endpoints = {
   };
   "/api/private/subscription/show": {
     "method": "GET";
-    "params": {
-      "id": string;
-    };
-    "query"?: {
-      "select"?: Prisma.subscriptionSelect;
-      "include"?: Prisma.subscriptionInclude;
-    };
   };
   "/api/private/subscription/update": {
     "method": "POST";
@@ -5484,6 +5492,7 @@ export type Routes =
   | "/api/private/billing/checkout"
   | "/api/private/billing/test"
   | "/api/private/billing/webhook"
+  | "/api/private/chat/action"
   | "/api/private/chat/category"
   | "/api/private/chat/index"
   | "/api/private/chat/messages"
@@ -5870,6 +5879,9 @@ export const flatEndpoints = {
     "method": "POST"
   },
   "/api/private/billing/webhook": {
+    "method": "POST"
+  },
+  "/api/private/chat/action": {
     "method": "POST"
   },
   "/api/private/chat/category": {

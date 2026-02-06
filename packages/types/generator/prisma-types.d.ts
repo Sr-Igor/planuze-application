@@ -109,11 +109,6 @@ export type notification_subscription = $Result.DefaultSelection<Prisma.$notific
  */
 export type document = $Result.DefaultSelection<Prisma.$documentPayload>
 /**
- * Model chat
- * 
- */
-export type chat = $Result.DefaultSelection<Prisma.$chatPayload>
-/**
  * Model chat_message
  * 
  */
@@ -683,6 +678,16 @@ export type company_invoice = $Result.DefaultSelection<Prisma.$company_invoicePa
  * 
  */
 export type notification = $Result.DefaultSelection<Prisma.$notificationPayload>
+/**
+ * Model chat
+ * 
+ */
+export type chat = $Result.DefaultSelection<Prisma.$chatPayload>
+/**
+ * Model chat_action
+ * 
+ */
+export type chat_action = $Result.DefaultSelection<Prisma.$chat_actionPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -998,16 +1003,6 @@ export class PrismaClient<
     * ```
     */
   get document(): Prisma.documentDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.chat`: Exposes CRUD operations for the **chat** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Chats
-    * const chats = await prisma.chat.findMany()
-    * ```
-    */
-  get chat(): Prisma.chatDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.chat_message`: Exposes CRUD operations for the **chat_message** model.
@@ -2148,6 +2143,26 @@ export class PrismaClient<
     * ```
     */
   get notification(): Prisma.notificationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.chat`: Exposes CRUD operations for the **chat** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Chats
+    * const chats = await prisma.chat.findMany()
+    * ```
+    */
+  get chat(): Prisma.chatDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.chat_action`: Exposes CRUD operations for the **chat_action** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Chat_actions
+    * const chat_actions = await prisma.chat_action.findMany()
+    * ```
+    */
+  get chat_action(): Prisma.chat_actionDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -2607,7 +2622,6 @@ export namespace Prisma {
     level: 'level',
     notification_subscription: 'notification_subscription',
     document: 'document',
-    chat: 'chat',
     chat_message: 'chat_message',
     subscription: 'subscription',
     integration: 'integration',
@@ -2721,7 +2735,9 @@ export namespace Prisma {
     plan: 'plan',
     subscription_plan: 'subscription_plan',
     company_invoice: 'company_invoice',
-    notification: 'notification'
+    notification: 'notification',
+    chat: 'chat',
+    chat_action: 'chat_action'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -2740,7 +2756,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "company_address" | "company_contact" | "company_document" | "level_action" | "plan_feature" | "plan_feature_action" | "subscription_plan_feature" | "subscription_plan_feature_action" | "user_token" | "user_background" | "company_customer" | "subscription_changes" | "billing_error" | "webhook_events_processed" | "admin" | "admin_token" | "level" | "notification_subscription" | "document" | "chat" | "chat_message" | "subscription" | "integration" | "integration_action" | "module" | "log__client" | "log__client_address" | "log__client_contact" | "log__client_document" | "log__company" | "log__company_address" | "log__company_contact" | "log__company_document" | "log__integration" | "log__level" | "log__profile_address" | "log__profile_contact" | "log__profile_document" | "log__cost_center" | "log__role" | "log__profile_role" | "client_address" | "client_contact" | "client_document" | "profile_address" | "profile_contact" | "profile_document" | "client_file" | "company_file" | "profile_file" | "action" | "feature" | "feature_dependency" | "profile_role" | "cost_center" | "log__profile_bonus" | "log__project" | "log__project_version" | "log__work_type" | "log__project_financial" | "log__project_financial_employees" | "project_financial_employees" | "role" | "project_financial" | "log__project_member" | "log__kanban_template" | "log__kanban_template_card" | "log__kanban_template_column" | "kanban_template" | "log__project_kanban" | "log__project_kanban_cycle" | "log__project_kanban_cycle_card_type" | "log__project_kanban_cycle_column" | "log__project_kanban_cycle_card" | "project_member" | "log__project_kanban_cycle_allocation" | "project_kanban_cycle_allocation" | "kanban_template_card" | "log__kanban_template_card_type" | "log__profile" | "log__invite" | "log__client_file" | "log__company_file" | "log__feature" | "log__profile_file" | "log__user" | "kanban_template_card_type" | "project_kanban_cycle_card_type" | "kanban_template_tag" | "log__kanban_template_tag" | "project_kanban_cycle_card_tag" | "project_kanban_cycle_card_comment" | "log__project_kanban_cycle_card_file" | "log__project_kanban_objective" | "project_kanban" | "log__project_kanban_objective_target" | "project_kanban_objective" | "project_kanban_objective_target" | "kanban_template_column" | "project_kanban_cycle_column" | "project_kanban_cycle_card_file" | "project_kanban_cycle_card_read" | "work_type" | "company_chunk" | "document_chunk" | "company_config" | "project_config" | "log__company_config" | "log__project_config" | "project_kanban_cycle" | "project_kanban_cycle_card" | "exchange_rate" | "project_allocation" | "log__project_allocation" | "client" | "project" | "log__client_bank_account" | "log__profile_bank_account" | "log__project_tool" | "client_bank_account" | "profile_bank_account" | "profile_bonus" | "project_tool" | "profile" | "user_two_auth" | "user_two_auth_code" | "company" | "project_version" | "user" | "invite" | "plan" | "subscription_plan" | "company_invoice" | "notification"
+      modelProps: "company_address" | "company_contact" | "company_document" | "level_action" | "plan_feature" | "plan_feature_action" | "subscription_plan_feature" | "subscription_plan_feature_action" | "user_token" | "user_background" | "company_customer" | "subscription_changes" | "billing_error" | "webhook_events_processed" | "admin" | "admin_token" | "level" | "notification_subscription" | "document" | "chat_message" | "subscription" | "integration" | "integration_action" | "module" | "log__client" | "log__client_address" | "log__client_contact" | "log__client_document" | "log__company" | "log__company_address" | "log__company_contact" | "log__company_document" | "log__integration" | "log__level" | "log__profile_address" | "log__profile_contact" | "log__profile_document" | "log__cost_center" | "log__role" | "log__profile_role" | "client_address" | "client_contact" | "client_document" | "profile_address" | "profile_contact" | "profile_document" | "client_file" | "company_file" | "profile_file" | "action" | "feature" | "feature_dependency" | "profile_role" | "cost_center" | "log__profile_bonus" | "log__project" | "log__project_version" | "log__work_type" | "log__project_financial" | "log__project_financial_employees" | "project_financial_employees" | "role" | "project_financial" | "log__project_member" | "log__kanban_template" | "log__kanban_template_card" | "log__kanban_template_column" | "kanban_template" | "log__project_kanban" | "log__project_kanban_cycle" | "log__project_kanban_cycle_card_type" | "log__project_kanban_cycle_column" | "log__project_kanban_cycle_card" | "project_member" | "log__project_kanban_cycle_allocation" | "project_kanban_cycle_allocation" | "kanban_template_card" | "log__kanban_template_card_type" | "log__profile" | "log__invite" | "log__client_file" | "log__company_file" | "log__feature" | "log__profile_file" | "log__user" | "kanban_template_card_type" | "project_kanban_cycle_card_type" | "kanban_template_tag" | "log__kanban_template_tag" | "project_kanban_cycle_card_tag" | "project_kanban_cycle_card_comment" | "log__project_kanban_cycle_card_file" | "log__project_kanban_objective" | "project_kanban" | "log__project_kanban_objective_target" | "project_kanban_objective" | "project_kanban_objective_target" | "kanban_template_column" | "project_kanban_cycle_column" | "project_kanban_cycle_card_file" | "project_kanban_cycle_card_read" | "work_type" | "company_chunk" | "document_chunk" | "company_config" | "project_config" | "log__company_config" | "log__project_config" | "project_kanban_cycle" | "project_kanban_cycle_card" | "exchange_rate" | "project_allocation" | "log__project_allocation" | "client" | "project" | "log__client_bank_account" | "log__profile_bank_account" | "log__project_tool" | "client_bank_account" | "profile_bank_account" | "profile_bonus" | "project_tool" | "profile" | "user_two_auth" | "user_two_auth_code" | "company" | "project_version" | "user" | "invite" | "plan" | "subscription_plan" | "company_invoice" | "notification" | "chat" | "chat_action"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -4147,80 +4163,6 @@ export namespace Prisma {
           count: {
             args: Prisma.documentCountArgs<ExtArgs>
             result: $Utils.Optional<DocumentCountAggregateOutputType> | number
-          }
-        }
-      }
-      chat: {
-        payload: Prisma.$chatPayload<ExtArgs>
-        fields: Prisma.chatFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.chatFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.chatFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>
-          }
-          findFirst: {
-            args: Prisma.chatFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.chatFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>
-          }
-          findMany: {
-            args: Prisma.chatFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>[]
-          }
-          create: {
-            args: Prisma.chatCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>
-          }
-          createMany: {
-            args: Prisma.chatCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.chatCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>[]
-          }
-          delete: {
-            args: Prisma.chatDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>
-          }
-          update: {
-            args: Prisma.chatUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>
-          }
-          deleteMany: {
-            args: Prisma.chatDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.chatUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.chatUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>[]
-          }
-          upsert: {
-            args: Prisma.chatUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$chatPayload>
-          }
-          aggregate: {
-            args: Prisma.ChatAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateChat>
-          }
-          groupBy: {
-            args: Prisma.chatGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ChatGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.chatCountArgs<ExtArgs>
-            result: $Utils.Optional<ChatCountAggregateOutputType> | number
           }
         }
       }
@@ -12628,6 +12570,154 @@ export namespace Prisma {
           }
         }
       }
+      chat: {
+        payload: Prisma.$chatPayload<ExtArgs>
+        fields: Prisma.chatFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.chatFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.chatFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>
+          }
+          findFirst: {
+            args: Prisma.chatFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.chatFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>
+          }
+          findMany: {
+            args: Prisma.chatFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>[]
+          }
+          create: {
+            args: Prisma.chatCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>
+          }
+          createMany: {
+            args: Prisma.chatCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.chatCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>[]
+          }
+          delete: {
+            args: Prisma.chatDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>
+          }
+          update: {
+            args: Prisma.chatUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>
+          }
+          deleteMany: {
+            args: Prisma.chatDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.chatUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.chatUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>[]
+          }
+          upsert: {
+            args: Prisma.chatUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chatPayload>
+          }
+          aggregate: {
+            args: Prisma.ChatAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateChat>
+          }
+          groupBy: {
+            args: Prisma.chatGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ChatGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.chatCountArgs<ExtArgs>
+            result: $Utils.Optional<ChatCountAggregateOutputType> | number
+          }
+        }
+      }
+      chat_action: {
+        payload: Prisma.$chat_actionPayload<ExtArgs>
+        fields: Prisma.chat_actionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.chat_actionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.chat_actionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>
+          }
+          findFirst: {
+            args: Prisma.chat_actionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.chat_actionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>
+          }
+          findMany: {
+            args: Prisma.chat_actionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>[]
+          }
+          create: {
+            args: Prisma.chat_actionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>
+          }
+          createMany: {
+            args: Prisma.chat_actionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.chat_actionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>[]
+          }
+          delete: {
+            args: Prisma.chat_actionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>
+          }
+          update: {
+            args: Prisma.chat_actionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>
+          }
+          deleteMany: {
+            args: Prisma.chat_actionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.chat_actionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.chat_actionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>[]
+          }
+          upsert: {
+            args: Prisma.chat_actionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$chat_actionPayload>
+          }
+          aggregate: {
+            args: Prisma.Chat_actionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateChat_action>
+          }
+          groupBy: {
+            args: Prisma.chat_actionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Chat_actionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.chat_actionCountArgs<ExtArgs>
+            result: $Utils.Optional<Chat_actionCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -12731,7 +12821,6 @@ export namespace Prisma {
     level?: levelOmit
     notification_subscription?: notification_subscriptionOmit
     document?: documentOmit
-    chat?: chatOmit
     chat_message?: chat_messageOmit
     subscription?: subscriptionOmit
     integration?: integrationOmit
@@ -12846,6 +12935,8 @@ export namespace Prisma {
     subscription_plan?: subscription_planOmit
     company_invoice?: company_invoiceOmit
     notification?: notificationOmit
+    chat?: chatOmit
+    chat_action?: chat_actionOmit
   }
 
   /* Types for Logging */
@@ -13657,37 +13748,6 @@ export namespace Prisma {
    */
   export type DocumentCountOutputTypeCountChunksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: document_chunkWhereInput
-  }
-
-
-  /**
-   * Count Type ChatCountOutputType
-   */
-
-  export type ChatCountOutputType = {
-    chat_messages: number
-  }
-
-  export type ChatCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    chat_messages?: boolean | ChatCountOutputTypeCountChat_messagesArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * ChatCountOutputType without action
-   */
-  export type ChatCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ChatCountOutputType
-     */
-    select?: ChatCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * ChatCountOutputType without action
-   */
-  export type ChatCountOutputTypeCountChat_messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: chat_messageWhereInput
   }
 
 
@@ -17667,6 +17727,46 @@ export namespace Prisma {
    */
   export type Subscription_planCountOutputTypeCountSubscription_plan_featuresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: subscription_plan_featureWhereInput
+  }
+
+
+  /**
+   * Count Type ChatCountOutputType
+   */
+
+  export type ChatCountOutputType = {
+    chat_actions: number
+    chat_messages: number
+  }
+
+  export type ChatCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    chat_actions?: boolean | ChatCountOutputTypeCountChat_actionsArgs
+    chat_messages?: boolean | ChatCountOutputTypeCountChat_messagesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ChatCountOutputType without action
+   */
+  export type ChatCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatCountOutputType
+     */
+    select?: ChatCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ChatCountOutputType without action
+   */
+  export type ChatCountOutputTypeCountChat_actionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: chat_actionWhereInput
+  }
+
+  /**
+   * ChatCountOutputType without action
+   */
+  export type ChatCountOutputTypeCountChat_messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: chat_messageWhereInput
   }
 
 
@@ -40595,1154 +40695,6 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: documentInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model chat
-   */
-
-  export type AggregateChat = {
-    _count: ChatCountAggregateOutputType | null
-    _min: ChatMinAggregateOutputType | null
-    _max: ChatMaxAggregateOutputType | null
-  }
-
-  export type ChatMinAggregateOutputType = {
-    id: string | null
-    deleted: boolean | null
-    deletedAt: Date | null
-    updatedAt: Date | null
-    createdAt: Date | null
-    company_id: string | null
-    profile_id: string | null
-    features: string | null
-    title: string | null
-  }
-
-  export type ChatMaxAggregateOutputType = {
-    id: string | null
-    deleted: boolean | null
-    deletedAt: Date | null
-    updatedAt: Date | null
-    createdAt: Date | null
-    company_id: string | null
-    profile_id: string | null
-    features: string | null
-    title: string | null
-  }
-
-  export type ChatCountAggregateOutputType = {
-    id: number
-    deleted: number
-    deletedAt: number
-    updatedAt: number
-    createdAt: number
-    company_id: number
-    profile_id: number
-    features: number
-    title: number
-    _all: number
-  }
-
-
-  export type ChatMinAggregateInputType = {
-    id?: true
-    deleted?: true
-    deletedAt?: true
-    updatedAt?: true
-    createdAt?: true
-    company_id?: true
-    profile_id?: true
-    features?: true
-    title?: true
-  }
-
-  export type ChatMaxAggregateInputType = {
-    id?: true
-    deleted?: true
-    deletedAt?: true
-    updatedAt?: true
-    createdAt?: true
-    company_id?: true
-    profile_id?: true
-    features?: true
-    title?: true
-  }
-
-  export type ChatCountAggregateInputType = {
-    id?: true
-    deleted?: true
-    deletedAt?: true
-    updatedAt?: true
-    createdAt?: true
-    company_id?: true
-    profile_id?: true
-    features?: true
-    title?: true
-    _all?: true
-  }
-
-  export type ChatAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which chat to aggregate.
-     */
-    where?: chatWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of chats to fetch.
-     */
-    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: chatWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` chats from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` chats.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned chats
-    **/
-    _count?: true | ChatCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ChatMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ChatMaxAggregateInputType
-  }
-
-  export type GetChatAggregateType<T extends ChatAggregateArgs> = {
-        [P in keyof T & keyof AggregateChat]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateChat[P]>
-      : GetScalarType<T[P], AggregateChat[P]>
-  }
-
-
-
-
-  export type chatGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: chatWhereInput
-    orderBy?: chatOrderByWithAggregationInput | chatOrderByWithAggregationInput[]
-    by: ChatScalarFieldEnum[] | ChatScalarFieldEnum
-    having?: chatScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ChatCountAggregateInputType | true
-    _min?: ChatMinAggregateInputType
-    _max?: ChatMaxAggregateInputType
-  }
-
-  export type ChatGroupByOutputType = {
-    id: string
-    deleted: boolean
-    deletedAt: Date | null
-    updatedAt: Date
-    createdAt: Date
-    company_id: string
-    profile_id: string
-    features: string
-    title: string
-    _count: ChatCountAggregateOutputType | null
-    _min: ChatMinAggregateOutputType | null
-    _max: ChatMaxAggregateOutputType | null
-  }
-
-  type GetChatGroupByPayload<T extends chatGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ChatGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ChatGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ChatGroupByOutputType[P]>
-            : GetScalarType<T[P], ChatGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type chatSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    deleted?: boolean
-    deletedAt?: boolean
-    updatedAt?: boolean
-    createdAt?: boolean
-    company_id?: boolean
-    profile_id?: boolean
-    features?: boolean
-    title?: boolean
-    company?: boolean | companyDefaultArgs<ExtArgs>
-    profile?: boolean | profileDefaultArgs<ExtArgs>
-    chat_messages?: boolean | chat$chat_messagesArgs<ExtArgs>
-    _count?: boolean | ChatCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["chat"]>
-
-  export type chatSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    deleted?: boolean
-    deletedAt?: boolean
-    updatedAt?: boolean
-    createdAt?: boolean
-    company_id?: boolean
-    profile_id?: boolean
-    features?: boolean
-    title?: boolean
-    company?: boolean | companyDefaultArgs<ExtArgs>
-    profile?: boolean | profileDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["chat"]>
-
-  export type chatSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    deleted?: boolean
-    deletedAt?: boolean
-    updatedAt?: boolean
-    createdAt?: boolean
-    company_id?: boolean
-    profile_id?: boolean
-    features?: boolean
-    title?: boolean
-    company?: boolean | companyDefaultArgs<ExtArgs>
-    profile?: boolean | profileDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["chat"]>
-
-  export type chatSelectScalar = {
-    id?: boolean
-    deleted?: boolean
-    deletedAt?: boolean
-    updatedAt?: boolean
-    createdAt?: boolean
-    company_id?: boolean
-    profile_id?: boolean
-    features?: boolean
-    title?: boolean
-  }
-
-  export type chatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "deleted" | "deletedAt" | "updatedAt" | "createdAt" | "company_id" | "profile_id" | "features" | "title", ExtArgs["result"]["chat"]>
-  export type chatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    company?: boolean | companyDefaultArgs<ExtArgs>
-    profile?: boolean | profileDefaultArgs<ExtArgs>
-    chat_messages?: boolean | chat$chat_messagesArgs<ExtArgs>
-    _count?: boolean | ChatCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type chatIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    company?: boolean | companyDefaultArgs<ExtArgs>
-    profile?: boolean | profileDefaultArgs<ExtArgs>
-  }
-  export type chatIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    company?: boolean | companyDefaultArgs<ExtArgs>
-    profile?: boolean | profileDefaultArgs<ExtArgs>
-  }
-
-  export type $chatPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "chat"
-    objects: {
-      company: Prisma.$companyPayload<ExtArgs>
-      profile: Prisma.$profilePayload<ExtArgs>
-      chat_messages: Prisma.$chat_messagePayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      deleted: boolean
-      deletedAt: Date | null
-      updatedAt: Date
-      createdAt: Date
-      company_id: string
-      profile_id: string
-      features: string
-      title: string
-    }, ExtArgs["result"]["chat"]>
-    composites: {}
-  }
-
-  type chatGetPayload<S extends boolean | null | undefined | chatDefaultArgs> = $Result.GetResult<Prisma.$chatPayload, S>
-
-  type chatCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<chatFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ChatCountAggregateInputType | true
-    }
-
-  export interface chatDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['chat'], meta: { name: 'chat' } }
-    /**
-     * Find zero or one Chat that matches the filter.
-     * @param {chatFindUniqueArgs} args - Arguments to find a Chat
-     * @example
-     * // Get one Chat
-     * const chat = await prisma.chat.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends chatFindUniqueArgs>(args: SelectSubset<T, chatFindUniqueArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Chat that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {chatFindUniqueOrThrowArgs} args - Arguments to find a Chat
-     * @example
-     * // Get one Chat
-     * const chat = await prisma.chat.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends chatFindUniqueOrThrowArgs>(args: SelectSubset<T, chatFindUniqueOrThrowArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Chat that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {chatFindFirstArgs} args - Arguments to find a Chat
-     * @example
-     * // Get one Chat
-     * const chat = await prisma.chat.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends chatFindFirstArgs>(args?: SelectSubset<T, chatFindFirstArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Chat that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {chatFindFirstOrThrowArgs} args - Arguments to find a Chat
-     * @example
-     * // Get one Chat
-     * const chat = await prisma.chat.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends chatFindFirstOrThrowArgs>(args?: SelectSubset<T, chatFindFirstOrThrowArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Chats that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {chatFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Chats
-     * const chats = await prisma.chat.findMany()
-     * 
-     * // Get first 10 Chats
-     * const chats = await prisma.chat.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const chatWithIdOnly = await prisma.chat.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends chatFindManyArgs>(args?: SelectSubset<T, chatFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Chat.
-     * @param {chatCreateArgs} args - Arguments to create a Chat.
-     * @example
-     * // Create one Chat
-     * const Chat = await prisma.chat.create({
-     *   data: {
-     *     // ... data to create a Chat
-     *   }
-     * })
-     * 
-     */
-    create<T extends chatCreateArgs>(args: SelectSubset<T, chatCreateArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Chats.
-     * @param {chatCreateManyArgs} args - Arguments to create many Chats.
-     * @example
-     * // Create many Chats
-     * const chat = await prisma.chat.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends chatCreateManyArgs>(args?: SelectSubset<T, chatCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Chats and returns the data saved in the database.
-     * @param {chatCreateManyAndReturnArgs} args - Arguments to create many Chats.
-     * @example
-     * // Create many Chats
-     * const chat = await prisma.chat.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Chats and only return the `id`
-     * const chatWithIdOnly = await prisma.chat.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends chatCreateManyAndReturnArgs>(args?: SelectSubset<T, chatCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Chat.
-     * @param {chatDeleteArgs} args - Arguments to delete one Chat.
-     * @example
-     * // Delete one Chat
-     * const Chat = await prisma.chat.delete({
-     *   where: {
-     *     // ... filter to delete one Chat
-     *   }
-     * })
-     * 
-     */
-    delete<T extends chatDeleteArgs>(args: SelectSubset<T, chatDeleteArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Chat.
-     * @param {chatUpdateArgs} args - Arguments to update one Chat.
-     * @example
-     * // Update one Chat
-     * const chat = await prisma.chat.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends chatUpdateArgs>(args: SelectSubset<T, chatUpdateArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Chats.
-     * @param {chatDeleteManyArgs} args - Arguments to filter Chats to delete.
-     * @example
-     * // Delete a few Chats
-     * const { count } = await prisma.chat.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends chatDeleteManyArgs>(args?: SelectSubset<T, chatDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Chats.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {chatUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Chats
-     * const chat = await prisma.chat.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends chatUpdateManyArgs>(args: SelectSubset<T, chatUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Chats and returns the data updated in the database.
-     * @param {chatUpdateManyAndReturnArgs} args - Arguments to update many Chats.
-     * @example
-     * // Update many Chats
-     * const chat = await prisma.chat.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Chats and only return the `id`
-     * const chatWithIdOnly = await prisma.chat.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends chatUpdateManyAndReturnArgs>(args: SelectSubset<T, chatUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Chat.
-     * @param {chatUpsertArgs} args - Arguments to update or create a Chat.
-     * @example
-     * // Update or create a Chat
-     * const chat = await prisma.chat.upsert({
-     *   create: {
-     *     // ... data to create a Chat
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Chat we want to update
-     *   }
-     * })
-     */
-    upsert<T extends chatUpsertArgs>(args: SelectSubset<T, chatUpsertArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Chats.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {chatCountArgs} args - Arguments to filter Chats to count.
-     * @example
-     * // Count the number of Chats
-     * const count = await prisma.chat.count({
-     *   where: {
-     *     // ... the filter for the Chats we want to count
-     *   }
-     * })
-    **/
-    count<T extends chatCountArgs>(
-      args?: Subset<T, chatCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ChatCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Chat.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ChatAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ChatAggregateArgs>(args: Subset<T, ChatAggregateArgs>): Prisma.PrismaPromise<GetChatAggregateType<T>>
-
-    /**
-     * Group by Chat.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {chatGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends chatGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: chatGroupByArgs['orderBy'] }
-        : { orderBy?: chatGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, chatGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetChatGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the chat model
-   */
-  readonly fields: chatFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for chat.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__chatClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    company<T extends companyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, companyDefaultArgs<ExtArgs>>): Prisma__companyClient<$Result.GetResult<Prisma.$companyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    profile<T extends profileDefaultArgs<ExtArgs> = {}>(args?: Subset<T, profileDefaultArgs<ExtArgs>>): Prisma__profileClient<$Result.GetResult<Prisma.$profilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    chat_messages<T extends chat$chat_messagesArgs<ExtArgs> = {}>(args?: Subset<T, chat$chat_messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chat_messagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the chat model
-   */
-  interface chatFieldRefs {
-    readonly id: FieldRef<"chat", 'String'>
-    readonly deleted: FieldRef<"chat", 'Boolean'>
-    readonly deletedAt: FieldRef<"chat", 'DateTime'>
-    readonly updatedAt: FieldRef<"chat", 'DateTime'>
-    readonly createdAt: FieldRef<"chat", 'DateTime'>
-    readonly company_id: FieldRef<"chat", 'String'>
-    readonly profile_id: FieldRef<"chat", 'String'>
-    readonly features: FieldRef<"chat", 'String'>
-    readonly title: FieldRef<"chat", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * chat findUnique
-   */
-  export type chatFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * Filter, which chat to fetch.
-     */
-    where: chatWhereUniqueInput
-  }
-
-  /**
-   * chat findUniqueOrThrow
-   */
-  export type chatFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * Filter, which chat to fetch.
-     */
-    where: chatWhereUniqueInput
-  }
-
-  /**
-   * chat findFirst
-   */
-  export type chatFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * Filter, which chat to fetch.
-     */
-    where?: chatWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of chats to fetch.
-     */
-    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for chats.
-     */
-    cursor?: chatWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` chats from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` chats.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of chats.
-     */
-    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
-  }
-
-  /**
-   * chat findFirstOrThrow
-   */
-  export type chatFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * Filter, which chat to fetch.
-     */
-    where?: chatWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of chats to fetch.
-     */
-    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for chats.
-     */
-    cursor?: chatWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` chats from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` chats.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of chats.
-     */
-    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
-  }
-
-  /**
-   * chat findMany
-   */
-  export type chatFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * Filter, which chats to fetch.
-     */
-    where?: chatWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of chats to fetch.
-     */
-    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing chats.
-     */
-    cursor?: chatWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` chats from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` chats.
-     */
-    skip?: number
-    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
-  }
-
-  /**
-   * chat create
-   */
-  export type chatCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * The data needed to create a chat.
-     */
-    data: XOR<chatCreateInput, chatUncheckedCreateInput>
-  }
-
-  /**
-   * chat createMany
-   */
-  export type chatCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many chats.
-     */
-    data: chatCreateManyInput | chatCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * chat createManyAndReturn
-   */
-  export type chatCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * The data used to create many chats.
-     */
-    data: chatCreateManyInput | chatCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * chat update
-   */
-  export type chatUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * The data needed to update a chat.
-     */
-    data: XOR<chatUpdateInput, chatUncheckedUpdateInput>
-    /**
-     * Choose, which chat to update.
-     */
-    where: chatWhereUniqueInput
-  }
-
-  /**
-   * chat updateMany
-   */
-  export type chatUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update chats.
-     */
-    data: XOR<chatUpdateManyMutationInput, chatUncheckedUpdateManyInput>
-    /**
-     * Filter which chats to update
-     */
-    where?: chatWhereInput
-    /**
-     * Limit how many chats to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * chat updateManyAndReturn
-   */
-  export type chatUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * The data used to update chats.
-     */
-    data: XOR<chatUpdateManyMutationInput, chatUncheckedUpdateManyInput>
-    /**
-     * Filter which chats to update
-     */
-    where?: chatWhereInput
-    /**
-     * Limit how many chats to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * chat upsert
-   */
-  export type chatUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * The filter to search for the chat to update in case it exists.
-     */
-    where: chatWhereUniqueInput
-    /**
-     * In case the chat found by the `where` argument doesn't exist, create a new chat with this data.
-     */
-    create: XOR<chatCreateInput, chatUncheckedCreateInput>
-    /**
-     * In case the chat was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<chatUpdateInput, chatUncheckedUpdateInput>
-  }
-
-  /**
-   * chat delete
-   */
-  export type chatDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
-    /**
-     * Filter which chat to delete.
-     */
-    where: chatWhereUniqueInput
-  }
-
-  /**
-   * chat deleteMany
-   */
-  export type chatDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which chats to delete
-     */
-    where?: chatWhereInput
-    /**
-     * Limit how many chats to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * chat.chat_messages
-   */
-  export type chat$chat_messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat_message
-     */
-    select?: chat_messageSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat_message
-     */
-    omit?: chat_messageOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chat_messageInclude<ExtArgs> | null
-    where?: chat_messageWhereInput
-    orderBy?: chat_messageOrderByWithRelationInput | chat_messageOrderByWithRelationInput[]
-    cursor?: chat_messageWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: Chat_messageScalarFieldEnum | Chat_messageScalarFieldEnum[]
-  }
-
-  /**
-   * chat without action
-   */
-  export type chatDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the chat
-     */
-    select?: chatSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the chat
-     */
-    omit?: chatOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: chatInclude<ExtArgs> | null
   }
 
 
@@ -188719,6 +187671,2292 @@ export namespace Prisma {
 
 
   /**
+   * Model chat
+   */
+
+  export type AggregateChat = {
+    _count: ChatCountAggregateOutputType | null
+    _min: ChatMinAggregateOutputType | null
+    _max: ChatMaxAggregateOutputType | null
+  }
+
+  export type ChatMinAggregateOutputType = {
+    id: string | null
+    deleted: boolean | null
+    deletedAt: Date | null
+    updatedAt: Date | null
+    createdAt: Date | null
+    company_id: string | null
+    profile_id: string | null
+    features: string | null
+    title: string | null
+  }
+
+  export type ChatMaxAggregateOutputType = {
+    id: string | null
+    deleted: boolean | null
+    deletedAt: Date | null
+    updatedAt: Date | null
+    createdAt: Date | null
+    company_id: string | null
+    profile_id: string | null
+    features: string | null
+    title: string | null
+  }
+
+  export type ChatCountAggregateOutputType = {
+    id: number
+    deleted: number
+    deletedAt: number
+    updatedAt: number
+    createdAt: number
+    company_id: number
+    profile_id: number
+    features: number
+    title: number
+    _all: number
+  }
+
+
+  export type ChatMinAggregateInputType = {
+    id?: true
+    deleted?: true
+    deletedAt?: true
+    updatedAt?: true
+    createdAt?: true
+    company_id?: true
+    profile_id?: true
+    features?: true
+    title?: true
+  }
+
+  export type ChatMaxAggregateInputType = {
+    id?: true
+    deleted?: true
+    deletedAt?: true
+    updatedAt?: true
+    createdAt?: true
+    company_id?: true
+    profile_id?: true
+    features?: true
+    title?: true
+  }
+
+  export type ChatCountAggregateInputType = {
+    id?: true
+    deleted?: true
+    deletedAt?: true
+    updatedAt?: true
+    createdAt?: true
+    company_id?: true
+    profile_id?: true
+    features?: true
+    title?: true
+    _all?: true
+  }
+
+  export type ChatAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which chat to aggregate.
+     */
+    where?: chatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chats to fetch.
+     */
+    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: chatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chats.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned chats
+    **/
+    _count?: true | ChatCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ChatMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ChatMaxAggregateInputType
+  }
+
+  export type GetChatAggregateType<T extends ChatAggregateArgs> = {
+        [P in keyof T & keyof AggregateChat]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateChat[P]>
+      : GetScalarType<T[P], AggregateChat[P]>
+  }
+
+
+
+
+  export type chatGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: chatWhereInput
+    orderBy?: chatOrderByWithAggregationInput | chatOrderByWithAggregationInput[]
+    by: ChatScalarFieldEnum[] | ChatScalarFieldEnum
+    having?: chatScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ChatCountAggregateInputType | true
+    _min?: ChatMinAggregateInputType
+    _max?: ChatMaxAggregateInputType
+  }
+
+  export type ChatGroupByOutputType = {
+    id: string
+    deleted: boolean
+    deletedAt: Date | null
+    updatedAt: Date
+    createdAt: Date
+    company_id: string
+    profile_id: string
+    features: string
+    title: string
+    _count: ChatCountAggregateOutputType | null
+    _min: ChatMinAggregateOutputType | null
+    _max: ChatMaxAggregateOutputType | null
+  }
+
+  type GetChatGroupByPayload<T extends chatGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ChatGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ChatGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ChatGroupByOutputType[P]>
+            : GetScalarType<T[P], ChatGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type chatSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    company_id?: boolean
+    profile_id?: boolean
+    features?: boolean
+    title?: boolean
+    company?: boolean | companyDefaultArgs<ExtArgs>
+    profile?: boolean | profileDefaultArgs<ExtArgs>
+    chat_actions?: boolean | chat$chat_actionsArgs<ExtArgs>
+    chat_messages?: boolean | chat$chat_messagesArgs<ExtArgs>
+    _count?: boolean | ChatCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chat"]>
+
+  export type chatSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    company_id?: boolean
+    profile_id?: boolean
+    features?: boolean
+    title?: boolean
+    company?: boolean | companyDefaultArgs<ExtArgs>
+    profile?: boolean | profileDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chat"]>
+
+  export type chatSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    company_id?: boolean
+    profile_id?: boolean
+    features?: boolean
+    title?: boolean
+    company?: boolean | companyDefaultArgs<ExtArgs>
+    profile?: boolean | profileDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chat"]>
+
+  export type chatSelectScalar = {
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    company_id?: boolean
+    profile_id?: boolean
+    features?: boolean
+    title?: boolean
+  }
+
+  export type chatOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "deleted" | "deletedAt" | "updatedAt" | "createdAt" | "company_id" | "profile_id" | "features" | "title", ExtArgs["result"]["chat"]>
+  export type chatInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | companyDefaultArgs<ExtArgs>
+    profile?: boolean | profileDefaultArgs<ExtArgs>
+    chat_actions?: boolean | chat$chat_actionsArgs<ExtArgs>
+    chat_messages?: boolean | chat$chat_messagesArgs<ExtArgs>
+    _count?: boolean | ChatCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type chatIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | companyDefaultArgs<ExtArgs>
+    profile?: boolean | profileDefaultArgs<ExtArgs>
+  }
+  export type chatIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | companyDefaultArgs<ExtArgs>
+    profile?: boolean | profileDefaultArgs<ExtArgs>
+  }
+
+  export type $chatPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "chat"
+    objects: {
+      company: Prisma.$companyPayload<ExtArgs>
+      profile: Prisma.$profilePayload<ExtArgs>
+      chat_actions: Prisma.$chat_actionPayload<ExtArgs>[]
+      chat_messages: Prisma.$chat_messagePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      deleted: boolean
+      deletedAt: Date | null
+      updatedAt: Date
+      createdAt: Date
+      company_id: string
+      profile_id: string
+      features: string
+      title: string
+    }, ExtArgs["result"]["chat"]>
+    composites: {}
+  }
+
+  type chatGetPayload<S extends boolean | null | undefined | chatDefaultArgs> = $Result.GetResult<Prisma.$chatPayload, S>
+
+  type chatCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<chatFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ChatCountAggregateInputType | true
+    }
+
+  export interface chatDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['chat'], meta: { name: 'chat' } }
+    /**
+     * Find zero or one Chat that matches the filter.
+     * @param {chatFindUniqueArgs} args - Arguments to find a Chat
+     * @example
+     * // Get one Chat
+     * const chat = await prisma.chat.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends chatFindUniqueArgs>(args: SelectSubset<T, chatFindUniqueArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Chat that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {chatFindUniqueOrThrowArgs} args - Arguments to find a Chat
+     * @example
+     * // Get one Chat
+     * const chat = await prisma.chat.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends chatFindUniqueOrThrowArgs>(args: SelectSubset<T, chatFindUniqueOrThrowArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Chat that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chatFindFirstArgs} args - Arguments to find a Chat
+     * @example
+     * // Get one Chat
+     * const chat = await prisma.chat.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends chatFindFirstArgs>(args?: SelectSubset<T, chatFindFirstArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Chat that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chatFindFirstOrThrowArgs} args - Arguments to find a Chat
+     * @example
+     * // Get one Chat
+     * const chat = await prisma.chat.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends chatFindFirstOrThrowArgs>(args?: SelectSubset<T, chatFindFirstOrThrowArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Chats that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chatFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Chats
+     * const chats = await prisma.chat.findMany()
+     * 
+     * // Get first 10 Chats
+     * const chats = await prisma.chat.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const chatWithIdOnly = await prisma.chat.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends chatFindManyArgs>(args?: SelectSubset<T, chatFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Chat.
+     * @param {chatCreateArgs} args - Arguments to create a Chat.
+     * @example
+     * // Create one Chat
+     * const Chat = await prisma.chat.create({
+     *   data: {
+     *     // ... data to create a Chat
+     *   }
+     * })
+     * 
+     */
+    create<T extends chatCreateArgs>(args: SelectSubset<T, chatCreateArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Chats.
+     * @param {chatCreateManyArgs} args - Arguments to create many Chats.
+     * @example
+     * // Create many Chats
+     * const chat = await prisma.chat.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends chatCreateManyArgs>(args?: SelectSubset<T, chatCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Chats and returns the data saved in the database.
+     * @param {chatCreateManyAndReturnArgs} args - Arguments to create many Chats.
+     * @example
+     * // Create many Chats
+     * const chat = await prisma.chat.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Chats and only return the `id`
+     * const chatWithIdOnly = await prisma.chat.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends chatCreateManyAndReturnArgs>(args?: SelectSubset<T, chatCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Chat.
+     * @param {chatDeleteArgs} args - Arguments to delete one Chat.
+     * @example
+     * // Delete one Chat
+     * const Chat = await prisma.chat.delete({
+     *   where: {
+     *     // ... filter to delete one Chat
+     *   }
+     * })
+     * 
+     */
+    delete<T extends chatDeleteArgs>(args: SelectSubset<T, chatDeleteArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Chat.
+     * @param {chatUpdateArgs} args - Arguments to update one Chat.
+     * @example
+     * // Update one Chat
+     * const chat = await prisma.chat.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends chatUpdateArgs>(args: SelectSubset<T, chatUpdateArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Chats.
+     * @param {chatDeleteManyArgs} args - Arguments to filter Chats to delete.
+     * @example
+     * // Delete a few Chats
+     * const { count } = await prisma.chat.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends chatDeleteManyArgs>(args?: SelectSubset<T, chatDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Chats.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chatUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Chats
+     * const chat = await prisma.chat.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends chatUpdateManyArgs>(args: SelectSubset<T, chatUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Chats and returns the data updated in the database.
+     * @param {chatUpdateManyAndReturnArgs} args - Arguments to update many Chats.
+     * @example
+     * // Update many Chats
+     * const chat = await prisma.chat.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Chats and only return the `id`
+     * const chatWithIdOnly = await prisma.chat.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends chatUpdateManyAndReturnArgs>(args: SelectSubset<T, chatUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Chat.
+     * @param {chatUpsertArgs} args - Arguments to update or create a Chat.
+     * @example
+     * // Update or create a Chat
+     * const chat = await prisma.chat.upsert({
+     *   create: {
+     *     // ... data to create a Chat
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Chat we want to update
+     *   }
+     * })
+     */
+    upsert<T extends chatUpsertArgs>(args: SelectSubset<T, chatUpsertArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Chats.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chatCountArgs} args - Arguments to filter Chats to count.
+     * @example
+     * // Count the number of Chats
+     * const count = await prisma.chat.count({
+     *   where: {
+     *     // ... the filter for the Chats we want to count
+     *   }
+     * })
+    **/
+    count<T extends chatCountArgs>(
+      args?: Subset<T, chatCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ChatCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Chat.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ChatAggregateArgs>(args: Subset<T, ChatAggregateArgs>): Prisma.PrismaPromise<GetChatAggregateType<T>>
+
+    /**
+     * Group by Chat.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chatGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends chatGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: chatGroupByArgs['orderBy'] }
+        : { orderBy?: chatGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, chatGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetChatGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the chat model
+   */
+  readonly fields: chatFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for chat.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__chatClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    company<T extends companyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, companyDefaultArgs<ExtArgs>>): Prisma__companyClient<$Result.GetResult<Prisma.$companyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    profile<T extends profileDefaultArgs<ExtArgs> = {}>(args?: Subset<T, profileDefaultArgs<ExtArgs>>): Prisma__profileClient<$Result.GetResult<Prisma.$profilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    chat_actions<T extends chat$chat_actionsArgs<ExtArgs> = {}>(args?: Subset<T, chat$chat_actionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    chat_messages<T extends chat$chat_messagesArgs<ExtArgs> = {}>(args?: Subset<T, chat$chat_messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chat_messagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the chat model
+   */
+  interface chatFieldRefs {
+    readonly id: FieldRef<"chat", 'String'>
+    readonly deleted: FieldRef<"chat", 'Boolean'>
+    readonly deletedAt: FieldRef<"chat", 'DateTime'>
+    readonly updatedAt: FieldRef<"chat", 'DateTime'>
+    readonly createdAt: FieldRef<"chat", 'DateTime'>
+    readonly company_id: FieldRef<"chat", 'String'>
+    readonly profile_id: FieldRef<"chat", 'String'>
+    readonly features: FieldRef<"chat", 'String'>
+    readonly title: FieldRef<"chat", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * chat findUnique
+   */
+  export type chatFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * Filter, which chat to fetch.
+     */
+    where: chatWhereUniqueInput
+  }
+
+  /**
+   * chat findUniqueOrThrow
+   */
+  export type chatFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * Filter, which chat to fetch.
+     */
+    where: chatWhereUniqueInput
+  }
+
+  /**
+   * chat findFirst
+   */
+  export type chatFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * Filter, which chat to fetch.
+     */
+    where?: chatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chats to fetch.
+     */
+    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for chats.
+     */
+    cursor?: chatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chats.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of chats.
+     */
+    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
+  }
+
+  /**
+   * chat findFirstOrThrow
+   */
+  export type chatFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * Filter, which chat to fetch.
+     */
+    where?: chatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chats to fetch.
+     */
+    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for chats.
+     */
+    cursor?: chatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chats.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of chats.
+     */
+    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
+  }
+
+  /**
+   * chat findMany
+   */
+  export type chatFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * Filter, which chats to fetch.
+     */
+    where?: chatWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chats to fetch.
+     */
+    orderBy?: chatOrderByWithRelationInput | chatOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing chats.
+     */
+    cursor?: chatWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chats from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chats.
+     */
+    skip?: number
+    distinct?: ChatScalarFieldEnum | ChatScalarFieldEnum[]
+  }
+
+  /**
+   * chat create
+   */
+  export type chatCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * The data needed to create a chat.
+     */
+    data: XOR<chatCreateInput, chatUncheckedCreateInput>
+  }
+
+  /**
+   * chat createMany
+   */
+  export type chatCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many chats.
+     */
+    data: chatCreateManyInput | chatCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * chat createManyAndReturn
+   */
+  export type chatCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * The data used to create many chats.
+     */
+    data: chatCreateManyInput | chatCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * chat update
+   */
+  export type chatUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * The data needed to update a chat.
+     */
+    data: XOR<chatUpdateInput, chatUncheckedUpdateInput>
+    /**
+     * Choose, which chat to update.
+     */
+    where: chatWhereUniqueInput
+  }
+
+  /**
+   * chat updateMany
+   */
+  export type chatUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update chats.
+     */
+    data: XOR<chatUpdateManyMutationInput, chatUncheckedUpdateManyInput>
+    /**
+     * Filter which chats to update
+     */
+    where?: chatWhereInput
+    /**
+     * Limit how many chats to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * chat updateManyAndReturn
+   */
+  export type chatUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * The data used to update chats.
+     */
+    data: XOR<chatUpdateManyMutationInput, chatUncheckedUpdateManyInput>
+    /**
+     * Filter which chats to update
+     */
+    where?: chatWhereInput
+    /**
+     * Limit how many chats to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * chat upsert
+   */
+  export type chatUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * The filter to search for the chat to update in case it exists.
+     */
+    where: chatWhereUniqueInput
+    /**
+     * In case the chat found by the `where` argument doesn't exist, create a new chat with this data.
+     */
+    create: XOR<chatCreateInput, chatUncheckedCreateInput>
+    /**
+     * In case the chat was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<chatUpdateInput, chatUncheckedUpdateInput>
+  }
+
+  /**
+   * chat delete
+   */
+  export type chatDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+    /**
+     * Filter which chat to delete.
+     */
+    where: chatWhereUniqueInput
+  }
+
+  /**
+   * chat deleteMany
+   */
+  export type chatDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which chats to delete
+     */
+    where?: chatWhereInput
+    /**
+     * Limit how many chats to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * chat.chat_actions
+   */
+  export type chat$chat_actionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    where?: chat_actionWhereInput
+    orderBy?: chat_actionOrderByWithRelationInput | chat_actionOrderByWithRelationInput[]
+    cursor?: chat_actionWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Chat_actionScalarFieldEnum | Chat_actionScalarFieldEnum[]
+  }
+
+  /**
+   * chat.chat_messages
+   */
+  export type chat$chat_messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_message
+     */
+    select?: chat_messageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_message
+     */
+    omit?: chat_messageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_messageInclude<ExtArgs> | null
+    where?: chat_messageWhereInput
+    orderBy?: chat_messageOrderByWithRelationInput | chat_messageOrderByWithRelationInput[]
+    cursor?: chat_messageWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Chat_messageScalarFieldEnum | Chat_messageScalarFieldEnum[]
+  }
+
+  /**
+   * chat without action
+   */
+  export type chatDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat
+     */
+    select?: chatSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat
+     */
+    omit?: chatOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chatInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model chat_action
+   */
+
+  export type AggregateChat_action = {
+    _count: Chat_actionCountAggregateOutputType | null
+    _min: Chat_actionMinAggregateOutputType | null
+    _max: Chat_actionMaxAggregateOutputType | null
+  }
+
+  export type Chat_actionMinAggregateOutputType = {
+    id: string | null
+    deleted: boolean | null
+    deletedAt: Date | null
+    updatedAt: Date | null
+    createdAt: Date | null
+    action_id: string | null
+    action: string | null
+    error: boolean | null
+    chat_id: string | null
+  }
+
+  export type Chat_actionMaxAggregateOutputType = {
+    id: string | null
+    deleted: boolean | null
+    deletedAt: Date | null
+    updatedAt: Date | null
+    createdAt: Date | null
+    action_id: string | null
+    action: string | null
+    error: boolean | null
+    chat_id: string | null
+  }
+
+  export type Chat_actionCountAggregateOutputType = {
+    id: number
+    deleted: number
+    deletedAt: number
+    updatedAt: number
+    createdAt: number
+    action_id: number
+    action: number
+    error: number
+    chat_id: number
+    _all: number
+  }
+
+
+  export type Chat_actionMinAggregateInputType = {
+    id?: true
+    deleted?: true
+    deletedAt?: true
+    updatedAt?: true
+    createdAt?: true
+    action_id?: true
+    action?: true
+    error?: true
+    chat_id?: true
+  }
+
+  export type Chat_actionMaxAggregateInputType = {
+    id?: true
+    deleted?: true
+    deletedAt?: true
+    updatedAt?: true
+    createdAt?: true
+    action_id?: true
+    action?: true
+    error?: true
+    chat_id?: true
+  }
+
+  export type Chat_actionCountAggregateInputType = {
+    id?: true
+    deleted?: true
+    deletedAt?: true
+    updatedAt?: true
+    createdAt?: true
+    action_id?: true
+    action?: true
+    error?: true
+    chat_id?: true
+    _all?: true
+  }
+
+  export type Chat_actionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which chat_action to aggregate.
+     */
+    where?: chat_actionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chat_actions to fetch.
+     */
+    orderBy?: chat_actionOrderByWithRelationInput | chat_actionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: chat_actionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chat_actions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chat_actions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned chat_actions
+    **/
+    _count?: true | Chat_actionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Chat_actionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Chat_actionMaxAggregateInputType
+  }
+
+  export type GetChat_actionAggregateType<T extends Chat_actionAggregateArgs> = {
+        [P in keyof T & keyof AggregateChat_action]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateChat_action[P]>
+      : GetScalarType<T[P], AggregateChat_action[P]>
+  }
+
+
+
+
+  export type chat_actionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: chat_actionWhereInput
+    orderBy?: chat_actionOrderByWithAggregationInput | chat_actionOrderByWithAggregationInput[]
+    by: Chat_actionScalarFieldEnum[] | Chat_actionScalarFieldEnum
+    having?: chat_actionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Chat_actionCountAggregateInputType | true
+    _min?: Chat_actionMinAggregateInputType
+    _max?: Chat_actionMaxAggregateInputType
+  }
+
+  export type Chat_actionGroupByOutputType = {
+    id: string
+    deleted: boolean
+    deletedAt: Date | null
+    updatedAt: Date
+    createdAt: Date
+    action_id: string
+    action: string | null
+    error: boolean
+    chat_id: string
+    _count: Chat_actionCountAggregateOutputType | null
+    _min: Chat_actionMinAggregateOutputType | null
+    _max: Chat_actionMaxAggregateOutputType | null
+  }
+
+  type GetChat_actionGroupByPayload<T extends chat_actionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Chat_actionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Chat_actionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Chat_actionGroupByOutputType[P]>
+            : GetScalarType<T[P], Chat_actionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type chat_actionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    action_id?: boolean
+    action?: boolean
+    error?: boolean
+    chat_id?: boolean
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chat_action"]>
+
+  export type chat_actionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    action_id?: boolean
+    action?: boolean
+    error?: boolean
+    chat_id?: boolean
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chat_action"]>
+
+  export type chat_actionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    action_id?: boolean
+    action?: boolean
+    error?: boolean
+    chat_id?: boolean
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chat_action"]>
+
+  export type chat_actionSelectScalar = {
+    id?: boolean
+    deleted?: boolean
+    deletedAt?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    action_id?: boolean
+    action?: boolean
+    error?: boolean
+    chat_id?: boolean
+  }
+
+  export type chat_actionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "deleted" | "deletedAt" | "updatedAt" | "createdAt" | "action_id" | "action" | "error" | "chat_id", ExtArgs["result"]["chat_action"]>
+  export type chat_actionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+  export type chat_actionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+  export type chat_actionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    chat?: boolean | chatDefaultArgs<ExtArgs>
+  }
+
+  export type $chat_actionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "chat_action"
+    objects: {
+      chat: Prisma.$chatPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      deleted: boolean
+      deletedAt: Date | null
+      updatedAt: Date
+      createdAt: Date
+      action_id: string
+      action: string | null
+      error: boolean
+      chat_id: string
+    }, ExtArgs["result"]["chat_action"]>
+    composites: {}
+  }
+
+  type chat_actionGetPayload<S extends boolean | null | undefined | chat_actionDefaultArgs> = $Result.GetResult<Prisma.$chat_actionPayload, S>
+
+  type chat_actionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<chat_actionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Chat_actionCountAggregateInputType | true
+    }
+
+  export interface chat_actionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['chat_action'], meta: { name: 'chat_action' } }
+    /**
+     * Find zero or one Chat_action that matches the filter.
+     * @param {chat_actionFindUniqueArgs} args - Arguments to find a Chat_action
+     * @example
+     * // Get one Chat_action
+     * const chat_action = await prisma.chat_action.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends chat_actionFindUniqueArgs>(args: SelectSubset<T, chat_actionFindUniqueArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Chat_action that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {chat_actionFindUniqueOrThrowArgs} args - Arguments to find a Chat_action
+     * @example
+     * // Get one Chat_action
+     * const chat_action = await prisma.chat_action.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends chat_actionFindUniqueOrThrowArgs>(args: SelectSubset<T, chat_actionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Chat_action that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chat_actionFindFirstArgs} args - Arguments to find a Chat_action
+     * @example
+     * // Get one Chat_action
+     * const chat_action = await prisma.chat_action.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends chat_actionFindFirstArgs>(args?: SelectSubset<T, chat_actionFindFirstArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Chat_action that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chat_actionFindFirstOrThrowArgs} args - Arguments to find a Chat_action
+     * @example
+     * // Get one Chat_action
+     * const chat_action = await prisma.chat_action.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends chat_actionFindFirstOrThrowArgs>(args?: SelectSubset<T, chat_actionFindFirstOrThrowArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Chat_actions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chat_actionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Chat_actions
+     * const chat_actions = await prisma.chat_action.findMany()
+     * 
+     * // Get first 10 Chat_actions
+     * const chat_actions = await prisma.chat_action.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const chat_actionWithIdOnly = await prisma.chat_action.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends chat_actionFindManyArgs>(args?: SelectSubset<T, chat_actionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Chat_action.
+     * @param {chat_actionCreateArgs} args - Arguments to create a Chat_action.
+     * @example
+     * // Create one Chat_action
+     * const Chat_action = await prisma.chat_action.create({
+     *   data: {
+     *     // ... data to create a Chat_action
+     *   }
+     * })
+     * 
+     */
+    create<T extends chat_actionCreateArgs>(args: SelectSubset<T, chat_actionCreateArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Chat_actions.
+     * @param {chat_actionCreateManyArgs} args - Arguments to create many Chat_actions.
+     * @example
+     * // Create many Chat_actions
+     * const chat_action = await prisma.chat_action.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends chat_actionCreateManyArgs>(args?: SelectSubset<T, chat_actionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Chat_actions and returns the data saved in the database.
+     * @param {chat_actionCreateManyAndReturnArgs} args - Arguments to create many Chat_actions.
+     * @example
+     * // Create many Chat_actions
+     * const chat_action = await prisma.chat_action.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Chat_actions and only return the `id`
+     * const chat_actionWithIdOnly = await prisma.chat_action.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends chat_actionCreateManyAndReturnArgs>(args?: SelectSubset<T, chat_actionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Chat_action.
+     * @param {chat_actionDeleteArgs} args - Arguments to delete one Chat_action.
+     * @example
+     * // Delete one Chat_action
+     * const Chat_action = await prisma.chat_action.delete({
+     *   where: {
+     *     // ... filter to delete one Chat_action
+     *   }
+     * })
+     * 
+     */
+    delete<T extends chat_actionDeleteArgs>(args: SelectSubset<T, chat_actionDeleteArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Chat_action.
+     * @param {chat_actionUpdateArgs} args - Arguments to update one Chat_action.
+     * @example
+     * // Update one Chat_action
+     * const chat_action = await prisma.chat_action.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends chat_actionUpdateArgs>(args: SelectSubset<T, chat_actionUpdateArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Chat_actions.
+     * @param {chat_actionDeleteManyArgs} args - Arguments to filter Chat_actions to delete.
+     * @example
+     * // Delete a few Chat_actions
+     * const { count } = await prisma.chat_action.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends chat_actionDeleteManyArgs>(args?: SelectSubset<T, chat_actionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Chat_actions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chat_actionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Chat_actions
+     * const chat_action = await prisma.chat_action.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends chat_actionUpdateManyArgs>(args: SelectSubset<T, chat_actionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Chat_actions and returns the data updated in the database.
+     * @param {chat_actionUpdateManyAndReturnArgs} args - Arguments to update many Chat_actions.
+     * @example
+     * // Update many Chat_actions
+     * const chat_action = await prisma.chat_action.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Chat_actions and only return the `id`
+     * const chat_actionWithIdOnly = await prisma.chat_action.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends chat_actionUpdateManyAndReturnArgs>(args: SelectSubset<T, chat_actionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Chat_action.
+     * @param {chat_actionUpsertArgs} args - Arguments to update or create a Chat_action.
+     * @example
+     * // Update or create a Chat_action
+     * const chat_action = await prisma.chat_action.upsert({
+     *   create: {
+     *     // ... data to create a Chat_action
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Chat_action we want to update
+     *   }
+     * })
+     */
+    upsert<T extends chat_actionUpsertArgs>(args: SelectSubset<T, chat_actionUpsertArgs<ExtArgs>>): Prisma__chat_actionClient<$Result.GetResult<Prisma.$chat_actionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Chat_actions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chat_actionCountArgs} args - Arguments to filter Chat_actions to count.
+     * @example
+     * // Count the number of Chat_actions
+     * const count = await prisma.chat_action.count({
+     *   where: {
+     *     // ... the filter for the Chat_actions we want to count
+     *   }
+     * })
+    **/
+    count<T extends chat_actionCountArgs>(
+      args?: Subset<T, chat_actionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Chat_actionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Chat_action.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Chat_actionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Chat_actionAggregateArgs>(args: Subset<T, Chat_actionAggregateArgs>): Prisma.PrismaPromise<GetChat_actionAggregateType<T>>
+
+    /**
+     * Group by Chat_action.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {chat_actionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends chat_actionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: chat_actionGroupByArgs['orderBy'] }
+        : { orderBy?: chat_actionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, chat_actionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetChat_actionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the chat_action model
+   */
+  readonly fields: chat_actionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for chat_action.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__chat_actionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    chat<T extends chatDefaultArgs<ExtArgs> = {}>(args?: Subset<T, chatDefaultArgs<ExtArgs>>): Prisma__chatClient<$Result.GetResult<Prisma.$chatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the chat_action model
+   */
+  interface chat_actionFieldRefs {
+    readonly id: FieldRef<"chat_action", 'String'>
+    readonly deleted: FieldRef<"chat_action", 'Boolean'>
+    readonly deletedAt: FieldRef<"chat_action", 'DateTime'>
+    readonly updatedAt: FieldRef<"chat_action", 'DateTime'>
+    readonly createdAt: FieldRef<"chat_action", 'DateTime'>
+    readonly action_id: FieldRef<"chat_action", 'String'>
+    readonly action: FieldRef<"chat_action", 'String'>
+    readonly error: FieldRef<"chat_action", 'Boolean'>
+    readonly chat_id: FieldRef<"chat_action", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * chat_action findUnique
+   */
+  export type chat_actionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * Filter, which chat_action to fetch.
+     */
+    where: chat_actionWhereUniqueInput
+  }
+
+  /**
+   * chat_action findUniqueOrThrow
+   */
+  export type chat_actionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * Filter, which chat_action to fetch.
+     */
+    where: chat_actionWhereUniqueInput
+  }
+
+  /**
+   * chat_action findFirst
+   */
+  export type chat_actionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * Filter, which chat_action to fetch.
+     */
+    where?: chat_actionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chat_actions to fetch.
+     */
+    orderBy?: chat_actionOrderByWithRelationInput | chat_actionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for chat_actions.
+     */
+    cursor?: chat_actionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chat_actions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chat_actions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of chat_actions.
+     */
+    distinct?: Chat_actionScalarFieldEnum | Chat_actionScalarFieldEnum[]
+  }
+
+  /**
+   * chat_action findFirstOrThrow
+   */
+  export type chat_actionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * Filter, which chat_action to fetch.
+     */
+    where?: chat_actionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chat_actions to fetch.
+     */
+    orderBy?: chat_actionOrderByWithRelationInput | chat_actionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for chat_actions.
+     */
+    cursor?: chat_actionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chat_actions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chat_actions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of chat_actions.
+     */
+    distinct?: Chat_actionScalarFieldEnum | Chat_actionScalarFieldEnum[]
+  }
+
+  /**
+   * chat_action findMany
+   */
+  export type chat_actionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * Filter, which chat_actions to fetch.
+     */
+    where?: chat_actionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of chat_actions to fetch.
+     */
+    orderBy?: chat_actionOrderByWithRelationInput | chat_actionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing chat_actions.
+     */
+    cursor?: chat_actionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` chat_actions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` chat_actions.
+     */
+    skip?: number
+    distinct?: Chat_actionScalarFieldEnum | Chat_actionScalarFieldEnum[]
+  }
+
+  /**
+   * chat_action create
+   */
+  export type chat_actionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a chat_action.
+     */
+    data: XOR<chat_actionCreateInput, chat_actionUncheckedCreateInput>
+  }
+
+  /**
+   * chat_action createMany
+   */
+  export type chat_actionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many chat_actions.
+     */
+    data: chat_actionCreateManyInput | chat_actionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * chat_action createManyAndReturn
+   */
+  export type chat_actionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * The data used to create many chat_actions.
+     */
+    data: chat_actionCreateManyInput | chat_actionCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * chat_action update
+   */
+  export type chat_actionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a chat_action.
+     */
+    data: XOR<chat_actionUpdateInput, chat_actionUncheckedUpdateInput>
+    /**
+     * Choose, which chat_action to update.
+     */
+    where: chat_actionWhereUniqueInput
+  }
+
+  /**
+   * chat_action updateMany
+   */
+  export type chat_actionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update chat_actions.
+     */
+    data: XOR<chat_actionUpdateManyMutationInput, chat_actionUncheckedUpdateManyInput>
+    /**
+     * Filter which chat_actions to update
+     */
+    where?: chat_actionWhereInput
+    /**
+     * Limit how many chat_actions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * chat_action updateManyAndReturn
+   */
+  export type chat_actionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * The data used to update chat_actions.
+     */
+    data: XOR<chat_actionUpdateManyMutationInput, chat_actionUncheckedUpdateManyInput>
+    /**
+     * Filter which chat_actions to update
+     */
+    where?: chat_actionWhereInput
+    /**
+     * Limit how many chat_actions to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * chat_action upsert
+   */
+  export type chat_actionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the chat_action to update in case it exists.
+     */
+    where: chat_actionWhereUniqueInput
+    /**
+     * In case the chat_action found by the `where` argument doesn't exist, create a new chat_action with this data.
+     */
+    create: XOR<chat_actionCreateInput, chat_actionUncheckedCreateInput>
+    /**
+     * In case the chat_action was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<chat_actionUpdateInput, chat_actionUncheckedUpdateInput>
+  }
+
+  /**
+   * chat_action delete
+   */
+  export type chat_actionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+    /**
+     * Filter which chat_action to delete.
+     */
+    where: chat_actionWhereUniqueInput
+  }
+
+  /**
+   * chat_action deleteMany
+   */
+  export type chat_actionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which chat_actions to delete
+     */
+    where?: chat_actionWhereInput
+    /**
+     * Limit how many chat_actions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * chat_action without action
+   */
+  export type chat_actionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the chat_action
+     */
+    select?: chat_actionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the chat_action
+     */
+    omit?: chat_actionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: chat_actionInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -189020,21 +190258,6 @@ export namespace Prisma {
   };
 
   export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typeof DocumentScalarFieldEnum]
-
-
-  export const ChatScalarFieldEnum: {
-    id: 'id',
-    deleted: 'deleted',
-    deletedAt: 'deletedAt',
-    updatedAt: 'updatedAt',
-    createdAt: 'createdAt',
-    company_id: 'company_id',
-    profile_id: 'profile_id',
-    features: 'features',
-    title: 'title'
-  };
-
-  export type ChatScalarFieldEnum = (typeof ChatScalarFieldEnum)[keyof typeof ChatScalarFieldEnum]
 
 
   export const Chat_messageScalarFieldEnum: {
@@ -191155,6 +192378,36 @@ export namespace Prisma {
   export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
 
 
+  export const ChatScalarFieldEnum: {
+    id: 'id',
+    deleted: 'deleted',
+    deletedAt: 'deletedAt',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt',
+    company_id: 'company_id',
+    profile_id: 'profile_id',
+    features: 'features',
+    title: 'title'
+  };
+
+  export type ChatScalarFieldEnum = (typeof ChatScalarFieldEnum)[keyof typeof ChatScalarFieldEnum]
+
+
+  export const Chat_actionScalarFieldEnum: {
+    id: 'id',
+    deleted: 'deleted',
+    deletedAt: 'deletedAt',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt',
+    action_id: 'action_id',
+    action: 'action',
+    error: 'error',
+    chat_id: 'chat_id'
+  };
+
+  export type Chat_actionScalarFieldEnum = (typeof Chat_actionScalarFieldEnum)[keyof typeof Chat_actionScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -192953,87 +194206,6 @@ export namespace Prisma {
     company_id?: StringNullableWithAggregatesFilter<"document"> | string | null
     category?: StringNullableWithAggregatesFilter<"document"> | string | null
     bucket?: StringWithAggregatesFilter<"document"> | string
-  }
-
-  export type chatWhereInput = {
-    AND?: chatWhereInput | chatWhereInput[]
-    OR?: chatWhereInput[]
-    NOT?: chatWhereInput | chatWhereInput[]
-    id?: StringFilter<"chat"> | string
-    deleted?: BoolFilter<"chat"> | boolean
-    deletedAt?: DateTimeNullableFilter<"chat"> | Date | string | null
-    updatedAt?: DateTimeFilter<"chat"> | Date | string
-    createdAt?: DateTimeFilter<"chat"> | Date | string
-    company_id?: StringFilter<"chat"> | string
-    profile_id?: StringFilter<"chat"> | string
-    features?: StringFilter<"chat"> | string
-    title?: StringFilter<"chat"> | string
-    company?: XOR<CompanyScalarRelationFilter, companyWhereInput>
-    profile?: XOR<ProfileScalarRelationFilter, profileWhereInput>
-    chat_messages?: Chat_messageListRelationFilter
-  }
-
-  export type chatOrderByWithRelationInput = {
-    id?: SortOrder
-    deleted?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
-    updatedAt?: SortOrder
-    createdAt?: SortOrder
-    company_id?: SortOrder
-    profile_id?: SortOrder
-    features?: SortOrder
-    title?: SortOrder
-    company?: companyOrderByWithRelationInput
-    profile?: profileOrderByWithRelationInput
-    chat_messages?: chat_messageOrderByRelationAggregateInput
-  }
-
-  export type chatWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: chatWhereInput | chatWhereInput[]
-    OR?: chatWhereInput[]
-    NOT?: chatWhereInput | chatWhereInput[]
-    deleted?: BoolFilter<"chat"> | boolean
-    deletedAt?: DateTimeNullableFilter<"chat"> | Date | string | null
-    updatedAt?: DateTimeFilter<"chat"> | Date | string
-    createdAt?: DateTimeFilter<"chat"> | Date | string
-    company_id?: StringFilter<"chat"> | string
-    profile_id?: StringFilter<"chat"> | string
-    features?: StringFilter<"chat"> | string
-    title?: StringFilter<"chat"> | string
-    company?: XOR<CompanyScalarRelationFilter, companyWhereInput>
-    profile?: XOR<ProfileScalarRelationFilter, profileWhereInput>
-    chat_messages?: Chat_messageListRelationFilter
-  }, "id">
-
-  export type chatOrderByWithAggregationInput = {
-    id?: SortOrder
-    deleted?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
-    updatedAt?: SortOrder
-    createdAt?: SortOrder
-    company_id?: SortOrder
-    profile_id?: SortOrder
-    features?: SortOrder
-    title?: SortOrder
-    _count?: chatCountOrderByAggregateInput
-    _max?: chatMaxOrderByAggregateInput
-    _min?: chatMinOrderByAggregateInput
-  }
-
-  export type chatScalarWhereWithAggregatesInput = {
-    AND?: chatScalarWhereWithAggregatesInput | chatScalarWhereWithAggregatesInput[]
-    OR?: chatScalarWhereWithAggregatesInput[]
-    NOT?: chatScalarWhereWithAggregatesInput | chatScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"chat"> | string
-    deleted?: BoolWithAggregatesFilter<"chat"> | boolean
-    deletedAt?: DateTimeNullableWithAggregatesFilter<"chat"> | Date | string | null
-    updatedAt?: DateTimeWithAggregatesFilter<"chat"> | Date | string
-    createdAt?: DateTimeWithAggregatesFilter<"chat"> | Date | string
-    company_id?: StringWithAggregatesFilter<"chat"> | string
-    profile_id?: StringWithAggregatesFilter<"chat"> | string
-    features?: StringWithAggregatesFilter<"chat"> | string
-    title?: StringWithAggregatesFilter<"chat"> | string
   }
 
   export type chat_messageWhereInput = {
@@ -205372,6 +206544,165 @@ export namespace Prisma {
     profile_id?: StringNullableWithAggregatesFilter<"notification"> | string | null
   }
 
+  export type chatWhereInput = {
+    AND?: chatWhereInput | chatWhereInput[]
+    OR?: chatWhereInput[]
+    NOT?: chatWhereInput | chatWhereInput[]
+    id?: StringFilter<"chat"> | string
+    deleted?: BoolFilter<"chat"> | boolean
+    deletedAt?: DateTimeNullableFilter<"chat"> | Date | string | null
+    updatedAt?: DateTimeFilter<"chat"> | Date | string
+    createdAt?: DateTimeFilter<"chat"> | Date | string
+    company_id?: StringFilter<"chat"> | string
+    profile_id?: StringFilter<"chat"> | string
+    features?: StringFilter<"chat"> | string
+    title?: StringFilter<"chat"> | string
+    company?: XOR<CompanyScalarRelationFilter, companyWhereInput>
+    profile?: XOR<ProfileScalarRelationFilter, profileWhereInput>
+    chat_actions?: Chat_actionListRelationFilter
+    chat_messages?: Chat_messageListRelationFilter
+  }
+
+  export type chatOrderByWithRelationInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    company_id?: SortOrder
+    profile_id?: SortOrder
+    features?: SortOrder
+    title?: SortOrder
+    company?: companyOrderByWithRelationInput
+    profile?: profileOrderByWithRelationInput
+    chat_actions?: chat_actionOrderByRelationAggregateInput
+    chat_messages?: chat_messageOrderByRelationAggregateInput
+  }
+
+  export type chatWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: chatWhereInput | chatWhereInput[]
+    OR?: chatWhereInput[]
+    NOT?: chatWhereInput | chatWhereInput[]
+    deleted?: BoolFilter<"chat"> | boolean
+    deletedAt?: DateTimeNullableFilter<"chat"> | Date | string | null
+    updatedAt?: DateTimeFilter<"chat"> | Date | string
+    createdAt?: DateTimeFilter<"chat"> | Date | string
+    company_id?: StringFilter<"chat"> | string
+    profile_id?: StringFilter<"chat"> | string
+    features?: StringFilter<"chat"> | string
+    title?: StringFilter<"chat"> | string
+    company?: XOR<CompanyScalarRelationFilter, companyWhereInput>
+    profile?: XOR<ProfileScalarRelationFilter, profileWhereInput>
+    chat_actions?: Chat_actionListRelationFilter
+    chat_messages?: Chat_messageListRelationFilter
+  }, "id">
+
+  export type chatOrderByWithAggregationInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    company_id?: SortOrder
+    profile_id?: SortOrder
+    features?: SortOrder
+    title?: SortOrder
+    _count?: chatCountOrderByAggregateInput
+    _max?: chatMaxOrderByAggregateInput
+    _min?: chatMinOrderByAggregateInput
+  }
+
+  export type chatScalarWhereWithAggregatesInput = {
+    AND?: chatScalarWhereWithAggregatesInput | chatScalarWhereWithAggregatesInput[]
+    OR?: chatScalarWhereWithAggregatesInput[]
+    NOT?: chatScalarWhereWithAggregatesInput | chatScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"chat"> | string
+    deleted?: BoolWithAggregatesFilter<"chat"> | boolean
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"chat"> | Date | string | null
+    updatedAt?: DateTimeWithAggregatesFilter<"chat"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"chat"> | Date | string
+    company_id?: StringWithAggregatesFilter<"chat"> | string
+    profile_id?: StringWithAggregatesFilter<"chat"> | string
+    features?: StringWithAggregatesFilter<"chat"> | string
+    title?: StringWithAggregatesFilter<"chat"> | string
+  }
+
+  export type chat_actionWhereInput = {
+    AND?: chat_actionWhereInput | chat_actionWhereInput[]
+    OR?: chat_actionWhereInput[]
+    NOT?: chat_actionWhereInput | chat_actionWhereInput[]
+    id?: StringFilter<"chat_action"> | string
+    deleted?: BoolFilter<"chat_action"> | boolean
+    deletedAt?: DateTimeNullableFilter<"chat_action"> | Date | string | null
+    updatedAt?: DateTimeFilter<"chat_action"> | Date | string
+    createdAt?: DateTimeFilter<"chat_action"> | Date | string
+    action_id?: StringFilter<"chat_action"> | string
+    action?: StringNullableFilter<"chat_action"> | string | null
+    error?: BoolFilter<"chat_action"> | boolean
+    chat_id?: StringFilter<"chat_action"> | string
+    chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
+  }
+
+  export type chat_actionOrderByWithRelationInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    action_id?: SortOrder
+    action?: SortOrderInput | SortOrder
+    error?: SortOrder
+    chat_id?: SortOrder
+    chat?: chatOrderByWithRelationInput
+  }
+
+  export type chat_actionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: chat_actionWhereInput | chat_actionWhereInput[]
+    OR?: chat_actionWhereInput[]
+    NOT?: chat_actionWhereInput | chat_actionWhereInput[]
+    deleted?: BoolFilter<"chat_action"> | boolean
+    deletedAt?: DateTimeNullableFilter<"chat_action"> | Date | string | null
+    updatedAt?: DateTimeFilter<"chat_action"> | Date | string
+    createdAt?: DateTimeFilter<"chat_action"> | Date | string
+    action_id?: StringFilter<"chat_action"> | string
+    action?: StringNullableFilter<"chat_action"> | string | null
+    error?: BoolFilter<"chat_action"> | boolean
+    chat_id?: StringFilter<"chat_action"> | string
+    chat?: XOR<ChatScalarRelationFilter, chatWhereInput>
+  }, "id">
+
+  export type chat_actionOrderByWithAggregationInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    action_id?: SortOrder
+    action?: SortOrderInput | SortOrder
+    error?: SortOrder
+    chat_id?: SortOrder
+    _count?: chat_actionCountOrderByAggregateInput
+    _max?: chat_actionMaxOrderByAggregateInput
+    _min?: chat_actionMinOrderByAggregateInput
+  }
+
+  export type chat_actionScalarWhereWithAggregatesInput = {
+    AND?: chat_actionScalarWhereWithAggregatesInput | chat_actionScalarWhereWithAggregatesInput[]
+    OR?: chat_actionScalarWhereWithAggregatesInput[]
+    NOT?: chat_actionScalarWhereWithAggregatesInput | chat_actionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"chat_action"> | string
+    deleted?: BoolWithAggregatesFilter<"chat_action"> | boolean
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"chat_action"> | Date | string | null
+    updatedAt?: DateTimeWithAggregatesFilter<"chat_action"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"chat_action"> | Date | string
+    action_id?: StringWithAggregatesFilter<"chat_action"> | string
+    action?: StringNullableWithAggregatesFilter<"chat_action"> | string | null
+    error?: BoolWithAggregatesFilter<"chat_action"> | boolean
+    chat_id?: StringWithAggregatesFilter<"chat_action"> | string
+  }
+
   export type company_addressCreateInput = {
     id?: string
     deleted?: boolean
@@ -207220,92 +208551,6 @@ export namespace Prisma {
     company_id?: NullableStringFieldUpdateOperationsInput | string | null
     category?: NullableStringFieldUpdateOperationsInput | string | null
     bucket?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type chatCreateInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    features: string
-    title: string
-    company: companyCreateNestedOneWithoutChatsInput
-    profile: profileCreateNestedOneWithoutChatsInput
-    chat_messages?: chat_messageCreateNestedManyWithoutChatInput
-  }
-
-  export type chatUncheckedCreateInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    company_id: string
-    profile_id: string
-    features: string
-    title: string
-    chat_messages?: chat_messageUncheckedCreateNestedManyWithoutChatInput
-  }
-
-  export type chatUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    features?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    company?: companyUpdateOneRequiredWithoutChatsNestedInput
-    profile?: profileUpdateOneRequiredWithoutChatsNestedInput
-    chat_messages?: chat_messageUpdateManyWithoutChatNestedInput
-  }
-
-  export type chatUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    company_id?: StringFieldUpdateOperationsInput | string
-    profile_id?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    chat_messages?: chat_messageUncheckedUpdateManyWithoutChatNestedInput
-  }
-
-  export type chatCreateManyInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    company_id: string
-    profile_id: string
-    features: string
-    title: string
-  }
-
-  export type chatUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    features?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type chatUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    company_id?: StringFieldUpdateOperationsInput | string
-    profile_id?: StringFieldUpdateOperationsInput | string
-    features?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
   }
 
   export type chat_messageCreateInput = {
@@ -220635,6 +221880,179 @@ export namespace Prisma {
     profile_id?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
+  export type chatCreateInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    features: string
+    title: string
+    company: companyCreateNestedOneWithoutChatsInput
+    profile: profileCreateNestedOneWithoutChatsInput
+    chat_actions?: chat_actionCreateNestedManyWithoutChatInput
+    chat_messages?: chat_messageCreateNestedManyWithoutChatInput
+  }
+
+  export type chatUncheckedCreateInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    company_id: string
+    profile_id: string
+    features: string
+    title: string
+    chat_actions?: chat_actionUncheckedCreateNestedManyWithoutChatInput
+    chat_messages?: chat_messageUncheckedCreateNestedManyWithoutChatInput
+  }
+
+  export type chatUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    features?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    company?: companyUpdateOneRequiredWithoutChatsNestedInput
+    profile?: profileUpdateOneRequiredWithoutChatsNestedInput
+    chat_actions?: chat_actionUpdateManyWithoutChatNestedInput
+    chat_messages?: chat_messageUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company_id?: StringFieldUpdateOperationsInput | string
+    profile_id?: StringFieldUpdateOperationsInput | string
+    features?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    chat_actions?: chat_actionUncheckedUpdateManyWithoutChatNestedInput
+    chat_messages?: chat_messageUncheckedUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatCreateManyInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    company_id: string
+    profile_id: string
+    features: string
+    title: string
+  }
+
+  export type chatUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    features?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type chatUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company_id?: StringFieldUpdateOperationsInput | string
+    profile_id?: StringFieldUpdateOperationsInput | string
+    features?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type chat_actionCreateInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    action_id: string
+    action?: string | null
+    error?: boolean
+    chat: chatCreateNestedOneWithoutChat_actionsInput
+  }
+
+  export type chat_actionUncheckedCreateInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    action_id: string
+    action?: string | null
+    error?: boolean
+    chat_id: string
+  }
+
+  export type chat_actionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+    chat?: chatUpdateOneRequiredWithoutChat_actionsNestedInput
+  }
+
+  export type chat_actionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+    chat_id?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type chat_actionCreateManyInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    action_id: string
+    action?: string | null
+    error?: boolean
+    chat_id: string
+  }
+
+  export type chat_actionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type chat_actionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+    chat_id?: StringFieldUpdateOperationsInput | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -222230,57 +223648,6 @@ export namespace Prisma {
     bucket?: SortOrder
   }
 
-  export type ProfileScalarRelationFilter = {
-    is?: profileWhereInput
-    isNot?: profileWhereInput
-  }
-
-  export type Chat_messageListRelationFilter = {
-    every?: chat_messageWhereInput
-    some?: chat_messageWhereInput
-    none?: chat_messageWhereInput
-  }
-
-  export type chat_messageOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type chatCountOrderByAggregateInput = {
-    id?: SortOrder
-    deleted?: SortOrder
-    deletedAt?: SortOrder
-    updatedAt?: SortOrder
-    createdAt?: SortOrder
-    company_id?: SortOrder
-    profile_id?: SortOrder
-    features?: SortOrder
-    title?: SortOrder
-  }
-
-  export type chatMaxOrderByAggregateInput = {
-    id?: SortOrder
-    deleted?: SortOrder
-    deletedAt?: SortOrder
-    updatedAt?: SortOrder
-    createdAt?: SortOrder
-    company_id?: SortOrder
-    profile_id?: SortOrder
-    features?: SortOrder
-    title?: SortOrder
-  }
-
-  export type chatMinOrderByAggregateInput = {
-    id?: SortOrder
-    deleted?: SortOrder
-    deletedAt?: SortOrder
-    updatedAt?: SortOrder
-    createdAt?: SortOrder
-    company_id?: SortOrder
-    profile_id?: SortOrder
-    features?: SortOrder
-    title?: SortOrder
-  }
-
   export type ChatScalarRelationFilter = {
     is?: chatWhereInput
     isNot?: chatWhereInput
@@ -223444,6 +224811,11 @@ export namespace Prisma {
     type?: SortOrder
     register?: SortOrder
     company_id?: SortOrder
+  }
+
+  export type ProfileScalarRelationFilter = {
+    is?: profileWhereInput
+    isNot?: profileWhereInput
   }
 
   export type profile_addressCountOrderByAggregateInput = {
@@ -228688,6 +230060,98 @@ export namespace Prisma {
     profile_id?: SortOrder
   }
 
+  export type Chat_actionListRelationFilter = {
+    every?: chat_actionWhereInput
+    some?: chat_actionWhereInput
+    none?: chat_actionWhereInput
+  }
+
+  export type Chat_messageListRelationFilter = {
+    every?: chat_messageWhereInput
+    some?: chat_messageWhereInput
+    none?: chat_messageWhereInput
+  }
+
+  export type chat_actionOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type chat_messageOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type chatCountOrderByAggregateInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    company_id?: SortOrder
+    profile_id?: SortOrder
+    features?: SortOrder
+    title?: SortOrder
+  }
+
+  export type chatMaxOrderByAggregateInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    company_id?: SortOrder
+    profile_id?: SortOrder
+    features?: SortOrder
+    title?: SortOrder
+  }
+
+  export type chatMinOrderByAggregateInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    company_id?: SortOrder
+    profile_id?: SortOrder
+    features?: SortOrder
+    title?: SortOrder
+  }
+
+  export type chat_actionCountOrderByAggregateInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    action_id?: SortOrder
+    action?: SortOrder
+    error?: SortOrder
+    chat_id?: SortOrder
+  }
+
+  export type chat_actionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    action_id?: SortOrder
+    action?: SortOrder
+    error?: SortOrder
+    chat_id?: SortOrder
+  }
+
+  export type chat_actionMinOrderByAggregateInput = {
+    id?: SortOrder
+    deleted?: SortOrder
+    deletedAt?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    action_id?: SortOrder
+    action?: SortOrder
+    error?: SortOrder
+    chat_id?: SortOrder
+  }
+
   export type companyCreateNestedOneWithoutCompany_addressInput = {
     create?: XOR<companyCreateWithoutCompany_addressInput, companyUncheckedCreateWithoutCompany_addressInput>
     connectOrCreate?: companyCreateOrConnectWithoutCompany_addressInput
@@ -231622,76 +233086,6 @@ export namespace Prisma {
     update?: document_chunkUpdateWithWhereUniqueWithoutDocumentInput | document_chunkUpdateWithWhereUniqueWithoutDocumentInput[]
     updateMany?: document_chunkUpdateManyWithWhereWithoutDocumentInput | document_chunkUpdateManyWithWhereWithoutDocumentInput[]
     deleteMany?: document_chunkScalarWhereInput | document_chunkScalarWhereInput[]
-  }
-
-  export type companyCreateNestedOneWithoutChatsInput = {
-    create?: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
-    connectOrCreate?: companyCreateOrConnectWithoutChatsInput
-    connect?: companyWhereUniqueInput
-  }
-
-  export type profileCreateNestedOneWithoutChatsInput = {
-    create?: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
-    connectOrCreate?: profileCreateOrConnectWithoutChatsInput
-    connect?: profileWhereUniqueInput
-  }
-
-  export type chat_messageCreateNestedManyWithoutChatInput = {
-    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
-    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
-    createMany?: chat_messageCreateManyChatInputEnvelope
-    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-  }
-
-  export type chat_messageUncheckedCreateNestedManyWithoutChatInput = {
-    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
-    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
-    createMany?: chat_messageCreateManyChatInputEnvelope
-    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-  }
-
-  export type companyUpdateOneRequiredWithoutChatsNestedInput = {
-    create?: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
-    connectOrCreate?: companyCreateOrConnectWithoutChatsInput
-    upsert?: companyUpsertWithoutChatsInput
-    connect?: companyWhereUniqueInput
-    update?: XOR<XOR<companyUpdateToOneWithWhereWithoutChatsInput, companyUpdateWithoutChatsInput>, companyUncheckedUpdateWithoutChatsInput>
-  }
-
-  export type profileUpdateOneRequiredWithoutChatsNestedInput = {
-    create?: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
-    connectOrCreate?: profileCreateOrConnectWithoutChatsInput
-    upsert?: profileUpsertWithoutChatsInput
-    connect?: profileWhereUniqueInput
-    update?: XOR<XOR<profileUpdateToOneWithWhereWithoutChatsInput, profileUpdateWithoutChatsInput>, profileUncheckedUpdateWithoutChatsInput>
-  }
-
-  export type chat_messageUpdateManyWithoutChatNestedInput = {
-    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
-    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
-    upsert?: chat_messageUpsertWithWhereUniqueWithoutChatInput | chat_messageUpsertWithWhereUniqueWithoutChatInput[]
-    createMany?: chat_messageCreateManyChatInputEnvelope
-    set?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    disconnect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    delete?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    update?: chat_messageUpdateWithWhereUniqueWithoutChatInput | chat_messageUpdateWithWhereUniqueWithoutChatInput[]
-    updateMany?: chat_messageUpdateManyWithWhereWithoutChatInput | chat_messageUpdateManyWithWhereWithoutChatInput[]
-    deleteMany?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
-  }
-
-  export type chat_messageUncheckedUpdateManyWithoutChatNestedInput = {
-    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
-    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
-    upsert?: chat_messageUpsertWithWhereUniqueWithoutChatInput | chat_messageUpsertWithWhereUniqueWithoutChatInput[]
-    createMany?: chat_messageCreateManyChatInputEnvelope
-    set?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    disconnect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    delete?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
-    update?: chat_messageUpdateWithWhereUniqueWithoutChatInput | chat_messageUpdateWithWhereUniqueWithoutChatInput[]
-    updateMany?: chat_messageUpdateManyWithWhereWithoutChatInput | chat_messageUpdateManyWithWhereWithoutChatInput[]
-    deleteMany?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
   }
 
   export type chatCreateNestedOneWithoutChat_messagesInput = {
@@ -250606,6 +252000,132 @@ export namespace Prisma {
     update?: XOR<XOR<companyUpdateToOneWithWhereWithoutNotificationsInput, companyUpdateWithoutNotificationsInput>, companyUncheckedUpdateWithoutNotificationsInput>
   }
 
+  export type companyCreateNestedOneWithoutChatsInput = {
+    create?: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
+    connectOrCreate?: companyCreateOrConnectWithoutChatsInput
+    connect?: companyWhereUniqueInput
+  }
+
+  export type profileCreateNestedOneWithoutChatsInput = {
+    create?: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
+    connectOrCreate?: profileCreateOrConnectWithoutChatsInput
+    connect?: profileWhereUniqueInput
+  }
+
+  export type chat_actionCreateNestedManyWithoutChatInput = {
+    create?: XOR<chat_actionCreateWithoutChatInput, chat_actionUncheckedCreateWithoutChatInput> | chat_actionCreateWithoutChatInput[] | chat_actionUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_actionCreateOrConnectWithoutChatInput | chat_actionCreateOrConnectWithoutChatInput[]
+    createMany?: chat_actionCreateManyChatInputEnvelope
+    connect?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+  }
+
+  export type chat_messageCreateNestedManyWithoutChatInput = {
+    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
+    createMany?: chat_messageCreateManyChatInputEnvelope
+    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+  }
+
+  export type chat_actionUncheckedCreateNestedManyWithoutChatInput = {
+    create?: XOR<chat_actionCreateWithoutChatInput, chat_actionUncheckedCreateWithoutChatInput> | chat_actionCreateWithoutChatInput[] | chat_actionUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_actionCreateOrConnectWithoutChatInput | chat_actionCreateOrConnectWithoutChatInput[]
+    createMany?: chat_actionCreateManyChatInputEnvelope
+    connect?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+  }
+
+  export type chat_messageUncheckedCreateNestedManyWithoutChatInput = {
+    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
+    createMany?: chat_messageCreateManyChatInputEnvelope
+    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+  }
+
+  export type companyUpdateOneRequiredWithoutChatsNestedInput = {
+    create?: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
+    connectOrCreate?: companyCreateOrConnectWithoutChatsInput
+    upsert?: companyUpsertWithoutChatsInput
+    connect?: companyWhereUniqueInput
+    update?: XOR<XOR<companyUpdateToOneWithWhereWithoutChatsInput, companyUpdateWithoutChatsInput>, companyUncheckedUpdateWithoutChatsInput>
+  }
+
+  export type profileUpdateOneRequiredWithoutChatsNestedInput = {
+    create?: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
+    connectOrCreate?: profileCreateOrConnectWithoutChatsInput
+    upsert?: profileUpsertWithoutChatsInput
+    connect?: profileWhereUniqueInput
+    update?: XOR<XOR<profileUpdateToOneWithWhereWithoutChatsInput, profileUpdateWithoutChatsInput>, profileUncheckedUpdateWithoutChatsInput>
+  }
+
+  export type chat_actionUpdateManyWithoutChatNestedInput = {
+    create?: XOR<chat_actionCreateWithoutChatInput, chat_actionUncheckedCreateWithoutChatInput> | chat_actionCreateWithoutChatInput[] | chat_actionUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_actionCreateOrConnectWithoutChatInput | chat_actionCreateOrConnectWithoutChatInput[]
+    upsert?: chat_actionUpsertWithWhereUniqueWithoutChatInput | chat_actionUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: chat_actionCreateManyChatInputEnvelope
+    set?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    disconnect?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    delete?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    connect?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    update?: chat_actionUpdateWithWhereUniqueWithoutChatInput | chat_actionUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: chat_actionUpdateManyWithWhereWithoutChatInput | chat_actionUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: chat_actionScalarWhereInput | chat_actionScalarWhereInput[]
+  }
+
+  export type chat_messageUpdateManyWithoutChatNestedInput = {
+    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
+    upsert?: chat_messageUpsertWithWhereUniqueWithoutChatInput | chat_messageUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: chat_messageCreateManyChatInputEnvelope
+    set?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    disconnect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    delete?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    update?: chat_messageUpdateWithWhereUniqueWithoutChatInput | chat_messageUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: chat_messageUpdateManyWithWhereWithoutChatInput | chat_messageUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
+  }
+
+  export type chat_actionUncheckedUpdateManyWithoutChatNestedInput = {
+    create?: XOR<chat_actionCreateWithoutChatInput, chat_actionUncheckedCreateWithoutChatInput> | chat_actionCreateWithoutChatInput[] | chat_actionUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_actionCreateOrConnectWithoutChatInput | chat_actionCreateOrConnectWithoutChatInput[]
+    upsert?: chat_actionUpsertWithWhereUniqueWithoutChatInput | chat_actionUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: chat_actionCreateManyChatInputEnvelope
+    set?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    disconnect?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    delete?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    connect?: chat_actionWhereUniqueInput | chat_actionWhereUniqueInput[]
+    update?: chat_actionUpdateWithWhereUniqueWithoutChatInput | chat_actionUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: chat_actionUpdateManyWithWhereWithoutChatInput | chat_actionUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: chat_actionScalarWhereInput | chat_actionScalarWhereInput[]
+  }
+
+  export type chat_messageUncheckedUpdateManyWithoutChatNestedInput = {
+    create?: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput> | chat_messageCreateWithoutChatInput[] | chat_messageUncheckedCreateWithoutChatInput[]
+    connectOrCreate?: chat_messageCreateOrConnectWithoutChatInput | chat_messageCreateOrConnectWithoutChatInput[]
+    upsert?: chat_messageUpsertWithWhereUniqueWithoutChatInput | chat_messageUpsertWithWhereUniqueWithoutChatInput[]
+    createMany?: chat_messageCreateManyChatInputEnvelope
+    set?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    disconnect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    delete?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    connect?: chat_messageWhereUniqueInput | chat_messageWhereUniqueInput[]
+    update?: chat_messageUpdateWithWhereUniqueWithoutChatInput | chat_messageUpdateWithWhereUniqueWithoutChatInput[]
+    updateMany?: chat_messageUpdateManyWithWhereWithoutChatInput | chat_messageUpdateManyWithWhereWithoutChatInput[]
+    deleteMany?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
+  }
+
+  export type chatCreateNestedOneWithoutChat_actionsInput = {
+    create?: XOR<chatCreateWithoutChat_actionsInput, chatUncheckedCreateWithoutChat_actionsInput>
+    connectOrCreate?: chatCreateOrConnectWithoutChat_actionsInput
+    connect?: chatWhereUniqueInput
+  }
+
+  export type chatUpdateOneRequiredWithoutChat_actionsNestedInput = {
+    create?: XOR<chatCreateWithoutChat_actionsInput, chatUncheckedCreateWithoutChat_actionsInput>
+    connectOrCreate?: chatCreateOrConnectWithoutChat_actionsInput
+    upsert?: chatUpsertWithoutChat_actionsInput
+    connect?: chatWhereUniqueInput
+    update?: XOR<XOR<chatUpdateToOneWithWhereWithoutChat_actionsInput, chatUpdateWithoutChat_actionsInput>, chatUncheckedUpdateWithoutChat_actionsInput>
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -260371,577 +261891,6 @@ export namespace Prisma {
     logs?: log__companyUncheckedUpdateManyWithoutRefNestedInput
   }
 
-  export type companyCreateWithoutChatsInput = {
-    language?: string
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    name: string
-    logo?: string | null
-    email: string
-    phone: string
-    in_config?: boolean
-    custom?: boolean
-    entity: string
-    type: string
-    logo_original_name?: string | null
-    documents?: documentCreateNestedManyWithoutCompanyInput
-    company_chunks?: company_chunkCreateNestedManyWithoutCompanyInput
-    creator: userCreateNestedOneWithoutCompaniesInput
-    billing_errors?: billing_errorCreateNestedManyWithoutCompanyInput
-    clients?: clientCreateNestedManyWithoutCompanyInput
-    client_address?: client_addressCreateNestedManyWithoutCompanyInput
-    client_bank_accounts?: client_bank_accountCreateNestedManyWithoutCompanyInput
-    client_contacts?: client_contactCreateNestedManyWithoutCompanyInput
-    client_documents?: client_documentCreateNestedManyWithoutCompanyInput
-    client_files?: client_fileCreateNestedManyWithoutCompanyInput
-    company_address?: company_addressCreateNestedOneWithoutCompanyInput
-    company_config?: company_configCreateNestedOneWithoutCompanyInput
-    company_contacts?: company_contactCreateNestedManyWithoutCompanyInput
-    company_customer?: company_customerCreateNestedOneWithoutCompanyInput
-    company_documents?: company_documentCreateNestedManyWithoutCompanyInput
-    company_files?: company_fileCreateNestedManyWithoutCompanyInput
-    company_invoices?: company_invoiceCreateNestedManyWithoutCompanyInput
-    cost_centers?: cost_centerCreateNestedManyWithoutCompanyInput
-    integrations?: integrationCreateNestedManyWithoutCompanyInput
-    invites?: inviteCreateNestedManyWithoutCompanyInput
-    kanban_templates?: kanban_templateCreateNestedManyWithoutCompanyInput
-    kanban_template_cards?: kanban_template_cardCreateNestedManyWithoutCompanyInput
-    kanban_template_card_types?: kanban_template_card_typeCreateNestedManyWithoutCompanyInput
-    kanban_template_columns?: kanban_template_columnCreateNestedManyWithoutCompanyInput
-    kanban_template_tags?: kanban_template_tagCreateNestedManyWithoutCompanyInput
-    levels?: levelCreateNestedManyWithoutCompanyInput
-    modules?: moduleCreateNestedManyWithoutCompanyInput
-    notifications?: notificationCreateNestedManyWithoutCompanyInput
-    plans?: planCreateNestedManyWithoutCompanyInput
-    profiles?: profileCreateNestedManyWithoutCompanyInput
-    profile_address?: profile_addressCreateNestedManyWithoutCompanyInput
-    profile_bank_accounts?: profile_bank_accountCreateNestedManyWithoutCompanyInput
-    profile_bonus?: profile_bonusCreateNestedManyWithoutCompanyInput
-    profile_contacts?: profile_contactCreateNestedManyWithoutCompanyInput
-    profile_documents?: profile_documentCreateNestedManyWithoutCompanyInput
-    profile_files?: profile_fileCreateNestedManyWithoutCompanyInput
-    profile_roles?: profile_roleCreateNestedManyWithoutCompanyInput
-    projects?: projectCreateNestedManyWithoutCompanyInput
-    project_allocations?: project_allocationCreateNestedManyWithoutCompanyInput
-    project_configs?: project_configCreateNestedManyWithoutCompanyInput
-    project_financials?: project_financialCreateNestedManyWithoutCompanyInput
-    project_financial_employees?: project_financial_employeesCreateNestedManyWithoutCompanyInput
-    project_kanbans?: project_kanbanCreateNestedManyWithoutCompanyInput
-    project_kanban_cycles?: project_kanban_cycleCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_columns?: project_kanban_cycle_columnCreateNestedManyWithoutCompanyInput
-    project_kanban_objectives?: project_kanban_objectiveCreateNestedManyWithoutCompanyInput
-    project_kanban_objective_targets?: project_kanban_objective_targetCreateNestedManyWithoutCompanyInput
-    project_members?: project_memberCreateNestedManyWithoutCompanyInput
-    project_tools?: project_toolCreateNestedManyWithoutCompanyInput
-    project_versions?: project_versionCreateNestedManyWithoutCompanyInput
-    roles?: roleCreateNestedManyWithoutCompanyInput
-    subscriptions?: subscriptionCreateNestedManyWithoutCompanyInput
-    subscription_changes?: subscription_changesCreateNestedManyWithoutCompanyInput
-    subscription_plans?: subscription_planCreateNestedManyWithoutCompanyInput
-    work_types?: work_typeCreateNestedManyWithoutCompanyInput
-    logs?: log__companyCreateNestedManyWithoutRefInput
-  }
-
-  export type companyUncheckedCreateWithoutChatsInput = {
-    language?: string
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    name: string
-    logo?: string | null
-    email: string
-    phone: string
-    in_config?: boolean
-    custom?: boolean
-    entity: string
-    type: string
-    creator_id: string
-    logo_original_name?: string | null
-    documents?: documentUncheckedCreateNestedManyWithoutCompanyInput
-    company_chunks?: company_chunkUncheckedCreateNestedManyWithoutCompanyInput
-    billing_errors?: billing_errorUncheckedCreateNestedManyWithoutCompanyInput
-    clients?: clientUncheckedCreateNestedManyWithoutCompanyInput
-    client_address?: client_addressUncheckedCreateNestedManyWithoutCompanyInput
-    client_bank_accounts?: client_bank_accountUncheckedCreateNestedManyWithoutCompanyInput
-    client_contacts?: client_contactUncheckedCreateNestedManyWithoutCompanyInput
-    client_documents?: client_documentUncheckedCreateNestedManyWithoutCompanyInput
-    client_files?: client_fileUncheckedCreateNestedManyWithoutCompanyInput
-    company_address?: company_addressUncheckedCreateNestedOneWithoutCompanyInput
-    company_config?: company_configUncheckedCreateNestedOneWithoutCompanyInput
-    company_contacts?: company_contactUncheckedCreateNestedManyWithoutCompanyInput
-    company_customer?: company_customerUncheckedCreateNestedOneWithoutCompanyInput
-    company_documents?: company_documentUncheckedCreateNestedManyWithoutCompanyInput
-    company_files?: company_fileUncheckedCreateNestedManyWithoutCompanyInput
-    company_invoices?: company_invoiceUncheckedCreateNestedManyWithoutCompanyInput
-    cost_centers?: cost_centerUncheckedCreateNestedManyWithoutCompanyInput
-    integrations?: integrationUncheckedCreateNestedManyWithoutCompanyInput
-    invites?: inviteUncheckedCreateNestedManyWithoutCompanyInput
-    kanban_templates?: kanban_templateUncheckedCreateNestedManyWithoutCompanyInput
-    kanban_template_cards?: kanban_template_cardUncheckedCreateNestedManyWithoutCompanyInput
-    kanban_template_card_types?: kanban_template_card_typeUncheckedCreateNestedManyWithoutCompanyInput
-    kanban_template_columns?: kanban_template_columnUncheckedCreateNestedManyWithoutCompanyInput
-    kanban_template_tags?: kanban_template_tagUncheckedCreateNestedManyWithoutCompanyInput
-    levels?: levelUncheckedCreateNestedManyWithoutCompanyInput
-    modules?: moduleUncheckedCreateNestedManyWithoutCompanyInput
-    notifications?: notificationUncheckedCreateNestedManyWithoutCompanyInput
-    plans?: planUncheckedCreateNestedManyWithoutCompanyInput
-    profiles?: profileUncheckedCreateNestedManyWithoutCompanyInput
-    profile_address?: profile_addressUncheckedCreateNestedManyWithoutCompanyInput
-    profile_bank_accounts?: profile_bank_accountUncheckedCreateNestedManyWithoutCompanyInput
-    profile_bonus?: profile_bonusUncheckedCreateNestedManyWithoutCompanyInput
-    profile_contacts?: profile_contactUncheckedCreateNestedManyWithoutCompanyInput
-    profile_documents?: profile_documentUncheckedCreateNestedManyWithoutCompanyInput
-    profile_files?: profile_fileUncheckedCreateNestedManyWithoutCompanyInput
-    profile_roles?: profile_roleUncheckedCreateNestedManyWithoutCompanyInput
-    projects?: projectUncheckedCreateNestedManyWithoutCompanyInput
-    project_allocations?: project_allocationUncheckedCreateNestedManyWithoutCompanyInput
-    project_configs?: project_configUncheckedCreateNestedManyWithoutCompanyInput
-    project_financials?: project_financialUncheckedCreateNestedManyWithoutCompanyInput
-    project_financial_employees?: project_financial_employeesUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanbans?: project_kanbanUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycles?: project_kanban_cycleUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_cycle_columns?: project_kanban_cycle_columnUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_objectives?: project_kanban_objectiveUncheckedCreateNestedManyWithoutCompanyInput
-    project_kanban_objective_targets?: project_kanban_objective_targetUncheckedCreateNestedManyWithoutCompanyInput
-    project_members?: project_memberUncheckedCreateNestedManyWithoutCompanyInput
-    project_tools?: project_toolUncheckedCreateNestedManyWithoutCompanyInput
-    project_versions?: project_versionUncheckedCreateNestedManyWithoutCompanyInput
-    roles?: roleUncheckedCreateNestedManyWithoutCompanyInput
-    subscriptions?: subscriptionUncheckedCreateNestedManyWithoutCompanyInput
-    subscription_changes?: subscription_changesUncheckedCreateNestedManyWithoutCompanyInput
-    subscription_plans?: subscription_planUncheckedCreateNestedManyWithoutCompanyInput
-    work_types?: work_typeUncheckedCreateNestedManyWithoutCompanyInput
-    logs?: log__companyUncheckedCreateNestedManyWithoutRefInput
-  }
-
-  export type companyCreateOrConnectWithoutChatsInput = {
-    where: companyWhereUniqueInput
-    create: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
-  }
-
-  export type profileCreateWithoutChatsInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    active?: boolean
-    type?: string | null
-    entity?: string | null
-    phone?: string | null
-    owner?: boolean
-    anonymous?: boolean
-    anonymous_name?: string | null
-    anonymous_email?: string | null
-    anonymous_avatar?: string | null
-    user?: userCreateNestedOneWithoutProfilesInput
-    level?: levelCreateNestedOneWithoutProfilesInput
-    company: companyCreateNestedOneWithoutProfilesInput
-    kanban_templates?: kanban_templateCreateNestedManyWithoutProfileInput
-    profile_address?: profile_addressCreateNestedOneWithoutProfileInput
-    profile_bank_accounts?: profile_bank_accountCreateNestedManyWithoutProfileInput
-    profile_bonus?: profile_bonusCreateNestedManyWithoutProfileInput
-    profile_contacts?: profile_contactCreateNestedManyWithoutProfileInput
-    profile_documents?: profile_documentCreateNestedManyWithoutProfileInput
-    profile_files?: profile_fileCreateNestedManyWithoutProfileInput
-    profile_roles?: profile_roleCreateNestedManyWithoutProfileInput
-    project_allocations?: project_allocationCreateNestedManyWithoutProfileInput
-    project_kanbans?: project_kanbanCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readCreateNestedManyWithoutProfileInput
-    project_members?: project_memberCreateNestedManyWithoutProfileInput
-    project_versions?: project_versionCreateNestedManyWithoutOwnerInput
-    users_by_default_profile?: userCreateNestedOneWithoutDefault_profileInput
-    logs?: log__profileCreateNestedManyWithoutRefInput
-  }
-
-  export type profileUncheckedCreateWithoutChatsInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    user_id?: string | null
-    level_id?: string | null
-    company_id: string
-    active?: boolean
-    type?: string | null
-    entity?: string | null
-    phone?: string | null
-    owner?: boolean
-    anonymous?: boolean
-    anonymous_name?: string | null
-    anonymous_email?: string | null
-    anonymous_avatar?: string | null
-    kanban_templates?: kanban_templateUncheckedCreateNestedManyWithoutProfileInput
-    profile_address?: profile_addressUncheckedCreateNestedOneWithoutProfileInput
-    profile_bank_accounts?: profile_bank_accountUncheckedCreateNestedManyWithoutProfileInput
-    profile_bonus?: profile_bonusUncheckedCreateNestedManyWithoutProfileInput
-    profile_contacts?: profile_contactUncheckedCreateNestedManyWithoutProfileInput
-    profile_documents?: profile_documentUncheckedCreateNestedManyWithoutProfileInput
-    profile_files?: profile_fileUncheckedCreateNestedManyWithoutProfileInput
-    profile_roles?: profile_roleUncheckedCreateNestedManyWithoutProfileInput
-    project_allocations?: project_allocationUncheckedCreateNestedManyWithoutProfileInput
-    project_kanbans?: project_kanbanUncheckedCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedCreateNestedManyWithoutProfileInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedCreateNestedManyWithoutProfileInput
-    project_members?: project_memberUncheckedCreateNestedManyWithoutProfileInput
-    project_versions?: project_versionUncheckedCreateNestedManyWithoutOwnerInput
-    users_by_default_profile?: userUncheckedCreateNestedOneWithoutDefault_profileInput
-    logs?: log__profileUncheckedCreateNestedManyWithoutRefInput
-  }
-
-  export type profileCreateOrConnectWithoutChatsInput = {
-    where: profileWhereUniqueInput
-    create: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
-  }
-
-  export type chat_messageCreateWithoutChatInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    sender: string
-    message: string
-    error?: boolean
-  }
-
-  export type chat_messageUncheckedCreateWithoutChatInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    sender: string
-    message: string
-    error?: boolean
-  }
-
-  export type chat_messageCreateOrConnectWithoutChatInput = {
-    where: chat_messageWhereUniqueInput
-    create: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput>
-  }
-
-  export type chat_messageCreateManyChatInputEnvelope = {
-    data: chat_messageCreateManyChatInput | chat_messageCreateManyChatInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type companyUpsertWithoutChatsInput = {
-    update: XOR<companyUpdateWithoutChatsInput, companyUncheckedUpdateWithoutChatsInput>
-    create: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
-    where?: companyWhereInput
-  }
-
-  export type companyUpdateToOneWithWhereWithoutChatsInput = {
-    where?: companyWhereInput
-    data: XOR<companyUpdateWithoutChatsInput, companyUncheckedUpdateWithoutChatsInput>
-  }
-
-  export type companyUpdateWithoutChatsInput = {
-    language?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    name?: StringFieldUpdateOperationsInput | string
-    logo?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: StringFieldUpdateOperationsInput | string
-    in_config?: BoolFieldUpdateOperationsInput | boolean
-    custom?: BoolFieldUpdateOperationsInput | boolean
-    entity?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    logo_original_name?: NullableStringFieldUpdateOperationsInput | string | null
-    documents?: documentUpdateManyWithoutCompanyNestedInput
-    company_chunks?: company_chunkUpdateManyWithoutCompanyNestedInput
-    creator?: userUpdateOneRequiredWithoutCompaniesNestedInput
-    billing_errors?: billing_errorUpdateManyWithoutCompanyNestedInput
-    clients?: clientUpdateManyWithoutCompanyNestedInput
-    client_address?: client_addressUpdateManyWithoutCompanyNestedInput
-    client_bank_accounts?: client_bank_accountUpdateManyWithoutCompanyNestedInput
-    client_contacts?: client_contactUpdateManyWithoutCompanyNestedInput
-    client_documents?: client_documentUpdateManyWithoutCompanyNestedInput
-    client_files?: client_fileUpdateManyWithoutCompanyNestedInput
-    company_address?: company_addressUpdateOneWithoutCompanyNestedInput
-    company_config?: company_configUpdateOneWithoutCompanyNestedInput
-    company_contacts?: company_contactUpdateManyWithoutCompanyNestedInput
-    company_customer?: company_customerUpdateOneWithoutCompanyNestedInput
-    company_documents?: company_documentUpdateManyWithoutCompanyNestedInput
-    company_files?: company_fileUpdateManyWithoutCompanyNestedInput
-    company_invoices?: company_invoiceUpdateManyWithoutCompanyNestedInput
-    cost_centers?: cost_centerUpdateManyWithoutCompanyNestedInput
-    integrations?: integrationUpdateManyWithoutCompanyNestedInput
-    invites?: inviteUpdateManyWithoutCompanyNestedInput
-    kanban_templates?: kanban_templateUpdateManyWithoutCompanyNestedInput
-    kanban_template_cards?: kanban_template_cardUpdateManyWithoutCompanyNestedInput
-    kanban_template_card_types?: kanban_template_card_typeUpdateManyWithoutCompanyNestedInput
-    kanban_template_columns?: kanban_template_columnUpdateManyWithoutCompanyNestedInput
-    kanban_template_tags?: kanban_template_tagUpdateManyWithoutCompanyNestedInput
-    levels?: levelUpdateManyWithoutCompanyNestedInput
-    modules?: moduleUpdateManyWithoutCompanyNestedInput
-    notifications?: notificationUpdateManyWithoutCompanyNestedInput
-    plans?: planUpdateManyWithoutCompanyNestedInput
-    profiles?: profileUpdateManyWithoutCompanyNestedInput
-    profile_address?: profile_addressUpdateManyWithoutCompanyNestedInput
-    profile_bank_accounts?: profile_bank_accountUpdateManyWithoutCompanyNestedInput
-    profile_bonus?: profile_bonusUpdateManyWithoutCompanyNestedInput
-    profile_contacts?: profile_contactUpdateManyWithoutCompanyNestedInput
-    profile_documents?: profile_documentUpdateManyWithoutCompanyNestedInput
-    profile_files?: profile_fileUpdateManyWithoutCompanyNestedInput
-    profile_roles?: profile_roleUpdateManyWithoutCompanyNestedInput
-    projects?: projectUpdateManyWithoutCompanyNestedInput
-    project_allocations?: project_allocationUpdateManyWithoutCompanyNestedInput
-    project_configs?: project_configUpdateManyWithoutCompanyNestedInput
-    project_financials?: project_financialUpdateManyWithoutCompanyNestedInput
-    project_financial_employees?: project_financial_employeesUpdateManyWithoutCompanyNestedInput
-    project_kanbans?: project_kanbanUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycles?: project_kanban_cycleUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_columns?: project_kanban_cycle_columnUpdateManyWithoutCompanyNestedInput
-    project_kanban_objectives?: project_kanban_objectiveUpdateManyWithoutCompanyNestedInput
-    project_kanban_objective_targets?: project_kanban_objective_targetUpdateManyWithoutCompanyNestedInput
-    project_members?: project_memberUpdateManyWithoutCompanyNestedInput
-    project_tools?: project_toolUpdateManyWithoutCompanyNestedInput
-    project_versions?: project_versionUpdateManyWithoutCompanyNestedInput
-    roles?: roleUpdateManyWithoutCompanyNestedInput
-    subscriptions?: subscriptionUpdateManyWithoutCompanyNestedInput
-    subscription_changes?: subscription_changesUpdateManyWithoutCompanyNestedInput
-    subscription_plans?: subscription_planUpdateManyWithoutCompanyNestedInput
-    work_types?: work_typeUpdateManyWithoutCompanyNestedInput
-    logs?: log__companyUpdateManyWithoutRefNestedInput
-  }
-
-  export type companyUncheckedUpdateWithoutChatsInput = {
-    language?: StringFieldUpdateOperationsInput | string
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    name?: StringFieldUpdateOperationsInput | string
-    logo?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: StringFieldUpdateOperationsInput | string
-    in_config?: BoolFieldUpdateOperationsInput | boolean
-    custom?: BoolFieldUpdateOperationsInput | boolean
-    entity?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    creator_id?: StringFieldUpdateOperationsInput | string
-    logo_original_name?: NullableStringFieldUpdateOperationsInput | string | null
-    documents?: documentUncheckedUpdateManyWithoutCompanyNestedInput
-    company_chunks?: company_chunkUncheckedUpdateManyWithoutCompanyNestedInput
-    billing_errors?: billing_errorUncheckedUpdateManyWithoutCompanyNestedInput
-    clients?: clientUncheckedUpdateManyWithoutCompanyNestedInput
-    client_address?: client_addressUncheckedUpdateManyWithoutCompanyNestedInput
-    client_bank_accounts?: client_bank_accountUncheckedUpdateManyWithoutCompanyNestedInput
-    client_contacts?: client_contactUncheckedUpdateManyWithoutCompanyNestedInput
-    client_documents?: client_documentUncheckedUpdateManyWithoutCompanyNestedInput
-    client_files?: client_fileUncheckedUpdateManyWithoutCompanyNestedInput
-    company_address?: company_addressUncheckedUpdateOneWithoutCompanyNestedInput
-    company_config?: company_configUncheckedUpdateOneWithoutCompanyNestedInput
-    company_contacts?: company_contactUncheckedUpdateManyWithoutCompanyNestedInput
-    company_customer?: company_customerUncheckedUpdateOneWithoutCompanyNestedInput
-    company_documents?: company_documentUncheckedUpdateManyWithoutCompanyNestedInput
-    company_files?: company_fileUncheckedUpdateManyWithoutCompanyNestedInput
-    company_invoices?: company_invoiceUncheckedUpdateManyWithoutCompanyNestedInput
-    cost_centers?: cost_centerUncheckedUpdateManyWithoutCompanyNestedInput
-    integrations?: integrationUncheckedUpdateManyWithoutCompanyNestedInput
-    invites?: inviteUncheckedUpdateManyWithoutCompanyNestedInput
-    kanban_templates?: kanban_templateUncheckedUpdateManyWithoutCompanyNestedInput
-    kanban_template_cards?: kanban_template_cardUncheckedUpdateManyWithoutCompanyNestedInput
-    kanban_template_card_types?: kanban_template_card_typeUncheckedUpdateManyWithoutCompanyNestedInput
-    kanban_template_columns?: kanban_template_columnUncheckedUpdateManyWithoutCompanyNestedInput
-    kanban_template_tags?: kanban_template_tagUncheckedUpdateManyWithoutCompanyNestedInput
-    levels?: levelUncheckedUpdateManyWithoutCompanyNestedInput
-    modules?: moduleUncheckedUpdateManyWithoutCompanyNestedInput
-    notifications?: notificationUncheckedUpdateManyWithoutCompanyNestedInput
-    plans?: planUncheckedUpdateManyWithoutCompanyNestedInput
-    profiles?: profileUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_address?: profile_addressUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_bank_accounts?: profile_bank_accountUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_bonus?: profile_bonusUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_contacts?: profile_contactUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_documents?: profile_documentUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_files?: profile_fileUncheckedUpdateManyWithoutCompanyNestedInput
-    profile_roles?: profile_roleUncheckedUpdateManyWithoutCompanyNestedInput
-    projects?: projectUncheckedUpdateManyWithoutCompanyNestedInput
-    project_allocations?: project_allocationUncheckedUpdateManyWithoutCompanyNestedInput
-    project_configs?: project_configUncheckedUpdateManyWithoutCompanyNestedInput
-    project_financials?: project_financialUncheckedUpdateManyWithoutCompanyNestedInput
-    project_financial_employees?: project_financial_employeesUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanbans?: project_kanbanUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycles?: project_kanban_cycleUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_cycle_columns?: project_kanban_cycle_columnUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_objectives?: project_kanban_objectiveUncheckedUpdateManyWithoutCompanyNestedInput
-    project_kanban_objective_targets?: project_kanban_objective_targetUncheckedUpdateManyWithoutCompanyNestedInput
-    project_members?: project_memberUncheckedUpdateManyWithoutCompanyNestedInput
-    project_tools?: project_toolUncheckedUpdateManyWithoutCompanyNestedInput
-    project_versions?: project_versionUncheckedUpdateManyWithoutCompanyNestedInput
-    roles?: roleUncheckedUpdateManyWithoutCompanyNestedInput
-    subscriptions?: subscriptionUncheckedUpdateManyWithoutCompanyNestedInput
-    subscription_changes?: subscription_changesUncheckedUpdateManyWithoutCompanyNestedInput
-    subscription_plans?: subscription_planUncheckedUpdateManyWithoutCompanyNestedInput
-    work_types?: work_typeUncheckedUpdateManyWithoutCompanyNestedInput
-    logs?: log__companyUncheckedUpdateManyWithoutRefNestedInput
-  }
-
-  export type profileUpsertWithoutChatsInput = {
-    update: XOR<profileUpdateWithoutChatsInput, profileUncheckedUpdateWithoutChatsInput>
-    create: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
-    where?: profileWhereInput
-  }
-
-  export type profileUpdateToOneWithWhereWithoutChatsInput = {
-    where?: profileWhereInput
-    data: XOR<profileUpdateWithoutChatsInput, profileUncheckedUpdateWithoutChatsInput>
-  }
-
-  export type profileUpdateWithoutChatsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    active?: BoolFieldUpdateOperationsInput | boolean
-    type?: NullableStringFieldUpdateOperationsInput | string | null
-    entity?: NullableStringFieldUpdateOperationsInput | string | null
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    owner?: BoolFieldUpdateOperationsInput | boolean
-    anonymous?: BoolFieldUpdateOperationsInput | boolean
-    anonymous_name?: NullableStringFieldUpdateOperationsInput | string | null
-    anonymous_email?: NullableStringFieldUpdateOperationsInput | string | null
-    anonymous_avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    user?: userUpdateOneWithoutProfilesNestedInput
-    level?: levelUpdateOneWithoutProfilesNestedInput
-    company?: companyUpdateOneRequiredWithoutProfilesNestedInput
-    kanban_templates?: kanban_templateUpdateManyWithoutProfileNestedInput
-    profile_address?: profile_addressUpdateOneWithoutProfileNestedInput
-    profile_bank_accounts?: profile_bank_accountUpdateManyWithoutProfileNestedInput
-    profile_bonus?: profile_bonusUpdateManyWithoutProfileNestedInput
-    profile_contacts?: profile_contactUpdateManyWithoutProfileNestedInput
-    profile_documents?: profile_documentUpdateManyWithoutProfileNestedInput
-    profile_files?: profile_fileUpdateManyWithoutProfileNestedInput
-    profile_roles?: profile_roleUpdateManyWithoutProfileNestedInput
-    project_allocations?: project_allocationUpdateManyWithoutProfileNestedInput
-    project_kanbans?: project_kanbanUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUpdateManyWithoutProfileNestedInput
-    project_members?: project_memberUpdateManyWithoutProfileNestedInput
-    project_versions?: project_versionUpdateManyWithoutOwnerNestedInput
-    users_by_default_profile?: userUpdateOneWithoutDefault_profileNestedInput
-    logs?: log__profileUpdateManyWithoutRefNestedInput
-  }
-
-  export type profileUncheckedUpdateWithoutChatsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user_id?: NullableStringFieldUpdateOperationsInput | string | null
-    level_id?: NullableStringFieldUpdateOperationsInput | string | null
-    company_id?: StringFieldUpdateOperationsInput | string
-    active?: BoolFieldUpdateOperationsInput | boolean
-    type?: NullableStringFieldUpdateOperationsInput | string | null
-    entity?: NullableStringFieldUpdateOperationsInput | string | null
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    owner?: BoolFieldUpdateOperationsInput | boolean
-    anonymous?: BoolFieldUpdateOperationsInput | boolean
-    anonymous_name?: NullableStringFieldUpdateOperationsInput | string | null
-    anonymous_email?: NullableStringFieldUpdateOperationsInput | string | null
-    anonymous_avatar?: NullableStringFieldUpdateOperationsInput | string | null
-    kanban_templates?: kanban_templateUncheckedUpdateManyWithoutProfileNestedInput
-    profile_address?: profile_addressUncheckedUpdateOneWithoutProfileNestedInput
-    profile_bank_accounts?: profile_bank_accountUncheckedUpdateManyWithoutProfileNestedInput
-    profile_bonus?: profile_bonusUncheckedUpdateManyWithoutProfileNestedInput
-    profile_contacts?: profile_contactUncheckedUpdateManyWithoutProfileNestedInput
-    profile_documents?: profile_documentUncheckedUpdateManyWithoutProfileNestedInput
-    profile_files?: profile_fileUncheckedUpdateManyWithoutProfileNestedInput
-    profile_roles?: profile_roleUncheckedUpdateManyWithoutProfileNestedInput
-    project_allocations?: project_allocationUncheckedUpdateManyWithoutProfileNestedInput
-    project_kanbans?: project_kanbanUncheckedUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedUpdateManyWithoutProfileNestedInput
-    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedUpdateManyWithoutProfileNestedInput
-    project_members?: project_memberUncheckedUpdateManyWithoutProfileNestedInput
-    project_versions?: project_versionUncheckedUpdateManyWithoutOwnerNestedInput
-    users_by_default_profile?: userUncheckedUpdateOneWithoutDefault_profileNestedInput
-    logs?: log__profileUncheckedUpdateManyWithoutRefNestedInput
-  }
-
-  export type chat_messageUpsertWithWhereUniqueWithoutChatInput = {
-    where: chat_messageWhereUniqueInput
-    update: XOR<chat_messageUpdateWithoutChatInput, chat_messageUncheckedUpdateWithoutChatInput>
-    create: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput>
-  }
-
-  export type chat_messageUpdateWithWhereUniqueWithoutChatInput = {
-    where: chat_messageWhereUniqueInput
-    data: XOR<chat_messageUpdateWithoutChatInput, chat_messageUncheckedUpdateWithoutChatInput>
-  }
-
-  export type chat_messageUpdateManyWithWhereWithoutChatInput = {
-    where: chat_messageScalarWhereInput
-    data: XOR<chat_messageUpdateManyMutationInput, chat_messageUncheckedUpdateManyWithoutChatInput>
-  }
-
-  export type chat_messageScalarWhereInput = {
-    AND?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
-    OR?: chat_messageScalarWhereInput[]
-    NOT?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
-    id?: StringFilter<"chat_message"> | string
-    deleted?: BoolFilter<"chat_message"> | boolean
-    deletedAt?: DateTimeNullableFilter<"chat_message"> | Date | string | null
-    updatedAt?: DateTimeFilter<"chat_message"> | Date | string
-    createdAt?: DateTimeFilter<"chat_message"> | Date | string
-    chat_id?: StringFilter<"chat_message"> | string
-    sender?: StringFilter<"chat_message"> | string
-    message?: StringFilter<"chat_message"> | string
-    error?: BoolFilter<"chat_message"> | boolean
-  }
-
   export type chatCreateWithoutChat_messagesInput = {
     id?: string
     deleted?: boolean
@@ -260952,6 +261901,7 @@ export namespace Prisma {
     title: string
     company: companyCreateNestedOneWithoutChatsInput
     profile: profileCreateNestedOneWithoutChatsInput
+    chat_actions?: chat_actionCreateNestedManyWithoutChatInput
   }
 
   export type chatUncheckedCreateWithoutChat_messagesInput = {
@@ -260964,6 +261914,7 @@ export namespace Prisma {
     profile_id: string
     features: string
     title: string
+    chat_actions?: chat_actionUncheckedCreateNestedManyWithoutChatInput
   }
 
   export type chatCreateOrConnectWithoutChat_messagesInput = {
@@ -260992,6 +261943,7 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     company?: companyUpdateOneRequiredWithoutChatsNestedInput
     profile?: profileUpdateOneRequiredWithoutChatsNestedInput
+    chat_actions?: chat_actionUpdateManyWithoutChatNestedInput
   }
 
   export type chatUncheckedUpdateWithoutChat_messagesInput = {
@@ -261004,6 +261956,7 @@ export namespace Prisma {
     profile_id?: StringFieldUpdateOperationsInput | string
     features?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    chat_actions?: chat_actionUncheckedUpdateManyWithoutChatNestedInput
   }
 
   export type companyCreateWithoutSubscriptionsInput = {
@@ -348982,6 +349935,7 @@ export namespace Prisma {
     features: string
     title: string
     company: companyCreateNestedOneWithoutChatsInput
+    chat_actions?: chat_actionCreateNestedManyWithoutChatInput
     chat_messages?: chat_messageCreateNestedManyWithoutChatInput
   }
 
@@ -348994,6 +349948,7 @@ export namespace Prisma {
     company_id: string
     features: string
     title: string
+    chat_actions?: chat_actionUncheckedCreateNestedManyWithoutChatInput
     chat_messages?: chat_messageUncheckedCreateNestedManyWithoutChatInput
   }
 
@@ -351487,6 +352442,7 @@ export namespace Prisma {
     features: string
     title: string
     profile: profileCreateNestedOneWithoutChatsInput
+    chat_actions?: chat_actionCreateNestedManyWithoutChatInput
     chat_messages?: chat_messageCreateNestedManyWithoutChatInput
   }
 
@@ -351499,6 +352455,7 @@ export namespace Prisma {
     profile_id: string
     features: string
     title: string
+    chat_actions?: chat_actionUncheckedCreateNestedManyWithoutChatInput
     chat_messages?: chat_messageUncheckedCreateNestedManyWithoutChatInput
   }
 
@@ -362922,6 +363879,708 @@ export namespace Prisma {
     logs?: log__companyUncheckedUpdateManyWithoutRefNestedInput
   }
 
+  export type companyCreateWithoutChatsInput = {
+    language?: string
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    name: string
+    logo?: string | null
+    email: string
+    phone: string
+    in_config?: boolean
+    custom?: boolean
+    entity: string
+    type: string
+    logo_original_name?: string | null
+    documents?: documentCreateNestedManyWithoutCompanyInput
+    company_chunks?: company_chunkCreateNestedManyWithoutCompanyInput
+    creator: userCreateNestedOneWithoutCompaniesInput
+    billing_errors?: billing_errorCreateNestedManyWithoutCompanyInput
+    clients?: clientCreateNestedManyWithoutCompanyInput
+    client_address?: client_addressCreateNestedManyWithoutCompanyInput
+    client_bank_accounts?: client_bank_accountCreateNestedManyWithoutCompanyInput
+    client_contacts?: client_contactCreateNestedManyWithoutCompanyInput
+    client_documents?: client_documentCreateNestedManyWithoutCompanyInput
+    client_files?: client_fileCreateNestedManyWithoutCompanyInput
+    company_address?: company_addressCreateNestedOneWithoutCompanyInput
+    company_config?: company_configCreateNestedOneWithoutCompanyInput
+    company_contacts?: company_contactCreateNestedManyWithoutCompanyInput
+    company_customer?: company_customerCreateNestedOneWithoutCompanyInput
+    company_documents?: company_documentCreateNestedManyWithoutCompanyInput
+    company_files?: company_fileCreateNestedManyWithoutCompanyInput
+    company_invoices?: company_invoiceCreateNestedManyWithoutCompanyInput
+    cost_centers?: cost_centerCreateNestedManyWithoutCompanyInput
+    integrations?: integrationCreateNestedManyWithoutCompanyInput
+    invites?: inviteCreateNestedManyWithoutCompanyInput
+    kanban_templates?: kanban_templateCreateNestedManyWithoutCompanyInput
+    kanban_template_cards?: kanban_template_cardCreateNestedManyWithoutCompanyInput
+    kanban_template_card_types?: kanban_template_card_typeCreateNestedManyWithoutCompanyInput
+    kanban_template_columns?: kanban_template_columnCreateNestedManyWithoutCompanyInput
+    kanban_template_tags?: kanban_template_tagCreateNestedManyWithoutCompanyInput
+    levels?: levelCreateNestedManyWithoutCompanyInput
+    modules?: moduleCreateNestedManyWithoutCompanyInput
+    notifications?: notificationCreateNestedManyWithoutCompanyInput
+    plans?: planCreateNestedManyWithoutCompanyInput
+    profiles?: profileCreateNestedManyWithoutCompanyInput
+    profile_address?: profile_addressCreateNestedManyWithoutCompanyInput
+    profile_bank_accounts?: profile_bank_accountCreateNestedManyWithoutCompanyInput
+    profile_bonus?: profile_bonusCreateNestedManyWithoutCompanyInput
+    profile_contacts?: profile_contactCreateNestedManyWithoutCompanyInput
+    profile_documents?: profile_documentCreateNestedManyWithoutCompanyInput
+    profile_files?: profile_fileCreateNestedManyWithoutCompanyInput
+    profile_roles?: profile_roleCreateNestedManyWithoutCompanyInput
+    projects?: projectCreateNestedManyWithoutCompanyInput
+    project_allocations?: project_allocationCreateNestedManyWithoutCompanyInput
+    project_configs?: project_configCreateNestedManyWithoutCompanyInput
+    project_financials?: project_financialCreateNestedManyWithoutCompanyInput
+    project_financial_employees?: project_financial_employeesCreateNestedManyWithoutCompanyInput
+    project_kanbans?: project_kanbanCreateNestedManyWithoutCompanyInput
+    project_kanban_cycles?: project_kanban_cycleCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_columns?: project_kanban_cycle_columnCreateNestedManyWithoutCompanyInput
+    project_kanban_objectives?: project_kanban_objectiveCreateNestedManyWithoutCompanyInput
+    project_kanban_objective_targets?: project_kanban_objective_targetCreateNestedManyWithoutCompanyInput
+    project_members?: project_memberCreateNestedManyWithoutCompanyInput
+    project_tools?: project_toolCreateNestedManyWithoutCompanyInput
+    project_versions?: project_versionCreateNestedManyWithoutCompanyInput
+    roles?: roleCreateNestedManyWithoutCompanyInput
+    subscriptions?: subscriptionCreateNestedManyWithoutCompanyInput
+    subscription_changes?: subscription_changesCreateNestedManyWithoutCompanyInput
+    subscription_plans?: subscription_planCreateNestedManyWithoutCompanyInput
+    work_types?: work_typeCreateNestedManyWithoutCompanyInput
+    logs?: log__companyCreateNestedManyWithoutRefInput
+  }
+
+  export type companyUncheckedCreateWithoutChatsInput = {
+    language?: string
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    name: string
+    logo?: string | null
+    email: string
+    phone: string
+    in_config?: boolean
+    custom?: boolean
+    entity: string
+    type: string
+    creator_id: string
+    logo_original_name?: string | null
+    documents?: documentUncheckedCreateNestedManyWithoutCompanyInput
+    company_chunks?: company_chunkUncheckedCreateNestedManyWithoutCompanyInput
+    billing_errors?: billing_errorUncheckedCreateNestedManyWithoutCompanyInput
+    clients?: clientUncheckedCreateNestedManyWithoutCompanyInput
+    client_address?: client_addressUncheckedCreateNestedManyWithoutCompanyInput
+    client_bank_accounts?: client_bank_accountUncheckedCreateNestedManyWithoutCompanyInput
+    client_contacts?: client_contactUncheckedCreateNestedManyWithoutCompanyInput
+    client_documents?: client_documentUncheckedCreateNestedManyWithoutCompanyInput
+    client_files?: client_fileUncheckedCreateNestedManyWithoutCompanyInput
+    company_address?: company_addressUncheckedCreateNestedOneWithoutCompanyInput
+    company_config?: company_configUncheckedCreateNestedOneWithoutCompanyInput
+    company_contacts?: company_contactUncheckedCreateNestedManyWithoutCompanyInput
+    company_customer?: company_customerUncheckedCreateNestedOneWithoutCompanyInput
+    company_documents?: company_documentUncheckedCreateNestedManyWithoutCompanyInput
+    company_files?: company_fileUncheckedCreateNestedManyWithoutCompanyInput
+    company_invoices?: company_invoiceUncheckedCreateNestedManyWithoutCompanyInput
+    cost_centers?: cost_centerUncheckedCreateNestedManyWithoutCompanyInput
+    integrations?: integrationUncheckedCreateNestedManyWithoutCompanyInput
+    invites?: inviteUncheckedCreateNestedManyWithoutCompanyInput
+    kanban_templates?: kanban_templateUncheckedCreateNestedManyWithoutCompanyInput
+    kanban_template_cards?: kanban_template_cardUncheckedCreateNestedManyWithoutCompanyInput
+    kanban_template_card_types?: kanban_template_card_typeUncheckedCreateNestedManyWithoutCompanyInput
+    kanban_template_columns?: kanban_template_columnUncheckedCreateNestedManyWithoutCompanyInput
+    kanban_template_tags?: kanban_template_tagUncheckedCreateNestedManyWithoutCompanyInput
+    levels?: levelUncheckedCreateNestedManyWithoutCompanyInput
+    modules?: moduleUncheckedCreateNestedManyWithoutCompanyInput
+    notifications?: notificationUncheckedCreateNestedManyWithoutCompanyInput
+    plans?: planUncheckedCreateNestedManyWithoutCompanyInput
+    profiles?: profileUncheckedCreateNestedManyWithoutCompanyInput
+    profile_address?: profile_addressUncheckedCreateNestedManyWithoutCompanyInput
+    profile_bank_accounts?: profile_bank_accountUncheckedCreateNestedManyWithoutCompanyInput
+    profile_bonus?: profile_bonusUncheckedCreateNestedManyWithoutCompanyInput
+    profile_contacts?: profile_contactUncheckedCreateNestedManyWithoutCompanyInput
+    profile_documents?: profile_documentUncheckedCreateNestedManyWithoutCompanyInput
+    profile_files?: profile_fileUncheckedCreateNestedManyWithoutCompanyInput
+    profile_roles?: profile_roleUncheckedCreateNestedManyWithoutCompanyInput
+    projects?: projectUncheckedCreateNestedManyWithoutCompanyInput
+    project_allocations?: project_allocationUncheckedCreateNestedManyWithoutCompanyInput
+    project_configs?: project_configUncheckedCreateNestedManyWithoutCompanyInput
+    project_financials?: project_financialUncheckedCreateNestedManyWithoutCompanyInput
+    project_financial_employees?: project_financial_employeesUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanbans?: project_kanbanUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycles?: project_kanban_cycleUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_cycle_columns?: project_kanban_cycle_columnUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_objectives?: project_kanban_objectiveUncheckedCreateNestedManyWithoutCompanyInput
+    project_kanban_objective_targets?: project_kanban_objective_targetUncheckedCreateNestedManyWithoutCompanyInput
+    project_members?: project_memberUncheckedCreateNestedManyWithoutCompanyInput
+    project_tools?: project_toolUncheckedCreateNestedManyWithoutCompanyInput
+    project_versions?: project_versionUncheckedCreateNestedManyWithoutCompanyInput
+    roles?: roleUncheckedCreateNestedManyWithoutCompanyInput
+    subscriptions?: subscriptionUncheckedCreateNestedManyWithoutCompanyInput
+    subscription_changes?: subscription_changesUncheckedCreateNestedManyWithoutCompanyInput
+    subscription_plans?: subscription_planUncheckedCreateNestedManyWithoutCompanyInput
+    work_types?: work_typeUncheckedCreateNestedManyWithoutCompanyInput
+    logs?: log__companyUncheckedCreateNestedManyWithoutRefInput
+  }
+
+  export type companyCreateOrConnectWithoutChatsInput = {
+    where: companyWhereUniqueInput
+    create: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
+  }
+
+  export type profileCreateWithoutChatsInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    active?: boolean
+    type?: string | null
+    entity?: string | null
+    phone?: string | null
+    owner?: boolean
+    anonymous?: boolean
+    anonymous_name?: string | null
+    anonymous_email?: string | null
+    anonymous_avatar?: string | null
+    user?: userCreateNestedOneWithoutProfilesInput
+    level?: levelCreateNestedOneWithoutProfilesInput
+    company: companyCreateNestedOneWithoutProfilesInput
+    kanban_templates?: kanban_templateCreateNestedManyWithoutProfileInput
+    profile_address?: profile_addressCreateNestedOneWithoutProfileInput
+    profile_bank_accounts?: profile_bank_accountCreateNestedManyWithoutProfileInput
+    profile_bonus?: profile_bonusCreateNestedManyWithoutProfileInput
+    profile_contacts?: profile_contactCreateNestedManyWithoutProfileInput
+    profile_documents?: profile_documentCreateNestedManyWithoutProfileInput
+    profile_files?: profile_fileCreateNestedManyWithoutProfileInput
+    profile_roles?: profile_roleCreateNestedManyWithoutProfileInput
+    project_allocations?: project_allocationCreateNestedManyWithoutProfileInput
+    project_kanbans?: project_kanbanCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readCreateNestedManyWithoutProfileInput
+    project_members?: project_memberCreateNestedManyWithoutProfileInput
+    project_versions?: project_versionCreateNestedManyWithoutOwnerInput
+    users_by_default_profile?: userCreateNestedOneWithoutDefault_profileInput
+    logs?: log__profileCreateNestedManyWithoutRefInput
+  }
+
+  export type profileUncheckedCreateWithoutChatsInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    user_id?: string | null
+    level_id?: string | null
+    company_id: string
+    active?: boolean
+    type?: string | null
+    entity?: string | null
+    phone?: string | null
+    owner?: boolean
+    anonymous?: boolean
+    anonymous_name?: string | null
+    anonymous_email?: string | null
+    anonymous_avatar?: string | null
+    kanban_templates?: kanban_templateUncheckedCreateNestedManyWithoutProfileInput
+    profile_address?: profile_addressUncheckedCreateNestedOneWithoutProfileInput
+    profile_bank_accounts?: profile_bank_accountUncheckedCreateNestedManyWithoutProfileInput
+    profile_bonus?: profile_bonusUncheckedCreateNestedManyWithoutProfileInput
+    profile_contacts?: profile_contactUncheckedCreateNestedManyWithoutProfileInput
+    profile_documents?: profile_documentUncheckedCreateNestedManyWithoutProfileInput
+    profile_files?: profile_fileUncheckedCreateNestedManyWithoutProfileInput
+    profile_roles?: profile_roleUncheckedCreateNestedManyWithoutProfileInput
+    project_allocations?: project_allocationUncheckedCreateNestedManyWithoutProfileInput
+    project_kanbans?: project_kanbanUncheckedCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedCreateNestedManyWithoutProfileInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedCreateNestedManyWithoutProfileInput
+    project_members?: project_memberUncheckedCreateNestedManyWithoutProfileInput
+    project_versions?: project_versionUncheckedCreateNestedManyWithoutOwnerInput
+    users_by_default_profile?: userUncheckedCreateNestedOneWithoutDefault_profileInput
+    logs?: log__profileUncheckedCreateNestedManyWithoutRefInput
+  }
+
+  export type profileCreateOrConnectWithoutChatsInput = {
+    where: profileWhereUniqueInput
+    create: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
+  }
+
+  export type chat_actionCreateWithoutChatInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    action_id: string
+    action?: string | null
+    error?: boolean
+  }
+
+  export type chat_actionUncheckedCreateWithoutChatInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    action_id: string
+    action?: string | null
+    error?: boolean
+  }
+
+  export type chat_actionCreateOrConnectWithoutChatInput = {
+    where: chat_actionWhereUniqueInput
+    create: XOR<chat_actionCreateWithoutChatInput, chat_actionUncheckedCreateWithoutChatInput>
+  }
+
+  export type chat_actionCreateManyChatInputEnvelope = {
+    data: chat_actionCreateManyChatInput | chat_actionCreateManyChatInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type chat_messageCreateWithoutChatInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    sender: string
+    message: string
+    error?: boolean
+  }
+
+  export type chat_messageUncheckedCreateWithoutChatInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    sender: string
+    message: string
+    error?: boolean
+  }
+
+  export type chat_messageCreateOrConnectWithoutChatInput = {
+    where: chat_messageWhereUniqueInput
+    create: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput>
+  }
+
+  export type chat_messageCreateManyChatInputEnvelope = {
+    data: chat_messageCreateManyChatInput | chat_messageCreateManyChatInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type companyUpsertWithoutChatsInput = {
+    update: XOR<companyUpdateWithoutChatsInput, companyUncheckedUpdateWithoutChatsInput>
+    create: XOR<companyCreateWithoutChatsInput, companyUncheckedCreateWithoutChatsInput>
+    where?: companyWhereInput
+  }
+
+  export type companyUpdateToOneWithWhereWithoutChatsInput = {
+    where?: companyWhereInput
+    data: XOR<companyUpdateWithoutChatsInput, companyUncheckedUpdateWithoutChatsInput>
+  }
+
+  export type companyUpdateWithoutChatsInput = {
+    language?: StringFieldUpdateOperationsInput | string
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    logo?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    in_config?: BoolFieldUpdateOperationsInput | boolean
+    custom?: BoolFieldUpdateOperationsInput | boolean
+    entity?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    logo_original_name?: NullableStringFieldUpdateOperationsInput | string | null
+    documents?: documentUpdateManyWithoutCompanyNestedInput
+    company_chunks?: company_chunkUpdateManyWithoutCompanyNestedInput
+    creator?: userUpdateOneRequiredWithoutCompaniesNestedInput
+    billing_errors?: billing_errorUpdateManyWithoutCompanyNestedInput
+    clients?: clientUpdateManyWithoutCompanyNestedInput
+    client_address?: client_addressUpdateManyWithoutCompanyNestedInput
+    client_bank_accounts?: client_bank_accountUpdateManyWithoutCompanyNestedInput
+    client_contacts?: client_contactUpdateManyWithoutCompanyNestedInput
+    client_documents?: client_documentUpdateManyWithoutCompanyNestedInput
+    client_files?: client_fileUpdateManyWithoutCompanyNestedInput
+    company_address?: company_addressUpdateOneWithoutCompanyNestedInput
+    company_config?: company_configUpdateOneWithoutCompanyNestedInput
+    company_contacts?: company_contactUpdateManyWithoutCompanyNestedInput
+    company_customer?: company_customerUpdateOneWithoutCompanyNestedInput
+    company_documents?: company_documentUpdateManyWithoutCompanyNestedInput
+    company_files?: company_fileUpdateManyWithoutCompanyNestedInput
+    company_invoices?: company_invoiceUpdateManyWithoutCompanyNestedInput
+    cost_centers?: cost_centerUpdateManyWithoutCompanyNestedInput
+    integrations?: integrationUpdateManyWithoutCompanyNestedInput
+    invites?: inviteUpdateManyWithoutCompanyNestedInput
+    kanban_templates?: kanban_templateUpdateManyWithoutCompanyNestedInput
+    kanban_template_cards?: kanban_template_cardUpdateManyWithoutCompanyNestedInput
+    kanban_template_card_types?: kanban_template_card_typeUpdateManyWithoutCompanyNestedInput
+    kanban_template_columns?: kanban_template_columnUpdateManyWithoutCompanyNestedInput
+    kanban_template_tags?: kanban_template_tagUpdateManyWithoutCompanyNestedInput
+    levels?: levelUpdateManyWithoutCompanyNestedInput
+    modules?: moduleUpdateManyWithoutCompanyNestedInput
+    notifications?: notificationUpdateManyWithoutCompanyNestedInput
+    plans?: planUpdateManyWithoutCompanyNestedInput
+    profiles?: profileUpdateManyWithoutCompanyNestedInput
+    profile_address?: profile_addressUpdateManyWithoutCompanyNestedInput
+    profile_bank_accounts?: profile_bank_accountUpdateManyWithoutCompanyNestedInput
+    profile_bonus?: profile_bonusUpdateManyWithoutCompanyNestedInput
+    profile_contacts?: profile_contactUpdateManyWithoutCompanyNestedInput
+    profile_documents?: profile_documentUpdateManyWithoutCompanyNestedInput
+    profile_files?: profile_fileUpdateManyWithoutCompanyNestedInput
+    profile_roles?: profile_roleUpdateManyWithoutCompanyNestedInput
+    projects?: projectUpdateManyWithoutCompanyNestedInput
+    project_allocations?: project_allocationUpdateManyWithoutCompanyNestedInput
+    project_configs?: project_configUpdateManyWithoutCompanyNestedInput
+    project_financials?: project_financialUpdateManyWithoutCompanyNestedInput
+    project_financial_employees?: project_financial_employeesUpdateManyWithoutCompanyNestedInput
+    project_kanbans?: project_kanbanUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycles?: project_kanban_cycleUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_columns?: project_kanban_cycle_columnUpdateManyWithoutCompanyNestedInput
+    project_kanban_objectives?: project_kanban_objectiveUpdateManyWithoutCompanyNestedInput
+    project_kanban_objective_targets?: project_kanban_objective_targetUpdateManyWithoutCompanyNestedInput
+    project_members?: project_memberUpdateManyWithoutCompanyNestedInput
+    project_tools?: project_toolUpdateManyWithoutCompanyNestedInput
+    project_versions?: project_versionUpdateManyWithoutCompanyNestedInput
+    roles?: roleUpdateManyWithoutCompanyNestedInput
+    subscriptions?: subscriptionUpdateManyWithoutCompanyNestedInput
+    subscription_changes?: subscription_changesUpdateManyWithoutCompanyNestedInput
+    subscription_plans?: subscription_planUpdateManyWithoutCompanyNestedInput
+    work_types?: work_typeUpdateManyWithoutCompanyNestedInput
+    logs?: log__companyUpdateManyWithoutRefNestedInput
+  }
+
+  export type companyUncheckedUpdateWithoutChatsInput = {
+    language?: StringFieldUpdateOperationsInput | string
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    logo?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    in_config?: BoolFieldUpdateOperationsInput | boolean
+    custom?: BoolFieldUpdateOperationsInput | boolean
+    entity?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    creator_id?: StringFieldUpdateOperationsInput | string
+    logo_original_name?: NullableStringFieldUpdateOperationsInput | string | null
+    documents?: documentUncheckedUpdateManyWithoutCompanyNestedInput
+    company_chunks?: company_chunkUncheckedUpdateManyWithoutCompanyNestedInput
+    billing_errors?: billing_errorUncheckedUpdateManyWithoutCompanyNestedInput
+    clients?: clientUncheckedUpdateManyWithoutCompanyNestedInput
+    client_address?: client_addressUncheckedUpdateManyWithoutCompanyNestedInput
+    client_bank_accounts?: client_bank_accountUncheckedUpdateManyWithoutCompanyNestedInput
+    client_contacts?: client_contactUncheckedUpdateManyWithoutCompanyNestedInput
+    client_documents?: client_documentUncheckedUpdateManyWithoutCompanyNestedInput
+    client_files?: client_fileUncheckedUpdateManyWithoutCompanyNestedInput
+    company_address?: company_addressUncheckedUpdateOneWithoutCompanyNestedInput
+    company_config?: company_configUncheckedUpdateOneWithoutCompanyNestedInput
+    company_contacts?: company_contactUncheckedUpdateManyWithoutCompanyNestedInput
+    company_customer?: company_customerUncheckedUpdateOneWithoutCompanyNestedInput
+    company_documents?: company_documentUncheckedUpdateManyWithoutCompanyNestedInput
+    company_files?: company_fileUncheckedUpdateManyWithoutCompanyNestedInput
+    company_invoices?: company_invoiceUncheckedUpdateManyWithoutCompanyNestedInput
+    cost_centers?: cost_centerUncheckedUpdateManyWithoutCompanyNestedInput
+    integrations?: integrationUncheckedUpdateManyWithoutCompanyNestedInput
+    invites?: inviteUncheckedUpdateManyWithoutCompanyNestedInput
+    kanban_templates?: kanban_templateUncheckedUpdateManyWithoutCompanyNestedInput
+    kanban_template_cards?: kanban_template_cardUncheckedUpdateManyWithoutCompanyNestedInput
+    kanban_template_card_types?: kanban_template_card_typeUncheckedUpdateManyWithoutCompanyNestedInput
+    kanban_template_columns?: kanban_template_columnUncheckedUpdateManyWithoutCompanyNestedInput
+    kanban_template_tags?: kanban_template_tagUncheckedUpdateManyWithoutCompanyNestedInput
+    levels?: levelUncheckedUpdateManyWithoutCompanyNestedInput
+    modules?: moduleUncheckedUpdateManyWithoutCompanyNestedInput
+    notifications?: notificationUncheckedUpdateManyWithoutCompanyNestedInput
+    plans?: planUncheckedUpdateManyWithoutCompanyNestedInput
+    profiles?: profileUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_address?: profile_addressUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_bank_accounts?: profile_bank_accountUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_bonus?: profile_bonusUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_contacts?: profile_contactUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_documents?: profile_documentUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_files?: profile_fileUncheckedUpdateManyWithoutCompanyNestedInput
+    profile_roles?: profile_roleUncheckedUpdateManyWithoutCompanyNestedInput
+    projects?: projectUncheckedUpdateManyWithoutCompanyNestedInput
+    project_allocations?: project_allocationUncheckedUpdateManyWithoutCompanyNestedInput
+    project_configs?: project_configUncheckedUpdateManyWithoutCompanyNestedInput
+    project_financials?: project_financialUncheckedUpdateManyWithoutCompanyNestedInput
+    project_financial_employees?: project_financial_employeesUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanbans?: project_kanbanUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycles?: project_kanban_cycleUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_files?: project_kanban_cycle_card_fileUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_tags?: project_kanban_cycle_card_tagUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_card_types?: project_kanban_cycle_card_typeUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_cycle_columns?: project_kanban_cycle_columnUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_objectives?: project_kanban_objectiveUncheckedUpdateManyWithoutCompanyNestedInput
+    project_kanban_objective_targets?: project_kanban_objective_targetUncheckedUpdateManyWithoutCompanyNestedInput
+    project_members?: project_memberUncheckedUpdateManyWithoutCompanyNestedInput
+    project_tools?: project_toolUncheckedUpdateManyWithoutCompanyNestedInput
+    project_versions?: project_versionUncheckedUpdateManyWithoutCompanyNestedInput
+    roles?: roleUncheckedUpdateManyWithoutCompanyNestedInput
+    subscriptions?: subscriptionUncheckedUpdateManyWithoutCompanyNestedInput
+    subscription_changes?: subscription_changesUncheckedUpdateManyWithoutCompanyNestedInput
+    subscription_plans?: subscription_planUncheckedUpdateManyWithoutCompanyNestedInput
+    work_types?: work_typeUncheckedUpdateManyWithoutCompanyNestedInput
+    logs?: log__companyUncheckedUpdateManyWithoutRefNestedInput
+  }
+
+  export type profileUpsertWithoutChatsInput = {
+    update: XOR<profileUpdateWithoutChatsInput, profileUncheckedUpdateWithoutChatsInput>
+    create: XOR<profileCreateWithoutChatsInput, profileUncheckedCreateWithoutChatsInput>
+    where?: profileWhereInput
+  }
+
+  export type profileUpdateToOneWithWhereWithoutChatsInput = {
+    where?: profileWhereInput
+    data: XOR<profileUpdateWithoutChatsInput, profileUncheckedUpdateWithoutChatsInput>
+  }
+
+  export type profileUpdateWithoutChatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    type?: NullableStringFieldUpdateOperationsInput | string | null
+    entity?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    owner?: BoolFieldUpdateOperationsInput | boolean
+    anonymous?: BoolFieldUpdateOperationsInput | boolean
+    anonymous_name?: NullableStringFieldUpdateOperationsInput | string | null
+    anonymous_email?: NullableStringFieldUpdateOperationsInput | string | null
+    anonymous_avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    user?: userUpdateOneWithoutProfilesNestedInput
+    level?: levelUpdateOneWithoutProfilesNestedInput
+    company?: companyUpdateOneRequiredWithoutProfilesNestedInput
+    kanban_templates?: kanban_templateUpdateManyWithoutProfileNestedInput
+    profile_address?: profile_addressUpdateOneWithoutProfileNestedInput
+    profile_bank_accounts?: profile_bank_accountUpdateManyWithoutProfileNestedInput
+    profile_bonus?: profile_bonusUpdateManyWithoutProfileNestedInput
+    profile_contacts?: profile_contactUpdateManyWithoutProfileNestedInput
+    profile_documents?: profile_documentUpdateManyWithoutProfileNestedInput
+    profile_files?: profile_fileUpdateManyWithoutProfileNestedInput
+    profile_roles?: profile_roleUpdateManyWithoutProfileNestedInput
+    project_allocations?: project_allocationUpdateManyWithoutProfileNestedInput
+    project_kanbans?: project_kanbanUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUpdateManyWithoutProfileNestedInput
+    project_members?: project_memberUpdateManyWithoutProfileNestedInput
+    project_versions?: project_versionUpdateManyWithoutOwnerNestedInput
+    users_by_default_profile?: userUpdateOneWithoutDefault_profileNestedInput
+    logs?: log__profileUpdateManyWithoutRefNestedInput
+  }
+
+  export type profileUncheckedUpdateWithoutChatsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_id?: NullableStringFieldUpdateOperationsInput | string | null
+    level_id?: NullableStringFieldUpdateOperationsInput | string | null
+    company_id?: StringFieldUpdateOperationsInput | string
+    active?: BoolFieldUpdateOperationsInput | boolean
+    type?: NullableStringFieldUpdateOperationsInput | string | null
+    entity?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    owner?: BoolFieldUpdateOperationsInput | boolean
+    anonymous?: BoolFieldUpdateOperationsInput | boolean
+    anonymous_name?: NullableStringFieldUpdateOperationsInput | string | null
+    anonymous_email?: NullableStringFieldUpdateOperationsInput | string | null
+    anonymous_avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    kanban_templates?: kanban_templateUncheckedUpdateManyWithoutProfileNestedInput
+    profile_address?: profile_addressUncheckedUpdateOneWithoutProfileNestedInput
+    profile_bank_accounts?: profile_bank_accountUncheckedUpdateManyWithoutProfileNestedInput
+    profile_bonus?: profile_bonusUncheckedUpdateManyWithoutProfileNestedInput
+    profile_contacts?: profile_contactUncheckedUpdateManyWithoutProfileNestedInput
+    profile_documents?: profile_documentUncheckedUpdateManyWithoutProfileNestedInput
+    profile_files?: profile_fileUncheckedUpdateManyWithoutProfileNestedInput
+    profile_roles?: profile_roleUncheckedUpdateManyWithoutProfileNestedInput
+    project_allocations?: project_allocationUncheckedUpdateManyWithoutProfileNestedInput
+    project_kanbans?: project_kanbanUncheckedUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_allocations?: project_kanban_cycle_allocationUncheckedUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_cards?: project_kanban_cycle_cardUncheckedUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_card_comments?: project_kanban_cycle_card_commentUncheckedUpdateManyWithoutProfileNestedInput
+    project_kanban_cycle_card_reads?: project_kanban_cycle_card_readUncheckedUpdateManyWithoutProfileNestedInput
+    project_members?: project_memberUncheckedUpdateManyWithoutProfileNestedInput
+    project_versions?: project_versionUncheckedUpdateManyWithoutOwnerNestedInput
+    users_by_default_profile?: userUncheckedUpdateOneWithoutDefault_profileNestedInput
+    logs?: log__profileUncheckedUpdateManyWithoutRefNestedInput
+  }
+
+  export type chat_actionUpsertWithWhereUniqueWithoutChatInput = {
+    where: chat_actionWhereUniqueInput
+    update: XOR<chat_actionUpdateWithoutChatInput, chat_actionUncheckedUpdateWithoutChatInput>
+    create: XOR<chat_actionCreateWithoutChatInput, chat_actionUncheckedCreateWithoutChatInput>
+  }
+
+  export type chat_actionUpdateWithWhereUniqueWithoutChatInput = {
+    where: chat_actionWhereUniqueInput
+    data: XOR<chat_actionUpdateWithoutChatInput, chat_actionUncheckedUpdateWithoutChatInput>
+  }
+
+  export type chat_actionUpdateManyWithWhereWithoutChatInput = {
+    where: chat_actionScalarWhereInput
+    data: XOR<chat_actionUpdateManyMutationInput, chat_actionUncheckedUpdateManyWithoutChatInput>
+  }
+
+  export type chat_actionScalarWhereInput = {
+    AND?: chat_actionScalarWhereInput | chat_actionScalarWhereInput[]
+    OR?: chat_actionScalarWhereInput[]
+    NOT?: chat_actionScalarWhereInput | chat_actionScalarWhereInput[]
+    id?: StringFilter<"chat_action"> | string
+    deleted?: BoolFilter<"chat_action"> | boolean
+    deletedAt?: DateTimeNullableFilter<"chat_action"> | Date | string | null
+    updatedAt?: DateTimeFilter<"chat_action"> | Date | string
+    createdAt?: DateTimeFilter<"chat_action"> | Date | string
+    action_id?: StringFilter<"chat_action"> | string
+    action?: StringNullableFilter<"chat_action"> | string | null
+    error?: BoolFilter<"chat_action"> | boolean
+    chat_id?: StringFilter<"chat_action"> | string
+  }
+
+  export type chat_messageUpsertWithWhereUniqueWithoutChatInput = {
+    where: chat_messageWhereUniqueInput
+    update: XOR<chat_messageUpdateWithoutChatInput, chat_messageUncheckedUpdateWithoutChatInput>
+    create: XOR<chat_messageCreateWithoutChatInput, chat_messageUncheckedCreateWithoutChatInput>
+  }
+
+  export type chat_messageUpdateWithWhereUniqueWithoutChatInput = {
+    where: chat_messageWhereUniqueInput
+    data: XOR<chat_messageUpdateWithoutChatInput, chat_messageUncheckedUpdateWithoutChatInput>
+  }
+
+  export type chat_messageUpdateManyWithWhereWithoutChatInput = {
+    where: chat_messageScalarWhereInput
+    data: XOR<chat_messageUpdateManyMutationInput, chat_messageUncheckedUpdateManyWithoutChatInput>
+  }
+
+  export type chat_messageScalarWhereInput = {
+    AND?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
+    OR?: chat_messageScalarWhereInput[]
+    NOT?: chat_messageScalarWhereInput | chat_messageScalarWhereInput[]
+    id?: StringFilter<"chat_message"> | string
+    deleted?: BoolFilter<"chat_message"> | boolean
+    deletedAt?: DateTimeNullableFilter<"chat_message"> | Date | string | null
+    updatedAt?: DateTimeFilter<"chat_message"> | Date | string
+    createdAt?: DateTimeFilter<"chat_message"> | Date | string
+    chat_id?: StringFilter<"chat_message"> | string
+    sender?: StringFilter<"chat_message"> | string
+    message?: StringFilter<"chat_message"> | string
+    error?: BoolFilter<"chat_message"> | boolean
+  }
+
+  export type chatCreateWithoutChat_actionsInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    features: string
+    title: string
+    company: companyCreateNestedOneWithoutChatsInput
+    profile: profileCreateNestedOneWithoutChatsInput
+    chat_messages?: chat_messageCreateNestedManyWithoutChatInput
+  }
+
+  export type chatUncheckedCreateWithoutChat_actionsInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    company_id: string
+    profile_id: string
+    features: string
+    title: string
+    chat_messages?: chat_messageUncheckedCreateNestedManyWithoutChatInput
+  }
+
+  export type chatCreateOrConnectWithoutChat_actionsInput = {
+    where: chatWhereUniqueInput
+    create: XOR<chatCreateWithoutChat_actionsInput, chatUncheckedCreateWithoutChat_actionsInput>
+  }
+
+  export type chatUpsertWithoutChat_actionsInput = {
+    update: XOR<chatUpdateWithoutChat_actionsInput, chatUncheckedUpdateWithoutChat_actionsInput>
+    create: XOR<chatCreateWithoutChat_actionsInput, chatUncheckedCreateWithoutChat_actionsInput>
+    where?: chatWhereInput
+  }
+
+  export type chatUpdateToOneWithWhereWithoutChat_actionsInput = {
+    where?: chatWhereInput
+    data: XOR<chatUpdateWithoutChat_actionsInput, chatUncheckedUpdateWithoutChat_actionsInput>
+  }
+
+  export type chatUpdateWithoutChat_actionsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    features?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    company?: companyUpdateOneRequiredWithoutChatsNestedInput
+    profile?: profileUpdateOneRequiredWithoutChatsNestedInput
+    chat_messages?: chat_messageUpdateManyWithoutChatNestedInput
+  }
+
+  export type chatUncheckedUpdateWithoutChat_actionsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company_id?: StringFieldUpdateOperationsInput | string
+    profile_id?: StringFieldUpdateOperationsInput | string
+    features?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    chat_messages?: chat_messageUncheckedUpdateManyWithoutChatNestedInput
+  }
+
   export type log__company_addressCreateManyRefInput = {
     id?: string
     auth_api?: string | null
@@ -366499,50 +368158,6 @@ export namespace Prisma {
   export type document_chunkUncheckedUpdateManyWithoutDocumentInput = {
     id?: StringFieldUpdateOperationsInput | string
     chunk_text?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type chat_messageCreateManyChatInput = {
-    id?: string
-    deleted?: boolean
-    deletedAt?: Date | string | null
-    updatedAt?: Date | string
-    createdAt?: Date | string
-    sender: string
-    message: string
-    error?: boolean
-  }
-
-  export type chat_messageUpdateWithoutChatInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    error?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type chat_messageUncheckedUpdateWithoutChatInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    error?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type chat_messageUncheckedUpdateManyWithoutChatInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    deleted?: BoolFieldUpdateOperationsInput | boolean
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    sender?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    error?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type subscription_changesCreateManySubscriptionInput = {
@@ -377803,6 +379418,7 @@ export namespace Prisma {
     features?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     company?: companyUpdateOneRequiredWithoutChatsNestedInput
+    chat_actions?: chat_actionUpdateManyWithoutChatNestedInput
     chat_messages?: chat_messageUpdateManyWithoutChatNestedInput
   }
 
@@ -377815,6 +379431,7 @@ export namespace Prisma {
     company_id?: StringFieldUpdateOperationsInput | string
     features?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    chat_actions?: chat_actionUncheckedUpdateManyWithoutChatNestedInput
     chat_messages?: chat_messageUncheckedUpdateManyWithoutChatNestedInput
   }
 
@@ -379576,6 +381193,7 @@ export namespace Prisma {
     features?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     profile?: profileUpdateOneRequiredWithoutChatsNestedInput
+    chat_actions?: chat_actionUpdateManyWithoutChatNestedInput
     chat_messages?: chat_messageUpdateManyWithoutChatNestedInput
   }
 
@@ -379588,6 +381206,7 @@ export namespace Prisma {
     profile_id?: StringFieldUpdateOperationsInput | string
     features?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    chat_actions?: chat_actionUncheckedUpdateManyWithoutChatNestedInput
     chat_messages?: chat_messageUncheckedUpdateManyWithoutChatNestedInput
   }
 
@@ -386738,6 +388357,94 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     feature_id?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type chat_actionCreateManyChatInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    action_id: string
+    action?: string | null
+    error?: boolean
+  }
+
+  export type chat_messageCreateManyChatInput = {
+    id?: string
+    deleted?: boolean
+    deletedAt?: Date | string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    sender: string
+    message: string
+    error?: boolean
+  }
+
+  export type chat_actionUpdateWithoutChatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type chat_actionUncheckedUpdateWithoutChatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type chat_actionUncheckedUpdateManyWithoutChatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    action_id?: StringFieldUpdateOperationsInput | string
+    action?: NullableStringFieldUpdateOperationsInput | string | null
+    error?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type chat_messageUpdateWithoutChatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sender?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    error?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type chat_messageUncheckedUpdateWithoutChatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sender?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    error?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type chat_messageUncheckedUpdateManyWithoutChatInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    deleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sender?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    error?: BoolFieldUpdateOperationsInput | boolean
   }
 
 

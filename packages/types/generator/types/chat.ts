@@ -1,5 +1,6 @@
 import { company, companyCreateInput } from "./company";
 import { profile, profileCreateInput } from "./profile";
+import { chat_action, chat_actionCreateInput } from "./chat_action";
 import { chat_message, chat_messageCreateInput } from "./chat_message";
 
 export interface chat {
@@ -14,6 +15,7 @@ export interface chat {
   title: string;
   company?: company;
   profile?: profile;
+  chat_actions?: chat_action[];
   chat_messages?: chat_message[];
 }
 
@@ -29,6 +31,7 @@ export interface chatCreateInput {
   title: string;
   company?: companyCreateInput;
   profile?: profileCreateInput;
+  chat_actions?: chat_actionCreateInput[];
   chat_messages?: chat_messageCreateInput[];
 }
 
