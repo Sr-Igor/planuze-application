@@ -75,7 +75,7 @@ export const usePage = () => {
                 prev.map((msg) => (msg.sending ? { ...msg, sending: false } : msg))
               );
             },
-            data.new ? 500 : 0
+            data.new ? 1000 : 0
           );
         },
         onError: () => {

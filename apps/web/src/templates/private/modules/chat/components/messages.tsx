@@ -60,7 +60,7 @@ export const Messages = ({
         ref={containerRef}
         className="bg-background/80 min-h-0 flex-1 overflow-y-auto rounded border px-2 py-1 sm:px-4 sm:py-2"
       >
-        {localMessages.length ? (
+        {localMessages.length &&
           localMessages
             .sort(
               (a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
@@ -132,13 +132,18 @@ export const Messages = ({
                       {isUser ? t.chat("user") : isIa ? chatName : msg.sender}
                     </span>
                     <div className="relative">
-                      {loading && !msg.sending && <Skeleton className="absolute h-4 w-full" />}
+                      <Skeleton
+                        className={cn(
+                          "absolute hidden h-4 w-full",
+                          loading && !msg.sending && "block"
+                        )}
+                      />
 
                       {isAction ? (
                         <div className="flex flex-col gap-3 pt-1">
                           <p
                             className={
-                              cn(loading && !msg.sending ? "opacity-0" : "opacity-100") +
+                              cn(loading ? "opacity-0" : "opacity-100") +
                               " leading-relaxed wrap-break-word"
                             }
                           >
@@ -224,10 +229,7 @@ export const Messages = ({
                   )}
                 </div>
               );
-            })
-        ) : (
-          <span className="text-muted-foreground text-xs sm:text-sm">{t.chat("empty")}</span>
-        )}
+            })}
         {/* Loading IA */}
         {(isAwaitingIa || localMessages?.length === 1) && <LoadingBubble />}
         <div ref={messagesEndRef} />
