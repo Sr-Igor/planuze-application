@@ -42,7 +42,7 @@ export const History = ({
     <div
       className={cn(
         "align-center bg-background/60 absolute top-0 right-0 z-100 flex h-full w-full justify-end transition-all duration-300",
-        !open && "z-[-10]"
+        !open && "-z-10"
       )}
       onClick={() => setOpen(false)}
     >

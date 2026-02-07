@@ -109,7 +109,7 @@ export const usePage = () => {
     setIsAwaitingIa(true);
     messages.mutate({
       question: question || "",
-      features: features.join(","),
+      features: chat?.features ? chat.features.split(",") : features.join(","),
       chat: chat?.id,
       mode,
     });
