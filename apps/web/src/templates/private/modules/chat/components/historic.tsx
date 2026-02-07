@@ -70,7 +70,7 @@ export const History = ({
           className="xs:gap-1 xs:px-1 flex flex-col gap-2 overflow-y-auto"
           ref={containerRef}
           onScroll={handleScroll}
-          style={{ maxHeight: "70vh" }}
+          style={{ height: "70vh", overflowY: "auto" }}
         >
           {data.map((c) => (
             <div
