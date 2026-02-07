@@ -67,11 +67,16 @@ export const usePage = () => {
         onSuccess: (data: any) => {
           setChat({ id: data.chat });
 
-          setLocalMessages((prev) =>
-            prev.map((msg) => (msg.sending ? { ...msg, sending: false } : msg))
-          );
-
           if (data.new) queryClient.refetchQueries({ queryKey: keys.chat.index() });
+
+          setTimeout(
+            () => {
+              setLocalMessages((prev) =>
+                prev.map((msg) => (msg.sending ? { ...msg, sending: false } : msg))
+              );
+            },
+            data.new ? 500 : 0
+          );
         },
         onError: () => {
           setIsAwaitingIa(false);

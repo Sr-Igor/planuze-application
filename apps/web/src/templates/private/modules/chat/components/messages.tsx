@@ -132,13 +132,13 @@ export const Messages = ({
                       {isUser ? t.chat("user") : isIa ? chatName : msg.sender}
                     </span>
                     <div className="relative">
-                      {loading && <Skeleton className="absolute h-4 w-full" />}
+                      {loading && !msg.sending && <Skeleton className="absolute h-4 w-full" />}
 
                       {isAction ? (
                         <div className="flex flex-col gap-3 pt-1">
                           <p
                             className={
-                              cn(loading ? "opacity-0" : "opacity-100") +
+                              cn(loading && !msg.sending ? "opacity-0" : "opacity-100") +
                               " leading-relaxed wrap-break-word"
                             }
                           >
@@ -208,7 +208,10 @@ export const Messages = ({
                         </div>
                       ) : (
                         <p
-                          className={cn(loading ? "opacity-0" : "opacity-100") + " wrap-break-word"}
+                          className={
+                            cn(loading && !msg.sending ? "opacity-0" : "opacity-100") +
+                            " wrap-break-word"
+                          }
                         >
                           {msg.error ? t.chat(`errors.${msg.message}`) : msg.message}
                         </p>

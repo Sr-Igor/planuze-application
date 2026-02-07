@@ -9,7 +9,6 @@ import { Header } from "./components/header";
 import { History } from "./components/historic";
 import { Initial } from "./components/initial";
 import { Messages } from "./components/messages";
-import { Modes } from "./components/mode";
 import { usePage } from "./hooks/use-page";
 
 export const Chat = () => {
